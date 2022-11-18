@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="sftp.studev.groept.be" id="769cd193-7372-4123-8f27-478a80a3ba32" port="22" nameFormat="DESCRIPTIVE" username="a22ux02" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="sftp.studev.groept.be" id="1f30bc98-f37f-4534-9c9b-77a9ecfd53f3" port="22" nameFormat="DESCRIPTIVE" username="a22ux02" useOpenSSHConfig="true" />
     </configs>
   </component>
 </project>
