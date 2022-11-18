@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HTML_CSS_template.iml" filepath="$PROJECT_DIR$/.idea/HTML_CSS_template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PHPStart.iml" filepath="$PROJECT_DIR$/PHPStart.iml" />
     </modules>
   </component>
 </project>

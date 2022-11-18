@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="f1c7edc9-ee50-4e99-9e10-e94d8b8601fd" name="Studev" url="http://a22ux02.studev.groept.be">
-        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="sftp.studev.groept.be" port="22" sshConfigId="769cd193-7372-4123-8f27-478a80a3ba32" sshConfig="a22ux02@sftp.studev.groept.be:22 password">
+      <webServer id="fb4082f6-8ea1-4ce3-b0d5-e7165c0ed416" name="App" url="https://a22ux02.studev.groept.be/">
+        <fileTransfer accessType="SFTP" host="sftp.studev.groept.be" port="22" sshConfigId="1f30bc98-f37f-4534-9c9b-77a9ecfd53f3" sshConfig="a22ux02@sftp.studev.groept.be:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

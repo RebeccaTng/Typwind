@@ -1,0 +1,275 @@
+CRITICAL - 2022-11-12 02:24:49 --> Invalid file: main.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('FCPATH\\main.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 3 APPPATH\Controllers\Home.php(20): view('main')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 02:32:40 --> Undefined constant "page"
+in APPPATH\Views\main.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 4 APPPATH\Controllers\Home.php(21): view('main')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 02:32:50 --> Undefined constant "title"
+in APPPATH\Views\main.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 4 APPPATH\Controllers\Home.php(21): view('main')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 02:33:37 --> Undefined constant "title"
+in APPPATH\Views\main.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 4 APPPATH\Controllers\Home.php(21): view('main')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 02:36:23 --> Undefined constant "title"
+in APPPATH\Views\main.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 4 APPPATH\Controllers\Home.php(24): view('main')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 02:37:33 --> Undefined variable $title
+in APPPATH\Views\main.php on line 4.
+ 1 APPPATH\Views\main.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Views\\main.php', 4)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(24): view('main')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 02:39:08 --> Undefined variable $title
+in APPPATH\Views\main.php on line 24.
+ 1 APPPATH\Views\main.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Views\\main.php', 24)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(24): view('main')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->main()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:18:39 --> Undefined variable $students
+in APPPATH\Views\students.php on line 41.
+ 1 APPPATH\Views\students.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $students', 'APPPATH\\Views\\students.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\students.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [...], true)
+ 5 APPPATH\Controllers\Home.php(33): view('students', [...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:50:32 --> Undefined constant "person"
+in APPPATH\Views\students.php on line 42.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 4 APPPATH\Controllers\Home.php(33): view('students', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:51:54 --> Undefined constant "person"
+in APPPATH\Views\students.php on line 42.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 4 APPPATH\Controllers\Home.php(33): view('students', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:55:20 --> Undefined constant "person"
+in APPPATH\Views\students.php on line 42.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 4 APPPATH\Controllers\Home.php(33): view('students', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:56:26 --> Undefined constant "person"
+in APPPATH\Views\students.php on line 43.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 4 APPPATH\Controllers\Home.php(32): view('students', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:56:36 --> Undefined constant "person"
+in APPPATH\Views\students.php on line 43.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 4 APPPATH\Controllers\Home.php(32): view('students', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 03:59:16 --> Undefined constant "person"
+in APPPATH\Views\students.php on line 43.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 4 APPPATH\Controllers\Home.php(33): view('students', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 09:58:53 --> Class "Menu_model" not found
+in APPPATH\Controllers\Home.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:05:41 --> Undefined variable $title
+in APPPATH\Views\homeContent.php on line 2.
+ 1 APPPATH\Views\homeContent.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Views\\homeContent.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\homeContent.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('homeContent', [], true)
+ 5 APPPATH\Controllers\Home.php(25): view('homeContent')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:07:04 --> Undefined constant "content"
+in APPPATH\Views\main.php on line 37.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 4 APPPATH\Controllers\Home.php(26): view('main', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:09:32 --> Invalid file: students.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('students.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('students', [], true)
+ 3 APPPATH\Controllers\Home.php(34): view('students', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:41:44 --> Undefined variable $menu_items
+in APPPATH\Views\main.php on line 28.
+ 1 APPPATH\Views\main.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu_items', 'APPPATH\\Views\\main.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(36): view('main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:42:38 --> Undefined variable $menu_items
+in APPPATH\Views\main.php on line 28.
+ 1 APPPATH\Views\main.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu_items', 'APPPATH\\Views\\main.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(36): view('main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:42:48 --> Undefined variable $menu_items
+in APPPATH\Views\main.php on line 28.
+ 1 APPPATH\Views\main.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu_items', 'APPPATH\\Views\\main.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(36): view('main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:43:02 --> Undefined variable $menu_items
+in APPPATH\Views\main.php on line 28.
+ 1 APPPATH\Views\main.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu_items', 'APPPATH\\Views\\main.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(36): view('main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:43:56 --> Undefined variable $menu_items
+in APPPATH\Views\main.php on line 28.
+ 1 APPPATH\Views\main.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu_items', 'APPPATH\\Views\\main.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 5 APPPATH\Controllers\Home.php(36): view('main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:44:00 --> Class "Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:44:28 --> Class "App\Controllers\Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:44:37 --> Class "Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:45:56 --> Class "App\Controllers\Models\Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:47:23 --> Class "Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:49:43 --> Class "Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-12 10:49:55 --> Class "Menu_model" not found
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->home()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
