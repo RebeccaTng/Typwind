@@ -35,7 +35,8 @@ class Home extends BaseController
         $idTeacher = $_GET['idTeacher'];
         $students= $this->students_model->get_students($idTeacher);
         $this->data['students'] = $students;
-        return view('students', $this->data);
+        return $this->response->setJSON($students);
+        //return view('students', $this->data);
     }
 
     public function addStudent()
