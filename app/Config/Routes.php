@@ -19,7 +19,6 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
-
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -36,14 +35,20 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::home');
-$routes->get('/hello', 'Home::hello');
-$routes->get('/hello/(:alpha)', 'Home::hello/$1');
-$routes->get('/home', 'Home::home');
-$routes->get('/exercises', 'Home::exercises');
-$routes->get('/students', 'Home::students');
-$routes->get('/profile', 'Home::profile');
-$routes->get('/menuTest', 'Home::menuTest');
+$routes->get('/', 'Home::index');
+$routes->get('/test', 'Home::test');
+$routes->get('/getStudents', 'Home::getStudents');
+$routes->get('/getTeacher', 'Home::getTeacher');
+$routes->post('/addStudent', 'Home::addStudent');
+$routes->post('/addTeacher', 'Home::addTeacher');
+
+$routes->get('/test/(:alpha)', 'Home::test/$1');
+$routes->get('/getStudents/(:alpha)', 'Home::getStudents/$1');
+
+
+
+
+
 
 
 /*

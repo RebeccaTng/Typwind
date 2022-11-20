@@ -2,67 +2,70 @@
 
 namespace App\Controllers;
 
+
+use App\Models\Students_model;
+use App\Models\Teachers_model;
+
 class Home extends BaseController
 {
 
-    private $menu_model;
     private $data;
+    private Students_model $students_model;
+    private Teachers_model $teachers_model;
 
-    public function __construct(){
-        //$this->menu_model = new \Menu_model();
+
+    public function __construct() {
+        $this->students_model = new Students_model();
+        $this->teachers_model = new Teachers_model();
     }
 
-/*    private function set_common_data($title,$viewName){
-        $this->$data['title']=$title;
-        $this->$data['content']= view($viewName,$this->$data);;
-    }*/
-
-    public function hello($name_param="Jeff")
+    public function index()
     {
-        $data['title'] = $name_param;
-        $data['content'] = $name_param;
-        return view('hello', $data);
+        return view('welcome_message');
     }
 
-    public function home()
+    public function test($name_param="random name")
     {
-        //$menu_model=new \Menu_model();
-        $data['title'] = "Home";
-        $data['content'] = view('homeContent',$data);
-        //$this->set_common_data("Home",'homeContent')
-        //$data['menu_items'] =$menu_model->get_menuitems('Home');
-
-        return view('main', /*$this->*/$data);
+        $data['firstname']=$name_param;
+        return view('welcome', $data);
     }
 
-    public function students()
+    public function getStudents()
     {
-        $data['title'] = "Students";
-        $data['students'] = array(array('name' => 'Loïc'), array('name' => 'Jeff'));
-        $data['content'] = view('studentsContent', $data);
-        return view('main', $data);
+        $idTeacher = $_GET['idTeacher'];
+        $students= $this->students_model->get_students($idTeacher);
+        $this->data['students'] = $students;
+        return view('students', $this->data);
     }
 
-    public function profile()
+    public function addStudent()
     {
-        $data['title'] = "My Profile";
-        $data['content'] = view('profileContent', $data);
-
-        return view('main', $data);
+        $data['firstname']= $_POST['firstname'];
+        $data['lastname'] = $_POST['lastname'];
+        $data['email']= $_POST['email'];
+        $data['password'] = $_POST['password'];
+        $data['birthday'] = $_POST['birthday'];
+        $data['idTeacher_fk'] = $_POST['idTeacher'];
+        $this->students_model->add_student($data);
+        return view('welcome', $data);
     }
 
-    public function exercises()
+    public function getTeacher()
     {
-        $data['title'] = "Exercises";
-        $data['content'] = view('exercisesContent', $data);
-
-        return view('main', $data);
+        $idTeachers = $_GET['idTeachers'];
+        $teacher= $this->teachers_model->get_teacher($idTeachers);
+        $this->data['teacher'] = $teacher;
+        return view('teacher', $this->data);
     }
 
-    public function menuTest()
+    public function addTeacher()
     {
-        $data['title'] = "Menu Testing";
-        return view('menuTest',$data);
+        $data['firstname']= $_POST['firstname'];
+        $data['lastname'] = $_POST['lastname'];
+        $data['email']= $_POST['email'];
+        $data['password'] = $_POST['password'];
+        $this->teachers_model->add_teacher($data);
+        return view('welcome', $data);
     }
 
 }

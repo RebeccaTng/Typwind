@@ -2,12 +2,11 @@
 
 namespace Config;
 
-use CodeIgniter\Database\Config;
 
 /**
  * Database Configuration
  */
-class Database extends Config
+class Database extends \CodeIgniter\Database\Config
 {
     /**
      * The directory that holds the Migrations
@@ -32,10 +31,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
+        'hostname' => 'mysql.studev.groept.be',
+        'username' => 'a22ux02',
+        'password' => '9krkjwRn',
+        'database' => 'a22ux02',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
