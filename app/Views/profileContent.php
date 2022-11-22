@@ -17,6 +17,25 @@ $Emily= new expert;
     // do whatever we want with the users array.
 }*/?>
 
+<script>
+    // Sample JS object
+    var obj = {FirstName: "Emily", SurName: "Pauwels", Email: "Emily.Pauwels@hotmail.com", Active: "Currently Active"};
+
+    // Converting JS object to JSON string
+    var json = JSON.stringify(obj);
+
+    console.log(json);
+    // Prints: {FirstName: "Emily", SurName: "Pauwels", Email: "Emily.Pauwels@hotmail.com", Active: "Currently Active"}
+</script>
+
+<script>
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET", json)
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(json);
+</script>
+
 <header>
     <div id="logo">
         <h1 class="test"> My Profile</h1>
