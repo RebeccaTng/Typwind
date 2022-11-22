@@ -44,6 +44,7 @@ $routes->get('/exercises', 'Home::exercises');
 $routes->get('/students', 'Home::students');
 $routes->get('/profile', 'Home::profile');
 $routes->get('/menuTest', 'Home::menuTest');
+$routes->get('/student', 'Home::student');
 
 
 /*

@@ -38,7 +38,7 @@ class Home extends BaseController
     public function students()
     {
         $data['title'] = "Students";
-        $data['students'] = array(array('name' => 'Loïc'), array('name' => 'Jeff'));
+        $data['students'] = array(array('name' => 'Loïc Rondou'), array('name' => 'Jeff MyName'));
         $data['content'] = view('studentsContent', $data);
         return view('main', $data);
     }
@@ -55,6 +55,14 @@ class Home extends BaseController
     {
         $data['title'] = "Exercises";
         $data['content'] = view('exercisesContent', $data);
+
+        return view('main', $data);
+    }
+
+    public function student()
+    {
+        $data['title'] = "Student Content";
+        $data['content'] = view('studentContent', $data);
 
         return view('main', $data);
     }

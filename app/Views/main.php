@@ -17,7 +17,7 @@
     <!-- sidebar Toggle Js -->
     <script type="text/javascript"src="<?=base_url()?>/app/Controllers/sidebarToggle.js" defer></script>
     <!-- Language switch Js -->
-    <script type="text/javascript" src="<?=base_url()?>/app/Controllers/languageButton.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/app/Models/languageData.js" defer></script>
 
 </head>
 <body>
@@ -35,10 +35,10 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li><a href="<?=base_url()?>/public/home" title="Go home">Home</a></li>
-            <li><a href="<?=base_url()?>/public/students" title="Look at students">Students</a></li>
-            <li><a href="<?=base_url()?>/public/exercises" title="Look at exercises">Exercises</a></li>
-            <li><a href="<?=base_url()?>/public/profile" title="Look at profile">My Profile</a></li>
+            <li><a href="<?=base_url()?>/public/home" title="Go home" class="home">Home</a></li>
+            <li><a href="<?=base_url()?>/public/students" title="Look at students" class="students">Students</a></li>
+            <li><a href="<?=base_url()?>/public/exercises" title="Look at exercises" class="exercises">Exercises</a></li>
+            <li><a href="<?=base_url()?>/public/profile" title="Look at profile" class="profile">My Profile</a></li>
         </ul>
 
         <ul class="list-unstyled CTAs">
@@ -55,11 +55,6 @@
             <span></span>
         </button>
 
-        <header>
-            <div id="logo">
-                <h1><?=$title?>  </h1>
-            </div>
-        </header>
         <main>
             <?=$content?>
         </main>

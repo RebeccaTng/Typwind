@@ -1,5 +1,11 @@
+<header>
+    <div id="logo">
+        <h1>Home</h1>
+    </div>
+</header>
+
 <section>
-    <h2>Welcome to the <?=$title?>page</h2>
+    <h2>Welcome to the Homepage</h2>
     <h3>What is this website?</h3>
     <p>
         We will make it easy for experts to teach the Typwind method to the children.

@@ -19,7 +19,7 @@ $Emily= new expert;
 
 <header>
     <div id="logo">
-        <h1 class="test"> My Profile</h1>
+        <h1 class="test"> @Naam Plaats </h1>
     </div>
 </header>
 
