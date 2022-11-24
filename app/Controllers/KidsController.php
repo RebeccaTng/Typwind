@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ExerciseModel;
+
 class KidsController extends BaseController
 {
     public function index()
@@ -15,12 +17,15 @@ class KidsController extends BaseController
             // Whoops, we don't have a page for that!
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
-
-        $data['title'] = ucfirst($page); // Capitalize the first letter
+        $model = model(ExerciseModel::class);
+        $data = [
+            'title' => ucfirst($page),// Capitalize the first letter
+            'exercises'=> $model->getExercises()
+        ];
 
         return view('templates/header', $data)
             . view('templates/side_nav_bar')
-            . view('pages/kids/' . $page)
+            . view('pages/kids/' . $page,$data)
             . view('templates/footer');
     }
 }
