@@ -26,8 +26,6 @@ class Home extends BaseController
 
     public function home()
     {
-        $session = session();
-        echo "Hello : ".$session->get('name');
         //$menu_model=new \Menu_model();
         $data['title'] = "Home";
         $data['content'] = view('homeContent',$data);

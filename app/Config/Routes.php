@@ -46,7 +46,7 @@ $routes->get('/profile', 'Home::profile');
 $routes->get('/menuTest', 'Home::menuTest');
 $routes->get('/student', 'Home::student');
 
-$routes->get('/', 'SignupController::index');
+$routes->get('/', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->match(['get', 'post'], 'SignupController/store', 'SignupController::store');
 $routes->match(['get', 'post'], 'SigninController/loginAuth', 'SigninController::loginAuth');
