@@ -67,6 +67,22 @@ class Home extends BaseController
         return view('main', $data);
     }
 
+    public function editStudent()
+    {
+        $data['title'] = "Student Content";
+        $data['content'] = view('editStudentContent', $data);
+
+        return view('main', $data);
+    }
+
+    public function editExpert()
+    {
+        $data['title'] = "Student Content";
+        $data['content'] = view('editExpertContent', $data);
+
+        return view('main', $data);
+    }
+
     public function menuTest()
     {
         $data['title'] = "Menu Testing";
