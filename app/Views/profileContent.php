@@ -68,7 +68,7 @@ $Emily= new expert;
                 Active: <?php echo $Emily->Active. "<br>" ?>
             </p>
             <h3 class="text-center">
-            <button class="btn btn-success" onclick="location.href='<?=base_url()?>/public/editExpert';"> Edit Profile </button>
+            <button class="btn btn-success" onclick="location.href='<?=base_url()?>/public/editExpert';"> Edit </button>
             </h3>
         </div>
         <div class="col-md-4">
