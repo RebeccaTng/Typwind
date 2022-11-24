@@ -3,16 +3,25 @@
 <br>
 <br>
 <br>
-<?php if (! empty($exercises) && is_array($exercises)): ?>
+<?php if (! empty($exercises) && is_array($exercises)):
+    $lesson = 0;
+    ?>
 
     <?php foreach ($exercises as $exercise_item): ?>
 
-        <h3><?= esc($exercise_item['name']) ?></h3>
+        <ul>
 
-        <div class="main">
-            <?= esc($exercise_item['text']) ?>
-        </div>
+        <?php
+        if ($exercise_item['lesson'] != $lesson) {
+            echo '<br>';
+            echo '<br>';
+            echo '<h3>Lesson'.$exercise_item['lesson'].'</h3>';
+        }
+        $lesson = $exercise_item['lesson'];
+        ?>
 
+        <li><?= esc($exercise_item['name']) ?></li>
+        </ul>
     <?php endforeach ?>
 
 <?php else: ?>
