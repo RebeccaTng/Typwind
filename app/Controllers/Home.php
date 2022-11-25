@@ -88,5 +88,4 @@ class Home extends BaseController
         $data['title'] = "Menu Testing";
         return view('menuTest',$data);
     }
-
 }

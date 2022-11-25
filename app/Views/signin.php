@@ -22,9 +22,9 @@
                 <div class="form-group mb-3">
                     <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
                 </div>
-                <div class="form-group mb-3">
+<!--                <div class="form-group mb-3">
                     <input type="password" name="password" placeholder="Password" class="form-control" >
-                </div>
+                </div>-->
 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-success">Signin</button>

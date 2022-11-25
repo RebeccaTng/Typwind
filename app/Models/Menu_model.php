@@ -1,5 +1,9 @@
 <?php
 
+//this model is used for if we want to highlight the current page that we are on
+//It basically makes the navigational menu turn white for the page we're on
+//Eg: the "home" will turn white when on home screen
+
 class Menu_model
 {
 //<a href="Link" title= "title text" class ="className">name</a>

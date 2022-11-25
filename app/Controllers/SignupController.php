@@ -35,7 +35,5 @@ class SignupController extends Controller
             $data['validation'] = $this->validator;
             echo view('signup', $data);
         }
-
     }
-
 }

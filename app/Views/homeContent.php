@@ -4,7 +4,10 @@
 <section>
     <h2 class="text-center">Welcome Back,</h2> <br>
     <h3 class="text-center">
-        Emily Wauters
+        Emily Wauters <?php
+        $session = session();
+        echo $session->get('name')
+        ?>
     </h3>
 
 </section>

@@ -1,3 +1,5 @@
+//Translation JS files to be adapted at the end
+
 const langEl = document.querySelector('.langWrap');
 const link = document.querySelectorAll('a');
 const homeEl = document.querySelector('.home');
@@ -10,7 +12,6 @@ link.forEach(el => {
     el.addEventListener('click', () => {
         langEl.querySelector('.active').classList.remove('active');
         el.classList.add('active');
-
         const attr = el.getAttribute('language');
 
         homeEl.textContent = mainData[attr].home;

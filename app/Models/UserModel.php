@@ -2,6 +2,7 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
+//This model is used for the log in :)
 class UserModel extends Model{
     protected $table = 'users';
 

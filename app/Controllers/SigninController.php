@@ -16,14 +16,14 @@ class SigninController extends Controller
         $session = session();
         $userModel = new UserModel();
         $email = $this->request->getVar('email');
-        $password = $this->request->getVar('password');
+/*        $password = $this->request->getVar('password');*/
 
         $data = $userModel->where('email', $email)->first();
 
         if($data){
-            $pass = $data['password'];
+            /*$pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
-            if($authenticatePassword){
+            if($authenticatePassword){*/
                 $ses_data = [
                     'id' => $data['id'],
                     'name' => $data['name'],
@@ -31,12 +31,12 @@ class SigninController extends Controller
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/public/profile');
+                return redirect()->to('/public/home');
 
-            }else{
+            /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->to('/public/signin');
-            }
+            }*/
         }else{
             $session->setFlashdata('msg', 'Email does not exist.');
             return redirect()->to('/public/signin');

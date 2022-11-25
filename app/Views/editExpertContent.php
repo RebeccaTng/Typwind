@@ -1,4 +1,7 @@
 
+<!--This PHP file is completely not finished yet and should be filled with Loïcs code!
+-->
+
 <header>
     <div id="logo">
         <h1 class="test"> My Profile</h1>

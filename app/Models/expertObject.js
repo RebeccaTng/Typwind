@@ -1,3 +1,6 @@
+//This JS file is what I wrote when trying out AJAX
+//It is not used anywhere and can be omitted
+
 let expert = {
     "name": "Mike",
     "password": "Mike567",
