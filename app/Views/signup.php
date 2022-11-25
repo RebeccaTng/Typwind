@@ -16,7 +16,7 @@
                     <?= $validation->listErrors() ?>
                 </div>
             <?php endif;?>
-            <form action="<?php echo base_url(); ?>/SignupController/store" method="post">
+            <form action="<?php echo base_url(); ?>/public/SignupController/store" method="post">
                 <div class="form-group mb-3">
                     <input type="text" name="name" placeholder="Name" value="<?= set_value('name') ?>" class="form-control" >
                 </div>

@@ -31,15 +31,15 @@ class SigninController extends Controller
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/profile');
+                return redirect()->to('/public/profile');
 
             }else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->to('/signin');
+                return redirect()->to('/public/signin');
             }
         }else{
             $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->to('/signin');
+            return redirect()->to('/public/signin');
         }
     }
 }
