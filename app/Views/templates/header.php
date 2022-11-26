@@ -4,7 +4,7 @@
 <head>
     <title>Typwind kids</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet"  type = "text/css"  href="/public/CSS/navbar.css"/>
+    <link rel="stylesheet"  type = "text/css"  href="<?=base_url()?>/CSS/navbar.css"/>
 <!--    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">-->
 </head>
 <body>
