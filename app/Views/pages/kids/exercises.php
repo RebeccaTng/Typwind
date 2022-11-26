@@ -1,16 +1,11 @@
 
 <!-- "esc(...) "It’s a global function provided by CodeIgniter to help prevent XSS attacks.-->
-<br>
-<br>
-<br>
+
 <?php if (! empty($exercises) && is_array($exercises)):
     $lesson = 0;
     ?>
-
     <?php foreach ($exercises as $exercise_item): ?>
-
         <ul>
-
         <?php
         if ($exercise_item['lesson'] != $lesson) {
             echo '<br>';
@@ -19,19 +14,12 @@
         }
         $lesson = $exercise_item['lesson'];
         ?>
-
-        <li><?= esc($exercise_item['name']) ?></li>
+        <li><button type="button"><?= esc($exercise_item['name']) ?></button></li>
         </ul>
     <?php endforeach ?>
-
 <?php else: ?>
-
     <h3>No Exercises</h3>
-
     <p>Unable to find any exercises for you.</p>
-
 <?php endif ?>
-<br>
-<br>
 <br>
 <br>

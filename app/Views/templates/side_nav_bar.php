@@ -1,13 +1,8 @@
 <div class="btn-group">
+    <p>------start of Nav Bar--------</p>
     <button>Home</button>
-    <br>
-    <br>
-    <br>
-    <br>
     <button>Exercise</button>
-    <br>
-    <br>
-    <br>
-    <br>
     <button>Log out</button>
+    <br>
+    <p>------end of Nav Bar--------</p>
 </div>

@@ -1,3 +1,3 @@
-    <em>&copy; 2021</em>
+    <em>Typwind Online by C++    &copy; 2022</em>
 </body>
 </html>
