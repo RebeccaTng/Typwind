@@ -40,7 +40,7 @@ $routes->get('pages', 'KidsController::index');
 $routes->get('/kids/(:any)', 'KidsController::view/$1');
 $routes->get('/experts/home', 'ExpertController::home');
 
-
+$routes->get('/design', 'ExpertController::Design');
 
 $routes->get('/test', 'Home::test');
 $routes->get('/getStudents', 'Home::getStudents');
