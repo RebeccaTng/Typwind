@@ -18,8 +18,7 @@ class KidsController extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
         $model = model(ExerciseModel::class);
-        $data = [
-            'title' => ucfirst($page),// Capitalize the first letter
+        $data = ['title' => ucfirst($page),// Capitalize the first letter
             'exercises'=> $model->getExercises()
         ];
 

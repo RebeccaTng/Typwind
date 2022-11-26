@@ -1,5 +1,5 @@
 
-<?= $this->extend('/templates/kids_default') ?>
+<?= $this->extend('/templates/css_default') ?>
 
 <?= $this->section('content') ?>
 <!--START OF PAGE CONTENT-->
