@@ -38,6 +38,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');
 $routes->get('/kids/(:any)', 'KidsController::view/$1');
+$routes->get('/experts/home', 'ExpertController::home');
 
 
 

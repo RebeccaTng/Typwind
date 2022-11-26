@@ -23,9 +23,6 @@ class KidsController extends BaseController
             'exercises'=> $model->getExercises()
         ];
 
-        return view('templates/header', $data)
-            . view('templates/side_nav_bar')
-            . view('pages/kids/' . $page,$data)
-            . view('templates/footer');
+        return view('pages/kids/' . $page,$data);
     }
 }
