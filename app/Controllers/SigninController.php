@@ -1,7 +1,9 @@
 <?php
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\UserModel;
+use App\Models\ExpertModel;
+use App\Models\StudentModel;
+
 
 class SigninController extends Controller
 {
@@ -14,11 +16,13 @@ class SigninController extends Controller
     public function loginAuth()
     {
         $session = session();
-        $userModel = new UserModel();
+        $expertModel = new ExpertModel();
+        $studentModel = new StudentModel();
         $email = $this->request->getVar('email');
 /*        $password = $this->request->getVar('password');*/
 
-        $data = $userModel->where('email', $email)->first();
+        $data = $expertModel->where('email', $email)->first();
+        $data2 = $studentModel->where('email', $email)->first();
 
         if($data){
             /*$pass = $data['password'];
@@ -26,19 +30,39 @@ class SigninController extends Controller
             if($authenticatePassword){*/
                 $ses_data = [
                     'id' => $data['id'],
-                    'firstname' => $data['firstname'],
-                    'lastname' => $data['lastname'],
+                    'name' => $data['name'],
                     'email' => $data['email'],
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/public/home');
+                return redirect()->to('/public/experthome');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->to('/public/signin');
             }*/
-        }else{
+        }
+
+        else if($data2){
+            /*$pass = $data['password'];
+            $authenticatePassword = password_verify($password, $pass);
+            if($authenticatePassword){*/
+            $ses_data = [
+                'id' => $data['id'],
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'isLoggedIn' => TRUE
+            ];
+            $session->set($ses_data);
+            return redirect()->to('/public/studenthome');
+
+            /*}*//*else{
+                $session->setFlashdata('msg', 'Password is incorrect.');
+                return redirect()->to('/public/signin');
+            }*/
+        }
+
+        else{
             $session->setFlashdata('msg', 'Email does not exist.');
             return redirect()->to('/public/signin');
         }

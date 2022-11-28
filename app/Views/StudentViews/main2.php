@@ -15,7 +15,7 @@
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
     <!-- sidebar Toggle Js -->
-    <script type="text/javascript"src="<?=base_url()?>/app/Controllers/sidebarToggle.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/app/Controllers/sidebarToggle.js" defer></script>
     <!-- Language switch Js -->
     <script type="text/javascript" src="<?=base_url()?>/app/Models/languageData.js" defer></script>
 
@@ -35,8 +35,8 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li><a href="<?=base_url()?>/public/home" title="Go home" class="home" >Home</a></li>
-            <li><a href="<?=base_url()?>/public/exercises" title="Look at exercises" class="exercises">Exercises</a></li>
+            <li><a href="<?=base_url()?>/public/studenthome" title="Go home" class="home" >Home</a></li>
+            <li><a href="<?=base_url()?>/public/studentexercises" title="Look at exercises" class="exercises">Exercises</a></li>
         </ul>
 
         <ul class="list-unstyled CTAs">

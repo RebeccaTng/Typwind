@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\UserModel;
+use App\Models\ExpertModel;
 
 class SignupController extends Controller
 {
@@ -24,7 +24,7 @@ class SignupController extends Controller
         ];
 
         if($this->validate($rules)){
-            $userModel = new UserModel();
+            $userModel = new ExpertModel();
             $data = [
                 'firstname'     => $this->request->getVar('firstname'),
                 'lastname'     => $this->request->getVar('lastname'),

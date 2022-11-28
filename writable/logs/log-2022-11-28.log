@@ -82,3 +82,57 @@ in APPPATH\Views\signin.php on line 16.
  6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
  7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:07:05 --> Invalid file: main.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('main.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 3 APPPATH\Controllers\ExpertController.php(35): view('main', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->home()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:09:00 --> Invalid file: homeContent.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('homeContent.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('homeContent', [], true)
+ 3 APPPATH\Controllers\ExpertController.php(31): view('homeContent', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->home()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:24:26 --> Class 'App\Controllers\expertModel' not found
+in APPPATH\Controllers\SigninController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:25:25 --> Class 'App\Controllers\expertModel' not found
+in APPPATH\Controllers\SigninController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:25:35 --> Class 'App\Controllers\expertModel' not found
+in APPPATH\Controllers\SigninController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:26:02 --> Class 'Expert_model' not found
+in APPPATH\Controllers\SigninController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:26:09 --> Class 'Expert_model' not found
+in APPPATH\Controllers\SigninController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 10:28:23 --> Class 'App\Models\ExpertModel' not found
+in APPPATH\Controllers\SigninController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -28,59 +28,59 @@ class ExpertController extends BaseController
     {
         //$menu_model=new \Menu_model();
         $data['title'] = "Home";
-        $data['content'] = view('homeContent',$data);
+        $data['content'] = view('/ExpertViews/homeContent',$data);
         //$this->set_common_data("Home",'homeContent')
         //$data['menu_items'] =$menu_model->get_menuitems('Home');
 
-        return view('main', /*$this->*/$data);
+        return view('/ExpertViews/main', /*$this->*/$data);
     }
 
     public function students()
     {
         $data['title'] = "Students";
         $data['students'] = array(array('name' => 'Loïc Rondou'), array('name' => 'Jeff MyName'));
-        $data['content'] = view('studentsContent', $data);
-        return view('main', $data);
+        $data['content'] = view('/ExpertViews/studentsContent', $data);
+        return view('/ExpertViews/main', $data);
     }
 
     public function profile()
     {
         $data['title'] = "My Profile";
-        $data['content'] = view('profileContent', $data);
+        $data['content'] = view('/ExpertViews/profileContent', $data);
 
-        return view('main', $data);
+        return view('/ExpertViews/main', $data);
     }
 
     public function exercises()
     {
         $data['title'] = "Exercises";
-        $data['content'] = view('exercisesContent', $data);
+        $data['content'] = view('/ExpertViews/exercisesContent', $data);
 
-        return view('main', $data);
+        return view('/ExpertViews/main', $data);
     }
 
     public function student()
     {
         $data['title'] = "Student Content";
-        $data['content'] = view('studentContent', $data);
+        $data['content'] = view('/ExpertViews/studentContent', $data);
 
-        return view('main', $data);
+        return view('/ExpertViews/main', $data);
     }
 
     public function editStudent()
     {
         $data['title'] = "Student Content";
-        $data['content'] = view('editStudentContent', $data);
+        $data['content'] = view('/ExpertViews/editStudentContent', $data);
 
-        return view('main', $data);
+        return view('/ExpertViews/main', $data);
     }
 
     public function editExpert()
     {
         $data['title'] = "Student Content";
-        $data['content'] = view('editExpertContent', $data);
+        $data['content'] = view('/ExpertViews/editExpertContent', $data);
 
-        return view('main', $data);
+        return view('/ExpertViews/main', $data);
     }
 
     public function menuTest()

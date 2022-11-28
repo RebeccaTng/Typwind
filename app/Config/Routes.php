@@ -17,9 +17,8 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('ExpertController');
 $routes->setDefaultMethod('index');
-
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -36,22 +35,23 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-/*$routes->get('/', 'Home::home');*/
-$routes->get('/hello', 'Home::hello');
-$routes->get('/hello/(:alpha)', 'Home::hello/$1');
-$routes->get('/home', 'Home::home');
-$routes->get('/exercises', 'Home::exercises');
-$routes->get('/students', 'Home::students');
-$routes->get('/profile', 'Home::profile');
-$routes->get('/menuTest', 'Home::menuTest');
-$routes->get('/student', 'Home::student');
+/*$routes->get('/', 'ExpertController::ExpertController');*/
 
+$routes->get('/hello', 'ExpertController::hello');
+$routes->get('/hello/(:alpha)', 'ExpertController::hello/$1');
+$routes->get('/experthome', 'ExpertController::home');
+$routes->get('/studenthome', 'StudentController::home');
+$routes->get('/expertexercises', 'ExpertController::exercises');
+$routes->get('/studentexercises', 'StudentController::exercises');
+$routes->get('/students', 'ExpertController::students');
+$routes->get('/profile', 'ExpertController::profile');
+$routes->get('/menuTest', 'ExpertController::menuTest');
+$routes->get('/student', 'ExpertController::student');
 $routes->get('/', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->match(['get', 'post'], 'SignupController/store', 'SignupController::store');
 $routes->match(['get', 'post'], 'SigninController/loginAuth', 'SigninController::loginAuth');
 $routes->get('/signin', 'SigninController::index');
-$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
