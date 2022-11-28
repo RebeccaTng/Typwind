@@ -12,7 +12,8 @@
         <div class="col-5">
 
             <h2>Login in</h2>
-
+            <?php $session = session();
+            echo $session->firstname; echo " "; echo $session->lastname . "<br>" ?>
             <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>
