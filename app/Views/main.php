@@ -42,7 +42,7 @@
         </ul>
 
         <ul class="list-unstyled CTAs">
-            <li><a href="<?=base_url()?>/public/home" title="Go home" class="download">Log out</a></li>
+            <li><a href="<?=base_url()?>/public/signin" title="Go home" class="download">Log out</a></li>
         </ul>
     </nav>
 
