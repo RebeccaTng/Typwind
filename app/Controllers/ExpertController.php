@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class ExpertController extends BaseController
 {
 
     private $menu_model;
