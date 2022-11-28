@@ -26,7 +26,8 @@ class SigninController extends Controller
             if($authenticatePassword){*/
                 $ses_data = [
                     'id' => $data['id'],
-                    'name' => $data['name'],
+                    'firstname' => $data['firstname'],
+                    'lastname' => $data['lastname'],
                     'email' => $data['email'],
                     'isLoggedIn' => TRUE
                 ];

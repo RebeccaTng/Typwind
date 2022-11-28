@@ -4,12 +4,13 @@ use CodeIgniter\Model;
 
 //This model is used for the log in :)
 class UserModel extends Model{
-    protected $table = 'users';
+    protected $table = 'teachers';
 
     protected $allowedFields = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
-        'password',
+/*        'password',*/
         'created_at'
     ];
 }
