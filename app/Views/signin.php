@@ -13,7 +13,10 @@
 
             <h2>Login in</h2>
             <?php $session = session();
-            echo $session->firstname; echo " "; echo $session->lastname . "<br>" ?>
+            if ($session->firstname != '') {
+                session_destroy();
+            }
+            ?>
             <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>

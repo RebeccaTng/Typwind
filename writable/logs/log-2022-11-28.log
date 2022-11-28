@@ -48,3 +48,37 @@ in APPPATH\Views\signin.php on line 16.
  6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
  7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 09:15:45 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\main.php on line 46.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'APPPATH\\Views\\main.php', 46, [...])
+ 2 APPPATH\Views\main.php(46): session_destroy()
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\main.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('main', [], true)
+ 6 APPPATH\Controllers\Home.php(43): view('main', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->students()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 09:17:18 --> session_destroy(): Trying to destroy uninitialized session
+in APPPATH\Views\signin.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy(): Trying to destroy uninitialized session', 'APPPATH\\Views\\signin.php', 15, [])
+ 2 APPPATH\Views\signin.php(15): session_destroy()
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\signin.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('signin', [], true)
+ 6 APPPATH\Controllers\SigninController.php(11): view('signin')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-28 09:20:37 --> Cannot use object of type CodeIgniter\Session\Session as array
+in APPPATH\Views\signin.php on line 16.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('signin', [], true)
+ 4 APPPATH\Controllers\SigninController.php(11): view('signin')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

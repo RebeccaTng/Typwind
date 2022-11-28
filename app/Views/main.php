@@ -41,16 +41,9 @@
             <li><a href="<?=base_url()?>/public/profile" title="Look at profile" class="profile">My Profile</a></li>
         </ul>
 
-        <script type="text/javascript">
-            function potato() {
-                <?php session_destroy();?>
-            }
-        </script>
-
-
         <ul class="list-unstyled CTAs">
             <form method="post">
-                <li><a href="<?=base_url()?>/public/signin" onclick="potato()" title="Go home" class="logout">Log out</a></li>
+                <li><a href="<?=base_url()?>/public/signin" title="Go home" class="logout">Log out</a></li>
             </form>
         </ul>
     </nav>
