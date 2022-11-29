@@ -1,0 +1,67 @@
+/* BUTTONS
+ *
+ * classes: .button, .buttonPrimary, .buttonSecondary, .buttonExpert, .buttonChild
+ */
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem; /* 16px */
+
+    font: 600 1.125rem var(--opensans-font); /* Weight=Semi bold, size=18pt, family=Open Sans*/
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.buttonPrimary {
+    border: none;
+    color: var(--beigeNeutral-light);
+    background-color: var(--primary-dark);
+}
+
+.buttonSecondary {
+    color: var(--primary-dark);
+    background-color: var(--beigeNeutral);
+    border: 0.125rem solid var(--primary-dark);
+}
+
+.buttonExpert {
+    padding: 0.625rem 1.5rem; /* 10px 24px */
+    border-radius: 1.4063rem; /* 22.5px */
+    width: 11.875rem; /* 190px */
+    height: 2.8125rem; /* 45px */
+}
+
+.buttonChild {
+    padding: 0.875rem 1.625rem; /* 14px 26px*/
+    border-radius: 1.6563rem; /*26.5px */
+    width: 12.125rem; /* 194px */
+    height: 3.3125rem; /* 53 */
+}
+
+.button:hover:enabled {
+    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
+}
+
+.buttonPrimary:hover:enabled {
+    background-color: var(--primary-darkest);
+}
+
+.buttonSecondary:hover:enabled {
+    color: var(--primary-darkest);
+    border-color: var(--primary-darkest);
+}
+
+.button:active:enabled {
+    box-shadow: 4px 4px 12px rgba(30, 41, 41, 0.7) inset;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
