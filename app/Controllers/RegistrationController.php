@@ -43,7 +43,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isLoggedIn' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('public/experts/homeContent');
+            return redirect()->to('public/experts/home');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
@@ -63,7 +63,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isLoggedIn' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('/public/studenthome');
+            return redirect()->to('/public/kids/home');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');

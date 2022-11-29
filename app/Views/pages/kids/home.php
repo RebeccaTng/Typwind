@@ -1,3 +1,7 @@
+<?= $this->extend('/templates/kids_default') ?>
+
+<?= $this->section('content') ?>
+
 <h3 class="text-center">
     <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle">
 </h3>
@@ -22,3 +26,5 @@
     </h3>
 
 </section>
+
+<?= $this->endSection() ?>
