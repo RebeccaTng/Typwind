@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="<?=base_url()?>/CSS/navbar.css">
     <!--END OF NAV BAR LINKS -->
     <link rel="stylesheet" href="<?=base_url()?>/CSS/testing/list_of_buttons.css">
+
+    <!--CSS FILES-->
+    <link rel="stylesheet" href="<?=base_url()?>/CSS/main.css">
 </head>
 <body>
 <div class="wrapper">
