@@ -24,5 +24,13 @@
     <button class="button buttonPrimary buttonChild">Button Label</button>
     <button class="button buttonSecondary buttonChild">Button Label</button>
 
+    <!-- BREADCRUMB -->
+    <ul class="breadcrumb bodyText">
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+        <li class="emphasisText">Page 4</li>
+    </ul>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>

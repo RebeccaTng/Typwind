@@ -25,6 +25,7 @@
 
     <!--CSS FILES-->
     <link rel="stylesheet" href="<?=base_url()?>/CSS/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/CSS/generalComponents.css">
 </head>
 <body>
 <div class="wrapper">
