@@ -41,8 +41,8 @@ $routes->get('/registration/signup', 'RegistrationController::signup)');
 
 $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');
-$routes->get('/kids/(:any)', 'KidsController::view/$1');
-$routes->get('/experts/(:any)', 'ExpertController::view/$1');
+$routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
+$routes->get('/experts/(:any)', 'ExpertController::view/$1',['filter'=>'AuthGuard']);
 
 $routes->get('/experts/home', 'ExpertController::home');
 
@@ -57,10 +57,7 @@ $routes->post('/addTeacher', 'Home::addTeacher');
 $routes->get('/test/(:alpha)', 'Home::test/$1');
 $routes->get('/getStudents/(:alpha)', 'Home::getStudents/$1');
 
-
-
-
-
+//Routing for Filtering (Blocking access to not logged-in Users)
 
 
 /*
