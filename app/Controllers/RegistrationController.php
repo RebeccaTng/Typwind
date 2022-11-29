@@ -83,7 +83,7 @@ class RegistrationController extends \CodeIgniter\Controller
         $rules = [
             'firstname'          => 'required|min_length[2]|max_length[50]',
             'lastname'          => 'required|min_length[2]|max_length[50]',
-            'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email]',
+            'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email]',
             /*            'password'      => 'required|min_length[4]|max_length[50]',*/
             /*            'confirmpassword'  => 'matches[password]'*/
         ];
