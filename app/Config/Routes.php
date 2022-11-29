@@ -37,7 +37,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->get('/registration/signin', 'RegistrationController::signin');
-$routes->get('/registration/signup', 'RegistrationController::signup)');
+$routes->get('/registration/signup', 'RegistrationController::signup');
 
 $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');

@@ -73,7 +73,7 @@ class RegistrationController extends \CodeIgniter\Controller
 
         else{
             $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->to('/public/signin');
+            return redirect()->to('/public/registration/signin');
         }
     }
 
@@ -97,10 +97,10 @@ class RegistrationController extends \CodeIgniter\Controller
                 /*                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)*/
             ];
             $userModel->save($data);
-            return redirect()->to('/public/signin');
+            return redirect()->to('/public/registration/signin');
         }else{
             $data['validation'] = $this->validator;
-            echo view('signup', $data);
+            echo view('/pages/registration/signup', $data);
         }
     }
 }
