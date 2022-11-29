@@ -17,5 +17,5 @@
     <p class="navText">Navigation text</p>
     <p class="navEmphasisText">Navigation emphasis text</p>
 
-    <!--END OF PAGE CONTENTT-->
+    <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
