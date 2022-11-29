@@ -42,6 +42,9 @@ class RegistrationController extends \CodeIgniter\Controller
                 'email' => $data['email'],
                 'isLoggedIn' => TRUE
             ];
+
+            setcookie('emailCookie',  $data['email'], time()+36000);
+
             $session->set($ses_data);
             return redirect()->to('public/experts/home');
 

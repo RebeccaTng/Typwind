@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Codeigniter Login with Email/Password Example</title>
+    <title>Login with Email/Password</title>
 </head>
 <body>
 <div class="container">
@@ -24,7 +24,7 @@
             <?php endif;?>
             <form action="<?php echo base_url(); ?>/public/RegistrationController/loginAuth" method="post">
                 <div class="form-group mb-3">
-                    <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
+                    <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["emailCookie"])) echo $_COOKIE["emailCookie"]; ?>" class="form-control" >
                 </div>
 <!--                <div class="form-group mb-3">
                     <input type="password" name="password" placeholder="Password" class="form-control" >
