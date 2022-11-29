@@ -11,12 +11,12 @@
     <div class="row justify-content-md-center">
         <div class="col-5">
 
+            
+            <?php $session=session();
+            $session->set('isLoggedIn',False);
+            ?>
+
             <h2>Login in</h2>
-<!--            --><?php /*$session = session();
-            if ($session->firstname != '') {
-                session_destroy();
-            }
-            */?>
             <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>

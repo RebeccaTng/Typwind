@@ -39,9 +39,18 @@
             <li><a href="<?=base_url()?>/public/studentexercises" title="Look at exercises" class="exercises">Exercises</a></li>
         </ul>
 
+        <script>
+
+            public function endSession
+            {
+                <?php session_destroy();?>
+            }
+
+        </script>
+
         <ul class="list-unstyled CTAs">
             <form method="post">
-                <li><a href="<?=base_url()?>/public/signin" title="Go home" class="logout">Log out</a></li>
+                <li><a href="<?=base_url()?>/public/signin" onclick="endSession" title="Go home" class="logout">Log out</a></li>
             </form>
         </ul>
     </nav>
