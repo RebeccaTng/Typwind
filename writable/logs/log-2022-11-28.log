@@ -136,3 +136,49 @@ in APPPATH\Controllers\SigninController.php on line 17.
  2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
  3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-28 13:01:38 --> Error connecting to the database: mysqli_sql_exception: Een verbindingspoging is mislukt omdat de verbonden party niet correct heeft geantwoord na een bepaalde tijd, of de gemaakte verbinding is mislukt omdat de verbonden host niet heeft geantwoord.
+ in C:\UwAmp\www\PHPStart\a22ux02\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\UwAmp\www\PHPStart\a22ux02\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('mysql.studev.gr...', 'a22ux02', '9krkjwRn', 'a22ux02', 3306, '', 0)
+#1 C:\UwAmp\www\PHPStart\a22ux02\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\UwAmp\www\PHPStart\a22ux02\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\UwAmp\www\PHPStart\a22ux02\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\UwAmp\www\PHPStart\a22ux02\system\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\UwAmp\www\PHPStart\a22ux02\system\BaseModel.php(623): CodeIgniter\Model->doFirst()
+#6 C:\UwAmp\www\PHPStart\a22ux02\app\Controllers\SigninController.php(24): CodeIgniter\BaseModel->first()
+#7 C:\UwAmp\www\PHPStart\a22ux02\system\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+#8 C:\UwAmp\www\PHPStart\a22ux02\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#9 C:\UwAmp\www\PHPStart\a22ux02\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\UwAmp\www\PHPStart\a22ux02\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Een verbindingspoging is mislukt omdat de verbonden party niet correct heeft geantwoord na een bepaalde tijd, of de gemaakte verbinding is mislukt omdat de verbonden host niet heeft geantwoord.
+ in C:\UwAmp\www\PHPStart\a22ux02\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\UwAmp\www\PHPStart\a22ux02\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\UwAmp\www\PHPStart\a22ux02\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\UwAmp\www\PHPStart\a22ux02\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\UwAmp\www\PHPStart\a22ux02\system\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\UwAmp\www\PHPStart\a22ux02\system\BaseModel.php(623): CodeIgniter\Model->doFirst()
+#5 C:\UwAmp\www\PHPStart\a22ux02\app\Controllers\SigninController.php(24): CodeIgniter\BaseModel->first()
+#6 C:\UwAmp\www\PHPStart\a22ux02\system\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+#7 C:\UwAmp\www\PHPStart\a22ux02\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+#8 C:\UwAmp\www\PHPStart\a22ux02\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\UwAmp\www\PHPStart\a22ux02\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-28 13:01:38 --> Unable to connect to the database.
+Main connection [MySQLi]: Een verbindingspoging is mislukt omdat de verbonden party niet correct heeft geantwoord na een bepaalde tijd, of de gemaakte verbinding is mislukt omdat de verbonden host niet heeft geantwoord.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `teachers`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(623): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\SigninController.php(24): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\SigninController->loginAuth()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

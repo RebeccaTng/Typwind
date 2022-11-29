@@ -12,11 +12,11 @@
         <div class="col-5">
 
             <h2>Login in</h2>
-            <?php $session = session();
+<!--            --><?php /*$session = session();
             if ($session->firstname != '') {
                 session_destroy();
             }
-            ?>
+            */?>
             <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>

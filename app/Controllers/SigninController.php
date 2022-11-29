@@ -30,7 +30,8 @@ class SigninController extends Controller
             if($authenticatePassword){*/
                 $ses_data = [
                     'id' => $data['id'],
-                    'name' => $data['name'],
+                    'firstname' => $data['firstname'],
+                    'lastname' => $data['lastname'],
                     'email' => $data['email'],
                     'isLoggedIn' => TRUE
                 ];
@@ -48,9 +49,10 @@ class SigninController extends Controller
             $authenticatePassword = password_verify($password, $pass);
             if($authenticatePassword){*/
             $ses_data = [
-                'id' => $data['id'],
-                'name' => $data['name'],
-                'email' => $data['email'],
+                'id' => $data2['id'],
+                'firstname' => $data2['firstname'],
+                'lastname' => $data2['lastname'],
+                'email' => $data2['email'],
                 'isLoggedIn' => TRUE
             ];
             $session->set($ses_data);
