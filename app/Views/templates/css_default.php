@@ -15,13 +15,13 @@
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
     <!-- sidebar Toggle Js -->
-    <script type="text/javascript" src="<?=base_url()?>/js/sidebarToggle.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/public/js/sidebarToggle.js" defer></script>
     <!-- Language switch Js -->
-    <script type="text/javascript" src="<?=base_url()?>/js/languageData.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="<?=base_url()?>/CSS/navbar.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/navbar.css">
     <!--END OF NAV BAR LINKS -->
-    <link rel="stylesheet" href="<?=base_url()?>/CSS/testing/list_of_buttons.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/testing/list_of_buttons.css">
 </head>
 <body>
 <div class="wrapper">

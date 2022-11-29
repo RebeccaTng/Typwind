@@ -1,3 +1,9 @@
+<!--This code should be Okay! It uses Session data from logged in user.
+-->
+<?= $this->extend('/templates/experts_default') ?>
+
+<?= $this->section('content') ?>
+
 <header>
     <div id="logo">
         <h1 class="test"> My Profile</h1>
@@ -31,3 +37,5 @@
         </div>
     </div>
 </div>
+
+<?= $this->endSection() ?>

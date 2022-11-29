@@ -1,5 +1,8 @@
 <?php
 
+//This menu model isn't used yet.
+//It should be used if we want to indicate which tab is active ('highlight active menu item')
+
 class Menu_model
 {
 //<a href="Link" title= "title text" class ="className">name</a>

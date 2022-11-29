@@ -8,7 +8,7 @@ class Teachers_model extends Model
 {
     protected $db;
     protected $DBGroup = 'default';
-
+    protected $table = 'teachers';
 
     public function add_teacher($data)
     {
@@ -21,5 +21,14 @@ class Teachers_model extends Model
         $query = $this->db->query($query_text, $idTeachers);
         return $query->getResult();
     }
+
+    //table data used for Log-In, please do not remove
+    protected $allowedFields = [
+        'firstname',
+        'lastname',
+        'email',
+        /*        'password',*/
+        'created_at'
+    ];
 
 }
