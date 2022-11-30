@@ -139,3 +139,34 @@ div.bottomBar {
     padding: 0.625rem 3.438rem; /* 10px 55px */
     position: sticky;
 }
+
+/* INPUT FIELD */
+input {
+    height: 2.5rem; /* 40px */
+    padding: 0.563rem 1.125rem; /* 9px 18px */
+    box-sizing: border-box;
+    border: 0.125rem solid var(--blueNeutral-lightest); /* 2px */
+    border-radius: 1.25rem; /* 20px */
+    background-color: var(--beigeNeutral-light);
+    color: var(--blueNeutral-dark);
+    caret-color: var(--blueNeutral-dark);
+}
+
+input:focus {
+    outline: none !important;
+    border: 0.125rem solid var(--accentColor); /* 2px */
+}
+
+/* Change placeholder color */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--blueNeutral-light);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--blueNeutral-light);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--blueNeutral-light);
+}

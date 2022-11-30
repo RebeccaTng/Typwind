@@ -38,5 +38,8 @@
         <button class="button buttonSecondary buttonExpert">Button Label</button>
     </div>
 
+    <!-- INPUT FIELD -->
+    <input type="text" placeholder="Type Here" class="bodyText">
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
