@@ -100,3 +100,10 @@ ul.breadcrumb li a:hover {
     color: var(--accentColor);
     text-decoration: underline;
 }
+
+/* BACKGROUND */
+body {
+    background: linear-gradient(107.95deg, var(--primary-dark) 2.42%, var(--primaryColor) 22.97%, var(--primaryColor) 45.27%, var(--secondaryColor) 64.72%, var(--secondaryColor) 82.77%, var(--accentColor) 101.29%) no-repeat fixed;
+    height: 100%;
+    margin: 0;
+}
