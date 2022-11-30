@@ -2,7 +2,6 @@
 
 <?= $this->section('content') ?>
 
-<h1>The input value attribute</h1>
 
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>

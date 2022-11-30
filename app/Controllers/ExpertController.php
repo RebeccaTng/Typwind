@@ -128,6 +128,37 @@ class ExpertController extends BaseController
         return view('pages/experts/studentsList', $data);
     }
 
+    public function profile()
+    {
+        $idTeachers= $_GET['idTeachers'];
+        $data['teachers']= cache()->get('teachers');
+        $data['idTeachers']=$idTeachers;
+        return view('pages/experts/profile', $data);
+    }
+
+    public function editProfilePage($idTeachers)
+    {
+        $this->data['idTeachers']=$idTeachers;
+        $this->data['teachers'] = cache()->get('teachers');
+        return view('pages/experts/editProfilePage', $this->data);
+    }
+
+    public function editProfile($idTeachers)
+    {
+        $this->data['idTeachers']=$idTeachers;
+        $this->data['firstname']= $_POST['firstname'];
+        $this->data['lastname'] = $_POST['lastname'];
+        $this->data['isActive'] = isset($_POST['active']);
+        $this->data['email']= $_POST['email'];
+        $this->data['password']= $_POST['password'];
+        $this->teachers_model->edit_teacher($this->data);
+        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
+        cache()->save('teachers', $this->data['teachers']);
+        return view('pages/experts/home_content');
+    }
+
+
+
 
 
 }

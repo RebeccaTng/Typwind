@@ -29,5 +29,13 @@ class Teachers_model extends Model
         return $query->getResult();
     }
 
+    public function edit_teacher($data)
+    {
+        $builder = $this->db->table('teachers');
+        $builder->where('idTeachers', $data['idTeachers']);
+        $builder->update($data);
+
+    }
+
 
 }

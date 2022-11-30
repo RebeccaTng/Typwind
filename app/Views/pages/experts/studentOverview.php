@@ -43,24 +43,23 @@
 
     <?php endif;?>
 
+    <h1>Notes</h1>
+    <h3><?=$person->notes ?></h3>
+
 </section>
-<h1>Notes</h1>
-<h3><?=$person->notes ?></h3>
 
 <section>
-
     <a href="http://localhost/UXWD/public/experts/editStudentPage/<?=$person->idStudents?>">
         <button class="btn btn-primary btn-lg">EDIT</button>
     </a>
-
-    <?php endif;?>
-
-
-
-
-
-    <?php endforeach;?>
 </section>
+<?php endif;?>
+<?php endforeach;?>
+
+
+
+
+
 
 <?= $this->endSection() ?>
 

@@ -42,20 +42,20 @@ $routes->get('/experts/home', 'ExpertController::home');
 $routes->get('/experts/studentsList', 'ExpertController::studentsList');
 $routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1');
 $routes->get('/experts/editStudentPage/(:num)', 'ExpertController::editStudentPage/$1');
-
-
 $routes->post('/experts/editStudent/(:num)', 'ExpertController::editStudent/$1');
 $routes->get('/experts/addStudentPage', 'ExpertController::addStudentPage');
 $routes->post('/experts/addStudent', 'ExpertController::addStudent');
-
+$routes->get('/experts/profile', 'ExpertController::profile');
+$routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1' );
+$routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1');
 
 $routes->get('/design/(:any)', 'DesignController::view/$1');
 
-$routes->get('/test', 'Home::test');
 
 
-$routes->get('/test/(:alpha)', 'Home::test/$1');
-$routes->get('/getStudents/(:alpha)', 'Home::getStudents/$1');
+//$routes->get('/test', 'Home::test');
+//$routes->get('/test/(:alpha)', 'Home::test/$1');
+//$routes->get('/getStudents/(:alpha)', 'Home::getStudents/$1');
 
 
 
