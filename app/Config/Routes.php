@@ -39,14 +39,20 @@ $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');
 $routes->get('/kids/(:any)', 'KidsController::view/$1');
 $routes->get('/experts/home', 'ExpertController::home');
+$routes->get('/experts/studentsList', 'ExpertController::studentsList');
+$routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1');
+$routes->get('/experts/editStudentPage/(:num)', 'ExpertController::editStudentPage/$1');
+
+
+$routes->post('/experts/editStudent/(:num)', 'ExpertController::editStudent/$1');
+$routes->get('/experts/addStudentPage', 'ExpertController::addStudentPage');
+$routes->post('/experts/addStudent', 'ExpertController::addStudent');
+
 
 $routes->get('/design/(:any)', 'DesignController::view/$1');
 
 $routes->get('/test', 'Home::test');
-$routes->get('/getStudents', 'Home::getStudents');
-$routes->get('/getTeacher', 'Home::getTeacher');
-$routes->post('/addStudent', 'Home::addStudent');
-$routes->post('/addTeacher', 'Home::addTeacher');
+
 
 $routes->get('/test/(:alpha)', 'Home::test/$1');
 $routes->get('/getStudents/(:alpha)', 'Home::getStudents/$1');
