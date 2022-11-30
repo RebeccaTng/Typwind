@@ -88,7 +88,7 @@ ul.breadcrumb li {
 /* Add icon before each list item */
 ul.breadcrumb li+li:before {
     padding: 0.313rem 0.625rem 0; /* 5px 10px */
-    content: url(/icons/angle-small-right.svg);
+    content: url(/public/assets/icons/angle-small-right.svg);
 }
 
 ul.breadcrumb li a {
