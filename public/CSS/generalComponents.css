@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin: 1rem; /* 16px */
+    margin: 0.313rem; /* 5px */
 
     font: 600 1.125rem var(--opensans-font); /* Weight=Semi bold, size=18pt, family=Open Sans*/
     text-transform: uppercase;
@@ -33,15 +33,15 @@
 .buttonExpert {
     padding: 0.625rem 1.5rem; /* 10px 24px */
     border-radius: 1.4063rem; /* 22.5px */
-    width: 11.875rem; /* 190px */
+    width: 11.875rem; /* 190px */ /* Needed because of outline */
     height: 2.8125rem; /* 45px */
 }
 
 .buttonChild {
-    padding: 0.875rem 1.625rem; /* 14px 26px*/
+    padding: 0.875rem 1.625rem; /* 14px 26px */
     border-radius: 1.6563rem; /*26.5px */
     width: 12.125rem; /* 194px */
-    height: 3.3125rem; /* 53 */
+    height: 3.3125rem; /* 53px */
 }
 
 .button:hover:enabled {
@@ -128,4 +128,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondaryColor);
+}
+
+/* BOTTOM BAR */
+div.bottomBar {
+    display: flex;
+    justify-content: flex-end;;
+    background-color: var(--secondary-lightest);
+    border-radius: 0 0 1.563rem 1.563rem; /* 0 0 25px 25px */
+    padding: 0.625rem 3.438rem; /* 10px 55px */
+    position: sticky;
 }

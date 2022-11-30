@@ -32,5 +32,11 @@
         <li class="emphasisText">Page 4</li>
     </ul>
 
+    <!-- BOTTOM BAR -->
+    <div class="bottomBar">
+        <button class="button buttonPrimary buttonExpert">Button Label</button>
+        <button class="button buttonSecondary buttonExpert">Button Label</button>
+    </div>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
