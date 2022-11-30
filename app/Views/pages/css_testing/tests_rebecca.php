@@ -35,9 +35,16 @@
     </ul>
 
     <!-- BOTTOM BAR -->
-    <div class="bottomBar">
-        <button class="button buttonPrimary buttonExpert">Button Label</button>
-        <button class="button buttonSecondary buttonExpert">Button Label</button>
+    <div class="card"> <!-- TODO As we can see for the big beige background where all content will be on, better not to have margin -->
+        <h3>Heading 2</h3>
+        <h4>Heading 4</h4>
+        <p class="smallText">Small text</p>
+        <p class="bodyExText">Body explanatory text</p>
+        <p class="bodyText">Body text</p>
+        <div class="bottomBar">
+            <button class="button buttonPrimary buttonExpert">Button Label</button>
+            <button class="button buttonSecondary buttonExpert">Button Label</button>
+        </div>
     </div>
 
     <!-- INPUT FIELD -->
