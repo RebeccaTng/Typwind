@@ -94,6 +94,7 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li a {
     color: var(--primary-darkest);
     text-decoration: none;
+    transition-duration: 0.2s;
 }
 
 ul.breadcrumb li a:hover {
