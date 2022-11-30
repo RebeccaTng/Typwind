@@ -4,8 +4,8 @@
     <!--START OF PAGE CONTENT-->
     <!--ADD HERE ALL THE PHP AND HTML THAT YOUR PAGE NEEDS-->
 
-    <!-- SYSTEM DESIGN + CARD -->
-    <div class="card">
+    <!-- SYSTEM DESIGN + CARD + WAVE BACKGROUND -->
+    <div class="card wave">
         <h1>Title</h1>
         <h2>Heading 1</h2>
         <h3>Heading 2</h3>

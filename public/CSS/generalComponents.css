@@ -180,3 +180,11 @@ div.card {
     margin: 0.625rem; /* 10px */
     width: fit-content;
 }
+
+/* WAVE BACKGROUND */
+div.wave {
+    background-image: url(/public/assets/general/wave.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+}
