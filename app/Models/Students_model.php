@@ -43,6 +43,14 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
         return $query;
     }
 
+    public function getExercises()
+    {
+        $query_text = 'SELECT * FROM exercises';
+        $query = $this->db->query($query_text);
+        return $query->getResult();
+
+    }
+
 
 
 }

@@ -37,7 +37,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');
-$routes->get('/kids/(:any)', 'KidsController::view/$1');
+//$routes->get('/kids/(:any)', 'KidsController::view/$1');
 $routes->get('/experts/home', 'ExpertController::home');
 $routes->get('/experts/studentsList', 'ExpertController::studentsList');
 $routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1');
@@ -50,6 +50,10 @@ $routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePag
 $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1');
 
 $routes->get('/design/(:any)', 'DesignController::view/$1');
+
+$routes->get('/kids/home', 'KidsController::home');
+$routes->get('/kids/intro', 'KidsController::intro');
+$routes->get('/kids/feedback', 'KidsController::feedback');
 
 
 
