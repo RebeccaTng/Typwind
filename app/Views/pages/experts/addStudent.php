@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <h1>add student:</h1>
-<form action="http://localhost/UXWD/public/experts/addStudent" method="post">
+<form action= <?php echo base_url('experts/addStudent');?> method="post">
 
 
     <label for="firstname">firstname:</label>

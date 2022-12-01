@@ -10,7 +10,7 @@
 
     <p>
         <?php foreach ($students as $person):?>
-            <li> <a href="http://localhost/UXWD/public/experts/studentOverview/<?=$person->idStudents?>" <?=$person->firstname?>
+            <li> <a href=<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>><?=$person->firstname?>
             <br><?=$person->lastname?></a>
     </li>
         <?php endforeach;?>
@@ -19,7 +19,8 @@
 <section>
 
     <h2>Add student </h2>
-    <a href="http://localhost/UXWD/public/experts/addStudentPage/"> addStudent </a>
+
+    <a href=<?php echo base_url('experts/addStudentPage/');?>> addStudent </a>
 </section>
 <?= $this->endSection() ?>
 

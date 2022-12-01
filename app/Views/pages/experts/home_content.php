@@ -18,14 +18,14 @@
 <section>
     <h1>show students:</h1>
 
-    <a href="http://localhost/UXWD/public/experts/studentsList">
+    <a href= <?php echo base_url('experts/studentsList');?>>
         <button class="btn btn-primary btn-lg">Show students</button>
     </a>
 </section>
 
 <section>
     <h1>show profile:</h1>
-    <form action="http://localhost/UXWD/public/experts/profile" method="get">
+    <form action= <?php echo base_url('experts/profile');?>"method="get">
         <label for="idTeachers">id teacher:</label><br>
         <input type="text" id="idTeachers" name="idTeachers"><br>
         <input type="submit" value="Submit">

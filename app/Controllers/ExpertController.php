@@ -86,7 +86,6 @@ class ExpertController extends BaseController
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
         cache()->save('students', $this->data['students']);
-        //return $this->response->setJSON($students);
         return view('pages/experts/studentsList', $this->data);
     }
 

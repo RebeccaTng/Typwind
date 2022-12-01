@@ -5,7 +5,8 @@
 
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
-        <form action="http://localhost/UXWD/public/experts/editStudent/<?=$person->idStudents?>" method="post">
+
+        <form action=<?php echo base_url('experts/editStudent/'.$person->idStudents);?> method="post">
             <input type="hidden" id="email" name="email" value="<?=$person->email?>">
             <input type="hidden" id="password" name="password" value="<?=$person->password?>">
             <input type="hidden" id="reminder" name="reminder" value="<?=$person->reminder?>">

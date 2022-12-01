@@ -35,9 +35,9 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('pages', 'KidsController::index');
-//$routes->get('/kids/(:any)', 'KidsController::view/$1');
+
+
+//Expert routes
 $routes->get('/experts/home', 'ExpertController::home');
 $routes->get('/experts/studentsList', 'ExpertController::studentsList');
 $routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1');
@@ -49,17 +49,22 @@ $routes->get('/experts/profile', 'ExpertController::profile');
 $routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1' );
 $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1');
 
-$routes->get('/design/(:any)', 'DesignController::view/$1');
 
+/// Kids Routes
+$routes->get('/', 'Home::index');
+$routes->get('pages', 'KidsController::index');
+$routes->get('/kids/(:any)', 'KidsController::view/$1');
 $routes->get('/kids/home', 'KidsController::home');
 $routes->get('/kids/intro', 'KidsController::intro');
 $routes->get('/kids/feedback', 'KidsController::feedback');
 
+/// design testing Route
+$routes->get('/design/(:any)', 'DesignController::view/$1');
 
 
-//$routes->get('/test', 'Home::test');
-//$routes->get('/test/(:alpha)', 'Home::test/$1');
-//$routes->get('/getStudents/(:alpha)', 'Home::getStudents/$1');
+
+
+
 
 
 
