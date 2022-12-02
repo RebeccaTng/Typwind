@@ -19,7 +19,10 @@
     <script type="text/javascript" src="<?=base_url()?>/js/languageData.js" defer></script>
 
     <!--CSS FILES-->
+    <script type="text/javascript" src="<?=base_url()?>/js/exercise_view.js" defer></script>
+
     <link rel="stylesheet" href="<?=base_url()?>/CSS/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/CSS/keyboard.css">
     <link rel="stylesheet" href="<?=base_url()?>/CSS/generalComponents.css">
 </head>
 <body>
