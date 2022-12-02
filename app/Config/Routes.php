@@ -49,18 +49,23 @@ $routes->get('/experts/profile', 'ExpertController::profile');
 $routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1' );
 $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1');
 
+$routes->get('/experts/(:any)', 'ExpertController::view/$1',['filter'=>'AuthGuard']);
 
 /// Kids Routes
+
+
 $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');
-$routes->get('/kids/(:any)', 'KidsController::view/$1');
+$routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
 $routes->get('/kids/home', 'KidsController::home');
 $routes->get('/kids/intro', 'KidsController::intro');
 $routes->get('/kids/feedback', 'KidsController::feedback');
 
 /// design testing Route
 $routes->get('/design/(:any)', 'DesignController::view/$1');
-
+/// LogIn
+$routes->get('/registration/signin', 'RegistrationController::signin');
+$routes->get('/registration/signup', 'RegistrationController::signup');
 
 
 

@@ -9,6 +9,7 @@ class Students_model extends Model {
 
     protected $db;
     protected $DBGroup = 'default';
+    protected $table = 'students';
 
 
 
@@ -52,5 +53,14 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
     }
 
 
+
+    //table data used for Log-In, please do not remove
+    protected $allowedFields = [
+        'firstname',
+        'lastname',
+        'email',
+        /*        'password',*/
+        'created_at'
+    ];
 
 }

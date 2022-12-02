@@ -9,10 +9,8 @@
     </div>
 
     <ul class="list-unstyled components">
-        <li><a href="<?=base_url()?>/public/experts/home" title="Go home" class="home" >Home</a></li>
-        <li><a href="<?=base_url()?>/public/experts/students" title="Look at students" class="students">Students</a></li>
-        <li><a href="<?=base_url()?>/public/experts/exercises" title="Look at exercises" class="exercises">Exercises</a></li>
-        <li><a href="<?=base_url()?>/public/experts/profile" title="Look at profile" class="profile">My Profile</a></li>
+        <li><a href="<?=base_url()?>/public/kids/home" title="Go home" class="home" >Home</a></li>
+        <li><a href="<?=base_url()?>/public/kids/exercises" title="Go to exercises" class="exercises">Exercises</a></li>
     </ul>
 
     <ul class="list-unstyled CTAs">
