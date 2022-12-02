@@ -4,7 +4,8 @@
 
 <?php foreach ($teachers as $person):?>
     <?php  if ($person->idTeachers==$idTeachers):?>
-        <form action="http://localhost/UXWD/public/experts/editProfile/<?=$person->idTeachers?>" method="post">
+
+        <form action="<?php echo base_url('experts/editProfile/'.$person->idTeachers);?>" method="post">
 
             <input type="hidden" id="password" name="password" value="<?=$person->password?>">
             <label for="firstname">First name:</label>

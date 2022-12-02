@@ -24,6 +24,9 @@ class App extends BaseConfig
      *
      * @var string
      */
+    ///PATRICIO
+    ///  public $baseURL = 'http://localhost:8080/';
+    /// LOIC
     public $baseURL = 'http://localhost:8080/';
 
     /**
