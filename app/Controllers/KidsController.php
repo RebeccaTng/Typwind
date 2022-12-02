@@ -23,32 +23,18 @@ class KidsController extends BaseController
         return view('welcome_message');
     }
 
-    public function view($page = 'home')
-    {
-        if (! is_file(APPPATH . 'Views/pages/kids/' . $page . '.php')) {
-            // Whoops, we don't have a page for that!
-            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
-        }
-        $model = model(ExerciseModel::class);
-        $data = ['title' => ucfirst($page),// Capitalize the first letter
-            'exercises'=> $model->getExercises()
-        ];
-
-        return view('pages/kids/' . $page,$data);
-    }
 
     public function home()
     {
-        $this->data['exercises'] = $this->students_model->getExercises();
-        cache()->save('exercises', $this->data['exercises']);
+        $exercises=$this->students_model->getExercises();
+        cache()->save('exercises', $exercises);
         return view('pages/kids/home');
     }
 
     public function intro()
     {
         $this->data['exercises']= cache()->get('exercises');
-        $idExercises= $_GET['idExercises'];
-        $this->data['idExercises']=$idExercises;
+        $this->data['idExercises']= $_GET['idExercises'];
         return view('pages/kids/intro',$this->data);
     }
 
