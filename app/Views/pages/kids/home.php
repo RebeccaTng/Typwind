@@ -8,7 +8,9 @@
 
     <form action="<?php echo base_url('kids/intro');?>" method="get">
         <label for="idExercises">id exercise:</label><br>
-        <i
+        <input type="text" id="idExercises" name="idExercises"><br>
+        <input type="submit" value="Submit">
+    </form>
 </section>
 
 

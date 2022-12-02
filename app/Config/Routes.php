@@ -53,7 +53,7 @@ $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1')
 /// Kids Routes
 $routes->get('/', 'Home::index');
 $routes->get('pages', 'KidsController::index');
-$routes->get('/kids/(:any)', 'KidsController::view/$1');
+
 $routes->get('/kids/home', 'KidsController::home');
 $routes->get('/kids/intro', 'KidsController::intro');
 $routes->get('/kids/feedback', 'KidsController::feedback');
