@@ -24,7 +24,8 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost:8080/a22ux02/';
+    ///to be deployed in studev.
+    public $baseURL = 'http://localhost:8080/typewind';
 
     /**
      * --------------------------------------------------------------------------

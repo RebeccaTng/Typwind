@@ -16,3 +16,37 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-02 04:30:57 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
+#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
+#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
+#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
+#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
+#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
+#4 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
+#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-02 04:30:57 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 418.
+ 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->home()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
