@@ -10,7 +10,7 @@
     gap: 1rem;
     margin: 0.313rem; /* 5px */
 
-    font: 600 1.125rem var(--opensans-font); /* Weight=Semi bold, size=18pt, family=Open Sans*/
+    font: var(--buttonLabel);
     text-transform: uppercase;
     text-align: center;
     box-sizing: border-box;
@@ -91,8 +91,12 @@ ul.breadcrumb li+li:before {
     content: url(/public/assets/icons/angle-small-right.svg);
 }
 
+ul.breadcrumb li:last-child {
+    font: var(--emphasisText);
+}
+
 ul.breadcrumb li a {
-    color: var(--primary-darkest);
+    font: var(--bodyText);
     text-decoration: none;
     transition-duration: 0.2s;
 }
@@ -107,6 +111,7 @@ body {
     background: linear-gradient(107.95deg, var(--primary-dark) 2.42%, var(--primaryColor) 22.97%, var(--primaryColor) 45.27%, var(--secondaryColor) 64.72%, var(--secondaryColor) 82.77%, var(--accentColor) 101.29%) no-repeat fixed;
     height: 100%;
     margin: 0;
+    padding: 20px;
 }
 
 /* SCROLLBAR */ /* TODO: needs to be component::webkit-scrollbar, component is the beige background */
@@ -149,6 +154,7 @@ input {
     border: 0.125rem solid var(--blueNeutral-lightest); /* 2px */
     border-radius: 1.25rem; /* 20px */
     background-color: var(--beigeNeutral-light);
+    font: var(--bodyText);
     color: var(--blueNeutral-dark);
     caret-color: var(--blueNeutral-dark);
 }
@@ -160,16 +166,16 @@ input:focus {
 
 /* Change placeholder color */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--blueNeutral-light);
+    color: var(--blueNeutral-lightest);
     opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--blueNeutral-light);
+    color: var(--blueNeutral-lightest);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--blueNeutral-light);
+    color: var(--blueNeutral-lightest);
 }
 
 /* CARD */
