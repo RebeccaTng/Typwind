@@ -54,7 +54,7 @@ $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',
 //$routes->get('/experts/(:any)', 'ExpertController::view/$1',['filter'=>'AuthGuard']);
 
 /// Kids Routes
-/*$routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);*/
+$routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
 //test 123
 $routes->get('/kids/home', 'KidsController::home',['filter'=>'AuthGuard']);
 $routes->get('/kids/exercises', 'KidsController::exercises',['filter'=>'AuthGuard']);

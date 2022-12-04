@@ -40,6 +40,7 @@ class KidsController extends BaseController
         $this->data['idExercises']=$idExercises;
         return view('pages/kids/feedback',$this->data);
     }
+
     public function view($page = 'home')
     {
         if (!is_file(APPPATH . 'Views/pages/kids/' . $page . '.php')) {
@@ -53,8 +54,6 @@ class KidsController extends BaseController
         ];
 
         return view('pages/kids/' . $page, $data);
-
     }
-
-
+    
     }
