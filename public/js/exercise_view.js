@@ -1,3 +1,5 @@
+//test
+
 let textInput = "push Failure. wake up with determination";
 //" Go to bed with satisfaction. It's going to be hard, but hard does not mean impossible. Learning never exhausts the mind. The only way to do great work is to love what you do.";
 let textArray = textInput.split(". ");
