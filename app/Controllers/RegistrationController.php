@@ -19,12 +19,13 @@ class RegistrationController extends \CodeIgniter\Controller
         echo view('pages/registration/studentLogin');
     }
 
-    public function signup()
+    public function register()
     {
         helper(['form']);
         $data = [];
-        echo view('pages/registration/signup', $data);
+        echo view('pages/registration/register', $data);
     }
+
 
     public function welcome()
     {
@@ -32,6 +33,8 @@ class RegistrationController extends \CodeIgniter\Controller
         $data = [];
         echo view('pages/registration/welcome', $data);
     }
+
+
 
     public function loginExpert()
     {

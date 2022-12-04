@@ -39,9 +39,8 @@
                 </div>
             </form>
             <br>
-
             <div class="d-grid">
-                <button id="backToLogin" class="btn btn-dark">BACK TO LOGIN</button>
+                <button type="button" id="backToLogin" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" class="btn btn-dark">BACK TO LOGIN</button>
             </div>
         </div>
     </div>

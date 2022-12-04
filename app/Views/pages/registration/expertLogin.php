@@ -42,7 +42,7 @@
 
             <br>
             <div class="d-grid">
-                <button id="REGISTER" onclick="" class="btn btn-success">REGISTER</button>
+                <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="btn btn-success">REGISTER</button>
             </div>
 
         </div>
