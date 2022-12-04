@@ -61,18 +61,10 @@ $routes->get('/kids/feedback', 'KidsController::feedback');
 
 /// design testing Route
 $routes->get('/design/(:any)', 'DesignController::view/$1');
+
 /// LogIn
 $routes->get('/registration/signin', 'RegistrationController::signin');
 $routes->get('/registration/signup', 'RegistrationController::signup');
-
-
-
-
-
-
-
-
-
 
 
 /*
