@@ -29,7 +29,7 @@
 
             <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
                 <div class="form-group mb-3">
-                    <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["emailCookie"])) echo $_COOKIE["emailCookie"]; ?>" class="form-control" >
+                    <input type="email" name="email" placeholder="Email" value="<?php if (!isset(session()->isStudent)) echo session()->email ?>" class="form-control" >
                 </div>
 <!--                <div class="form-group mb-3">
                     <input type="password" name="password" placeholder="Password" class="form-control" >
