@@ -56,7 +56,8 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],
                 'email' => $data['email'],
-                'isLoggedIn' => TRUE
+                'isLoggedIn' => TRUE,
+                'isStudent' => FALSE
             ];
             $session->set($ses_data);
             return redirect()->to('experts/home');
@@ -103,7 +104,8 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname' => $data2['firstname'],
                 'lastname' => $data2['lastname'],
                 'email' => $data2['email'],
-                'isLoggedIn' => TRUE
+                'isLoggedIn' => TRUE,
+                'isStudent' => TRUE
             ];
             $session->set($ses_data);
             return redirect()->to('/kids/home');

@@ -13,6 +13,7 @@
 <h5 class="text-center">Are you a student or a teacher?</h5>
 
 <div class="d-grid">
+
     <button id="teacher" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" title="Look at profile" class="btn btn-dark">TEACHER</button>
 </div>
 
