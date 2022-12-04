@@ -16,12 +16,13 @@
             $session->set('isLoggedIn',False);
             ?>
 
-            <h2>Login in</h2>
+            <h2 class="text-center">Login</h2>
             <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>
                 </div>
             <?php endif;?>
+
             <form action="<?php echo base_url(); ?>/RegistrationController/loginAuth" method="post">
                 <div class="form-group mb-3">
                     <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["emailCookie"])) echo $_COOKIE["emailCookie"]; ?>" class="form-control" >
@@ -31,11 +32,16 @@
                 </div>-->
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-success">Signin</button>
+                    <button type="submit" class="btn btn-success">LOGIN</button>
                 </div>
             </form>
-        </div>
 
+            <br>
+            <div class="d-grid">
+                <button id="REGISTER" class="btn btn-success">REGISTER</button>
+            </div>
+
+        </div>
     </div>
 </div>
 </body>
