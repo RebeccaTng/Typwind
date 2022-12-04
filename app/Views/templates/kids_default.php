@@ -8,23 +8,23 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="<?=base_url()?>/CSS/navbar.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/navbar.css">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
     <!-- sidebar Toggle Js -->
-    <script type="text/javascript" src="<?=base_url()?>/js/sidebarToggle.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/public/js/sidebarToggle.js" defer></script>
     <!-- Language switch Js -->
-    <script type="text/javascript" src="<?=base_url()?>/js/languageData.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
     <!--kids exercise-->
-    <script type="text/javascript" src="<?=base_url()?>/js/exercise_view.js" defer></script>
+    <script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js" defer></script>
 
 
     <!--CSS FILES-->
-    <link rel="stylesheet" href="<?=base_url()?>/CSS/main.css">
-    <link rel="stylesheet" href="<?=base_url()?>/CSS/keyboard.css">
-    <link rel="stylesheet" href="<?=base_url()?>/CSS/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/keyboard.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
 </head>
 <body>
 <div class="wrapper">
