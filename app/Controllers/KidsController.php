@@ -18,11 +18,6 @@ class KidsController extends BaseController
         $this->teachers_model = new Teachers_model();
     }
 
-    public function index()
-    {
-        return view('welcome_message');
-    }
-
 
     public function home()
     {
@@ -45,6 +40,7 @@ class KidsController extends BaseController
         $this->data['idExercises']=$idExercises;
         return view('pages/kids/feedback',$this->data);
     }
+
     public function view($page = 'home')
     {
         if (!is_file(APPPATH . 'Views/pages/kids/' . $page . '.php')) {
@@ -58,8 +54,6 @@ class KidsController extends BaseController
         ];
 
         return view('pages/kids/' . $page, $data);
-
     }
-
-
+    
     }

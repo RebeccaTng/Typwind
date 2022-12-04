@@ -38,43 +38,36 @@ $routes->setAutoRoute(true);
 
 
 //Expert routes
-$routes->get('/experts/home', 'ExpertController::home');
-$routes->get('/experts/studentsList', 'ExpertController::studentsList');
-$routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1');
-$routes->get('/experts/editStudentPage/(:num)', 'ExpertController::editStudentPage/$1');
-$routes->post('/experts/editStudent/(:num)', 'ExpertController::editStudent/$1');
-$routes->get('/experts/addStudentPage', 'ExpertController::addStudentPage');
-$routes->post('/experts/addStudent', 'ExpertController::addStudent');
-$routes->get('/experts/profile', 'ExpertController::profile');
-$routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1' );
-$routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1');
+$routes->get('/experts/home', 'ExpertController::home',['filter'=>'AuthGuard']);
+$routes->get('/experts/studentsList', 'ExpertController::studentsList',['filter'=>'AuthGuard']);
+$routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1',['filter'=>'AuthGuard']);
+$routes->get('/experts/editStudentPage/(:num)', 'ExpertController::editStudentPage/$1',['filter'=>'AuthGuard']);
+$routes->post('/experts/editStudent/(:num)', 'ExpertController::editStudent/$1',['filter'=>'AuthGuard']);
+$routes->get('/experts/addStudentPage', 'ExpertController::addStudentPage',['filter'=>'AuthGuard']);
+$routes->post('/experts/addStudent', 'ExpertController::addStudent',['filter'=>'AuthGuard']);
+$routes->get('/experts/profile', 'ExpertController::profile',['filter'=>'AuthGuard']);
+$routes->get('/experts/exercises', 'ExpertController::exercises',['filter'=>'AuthGuard']);
 
-$routes->get('/experts/(:any)', 'ExpertController::view/$1',['filter'=>'AuthGuard']);
+$routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1',['filter'=>'AuthGuard']);
+$routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',['filter'=>'AuthGuard']);
+
+//$routes->get('/experts/(:any)', 'ExpertController::view/$1',['filter'=>'AuthGuard']);
 
 /// Kids Routes
-$routes->get('/', 'Home::index');
-$routes->get('pages', 'KidsController::index');
-$routes->get('/kids/(:any)', 'KidsController::view/$1');
-//$routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
-$routes->get('/kids/home', 'KidsController::home');
-$routes->get('/kids/intro', 'KidsController::intro');
-$routes->get('/kids/feedback', 'KidsController::feedback');
+$routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
+//test 123
+$routes->get('/kids/home', 'KidsController::home',['filter'=>'AuthGuard']);
+$routes->get('/kids/exercises', 'KidsController::exercises',['filter'=>'AuthGuard']);
+$routes->get('/kids/intro', 'KidsController::intro',['filter'=>'AuthGuard']);
+$routes->get('/kids/feedback', 'KidsController::feedback',['filter'=>'AuthGuard']);
 
 
 /// design testing Route
 $routes->get('/design/(:any)', 'DesignController::view/$1');
+
 /// LogIn
 $routes->get('/registration/signin', 'RegistrationController::signin');
 $routes->get('/registration/signup', 'RegistrationController::signup');
-
-
-
-
-
-
-
-
-
 
 
 /*

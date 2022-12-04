@@ -25,7 +25,7 @@
 <body>
 <div class="wrapper">
     <!-- Sidebar Holder -->
-    <?= $this->include('templates/side_nav_bar') ?>
+    <?= $this->include('templates/side_nav_bar_2') ?>
     <!-- Page Content Holder -->
     <div id="content">
         <button type="button" id="sidebarCollapse" class="navbar-btn">

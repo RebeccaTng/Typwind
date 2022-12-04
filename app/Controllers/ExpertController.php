@@ -22,7 +22,7 @@ class ExpertController extends BaseController
         $data['title'] = "Home";
         $this->data['teachers'] = $this->teachers_model->get_all_teachers();
         cache()->save('teachers', $this->data['teachers']);
-        return view('pages/experts/home_content', $data);
+        return view('pages/experts/home', $data);
     }
 
     public function studentsList()
@@ -33,6 +33,13 @@ class ExpertController extends BaseController
         cache()->save('students', $this->data['students']);
         //return $this->response->setJSON($students);
         return view('pages/experts/studentsList', $this->data);
+    }
+
+    public function exercises()
+    {
+        $exercises=$this->students_model->getExercises();
+        cache()->save('exercises', $exercises);
+        return view('pages/experts/exercises');
     }
 
     public function studentOverview($idStudents)
@@ -153,11 +160,7 @@ class ExpertController extends BaseController
         $this->teachers_model->edit_teacher($this->data);
         $this->data['teachers'] = $this->teachers_model->get_all_teachers();
         cache()->save('teachers', $this->data['teachers']);
-        return view('pages/experts/home_content');
+        return view('pages/experts/home');
     }
-
-
-
-
 
 }

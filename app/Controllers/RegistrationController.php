@@ -46,7 +46,7 @@ class RegistrationController extends \CodeIgniter\Controller
             setcookie('emailCookie',  $data['email'], time()+36000);
 
             $session->set($ses_data);
-            return redirect()->to('public/experts/home');
+            return redirect()->to('experts/home');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
@@ -66,7 +66,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isLoggedIn' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('/public/kids/home');
+            return redirect()->to('/kids/home');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
@@ -76,7 +76,7 @@ class RegistrationController extends \CodeIgniter\Controller
 
         else{
             $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->to('/public/registration/signin');
+            return redirect()->to('/registration/signin');
         }
     }
 
@@ -100,7 +100,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 /*                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)*/
             ];
             $userModel->save($data);
-            return redirect()->to('/public/registration/signin');
+            return redirect()->to('/registration/signin');
         }else{
             $data['validation'] = $this->validator;
             echo view('/pages/registration/signup', $data);
