@@ -40,7 +40,21 @@ class KidsController extends BaseController
         $this->data['idExercises']=$idExercises;
         return view('pages/kids/feedback',$this->data);
     }
+    public function view($page = 'home')
+    {
+        if (!is_file(APPPATH . 'Views/pages/kids/' . $page . '.php')) {
+            // Whoops, we don't have a page for that!
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
+        $model = model(ExerciseModel::class);
+        $data = [
+            'title' => ucfirst($page),// Capitalize the first letter
+            'exercises' => $model->getExercises()
+        ];
+
+        return view('pages/kids/' . $page, $data);
+
+    }
 
 
-
-}
+    }
