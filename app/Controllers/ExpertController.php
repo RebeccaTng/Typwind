@@ -136,10 +136,7 @@ class ExpertController extends BaseController
 
     public function profile()
     {
-        $idTeachers= $_GET['idTeachers'];
-        $data['teachers']= cache()->get('teachers');
-        $data['idTeachers']=$idTeachers;
-        return view('pages/experts/profile', $data);
+        return view('pages/experts/profile');
     }
 
     public function editProfilePage($idTeachers)
