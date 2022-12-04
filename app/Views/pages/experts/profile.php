@@ -2,10 +2,6 @@
 
 <?= $this->section('content') ?>
 
-<?php
-echo session()->firstname; echo " "; echo session()->lastname . "<br>"
-?>
-
     <div class="col-md-4">
         <h3 class="text-center">
             <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle">
@@ -21,12 +17,12 @@ echo session()->firstname; echo " "; echo session()->lastname . "<br>"
             Email: <?php echo $session->email. "<br>" ?>
             <?php if (session()->isActive==1):?>
 
-        <h3>Active= currently active</h3>
+        Active: Currently Active
 
         <?php endif;?>
         <?php if (session()->isActive==0):?>
 
-            <h3>Active= not active</h3>
+            Active: Currently Not Active
 
         <?php endif;?>
         </p>
