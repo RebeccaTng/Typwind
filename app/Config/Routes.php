@@ -66,8 +66,10 @@ $routes->get('/kids/feedback', 'KidsController::feedback',['filter'=>'AuthGuard'
 $routes->get('/design/(:any)', 'DesignController::view/$1');
 
 /// LogIn
-$routes->get('/registration/signin', 'RegistrationController::signin');
-$routes->get('/registration/signup', 'RegistrationController::signup');
+$routes->get('/registration/expertLogin', 'RegistrationController::expertLogin');
+$routes->get('/registration/studentLogin', 'RegistrationController::studentLogin');
+$routes->get('/registration/register', 'RegistrationController::register');
+$routes->get('/registration/welcome', 'RegistrationController::welcome');
 
 
 /*
