@@ -37,7 +37,6 @@ class Teachers_model extends Model
 
     }
 
-
     //table data used for Log-In, please do not remove
     protected $allowedFields = [
         'firstname',

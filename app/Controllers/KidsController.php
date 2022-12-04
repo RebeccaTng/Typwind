@@ -18,11 +18,6 @@ class KidsController extends BaseController
         $this->teachers_model = new Teachers_model();
     }
 
-    public function index()
-    {
-        return view('welcome_message');
-    }
-
 
     public function home()
     {
