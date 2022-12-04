@@ -85,7 +85,7 @@ class ExpertController extends BaseController
         $this->data['isActive'] = isset($_POST['active']);
         $this->data['notes'] = $_POST['notes'];
         $this->data['email']= $_POST['email'];
-        $this->data['password']= $_POST['password'];
+/*        $this->data['password']= $_POST['password'];*/
         $this->data['reminder']= $_POST['reminder'];
         $this->data['coins']= $_POST['coins'];
         $this->data['streak']= $_POST['streak'];
@@ -106,7 +106,7 @@ class ExpertController extends BaseController
         $data['firstname']= $_POST['firstname'];
         $data['lastname'] = $_POST['lastname'];
         $data['email']= $_POST['email'];
-        $data['password'] = $_POST['password'];
+/*        $data['password'] = $_POST['password'];*/
         $gender= $_POST['gender'];
         if($gender == "male")
         {
@@ -136,31 +136,31 @@ class ExpertController extends BaseController
 
     public function profile()
     {
-        $idTeachers= $_GET['idTeachers'];
-        $data['teachers']= cache()->get('teachers');
-        $data['idTeachers']=$idTeachers;
-        return view('pages/experts/profile', $data);
+        return view('pages/experts/profile');
     }
 
-    public function editProfilePage($idTeachers)
+    public function editProfilePage()
     {
-        $this->data['idTeachers']=$idTeachers;
-        $this->data['teachers'] = cache()->get('teachers');
-        return view('pages/experts/editProfilePage', $this->data);
+        return view('pages/experts/editProfilePage');
     }
 
-    public function editProfile($idTeachers)
+    public function editProfile()
     {
-        $this->data['idTeachers']=$idTeachers;
+        $this->data['idTeachers']= session()->id;
+
         $this->data['firstname']= $_POST['firstname'];
+        session()->firstname = $this->data['firstname'];
         $this->data['lastname'] = $_POST['lastname'];
+        session()->lastname = $this->data['lastname'];
         $this->data['isActive'] = isset($_POST['active']);
+        session()->isActive = $this->data['isActive'];
         $this->data['email']= $_POST['email'];
-        $this->data['password']= $_POST['password'];
+        session()->email = $this->data['email'];
+
+        /*        $this->data['password']= $_POST['password'];*/
+
         $this->teachers_model->edit_teacher($this->data);
-        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
-        cache()->save('teachers', $this->data['teachers']);
-        return view('pages/experts/home');
+        return view('pages/experts/profile');
     }
 
 }

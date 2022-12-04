@@ -105,3 +105,24 @@ in APPPATH\Controllers\ExpertController.php on line 139.
  3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 10:35:17 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 10:47:24 --> Undefined index: password
+in APPPATH\Controllers\ExpertController.php on line 156.
+ 1 APPPATH\Controllers\ExpertController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: password', 'APPPATH\\Controllers\\ExpertController.php', 156, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->editProfile('11')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 10:47:51 --> Undefined index: password
+in APPPATH\Controllers\ExpertController.php on line 156.
+ 1 APPPATH\Controllers\ExpertController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: password', 'APPPATH\\Controllers\\ExpertController.php', 156, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->editProfile('11')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
