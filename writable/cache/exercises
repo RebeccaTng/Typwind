@@ -1,0 +1,1 @@
+a:3:{s:4:"time";i:1670160279;s:3:"ttl";i:60;s:4:"data";a:1:{i:0;O:8:"stdClass":7:{s:11:"idExercises";s:1:"1";s:4:"name";s:24:"the adventure of the dog";s:4:"text";s:14:"story of a dog";s:12:"idTeacher_fk";N;s:8:"isCustom";s:1:"0";s:6:"lesson";N;s:8:"language";s:1:"0";}}}

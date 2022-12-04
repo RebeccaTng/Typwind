@@ -23,14 +23,11 @@
         </section>
 
         <section>
-
-            <a href="http://localhost/UXWD/public/experts/editProfilePage/<?=$person->idTeachers?>">
+            <a href="<?php echo base_url('experts/editProfilePage/'.$person->idTeachers);?>">
                 <button class="btn btn-primary btn-lg">EDIT</button>
             </a>
         </section>
     <?php endif;?>
 <?php endforeach;?>
-
-
 
 <?= $this->endSection() ?>

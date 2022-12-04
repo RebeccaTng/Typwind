@@ -2,15 +2,10 @@
 
 <?= $this->section('content') ?>
 
-
-
 <section>
-
-
-
     <p>
         <?php foreach ($students as $person):?>
-            <li> <a href=<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>><?=$person->firstname?>
+            <li> <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>"><?=$person->firstname?>
             <br><?=$person->lastname?></a>
     </li>
         <?php endforeach;?>

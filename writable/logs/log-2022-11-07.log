@@ -3,7 +3,7 @@ in SYSTEMPATH\CodeIgniter.php on line 224.
  1 SYSTEMPATH\CodeIgniter.php(224): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl')
  2 SYSTEMPATH\CodeIgniter.php(182): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
  3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
-CRITICAL - 2022-11-07 12:42:08 --> The framework needs the following extension(s) installed and loaded: curl.
+CRITICAL - 2022-11-07 12:42:08--> The framework needs the following extension(s) installed and loaded: curl.
 in SYSTEMPATH\CodeIgniter.php on line 224.
  1 SYSTEMPATH\CodeIgniter.php(224): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl')
  2 SYSTEMPATH\CodeIgniter.php(182): CodeIgniter\CodeIgniter->resolvePlatformExtensions()

@@ -49,7 +49,7 @@ if (! function_exists('_get_uri')) {
 
         // Check for an index page
         if ($config->indexPage !== '') {
-            $url .= $config->indexPage;
+            /*$url .= $config->indexPage;*/
 
             // Check if we need a separator
             if ($relativePath !== '' && $relativePath[0] !== '/' && $relativePath[0] !== '?') {

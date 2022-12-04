@@ -50,17 +50,12 @@
 
 <section>
 
-    <a href= <?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>>
+    <a href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>">
         <button class="btn btn-primary btn-lg">EDIT</button>
     </a>
 </section>
 <?php endif;?>
 <?php endforeach;?>
-
-
-
-
-
 
 <?= $this->endSection() ?>
 
