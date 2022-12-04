@@ -10,7 +10,7 @@
 <div class="container mt-5">
     <div class="row justify-content-md-center">
         <div class="col-5">
-            <h2>Register User</h2>
+            <h2 class="text-center">Register</h2>
             <?php if(isset($validation)):?>
                 <div class="alert alert-warning">
                     <?= $validation->listErrors() ?>
@@ -21,7 +21,7 @@
                     <input type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" class="form-control" >
                 </div>
                 <div class="form-group mb-3">
-                    <input type="text" name="lastname" placeholder="Lastname" value="<?= set_value('name') ?>" class="form-control" >
+                    <input type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" class="form-control" >
                 </div>
                 <div class="form-group mb-3">
                     <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
@@ -32,10 +32,17 @@
                 <div class="form-group mb-3">
                     <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" >
                 </div>-->
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-dark">Signup</button>
+                    <br>
+
+                    <div class="d-grid">
+                    <button type="submit" class="btn btn-dark">REGISTER</button>
                 </div>
             </form>
+            <br>
+
+            <div class="d-grid">
+                <button id="backToLogin" class="btn btn-dark">BACK TO LOGIN</button>
+            </div>
         </div>
     </div>
 </div>
