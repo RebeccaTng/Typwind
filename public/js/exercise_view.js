@@ -1,6 +1,6 @@
 //test
 
-let textInput = "push Failure. wake up with determination";
+let textInput = "push Failure. wake up with determination push Failure. wake up with determination";
 //" Go to bed with satisfaction. It's going to be hard, but hard does not mean impossible. Learning never exhausts the mind. The only way to do great work is to love what you do.";
 let textArray = textInput.split(". ");
 textArray.forEach(addDotFucntion);
@@ -49,6 +49,8 @@ highlightCurrentLetter();
 keyboardColorsFunction(0);
 
 
+
+
 //exerciseBoxInput.style.visibility = "hidden";
 //exerciseBoxInput.focus();
 //***On Load***//
@@ -58,10 +60,20 @@ function createSpanSentence(){
     for(i=0;textChar.length>i;i++) {
         var s = document.createElement("SPAN");//.attributes("class","letter");
         s.setAttribute("class","letter");
+        s.style.transform="translateX(-99999999999px)";
         var txt = document.createTextNode(textChar[i]);
         s.appendChild(txt);
         movableExerciseBoxText.appendChild(s);
+    }
+    moveSentence();
+}
 
+function moveSentence(){
+    var span = movableExerciseBoxText.getElementsByTagName("span");
+    var value = ((movableExerciseBoxText.offsetWidth/3)-(correctCharactersTyped*50));
+    for (let i = 0; i < span.length; i++) {
+        span[i].style.transform="translateX("+value+"px)";
+        // span[i].style.display = "inline-block";
     }
 }
 
@@ -187,6 +199,7 @@ function highlightLetterWrong() {
 function highlightLetterRight() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
     span.setAttribute("class","letter");
+    moveSentence();
     /*    span.style.color = "";
     span.style.fontSize = "";
     span.style.fontWeight = "";
