@@ -35,70 +35,50 @@
     /* Fonts */
     --opensans-font: "Open Sans", sans-serif;
     --andika-font: "Andika", sans-serif;
+
+    /* TEXT STYLES
+     *
+     * Small text = --smallText
+     * Body text = --bodyText
+     * Body explanatory text = --bodyExText
+     * Emphasis = .emphasisText
+     * Emphasis explanatory text = --emphasisExText
+     * Heading 3 = --heading3 = h4
+     * Heading 2 = --heading2 = h3
+     * Heading 1 = --heading1 = h2
+     * Title = --title = h1
+     * Subtitle = --subTitle
+     * Button label = --buttonLabel
+     * Navigation text = --navText
+     * Navigation emphasis text = --navEmphasisText
+     */
+    --smallText: italic 400 0.825rem var(--opensans-font); /* Style=italic, Weight=regular, Size=14pt, Family=Open Sans */
+    --bodyText: 400 1rem var(--opensans-font); /* Weight=regular, Size=16pt, Family=Open Sans */
+    --bodyExText: 400 1rem var(--andika-font); /* Weight=regular, Size=16pt, Family=Andika */
+    --emphasisText: 700 1rem var(--opensans-font); /* Weight=bold, Size=16pt, Family=Open Sans */
+    --emphasisExText: 700 1rem var(--andika-font); /* Weight=bold, Size=16pt, Family=Andika */
+    --heading3: 700 1.25rem var(--andika-font); /* Weight=bold, Size=20pt, Family=Andika */
+    --heading2: 700 1.625rem var(--andika-font); /* Weight=bold, Size=26pt, Family=Andika */
+    --heading1: 700 2.125rem var(--andika-font); /* Weight=bold, Size=34pt, Family=Andika */
+    --title: 700 3rem var(--andika-font); /* Weight=bold, Size=48pt, Family=Andika */
+    --subtitle: 400 2.125rem var(--andika-font); /* Weight=semibold, Size=34pt, Family=Andika */
+    --buttonLabel: 600 1.125rem var(--opensans-font); /* Weight=semibold, Size=18pt, Family=Open Sans */
+    --navText: 600 1.25rem var(--opensans-font); /* Weight=semibold, Size=20pt, Family=Open Sans */
+    --navEmphasisText: 700 1.25rem var(--opensans-font); /* Weight=bold, Size=20pt, Family=Open Sans */
 }
 
-/*
- * TEXT STYLES
- *
- * Small text = .smallText
- * Body explanatory text = .bodyExText
- * Body text = .bodyText
- * Emphasis explanatory text = .emphasisExText
- * Emphasis = .emphasisText
- * Heading 3 = h4
- * Heading 2 = h3
- * Heading 1 = h2
- * Title = h1
- * Subtitle = .subTitle
- * Button label -> see on button css
- * Navigation text = .navText
- * Navigation emphasis text = .navEmphasisText
- */
-
-.smallText, .bodyText, .emphasisText, .navText, .navEmphasisText {
-    font-family: var(--opensans-font);
-}
-
-.bodyExText, .emphasisExText, h4, h3, h2, h1, .subTitle {
-    font-family: var(--andika-font);
-}
-
-.smallText, .bodyExText, .bodyText, .subTitle {
-    font-weight: 400; /* Regular */
-}
-
-.emphasisExText, .emphasisText, h4, h3, h2, h1, .navEmphasisText {
-    font-weight: 700; /* Bold */
-}
-
-.navText {
-    font-weight: 600; /* Semi bold */
-}
-
-.smallText {
-    font-style: italic;
-    font-size: 0.875rem; /* 14 pt */
-}
-
-.bodyExText, .bodyText, .emphasisExText, .emphasisText {
-    font-size: 1rem; /* 16pt */
-}
-
-h4, .navText, .navEmphasisText {
-    font-size: 1.25rem; /* 20pt */
+h4 {
+    font: var(--heading3);
 }
 
 h3 {
-    font-size: 1.625rem; /* 26pt */
+    font: var(--heading2);
 }
 
-h2, .subTitle {
-    font-size: 2.125rem; /* 34pt */
+h2 {
+    font: var(--heading1);
 }
 
 h1 {
-    font-size: 3rem; /* 48pt */
-}
-.subTitle {
-    text-transform: uppercase;
+    font: var(--title);
 }
