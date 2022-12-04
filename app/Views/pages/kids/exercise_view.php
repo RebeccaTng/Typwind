@@ -10,10 +10,13 @@
     </div>
     <div class="exercise">
         <div id="exerciseBoxText"></div>
-        <div class="textBox " id="movableExerciseBoxText"></div>
-
+        <div class="textBox" id="textBox">
+            <div class="textContainer " id="movableExerciseBoxText"></div>
+        </div>
         <div id="effect"></div>
         <p id="currentInputFeedBack"></p>
+        <div id="imageContainer">
+        </div>
     </div>
     <div class="keyboard-base" id="keyboard">
         <div class="key" id="Backquote">~</div>

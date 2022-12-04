@@ -1,8 +1,23 @@
 //test
 
-let textInput = "push Failure. wake up with determination push Failure. wake up with determination";
+let textInput = "Internationale connecties" +
+    "De volledige opleiding tot Master in de Industriële Wetenschappen kan vanaf het eerste bachelorjaar naast in het Nederlands ook in het Engels gevolgd worden. Daarbij kunnen studenten die zich in het Nederlandstalige programma inschrijven naar keuze ook vakken in het Engels volgen. De Campus Groep T telde in het academiejaar 2019-2020 meer dan 150 eerstejaarsstudenten in de Engelstalige richting. Deze komen uit China, de landen van Zuidoost-Azië (Laos, Vietnam, Cambodja), India, het Midden-Oosten, Afrika, maar ook uit verschillende Europese landen, in het bijzonder landen uit het voormalige oostblok en landen van de voormalige Sovietunie. Docenten van IIW geven regelmatig gastcursussen aan verschillende universiteiten in het verre oosten, waarmee de faculteit samenwerkingsverbanden heeft, zoals de Beijing Jiaotong Universiteit en de Technische Universiteit Zhejiang." +
+     +
+    "Formula Student Competitions" +
+    "Formula Electric Belgium (FEB) is een team van een 25-tal ingenieurs studenten dat ieder jaar meedoet aan de grootste engineering competities ter wereld. In deze competitie moet er een Formula Student wagen gebouwd worden. Het FEB team neemt deel aan de EV categorie. Deze wagen wordt ontworpen en gebouwd in negen maanden, waarna de competities gedurende de zomervakanties georganiseerd worden over heel Europa; van de Hockenheimring in Duitsland tot de Hungaroring in Hongarije. In 2021-2022 behaalde het team een 2de plaats op Efficiency, een 5de plaats op endurance met de nieuwste elektrische racewagen, Titan." +
+    +
+    "Solar Challenge" +
+    "Met het Solar Team neemt een team van studenten om de twee jaar deel aan de World Solar Challenge, het officieuze wereldkampioenschap voor zonnewagens." +
+     +
+    "De geschiedenis van deze wedstrijden kan teruggevonden worden op de pagina van het Solar Team." +
+     +
+    "In 2018 behaalde het team de eerste plaats in de Carrera Solar Atacama met de Punch Two." +
+    +
+    "In 2019 ontwikkelde het team de achtste Belgische zonnewagen, genaamd BluePoint. In datzelfde jaar werd het Belgische team met de nieuwe wagen voor het eerst in de geschiedenis wereldkampioen op de Bridgestone World Solar Challenge in Australië. De Belgen konden op het laatste traject het Vattenfal Solar Team (TU Delft), voormalig wereldkampioen en tevens hun enige voorligger, inhalen. Die laatsten moesten noodgedwongen stoppen nadat hun wagen uitbrandde.[1]";
+    //"push Failure. wake up with determination push Failure. wake up with determination";
+    //"abcdefghijklmnopqrstuvwxyz,;:";
 //" Go to bed with satisfaction. It's going to be hard, but hard does not mean impossible. Learning never exhausts the mind. The only way to do great work is to love what you do.";
-let textArray = textInput.split(". ");
+    let textArray = textInput.split(". ");
 textArray.forEach(addDotFucntion);
 let textArrayChar =textArray[0].split('');
 
@@ -16,6 +31,37 @@ let correctCharactersNeeded = 0;
 let correctAnswers = 0;
 let mistakes = 0;
 const startDate = Date();
+let imageMap = new Map([
+    [",","/public/assets/pictures/,.jpg"],
+    ["=","/public/assets/pictures/=.jpg"],
+    [":","/public/assets/pictures/Dubbelpunt.jpg"],
+    ["a","/public/assets/pictures/Avond.jpg"],
+    ["b","/public/assets/pictures/Banaan.jpg"],
+    ["c","/public/assets/pictures/Circus.jpg"],
+    ["d","/public/assets/pictures/Draak.jpg"],
+    ["e","/public/assets/pictures/Eenwieler.jpg"],
+    ["f","/public/assets/pictures/Fuut.jpg"],
+    ["g","/public/assets/pictures/Gorilla.jpg"],
+    ["h","/public/assets/pictures/Haas.jpg"],
+    ["i","/public/assets/pictures/Insect.jpg"],
+    ["j","/public/assets/pictures/Joke.jpg"],
+    ["k","/public/assets/pictures/Kat.jpg"],
+    ["l","/public/assets/pictures/Luipaard.jpg"],
+    ["m","/public/assets/pictures/Matroos.jpg"],
+    ["n","/public/assets/pictures/Natuur.jpg"],
+    ["o","/public/assets/pictures/Olifant.jpg"],
+    ["p","/public/assets/pictures/Pelikaan.jpg"],
+    ["q","/public/assets/pictures/Quiz.jpg"],
+    ["r","/public/assets/pictures/Riet.jpg"],
+    ["s","/public/assets/pictures/Slang.jpg"],
+    ["t","/public/assets/pictures/Tamtam.jpg"],
+    ["u","/public/assets/pictures/Ufo.jpg"],
+    ["v","/public/assets/pictures/Vis.jpg"],
+    ["w","/public/assets/pictures/Winter.jpg"],
+    ["x","/public/assets/pictures/Xylofoon.jpg"],
+    ["y","/public/assets/pictures/Yogamat.jpg"],
+    ["z","/public/assets/pictures/Zigzaggende.jpg"]]);
+
 let currentKey = null;
 let previousKey = null; //hardcoded, this is bad
 let wrongAnswered = false;
@@ -27,6 +73,8 @@ let exerciseBoxText = document.getElementById("exerciseBoxText");
 let stopButton = document.getElementById("stopButton");
 let currentInputFeedBack = document.getElementById("currentInputFeedBack");
 let container = document.getElementById("effect");
+let textBox = document.getElementById("textBox");
+let imageContainer = document.getElementById("imageContainer");
 
 //events
 stopButton.onclick = function (){stopButtonFunction()};
@@ -60,7 +108,6 @@ function createSpanSentence(){
     for(i=0;textChar.length>i;i++) {
         var s = document.createElement("SPAN");//.attributes("class","letter");
         s.setAttribute("class","letter");
-        s.style.transform="translateX(-99999999999px)";
         var txt = document.createTextNode(textChar[i]);
         s.appendChild(txt);
         movableExerciseBoxText.appendChild(s);
@@ -69,12 +116,15 @@ function createSpanSentence(){
 }
 
 function moveSentence(){
-    var span = movableExerciseBoxText.getElementsByTagName("span");
-    var value = ((movableExerciseBoxText.offsetWidth/3)-(correctCharactersTyped*50));
-    for (let i = 0; i < span.length; i++) {
+    // var span = movableExerciseBoxText.getElementsByTagName("span");
+
+    var valueClass = textBox.getAttribute("class");
+    var value = (((document.querySelector("."+valueClass.toString())).clientWidth/4)-(correctCharactersTyped*50));
+    movableExerciseBoxText.style.transform="translateX("+value+"px)";
+    /*for (let i = 0; i < span.length; i++) {
         span[i].style.transform="translateX("+value+"px)";
         // span[i].style.display = "inline-block";
-    }
+    }*/
 }
 
 
@@ -104,14 +154,8 @@ function highlightKey(bool){
     document.getElementById("movableExerciseBoxText").style.left = (distance+"px");
 }
 
-
-
-
-
-
 function processInputFunction() {
     let currInput = currentKey.key;
-    let currShift = currentKey.shiftKey;
     console.log(currentKey);
     currentInputFeedBack.textContent=currentKey.code;
     if (currInput == null || currInput === "Shift") {
@@ -139,6 +183,7 @@ function processInputFunction() {
     highlightCurrentLetter();
     //console.log("trigger "+textInput[(correctCharactersTyped)]);
 }
+
 
 /*function displayNextSentenceFunction() {
     if (textArray.length==indexSentence){
@@ -176,6 +221,32 @@ function addDotFucntion(item, index, arr){
         arr[index] = item +".";
     }
 }
+function setImage(key){
+    if(key!==undefined){key = key.toLowerCase();}
+    var curr = imageContainer.getElementsByTagName("img")[0];
+    var s;
+    console.log(imageMap.has(key)+" / "+curr);
+   if (imageMap.has(key)) {
+       if (curr === undefined) {
+           s = document.createElement("IMG");//.attributes("class","letter");
+           s.setAttribute("class", "image");
+           //s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
+           s.setAttribute("alt", key);
+           s.setAttribute("src",  window.location.origin + imageMap.get(key));
+           // var txt = document.createTextNode(textChar[i]);
+           // s.appendChild(txt);
+           imageContainer.appendChild(s);
+       } else {
+           s = curr;
+           s.setAttribute("src", imageMap.get(key));
+           s.setAttribute("alt", key);
+       }
+   }else if (curr !== undefined){
+        curr.remove();
+   }
+}
+
+
 
 function highlightCurrentLetter() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
@@ -185,11 +256,12 @@ function highlightCurrentLetter() {
     span.style.border = "thick solid";
     span.style.borderColor = "black";*/
     span.setAttribute("class","letter focus");
+    setImage(textInput[correctCharactersTyped])
 }
 function highlightLetterWrong() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
     span.setAttribute("class","letter wrong");
-
+    moveSentence();
     /*    span.style.color = "red";
     span.style.fontSize = "";
     span.style.fontWeight = "";
