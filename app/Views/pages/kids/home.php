@@ -31,6 +31,8 @@
         <?php
         $session = session();
         echo $session->firstname; echo "!";
+
+        echo $_COOKIE["language"];
         ?>
 
         <br>

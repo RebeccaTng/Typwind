@@ -7,6 +7,7 @@ use App\Models\Teachers_model;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
+
     public function expertLogin()
     {
         helper(['form']);
@@ -108,12 +109,10 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isStudent' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('/kids/home');
 
-            /*}*//*else{
-                $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->to('/public/signin');
-            }*/
+            setcookie("language", 'english', 0, "/");
+
+            return redirect()->to('/kids/home');
         }
 
         else {

@@ -26,6 +26,11 @@ link.forEach(el => {
     });
 });
 
+$("document").ready(function() {
+    document. getElementById('active').click();
+
+});
+
 var mainData = {
     "nederlands":
         {
