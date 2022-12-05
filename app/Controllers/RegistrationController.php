@@ -32,6 +32,7 @@ class RegistrationController extends \CodeIgniter\Controller
     {
         helper(['form']);
         $data = [];
+        setcookie("language", 'english', 0, "/");
         echo view('pages/registration/welcome', $data);
     }
 
@@ -109,8 +110,6 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isStudent' => TRUE
             ];
             $session->set($ses_data);
-
-            setcookie("language", 'english', 0, "/");
 
             return redirect()->to('/kids/home');
         }
