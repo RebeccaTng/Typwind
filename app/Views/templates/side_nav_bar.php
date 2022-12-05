@@ -16,6 +16,6 @@
     </ul>
 
     <ul class="list-unstyled CTAs">
-        <li><a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">Log out</a></li>
+        <li><a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">Log Out</a></li>
     </ul>
 </nav>

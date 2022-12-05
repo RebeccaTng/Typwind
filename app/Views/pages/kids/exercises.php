@@ -7,18 +7,17 @@
 <br>
 <script type="text/javascript" src="<?=base_url()?>/public/js/kidsScrollExercises.js" defer></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?=base_url()?>/public/CSS/sectionNavArrows.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?/*=base_url()*/?>/public/CSS/sectionNavArrows.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 <div class="main">
-
     <section id="section1">
         <div class="container jumbo">
             <div class="jumbotron">
-                <h2>Let Big Data Change the Game</h2>
-                <p>WebCorpCo is all about making sure your marketing stack is in alignment with your company as well as the customers you serve. There is no 'one size fits all' approach to marketing. Every business is unique, customers are unique, and your marketing should be as well.</p>
+                <h2>Lesson X</h2>
+                <p>Exercises Y</p>
                 <p><a class="btn btn-primary btn-lg" href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
@@ -27,8 +26,8 @@
         <div class="container jumbo">
             <div class="jumbotron">
                 <p><a class="btn btn-primary btn-lg" href="#section1"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Let Big Data Change the Game</h2>
-                <p>WebCorpCo is all about making sure your marketing stack is in alignment with your company as well as the customers you serve. There is no 'one size fits all' approach to marketing. Every business is unique, customers are unique, and your marketing should be as well.</p>
+                <h2>Lesson X</h2>
+                <p>Exercises Y</p>
                 <p><a class="btn btn-primary btn-lg" href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
@@ -37,8 +36,8 @@
         <div class="container jumbo">
             <div class="jumbotron">
                 <p><a class="btn btn-primary btn-lg" href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Let Big Data Change the Game</h2>
-                <p>WebCorpCo is all about making sure your marketing stack is in alignment with your company as well as the customers you serve. There is no 'one size fits all' approach to marketing. Every business is unique, customers are unique, and your marketing should be as well.</p>
+                <h2>Lesson X</h2>
+                <p>Exercises Y</p>
                 <p><a class="btn btn-primary btn-lg" href="#section4"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
@@ -47,8 +46,8 @@
         <div class="container jumbo">
             <div class="jumbotron">
                 <p><a class="btn btn-primary btn-lg" href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Let Big Data Change the Game</h2>
-                <p>WebCorpCo is all about making sure your marketing stack is in alignment with your company as well as the customers you serve. There is no 'one size fits all' approach to marketing. Every business is unique, customers are unique, and your marketing should be as well.</p>
+                <h2>Lesson X</h2>
+                <p>Exercises Y</p>
                 <p><a class="btn btn-primary btn-lg" href="#section5"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
@@ -56,8 +55,8 @@
     <section id="section5">
         <div class="container jumbo">
             <div class="jumbotron">
-                <h2>Let Big Data Change the Game</h2>
-                <p>WebCorpCo is all about making sure your marketing stack is in alignment with your company as well as the customers you serve. There is no 'one size fits all' approach to marketing. Every business is unique, customers are unique, and your marketing should be as well.</p>
+                <h2>Lesson X</h2>
+                <p>Exercises Y</p>
             </div>
     </section>
 </div>
