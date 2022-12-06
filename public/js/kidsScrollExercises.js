@@ -1,3 +1,5 @@
+//Allowing for smooth arrow scrolling in Kids exercises
+
 $(document).ready(function(){
     $("a").on('click', function(event) {
         if (this.hash !== "") {

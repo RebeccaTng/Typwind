@@ -1,10 +1,12 @@
+
+
 <nav id="sidebar">
     <div class="sidebar-header">
         <h3>Typwind</h3>
         <div class="langWrap">
-            <a href="#" language='nederlands' class="active">NED</a>
+            <a type="submit" id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
             |
-            <a href="#" language='english'>ENG</a>
+            <a type="submit" id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
         </div>
     </div>
 

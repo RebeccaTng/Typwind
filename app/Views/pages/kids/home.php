@@ -13,7 +13,6 @@
     </form>
 </section>
 
-
 <section>
     <h1>Go to feedback page:</h1>
 
@@ -31,8 +30,6 @@
         <?php
         $session = session();
         echo $session->firstname; echo "!";
-
-        echo $_COOKIE["language"];
         ?>
 
         <br>
@@ -50,4 +47,3 @@
 </section>
 
 <?= $this->endSection() ?>
-
