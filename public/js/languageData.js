@@ -49,7 +49,7 @@ function setCookie2(name, value, options = {}) {
 
 link.forEach(el => {
     el.addEventListener('click', () => {
-        
+
         langEl.querySelector('.active').classList.remove('active');
         el.classList.add('active');
         const attr = el.getAttribute('language');

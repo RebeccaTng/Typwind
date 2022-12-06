@@ -5,7 +5,7 @@
 <br>
 <br>
 <br>
-<script type="text/javascript" src="<?=base_url()?>/public/js/kidsScrollExercises.js" defer></script>
+<script type="text/javascript" src="<?=base_url()?>/public/js/ScrollExercises.js" defer></script>
 
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?/*=base_url()*/?>/public/CSS/sectionNavArrows.css">
@@ -61,8 +61,6 @@
     </section>
 </div>
 
-
-
 <!--
 <?php /*if (! empty($exercises) && is_array($exercises)):
     $lesson = 0;
@@ -92,6 +90,7 @@
     <p>Unable to find any exercises for you.</p>
 
 --><?php /*endif */?>
+
 <br>
 <br>
 <br>
