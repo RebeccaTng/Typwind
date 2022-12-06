@@ -2,9 +2,9 @@
     <div class="sidebar-header">
         <h3>Typwind</h3>
         <div class="langWrap">
-            <a href="#" language='nederlands' class="active">NED</a>
+            <a href="#" id="<?php echo $_COOKIE["nederlandsActief"];?>" language='nederlands' class="active">NED</a>
             |
-            <a href="#" language='english'>ENG</a>
+            <a href="#" id="<?php echo $_COOKIE["englishActive"];?>" language='english'>ENG</a>
         </div>
     </div>
 
