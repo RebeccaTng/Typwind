@@ -33,7 +33,7 @@ class RegistrationController extends \CodeIgniter\Controller
         helper(['form']);
         $data = [];
 
-        //Clearing all of the previously declared cookies
+/*        //Clearing all of the previously declared cookies if necesarry with uncommenting this line of code :)
         if (isset($_SERVER['HTTP_COOKIE'])) {
             $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
             foreach($cookies as $cookie) {
@@ -42,7 +42,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 setcookie($name, '', time()-1000);
                 setcookie($name, '', time()-1000, '/');
             }
-        }
+        }*/
 
         //Setting the initial language Cookie
         setcookie("englishActive", 'not active', time()+3600000000000, "/");

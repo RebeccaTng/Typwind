@@ -21,7 +21,7 @@
             <h2 class="text-center">Login</h2>
             <h4 class="text-center">and have fun typing!</h4>
             <br>
-            <h6 class="text-center">Let's get loggin in with your email</h6>
+            <h6 class="text-center">Let's get logged in with your email</h6>
             <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>

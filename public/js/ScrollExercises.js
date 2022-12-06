@@ -1,4 +1,4 @@
-//Allowing for smooth arrow scrolling in Kids exercises
+//Allowing for smooth arrow scrolling in exercises pages
 
 $(document).ready(function(){
     $("a").on('click', function(event) {

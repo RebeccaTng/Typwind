@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/navbar.css">
+    <!-- Dropdown menu for Expert exercises CSS -->
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/dropDownExpertExercises.css">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
     <!-- Bootstrap Js CDN -->
@@ -20,6 +22,7 @@
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
     <!-- Scrolling in exercise page Js -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/ScrollExercises.js" defer></script>
+
 
 
     <!--CSS FILES-->

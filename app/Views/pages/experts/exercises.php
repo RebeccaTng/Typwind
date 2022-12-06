@@ -1,58 +1,60 @@
 <?= $this->extend('/templates/experts_default') ?>
 
 <?= $this->section('content') ?>
+<br>
+<br>
+<br>
 
-
-<header>
-    <div id="logo">
-        <h1 class="title">Exercises</h1>
+<div class="dropdown" style="float:right;">
+    <button class="dropbtn" ><img class="arw_img" alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"> Select Lesson</button>
+    <div class="dropdown-content">
+        <a href="#section1">Lesson 1</a>
+        <a href="#section2">Lesson 2</a>
+        <a href="#section3">Lesson 3</a>
+        <a href="#section4">Lesson 4</a>
+        <a href="#section5">Lesson 5</a>
     </div>
-</header>
+</div>
+
+<br><br><br><br>
 
 <div class="main">
     <section id="section1">
         <div class="container jumbo">
             <div class="jumbotron">
-                <h2>Lesson X</h2>
+                <h2>Lesson 1</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section2">
         <div class="container jumbo">
             <div class="jumbotron">
-                <p><a class="btn btn-primary btn-lg" href="#section1"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Lesson X</h2>
+                <h2>Lesson 2</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section3">
         <div class="container jumbo">
             <div class="jumbotron">
-                <p><a class="btn btn-primary btn-lg" href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Lesson X</h2>
+                <h2>Lesson 3</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section4"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section4">
         <div class="container jumbo">
             <div class="jumbotron">
-                <p><a class="btn btn-primary btn-lg" href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Lesson X</h2>
+                <h2>Lesson 4</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section5"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section5">
         <div class="container jumbo">
             <div class="jumbotron">
-                <h2>Lesson X</h2>
+                <h2>Lesson 5</h2>
                 <p>Exercises Y</p>
             </div>
     </section>
@@ -88,5 +90,11 @@
 
     <?php /*endif */?>
 </section>-->
+
+<br>
+<br>
+<br>
+<br>
+
 
 <?= $this->endSection() ?>
