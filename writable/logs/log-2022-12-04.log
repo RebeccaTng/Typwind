@@ -1,0 +1,128 @@
+CRITICAL - 2022-12-04 05:55:28 --> Invalid argument supplied for foreach()
+in APPPATH\Views\pages\experts\editStudentPage.php on line 6.
+ 1 APPPATH\Views\pages\experts\editStudentPage.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\pages\\experts\\editStudentPage.php', 6, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\experts\\editStudentPage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/experts/editStudentPage', [], true)
+ 5 APPPATH\Controllers\ExpertController.php(50): view('pages/experts/editStudentPage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage('8')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 05:55:29 --> Invalid argument supplied for foreach()
+in APPPATH\Views\pages\experts\studentOverview.php on line 6.
+ 1 APPPATH\Views\pages\experts\studentOverview.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\pages\\experts\\studentOverview.php', 6, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\experts\\studentOverview.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/experts/studentOverview', [], true)
+ 5 APPPATH\Controllers\ExpertController.php(42): view('pages/experts/studentOverview', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->studentOverview('8')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 05:58:27 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 132.
+ 1 APPPATH\Controllers\ExpertController.php(132): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 132, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:07:57 --> Argument 2 passed to view() must be of the type array, null given, called in C:\UwAmp\www\PHPStart\a22ux02\app\Controllers\ExpertController.php on line 41
+in SYSTEMPATH\Common.php on line 1120.
+ 1 APPPATH\Controllers\ExpertController.php(41): view('pages/experts/exercises', null)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->exercises()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:11:45 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:15:41 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:17:07 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:24:21 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:25:43 --> Invalid argument supplied for foreach()
+in APPPATH\Views\pages\experts\editStudentPage.php on line 34.
+ 1 APPPATH\Views\pages\experts\editStudentPage.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\pages\\experts\\editStudentPage.php', 34, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\experts\\editStudentPage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/experts/editStudentPage', [], true)
+ 5 APPPATH\Controllers\ExpertController.php(57): view('pages/experts/editStudentPage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage('8')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:29:31 --> Invalid argument supplied for foreach()
+in APPPATH\Views\pages\experts\studentOverview.php on line 6.
+ 1 APPPATH\Views\pages\experts\studentOverview.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\pages\\experts\\studentOverview.php', 6, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\experts\\studentOverview.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/experts/studentOverview', [], true)
+ 5 APPPATH\Controllers\ExpertController.php(49): view('pages/experts/studentOverview', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->studentOverview('8')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:56:47 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 06:57:09 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 07:09:23 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 10:35:17 --> Undefined index: idTeachers
+in APPPATH\Controllers\ExpertController.php on line 139.
+ 1 APPPATH\Controllers\ExpertController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: idTeachers', 'APPPATH\\Controllers\\ExpertController.php', 139, [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->profile()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 10:47:24 --> Undefined index: password
+in APPPATH\Controllers\ExpertController.php on line 156.
+ 1 APPPATH\Controllers\ExpertController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: password', 'APPPATH\\Controllers\\ExpertController.php', 156, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->editProfile('11')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-04 10:47:51 --> Undefined index: password
+in APPPATH\Controllers\ExpertController.php on line 156.
+ 1 APPPATH\Controllers\ExpertController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: password', 'APPPATH\\Controllers\\ExpertController.php', 156, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ExpertController->editProfile('11')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExpertController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

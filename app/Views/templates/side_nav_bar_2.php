@@ -9,11 +9,11 @@
     </div>
 
     <ul class="list-unstyled components">
-        <li><a href="<?=base_url()?>/public/kids/home" title="Go home" class="home" >Home</a></li>
-        <li><a href="<?=base_url()?>/public/kids/exercises" title="Go to exercises" class="exercises">Exercises</a></li>
+        <li><a href="<?=base_url()?>/kids/home" title="Go home" class="home" >Home</a></li>
+        <li><a href="<?=base_url()?>/kids/exercises" title="Go to exercises" class="exercises">Exercises</a></li>
     </ul>
 
     <ul class="list-unstyled CTAs">
-        <li><a href="<?=base_url()?>/public/registration/signin" title="Log Out" class="download">Log out</a></li>
+        <li><a href="<?=base_url()?>/registration/welcome" title="Log Out" class="download">Log out</a></li>
     </ul>
 </nav>

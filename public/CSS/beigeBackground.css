@@ -1,0 +1,8 @@
+div.beigeBackground {
+    background-color: var(--beigeNeutral);
+    display: flex;
+    height: 100%;
+    border-radius: 1.563rem; /* 25px */
+    padding: 1.25rem; /* 20px */
+    margin: 0.625rem; /* 10px */
+}

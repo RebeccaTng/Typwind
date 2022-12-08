@@ -7,20 +7,36 @@ use App\Models\Teachers_model;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
-    public function signin()
+    public function expertLogin()
     {
         helper(['form']);
-        echo view('pages/registration/signin');
+        echo view('pages/registration/expertLogin');
     }
 
-    public function signup()
+    public function studentLogin()
+    {
+        helper(['form']);
+        echo view('pages/registration/studentLogin');
+    }
+
+    public function register()
     {
         helper(['form']);
         $data = [];
-        echo view('pages/registration/signup', $data);
+        echo view('pages/registration/register', $data);
     }
 
-    public function loginAuth()
+
+    public function welcome()
+    {
+        helper(['form']);
+        $data = [];
+        echo view('pages/registration/welcome', $data);
+    }
+
+
+
+    public function loginExpert()
     {
         $session = session();
         $expertModel = new Teachers_model();
@@ -40,18 +56,43 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],
                 'email' => $data['email'],
-                'isLoggedIn' => TRUE
+                'isLoggedIn' => TRUE,
+                'isStudent' => FALSE
             ];
-
-            setcookie('emailCookie',  $data['email'], time()+36000);
-
             $session->set($ses_data);
-            return redirect()->to('public/experts/home');
+            return redirect()->to('experts/home');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->to('/public/signin');
             }*/
+        }
+
+        else if(!$data & $data2){
+            $session->setFlashdata('msg', 'This is a student email.');
+            return redirect()->to('/registration/expertLogin');
+        }
+
+        else {
+            $session->setFlashdata('msg', 'Email does not exist.');
+            return redirect()->to('/registration/expertLogin');
+        }
+    }
+
+    public function loginStudent()
+    {
+        $session = session();
+        $expertModel = new Teachers_model();
+        $studentModel = new Students_model();
+        $email = $this->request->getVar('email');
+        /*        $password = $this->request->getVar('password');*/
+
+        $data = $expertModel->where('email', $email)->first();
+        $data2 = $studentModel->where('email', $email)->first();
+
+        if($data & !$data2){
+            $session->setFlashdata('msg', 'This is an expert email.');
+            return redirect()->to('/registration/studentLogin');
         }
 
         else if($data2){
@@ -63,10 +104,11 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname' => $data2['firstname'],
                 'lastname' => $data2['lastname'],
                 'email' => $data2['email'],
-                'isLoggedIn' => TRUE
+                'isLoggedIn' => TRUE,
+                'isStudent' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('/public/kids/home');
+            return redirect()->to('/kids/home');
 
             /*}*//*else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
@@ -74,9 +116,9 @@ class RegistrationController extends \CodeIgniter\Controller
             }*/
         }
 
-        else{
+        else {
             $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->to('/public/registration/signin');
+            return redirect()->to('/registration/studentLogin');
         }
     }
 
@@ -100,10 +142,10 @@ class RegistrationController extends \CodeIgniter\Controller
                 /*                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)*/
             ];
             $userModel->save($data);
-            return redirect()->to('/public/registration/signin');
+            return redirect()->to('/registration/welcome');
         }else{
             $data['validation'] = $this->validator;
-            echo view('/pages/registration/signup', $data);
+            echo view('/pages/registration/register', $data);
         }
     }
 }

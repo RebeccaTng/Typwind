@@ -1,290 +1,95 @@
-CRITICAL - 2022-12-02 03:24:33 --> Invalid file: welcome_message.php
-in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
- 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_message.php')
- 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
- 3 APPPATH\Controllers\Home.php(24): view('welcome_message')
- 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
- 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
- 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 03:36:24 --> Invalid file: welcome_message.php
-in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
- 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_message.php')
- 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('welcome_message', [], true)
- 3 APPPATH\Controllers\Home.php(24): view('welcome_message')
- 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Home->index()
- 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
- 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-ERROR - 2022-12-02 04:30:57 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#9 {main}
-
-Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:215
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#8 {main}
-CRITICAL - 2022-12-02 04:30:57 --> Unable to connect to the database.
-Main connection [MySQLi]: Connection refused
-in SYSTEMPATH/Database/BaseConnection.php on line 418.
- 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
- 2 APPPATH/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
- 3 APPPATH/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
- 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->home()
- 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-ERROR - 2022-12-02 08:12:41 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for mysql.studev.groept.be failed: Temporary failure in name resolution in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
-Stack trace:
-#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#8 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#9 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#10 {main}
-
-Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for mysql.studev.groept.be failed: Temporary failure in name resolution in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#9 {main}
-
-Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for mysql.studev.groept.be failed: Temporary failure in name resolution in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:215
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#8 {main}
-CRITICAL - 2022-12-02 08:12:41 --> Unable to connect to the database.
-Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for mysql.studev.groept.be failed: Temporary failure in name resolution
-in SYSTEMPATH/Database/BaseConnection.php on line 418.
- 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
- 2 APPPATH/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
- 3 APPPATH/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
- 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->home()
- 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-ERROR - 2022-12-02 08:42:05 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#9 {main}
-
-Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:215
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#8 {main}
-CRITICAL - 2022-12-02 08:42:05 --> Unable to connect to the database.
-Main connection [MySQLi]: Connection refused
-in SYSTEMPATH/Database/BaseConnection.php on line 418.
- 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
- 2 APPPATH/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
- 3 APPPATH/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
- 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->home()
- 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:52:29 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/editStudentPage.php on line 6.
- 1 APPPATH/Views/pages/experts/editStudentPage.php(6): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/editStudentPage.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(50): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:52:33 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/studentOverview.php on line 6.
- 1 APPPATH/Views/pages/experts/studentOverview.php(6): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/studentOverview.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(42): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->studentOverview()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:54:24 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/editStudentPage.php on line 34.
- 1 APPPATH/Views/pages/experts/editStudentPage.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/editStudentPage.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(50): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:54:37 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/editStudentPage.php on line 34.
- 1 APPPATH/Views/pages/experts/editStudentPage.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/editStudentPage.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(50): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:54:41 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/editStudentPage.php on line 34.
- 1 APPPATH/Views/pages/experts/editStudentPage.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/editStudentPage.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(50): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:54:47 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/editStudentPage.php on line 34.
- 1 APPPATH/Views/pages/experts/editStudentPage.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/editStudentPage.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(50): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->editStudentPage()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 08:56:38 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/studentOverview.php on line 6.
- 1 APPPATH/Views/pages/experts/studentOverview.php(6): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/studentOverview.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(42): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->studentOverview()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-ERROR - 2022-12-02 09:19:21 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#9 {main}
-
-Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:215
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#8 {main}
-CRITICAL - 2022-12-02 09:19:21 --> Unable to connect to the database.
-Main connection [MySQLi]: Connection refused
-in SYSTEMPATH/Database/BaseConnection.php on line 418.
- 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
- 2 APPPATH/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
- 3 APPPATH/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
- 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->home()
- 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2022-12-02 10:48:11 --> foreach() argument must be of type array|object, null given
-in APPPATH/Views/pages/experts/studentOverview.php on line 6.
- 1 APPPATH/Views/pages/experts/studentOverview.php(6): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/experts/studentOverview.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ExpertController.php(42): view()
- 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->studentOverview()
- 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-ERROR - 2022-12-02 10:48:34 --> Error connecting to the database: mysqli_sql_exception: Connection timed out in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:171
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#9 {main}
-
-Next CodeIgniter\Database\Exceptions\DatabaseException: Connection timed out in /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/MySQLi/Connection.php:215
-Stack trace:
-#0 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
-#1 /home/hurricane97/Documents/kul/masters/ux/typewind/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
-#2 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
-#3 /home/hurricane97/Documents/kul/masters/ux/typewind/app/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
-#4 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(927): App\Controllers\ExpertController->home()
-#5 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
-#6 /home/hurricane97/Documents/kul/masters/ux/typewind/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
-#7 /home/hurricane97/Documents/kul/masters/ux/typewind/index.php(67): CodeIgniter\CodeIgniter->run()
-#8 {main}
-CRITICAL - 2022-12-02 10:48:34 --> Unable to connect to the database.
-Main connection [MySQLi]: Connection timed out
-in SYSTEMPATH/Database/BaseConnection.php on line 418.
- 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
- 2 APPPATH/Models/Teachers_model.php(28): CodeIgniter\Database\BaseConnection->query()
- 3 APPPATH/Controllers/ExpertController.php(23): App\Models\Teachers_model->get_all_teachers()
- 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ExpertController->home()
- 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 09:38:26 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+in SYSTEMPATH\CodeIgniter.php on line 224.
+ 1 SYSTEMPATH\CodeIgniter.php(224): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbstring')
+ 2 SYSTEMPATH\CodeIgniter.php(182): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-12-02 03:40:37 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:08:15 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:21:55 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:25:33 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:25:50 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\KidsController.php(17): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\KidsController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:35:41 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:35:51 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Home.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Home->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:36:09 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\ExpertController.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\ExpertController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 04:36:39 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH\Database\Database.php on line 136.
+ 1 SYSTEMPATH\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQLi', 'CodeIgniter\\Database\\MySQLi\\Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(137): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\ExpertController.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\ExpertController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

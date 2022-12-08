@@ -32,11 +32,9 @@ class Teachers_model extends Model
     public function edit_teacher($data)
     {
         $builder = $this->db->table('teachers');
-        $builder->where('idTeachers', $data['idTeachers']);
+        $builder->where('idTeachers', session()->id);
         $builder->update($data);
-
     }
-
 
     //table data used for Log-In, please do not remove
     protected $allowedFields = [
