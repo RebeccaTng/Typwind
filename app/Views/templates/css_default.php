@@ -24,6 +24,7 @@
     <!--CSS FILES-->
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/beigeBackground.css">
 </head>
 <body>
 <div class="wrapper">
