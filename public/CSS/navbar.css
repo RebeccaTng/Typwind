@@ -1,7 +1,8 @@
 /*
     DEMO STYLE
 */
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";*/
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -51,6 +52,7 @@ a, a:hover, a:focus {
 .wrapper {
     display: flex;
     width: 100%;
+    height: 100%;
     align-items: stretch;
     perspective: 1500px;
 }
@@ -59,12 +61,13 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
-    color: #fff;
+    background: transparent;
+    color: red;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
 }
 
+/*This affects the position of the button */
 #sidebar.active {
     margin-left: -250px;
     transform: rotateY(100deg);
@@ -72,18 +75,18 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    padding: 30px;
+    background: transparent;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
+    padding: 40px 0;
     border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
     color: #fff;
-    padding: 10px;
+    padding: 40px;
 }
 
 #sidebar ul li a {

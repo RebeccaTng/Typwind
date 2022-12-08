@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <ul class="list-unstyled components">
+    <ul class="list-unstyled">
         <li><a href="<?=base_url()?>/experts/home" title="Go home" class="home" >Home</a></li>
         <li><a href="<?=base_url()?>/experts/studentsList" title="Look at students" class="students">Students</a></li>
         <li><a href="<?=base_url()?>/experts/exercises" title="Look at exercises" class="exercises">Exercises</a></li>

@@ -45,7 +45,7 @@
 }
 
 .button:hover:enabled {
-    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
+    box-shadow: 8px 8px 20px rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
 }
 
 .buttonPrimary:hover:enabled {
@@ -109,9 +109,8 @@ ul.breadcrumb li a:hover {
 /* BACKGROUND */
 body {
     background: linear-gradient(107.95deg, var(--primary-dark) 2.42%, var(--primaryColor) 22.97%, var(--primaryColor) 45.27%, var(--secondaryColor) 64.72%, var(--secondaryColor) 82.77%, var(--accentColor) 101.29%) no-repeat fixed;
-    height: 100%;
     margin: 0;
-    padding: 20px;
+    /*padding-right: 20px;*/
 }
 
 /* SCROLLBAR */ /* TODO: needs to be component::webkit-scrollbar, component is the beige background */
