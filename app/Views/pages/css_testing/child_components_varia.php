@@ -34,8 +34,8 @@
 <button class="exerciseButton ">Exercise Name is the following</button>
 
 <!-- Stars on exercise button -->
-<div class="container">
-    <button class="exerciseButton ">Exercise Name</button>
+
+<button class="exerciseButton ">Exercise Name
     <div class = "stars_on_exercise">
         <div class = "wrapper_for_stars">
             <span class="fi-sr-star checked_stars small"></span>
@@ -45,7 +45,8 @@
             <span class="fi-br-star unchecked_stars small"></span>
         </div>
     </div>
-</div>
+</button>
+
 
 <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
