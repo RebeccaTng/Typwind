@@ -68,5 +68,13 @@
         </li>
     </ul>
 
+    <!-- PROGRESS STEPS (STEPPER) -->
+    <ol class="stepper">
+        <li></li>
+        <li></li>
+        <li class="current"><p>Step</p></li>
+        <li class="todo"></li>
+    </ol>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>

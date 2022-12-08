@@ -68,3 +68,76 @@ li.studentListItem h3 {
     margin: -0.5rem; /* -8px */
     color: var(--blueNeutral-dark);
 }
+
+/* PROGRESS STEPS (STEPPER) */
+ol.stepper {
+    display: flex;
+    flex-wrap: wrap;
+    font: var(--bodyExText);
+    text-transform: uppercase;
+}
+
+ol.stepper li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    counter-increment: custom;
+}
+
+ol.stepper li:before {
+    --size: 3.625rem;
+    content: url(/public/assets/icons/check.svg);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    margin: 0.531rem auto 0;
+    background-color: var(--primaryColor);
+
+    padding: 15px;
+    box-sizing: border-box;
+    font: var(--navEmphasisText);
+}
+
+ol.stepper li:not(:last-child):after {
+    content: "";
+    position: relative;
+    top: 2.406rem;
+    left: 50%;
+    height: 5px;
+    background-color: var(--primaryColor);
+    order: -1;
+}
+
+ol.stepper li p {
+    color: var(--blueNeutral);
+    margin: 2px;
+}
+
+ol.stepper li:first-child{
+    counter-reset: custom;
+}
+
+ol.stepper li.current:before {
+    content: counter(custom) " ";
+    background-color: var(--accentColor);
+    font: var(--heading1);
+    --size: 4.813rem;
+    width: var(--size);
+    height: var(--size);
+    padding: 10px;
+    margin-top: 0;
+    color: var(--beigeNeutral);
+}
+
+ol.stepper li.todo:before {
+    content: counter(custom) " ";
+    background-color: var(--blueNeutral-lightest);
+}
+
+ol.stepper li.current:not(:last-child):after {
+    background-color: var(--blueNeutral-lightest);
+}
