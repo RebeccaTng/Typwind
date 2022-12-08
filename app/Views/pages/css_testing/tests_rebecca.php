@@ -50,5 +50,23 @@
     <!-- INPUT FIELD -->
     <input type="text" placeholder="Type Here">
 
+    <!-- SWITCH -->
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+    <!-- HANDS -->
+    <img src="/public/assets/general/hands_both.svg" alt="Both hands">
+
+    <!-- STUDENT -->
+    <ul>
+        <li class="studentListItem">
+            <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+            <h3>FirstName</h3>
+            <h3>Surname</h3>
+        </li>
+    </ul>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>

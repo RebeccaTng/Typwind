@@ -195,3 +195,14 @@ div.wave {
     background-position: center bottom;
     background-size: 100%;
 }
+
+/* ROUND PROFILE PIC */
+img.roundProfilePic {
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 0.125 solid var(--secondary-light); /* 2px */
+    background-color: var(--beigeNeutral);
+    height: 6.25rem; /* 100px */
+    width: 6.25rem; /* 100px */
+    padding: 0.625rem; /* 10px */;
+}
