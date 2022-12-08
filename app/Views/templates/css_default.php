@@ -18,13 +18,13 @@
     <!-- Language switch Js -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/navbar.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/navbar.css">
     <!--END OF NAV BAR LINKS -->
 
     <!--CSS FILES-->
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expertComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/expertComponents.css">
 </head>
 <body>
 <div class="wrapper">
