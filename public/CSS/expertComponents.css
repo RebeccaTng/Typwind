@@ -57,16 +57,14 @@ li.studentListItem {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.625rem; /* 10px */
+    padding: 0.625rem;
 }
 
-li.studentListItem img.roundProfilePic {
-    margin-bottom: 0.5rem; /* 8px */
-}
-
-li.studentListItem h3 {
-    margin: -0.5rem; /* -8px */
+li.studentListItem h4 {
+    line-height: 0.7rem;
     color: var(--blueNeutral-dark);
+    text-align: center;
+    margin: 0.938rem 0.938rem 0;
 }
 
 /* PROGRESS STEPS (STEPPER) */
@@ -75,6 +73,7 @@ ol.stepper {
     flex-wrap: wrap;
     font: var(--bodyExText);
     text-transform: uppercase;
+    max-width: 31.25rem;
 }
 
 ol.stepper li {
@@ -97,7 +96,7 @@ ol.stepper li:before {
     margin: 0.531rem auto 0;
     background-color: var(--primaryColor);
 
-    padding: 15px;
+    padding: 0.938rem;
     box-sizing: border-box;
     font: var(--navEmphasisText);
 }
@@ -107,14 +106,14 @@ ol.stepper li:not(:last-child):after {
     position: relative;
     top: 2.406rem;
     left: 50%;
-    height: 5px;
+    height: 0.313rem;
     background-color: var(--primaryColor);
     order: -1;
 }
 
 ol.stepper li p {
     color: var(--blueNeutral);
-    margin: 2px;
+    margin: 0.125rem;
 }
 
 ol.stepper li:first-child{
@@ -128,7 +127,7 @@ ol.stepper li.current:before {
     --size: 4.813rem;
     width: var(--size);
     height: var(--size);
-    padding: 10px;
+    padding: 0.625rem;
     margin-top: 0;
     color: var(--beigeNeutral);
 }
@@ -140,4 +139,37 @@ ol.stepper li.todo:before {
 
 ol.stepper li.current:not(:last-child):after {
     background-color: var(--blueNeutral-lightest);
+}
+
+/* EXERCISE FIELD */
+h4.exerciseField {
+    box-sizing: border-box;
+    padding: 0.625rem 1.25rem;
+
+    width: 13.75rem;
+    background-color: var(--beigeNeutral);
+    border: 0.094rem solid var(--secondary-light);
+    border-radius: 1.563rem;
+    color: var(--blueNeutral-dark);
+    line-height: 1.563rem;
+    margin: 0;
+}
+
+/* LESSON CARD */
+div.lessonCard {
+    display: flex;
+    row-gap: 1.563rem;
+    column-gap: 1.25rem;
+    max-width: 63.875rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.25rem 2.5rem 2.188rem;
+}
+
+div.lessonCard h2 {
+    width: 100%;
+    text-align: center;
+    color: var(--secondaryColor);
+    margin: 0;
 }
