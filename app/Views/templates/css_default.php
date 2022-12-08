@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/beigeBackground.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/child_components_varia.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/assets/icons/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/assets/icons/uicons-solid-rounded/css/uicons-solid-rounded.css">
+
 </head>
 <body>
 <div class="wrapper">
