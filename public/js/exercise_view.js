@@ -95,7 +95,7 @@ correctCharactersNeeded =  textChar.length;
 createSpanSentence();
 highlightCurrentLetter();
 keyboardColorsFunction(0);
-
+loadTextFromDB();
 
 
 
@@ -104,6 +104,12 @@ keyboardColorsFunction(0);
 //***On Load***//
 
 //functions
+function loadTextFromDB(id = 2){
+
+       $. get('/student_model/getExercise/' + id, function(data) {console.log(data);});
+}
+
+
 function createSpanSentence(){
     for(i=0;textChar.length>i;i++) {
         var s = document.createElement("SPAN");//.attributes("class","letter");
