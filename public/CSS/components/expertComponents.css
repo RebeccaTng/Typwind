@@ -97,7 +97,6 @@ ol.stepper li:before {
     background-color: var(--primaryColor);
 
     padding: 0.938rem;
-    box-sizing: border-box;
     font: var(--navEmphasisText);
 }
 
@@ -161,7 +160,6 @@ div.lessonCard {
     row-gap: 1.563rem;
     column-gap: 1.25rem;
     max-width: 63.875rem;
-    box-sizing: border-box;
     flex-wrap: wrap;
     align-items: center;
     padding: 1.25rem 2.5rem 2.188rem;

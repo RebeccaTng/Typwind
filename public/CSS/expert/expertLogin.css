@@ -33,7 +33,20 @@ div.card {
 }
 
 img.logo {
+    display: block;
     position: absolute;
     right: 50px;
     bottom: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    div.card {
+        padding: 10px 50px 25px;
+    }
+}
+
+@media screen and (max-height: 650px), screen and (max-width: 992px) {
+    img.logo {
+        display: none;
+    }
 }

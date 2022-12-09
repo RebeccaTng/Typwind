@@ -13,7 +13,6 @@
     font: var(--buttonLabel);
     text-transform: uppercase;
     text-align: center;
-    box-sizing: border-box;
     cursor: pointer;
     transition-duration: 0.4s;
 }
@@ -151,7 +150,6 @@ div.bottomBar {
 input {
     height: 2.5rem; /* 40px */
     padding: 0.563rem 1.125rem; /* 9px 18px */
-    box-sizing: border-box;
     border: 0.125rem solid var(--blueNeutral-lightest); /* 2px */
     border-radius: 1.25rem; /* 20px */
     background-color: var(--beigeNeutral-light);
@@ -186,7 +184,7 @@ div.card {
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
     padding: 1.25rem; /* 20px */
     margin: 0.625rem; /* 10px */
-    width: fit-content;
+    /*width: fit-content;*/
 }
 
 /* WAVE BACKGROUND */
@@ -199,7 +197,6 @@ div.wave {
 
 /* ROUND PROFILE PIC */
 img.roundProfilePic {
-    box-sizing: border-box;
     border-radius: 50%;
     border: 0.125 solid var(--secondary-light); /* 2px */
     background-color: var(--beigeNeutral);
