@@ -44,3 +44,24 @@ WHERE `email` = :email:
  7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrationController))
  8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 08:28:06 --> setcookie(): "expires" option cannot have a year greater than 9999
+in APPPATH/Controllers/RegistrationController.php on line 48.
+ 1 APPPATH/Controllers/RegistrationController.php(48): setcookie()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\RegistrationController->welcome()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 08:59:59 --> setcookie(): "expires" option cannot have a year greater than 9999
+in APPPATH/Controllers/RegistrationController.php on line 48.
+ 1 APPPATH/Controllers/RegistrationController.php(48): setcookie()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\RegistrationController->welcome()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 09:00:08 --> setcookie(): "expires" option cannot have a year greater than 9999
+in APPPATH/Controllers/RegistrationController.php on line 48.
+ 1 APPPATH/Controllers/RegistrationController.php(48): setcookie()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\RegistrationController->welcome()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

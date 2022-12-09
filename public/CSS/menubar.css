@@ -61,6 +61,8 @@
     display: flex;
     align-items: center;
     padding: 24px;
+    z-index: 50;
+    /*clipping the shadow on one side*/
 
 }
 
