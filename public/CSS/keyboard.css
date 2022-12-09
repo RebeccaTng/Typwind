@@ -1,0 +1,131 @@
+.textBox {
+    background-color: rgb(243, 243, 243);
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 40px;
+    height: 70px;
+    display: flex;
+    width: 1200px;
+    overflow: hidden;
+
+    /*display: inline;*/
+    /*text-align: center;*/
+}
+
+.textContainer{
+    display: flex;
+}
+
+.letter{
+    /*margin: 10px 2px 10px 0;*/
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+    border: thick solid transparent;
+    /*display: inline;*/
+    /*transform: translateX(40px);*/
+
+    /*height: 50px;*/
+
+    /*border: 1px solid #000000;*/
+}
+
+.focus{
+    alignment: center;
+    color: blue;
+
+    border: thick solid black;
+}
+.wrong{
+    border-color: transparent;
+    color: red;
+}
+
+.keyboard-base {
+    max-width: 1085px;
+    padding: 20px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(30, 30px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 5px;
+}
+
+
+
+.key {
+    background-color: rgb(243, 243, 243);
+    border: 2px solid black;
+    border-radius: 5px;
+    grid-column: span 2;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 17px;
+}
+
+.delete {
+    grid-column: span 4;
+}
+
+.tab {
+    grid-column: span 3;
+}
+
+.backslash {
+    grid-column: span 3;
+}
+
+.capslock {
+    grid-column: span 4;
+}
+
+.return {
+    grid-column: span 4;
+}
+
+.leftshift {
+    grid-column: span 5;
+}
+
+.rightshift {
+    grid-column: span 5;
+}
+
+.leftctrl {
+    grid-column: span 3;
+}
+
+.command {
+    grid-column: span 3;
+    font-size: 14px;
+}
+
+.space {
+    grid-column: span 13;
+}
+
+
+.red{
+    background-color: indianred;
+}
+
+.blue{
+    background-color: cornflowerblue;
+}
+
+.yellow{
+    background-color: lightyellow;
+}
+
+.green{
+    background-color: darkseagreen;
+}
+
+.thickBorder{
+    border: 5px solid black;
+}
