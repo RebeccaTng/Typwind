@@ -7,6 +7,7 @@ use App\Models\Teachers_model;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
+
     public function expertLogin()
     {
         helper(['form']);
@@ -31,6 +32,22 @@ class RegistrationController extends \CodeIgniter\Controller
     {
         helper(['form']);
         $data = [];
+
+/*        //Clearing all of the previously declared cookies if necesarry with uncommenting this line of code :)
+        if (isset($_SERVER['HTTP_COOKIE'])) {
+            $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+            foreach($cookies as $cookie) {
+                $parts = explode('=', $cookie);
+                $name = trim($parts[0]);
+                setcookie($name, '', time()-1000);
+                setcookie($name, '', time()-1000, '/');
+            }
+        }*/
+
+        //Setting the initial language Cookie
+        setcookie("englishActive", 'not active', time()+3600000000000, "/");
+        setcookie("nederlandsActief", 'active', time()+3600000000000, "/");
+
         echo view('pages/registration/welcome', $data);
     }
 
@@ -108,12 +125,8 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isStudent' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('/kids/home');
 
-            /*}*//*else{
-                $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->to('/public/signin');
-            }*/
+            return redirect()->to('/kids/home');
         }
 
         else {

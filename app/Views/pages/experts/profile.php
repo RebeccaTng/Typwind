@@ -2,16 +2,16 @@
 
 <?= $this->section('content') ?>
 
-    <div class="col-md-4">
-        <h3 class="text-center">
-            <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle">
+    <div>
+        <h3>
+            <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
         </h3>
-        <h3 class="text-center">
+        <h3>
             <?php $session = session();
             echo $session->firstname; echo " "; echo $session->lastname . "<br>" ?>
         </h3>
-        <h4 class="text-center"> General Information </h4>
-        <p class="text-center">
+        <h4> General Information </h4>
+        <p>
             FirstName: <?php echo $session->firstname. "<br>" ?>
             SurName: <?php echo $session->lastname. "<br>" ?>
             Email: <?php echo $session->email. "<br>" ?>
@@ -27,10 +27,10 @@
         <?php endif;?>
         </p>
 
-        <h3 class="text-center">
+        <h3>
             <section>
                 <a href="<?php echo base_url('experts/editProfilePage/'.session()->id);?>">
-                    <button class="btn btn-primary btn-lg">EDIT</button>
+                    <button>EDIT</button>
                 </a>
             </section>
         </h3>

@@ -16,13 +16,13 @@
 <section>
 
     <a href="">
-        <button class="btn btn-primary btn-lg">REPLAY EXERCISE</button>
+        <button>REPLAY EXERCISE</button>
     </a><br><br>
     <a href="">
-        <button class="btn btn-primary btn-lg">START NEW EXERCISE</button>
+        <button>START NEW EXERCISE</button>
     </a><br><br>
     <a href="">
-        <button class="btn btn-primary btn-lg">BACK TO EXERCISES</button>
+        <button>BACK TO EXERCISES</button>
     </a>
 </section>
 <?= $this->endSection() ?>

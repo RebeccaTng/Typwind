@@ -20,10 +20,10 @@
 
     <h3>Press start and earn some stars.<br> Good luck!</h3>
     <a href="">
-        <button class="btn btn-primary btn-lg">Start</button>
+        <button>Start</button>
     </a><br><br>
     <a href="">
-        <button class="btn btn-primary btn-lg">GO BACK TO EXERCISES</button>
+        <button>GO BACK TO EXERCISES</button>
     </a>
 </section>
 

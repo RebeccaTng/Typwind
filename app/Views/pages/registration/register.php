@@ -7,40 +7,40 @@
     <title> Expert Registration</title>
 </head>
 <body>
-<div class="container mt-5">
-    <div class="row justify-content-md-center">
-        <div class="col-5">
-            <h2 class="text-center">Register</h2>
+<div>
+    <div>
+        <div>
+            <h2 >Register</h2>
             <?php if(isset($validation)):?>
-                <div class="alert alert-warning">
+                <div>
                     <?= $validation->listErrors() ?>
                 </div>
             <?php endif;?>
             <form action="<?php echo base_url(); ?>/RegistrationController/store" method="post">
-                <div class="form-group mb-3">
-                    <input type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" class="form-control" >
+                <div>
+                    <input type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" >
                 </div>
-                <div class="form-group mb-3">
-                    <input type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" class="form-control" >
+                <div>
+                    <input type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" >
                 </div>
-                <div class="form-group mb-3">
-                    <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
+                <div>
+                    <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" >
 <!--                </div>
-                <div class="form-group mb-3">
-                    <input type="password" name="password" placeholder="Password" class="form-control" >
+                <div>
+                    <input type="password" name="password" placeholder="Password" >
                 </div>
-                <div class="form-group mb-3">
-                    <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" >
+                <div>
+                    <input type="password" name="confirmpassword" placeholder="Confirm Password" >
                 </div>-->
                     <br>
 
-                    <div class="d-grid">
-                    <button type="submit" class="btn btn-dark">REGISTER</button>
+                    <div>
+                    <button type="submit">REGISTER</button>
                 </div>
             </form>
             <br>
-            <div class="d-grid">
-                <button type="button" id="backToLogin" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" class="btn btn-dark">BACK TO LOGIN</button>
+            <div>
+                <button type="button" id="backToLogin" onclick="window.location= '<?=base_url()?>/registration/expertLogin'">BACK TO LOGIN</button>
             </div>
         </div>
     </div>
