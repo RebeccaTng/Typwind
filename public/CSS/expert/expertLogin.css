@@ -1,0 +1,21 @@
+div.loginCard {
+    color: var(--blueNeutral);
+}
+
+div.loginCard h1 {
+    margin: 30px;
+}
+
+div.loginCard p {
+    font: var(--bodyText);
+    margin: 10px;
+}
+
+div.loginCard input, .button {
+    width: 300px;
+    margin: 12.5px 0;
+}
+
+div.loginCard input {
+    margin: 0 0 32.5px;
+}

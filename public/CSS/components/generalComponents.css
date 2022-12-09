@@ -112,6 +112,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 20px;
+    align-items: center;
 }
 
 /* SCROLLBAR */ /* TODO: needs to be component::webkit-scrollbar, component is the beige background */
