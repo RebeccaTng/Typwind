@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
 </head>
 <body>
-<div class="wrapper">
+<div>
     <!-- Sidebar Holder -->
     <?= $this->include('templates/side_nav_bar_2') ?>
     <!-- Page Content Holder -->
     <div id="content">
-        <button type="button" id="sidebarCollapse" class="navbar-btn">
+        <button type="button" id="sidebarCollapse">
             <span></span>
             <span></span>
             <span></span>

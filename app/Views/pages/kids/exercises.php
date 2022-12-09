@@ -6,49 +6,49 @@
 <br>
 <br>
 
-<div class="main">
+<div>
     <section id="section1">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson X</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
+                <p><a href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section2">
-        <div class="container jumbo">
-            <div class="jumbotron">
-                <p><a class="btn btn-primary btn-lg" href="#section1"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
+        <div>
+            <div>
+                <p><a href="#section1"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
                 <h2>Lesson X</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
+                <p><a href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section3">
-        <div class="container jumbo">
-            <div class="jumbotron">
-                <p><a class="btn btn-primary btn-lg" href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
+        <div>
+            <div>
+                <p><a href="#section2"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
                 <h2>Lesson X</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section4"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
+                <p><a href="#section4"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section4">
-        <div class="container jumbo">
-            <div class="jumbotron">
-                <p><a class="btn btn-primary btn-lg" href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
+        <div>
+            <div>
+                <p><a href="#section3"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
                 <h2>Lesson X</h2>
                 <p>Exercises Y</p>
-                <p><a class="btn btn-primary btn-lg" href="#section5"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
+                <p><a href="#section5"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>
             </div>
     </section>
 
     <section id="section5">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson X</h2>
                 <p>Exercises Y</p>
             </div>

@@ -7,20 +7,20 @@
     <title> Welcome Page</title>
 </head>
 <body>
-<h2 class="text-center">Typwind</h2>
-<h3 class="text-center">Welcomes you!</h3>
+<h2>Typwind</h2>
+<h3>Welcomes you!</h3>
 
-<h5 class="text-center">Are you a student or a teacher?</h5>
+<h5>Are you a student or a teacher?</h5>
 
-<div class="d-grid">
+<div>
 
-    <button id="teacher" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" title="Look at profile" class="btn btn-dark">TEACHER</button>
+    <button id="teacher" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" title="Look at profile">TEACHER</button>
 </div>
 
 <br>
 
-<div class="d-grid">
-    <button id="student" onclick="window.location= '<?=base_url()?>/registration/studentLogin'" class="btn btn-dark">STUDENT</button>
+<div>
+    <button id="student" onclick="window.location= '<?=base_url()?>/registration/studentLogin'">STUDENT</button>
 </div>
 
 </body>

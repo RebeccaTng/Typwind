@@ -7,9 +7,9 @@
     <title>Login with Email</title>
 </head>
 <body>
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-5">
+<div>
+    <div>
+        <div>
 
             
             <?php $session=session();
@@ -18,31 +18,31 @@
             <br>
             <br>
 
-            <h2 class="text-center">Login</h2>
+            <h2>Login</h2>
             <br>
-            <h5 class="text-center">Please Log in with your email</h5>
+            <h5>Please Log in with your email</h5>
             <?php if(session()->getFlashdata('msg')):?>
-                <div class="alert alert-warning">
+                <div>
                     <?= session()->getFlashdata('msg') ?>
                 </div>
             <?php endif;?>
 
             <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
-                <div class="form-group mb-3">
-                    <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" class="form-control" >
+                <div>
+                    <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" >
                 </div>
 <!--                <div class="form-group mb-3">
-                    <input type="password" name="password" placeholder="Password" class="form-control" >
+                    <input type="password" name="password" placeholder="Password" >
                 </div>-->
 
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-success">LOGIN</button>
+                <div>
+                    <button type="submit">LOGIN</button>
                 </div>
             </form>
 
             <br>
-            <div class="d-grid">
-                <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="btn btn-success">REGISTER</button>
+            <div>
+                <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'">REGISTER</button>
             </div>
 
         </div>

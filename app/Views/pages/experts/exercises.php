@@ -18,42 +18,42 @@
 
 <br><br><br><br>
 
-<div class="main">
+<div>
     <section id="section1">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson 1</h2>
                 <p>Exercises Y</p>
             </div>
     </section>
 
     <section id="section2">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson 2</h2>
                 <p>Exercises Y</p>
             </div>
     </section>
 
     <section id="section3">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson 3</h2>
                 <p>Exercises Y</p>
             </div>
     </section>
 
     <section id="section4">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson 4</h2>
                 <p>Exercises Y</p>
             </div>
     </section>
 
     <section id="section5">
-        <div class="container jumbo">
-            <div class="jumbotron">
+        <div>
+            <div>
                 <h2>Lesson 5</h2>
                 <p>Exercises Y</p>
             </div>

@@ -25,8 +25,8 @@
     <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle">
 </h3>
 <section>
-    <h2 class="text-center">Welcome Back</h2>
-    <h3 class="text-center">
+    <h2>Welcome Back</h2>
+    <h3>
         <?php
         $session = session();
         echo $session->firstname; echo "!";

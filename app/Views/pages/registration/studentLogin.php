@@ -7,9 +7,9 @@
     <title>Login with Email</title>
 </head>
 <body>
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-5">
+<div>
+    <div>
+        <div>
 
 
             <?php $session=session();
@@ -18,25 +18,25 @@
             <br>
             <br>
 
-            <h2 class="text-center">Login</h2>
-            <h4 class="text-center">and have fun typing!</h4>
+            <h2>Login</h2>
+            <h4>and have fun typing!</h4>
             <br>
-            <h6 class="text-center">Let's get logged in with your email</h6>
+            <h6>Let's get logged in with your email</h6>
             <?php if(session()->getFlashdata('msg')):?>
-                <div class="alert alert-warning">
+                <div>
                     <?= session()->getFlashdata('msg') ?>
                 </div>
             <?php endif;?>
 
             <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
-                <div class="form-group mb-3">
-                    <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>" class="form-control" >
+                <div>
+                    <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>" >
                 </div>
-                <!--                <div class="form-group mb-3">
+                <!--                <div>
                                     <input type="password" name="password" placeholder="Password" class="form-control" >
                                 </div>-->
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-success">CONTINUE WITH MY EMAIL</button>
+                <div>
+                    <button type="submit">CONTINUE WITH MY EMAIL</button>
                 </div>
             </form>
 
