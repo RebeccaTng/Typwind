@@ -1,0 +1,80 @@
+.menu_grid-container {
+    display: grid;
+    height: 95vh;
+    /*margin-left: 20px;*/
+    /*margin-right: 30px;*/
+    font: var(--navText);
+    color: var(--blueNeutral);
+    align-content: stretch;
+    justify-content: stretch;
+    grid-template-areas:'.''header' 'header' 'subHeader''subHeader''.''item''item''item''item''item''item' 'item'  '.''.' '.''.' 'footer''footer' '.';
+}
+
+.menuHeader {
+    grid-area: header;
+    padding-right: 25px;
+    padding-left: 15px;
+}
+
+.menuSubHeader{
+    grid-area: subHeader;
+    padding-right: 25px;
+    padding-left: 15px;
+
+}
+
+.menuItems {
+    grid-area: item;
+    display: flex;
+    flex-direction: column;
+
+}
+.menuFooter {
+    grid-area: footer;
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    padding-left: 24px;
+
+}
+.menuItems img {
+    margin-right: 15px;
+}
+.menuFooter  img {
+    margin-right: 10px;
+}
+
+.menu_grid-container a {
+    font: var(--navText);
+    color: var(--blueNeutral);
+    text-decoration: none;
+    text-align: start;
+}
+.menuItems a {
+    font: var(--navText);
+    color: var(--blueNeutral);
+    text-decoration: none;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+
+}
+
+.menuItems a:hover {
+    font: var(--navEmphasisText);
+    color: var(--blueNeutral-dark);
+    background-color: var(--beigeNeutral);
+    box-shadow:  8px 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 1.563rem 0 0 1.563rem;
+
+}
+.menu_grid-container a:hover {
+    font: var(--navEmphasisText);
+    color: var(--blueNeutral-dark);
+}
+
+
