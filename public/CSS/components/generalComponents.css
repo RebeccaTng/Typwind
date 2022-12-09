@@ -45,7 +45,7 @@
 }
 
 .button:hover:enabled {
-    box-shadow: 8px 8px 20px rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
+    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
 }
 
 .buttonPrimary:hover:enabled {
@@ -195,4 +195,15 @@ div.wave {
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
+}
+
+/* ROUND PROFILE PIC */
+img.roundProfilePic {
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 0.125 solid var(--secondary-light); /* 2px */
+    background-color: var(--beigeNeutral);
+    height: 6.25rem; /* 100px */
+    width: 6.25rem; /* 100px */
+    padding: 0.625rem; /* 10px */;
 }

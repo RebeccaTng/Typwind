@@ -3,50 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Login with Email</title>
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLogin.css">
+
+    <title>Login with email</title>
 </head>
 <body>
-<div>
-    <div>
-        <div>
-
-            
-            <?php $session=session();
-            $session->set('isLoggedIn',False);
-            ?>
-            <br>
-            <br>
-
-            <h2>Login</h2>
-            <br>
-            <h5>Please Log in with your email</h5>
-            <?php if(session()->getFlashdata('msg')):?>
-                <div>
-                    <?= session()->getFlashdata('msg') ?>
-                </div>
-            <?php endif;?>
-
-            <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
-                <div>
-                    <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" >
-                </div>
-<!--                <div class="form-group mb-3">
-                    <input type="password" name="password" placeholder="Password" >
-                </div>-->
-
-                <div>
-                    <button type="submit">LOGIN</button>
-                </div>
-            </form>
-
-            <br>
+    <div class="card">
+        <?php $session=session();
+        $session->set('isLoggedIn',False);
+        ?>
+        <h1>Login</h1>
+        <p>Please log in with your email</p>
+        <?php if(session()->getFlashdata('msg')):?>
             <div>
-                <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'">REGISTER</button>
+                <?= session()->getFlashdata('msg') ?>
             </div>
+        <?php endif;?>
 
-        </div>
+        <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
+            <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" >
+            <button type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
+        </form>
+        <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
     </div>
-</div>
 </body>
 </html>

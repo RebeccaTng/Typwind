@@ -50,5 +50,51 @@
     <!-- INPUT FIELD -->
     <input type="text" placeholder="Type Here">
 
+    <!-- SWITCH -->
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+    <!-- HANDS -->
+    <img src="/public/assets/general/hands_both.svg" alt="Both hands">
+
+    <!-- STUDENT -->
+    <ul>
+        <li class="studentListItem">
+            <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+            <h4>FirstName<br></br>Surname</h4>
+        </li>
+    </ul>
+
+    <!-- PROGRESS STEPS (STEPPER) -->
+    <ol class="stepper">
+        <li></li>
+        <li></li>
+        <li class="current"><p>Step</p></li>
+        <li class="todo"></li>
+    </ol>
+
+    <!-- EXERCISE FIELD -->
+    <h4 class="exerciseField">Exercise Name aaaaaaa hhhh hhhhhhhh hhhhh</h4>
+
+    <!-- LESSON CARD -->
+    <div class="card lessonCard">
+        <h2>Lesson 1</h2>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name aaaaanh hubhbj hbjvb</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name</h4>
+        <h4 class="exerciseField">Exercise Name2</h4>
+    </div>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
