@@ -31,3 +31,9 @@ div.card {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
+img.logo {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}

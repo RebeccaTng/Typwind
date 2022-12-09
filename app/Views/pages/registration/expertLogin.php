@@ -28,5 +28,6 @@
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
     </div>
+    <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
 </body>
 </html>
