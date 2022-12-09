@@ -1,4 +1,23 @@
-//Translation JS files to be adapted at the end
+//Translation data
+var mainData = {
+    "nederlands":
+        {
+            "home" : "Startpagina",
+            "students" : "Studenten",
+            "exercises" : "Oefeningen",
+            "profile" : "Mijn Profiel",
+            "download" : "Uitloggen"
+        },
+
+    "english":
+        {
+            "home" : "Home",
+            "students" : "Students",
+            "exercises" : "Exercises",
+            "profile" : "My Profile",
+            "download" : "Log Out"
+        }
+}
 
 const langEl = document.querySelector('.langWrap');
 const link = document.querySelectorAll('a');
@@ -79,25 +98,6 @@ $("document").ready(function() {
     document. getElementById('active').click();
 });
 
-var mainData = {
-    "nederlands":
-        {
-            "home" : "Startpagina",
-            "students" : "Studenten",
-            "exercises" : "Oefeningen",
-            "profile" : "Mijn Profiel",
-            "download" : "Uitloggen"
-        },
-
-"english":
-{
-    "home" : "Home",
-    "students" : "Students",
-    "exercises" : "Exercises",
-    "profile" : "My Profile",
-    "download" : "Log Out"
-}
-}
 
 
 
