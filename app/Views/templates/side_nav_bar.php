@@ -5,9 +5,9 @@
 
     </div>
     <div class=" menuSubHeader">
-        <a href="#" language='nederlands' class="active">NED</a>
+        <a type="submit" id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
         |
-        <a href="#" language='english'>ENG</a>
+        <a type="submit" id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
     <div class="menuItems" >
         <a href="<?=base_url()?>/experts/home"  class="home" >
