@@ -1,13 +1,18 @@
-
-<?= $this->extend('/templates/css_default') ?>
-
-<?= $this->section('content') ?>
-<!--START OF PAGE CONTENT-->
-<!--ADD HERE ALL THE PHP AND HTML THAT YOUR PAGE NEEDS-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/welcome.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
+    <title>Welcome page</title>
+</head>
+<body>
 
 <div class = "card_welcome_page">
 
-    <img src="/public/assets/general/Typwind_logo_editable.svg" alt="Typwind logo" style="width:221px;height:77px;">
+    <img src="/public/assets/general/typwind_logo.svg" alt="Typwind logo" style="width:221px;height:77px;">
     <h1 style="color:var(--blueNeutral);">Welcomes you!</h1>
     <h3 style="color:var(--primary-darkest);">Are you a student or a teacher?</h3>
 
@@ -18,7 +23,5 @@
 
 </div>
 
-
-
-<!--END OF PAGE CONTENT-->
-<?= $this->endSection() ?>
+</body>
+</html>
