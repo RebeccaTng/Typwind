@@ -60,12 +60,12 @@ class KidsController extends BaseController
         return view('pages/kids/feedback',$this->data);
     }
 
-    public function exerciseText()
-    {
-        $this->data['exercises']= cache()->get('exercises');
-        $idExercises= $_GET['idExercises'];
-        $this->data['idExercises']=$idExercises;
-        return view('pages/kids/exercise_view',$this->data);
-    }
+//    public function exerciseText()
+//    {
+//        $this->data['exercises']= cache()->get('exercises');
+//        $idExercises= $_GET['idExercises'];
+//        $this->data['idExercises']=$idExercises;
+//        return view('pages/kids/exercise_view',$this->data);
+//    }
 
 }

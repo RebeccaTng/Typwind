@@ -106,7 +106,7 @@ loadTextFromDB();
 //functions
 function loadTextFromDB(id = 2){
 
-       $. get('/student_model/getExercise/' + id, function(data) {console.log(data);});
+       get('/student_model/getExercise/' + id, function(data) {console.log(data);});
 }
 
 
