@@ -45,8 +45,8 @@ class RegistrationController extends \CodeIgniter\Controller
         }*/
 
         //Setting the initial language Cookie
-        setcookie("englishActive", 'not active', time()+3600000000000, "/");
-        setcookie("nederlandsActief", 'active', time()+3600000000000, "/");
+        setcookie("englishActive", 'not active', time()+3600, "/");
+        setcookie("nederlandsActief", 'active', time()+3600, "/");
 
         echo view('pages/registration/welcome', $data);
     }
