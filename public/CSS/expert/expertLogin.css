@@ -1,21 +1,33 @@
-div.loginCard {
+div.card {
     color: var(--blueNeutral);
 }
 
-div.loginCard h1 {
+div.card h1 {
     margin: 30px;
 }
 
-div.loginCard p {
+div.card p {
     font: var(--bodyText);
     margin: 10px;
 }
 
-div.loginCard input, .button {
+div.card input, .button {
     width: 300px;
-    margin: 12.5px 0;
+    margin: 25px 0;
 }
 
-div.loginCard input {
-    margin: 0 0 32.5px;
+div.card input {
+    margin: 0 0 20px;
+}
+
+div.card {
+    background-color: var(--beigeNeutral);
+    padding: 20px 100px 35px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }

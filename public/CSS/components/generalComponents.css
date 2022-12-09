@@ -45,7 +45,7 @@
 }
 
 .button:hover:enabled {
-    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
+    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
 }
 
 .buttonPrimary:hover:enabled {
@@ -112,7 +112,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 20px;
-    align-items: center;
 }
 
 /* SCROLLBAR */ /* TODO: needs to be component::webkit-scrollbar, component is the beige background */
