@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLogin.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
 
     <title>Login with email</title>
 </head>
