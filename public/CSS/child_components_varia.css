@@ -17,18 +17,17 @@
     gap: 0.25rem;
     /*border: 0.0625rem solid black;*/
 }
+
 .checked_stars {
-    color: var(--accent-light);
+    content: url(/public/assets/icons/fi-sr-star.svg);
 }
 .unchecked_stars {
-    color: var(--lightGray);
+    content: url(/public/assets/icons/fi-br-star.svg);
+}
 
-}
-.big{
-    font-size: 3.75rem;
-}
 .small{
-    font-size: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 /*Progress bar*/

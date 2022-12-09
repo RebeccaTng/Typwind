@@ -1,9 +1,14 @@
-
-<?= $this->extend('/templates/css_default') ?>
-
-<?= $this->section('content') ?>
-<!--START OF PAGE CONTENT-->
-<!--ADD HERE ALL THE PHP AND HTML THAT YOUR PAGE NEEDS-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/welcome.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
+    <title>Welcome page</title>
+</head>
+<body>
 
 <div class = "card_welcome_page">
 
@@ -18,7 +23,5 @@
 
 </div>
 
-
-
-<!--END OF PAGE CONTENT-->
-<?= $this->endSection() ?>
+</body>
+</html>

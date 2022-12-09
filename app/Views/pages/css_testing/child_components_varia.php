@@ -17,11 +17,11 @@
 
 <!-- Star icons -->
 <div class = "wrapper_for_stars">
-    <span class="fi-sr-star checked_stars big"></span>
-    <span class="fi-sr-star checked_stars big"></span>
-    <span class="fi-sr-star checked_stars big"></span>
-    <span class="fi-br-star unchecked_stars big"></span>
-    <span class="fi-br-star unchecked_stars big"></span>
+    <div class ="checked_stars"></div>
+    <div class ="checked_stars"></div>
+    <div class ="checked_stars"></div>
+    <div class ="unchecked_stars"></div>
+    <div class ="unchecked_stars"></div>
 </div>
 
 <!-- Progress bar -->
@@ -38,11 +38,11 @@
 <button class="exerciseButton ">Exercise Name
     <div class = "stars_on_exercise">
         <div class = "wrapper_for_stars">
-            <span class="fi-sr-star checked_stars small"></span>
-            <span class="fi-sr-star checked_stars small"></span>
-            <span class="fi-sr-star checked_stars small"></span>
-            <span class="fi-br-star unchecked_stars small"></span>
-            <span class="fi-br-star unchecked_stars small"></span>
+            <div class ="checked_stars small"></div>
+            <div class ="checked_stars small"></div>
+            <div class ="checked_stars small"></div>
+            <div class ="unchecked_stars small"></div>
+            <div class ="unchecked_stars small"></div>
         </div>
     </div>
 </button>
