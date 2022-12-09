@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/child_components_varia.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/assets/icons/uicons-bold-rounded/css/uicons-bold-rounded.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/assets/icons/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/welcome.css">
 
 </head>
 <body>

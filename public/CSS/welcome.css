@@ -1,0 +1,19 @@
+.card_welcome_page {
+    background-color: var(--beigeNeutral-light);
+    border-radius: 1.563rem; /* 25px */
+    box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
+    padding: 1.25rem; /* 20px */
+    margin: 0.625rem; /* 10px */
+    width: fit-content;
+
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+.teacher_student_buttons{
+    display: flex;
+    justify-content: center;
+    margin: 0px 75px;
+    text-align: center;
+    gap: 50px;
+}
