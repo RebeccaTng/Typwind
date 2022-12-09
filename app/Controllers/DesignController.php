@@ -12,8 +12,8 @@ class DesignController extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
 
-        setcookie("englishActive", 'not active', time()+3600000000000, "/");
-        setcookie("nederlandsActief", 'active', time()+3600000000000, "/");
+        setcookie("englishActive", 'not active', time()+3600, "/");
+        setcookie("nederlandsActief", 'active', time()+3600, "/");
         
         return view('/pages/css_testing/' . $page);
     }
