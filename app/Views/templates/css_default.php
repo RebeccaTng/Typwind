@@ -12,21 +12,17 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
+
     <title>Typewind Online</title>
 </head>
-<body>
+<body >
     <div class="grid-container">
         <div class="leftNavBar">
             <?= $this->include('templates/side_nav_bar') ?>
         </div>
-
         <div class="mainContent ">
             <?= $this->renderSection('content') ?>
         </div>
-
-
     </div>
-
-
 </body>
 </html>

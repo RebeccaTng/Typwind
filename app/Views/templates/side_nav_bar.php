@@ -1,21 +1,44 @@
 <nav id="sidebar">
-    <div class="sidebar-header">
-        <h3>Typwind</h3>
-        <div class="langWrap">
+    <div class="menu_grid-container">
+        <div class="menuHeader">
+            <img  src="<?=base_url()?>/public/assets/general/typwind_logo.svg" width="100%" height="70">
+
+        </div>
+
+        <div class=" menuSubHeader">
             <a href="#" language='nederlands' class="active">NED</a>
             |
             <a href="#" language='english'>ENG</a>
         </div>
+        <div class="menuItems" >
+            <a href="<?=base_url()?>/experts/home"  class="home" >
+                <img  src="<?=base_url()?>/public/assets/icons/Home%20_icon.svg" width="20px" height="20px">
+                Home
+            </a>
+
+            <a href="<?=base_url()?>/experts/studentsList"  class="students">
+                <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" width="20px" height="20px">
+                Students
+            </a>
+            <a href="<?=base_url()?>/experts/exercises"  class="exercises">
+                <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" width="20px" height="20px">
+                Exercises
+            </a>
+
+
+            <a href="<?=base_url()?>/experts/profile" >
+                <img  src="<?=base_url()?>/public/assets/icons/profile_icon.svg" width="20px" height="20px">
+                    My Profile
+            </a>
+        </div >
+        <div  class="menuFooter">
+            <a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">
+                <img  src="<?=base_url()?>/public/assets/icons/log_out_icon.svg" width="20px" height="20px">
+                Log out
+            </a>
+
+        </div>
+
     </div>
 
-    <ul class="list-unstyled">
-        <li><a href="<?=base_url()?>/experts/home" title="Go home" class="home" >Home</a></li>
-        <li><a href="<?=base_url()?>/experts/studentsList" title="Look at students" class="students">Students</a></li>
-        <li><a href="<?=base_url()?>/experts/exercises" title="Look at exercises" class="exercises">Exercises</a></li>
-        <li><a href="<?=base_url()?>/experts/profile" title="Look at profile" class="profile">My Profile</a></li>
-    </ul>
-
-    <ul class="list-unstyled CTAs">
-        <li><a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">Log out</a></li>
-    </ul>
 </nav>
