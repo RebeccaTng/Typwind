@@ -9,7 +9,6 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/navbar.css">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
     <!-- Bootstrap Js CDN -->
@@ -23,6 +22,7 @@
 
     <!--CSS FILES-->
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
 </head>
 <body>
