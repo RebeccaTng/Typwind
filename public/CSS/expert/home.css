@@ -1,0 +1,31 @@
+div.user h1 {
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+div.user p {
+    font: 700 4rem var(--andika-font); /* Weight=bold, Size=64pt, Family=Andika */
+    margin: -20px;
+    color: var(--blueNeutral);
+}
+
+div.user {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mainContent {
+    position: relative;
+    background-image: url(/public/assets/general/wave.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+}
+
+div.user img.roundProfilePic {
+    height: 7.5rem; /* 120px */
+    width: 7.5rem; /* 120px */
+}
