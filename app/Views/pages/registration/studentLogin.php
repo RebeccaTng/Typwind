@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/login_child.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
     <title>Welcome page</title>
 </head>
 <body>
