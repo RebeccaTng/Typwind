@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/login_child.css">
 
     <title>Typewind Online</title>
 </head>

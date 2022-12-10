@@ -3,45 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Login with Email</title>
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/login_child.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
+    <title>Welcome page</title>
 </head>
 <body>
-<div>
-    <div>
-        <div>
-
-
+<div class="card_welcome_page">
             <?php $session=session();
             $session->set('isLoggedIn',False);
             ?>
-            <br>
-            <br>
-
-            <h2>Login</h2>
-            <h4>and have fun typing!</h4>
-            <br>
-            <h6>Let's get logged in with your email</h6>
+    <div>
+            <h1 style="color: var(--blueNeutral)">Login</h1>
+            <h2 style="color: var(--blueNeutral)">and have fun typing!</h2>
+    </div>
+            <p style="color: var(--blueNeutral); font: var(--bodyExText);">Let's get loggin in with your email</p>
             <?php if(session()->getFlashdata('msg')):?>
-                <div>
+                <div class="alert alert-warning">
                     <?= session()->getFlashdata('msg') ?>
                 </div>
             <?php endif;?>
 
             <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
-                <div>
-                    <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>" >
-                </div>
-                <!--                <div>
-                                    <input type="password" name="password" placeholder="Password" class="form-control" >
-                                </div>-->
-                <div>
-                    <button type="submit">CONTINUE WITH MY EMAIL</button>
-                </div>
-            </form>
 
-        </div>
-    </div>
+                <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>">
+
+                <button type="submit" class="button buttonPrimary buttonChild changeWidth" style="font: var(--buttonLabel);">continue with my email</button>
+            </form>
 </div>
 </body>
 </html>
+
