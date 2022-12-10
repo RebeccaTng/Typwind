@@ -17,7 +17,6 @@ class DesignController extends BaseController
         setcookie("englishActive", 'not active', time()+3600, "/");
         setcookie("nederlandsActief", 'active', time()+3600, "/");
         $data = [
-
             'cssFiles' =>  $this->getCSSFile($page)
         ];
 
