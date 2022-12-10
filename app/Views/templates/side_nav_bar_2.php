@@ -4,9 +4,9 @@
     <div class="sidebar-header">
         <h3>Typwind</h3>
         <div class="langWrap">
-            <a type="submit" id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
             |
-            <a type="submit" id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
+            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
         </div>
     </div>
 
