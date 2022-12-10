@@ -21,11 +21,13 @@ div.user {
 
 .mainContent {
     position: relative;
+    overflow: hidden;
+
+    /* WAVE COMPONENT CODE */
     background-image: url(/public/assets/general/wave.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
-    overflow: hidden;
 }
 
 div.user img.roundProfilePic {
