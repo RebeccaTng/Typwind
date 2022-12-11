@@ -55,35 +55,35 @@
     </section>
 </div>
 
-<!--
-<?php /*if (! empty($exercises) && is_array($exercises)):
-    $lesson = 0;
-    */?>
 
-    <?php /*foreach ($exercises as $exercise_item): */?>
+<?php if (! empty($exercises) && is_array($exercises)):
+    $lesson = 0;
+    ?>
+
+    <?php foreach ($exercises as $exercise_item): ?>
 
     <ul>
 
         <?php
-/*        if ($exercise_item['lesson'] != $lesson) {
+        if ($exercise_item['lesson'] != $lesson) {
             echo '<br>';
             echo '<br>';
             echo '<h3>Lesson'.$exercise_item['lesson'].'</h3>';
         }
         $lesson = $exercise_item['lesson'];
-        */?>
+        ?>
 
-        <li><?/*= esc($exercise_item['name']) */?></li>
+        <li><?= esc($exercise_item['name']) ?></li>
     </ul>
-<?php /*endforeach */?>
+<?php endforeach ?>
 
-<?php /*else: */?>
+<?php else: ?>
 
     <h3>No Exercises</h3>
 
     <p>Unable to find any exercises for you.</p>
 
---><?php /*endif */?>
+<?php endif ?>
 
 <br>
 <br>

@@ -8,11 +8,18 @@
 <div class="dropdown" style="float:right;">
     <button class="dropbtn" ><img class="arw_img" alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"> Select Lesson</button>
     <div class="dropdown-content">
-        <a href="#section1">Lesson 1</a>
-        <a href="#section2">Lesson 2</a>
-        <a href="#section3">Lesson 3</a>
-        <a href="#section4">Lesson 4</a>
-        <a href="#section5">Lesson 5</a>
+        <?php if (! empty($exercises) && is_array($exercises)):
+        $lesson = 0;
+        ?>
+
+        <?php foreach ($exercises as $exercise_item):
+        if ($exercise_item->lesson != $lesson) {
+        echo "<a href=#Lesson " .$exercise_item->lesson. ">". "Lesson ".$exercise_item->lesson. "</a>";
+        }
+        $lesson = $exercise_item->lesson;?>
+
+        <?php endforeach ?>
+
     </div>
 </div>
 
@@ -60,36 +67,40 @@
     </section>
 </div>
 
-<!--<section>
-    <?php /*if (! empty($exercises) && is_array($exercises)):
-        $lesson = 0;
-        */?>
+<section>
 
-        <?php /*foreach ($exercises as $exercise_item): */?>
+    <?php if (! empty($exercises) && is_array($exercises)):
+        $lesson = 0;
+        ?>
+
+        <?php foreach ($exercises as $exercise_item): ?>
 
         <ul>
 
             <?php
-/*            if ($exercise_item['lesson'] != $lesson) {
+            if ($exercise_item->lesson != $lesson) {
                 echo '<br>';
                 echo '<br>';
-                echo '<h3>Lesson'.$exercise_item['lesson'].'</h3>';
+                echo '<h3>Lesson'.$exercise_item->lesson.'</h3>';
+                echo "<a href= Lesson " .$exercise_item->lesson. ">". "Lesson ".$exercise_item->lesson. "</a>";
+                echo '<br>';
+
             }
-            $lesson = $exercise_item['lesson'];
-            */?>
+            $lesson = $exercise_item->lesson;
+            ?>
 
-            <li><?/*= esc($exercise_item['name']) */?></li>
+            <?= esc($exercise_item->name) ?>
         </ul>
-    <?php /*endforeach */?>
+    <?php endforeach ?>
 
-    <?php /*else: */?>
+    <?php else: ?>
 
         <h3>No Exercises</h3>
 
         <p>Unable to find any exercises for you.</p>
 
-    <?php /*endif */?>
-</section>-->
+    <?php endif ?>
+</section>
 
 <br>
 <br>
