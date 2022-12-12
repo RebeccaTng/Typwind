@@ -18,19 +18,19 @@
             <?php endif;?>
             <form action="<?php echo base_url(); ?>/RegistrationController/store" method="post">
                 <div>
-                    <input type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" >
+                    <input type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" required>
                 </div>
                 <div>
-                    <input type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" >
+                    <input type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" required>
                 </div>
                 <div>
-                    <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" >
+                    <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required>
 <!--                </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password" >
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div>
-                    <input type="password" name="confirmpassword" placeholder="Confirm Password" >
+                    <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
                 </div>-->
                     <br>
 

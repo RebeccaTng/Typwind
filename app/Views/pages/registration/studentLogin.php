@@ -30,7 +30,7 @@
 
             <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
                 <div>
-                    <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>" >
+                    <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>" required>
                 </div>
                 <!--                <div>
                                     <input type="password" name="password" placeholder="Password" class="form-control" >
