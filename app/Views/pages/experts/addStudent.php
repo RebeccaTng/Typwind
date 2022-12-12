@@ -22,7 +22,7 @@
     </select><br><br>
 
     <label for="birthday">birthday:</label>
-    <input type="text" id="birthday" name="birthday"><br><br>
+    <input type="date" id="birthday" name="birthday"><br><br>
 
     <label for="teachers">Teacher:</label>
     <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>">

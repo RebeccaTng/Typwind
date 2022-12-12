@@ -27,8 +27,7 @@
             <?php endif;?>
             </select><br><br>
             <label for="birthday">Birthday:</label>
-            <input type="text" id="birthday" name="birthday" value=<?=$person->birthday?>><br><br>
-
+            <input type="date" id="birthday" name="birthday" value=<?=$person->birthday?>><br><br>
             <label for="teachers">Teacher:</label>
             <select name="teachers" id="teachers" value="<?=$person->teacherFirstname?>">
                 <?php foreach ($teachers as $teacher):?>
