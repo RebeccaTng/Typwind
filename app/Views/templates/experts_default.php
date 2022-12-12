@@ -8,7 +8,7 @@
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
-    
+
     <!-- Translation file -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
 

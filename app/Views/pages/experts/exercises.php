@@ -15,7 +15,7 @@ $lesson = 0;
 
         <?php foreach ($exercises as $exercise_item):
         if ($exercise_item->lesson != $lesson) {
-        echo "<a href=#Lesson " .$exercise_item->lesson. ">". "Lesson ".$exercise_item->lesson. "</a>";
+        echo "<a href=#Lesson" .$exercise_item->lesson. ">". "Lesson ".$exercise_item->lesson. "</a>";
         }
         $lesson = $exercise_item->lesson;?>
 
@@ -33,6 +33,7 @@ $lesson = 0;
 <br><br><br><br>
 
 <section>
+    
     <?php if (! empty($exercises) && is_array($exercises)):
         $lesson = 0;
         ?>
@@ -44,19 +45,19 @@ $lesson = 0;
 
             <?php
             if ($exercise_item->lesson != $lesson) {
-                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';                echo '<br>';
-                echo '<br>';
-
-                echo "<section id=#Lesson " .$exercise_item->lesson. ">".
+                echo '<section id=Lesson'.$exercise_item->lesson. '>'.
                       "<h2>". "Lesson ".$exercise_item->lesson. "</h2>".
                     "</section>";
-                echo '<br>';
+
             }
             $lesson = $exercise_item->lesson;
+
             ?>
 
-            <?= esc($exercise_item->name) ?>
+            <?= esc($exercise_item->name); ?>
+
         </ul>
+
     <?php endforeach ?>
 
     <?php else: ?>
