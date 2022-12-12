@@ -9,9 +9,9 @@
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
 
     <!--CSS FILES-->
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/menubar.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
 
     <title>Typewind Online</title>
 </head>

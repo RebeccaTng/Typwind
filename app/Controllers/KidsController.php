@@ -22,20 +22,22 @@ class KidsController extends BaseController
     public function home()
     {
         $exercises=$this->students_model->getExercises();
-        cache()->save('exercises', $exercises);
+        session()->set('exercises', $exercises);
         return view('pages/kids/home');
     }
 
     public function intro()
     {
-        $this->data['exercises']= cache()->get('exercises');
+
+        $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']= $_GET['idExercises'];
         return view('pages/kids/intro',$this->data);
     }
 
     public function feedback()
     {
-        $this->data['exercises']= cache()->get('exercises');
+
+        $this->data['exercises']= session()->get('exercises');
         $idExercises= $_GET['idExercises'];
         $this->data['idExercises']=$idExercises;
         return view('pages/kids/feedback',$this->data);
