@@ -1,9 +1,6 @@
 <?= $this->extend('/templates/experts_default') ?>
 
 <?= $this->section('content') ?>
-<br>
-<br>
-<br>
 
 <?php if (! empty($exercises) && is_array($exercises)):
 $lesson = 0;
@@ -33,7 +30,7 @@ $lesson = 0;
 <br><br><br><br>
 
 <section>
-    
+
     <?php if (! empty($exercises) && is_array($exercises)):
         $lesson = 0;
         ?>
@@ -69,11 +66,5 @@ $lesson = 0;
     <?php endif ?>
 
 </section>
-
-<br>
-<br>
-<br>
-<br>
-
 
 <?= $this->endSection() ?>
