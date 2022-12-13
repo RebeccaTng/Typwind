@@ -12,7 +12,6 @@ class Students_model extends Model {
     protected $table = 'students';
 
 
-
     public function add_student($data)
     {
         $query = $this->db->table('students')->insert($data);
@@ -44,11 +43,16 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
         return $query;
     }
 
-    public function getStudentExercises()
+    public function getStudentExercises($idStudent)
     {
-        $session=session();
-        $query_text = 'SELECT * FROM student_exercise_fk WHERE idStudent_fk='.$session->id;
-        $query = $this->db->query($query_text);
+        $query_text = 'SELECT * FROM exercises INNER JOIN student_exercise_fk ON exercises.idExercises = student_exercise_fk.idExercise_fk WHERE student_exercise_fk.idStudent_fk=?';
+        $query = $this->db->query($query_text,$idStudent);
+        return $query->getResult();
+    }
+
+    public function getSpecificExercises($idStudent) {
+        $query_text = 'SELECT * FROM student_exercise_fk WHERE idStudent_fk= ?';
+        $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
 

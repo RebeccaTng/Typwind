@@ -48,10 +48,16 @@ class KidsController extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
         $model = model(Students_model::class);
+        $all=$model->getExercises();
+        $specific=$model->getSpecificExercises(session()->id);
+        $joined_exercises_scores=$model->getStudentExercises(session()->id);
+
         $data = [
             'title' => ucfirst($page),// Capitalize the first letter
-            'exercises' => $model->getExercises()
+            'exercises' => $all
         ];
+
+
 
         return view('pages/kids/' . $page, $data);
     }

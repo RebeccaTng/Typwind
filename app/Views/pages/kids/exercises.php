@@ -6,14 +6,11 @@
     $lesson = 0;
     ?>
 
-
-
     <?php foreach ($exercises as $exercise_item): ?>
 
     <ul>
 
         <?php
-
         if ($exercise_item->lesson != $lesson) {
             $exercise_above_index=$exercise_item->lesson-1;
             $exercise_under_index=$exercise_item->lesson+1;
@@ -21,16 +18,17 @@
             if($exercise_above_index>0) {
                 echo '<p><a href="#lesson' . $exercise_under_index . '"><img alt="Arrow Down Icon" src="' . base_url() . '/public/assets/icons/down.png"></a></p>';
             }
+
+            if($exercise_above_index>0){
+                echo '<section id="lesson' . $exercise_item->lesson . '">' .
+                    '<p><a href="#lesson' . $exercise_above_index . '">' .
+                    '<img alt="Arrow Up Icon" src="' . base_url() . '/public/assets/icons/up.png"></a></p>
+                    </section>';
+            }
+
             echo '<section id=Lesson'.$exercise_item->lesson. '>'.
                 "<h2>". "Lesson ".$exercise_item->lesson. "</h2>".
                 "</section>";
-
-     echo '<section id="lesson'.$exercise_item->lesson. '">'.
-    '<p><a href="#lesson'.$exercise_above_index. '">'.
-            '<img alt="Arrow Up Icon" src="'.base_url().'/public/assets/icons/up.png"></a></p>
-</section>'
-    ;
-
         }
         $lesson = $exercise_item->lesson;
         ?>
@@ -39,10 +37,7 @@
         ?>
     </ul>
 
-
 <?php endforeach ?>
-
-
 <?php else: ?>
 
     <h3>No Exercises</h3>
