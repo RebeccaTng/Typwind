@@ -34,6 +34,11 @@
         ?>
 
         <?= esc($exercise_item->name);
+        echo '<br>';
+
+         if (isset($exercise_item->score)) {
+            echo ' Score:' . $exercise_item->score;
+        }
         ?>
     </ul>
 
@@ -41,7 +46,6 @@
 <?php else: ?>
 
     <h3>No Exercises</h3>
-
     <p>Unable to find any exercises for you.</p>
 
 <?php endif ?>

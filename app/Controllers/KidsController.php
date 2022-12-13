@@ -48,13 +48,15 @@ class KidsController extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
         $model = model(Students_model::class);
+
+        //Testing queries to visualise the Arrow Navigation in Student exercise page, please leave these in!
         $all=$model->getExercises();
         $specific=$model->getSpecificExercises(session()->id);
         $joined_exercises_scores=$model->getStudentExercises(session()->id);
 
         $data = [
             'title' => ucfirst($page),// Capitalize the first letter
-            'exercises' => $all
+            'exercises' => $joined_exercises_scores
         ];
 
 
