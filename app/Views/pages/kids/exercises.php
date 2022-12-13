@@ -6,6 +6,8 @@
     $lesson = 0;
     ?>
 
+
+
     <?php foreach ($exercises as $exercise_item): ?>
 
     <ul>
@@ -19,12 +21,6 @@
                 "<h2>". "Lesson ".$exercise_item->lesson. "</h2>".
                 "</section>";
 
-            echo '<section id="lesson'.$exercise_item->lesson. '">'.
-                '<p><a href="#lesson'.$exercise_item->lesson. '">'.
-                '<img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/up.png"></a></p>
-                <h2>Lesson '.$exercise_item->lesson. '</h2>
-                </section>'
-            ;
         }
         $lesson = $exercise_item->lesson;
 
@@ -34,7 +30,10 @@
         echo '<p><a href="#lesson'.$exercise_item->lesson. '"><img alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"></a></p>'
         ?>
     </ul>
+
+
 <?php endforeach ?>
+
 
 <?php else: ?>
 
