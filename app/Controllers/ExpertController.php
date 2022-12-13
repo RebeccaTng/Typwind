@@ -37,7 +37,7 @@ class ExpertController extends BaseController
 
     public function exercises()
     {
-        $data['exercises']=$this->students_model->getExercises();
+        $data['exercises']=$this->teachers_model->getExercises();
         //cache()->save('exercises', $exercises);
         return view('pages/experts/exercises',$data);
     }
