@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLogin.css">
+    <!-- Google Login Authentication Js -->
+    <script type="module" src="<?=base_url()?>/public/js/googleLoginAuth.js" defer></script>
 
     <title>Login with email</title>
 </head>
@@ -27,6 +29,11 @@
             <button type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
+        ----------------------- OR -----------------------
+        <p>Log in With Google</p>
+        <button class="social-signin google" id="login">Log in with Google+</button>
+
     </div>
+
 </body>
 </html>
