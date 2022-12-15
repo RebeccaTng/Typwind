@@ -35,8 +35,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
                 // The signed-in user info.
                 const user = result.user;
 
-                alert(user.displayName);
-                // ...
+                document.getElementById('googleJSOutput').value = user.displayName;
+
             }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -48,5 +48,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
             // ...
             alert(errorMessage);
         });
+
     });
 

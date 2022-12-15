@@ -51,8 +51,6 @@ class RegistrationController extends \CodeIgniter\Controller
         echo view('pages/registration/welcome', $data);
     }
 
-
-
     public function loginExpert()
     {
         $session = session();
