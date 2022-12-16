@@ -25,13 +25,13 @@
                 </div>
                 <div>
                     <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" >
-<!--                </div>
+                </div>
                 <div>
                     <input type="password" name="password" placeholder="Password" >
                 </div>
                 <div>
                     <input type="password" name="confirmpassword" placeholder="Confirm Password" >
-                </div>-->
+                </div>
                     <br>
 
                     <div>
