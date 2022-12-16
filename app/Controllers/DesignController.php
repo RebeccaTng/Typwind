@@ -17,5 +17,7 @@ class DesignController extends BaseController
         
         return view('/pages/css_testing/' . $page);
     }
+
+
 }
 // THIS IS A TUTORIAL
