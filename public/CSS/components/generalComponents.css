@@ -110,15 +110,14 @@ ul.breadcrumb li a:hover {
 body {
     background: linear-gradient(107.95deg, var(--primary-dark) 2.42%, var(--primaryColor) 22.97%, var(--primaryColor) 45.27%, var(--secondaryColor) 64.72%, var(--secondaryColor) 82.77%, var(--accentColor) 101.29%) no-repeat fixed;
     margin: 0;
-
-
+    overflow: hidden;
     /*padding-right: 20px;*/
 }
 
-/* SCROLLBAR */ /* TODO: needs to be component::webkit-scrollbar, component is the beige background */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 0.625rem; /* 10px */
-    background-color: var(--secondaryColor); /* TODO needs to be set to matching color as background */
+    background-color: var(--secondaryColor);
 }
 
 ::-webkit-scrollbar-track {
@@ -201,7 +200,7 @@ div.wave {
 img.roundProfilePic {
     box-sizing: border-box;
     border-radius: 50%;
-    border: 0.125 solid var(--secondary-light); /* 2px */
+    border: 0.125rem solid var(--secondary-light); /* 2px */
     background-color: var(--beigeNeutral);
     height: 6.25rem; /* 100px */
     width: 6.25rem; /* 100px */

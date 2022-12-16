@@ -2,19 +2,16 @@
 
 <?= $this->section('content') ?>
 
-<h3>
-    <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle">
-</h3>
-<section>
-    <h2>Welcome Back,</h2> <br>
-    <h3>
-        <?php
-        $session = session();
-        echo $session->firstname; echo " "; echo $session->lastname . "<br>"
-        ?>
+    <div class="user">
+        <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+        <h1>Welcome Back,</h1>
+        <p>
+            <?php
+            $session = session();
+            echo $session->firstname; echo " "; echo $session->lastname . "<br>"
+            ?>
 
-    </h3>
-
-</section>
+        </p>
+    </div>
 
 <?= $this->endSection() ?>
