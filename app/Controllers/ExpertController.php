@@ -8,7 +8,10 @@ use App\Models\Teachers_model;
 class ExpertController extends BaseController
 {
 
+    /// CSS FILES *********************
+    private  array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
 
+    /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
@@ -17,13 +20,54 @@ class ExpertController extends BaseController
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
     }
-
-    public function home()
+    public function view($page = 'home')
     {
-        $data['title'] = "Home";
+        if (! is_file(APPPATH . 'Views/pages/experts/' . $page . '.php')) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
+
+
+        $data = [
+            'cssFiles' =>  $this->getCSSFile($page)
+        ];
+
+        return view('/pages/experts/' . $page,$data);
+    }
+
+
+    private function getDataForPage($pageName): array
+    {
+
+        switch ($pageName) {
+            case 'home':
+                return $this->home();
+//            case 'tests_rebecca':
+//                return$this->includeCSSFilesInCommonFiles( $this->tests_rebecca);
+            default:
+                return $this->commonCssFiles;
+        }
+    }
+    private function getCSSFile($pageName): array
+    {
+
+        switch ($pageName) {
+//            case 'example':
+//                return $this->includeCSSFilesInCommonFiles( $this->example);
+//            case 'tests_rebecca':
+//                return$this->includeCSSFilesInCommonFiles( $this->tests_rebecca);
+            default:
+                return $this->commonCssFiles;
+        }
+    }
+    private function includeCSSFilesInCommonFiles($arrayOfCSSFiles): array{
+        return array_merge($this->commonCssFiles, $arrayOfCSSFiles);
+    }
+
+    public function home():array
+    {
         $this->data['teachers'] = $this->teachers_model->get_all_teachers();
         session()->set('teachers', $this->data['teachers']);
-        return view('pages/experts/home', $data);
+        return array();
     }
 
     public function studentsList()

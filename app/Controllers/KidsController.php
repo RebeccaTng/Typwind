@@ -10,12 +10,12 @@ class KidsController extends BaseController
 {
     private $data;
     private Students_model $students_model;
-    private Teachers_model $teachers_model;
+//    private Teachers_model $teachers_model;
 
 
     public function __construct() {
         $this->students_model = new Students_model();
-        $this->teachers_model = new Teachers_model();
+//        $this->teachers_model = new Teachers_model();
     }
 
 
