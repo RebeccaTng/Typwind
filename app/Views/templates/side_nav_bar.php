@@ -9,19 +9,19 @@
         <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
     <div class="menuItems" >
-        <img  src="<?=base_url()?>/public/assets/icons/Home_icon.svg" >
+<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Home_icon.svg" >-->
         <a href="<?=base_url()?>/experts/home"  class="home" >
             Home
         </a>
-        <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" >
+<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Students_Icon.svg" >-->
         <a href="<?=base_url()?>/experts/studentsList"  class="students">
             Students
         </a>
-        <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" >
+<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Students_Icon.svg" >-->
         <a href="<?=base_url()?>/experts/exercises"  class="exercises">
             Exercises
         </a>
-        <img  src="<?=base_url()?>/public/assets/icons/profile_icon.svg" >
+<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/profile_icon.svg" >-->
         <a href="<?=base_url()?>/experts/profile" class="profile">
             My Profile
         </a>
