@@ -9,33 +9,17 @@
 
 }
 
-
 .card_welcome_page {
     background-color: var(--beigeNeutral);
     border-radius: 1.563rem; /* 25px */
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
+
     grid-column: 2  / span 1;
     grid-row: 2/span 1;
     justify-self: stretch;
     text-align: center;
     padding: 50px;
-    /*grid-area: 2 / 2 / 2 / 2; !*start row, column, end row, column*!*/
-/*
-    width: fit-content;
-
-    text-align: center;
-    padding: 50px;
-
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
- */
 }
-
 
 .teacher_student_buttons{
     display: flex;
