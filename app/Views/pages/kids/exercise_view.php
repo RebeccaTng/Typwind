@@ -2,14 +2,13 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
-
-<div onload="displayNextSentenceFunction()">
+<link rel="stylesheet" href="<?=base_url()?>/public/CSS/keyboard.css">
+<div>
     <div class="container">
         <h1>Title</h1>
         <button id="stopButton">STOP & EXIT</button>
     </div>
     <div class="exercise">
-        <div id="exerciseBoxText"></div>
         <div class="textBox" id="textBox">
             <div class="textContainer " id="movableExerciseBoxText"></div>
         </div>
@@ -84,6 +83,6 @@
         <div class="key" id="ControlRight">Ctrl</div>
         <div class="key">Fn</div>
     </div>
-    <script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js"></script>
 </div>
+<script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js"></script>
 <?= $this->endSection() ?>

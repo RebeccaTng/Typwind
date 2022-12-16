@@ -1,36 +1,16 @@
-//test
+/***VARIABLES***/
 
-let textInput = "Internationale connecties" +
-    "De volledige opleiding tot Master in de Industriële Wetenschappen kan vanaf het eerste bachelorjaar naast in het Nederlands ook in het Engels gevolgd worden. Daarbij kunnen studenten die zich in het Nederlandstalige programma inschrijven naar keuze ook vakken in het Engels volgen. De Campus Groep T telde in het academiejaar 2019-2020 meer dan 150 eerstejaarsstudenten in de Engelstalige richting. Deze komen uit China, de landen van Zuidoost-Azië (Laos, Vietnam, Cambodja), India, het Midden-Oosten, Afrika, maar ook uit verschillende Europese landen, in het bijzonder landen uit het voormalige oostblok en landen van de voormalige Sovietunie. Docenten van IIW geven regelmatig gastcursussen aan verschillende universiteiten in het verre oosten, waarmee de faculteit samenwerkingsverbanden heeft, zoals de Beijing Jiaotong Universiteit en de Technische Universiteit Zhejiang." +
-     +
-    "Formula Student Competitions" +
-    "Formula Electric Belgium (FEB) is een team van een 25-tal ingenieurs studenten dat ieder jaar meedoet aan de grootste engineering competities ter wereld. In deze competitie moet er een Formula Student wagen gebouwd worden. Het FEB team neemt deel aan de EV categorie. Deze wagen wordt ontworpen en gebouwd in negen maanden, waarna de competities gedurende de zomervakanties georganiseerd worden over heel Europa; van de Hockenheimring in Duitsland tot de Hungaroring in Hongarije. In 2021-2022 behaalde het team een 2de plaats op Efficiency, een 5de plaats op endurance met de nieuwste elektrische racewagen, Titan." +
-    +
-    "Solar Challenge" +
-    "Met het Solar Team neemt een team van studenten om de twee jaar deel aan de World Solar Challenge, het officieuze wereldkampioenschap voor zonnewagens." +
-     +
-    "De geschiedenis van deze wedstrijden kan teruggevonden worden op de pagina van het Solar Team." +
-     +
-    "In 2018 behaalde het team de eerste plaats in de Carrera Solar Atacama met de Punch Two." +
-    +
-    "In 2019 ontwikkelde het team de achtste Belgische zonnewagen, genaamd BluePoint. In datzelfde jaar werd het Belgische team met de nieuwe wagen voor het eerst in de geschiedenis wereldkampioen op de Bridgestone World Solar Challenge in Australië. De Belgen konden op het laatste traject het Vattenfal Solar Team (TU Delft), voormalig wereldkampioen en tevens hun enige voorligger, inhalen. Die laatsten moesten noodgedwongen stoppen nadat hun wagen uitbrandde.[1]";
-    //"push Failure. wake up with determination push Failure. wake up with determination";
-    //"abcdefghijklmnopqrstuvwxyz,;:";
-//" Go to bed with satisfaction. It's going to be hard, but hard does not mean impossible. Learning never exhausts the mind. The only way to do great work is to love what you do.";
-    let textArray = textInput.split(". ");
-textArray.forEach(addDotFucntion);
-let textArrayChar =textArray[0].split('');
-
+let textInput = "test tEsT tést têst tëst";
 let textChar = textInput.split(""); //Every char is a separeted element in an array
-
-
-//variables
+let currentKey = null;
+let previousKey = null; //hardcoded, this is bad
+let wrongAnswered = false;
+let distance = 250;
 let indexSentence = 0;
 let correctCharactersTyped = 0;
 let correctCharactersNeeded = 0;
 let correctAnswers = 0;
 let mistakes = 0;
-const startDate = Date();
 let imageMap = new Map([
     [",","/public/assets/pictures/,.jpg"],
     ["=","/public/assets/pictures/=.jpg"],
@@ -62,48 +42,40 @@ let imageMap = new Map([
     ["y","/public/assets/pictures/Yogamat.jpg"],
     ["z","/public/assets/pictures/Zigzaggende.jpg"]]);
 
-let currentKey = null;
-let previousKey = null; //hardcoded, this is bad
-let wrongAnswered = false;
-let distance = 250;
 
 //select elements that will be used
 let movableExerciseBoxText = document.getElementById("movableExerciseBoxText");
-let exerciseBoxText = document.getElementById("exerciseBoxText");
 let stopButton = document.getElementById("stopButton");
 let currentInputFeedBack = document.getElementById("currentInputFeedBack");
 let container = document.getElementById("effect");
 let textBox = document.getElementById("textBox");
 let imageContainer = document.getElementById("imageContainer");
 
-//events
+
+/***EVENTS***/
+
 stopButton.onclick = function (){stopButtonFunction()};
-//exerciseBoxInput.oninput = function (){processInputFunction()};
 window.addEventListener('keydown', (event) =>{
     previousKey = currentKey;
     currentKey = event;
     processInputFunction()
-    //highlightKey();
-
 });
-
-//do at start
-console.log(textInput+"\n"+textChar);
-exerciseBoxText.textContent = textInput;
-correctCharactersTyped = 0;
-correctCharactersNeeded =  textChar.length;
-createSpanSentence();
-highlightCurrentLetter();
-keyboardColorsFunction(0);
+window.onload = atStart;   //runs the function when the page is loaded
 
 
+/***FUNCTIONS***/
 
+/*What needs to happen when the page is loaded*/
+function atStart(){
+    console.log(textInput+"\n"+textChar);
+    correctCharactersTyped = 0;
+    correctCharactersNeeded =  textChar.length;
+    createSpanSentence();
+    highlightCurrentLetter();
+    keyboardColorsFunction(0);
+}
 
-//exerciseBoxInput.style.visibility = "hidden";
-//exerciseBoxInput.focus();
-//***On Load***//
-
-//functions
+/*Create a span element of every character*/
 function createSpanSentence(){
     for(i=0;textChar.length>i;i++) {
         var s = document.createElement("SPAN");//.attributes("class","letter");
@@ -115,19 +87,14 @@ function createSpanSentence(){
     moveSentence();
 }
 
+/*Moves the sentence after being called*/
 function moveSentence(){
-    // var span = movableExerciseBoxText.getElementsByTagName("span");
-
     var valueClass = textBox.getAttribute("class");
     var value = (((document.querySelector("."+valueClass.toString())).clientWidth/4)-(correctCharactersTyped*50));
     movableExerciseBoxText.style.transform="translateX("+value+"px)";
-    /*for (let i = 0; i < span.length; i++) {
-        span[i].style.transform="translateX("+value+"px)";
-        // span[i].style.display = "inline-block";
-    }*/
 }
 
-
+/*Highlight stroked key. Currently not used but still leave it here*/
 /*function highlightKey(bool){
     if(previousKey!=null){
         document.getElementById(previousKey.code).style.backgroundColor = "";
@@ -136,14 +103,11 @@ function moveSentence(){
         document.getElementById(currentKey.code).style.backgroundColor = "rgb(0, 255, 0)";
     }else{  //in case wrong input
         document.getElementById(currentKey.code).style.backgroundColor = "rgb(255, 0, 0)";
-
     }
-
 }*/
 
-
-
-function highlightKey(bool){
+/*Highlight the key that's being stroked. Undo highlight the previous one*/
+function highlightKey(){
     if (currentKey!== null && document.getElementById(currentKey.code) !== null) {
         document.getElementById(currentKey.code).setAttribute("Class", (document.getElementById(currentKey.code).getAttribute("class") + " thickBorder"));
     }
@@ -154,73 +118,51 @@ function highlightKey(bool){
     document.getElementById("movableExerciseBoxText").style.left = (distance+"px");
 }
 
+/*Processes the input generated by the keyboard*/
 function processInputFunction() {
     let currInput = currentKey.key;
-    console.log(currentKey);
     currentInputFeedBack.textContent=currentKey.code;
-    if (currInput == null || currInput === "Shift") {
-        highlightKey(false);
+    //Input checker
+    //If shift or bracketleft is pressed, it isn't processed as wrong
+    if (currInput == null || currInput === "Shift" || currentKey.code === "BracketLeft") {
+        highlightKey();
         // correct character
+    //If input is according to needed inut
     } else if (currInput === textInput[correctCharactersTyped]) {
         correctCharactersTyped++;
-        highlightKey(true);
+        highlightKey();
+    //If input is correct but previous was wrong
         if(wrongAnswered){
             highlightLetterWrong();
             wrongAnswered = false;
+    //If input is correct but previous was also correct
         }else{
             highlightLetterRight();
         }
-
+    //Checks if we're at the end of the exercise
         if(correctCharactersTyped===correctCharactersNeeded){
             exerciseFinishedFunction();
         }
-
+   //Given input is wrong
     } else {
-        highlightKey(false);
+        highlightKey();
         wrongAnswered = true;
-
     }
     highlightCurrentLetter();
-    //console.log("trigger "+textInput[(correctCharactersTyped)]);
 }
 
-
-/*function displayNextSentenceFunction() {
-    if (textArray.length==indexSentence){
-        exerciseFinishedFunction();
-        return;
-    }
-    console.log(textArray);
-    exerciseBoxText.textContent = textArray[indexSentence];
-    const str = exerciseBoxText.textContent;
-    //exerciseBoxText.textContent = str.charAt(0).b + str.slice(1);
-
-    correctCharactersTyped = 0;
-    correctCharactersNeeded = textArray[indexSentence].length;
-    textArrayChar = textArray[indexSentence].split('');
-    highlightCurrentLetter();
-    indexSentence++;
-
-}*/
-
+/*Function for when the exercise is finished*/
 function exerciseFinishedFunction(){
-    exerciseBoxText.textContent = "The exercise is finished!";
+    window.location = window.location.origin + "/kids/feedback";
     stopButton.disabled = true;
 }
 
+/*Function for when the exit button is pressed*/
 function stopButtonFunction(){
-    // indexSentence++
-    // textArrayChar = textArray[indexSentence].split('');
-    //displayNextSentenceFunction();
-    keyboardColorsFunction(1);
-
+    window.location = window.location.origin + "/kids/home";
 }
 
-function addDotFucntion(item, index, arr){
-    if (arr.slice(-1)!=arr[index]){
-        arr[index] = item +".";
-    }
-}
+/*Function for setting the correct image. If keystroke has no image nothing happens*/
 function setImage(key){
     if(key!==undefined){key = key.toLowerCase();}
     var curr = imageContainer.getElementsByTagName("img")[0];
@@ -246,39 +188,28 @@ function setImage(key){
    }
 }
 
-
-
+/*Function for adjusting the CSS class of the given key*/
 function highlightCurrentLetter() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
-/*    span.style.color = "blue";
-    span.style.fontSize = "larger";
-    span.style.fontWeight = "bold";
-    span.style.border = "thick solid";
-    span.style.borderColor = "black";*/
     span.setAttribute("class","letter focus");
     setImage(textInput[correctCharactersTyped])
 }
+
+/*Function for adjusting the CSS class of the given key*/
 function highlightLetterWrong() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
     span.setAttribute("class","letter wrong");
     moveSentence();
-    /*    span.style.color = "red";
-    span.style.fontSize = "";
-    span.style.fontWeight = "";
-    span.style.border = "";*/
-
 }
+
+/*Function for adjusting the CSS class of the given key*/
 function highlightLetterRight() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
     span.setAttribute("class","letter");
     moveSentence();
-    /*    span.style.color = "";
-    span.style.fontSize = "";
-    span.style.fontWeight = "";
-    span.style.border = "";*/
-
 }
 
+/*Function for adjusting the CSS class depending if one handed or two handed keyboard is needed. */
 function keyboardColorsFunction(type){
     if (type === 1){ //Right hand typing
         document.getElementById("Digit1").setAttribute("class","key red");
@@ -374,6 +305,5 @@ function keyboardColorsFunction(type){
         document.getElementById("Comma").setAttribute("class","key red");
         document.getElementById("Period").setAttribute("class","key red");
         document.getElementById("Slash").setAttribute("class","key red");
-
     }
 }
