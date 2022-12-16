@@ -10,6 +10,11 @@ class ExpertController extends BaseController
 
     /// CSS FILES *********************
     private  array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
+    private array $studentsList = array();//fill it with your CSS
+    private array $home = array();
+    private array $exercises = array();
+    private array $studentOverview = array();
+
 
     /// END OF CSS FILES ************************
     private $data;
@@ -20,41 +25,46 @@ class ExpertController extends BaseController
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
     }
-    public function view($page = 'home')
+    public function view($page = 'home',$arg='0')
     {
         if (! is_file(APPPATH . 'Views/pages/experts/' . $page . '.php')) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
-
-
-        $data = [
-            'cssFiles' =>  $this->getCSSFile($page)
-        ];
-
+        $css = ['cssFiles' =>  $this->getCSSFile($page)];
+        $page_data =$this->getDataForPage($page,$arg);
+        if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
+        else $data = $css;
         return view('/pages/experts/' . $page,$data);
     }
 
 
-    private function getDataForPage($pageName): array
+    private function getDataForPage($pageName,$args): array
     {
-
         switch ($pageName) {
             case 'home':
                 return $this->home();
-//            case 'tests_rebecca':
-//                return$this->includeCSSFilesInCommonFiles( $this->tests_rebecca);
+            case 'studentsList':
+                return $this->studentsList();
+            case 'exercises':
+                return $this->exercises();
+            case 'studentOverview':
+                return $this->studentOverview($args);
+
             default:
                 return $this->commonCssFiles;
         }
     }
     private function getCSSFile($pageName): array
     {
-
         switch ($pageName) {
-//            case 'example':
-//                return $this->includeCSSFilesInCommonFiles( $this->example);
-//            case 'tests_rebecca':
-//                return$this->includeCSSFilesInCommonFiles( $this->tests_rebecca);
+            case 'home':
+                return$this->includeCSSFilesInCommonFiles( $this->home);
+            case 'studentsList':
+                return $this->includeCSSFilesInCommonFiles( $this->studentsList);
+            case 'exercises':
+                return $this->includeCSSFilesInCommonFiles( $this->exercises);
+            case 'studentOverview':
+                return $this->includeCSSFilesInCommonFiles( $this->studentOverview);
             default:
                 return $this->commonCssFiles;
         }
@@ -69,30 +79,25 @@ class ExpertController extends BaseController
         session()->set('teachers', $this->data['teachers']);
         return array();
     }
-
-    public function studentsList()
+    public function studentsList():array
     {
-        //$this->data['title']= "students overview";
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
         session()->set('students', $this->data['students']);
-        //return $this->response->setJSON($students);
-        return view('pages/experts/studentsList', $this->data);
+        return $this->data;
     }
 
-    public function exercises()
+    public function exercises():array
     {
-
-        $exercises=$this->students_model->getExercises();
-        session()->set('exercises', $exercises);
-        return view('pages/experts/exercises');
+        $data['exercises']=$this->teachers_model->getExercises();
+        return $data;
     }
 
-    public function studentOverview($idStudents)
+    public function studentOverview($idStudents): array
     {
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
-        return view('pages/experts/studentOverview', $this->data);
+        return  $this->data;
     }
 
     public function editStudentPage($idStudents)

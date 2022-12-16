@@ -38,7 +38,8 @@ $routes->setAutoRoute(true);
 
 
 //Expert routes
-$routes->get('/experts/(:any)', 'ExpertController::view/$1');
+//$routes->get('/experts/(:any)', 'ExpertController::view/$1');
+$routes->get('/experts/(:any)', 'ExpertController::view/$1/$2');
 //$routes->get('/experts/home', 'ExpertController::home',['filter'=>'AuthGuard']);
 $routes->get('/experts/studentsList', 'ExpertController::studentsList',['filter'=>'AuthGuard']);
 $routes->get('/experts/studentOverview/(:num)', 'ExpertController::studentOverview/$1',['filter'=>'AuthGuard']);
