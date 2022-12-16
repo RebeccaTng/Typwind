@@ -56,7 +56,7 @@ class KidsController extends BaseController
 
         $data = [
             'title' => ucfirst($page),// Capitalize the first letter
-            'exercises' => $joined_exercises_scores
+            'exercises' => $all
         ];
 
 
