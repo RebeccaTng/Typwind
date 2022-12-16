@@ -23,7 +23,7 @@
         <?php endif;?>
 
         <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
-            <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" >
+            <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" required>
             <button type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>

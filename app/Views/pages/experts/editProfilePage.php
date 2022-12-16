@@ -7,11 +7,11 @@
 
 <!--            <input type="hidden" id="password" name="password" value=" <?/*=$person->password*/?>">
 -->         <label for="firstname">First name:</label>
-            <input type="text" id="firstname" name="firstname" value="<?=session()->firstname?>"><br><br>
+            <input type="text" id="firstname" name="firstname" value="<?=session()->firstname?>" required><br><br>
             <label for="lastname">Last name:</label>
-            <input type="text" id="lastname" name="lastname" value="<?=session()->lastname?>"><br><br>
+            <input type="text" id="lastname" name="lastname" value="<?=session()->lastname?>" required><br><br>
             <label for="email">email:</label>
-            <input type="text" id="email" name="email" value="<?=session()->email?>"><br><br>
+            <input type="text" id="email" name="email" value="<?=session()->email?>" required><br><br>
             <label for="active">Active</label>
             <?php if (session()->isActive==1):?>
 

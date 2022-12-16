@@ -13,11 +13,11 @@
             <input type="hidden" id="coins" name="coins" value=<?=$person->coins?>>
             <input type="hidden" id="streak" name="streak" value=<?=$person->streak?>>
             <label for="firstname">First name:</label>
-            <input type="text" id="firstname" name="firstname" value="<?=$person->firstname?>"><br><br>
+            <input type="text" id="firstname" name="firstname" value="<?=$person->firstname?>" required><br><br>
             <label for="lastname">Last name:</label>
-            <input type="text" id="lastname" name="lastname" value="<?=$person->lastname?>"><br><br>
+            <input type="text" id="lastname" name="lastname" value="<?=$person->lastname?>" required><br><br>
             <label for="gender">Gender:</label>
-            <select name="gender" id="gender">
+            <select name="gender" id="gender" required>
             <?php if ($person->gender==1):?>
                 <option selected="selected" value="male">Male</option>
                 <option value="female">Female</option>
@@ -27,9 +27,9 @@
             <?php endif;?>
             </select><br><br>
             <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" value=<?=$person->birthday?>><br><br>
+            <input type="date" id="birthday" name="birthday" value="<?=$person->birthday?>" required><br><br>
             <label for="teachers">Teacher:</label>
-            <select name="teachers" id="teachers" value="<?=$person->teacherFirstname?>">
+            <select name="teachers" id="teachers" value="<?=$person->teacherFirstname?>" required>
                 <?php foreach ($teachers as $teacher):?>
                     <?php if ($person->teacherFirstname==$teacher->firstname):?>
                         <option selected="selected" value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
@@ -41,7 +41,7 @@
             </select><br><br>
 
             <label for="handSelection">Hand Selection:</label>
-            <select name="handSelection" id="handSelection">
+            <select name="handSelection" id="handSelection" required>
             <?php if ($person->handSelection==1):?>
 
                 <option selected="selected" value="One Hand">One Hand</option>
