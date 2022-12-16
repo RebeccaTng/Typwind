@@ -30,6 +30,7 @@ class RegistrationController extends \CodeIgniter\Controller
 
     public function welcome()
     {
+        $session = session();
         helper(['form']);
         $data = [];
 
@@ -47,7 +48,7 @@ class RegistrationController extends \CodeIgniter\Controller
         //Setting the initial language Cookie
         setcookie("englishActive", 'not active', time()+3600, "/");
         setcookie("nederlandsActief", 'active', time()+3600, "/");
-
+        $session->destroy();
         echo view('pages/registration/welcome', $data);
     }
 

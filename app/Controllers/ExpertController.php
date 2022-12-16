@@ -8,6 +8,7 @@ use App\Models\Teachers_model;
 class ExpertController extends BaseController
 {
 
+
     private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
@@ -21,7 +22,7 @@ class ExpertController extends BaseController
     {
         $data['title'] = "Home";
         $this->data['teachers'] = $this->teachers_model->get_all_teachers();
-        cache()->save('teachers', $this->data['teachers']);
+        session()->set('teachers', $this->data['teachers']);
         return view('pages/experts/home', $data);
     }
 
@@ -30,30 +31,31 @@ class ExpertController extends BaseController
         //$this->data['title']= "students overview";
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
-        cache()->save('students', $this->data['students']);
+        session()->set('students', $this->data['students']);
         //return $this->response->setJSON($students);
         return view('pages/experts/studentsList', $this->data);
     }
 
     public function exercises()
     {
-        $data['exercises']=$this->teachers_model->getExercises();
-        //cache()->save('exercises', $exercises);
-        return view('pages/experts/exercises',$data);
+
+        $exercises=$this->students_model->getExercises();
+        session()->set('exercises', $exercises);
+        return view('pages/experts/exercises');
     }
 
     public function studentOverview($idStudents)
     {
         $this->data['idStudents']=$idStudents;
-        $this->data['students'] = cache()->get('students');
+        $this->data['students'] = session()->get('students');
         return view('pages/experts/studentOverview', $this->data);
     }
 
     public function editStudentPage($idStudents)
     {
         $this->data['idStudents']=$idStudents;
-        $this->data['students'] = cache()->get('students');
-        $this->data['teachers'] = cache()->get('teachers');
+        $this->data['students'] = session()->get('students');
+        $this->data['teachers'] = session()->get('teachers');
         return view('pages/experts/editStudentPage', $this->data);
     }
     public function editStudent($idStudents)
@@ -92,13 +94,14 @@ class ExpertController extends BaseController
         $this->students_model->edit_student($this->data);
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
-        cache()->save('students', $this->data['students']);
+        session()->set('students', $this->data['students']);
         return view('pages/experts/studentsList', $this->data);
     }
 
     public function addStudentPage()
     {
-        $data['teachers']=cache()->get('teachers');
+
+        $data['teachers']=session()->get('teachers');
         return view('pages/experts/addStudent', $data);
     }
     public function addStudent()
@@ -130,7 +133,7 @@ class ExpertController extends BaseController
 
         $students= $this->students_model->get_students();
         $data['students'] = $students;
-        cache()->save('students', $data['students']);
+        session()->set('students', $data['students']);
         return view('pages/experts/studentsList', $data);
     }
 
