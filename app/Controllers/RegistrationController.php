@@ -52,8 +52,6 @@ class RegistrationController extends \CodeIgniter\Controller
         echo view('pages/registration/welcome', $data);
     }
 
-
-
     public function loginExpert()
     {
         $session = session();
@@ -78,6 +76,8 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isStudent' => FALSE
             ];
             $session->set($ses_data);
+
+            setcookie("email", session()->email, time()+36000, "/");
             return redirect()->to('experts/home');
 
             /*}*//*else{
@@ -126,6 +126,8 @@ class RegistrationController extends \CodeIgniter\Controller
                 'isStudent' => TRUE
             ];
             $session->set($ses_data);
+
+            setcookie("email", session()->email, time()+36000, "/");
 
             return redirect()->to('/kids/home');
         }
