@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLogin.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
 
     <title>Login with email</title>
 </head>
@@ -28,5 +28,6 @@
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
     </div>
+    <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
 </body>
 </html>
