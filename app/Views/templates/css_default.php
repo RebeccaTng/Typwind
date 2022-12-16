@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
 
-    <!--CSS FILES-->
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/login_child.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/child_components_varia.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/expertComponents.css">
+    <?php
+        if (! empty($cssFiles) && is_array($cssFiles)):
+             foreach ($cssFiles as $ccsFilePath):
+                 $path = base_url('public/CSS/'.$ccsFilePath);
+                 echo PHP_EOL.'<link rel="stylesheet" href='.$path.'>' ;
+             endforeach;
+        endif;
+    ?>
 
     <title>Typewind Online</title>
 </head>
