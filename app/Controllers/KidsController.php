@@ -47,11 +47,19 @@ class KidsController extends BaseController
             // Whoops, we don't have a page for that!
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
-        $model = model(ExerciseModel::class);
+        $model = model(Students_model::class);
+
+        //Testing queries to visualise the Arrow Navigation in Student exercise page, please leave these in!
+        $all=$model->getExercises();
+        $specific=$model->getSpecificExercises(session()->id);
+        $joined_exercises_scores=$model->getStudentExercises(session()->id);
+
         $data = [
             'title' => ucfirst($page),// Capitalize the first letter
-            'exercises' => $model->getExercises()
+            'exercises' => $joined_exercises_scores
         ];
+
+
 
         return view('pages/kids/' . $page, $data);
     }

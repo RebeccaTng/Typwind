@@ -36,6 +36,13 @@ class Teachers_model extends Model
         $builder->update($data);
     }
 
+    public function getExercises()
+    {
+        $query_text = 'SELECT * FROM exercises';
+        $query = $this->db->query($query_text);
+        return $query->getResult();
+    }
+
     //table data used for Log-In, please do not remove
     protected $allowedFields = [
         'firstname',
