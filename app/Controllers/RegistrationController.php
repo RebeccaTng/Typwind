@@ -85,7 +85,7 @@ class RegistrationController extends \CodeIgniter\Controller
             }*/
         }
 
-        else if(!$data & $data2){
+        else if(!isset($data) & isset($data2)){
             $session->setFlashdata('msg', 'This is a student email.');
             return redirect()->to('/registration/expertLogin');
         }
@@ -107,12 +107,12 @@ class RegistrationController extends \CodeIgniter\Controller
         $data = $expertModel->where('email', $email)->first();
         $data2 = $studentModel->where('email', $email)->first();
 
-        if($data & !$data2){
+        if(isset($data) & !isset($data2)){
             $session->setFlashdata('msg', 'This is an expert email.');
             return redirect()->to('/registration/studentLogin');
         }
 
-        else if($data2){
+        else if(isset($data2)){
             /*$pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
             if($authenticatePassword){*/
