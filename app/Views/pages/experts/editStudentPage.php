@@ -53,17 +53,20 @@
                 <option selected="selected" value="right">One Hand, right hand</option>
                 <option value="left">One Hand, left hand</option>
                 <option value="both">Both Hands</option>
+
             <?php endif;?>
             <?php if ($person->handSelection==2):?>
                 <option value="right">One Hand, right hand</option>
                 <option selected="selected" value="left">One Hand, left hand</option>
                 <option value="both">Both Hands</option>
+
             <?php endif;?>
             <?php if ($person->handSelection==0):?>
 
                 <option value="right">One Hand, right hand</option>
                 <option value="left">One Hand, left hand</option>
                 <option selected="selected" value="both">Both Hands</option>
+
             <?php endif;?>
             </select><br><br>
             <label for="active">Active</label>
@@ -81,6 +84,19 @@
             <input type="text" id="notes" name="notes" value="<?= $person->notes?>" ><br><br>
             <input type="submit" value="Save">
         </form>
+
+        <?php if ($person->handSelection==1):?>
+            <img src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
+
+        <?php endif;?>
+        <?php if ($person->handSelection==2):?>
+            <img src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
+
+        <?php endif;?>
+        <?php if ($person->handSelection==0):?>
+            <img src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
+
+        <?php endif;?>
     <?php endif;?>
 <?php endforeach;?>
 

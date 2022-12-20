@@ -30,16 +30,19 @@
     <?php if ($person->handSelection==1):?>
 
         <h3>Hand selection= One Hand, right hand</h3>
+        <img src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
 
     <?php endif;?>
     <?php if ($person->handSelection==2):?>
 
         <h3>Hand selection= One Hand, left hand</h3>
+        <img src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
 
     <?php endif;?>
     <?php if ($person->handSelection==0):?>
 
         <h3>Hand selection= Both Hands</h3>
+        <img src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
 
     <?php endif;?>
     <?php if ($person->isActive==1):?>
