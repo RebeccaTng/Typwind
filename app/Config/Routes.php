@@ -60,6 +60,7 @@ $routes->get('/kids/home', 'KidsController::home',['filter'=>'AuthGuard']);
 $routes->get('/kids/exercises', 'KidsController::exercises',['filter'=>'AuthGuard']);
 $routes->get('/kids/intro', 'KidsController::intro',['filter'=>'AuthGuard']);
 $routes->get('/kids/feedback', 'KidsController::feedback',['filter'=>'AuthGuard']);
+$routes->get('/kids/exercise/(:num)', 'KidsController::exercise_view/$1',['filter'=>'AuthGuard']);
 
 
 /// design testing Route

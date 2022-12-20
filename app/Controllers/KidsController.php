@@ -65,5 +65,15 @@ class KidsController extends BaseController
 
         return view('pages/kids/' . $page, $data);
     }
-    
+
+    public function exercise_view($idStudents)
+    {
+        $this->data['idStudents']=$idStudents;
+        $this->data['test'] = $this->students_model->get_students();
+        return view('pages/kids/exercise_view', $this->data);
+    }/*
+$this->data['exercises']=
+$idExercises= $_GET['idExercises'];
+$this->data['idExercises']=$idExercises;
+return view('pages/kids/feedback',$this->data);*/
     }

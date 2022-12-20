@@ -52,6 +52,12 @@ let textBox = document.getElementById("textBox");
 let imageContainer = document.getElementById("imageContainer");
 
 
+//SessionStorage temporary
+sessionStorage.setItem("exerciseID", 2);
+let exerciseID = sessionStorage.getItem("exerciseID");
+console.log(exerciseID);
+
+
 /***EVENTS***/
 
 stopButton.onclick = function (){stopButtonFunction()};
@@ -67,12 +73,16 @@ window.onload = atStart;   //runs the function when the page is loaded
 
 /*What needs to happen when the page is loaded*/
 function atStart(){
-    console.log(textInput+"\n"+textChar);
     correctCharactersTyped = 0;
     correctCharactersNeeded =  textChar.length;
     createSpanSentence();
     highlightCurrentLetter();
     keyboardColorsFunction(0);
+}
+
+/*Access data from the database*/
+function getText(){
+    //var data = <?php echo json_encode("42", JSON_HEX_TAG); ?>;
 }
 
 /*Create a span element of every character*/
@@ -167,7 +177,6 @@ function setImage(key){
     if(key!==undefined){key = key.toLowerCase();}
     var curr = imageContainer.getElementsByTagName("img")[0];
     var s;
-    console.log(imageMap.has(key)+" / "+curr);
    if (imageMap.has(key)) {
        if (curr === undefined) {
            s = document.createElement("IMG");//.attributes("class","letter");

@@ -2,7 +2,11 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
+
 <link rel="stylesheet" href="<?=base_url()?>/public/CSS/keyboard.css">
+<?php foreach ($test as $person):?>
+    <h1> <?= $person->firstname?> </h1>
+<?php endforeach;?>
 <div>
     <div class="container">
         <h1>Title</h1>
