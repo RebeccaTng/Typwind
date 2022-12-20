@@ -3,8 +3,14 @@
 <?= $this->section('content') ?>
 
 
+
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
+
+
+        <section>
+            <a href="<?php echo base_url('/experts/studentsList');?>">Students</a><h6><?=$person->firstname?><?=$person->lastname?></h6>
+        </section>
 
         <form action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
             <input type="hidden" id="email" name="email" value="<?=$person->email?>">

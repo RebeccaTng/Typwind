@@ -6,6 +6,11 @@
 <?php foreach ($students as $person):?>
 <?php  if ($person->idStudents==$idStudents):?>
 
+
+<section>
+    <a href="<?php echo base_url('/experts/studentsList');?>">Students</a><h6><?=$person->firstname?><?=$person->lastname?></h6>
+</section>
+
 <h1> <?= $person->firstname?> </h1>
 <section>
     <h3>First name= <?= $person->firstname?></h3>
@@ -59,7 +64,7 @@
         <button>EDIT</button>
     </a>
 </section>
-<?php endif;?>
+    <?php endif;?>
 <?php endforeach;?>
 
 <?= $this->endSection() ?>
