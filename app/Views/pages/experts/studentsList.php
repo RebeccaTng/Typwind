@@ -8,6 +8,8 @@
 
 <script type="text/javascript" src="<?=base_url()?>/public/js/filter.js"></script>
 
+
+
 <div id="list">
 
         <?php foreach ($students as $person):?>
@@ -31,6 +33,11 @@
             <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
         <?php endforeach;?>
     </select>
+</section>
+
+<section>
+
+    <input type="text" id="myInput" onkeyup="search()" placeholder="Text Input">
 </section>
 <?= $this->endSection() ?>
 
