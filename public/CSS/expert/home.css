@@ -28,6 +28,7 @@ div.user {
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
+    text-align: center;
 }
 
 div.user img.roundProfilePic {

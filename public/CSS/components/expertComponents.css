@@ -61,10 +61,10 @@ li.studentListItem {
 }
 
 li.studentListItem h4 {
-    line-height: 0.7rem;
+    line-height: 1.5rem;
     color: var(--blueNeutral-dark);
     text-align: center;
-    margin: 0.938rem 0.938rem 0;
+    margin: 0.138rem 0.938rem 0;
 }
 
 /* PROGRESS STEPS (STEPPER) */

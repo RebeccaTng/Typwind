@@ -63,7 +63,7 @@
     <ul>
         <li class="studentListItem">
             <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
-            <h4>FirstName<br></br>Surname</h4>
+            <h4>FirstName<br>Surname</h4>
         </li>
     </ul>
 
