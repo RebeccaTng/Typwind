@@ -2,21 +2,22 @@
 
 <?= $this->section('content') ?>
 
-<section>
-    <p>
-        <?php foreach ($students as $person):?>
-            <li> <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>"><?=$person->firstname?>
-            <br><?=$person->lastname?></a>
-    </li>
-        <?php endforeach;?>
-    </p>
-</section>
-<section>
+<h1>Students</h1>
+<div class="bar">
+    <a class="addNew" href=<?php echo base_url('experts/addStudentPage/');?>>Add New Student</a>
+</div>
 
-    <h2>Add student </h2>
+<ul class="studentList">
+    <?php foreach ($students as $person):?>
+        <li class="studentListItem">
+            <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
+                <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                <h4><?=$person->firstname?><br><?=$person->lastname?></h4>
+            </a>
+        </li>
+    <?php endforeach;?>
+</ul>
 
-    <a href=<?php echo base_url('experts/addStudentPage/');?>> addStudent </a>
-</section>
 <?= $this->endSection() ?>
 
 
