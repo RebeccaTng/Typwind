@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
 
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/home.css">
+<!--    <link rel="stylesheet" href="--><?php //=base_url()?><!--/public/CSS/expert/home.css">-->
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/studentsList.css">
 
     <title>Typewind Online</title>
 </head>

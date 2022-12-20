@@ -1,0 +1,67 @@
+* {
+    color: var(--blueNeutral);
+}
+
+.mainContent {
+    padding: 45px 30px 60px 60px;
+}
+
+div.bar .addNew{
+    font: var(--navText);
+    text-decoration: none;
+    padding: 0;
+}
+
+div.bar .addNew::before{
+    content: url("/public/assets/icons/add.svg");
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+div.bar {
+    margin-top: 9px;
+    margin-bottom: 40px;
+}
+
+ul.studentList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: start;
+    gap: 50px 100px;
+    max-height: 610px;
+
+    list-style-type: none;
+    overflow: auto;
+    padding-right: 35px;
+}
+
+li.studentListItem a {
+    text-decoration: none;
+    text-align: center;
+}
+
+li.studentListItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1700px) {
+    ul.studentList {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    ul.studentList {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    ul.studentList {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
