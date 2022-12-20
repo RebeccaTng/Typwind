@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLogin.css">
+    <!-- Google Login Authentication Js -->
+    <script type="module" src="<?=base_url()?>/public/js/googleLoginAuth.js" defer></script>
 
     <title>Login with email</title>
 </head>
@@ -23,11 +25,15 @@
         <?php endif;?>
 
         <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
-            <input type="email" name="email" placeholder="Email" value="<?php if (!session()->isStudent) echo session()->email ?>" required>
+            <input id="googleJSOutput" type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["email"])) echo $_COOKIE["email"]; ?>" >
             <button type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
+        ----------------------- OR -----------------------
+        <p>Log in With Google</p>
+        <button class="social-signin google" id="login">Log in with Google+</button>
+
     </div>
-    <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
+
 </body>
 </html>

@@ -4,26 +4,88 @@ namespace App\Controllers;
 
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
-use App\Models\Teachers_model;
 
 class KidsController extends BaseController
 {
+
+
+
+    /// CSS FILES *********************
+    private  array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
+    private array $home = array();
+    private array $intro = array();
+    private array $feedback = array();
+    private array $exercises = array();
+
+
+
+
+
+    /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
-    private Teachers_model $teachers_model;
-
-
     public function __construct() {
         $this->students_model = new Students_model();
-        $this->teachers_model = new Teachers_model();
     }
 
+    public function view($page = 'home',$arg='0')
+    {
+        if (! is_file(APPPATH . 'Views/pages/kids/' . $page . '.php')) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
+        $css = ['cssFiles' =>  $this->getCSSFile($page)];
+        $page_data =$this->getDataForPage($page,$arg);
+        if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
+        else $data = $css;
+        return view('/pages/kids/' . $page,$data);
+    }
 
-    public function home()
+    ////// SET UP METHODS ALL
+    private function getDataForPage($pageName,$args): array
+    {
+        switch ($pageName) {
+            case 'home':
+                return $this->home();
+            case 'intro':
+                return $this->intro();
+            case 'feedback':
+                return $this->feedback();
+            case 'exercises':
+                return $this->exercises();
+
+
+
+            default:
+                return $this->commonCssFiles;
+        }
+    }
+    private function getCSSFile($pageName): array
+    {
+        switch ($pageName) {
+            case 'home':
+                return$this->includeCSSFilesInCommonFiles( $this->home);
+            case 'intro':
+                return$this->includeCSSFilesInCommonFiles( $this->intro);
+            case 'feedback':
+                return$this->includeCSSFilesInCommonFiles( $this->feedback);
+            case 'exercises':
+                return$this->includeCSSFilesInCommonFiles( $this->exercises);
+
+
+            default:
+                return $this->commonCssFiles;
+        }
+    }
+    private function includeCSSFilesInCommonFiles($arrayOfCSSFiles): array{
+        return array_merge($this->commonCssFiles, $arrayOfCSSFiles);
+    }
+    ///// VIEW METHODS *********************
+
+    public function home():array
     {
         $exercises=$this->students_model->getExercises();
         session()->set('exercises', $exercises);
-        return view('pages/kids/home');
+        return array();
     }
 
     public function intro()
@@ -31,24 +93,23 @@ class KidsController extends BaseController
 
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']= $_GET['idExercises'];
-        return view('pages/kids/intro',$this->data);
+        return ($this->data);
     }
 
-    public function feedback()
+    public function feedback():array
     {
 
         $this->data['exercises']= session()->get('exercises');
         $idExercises= $_GET['idExercises'];
         $this->data['idExercises']=$idExercises;
-        return view('pages/kids/feedback',$this->data);
+        return ($this->data);
     }
 
-    public function view($page = 'home')
+
+
+    public function exercises():array
     {
-        if (!is_file(APPPATH . 'Views/pages/kids/' . $page . '.php')) {
-            // Whoops, we don't have a page for that!
-            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
-        }
+
         $model = model(Students_model::class);
 
         //Testing queries to visualise the Arrow Navigation in Student exercise page, please leave these in!
@@ -56,14 +117,9 @@ class KidsController extends BaseController
         $specific=$model->getSpecificExercises(session()->id);
         $joined_exercises_scores=$model->getStudentExercises(session()->id);
 
-        $data = [
-            'title' => ucfirst($page),// Capitalize the first letter
-            'exercises' => $joined_exercises_scores
-        ];
+        $data = ['exercises' => $joined_exercises_scores];
 
-
-
-        return view('pages/kids/' . $page, $data);
+        return ($data);
     }
-    
-    }
+
+}

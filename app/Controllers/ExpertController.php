@@ -8,7 +8,22 @@ use App\Models\Teachers_model;
 class ExpertController extends BaseController
 {
 
+    /// CSS FILES *********************
+    private  array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
+    private array $studentsList = array();//fill it with your CSS
+    private array $home = array();
+    private array $exercises = array();
+    private array $studentOverview = array();
+    private array $editStudentPage = array();
+    private array $addStudent = array();
+    private array $profile = array();
+    private array $editProfilePage = array();
 
+
+
+
+
+    /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
@@ -17,46 +32,105 @@ class ExpertController extends BaseController
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
     }
-
-    public function home()
+    public function view($page = 'home',$arg='0')
     {
-        $data['title'] = "Home";
-        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
-        session()->set('teachers', $this->data['teachers']);
-        return view('pages/experts/home', $data);
+        if (! is_file(APPPATH . 'Views/pages/experts/' . $page . '.php')) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
+        $css = ['cssFiles' =>  $this->getCSSFile($page)];
+        $page_data =$this->getDataForPage($page,$arg);
+        if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
+        else $data = $css;
+        return view('/pages/experts/' . $page,$data);
     }
 
-    public function studentsList()
+    ////// SET UP METHODS ALL
+    private function getDataForPage($pageName,$args): array
     {
-        //$this->data['title']= "students overview";
+        switch ($pageName) {
+            case 'home':
+                return $this->home();
+            case 'studentsList':
+                return $this->studentsList();
+            case 'exercises':
+                return $this->exercises();
+            case 'studentOverview':
+                return $this->studentOverview($args);
+            case 'editStudentPage':
+                return $this->editStudentPage($args);
+            case 'addStudent':
+                return $this->addStudentPage();
+            case 'profile':
+                return $this->profile();
+            case 'editProfilePage':
+                return $this->editProfilePage();
+
+            default:
+                return $this->commonCssFiles;
+        }
+    }
+    private function getCSSFile($pageName): array
+    {
+        switch ($pageName) {
+            case 'home':
+                return$this->includeCSSFilesInCommonFiles( $this->home);
+            case 'studentsList':
+                return $this->includeCSSFilesInCommonFiles( $this->studentsList);
+            case 'exercises':
+                return $this->includeCSSFilesInCommonFiles( $this->exercises);
+            case 'studentOverview':
+                return $this->includeCSSFilesInCommonFiles( $this->studentOverview);
+            case 'editStudentPage':
+                return $this->includeCSSFilesInCommonFiles( $this->editStudentPage);
+            case 'addStudent':
+                return $this->includeCSSFilesInCommonFiles( $this->addStudent);
+            case 'profile':
+                return $this->includeCSSFilesInCommonFiles( $this->profile);
+            case 'editProfilePage':
+                return $this->includeCSSFilesInCommonFiles( $this->editProfilePage);
+            default:
+                return $this->commonCssFiles;
+        }
+    }
+
+
+
+
+
+    ////// SET UP METHODS FOR EACH VIEW
+    public function home():array
+    {
+        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
+        session()->set('teachers', $this->data['teachers']);
+        return array();
+    }
+    public function studentsList():array
+    {
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
         session()->set('students', $this->data['students']);
-        //return $this->response->setJSON($students);
-        return view('pages/experts/studentsList', $this->data);
+        return $this->data;
     }
 
-    public function exercises()
+    public function exercises():array
     {
-
-        $exercises=$this->students_model->getExercises();
-        session()->set('exercises', $exercises);
-        return view('pages/experts/exercises');
+        $data['exercises']=$this->teachers_model->getExercises();
+        return $data;
     }
 
-    public function studentOverview($idStudents)
+    public function studentOverview($idStudents): array
     {
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
-        return view('pages/experts/studentOverview', $this->data);
+        return  $this->data;
     }
 
-    public function editStudentPage($idStudents)
+    public function editStudentPage($idStudents): array
     {
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
         $this->data['teachers'] = session()->get('teachers');
-        return view('pages/experts/editStudentPage', $this->data);
+        return( $this->data);
     }
     public function editStudent($idStudents)
     {
@@ -100,9 +174,8 @@ class ExpertController extends BaseController
 
     public function addStudentPage()
     {
-
         $data['teachers']=session()->get('teachers');
-        return view('pages/experts/addStudent', $data);
+        return ( $data);
     }
     public function addStudent()
     {
@@ -139,12 +212,12 @@ class ExpertController extends BaseController
 
     public function profile()
     {
-        return view('pages/experts/profile');
+        return array();
     }
 
     public function editProfilePage()
     {
-        return view('pages/experts/editProfilePage');
+        return array();
     }
 
     public function editProfile()
