@@ -11,7 +11,14 @@
 
     <!-- Translation file -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
-
+    <?php
+    if (! empty($cssFiles) && is_array($cssFiles)):
+        foreach ($cssFiles as $ccsFilePath):
+            $path = base_url('public/CSS/'.$ccsFilePath);
+            echo PHP_EOL.'<link rel="stylesheet" href='.$path.'>' ;
+        endforeach;
+    endif;
+    ?>
     <title>Typewind Online</title>
 </head>
 <body >
