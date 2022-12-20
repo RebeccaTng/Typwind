@@ -50,4 +50,8 @@
 
 <?php endif ?>
 
+<?php
+$_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
+?>
+
 <?= $this->endSection() ?>

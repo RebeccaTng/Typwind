@@ -1,9 +1,9 @@
 /***VARIABLES***/
 
-let textInput = "test tEsT tést têst tëst";
-let textChar = textInput.split(""); //Every char is a separeted element in an array
+let textInput = "No input from DB test tEsT tést têst tëst";
+let textChar;
 let currentKey = null;
-let previousKey = null; //hardcoded, this is bad
+let previousKey = null;
 let wrongAnswered = false;
 let distance = 250;
 let indexSentence = 0;
@@ -11,6 +11,7 @@ let correctCharactersTyped = 0;
 let correctCharactersNeeded = 0;
 let correctAnswers = 0;
 let mistakes = 0;
+let score = 0;
 let imageMap = new Map([
     [",","/public/assets/pictures/,.jpg"],
     ["=","/public/assets/pictures/=.jpg"],
@@ -50,6 +51,9 @@ let currentInputFeedBack = document.getElementById("currentInputFeedBack");
 let container = document.getElementById("effect");
 let textBox = document.getElementById("textBox");
 let imageContainer = document.getElementById("imageContainer");
+let textInputDB = document.getElementById("textInput");
+let handSelection = document.getElementById("handSelection");
+
 
 
 /***EVENTS***/
@@ -67,12 +71,16 @@ window.onload = atStart;   //runs the function when the page is loaded
 
 /*What needs to happen when the page is loaded*/
 function atStart(){
-    console.log(textInput+"\n"+textChar);
+    if(textInputDB.innerText !== null) {
+        textInput = textInputDB.innerText;
+    }
+    textChar = textInput.split("");
     correctCharactersTyped = 0;
     correctCharactersNeeded =  textChar.length;
     createSpanSentence();
     highlightCurrentLetter();
-    keyboardColorsFunction(0);
+    console.log(handSelection.innerText);
+    keyboardColorsFunction(parseInt(handSelection.innerText));
 }
 
 /*Create a span element of every character*/
@@ -134,6 +142,7 @@ function processInputFunction() {
     //If input is correct but previous was wrong
         if(wrongAnswered){
             highlightLetterWrong();
+            mistakes++;
             wrongAnswered = false;
     //If input is correct but previous was also correct
         }else{
@@ -153,6 +162,7 @@ function processInputFunction() {
 
 /*Function for when the exercise is finished*/
 function exerciseFinishedFunction(){
+    score = ((correctCharactersNeeded-mistakes)/correctCharactersNeeded);
     window.location = window.location.origin + "/kids/feedback";
     stopButton.disabled = true;
 }
@@ -167,7 +177,6 @@ function setImage(key){
     if(key!==undefined){key = key.toLowerCase();}
     var curr = imageContainer.getElementsByTagName("img")[0];
     var s;
-    console.log(imageMap.has(key)+" / "+curr);
    if (imageMap.has(key)) {
        if (curr === undefined) {
            s = document.createElement("IMG");//.attributes("class","letter");
@@ -209,7 +218,9 @@ function highlightLetterRight() {
     moveSentence();
 }
 
-/*Function for adjusting the CSS class depending if one handed or two handed keyboard is needed. */
+/*Function for adjusting the CSS class depending if one handed or two handed keyboard is needed.
+* 1= one handed right, 0= both hands and NULL= one handed left
+* */
 function keyboardColorsFunction(type){
     if (type === 1){ //Right hand typing
         document.getElementById("Digit1").setAttribute("class","key red");

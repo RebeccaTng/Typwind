@@ -122,6 +122,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname' => $data2['firstname'],
                 'lastname' => $data2['lastname'],
                 'email' => $data2['email'],
+                'handSelection' => $data2['handSelection'],
                 'isLoggedIn' => TRUE,
                 'isStudent' => TRUE
             ];
