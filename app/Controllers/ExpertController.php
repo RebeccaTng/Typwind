@@ -94,9 +94,7 @@ class ExpertController extends BaseController
     }
 
 
-    private function includeCSSFilesInCommonFiles($arrayOfCSSFiles): array{
-        return array_merge($this->commonCssFiles, $arrayOfCSSFiles);
-    }
+
 
 
     ////// SET UP METHODS FOR EACH VIEW
