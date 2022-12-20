@@ -42,15 +42,23 @@
 
             <label for="handSelection">Hand Selection:</label>
             <select name="handSelection" id="handSelection" required>
+
             <?php if ($person->handSelection==1):?>
+                <option selected="selected" value="right">One Hand, right hand</option>
+                <option value="left">One Hand, left hand</option>
+                <option value="both">Both Hands</option>
+            <?php endif;?>
+            <?php if ($person->handSelection==2):?>
+                <option value="right">One Hand, right hand</option>
+                <option selected="selected" value="left">One Hand, left hand</option>
+                <option value="both">Both Hands</option>
+            <?php endif;?>
+            <?php if ($person->handSelection==0):?>
 
-                <option selected="selected" value="One Hand">One Hand</option>
-                <option value="Both Hands">Both Hands</option>
-
-            <?php else: ?>
-                <option value="One Hand">One Hand</option>
-                <option selected="selected" value="Both Hands">Both Hands</option>
-                <?php endif;?>
+                <option value="right">One Hand, right hand</option>
+                <option value="left">One Hand, left hand</option>
+                <option selected="selected" value="both">Both Hands</option>
+            <?php endif;?>
             </select><br><br>
             <label for="active">Active</label>
             <?php if ($person->isActive==1):?>

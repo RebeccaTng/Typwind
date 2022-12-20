@@ -33,7 +33,8 @@
 
     <label for="handSelection">Hand Selection:</label>
     <select name="handSelection" id="handSelection">
-        <option value="One Hand">One Hand</option>
+        <option value="One Hand, right hand">One Hand, right hand</option>
+        <option value="One Hand, left hand">One Hand, left hand</option>
         <option value="Both Hands">Both Hands</option>
     </select><br><br>
 

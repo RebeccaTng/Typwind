@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 
+
 <?php if (! empty($exercises) && is_array($exercises)):
 $lesson = 0;
 ?>

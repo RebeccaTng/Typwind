@@ -24,7 +24,12 @@
     <h3>teacher= <?= $person->teacherFirstname?></h3>
     <?php if ($person->handSelection==1):?>
 
-        <h3>Hand selection= One Hand</h3>
+        <h3>Hand selection= One Hand, right hand</h3>
+
+    <?php endif;?>
+    <?php if ($person->handSelection==2):?>
+
+        <h3>Hand selection= One Hand, left hand</h3>
 
     <?php endif;?>
     <?php if ($person->handSelection==0):?>
