@@ -14,6 +14,13 @@ class ExpertController extends BaseController
     private array $home = array();
     private array $exercises = array();
     private array $studentOverview = array();
+    private array $editStudentPage = array();
+    private array $addStudent = array();
+    private array $profile = array();
+    private array $editProfilePage = array();
+
+
+
 
 
     /// END OF CSS FILES ************************
@@ -37,7 +44,7 @@ class ExpertController extends BaseController
         return view('/pages/experts/' . $page,$data);
     }
 
-
+    ////// SET UP METHODS ALL
     private function getDataForPage($pageName,$args): array
     {
         switch ($pageName) {
@@ -49,6 +56,14 @@ class ExpertController extends BaseController
                 return $this->exercises();
             case 'studentOverview':
                 return $this->studentOverview($args);
+            case 'editStudentPage':
+                return $this->editStudentPage($args);
+            case 'addStudent':
+                return $this->addStudentPage();
+            case 'profile':
+                return $this->profile();
+            case 'editProfilePage':
+                return $this->editProfilePage();
 
             default:
                 return $this->commonCssFiles;
@@ -65,14 +80,26 @@ class ExpertController extends BaseController
                 return $this->includeCSSFilesInCommonFiles( $this->exercises);
             case 'studentOverview':
                 return $this->includeCSSFilesInCommonFiles( $this->studentOverview);
+            case 'editStudentPage':
+                return $this->includeCSSFilesInCommonFiles( $this->editStudentPage);
+            case 'addStudent':
+                return $this->includeCSSFilesInCommonFiles( $this->addStudent);
+            case 'profile':
+                return $this->includeCSSFilesInCommonFiles( $this->profile);
+            case 'editProfilePage':
+                return $this->includeCSSFilesInCommonFiles( $this->editProfilePage);
             default:
                 return $this->commonCssFiles;
         }
     }
+
+
     private function includeCSSFilesInCommonFiles($arrayOfCSSFiles): array{
         return array_merge($this->commonCssFiles, $arrayOfCSSFiles);
     }
 
+
+    ////// SET UP METHODS FOR EACH VIEW
     public function home():array
     {
         $this->data['teachers'] = $this->teachers_model->get_all_teachers();
@@ -100,12 +127,12 @@ class ExpertController extends BaseController
         return  $this->data;
     }
 
-    public function editStudentPage($idStudents)
+    public function editStudentPage($idStudents): array
     {
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
         $this->data['teachers'] = session()->get('teachers');
-        return view('pages/experts/editStudentPage', $this->data);
+        return( $this->data);
     }
     public function editStudent($idStudents)
     {
@@ -149,9 +176,8 @@ class ExpertController extends BaseController
 
     public function addStudentPage()
     {
-
         $data['teachers']=session()->get('teachers');
-        return view('pages/experts/addStudent', $data);
+        return ( $data);
     }
     public function addStudent()
     {
@@ -188,12 +214,12 @@ class ExpertController extends BaseController
 
     public function profile()
     {
-        return view('pages/experts/profile');
+        return array();
     }
 
     public function editProfilePage()
     {
-        return view('pages/experts/editProfilePage');
+        return array();
     }
 
     public function editProfile()
