@@ -1,13 +1,13 @@
 h3 {
     color: var(--secondaryColor);
-    margin: 20px 0 15px;
+    margin: 1.25rem 0 0.938rem; /*20px 0 15px*/
 }
 
 p {
     font: var(--bodyText);
     text-align: left;
     display: inline-block;
-    line-height: 40px;
+    line-height: 2.5rem; /*40px*/
 }
 
 div.bottomBar a {
@@ -15,17 +15,17 @@ div.bottomBar a {
 }
 
 .button {
-    max-width: 150px;
+    max-width: 9.375rem; /*150px*/
 }
 
 .mainContent {
     position: relative;
-    padding-top: 45px;
+    padding-top: 2.813rem; /*45px*/
 }
 
 h1 {
-    margin-left: 60px;
-    margin-bottom: 20px;
+    margin-left: 3.75rem; /*60px*/
+    margin-bottom: 1.25rem; /*20px*/
 }
 
 div.center {

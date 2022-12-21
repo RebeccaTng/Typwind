@@ -1,11 +1,11 @@
 label {
     font: var(--emphasisText);
-    margin-right: 10px;
+    margin-right: 0.625rem;  /*10px*/
 }
 
 input {
-    width: 250px;
-    margin: 2px 0 20px;
+    width: 15.625rem;  /*250px*/
+    margin: 0.125rem 0 1.25rem; /*2px 0 20px*/
 }
 
 div .field {
@@ -19,5 +19,5 @@ div.user {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 1.25rem; /*20px*/
 }
