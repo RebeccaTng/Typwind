@@ -1,0 +1,38 @@
+h3 {
+    color: var(--secondaryColor);
+    margin: 20px 0 5px;
+}
+
+p {
+    font: var(--bodyText);
+    text-align: left;
+    display: inline-block;
+    line-height: 40px;
+}
+
+div.bottomBar a {
+    text-decoration: none;
+}
+
+.button {
+    max-width: 150px;
+}
+
+.mainContent {
+    position: relative;
+    padding-top: 45px;
+}
+
+h1 {
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+div.center {
+    text-align: center;
+}
+
+div.left {
+    text-align: left;
+    margin: auto;
+}

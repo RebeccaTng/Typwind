@@ -5,6 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--blueNeutral);
 }
 :root {
     /* Colors Styles */
@@ -100,6 +101,8 @@ h1 {
     background-color: var(--beigeNeutral);
     border-radius: 1.563rem; /* 25px */
     /*text-align: center;*/
+    height: 100%;
+    overflow: hidden;
 }
 .grid-container {
     display: grid;

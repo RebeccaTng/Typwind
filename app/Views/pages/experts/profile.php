@@ -2,38 +2,33 @@
 
 <?= $this->section('content') ?>
 
-    <div>
-        <h3>
-            <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
-        </h3>
-        <h3>
+    <h1>My Profile</h1>
+    <div class="center">
+        <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+        <h2>
             <?php $session = session();
-            echo $session->firstname; echo " "; echo $session->lastname . "<br>" ?>
-        </h3>
-        <h4> General Information </h4>
+            echo $session->firstname; echo " "; echo $session->lastname;?>
+        </h2>
+        <h3>General Information</h3>
         <p>
-            FirstName: <?php echo $session->firstname. "<br>" ?>
-            SurName: <?php echo $session->lastname. "<br>" ?>
-            Email: <?php echo $session->email. "<br>" ?>
+            <b>First name:</b>&nbsp&nbsp&nbsp<?php echo $session->firstname;?><br>
+            <b>Surname:</b>&nbsp&nbsp&nbsp<?php echo $session->lastname;?><br>
+            <b>Email:</b>&nbsp&nbsp&nbsp<?php echo $session->email;?><br>
+
             <?php if (session()->isActive==1):?>
+                <b>Active:</b>&nbsp&nbsp&nbspCurrently active
+            <?php endif;?>
 
-        Active: Currently Active
-
-        <?php endif;?>
-        <?php if (session()->isActive==0):?>
-
-            Active: Currently Not Active
-
-        <?php endif;?>
+            <?php if (session()->isActive==0):?>
+                <b>Active:</b>&nbsp&nbsp&nbspCurrently not active
+            <?php endif;?>
         </p>
+    </div>
 
-        <h3>
-            <section>
-                <a href="<?php echo base_url('experts/editProfilePage/'.session()->id);?>">
-                    <button>EDIT</button>
-                </a>
-            </section>
-        </h3>
+    <div class="bottomBar">
+        <a href="<?php echo base_url('experts/editProfilePage/'.session()->id);?>">
+            <button class="button buttonPrimary buttonExpert">EDIT</button>
+        </a>
     </div>
 
 <?= $this->endSection() ?>
