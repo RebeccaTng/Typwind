@@ -53,6 +53,8 @@ let textBox = document.getElementById("textBox");
 let imageContainer = document.getElementById("imageContainer");
 let textInputDB = document.getElementById("textInput");
 let handSelection = document.getElementById("handSelection");
+let form = document.getElementById("form");
+let formInput = document.getElementById("scoreForDB");
 
 
 
@@ -163,8 +165,16 @@ function processInputFunction() {
 /*Function for when the exercise is finished*/
 function exerciseFinishedFunction(){
     score = ((correctCharactersNeeded-mistakes)/correctCharactersNeeded);
+
     window.location = window.location.origin + "/kids/feedback";
     stopButton.disabled = true;
+}
+
+/*Function to submit the code to the DB*/
+function submit() {
+    form.
+    form.submit();
+    alert("Data stored in database!");
 }
 
 /*Function for when the exit button is pressed*/

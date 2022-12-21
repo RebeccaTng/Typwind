@@ -92,6 +92,13 @@
     <?php endforeach;?>
     <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
 
+    <form id="form" action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
+
+
+        <input type="text" id="scoreForDB" name="scoreForDB" value="">
+        <h5 onclick="submit()"></h5>
+    </>
+
 </div>
 <script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js"></script>
 <?= $this->endSection() ?>
