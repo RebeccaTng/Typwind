@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/login_child.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/child_components_varia.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/kids/login_child.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/child_components_varia.css">
 
     <title>Typewind Online</title>
 </head>

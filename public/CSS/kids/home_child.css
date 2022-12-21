@@ -1,0 +1,36 @@
+.home_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+    align-items: stretch;
+    /*justify-self: stretch;*/
+    text-align: center;
+    padding: 50px;
+    height: 100vh;
+}
+div.start_ex_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+    /*text-align: center;*/
+    margin-bottom: 15%;
+
+}
+div.start_ex_button button{
+    width: 35%;
+    margin: 12px;
+
+}
+
+.mainContent {
+    position: relative;
+    overflow: hidden;
+
+    /* WAVE COMPONENT CODE */
+    background-image: url(/public/assets/general/wave.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+}
