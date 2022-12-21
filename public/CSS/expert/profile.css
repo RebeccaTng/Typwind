@@ -1,6 +1,6 @@
 h3 {
     color: var(--secondaryColor);
-    margin: 20px 0 5px;
+    margin: 20px 0 15px;
 }
 
 p {
@@ -34,5 +34,4 @@ div.center {
 
 div.left {
     text-align: left;
-    margin: auto;
 }
