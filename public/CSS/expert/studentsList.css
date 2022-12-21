@@ -1,9 +1,5 @@
-* {
-    color: var(--blueNeutral);
-}
-
 .mainContent {
-    padding: 45px 30px 60px 60px;
+    padding: 2.813rem 1.875rem 3.75rem 3.75rem; /*45px 30px 60px 60px*/
 }
 
 div.bar .addNew{
@@ -15,12 +11,12 @@ div.bar .addNew{
 div.bar .addNew::before{
     content: url("/public/assets/icons/add.svg");
     vertical-align: middle;
-    padding-right: 10px;
+    padding-right: 0.625rem; /*10px*/
 }
 
 div.bar {
-    margin-top: 9px;
-    margin-bottom: 40px;
+    margin-top: 0.563rem; /*9px*/
+    margin-bottom: 2.5rem; /*40px*/
 }
 
 ul.studentList {
@@ -29,12 +25,12 @@ ul.studentList {
     grid-template-rows: auto;
     justify-content: center;
     align-items: start;
-    gap: 50px 100px;
-    max-height: 610px;
+    gap: 3.125rem 6.25rem; /*50px 100px*/
+    /*max-height: 450px;*/
 
     list-style-type: none;
     overflow: auto;
-    padding-right: 35px;
+    padding-right: 2.188rem; /*35px*/
 }
 
 li.studentListItem a {

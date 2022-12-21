@@ -35,7 +35,7 @@
     </ul>
 
     <!-- BOTTOM BAR -->
-    <div class="card"> <!-- TODO As we can see for the big beige background where all content will be on, better not to have margin -->
+    <div class="card"> <!-- As we can see for the big beige background where all content will be on, better not to have margin -->
         <h3>Heading 2</h3>
         <h4>Heading 3</h4>
         <p style="font:var(--smallText);">Small text</p>
@@ -63,7 +63,7 @@
     <ul>
         <li class="studentListItem">
             <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
-            <h4>FirstName<br></br>Surname</h4>
+            <h4>FirstName<br>Surname</h4>
         </li>
     </ul>
 

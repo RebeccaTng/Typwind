@@ -2,28 +2,42 @@
 
 <?= $this->section('content') ?>
 
+    <h1>My Profile</h1>
+    <div class="center">
+        <div class="user">
+            <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+            <h2>
+                <?php $session = session();
+                echo $session->firstname; echo " "; echo $session->lastname;?>
+            </h2>
+        </div>
 
+        <h3>General Information</h3>
         <form action="<?php echo base_url('experts/editProfile/'.session()->id);?>" method="post">
+            <!-- <input type="hidden" id="password" name="password" value="<?$person->password?>"> -->
 
-<!--            <input type="hidden" id="password" name="password" value=" <?/*=$person->password*/?>">
--->         <label for="firstname">First name:</label>
-            <input type="text" id="firstname" name="firstname" value="<?=session()->firstname?>" required><br><br>
-            <label for="lastname">Last name:</label>
-            <input type="text" id="lastname" name="lastname" value="<?=session()->lastname?>" required><br><br>
-            <label for="email">email:</label>
-            <input type="text" id="email" name="email" value="<?=session()->email?>" required><br><br>
-            <label for="active">Active</label>
-            <?php if (session()->isActive==1):?>
+            <div class="field">
+                <label for="firstname">First name:</label><br>
+                <input type="text" id="firstname" name="firstname" value="<?=session()->firstname?>" required><br>
+                <label for="lastname">Surname:</label><br>
+                <input type="text" id="lastname" name="lastname" value="<?=session()->lastname?>" required><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" value="<?=session()->email?>" required><br>
+                <label for="active">Active</label>
 
-                <input type="checkbox" id="active" name="active" value="1" checked>
-
-            <?php else:?>
-
-                <input type="checkbox" id="active" name="active">
-
-            <?php endif;?>
-            <br><br>
-            <input type="submit" value="Save">
+                <label class="switch">
+                    <?php if (session()->isActive==1):?>
+                        <input type="checkbox" id="active" name="active" value="1" checked>
+                    <?php else:?>
+                        <input type="checkbox" id="active" name="active">
+                    <?php endif;?>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="bottomBar">
+                <input class="button buttonPrimary buttonExpert" type="submit" value="Save">
+            </div>
         </form>
+    </div>
 
 <?= $this->endSection() ?>
