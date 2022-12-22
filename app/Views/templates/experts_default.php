@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
 
-    <!--PHP -->
-    <?=include(base_url().'/public/PHP/jQueryStoreUserInDB.php')?>
     <title>Typewind Online</title>
 </head>
 <body >

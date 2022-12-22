@@ -31,8 +31,9 @@ const baseURLcookieValue = document.cookie
     ?.split('=')[1];
 
 const baseURLString = baseURLcookieValue.toString().replace(/%2F/gi, "/").replace(/%3A/gi, ":");
+/*
 document.getElementById('googleJSOutput').value = baseURLString+'/public/PHP/jQueryStoreUserInDB.php';
-
+*/
 
     document.getElementById('login').addEventListener('click',(e) =>
     {
