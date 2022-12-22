@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLogin.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
     <!-- Google Login Authentication Js -->
     <script type="module" src="<?=base_url()?>/public/js/googleLoginAuth.js" defer></script>
 
@@ -30,11 +30,10 @@
             <button type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
-        ----------------------- OR -----------------------
+        <p><i>- or -</i></p>
         <p>Log in With Google</p>
-        <button type ="button" class="social-signin google" id="login">Log in with Google+</button>
-
+        <button type ="button" class="button buttonPrimary buttonExpert" id="login">Log in with Google+</button>
     </div>
-
+    <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
 </body>
 </html>
