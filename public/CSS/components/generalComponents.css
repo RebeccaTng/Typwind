@@ -109,9 +109,6 @@ ul.breadcrumb li a:hover {
 body {
     background: linear-gradient(107.95deg, var(--primary-dark) 2.42%, var(--primaryColor) 22.97%, var(--primaryColor) 45.27%, var(--secondaryColor) 64.72%, var(--secondaryColor) 82.77%, var(--accentColor) 101.29%) no-repeat fixed;
     margin: 0;
-    overflow: hidden;
-    /*padding-right: 20px;*/
-    height: 100vh;
 }
 
 /* SCROLLBAR */
