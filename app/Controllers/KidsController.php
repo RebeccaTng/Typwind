@@ -12,10 +12,10 @@ class KidsController extends BaseController
 
     /// CSS FILES *********************
     private  array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
-    private array $home = array();
-    private array $intro = array();
-    private array $feedback = array();
-    private array $exercises = array();
+    private array $home = array("components/main.css", "components/menubar.css", "components/generalComponents.css", "kids/home_child.css");
+    private array $intro = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
+    private array $feedback = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
+    private array $exercises = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
 
 
 
