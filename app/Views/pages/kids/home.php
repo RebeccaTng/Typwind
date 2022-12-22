@@ -18,7 +18,7 @@
 
     <div class="start_ex_button">
         <button class="button buttonSecondary buttonChild" style="color:var(--blueNeutral); text-transform: none;"> The Adventure of the Dog.</button>
-        <button class="button buttonPrimary buttonChild" style="font: var(--buttonLabel);">Start new exercise</button>
+        <button class="button buttonPrimary buttonChild">Start new exercise</button>
     </div>
 
 </div>
