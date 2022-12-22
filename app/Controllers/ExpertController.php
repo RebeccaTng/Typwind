@@ -157,7 +157,7 @@ class ExpertController extends BaseController
         $this->data['email']= $_POST['email'];
         session()->email = $this->data['email'];
 
-        /*        $this->data['password']= $_POST['password'];*/
+        $this->data['password']= $_POST['password'];
 
         $this->teachers_model->edit_teacher($this->data);
         return view('pages/experts/profile');
