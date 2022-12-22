@@ -15,10 +15,10 @@ div.bar .addNew::before{
 }
 
 div.bar {
-    margin: 0.563rem 75px 2.5rem 0; /*9px 75px 40px 0*/
+    margin: 0.563rem 4.688rem 2.5rem 0; /*9px 75px 40px 0*/
     display: grid;
-    grid-template-columns: fit-content(210px) auto fit-content(110px) fit-content(230px);
-    column-gap: 30px;
+    grid-template-columns: fit-content(13.125rem) auto fit-content(6.875rem) fit-content(14.375rem);
+    column-gap: 1.875rem;
     align-items: center;
 }
 
@@ -52,9 +52,9 @@ li.studentListItem {
 }
 
 #myInput {
-    background: url("/public/assets/icons/search.svg") no-repeat 194px center;
-    padding-right: 40px;
-    width: 230px;
+    background: url("/public/assets/icons/search.svg") no-repeat 12.125rem center;
+    padding-right: 2.5rem;
+    width: 14.375rem;
 }
 
 #filter {
@@ -62,7 +62,7 @@ li.studentListItem {
     background-color: inherit;
     border: none;
     font: var(--navText);
-    padding-left: 25px;
+    padding-left: 1.563rem;
 
     -moz-appearance: none;
     -webkit-appearance: none;
