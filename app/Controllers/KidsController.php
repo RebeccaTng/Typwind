@@ -117,15 +117,9 @@ class KidsController extends BaseController
     public function exercises():array
     {
 
-        $model = model(Students_model::class);
+        $model = model(ExerciseModel::class);
 
-        //Testing queries to visualise the Arrow Navigation in Student exercise page, please leave these in!
-//        $all=$model->getExercises();
-//        $specific=$model->getSpecificExercises(session()->id);
-//        $joined_exercises_scores = $model->getStudentExercises(session()->id);
-
-
-        $data = ['exercises' => json_encode($joined_exercises_scores)];
+        $data = ['exercises' => json_encode($model->getExercises())];
         echo $data['exercises' ];
         return ($data);
     }
