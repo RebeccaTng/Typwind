@@ -7,7 +7,7 @@
     /*justify-self: stretch;*/
     text-align: center;
     padding: 50px;
-    height: 100vh;
+
 }
 div.start_ex_button{
     display: flex;
@@ -25,10 +25,12 @@ div.start_ex_button button{
 .mainContent {
     position: relative;
     overflow: hidden;
+    padding: 100px;
 
     /* WAVE COMPONENT CODE */
     background-image: url(/public/assets/general/wave.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
+    text-align: center;
 }
