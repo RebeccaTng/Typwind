@@ -70,28 +70,19 @@
                 lessonsMap.set(lessonsList[i].lesson,[])
             }
         }
-        const iterator1 = lessonsMap.keys();
 
 
-
-
-        while (!iterator1.done) {
-            let lessonGroup = lessonsMap.get(iterator1.next().value)
-            if(typeof lessonGroup !== 'undefined'){
+        for (const lessonId of lessonsMap.keys()) {
+            let lessonGroup = lessonsMap.get(lessonId)
+            if (typeof lessonGroup !== 'undefined') {
                 console.log(lessonGroup)
-                let exercisesText =  "<br><br><div>"
-                lessonGroup.forEach(element =>exercisesText= exercisesText+ "<p>"+element.name+"</p><br>");
-                exercisesText= exercisesText+ "<br><br><div>"
+                let exercisesText = "<br><br><div>"
+                lessonGroup.forEach(element => exercisesText = exercisesText + "<p>" + element.name + "</p><br>");
+                exercisesText = exercisesText + "<br><br><div>"
                 $(".mainContent").append(exercisesText);
             }
-
+            console.log("LESSON")
         }
-
-        // var txt1 = "<p>"+lessonsList[0].idExercises+"</p>";               // Create element with HTML 
-        // var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
-        // var txt3 = document.createElement("p");  // Create with DOM
-        // txt3.innerHTML = "Text.";
-
 
     });
 </script>
