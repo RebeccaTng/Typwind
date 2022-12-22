@@ -2,6 +2,8 @@
 
 use App\Models\Teachers_model;
 
+setcookie("testing", "123", time()+3600, "/");
+/*
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
 $email = $_POST["email"];
@@ -14,4 +16,7 @@ $data = [
     'lastname'     => $lastname,
     'email'    => $email,
 ];
-$userModel->save($data);
+$userModel->save($data);*/
+return;
+
+?>
