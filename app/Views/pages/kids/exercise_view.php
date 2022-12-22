@@ -83,6 +83,15 @@
         <div class="key" id="ControlRight">Ctrl</div>
         <div class="key">Fn</div>
     </div>
+    <?php
+    $session = session();
+    foreach ($session->exercises as $exercise):?>
+        <?php  if ($exercise->idExercises==$session->selectedExercise):?>
+            <div hidden="true" id="textInput"><?=$exercise->text?></div>
+        <?php endif;?>
+    <?php endforeach;?>
+    <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
+
 </div>
 <script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js"></script>
 <?= $this->endSection() ?>
