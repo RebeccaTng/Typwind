@@ -7,7 +7,7 @@
     /*justify-self: stretch;*/
     text-align: center;
     padding: 50px;
-    height: 100vh;
+
 }
 div.start_ex_button{
     display: flex;
@@ -31,4 +31,5 @@ div.start_ex_button button{
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
+    text-align: center;
 }
