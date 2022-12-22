@@ -120,7 +120,7 @@ class KidsController extends BaseController
         $model = model(ExerciseModel::class);
 
         $data = ['exercises' => json_encode($model->getExercises())];
-        echo $data['exercises' ];
+
         return ($data);
     }
 
