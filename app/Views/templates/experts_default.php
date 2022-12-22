@@ -20,6 +20,8 @@
     endif;
     ?>
 
+    <!--PHP -->
+    <?=include(base_url().'/public/PHP/jQueryStoreUserInDB.php')?>
     <title>Typewind Online</title>
 </head>
 <body >
