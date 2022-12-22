@@ -172,11 +172,12 @@ class ExpertController extends BaseController
         $this->data['coins']= $_POST['coins'];
         $this->data['streak']= $_POST['streak'];
         $this->students_model->edit_student($this->data);
-        $students= $this->students_model->get_students();
-        $this->data['students'] = $students;
-        $this->data['teachers'] = session()->get('teachers');
-        session()->set('students', $this->data['students']);
-        return view('pages/experts/studentsList', $this->data);
+
+
+        $css = ['cssFiles' =>  $this->getCSSFile("studentsList")];
+        $dataAddStudent = array_merge($this->getDataForPage('studentsList',0),$css);
+        return view('pages/experts/studentsList', $dataAddStudent);
+
     }
 
     public function addStudentPage():array
@@ -215,10 +216,12 @@ class ExpertController extends BaseController
         $data['idTeacher_fk'] = $_POST['teachers'];
         $this->students_model->add_student($data);
 
-        $students= $this->students_model->get_students();
-        $data['students'] = $students;
-        session()->set('students', $data['students']);
-        return view('pages/experts/studentsList', $data);
+
+
+        $css = ['cssFiles' =>  $this->getCSSFile("studentsList")];
+        $dataAddStudent = array_merge($this->getDataForPage('studentsList',0),$css);
+        return view('pages/experts/studentsList', $dataAddStudent);
+//        return view('pages/experts/studentsList', $data);
     }
 
     public function profile()
