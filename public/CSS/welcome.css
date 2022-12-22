@@ -16,7 +16,7 @@
 
     grid-column: 2  / span 1;
     grid-row: 2/span 1;
-    justify-self: stretch;
+    justify-self: center;
     text-align: center;
     padding: 50px;
 }
