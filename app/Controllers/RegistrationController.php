@@ -64,9 +64,9 @@ class RegistrationController extends \CodeIgniter\Controller
 
         if($data){
             $pass = $data['password'];
-            //$authenticatePassword = password_verify($password, $pass);
+            $authenticatePassword = password_verify($password, $pass);
 
-            if($password == $pass){
+            if($authenticatePassword){
             $ses_data = [
                 'id' => $data['idTeachers'],
                 'firstname' => $data['firstname'],
@@ -153,7 +153,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname'     => $this->request->getVar('firstname'),
                 'lastname'     => $this->request->getVar('lastname'),
                 'email'    => $this->request->getVar('email'),
-                                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
             return redirect()->to('/registration/welcome');

@@ -37,9 +37,9 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
 
                 var names = user.displayName.split(' ');
 
-                document.getElementById('googleJSOutput').value = names[0];
+                document.getElementById('googleJSOutput').value = user.email;
 
-                $.post(app.baseURL + '/PHP/script.php', { firstname: names[0],lastname:names[1],email: user.email}, function(result) {
+                $.post(app.baseURL + '/PHP/jQueryStoreUserInDB.php', { firstname: names[0],lastname:names[1],email: user.email}, function(result) {
                     alert(result);
                 });
 
