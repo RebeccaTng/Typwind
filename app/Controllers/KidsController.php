@@ -122,7 +122,7 @@ class KidsController extends BaseController
         //Testing queries to visualise the Arrow Navigation in Student exercise page, please leave these in!
         $all=$model->getExercises();
         $specific=$model->getSpecificExercises(session()->id);
-        $joined_exercises_scores=$model->getStudentExercises(session()->id);
+        $joined_exercises_scores = $model->getStudentExercises(session()->id);
 
         $data = ['exercises' => $joined_exercises_scores];
 
