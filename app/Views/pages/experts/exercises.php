@@ -1,69 +1,43 @@
-<?= $this->extend('/templates/experts_default') ?>
+<?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
 
 
-<?php if (! empty($exercises) && is_array($exercises)):
-$lesson = 0;
-?>
 
-<div class="dropdown" style="float:right;">
-    <img class="arw_img" alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"> <span>Select Lesson</span>
-    <div class="dropdown-content">
-        <?php foreach ($exercises as $exercise_item):
-        if ($exercise_item->lesson != $lesson) {
-        echo "<a href=#Lesson" .$exercise_item->lesson. "><option>". "Lesson ".$exercise_item->lesson. "</option></a>";
-        }
-        $lesson = $exercise_item->lesson;?>
+<script>
+    $(document).ready(function(){
 
-        <?php endforeach ?>
+        let lessonsList = <?php echo $exercises; ?>;
 
-        <?php else: ?>
+        const lessonsMap = new Map();
 
-            No Lessons To Show
-
-        <?php endif ?>
-    </div>
-</div>
-
-<br><br><br><br>
-
-<section>
-
-    <?php if (! empty($exercises) && is_array($exercises)):
-        $lesson = 0;
-        ?>
-
-
-        <?php foreach ($exercises as $exercise_item): ?>
-
-        <ul>
-
-            <?php
-            if ($exercise_item->lesson != $lesson) {
-                echo '<section id=Lesson'.$exercise_item->lesson. '>'.
-                      "<h2>". "Lesson ".$exercise_item->lesson. "</h2>".
-                    "</section>";
-
+        for (let i = 0; i < lessonsList.length; i++) {
+            if(lessonsMap.has(lessonsList[i].lesson)){
+                lessonsMap.get(lessonsList[i].lesson).push(lessonsList[i])
             }
-            $lesson = $exercise_item->lesson;
+            else{
+                lessonsMap.set(lessonsList[i].lesson,[])
+            }
+        }
 
-            ?>
 
-            <?= esc($exercise_item->name); ?>
+        for (const lessonId of lessonsMap.keys()) {
+            let lessonGroup = lessonsMap.get(lessonId)
+            if (typeof lessonGroup !== 'undefined') {
+                console.log(lessonGroup)
+                let exercisesText = "<br><br><div>"
+                lessonGroup.forEach(element => exercisesText = exercisesText + "<p>" + element.name + "</p><br>");
+                exercisesText = exercisesText + "<br><br><div>"
+                $(".mainContent").append(exercisesText);
+            }
+            console.log("LESSON")
+        }
 
-        </ul>
+    });
+</script>
 
-    <?php endforeach ?>
-
-    <?php else: ?>
-
-        <h3>No Exercises</h3>
-
-        <p>Unable to find any exercises for you.</p>
-
-    <?php endif ?>
-
-</section>
+<?php
+$_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
+?>
 
 <?= $this->endSection() ?>

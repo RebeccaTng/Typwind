@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ExerciseModel;
 use App\Models\Students_model;
 use App\Models\Teachers_model;
 
@@ -114,8 +115,12 @@ class ExpertController extends BaseController
 
     public function exercises():array
     {
-        $data['exercises']=$this->teachers_model->getExercises();
-        return $data;
+
+        $model = model(ExerciseModel::class);
+
+        $data = ['exercises' => json_encode($model->getExercises())];
+
+        return ($data);
     }
 
     public function studentOverview($idStudents): array
