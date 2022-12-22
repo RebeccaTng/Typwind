@@ -47,9 +47,9 @@ class KidsController extends BaseController
             case 'home':
                 return $this->home();
             case 'intro':
-                return $this->intro();
+                return $this->intro($args);
             case 'feedback':
-                return $this->feedback();
+                return $this->feedback($args);
             case 'exercises':
                 return $this->exercises();
 
@@ -88,19 +88,20 @@ class KidsController extends BaseController
         return array();
     }
 
-    public function intro()
+    public function intro($idExercises)
     {
 
         $this->data['exercises']= session()->get('exercises');
-        $this->data['idExercises']= $_GET['idExercises'];
+//        $this->data['idExercises']= $_GET['idExercises'];
+        $this->data['idExercises']= $idExercises;
         return ($this->data);
     }
 
-    public function feedback():array
+    public function feedback($idExercises):array
     {
 
         $this->data['exercises']= session()->get('exercises');
-        $idExercises= $_GET['idExercises'];
+//        $idExercises= $_GET['idExercises'];
         $this->data['idExercises']=$idExercises;
         return ($this->data);
     }
