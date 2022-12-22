@@ -62,13 +62,10 @@ class RegistrationController extends \CodeIgniter\Controller
         $data = $expertModel->where('email', $email)->first();
         $data2 = $studentModel->where('email', $email)->first();
 
-        setcookie("pass1", $password, time()+36000, "/");
-        setcookie("pass2", $data['password'], time()+36000, "/");
-
         if($data){
             $pass = $data['password'];
-            $authenticatePassword = password_verify($password, $pass);
-            
+            //$authenticatePassword = password_verify($password, $pass);
+
             if($password == $pass){
             $ses_data = [
                 'id' => $data['idTeachers'],
@@ -107,7 +104,6 @@ class RegistrationController extends \CodeIgniter\Controller
         $expertModel = new Teachers_model();
         $studentModel = new Students_model();
         $email = $this->request->getVar('email');
-        /*        $password = $this->request->getVar('password');*/
 
         $data = $expertModel->where('email', $email)->first();
         $data2 = $studentModel->where('email', $email)->first();
@@ -118,9 +114,7 @@ class RegistrationController extends \CodeIgniter\Controller
         }
 
         else if(isset($data2)){
-            /*$pass = $data['password'];
-            $authenticatePassword = password_verify($password, $pass);
-            if($authenticatePassword){*/
+
             $ses_data = [
                 'id' => $data2['idStudents'],
                 'firstname' => $data2['firstname'],
