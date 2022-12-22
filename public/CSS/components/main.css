@@ -104,7 +104,7 @@ h1 {
     border-radius: 1.563rem; /* 25px */
     /*text-align: center;*/
     /*height: 100%;*/
-    /*overflow: hidden;*/
+    overflow: hidden;
     flex-grow: 1;
 
 }
@@ -113,6 +113,7 @@ h1 {
     padding: 20px;
     flex-direction: row;
     justify-content: flex-start;
+    height: 100vh
 
 }
 

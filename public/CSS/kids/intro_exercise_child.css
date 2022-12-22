@@ -2,23 +2,25 @@
 .grid-container_intro {
     display: grid;
     grid-template-columns: 3fr 4fr 3fr;
-    grid-template-rows: 1fr 1fr 8fr;
-    width: 100vw;
-    height: 100vh;
-
+    grid-template-rows: 0.5fr 1fr 8fr;
+    margin: 50px;
+    height: 100%;
 }
 /* CARD */
 .grid_cards{
     grid-column: 2  / span 1;
     grid-row: 3/span 1;
+    justify-self: stretch;
+    text-align: center;
+    padding: 40px;
+    align-content: flex-start;
 }
 .card_intro {
     background-color: var(--beigeNeutral-light);
     border-radius: 1.563rem; /* 25px */
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
-    padding: 1.25rem; /* 20px */
+    padding: 40px;
     margin: 0.625rem; /* 10px */
-    width: fit-content;
 }
 .breadcrumb{
     grid-column: 1  / span 3;
@@ -33,12 +35,9 @@ div.intro_ex_button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: center;*/
-    /*text-align: center;*/
-    margin-bottom: 15%;
 }
 div.intro_ex_button button{
-    width: 35%;
+    width: 70%;
     margin: 12px;
 }
 /* SWITCH */

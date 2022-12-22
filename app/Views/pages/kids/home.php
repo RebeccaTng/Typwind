@@ -4,7 +4,7 @@
 
 <div class="home_content">
     <div>
-        <h1 style="color:var(--blueNeutral); "> Welcome Back </h1>
+        <h1 style="color:var(--blueNeutral);"> Welcome Back </h1>
         <h1 style="color:var(--blueNeutral); ">
             <?php
             $session = session();
