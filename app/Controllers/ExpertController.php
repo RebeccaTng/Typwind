@@ -132,6 +132,7 @@ class ExpertController extends BaseController
         $this->data['teachers'] = session()->get('teachers');
         return( $this->data);
     }
+
     public function editStudent($idStudents)
     {
         $this->data['idStudents']=$idStudents;

@@ -41,6 +41,7 @@ class KidsController extends BaseController
         else $data = $css;
         return view('/pages/kids/' . $page,$data);
     }
+
     ////// SET UP METHODS ALL
     private function getDataForPage($pageName,$args): array
     {
@@ -107,7 +108,6 @@ class KidsController extends BaseController
         $this->students_model->add_results($data1);
 
         $this->data['exercises']= session()->get('exercises');
-//        $idExercises= $_GET['idExercises'];
         $this->data['idExercises']=$idExercises;
         return ($this->data);
     }
