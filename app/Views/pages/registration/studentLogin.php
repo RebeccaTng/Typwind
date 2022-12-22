@@ -26,7 +26,7 @@
 
             <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
 
-                <input type="email" name="email" placeholder="Email" value="<?php jquery ?>">
+                <input type="email" name="email" placeholder="Email" value="">
 
                 <button type="submit" class="button buttonPrimary buttonChild changeWidth" style="font: var(--buttonLabel);">continue with my email</button>
             </form>
