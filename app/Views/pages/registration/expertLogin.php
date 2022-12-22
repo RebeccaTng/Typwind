@@ -32,7 +32,7 @@
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert">REGISTER</button>
         ----------------------- OR -----------------------
         <p>Log in With Google</p>
-        <button class="social-signin google" id="login">Log in with Google+</button>
+        <button type ="button" class="social-signin google" id="login">Log in with Google+</button>
 
     </div>
 

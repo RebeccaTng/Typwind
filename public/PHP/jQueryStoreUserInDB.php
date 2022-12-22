@@ -15,4 +15,3 @@ $data = [
     'email'    => $email,
 ];
 $userModel->save($data);
-$userModel->add_teacher($data);
