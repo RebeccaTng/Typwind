@@ -107,6 +107,7 @@ class ExpertController extends BaseController
     {
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
+        $this->data['teachers'] = session()->get('teachers');
         session()->set('students', $this->data['students']);
         return $this->data;
     }
@@ -150,23 +151,30 @@ class ExpertController extends BaseController
 
 
         $handSelection=$_POST['handSelection'];
-        if ($handSelection=="One Hand")
+
+
+        if ($handSelection=="left")
+        {
+            $this->data['handSelection']=2;
+        }
+        if ($handSelection=="right")
         {
             $this->data['handSelection']=1;
         }
-        else{
+        if ($handSelection=="both"){
             $this->data['handSelection']=0;
         }
         $this->data['isActive'] = isset($_POST['active']);
         $this->data['notes'] = $_POST['notes'];
         $this->data['email']= $_POST['email'];
-/*        $this->data['password']= $_POST['password'];*/
+        $this->data['password']= $_POST['password'];
         $this->data['reminder']= $_POST['reminder'];
         $this->data['coins']= $_POST['coins'];
         $this->data['streak']= $_POST['streak'];
         $this->students_model->edit_student($this->data);
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
+        $this->data['teachers'] = session()->get('teachers');
         session()->set('students', $this->data['students']);
         return view('pages/experts/studentsList', $this->data);
     }
@@ -191,9 +199,13 @@ class ExpertController extends BaseController
             $data['gender']=0;
         }
         $handSelection=$_POST['handSelection'];
-        if ($handSelection=="One Hand")
+        if ($handSelection=="One Hand, right hand")
         {
             $data['handSelection']=1;
+        }
+        if ($handSelection=="One Hand, left hand")
+        {
+            $data['handSelection']=2;
         }
         else{
             $data['handSelection']=0;

@@ -35,12 +35,9 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
     }
     public function edit_student($data)
     {
-
         $builder = $this->db->table('students');
-        $query = $builder->replace($data);
-        //$query_text= 'UPDATE `a22ux02`.`students` SET `firstname` = ?, `lastname` = ?, `gender` = ?, `birthday` = ?, `handSelection` = ?, `isActive` = ?, `notes` = ?, `idTeacher_fk` = ? WHERE (`idStudents` = ?)';
-        //$query = $this->db->query($query_text, $data['firstname'],$data['lastname'], $data['gender'], $data['birthday'], $data['handSelection'], $data['isActive'],$data['notes'],$data['idTeacher_fk'], $data['idStudents'] );
-        return $query;
+        $builder->where('idStudents', $data['idStudents']);
+        $builder->update($data);
     }
 
     public function getStudentExercises($idStudent)

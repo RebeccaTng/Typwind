@@ -3,8 +3,14 @@
 <?= $this->section('content') ?>
 
 
+
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
+
+
+        <section>
+            <a href="<?php echo base_url('/experts/studentsList');?>">Students</a><h6><?=$person->firstname?><?=$person->lastname?></h6>
+        </section>
 
         <form action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
             <input type="hidden" id="email" name="email" value="<?=$person->email?>">
@@ -42,15 +48,26 @@
 
             <label for="handSelection">Hand Selection:</label>
             <select name="handSelection" id="handSelection" required>
+
             <?php if ($person->handSelection==1):?>
+                <option selected="selected" value="right">One Hand, right hand</option>
+                <option value="left">One Hand, left hand</option>
+                <option value="both">Both Hands</option>
 
-                <option selected="selected" value="One Hand">One Hand</option>
-                <option value="Both Hands">Both Hands</option>
+            <?php endif;?>
+            <?php if ($person->handSelection==2):?>
+                <option value="right">One Hand, right hand</option>
+                <option selected="selected" value="left">One Hand, left hand</option>
+                <option value="both">Both Hands</option>
 
-            <?php else: ?>
-                <option value="One Hand">One Hand</option>
-                <option selected="selected" value="Both Hands">Both Hands</option>
-                <?php endif;?>
+            <?php endif;?>
+            <?php if ($person->handSelection==0):?>
+
+                <option value="right">One Hand, right hand</option>
+                <option value="left">One Hand, left hand</option>
+                <option selected="selected" value="both">Both Hands</option>
+
+            <?php endif;?>
             </select><br><br>
             <label for="active">Active</label>
             <?php if ($person->isActive==1):?>
@@ -67,6 +84,19 @@
             <input type="text" id="notes" name="notes" value="<?= $person->notes?>" ><br><br>
             <input type="submit" value="Save">
         </form>
+
+        <?php if ($person->handSelection==1):?>
+            <img src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
+
+        <?php endif;?>
+        <?php if ($person->handSelection==2):?>
+            <img src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
+
+        <?php endif;?>
+        <?php if ($person->handSelection==0):?>
+            <img src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
+
+        <?php endif;?>
     <?php endif;?>
 <?php endforeach;?>
 
