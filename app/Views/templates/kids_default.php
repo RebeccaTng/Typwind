@@ -24,25 +24,19 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/kids/home_child.css">
+
+
 </head>
 <body>
-<div>
-    <!-- Sidebar Holder -->
-    <?= $this->include('templates/side_nav_bar_2') ?>
-    <!-- Page Content Holder -->
-    <div id="content">
-        <button type="button" id="sidebarCollapse">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <main>
-            <?= $this->renderSection('content') ?>
-        </main>
+<div class="grid-container">
+    <div class="leftNavBar">
+        <?= $this->include('templates/side_nav_bar') ?>
+    </div>
+    <div class="mainContent ">
+        <?= $this->renderSection('content') ?>
     </div>
 </div>
-
 
 </body>
 </html>

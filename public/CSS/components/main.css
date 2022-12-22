@@ -97,7 +97,7 @@ h1 {
 
 }
 .mainContent {
-    box-shadow: 8px 8px 20px rgba(30, 41, 41, 0.4);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15);
     background-color: var(--beigeNeutral);
     border-radius: 1.563rem; /* 25px */
     /*text-align: center;*/
