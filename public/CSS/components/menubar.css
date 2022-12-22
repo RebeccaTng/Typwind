@@ -8,13 +8,15 @@
     color: var(--blueNeutral);
     align-content: stretch;
     justify-content: stretch;
-    grid-template-areas:'.''header' 'header' 'subHeader''subHeader''.''item''item''item''item''item''item' 'item'  '.''.' '.''.' 'footer''footer' '.';
+    grid-template-areas:'.' '.''header' 'subHeader''subHeader''.''item''item''item''item''item''item''item' 'item'  '.''.' '.''.' 'footer''footer' '.';
 }
 
 .menuHeader {
     grid-area: header;
     padding-right: 60px;
     padding-left: 50px;
+
+
 }
 .menuHeader img{
     height: 50px;
@@ -22,6 +24,7 @@
 }
 
 .menuSubHeader{
+
     grid-area: subHeader;
     padding-right: 25px;
     padding-left: 15px;
