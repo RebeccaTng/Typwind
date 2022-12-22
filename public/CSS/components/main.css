@@ -91,9 +91,11 @@ h1 {
 }
 
 .leftNavBar {
-    /*grid-area: menu;*/
+
     background-color: transparent;
     text-align: center;
+    flex-shrink: 1;
+
 
 }
 .mainContent {
@@ -101,18 +103,17 @@ h1 {
     background-color: var(--beigeNeutral);
     border-radius: 1.563rem; /* 25px */
     /*text-align: center;*/
-    height: 100%;
-    overflow: hidden;
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+    flex-grow: 1;
+
 }
 .grid-container {
-    display: grid;
+    display: flex;
     padding: 20px;
-    /*width: 100vw;*/
-    /*height: 100vh;*/
+    flex-direction: row;
+    justify-content: flex-start;
 
-    grid-template-columns: 210px auto;
-    /*grid-template-rows: auto;*/
-    /*grid-template-areas:'menu main main main main main main main';*/
 }
 
 
