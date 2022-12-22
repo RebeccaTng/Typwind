@@ -2,43 +2,38 @@
 
 <?= $this->section('content') ?>
 
-<script type="text/javascript">
-    var users = <?php echo json_encode($students); ?>;
-</script>
+    <h1>Students</h1>
+    <div class="bar">
+        <!-- Add new student -->
+        <a class="addNew" href=<?php echo base_url('experts/addStudentPage/');?>>Add New Student</a>
 
-<script type="text/javascript" src="<?=base_url()?>/public/js/filter.js"></script>
+        <!-- Filter -->
+        <select name="Filter" id="filter" onchange="filterStudents(users, this.value);">
+            <option disabled selected value> Filter </option>
+            <?php foreach ($teachers as $teacher):?>
+                <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
+            <?php endforeach;?>
+        </select>
 
+        <!-- Searchbar -->
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Text Input">
+    </div>
 
+    <script type="text/javascript">
+        var users = <?php echo json_encode($students); ?>;
+    </script>
+    <script type="text/javascript" src="<?=base_url()?>/public/js/filter.js"></script>
 
-<div id="list">
-
+    <ul class="studentList" id="list">
         <?php foreach ($students as $person):?>
-            <li> <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>"><?=$person->firstname?><br><?=$person->lastname?></a></li>
-
-
+            <li class="studentListItem">
+                <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
+                    <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                    <h4><?=$person->firstname?><br><?=$person->lastname?></h4>
+                </a>
+            </li>
         <?php endforeach;?>
-</div>
-
-<section>
-
-    <h2>Add New Student </h2>
-
-    <a href=<?php echo base_url('experts/addStudentPage/');?>> addStudent </a> <br><br>
-</section>
-
-<section>
-    <select name="Filter" id="filter" onchange="filterStudents(users, this.value);">
-        <option disabled selected value> Filter </option>
-        <?php foreach ($teachers as $teacher):?>
-            <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
-        <?php endforeach;?>
-    </select>
-</section>
-
-<section>
-
-    <input type="text" id="myInput" onkeyup="search()" placeholder="Text Input">
-</section>
+    </ul>
 <?= $this->endSection() ?>
 
 
