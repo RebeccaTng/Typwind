@@ -66,6 +66,7 @@ $routes->post('/kids/feedback', 'KidsController::feedback',['filter'=>'AuthGuard
 
 /// design testing Route
 $routes->get('/design/(:any)', 'DesignController::view/$1');
+$routes->get('/design/(:any)', 'DesignController::view/$1');
 
 /// LogIn
 $routes->get('/registration/expertLogin', 'RegistrationController::expertLogin');

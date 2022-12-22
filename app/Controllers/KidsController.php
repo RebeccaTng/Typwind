@@ -124,8 +124,8 @@ class KidsController extends BaseController
         $specific=$model->getSpecificExercises(session()->id);
         $joined_exercises_scores = $model->getStudentExercises(session()->id);
 
-        $data = ['exercises' => $joined_exercises_scores];
-
+        $data = ['exercises' => json_encode($joined_exercises_scores)];
+        echo $data['exercises' ];
         return ($data);
     }
 
