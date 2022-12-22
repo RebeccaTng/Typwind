@@ -106,14 +106,14 @@ h1 {
     /*height: 100%;*/
     /*overflow: hidden;*/
     flex-grow: 1;
-
+    overflow: hidden;
 }
 .grid-container {
     display: flex;
     padding: 20px;
     flex-direction: row;
     justify-content: flex-start;
-
+    height: 100vh;
 }
 
 
