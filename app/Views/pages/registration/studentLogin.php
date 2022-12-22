@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/kids/login_child.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
-    <title>Welcome page</title>
+
 </head>
 <body>
 
