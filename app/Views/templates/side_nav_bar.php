@@ -9,21 +9,30 @@
         <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
     <div class="menuItems" >
-<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Home_icon.svg" >-->
-        <a href="<?=base_url()?>/experts/home"  class="home" >
-            Home
+
+<!--        <a href="--><?php //=base_url()?><!--/experts/home"  class="home" >-->
+        <a href="<?=base_url()?>/experts/home" >
+            <img  src="<?=base_url()?>/public/assets/icons/Home_icon.svg" >
+            <p>Home1</p>
         </a>
-<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Students_Icon.svg" >-->
+
+<!--        <a href="--><?php //=base_url()?><!--/experts/studentsList"  class="students">-->
         <a href="<?=base_url()?>/experts/studentsList"  class="students">
             Students
+            <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" >
         </a>
-<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Students_Icon.svg" >-->
+
+<!--        <a href="--><?php //=base_url()?><!--/experts/exercises"  class="exercises">       -->
         <a href="<?=base_url()?>/experts/exercises"  class="exercises">
             Exercises
+            <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" >
+
         </a>
-<!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/profile_icon.svg" >-->
-        <a href="<?=base_url()?>/experts/profile" class="profile">
+
+<!--        <a href="--><?php //=base_url()?><!--/experts/profile" class="profile">-->
+        <a href="--><?php //=base_url()?><!--/experts/profile" class="profile">
             My Profile
+            <img  src="<?=base_url()?>/public/assets/icons/profile_icon.svg" >
         </a>
     </div >
     <div  class="menuFooter">
