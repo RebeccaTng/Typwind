@@ -13,7 +13,6 @@
             <div class="textContainer " id="movableExerciseBoxText"></div>
         </div>
         <div id="effect"></div>
-        <p id="currentInputFeedBack"></p>
         <div id="imageContainer">
         </div>
     </div>
@@ -88,10 +87,20 @@
     foreach ($session->exercises as $exercise):?>
         <?php  if ($exercise->idExercises==$session->selectedExercise):?>
             <div hidden="true" id="textInput"><?=$exercise->text?></div>
+            <div hidden="true" id="idExercise_fkDB"><?=$exercise->idExercises?></div>
+            <div hidden="true" id="idStudent_fkDB"><?=$session->id?></div>
+
         <?php endif;?>
     <?php endforeach;?>
     <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
 
+
+    <form id="form" action="<?php echo base_url('kids/feedback');?>" method="post" onsubmit="addResults()">
+        <input type="hidden" id="idStudent_fk" name="idStudent_fk" value="">
+        <input type="hidden" id="idExercise_fk" name="idExercise_fk" value="">
+        <input type="hidden" id="score" name="score" value="">
+        <input type="hidden" id="date" name="date" value="">
+    </form>
 </div>
 <script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js"></script>
 <?= $this->endSection() ?>

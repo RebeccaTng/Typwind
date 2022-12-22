@@ -99,6 +99,11 @@ class KidsController extends BaseController
 
     public function feedback($idExercises):array
     {
+        $data1['idStudent_fk'] = $_POST['idStudent_fk'];
+        $data1['idExercise_fk'] = $_POST['idExercise_fk'];
+        $data1['score'] = $_POST['score'];
+        $data1['date'] = $_POST['date'];
+        $this->students_model->add_results($data1);
 
         $this->data['exercises']= session()->get('exercises');
 //        $idExercises= $_GET['idExercises'];
