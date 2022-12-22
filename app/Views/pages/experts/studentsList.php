@@ -7,12 +7,14 @@
         <!-- Add new student -->
         <a class="addNew" href=<?php echo base_url('experts/addStudentPage/');?>>Add New Student</a>
 
+        <input type="hidden" id="testURL" name="testURL" value="<?php echo base_url();?>/experts/studentOverview/">
         <!-- Filter -->
-        <select name="Filter" id="filter" onchange="filterStudents(users, this.value);">
+        <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
             <option disabled selected value>Filter</option>
             <?php foreach ($teachers as $teacher):?>
                 <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
             <?php endforeach;?>
+            <option value="disable filter"> Disable filter</option>
         </select>
 
         <!-- Searchbar -->
@@ -35,5 +37,4 @@
         <?php endforeach;?>
     </ul>
 <?= $this->endSection() ?>
-
 

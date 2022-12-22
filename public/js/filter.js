@@ -2,14 +2,30 @@
 
 
 function filterStudents(array, name) {
-    const result = array.filter(student => student.teacherFirstname === name);
-    html = "<div id='list'>";
-    for (var i = 0; i < result.length; i++) {
-        html= html+ "<li> <a href= \"http://localhost/UXWD/experts/studentOverview/" + result[i].idStudents + "\">"+ result[i].firstname +"<br>" + result[i].lastname + "</a></li>"
+    var URL = document.getElementById("testURL").value;
+
+    if (name == "disable filter")
+    {
+        html="";
+        for (var i = 0; i < array.length; i++) {
+            html= html+ "<li class=\"studentListItem\"> <a href= \"" + URL + array[i].idStudents  +"\">"
+                + " <img src=\"/public/assets/icons/user.svg\" alt=\"User Icon\" class=\"roundProfilePic\">" +
+                " <h4>" +array[i].firstname + "<br>" + array[i].lastname +"</h4>"+"</a></li>"
+        }
     }
-    //html= html+""
+    else{
+        const result = array.filter(student => student.teacherFirstname === name);
+        html="";
+        for (var i = 0; i < result.length; i++) {
+            html= html+ "<li class=\"studentListItem\"> <a href= \"" + URL + result[i].idStudents  +"\">"
+                + " <img src=\"/public/assets/icons/user.svg\" alt=\"User Icon\" class=\"roundProfilePic\">" +
+                " <h4>" +result[i].firstname + "<br>" + result[i].lastname +"</h4>"+"</a></li>"
+        }
+    }
+
+
+    //html= html+"
     document.getElementById("list").innerHTML = html;
-    //return console.log(result);
 }
 
 function search() {
