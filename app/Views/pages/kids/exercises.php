@@ -58,24 +58,36 @@
 <script>
     $(document).ready(function(){
 
-        let lessons = <?php echo $exercises; ?>;
+        let lessonsList = <?php echo $exercises; ?>;
 
         const lessonsMap = new Map();
-        lessonsMap.set("array_key",[])
-        for (let i = 0; i < 10; i++) {
-            // if(!lessonsMap.has(lessons[i].lesson)){
-            //     lessonsMap.set()
-            // }
-            lessonsMap.get("array_key").push(lessons[i].lesson)
+
+        for (let i = 0; i < lessonsList.length; i++) {
+            if(lessonsMap.has(lessonsList[i].lesson)){
+                lessonsMap.get(lessonsList[i].lesson).push(lessonsList[i])
+            }
+            else{
+                lessonsMap.set(lessonsList[i].lesson,[])
+            }
         }
 
-        // Display the array elements
-        console.log(lessonsMap.get("array_key")); // Console Log print.
-        var txt1 = "<p>"+lessons[0].idExercises+"</p>";               // Create element with HTML 
+        console.log(lessonsMap.get("1"))
+        const iterator1 = lessonsMap.keys();
+        for (const item of iterator1) {
+            const lessonGroup = item.get()
+            console.log(typeof lessonGroup)
+            let exercisesText =  "<br><br><div>"
+            lessonGroup.forEach(element =>exercisesText= exercisesText+ "<p>"+element.name+"</p><br>");
+            exercisesText= exercisesText+ "<br><br><div>"
+            $(".mainContent").append(exercisesText);
+        }
+
+
+        // var txt1 = "<p>"+lessonsList[0].idExercises+"</p>";               // Create element with HTML 
         // var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
         // var txt3 = document.createElement("p");  // Create with DOM
         // txt3.innerHTML = "Text.";
-        $(".mainContent").append(txt1);
+
 
     });
 </script>
