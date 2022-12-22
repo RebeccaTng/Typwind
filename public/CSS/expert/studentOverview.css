@@ -1,0 +1,108 @@
+.mainContent {
+    position: relative;
+    padding: 2.813rem 0 3.75rem; /*45px 0 60px*/
+}
+
+div.bottomBar a {
+    text-decoration: none;
+}
+
+.button {
+    max-width: 9.375rem; /*150px*/
+}
+
+ul.breadcrumb, h1 {
+    padding-left: 60px;
+}
+
+p {
+    font: var(--bodyText);
+    text-align: left;
+    display: inline-block;
+    line-height: 2.5rem; /*40px*/
+    grid-column: 2;
+    grid-row: 2/span 2;
+    justify-self: left;
+}
+
+h3 {
+    color: var(--secondaryColor);
+    grid-column: 1/span 2;
+    grid-row: 1;
+    margin-bottom: 15px;
+    justify-self: left;
+    align-items: center;
+}
+
+div.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 30px;
+    overflow: auto;
+    height: 70vh;
+}
+
+div.scroller {
+    padding-left: 60px;
+    padding-right: 30px;
+}
+
+div.card {
+    margin: 0 0 20px 0;
+}
+
+div.general {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 50px 150px 150px;
+    column-gap: 30px;
+    row-gap: 15px;
+    justify-items: center;
+    align-items: start;
+    height: fit-content;
+}
+
+div.card {
+    padding: 30px;
+}
+
+img.roundProfilePic {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+img.hands {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+div.notes {
+    padding: 15px;
+    border: solid 1.5px var(--primaryColor);
+    background-color: var(--beigeNeutral);
+    border-radius: 20px;
+}
+
+div.noteCard {
+    width: 100%;
+    margin-right: 30px;
+    height: fit-content;
+}
+
+div.noteCard p {
+    line-height: 25px;
+}
+
+@media screen and (max-height: 950px) {
+    div.container {
+        height: 65vh;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    div.container {
+        height: 55vh;
+    }
+}
