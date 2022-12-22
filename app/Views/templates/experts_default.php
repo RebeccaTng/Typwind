@@ -14,6 +14,7 @@
 
     <!--CSS FILES-->
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>/public/CSS/dropDownExpertExercises.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/menubar.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
 

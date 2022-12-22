@@ -6,13 +6,12 @@
 $lesson = 0;
 ?>
 
-<div style="float:right;">
-    <button ><img class="arw_img" alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"> Select Lesson</button>
-    <div>
-
+<div class="dropdown" style="float:right;">
+    <img class="arw_img" alt="Arrow Down Icon" src="<?=base_url()?>/public/assets/icons/down.png"> <span>Select Lesson</span>
+    <div class="dropdown-content">
         <?php foreach ($exercises as $exercise_item):
         if ($exercise_item->lesson != $lesson) {
-        echo "<a href=#Lesson" .$exercise_item->lesson. ">". "Lesson ".$exercise_item->lesson. "</a>";
+        echo "<a href=#Lesson" .$exercise_item->lesson. "><option>". "Lesson ".$exercise_item->lesson. "</option></a>";
         }
         $lesson = $exercise_item->lesson;?>
 
@@ -23,7 +22,6 @@ $lesson = 0;
             No Lessons To Show
 
         <?php endif ?>
-
     </div>
 </div>
 

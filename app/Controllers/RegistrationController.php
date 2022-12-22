@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Students_model;
 use App\Models\Teachers_model;
+use function MongoDB\BSON\toJSON;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
@@ -43,6 +44,9 @@ class RegistrationController extends \CodeIgniter\Controller
                 setcookie($name, '', time()-1000, '/');
             }
         }*/
+
+        //Setting the baseURL in a cookie to easily use in JS
+        setcookie("baseURL", base_url(), time()+3600, "/");
 
         //Setting the initial language Cookie
         setcookie("englishActive", 'not active', time()+3600, "/");
