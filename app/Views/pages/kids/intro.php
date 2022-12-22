@@ -12,12 +12,12 @@
         </ul>
     </div>
 
-    <div class="title"">
-    <?php foreach ($exercises as $ex):?>
-        <?php  if ($ex->idExercises==$idExercises):?>
-            <h1 style="color: var(--blueNeutral);"><?= $ex->name?></h1>
-        <?php endif;?>
-    <?php endforeach;?>
+    <div class="title">
+        <?php foreach ($exercises as $ex):?>
+            <?php  if ($ex->idExercises==$idExercises):?>
+                <h1 style="color: var(--blueNeutral);"><?= $ex->name?></h1>
+            <?php endif;?>
+        <?php endforeach;?>
     </div>
     <div class="grid_cards">
             <div class="card_intro">

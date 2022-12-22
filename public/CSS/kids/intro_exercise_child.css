@@ -13,7 +13,6 @@
     justify-self: stretch;
     text-align: center;
     padding: 40px;
-    align-content: flex-start;
 }
 .card_intro {
     background-color: var(--beigeNeutral-light);
