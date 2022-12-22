@@ -9,14 +9,14 @@
 
         <!-- Filter -->
         <select name="Filter" id="filter" onchange="filterStudents(users, this.value);">
-            <option disabled selected value> Filter </option>
+            <option disabled selected value>Filter</option>
             <?php foreach ($teachers as $teacher):?>
                 <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
             <?php endforeach;?>
         </select>
 
         <!-- Searchbar -->
-        <input type="text" id="myInput" onkeyup="search()" placeholder="Text Input">
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search">
     </div>
 
     <script type="text/javascript">

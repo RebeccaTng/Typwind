@@ -15,11 +15,11 @@ div.bar .addNew::before{
 }
 
 div.bar {
-    margin-top: 0.563rem; /*9px*/
-    margin-bottom: 2.5rem; /*40px*/
+    margin: 0.563rem 75px 2.5rem 0; /*9px 75px 40px 0*/
     display: grid;
-    grid-template-columns: fit-content(1fr) auto fit-content(1fr) fit-content(1fr);
+    grid-template-columns: fit-content(210px) auto fit-content(110px) fit-content(230px);
     column-gap: 30px;
+    align-items: center;
 }
 
 ul.studentList {
@@ -28,9 +28,9 @@ ul.studentList {
     grid-template-rows: auto;
     justify-content: center;
     align-items: start;
-    gap: 3.125rem 6.25rem; /*50px 100px*/
-    /*max-height: 450px;*/
+    gap: 3.125rem 3.125rem; /*50px 50px*/
 
+    height: 65vh;
     list-style-type: none;
     overflow: auto;
     padding-right: 2.188rem; /*35px*/
@@ -51,6 +51,29 @@ li.studentListItem {
     grid-column: 3/4;
 }
 
+#myInput {
+    background: url("/public/assets/icons/search.svg") no-repeat 194px center;
+    padding-right: 40px;
+    width: 230px;
+}
+
+#filter {
+    width: fit-content;
+    background-color: inherit;
+    border: none;
+    font: var(--navText);
+    padding-left: 25px;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url("/public/assets/icons/angle-small-down.svg") no-repeat left center;
+}
+
+#filter:focus {
+    outline: none;
+}
+
 @media screen and (max-width: 1700px) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -66,5 +89,19 @@ li.studentListItem {
 @media screen and (max-width: 1200px) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #filter, #myInput{
+        display: none;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    div.bar {
+        display: none;
+    }
+
+    ul.studentList {
+        margin-top: 1.25rem; /*9px*/
     }
 }
