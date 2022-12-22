@@ -41,6 +41,7 @@ class KidsController extends BaseController
         else $data = $css;
         return view('/pages/kids/' . $page,$data);
     }
+
     ////// SET UP METHODS ALL
     private function getDataForPage($pageName,$args): array
     {
@@ -107,7 +108,6 @@ class KidsController extends BaseController
         $this->students_model->add_results($data1);
 
         $this->data['exercises']= session()->get('exercises');
-//        $idExercises= $_GET['idExercises'];
         $this->data['idExercises']=$idExercises;
         return ($this->data);
     }
@@ -117,14 +117,9 @@ class KidsController extends BaseController
     public function exercises():array
     {
 
-        $model = model(Students_model::class);
+        $model = model(ExerciseModel::class);
 
-        //Testing queries to visualise the Arrow Navigation in Student exercise page, please leave these in!
-        $all=$model->getExercises();
-        $specific=$model->getSpecificExercises(session()->id);
-        $joined_exercises_scores = $model->getStudentExercises(session()->id);
-
-        $data = ['exercises' => $joined_exercises_scores];
+        $data = ['exercises' => json_encode($model->getExercises())];
 
         return ($data);
     }
