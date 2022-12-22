@@ -29,7 +29,7 @@ h3 {
     color: var(--secondaryColor);
     grid-column: 1/span 2;
     grid-row: 1;
-    margin-bottom: 15px;
+    margin-bottom: 0.938rem; /*15px*/
     justify-self: left;
     align-items: center;
 }
@@ -38,34 +38,34 @@ div.container {
     display: flex;
     flex-direction: row;
     width: 100%;
-    column-gap: 30px;
+    column-gap: 1.875rem; /*30px*/
     overflow: auto;
-    height: 70vh;
+    height: 69vh;
 }
 
 div.scroller {
-    padding-left: 60px;
-    padding-right: 30px;
+    padding-left: 3.75rem; /*60px*/
+    padding-right: 1.875rem; /*30px*/
 }
 
 div.card {
-    margin: 0 0 20px 0;
+    margin: 0 0 1.25rem 0; /*20px*/
 }
 
 div.general {
     width: 100%;
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 50px 150px 150px;
-    column-gap: 30px;
-    row-gap: 15px;
+    grid-template-rows: 3.125rem 9.375rem 9.375rem; /*50px 150px 150px*/
+    column-gap: 1.875rem; /*30px*/
+    row-gap: 0.938rem; /*15px*/
     justify-items: center;
     align-items: start;
     height: fit-content;
 }
 
 div.card {
-    padding: 30px;
+    padding: 1.875rem; /*30px*/
 }
 
 img.roundProfilePic {
@@ -79,20 +79,20 @@ img.hands {
 }
 
 div.notes {
-    padding: 15px;
-    border: solid 1.5px var(--primaryColor);
+    padding: 0.938rem; /*15px*/
+    border: solid 0.094rem var(--primaryColor); /*1.5px*/
     background-color: var(--beigeNeutral);
-    border-radius: 20px;
+    border-radius: 1.25rem; /*20px*/
 }
 
 div.noteCard {
     width: 100%;
-    margin-right: 30px;
+    margin-right: 1.875rem; /*30px*/
     height: fit-content;
 }
 
 div.noteCard p {
-    line-height: 25px;
+    line-height: 1.563rem; /*25px*/
 }
 
 @media screen and (max-height: 950px) {
