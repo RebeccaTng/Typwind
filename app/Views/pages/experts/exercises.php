@@ -1,4 +1,4 @@
-<?= $this->extend('/templates/kids_default') ?>
+<?= $this->extend('/templates/experts_default') ?>
 
 <?= $this->section('content') ?>
 
