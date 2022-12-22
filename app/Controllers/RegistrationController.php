@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Students_model;
 use App\Models\Teachers_model;
+use function MongoDB\BSON\toJSON;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
@@ -45,6 +46,9 @@ class RegistrationController extends \CodeIgniter\Controller
             }
         }*/
 
+        //Setting the baseURL in a cookie to easily use in JS
+        setcookie("baseURL", base_url(), time()+3600, "/");
+
         //Setting the initial language Cookie
         setcookie("englishActive", 'not active', time()+3600, "/");
         setcookie("nederlandsActief", 'active', time()+3600, "/");
@@ -58,20 +62,22 @@ class RegistrationController extends \CodeIgniter\Controller
         $expertModel = new Teachers_model();
         $studentModel = new Students_model();
         $email = $this->request->getVar('email');
-        /*        $password = $this->request->getVar('password');*/
+        $password = $this->request->getVar('password');
 
         $data = $expertModel->where('email', $email)->first();
         $data2 = $studentModel->where('email', $email)->first();
 
         if($data){
-            /*$pass = $data['password'];
+            $pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
-            if($authenticatePassword){*/
+
+            if($authenticatePassword){
             $ses_data = [
                 'id' => $data['idTeachers'],
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],
                 'email' => $data['email'],
+                'password'  => $data['password'],
                 'isLoggedIn' => TRUE,
                 'isStudent' => FALSE
             ];
@@ -80,10 +86,10 @@ class RegistrationController extends \CodeIgniter\Controller
             setcookie("email", session()->email, time()+36000, "/");
             return redirect()->to('experts/home');
 
-            /*}*//*else{
+            }else{
                 $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->to('/public/signin');
-            }*/
+                return redirect()->to('/registration/expertLogin');
+            }
         }
 
         else if(!isset($data) & isset($data2)){
@@ -103,7 +109,6 @@ class RegistrationController extends \CodeIgniter\Controller
         $expertModel = new Teachers_model();
         $studentModel = new Students_model();
         $email = $this->request->getVar('email');
-        /*        $password = $this->request->getVar('password');*/
 
         $data = $expertModel->where('email', $email)->first();
         $data2 = $studentModel->where('email', $email)->first();
@@ -114,9 +119,7 @@ class RegistrationController extends \CodeIgniter\Controller
         }
 
         else if(isset($data2)){
-            /*$pass = $data['password'];
-            $authenticatePassword = password_verify($password, $pass);
-            if($authenticatePassword){*/
+
             $ses_data = [
                 'id' => $data2['idStudents'],
                 'firstname' => $data2['firstname'],
@@ -146,8 +149,8 @@ class RegistrationController extends \CodeIgniter\Controller
             'firstname'          => 'required|min_length[2]|max_length[50]',
             'lastname'          => 'required|min_length[2]|max_length[50]',
             'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email]',
-            /*            'password'      => 'required|min_length[4]|max_length[50]',*/
-            /*            'confirmpassword'  => 'matches[password]'*/
+                        'password'      => 'required|min_length[4]|max_length[50]',
+                        'confirmpassword'  => 'matches[password]'
         ];
 
         if($this->validate($rules)){
@@ -156,7 +159,7 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname'     => $this->request->getVar('firstname'),
                 'lastname'     => $this->request->getVar('lastname'),
                 'email'    => $this->request->getVar('email'),
-                /*                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)*/
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
             return redirect()->to('/registration/welcome');

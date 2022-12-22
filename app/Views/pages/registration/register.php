@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
-
     <title> Expert Registration</title>
 </head>
 <body>
@@ -22,6 +22,10 @@
             <input type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" >
             <input type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" >
             <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" >
+            <input type="password" name="password" placeholder="Password" >
+            <input type="password" name="confirmpassword" placeholder="Confirm Password" >
+
+
 
             <button type="submit" class="button buttonPrimary buttonExpert">REGISTER</button>
         </form>

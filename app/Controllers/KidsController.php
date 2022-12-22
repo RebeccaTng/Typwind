@@ -24,6 +24,8 @@ class KidsController extends BaseController
     /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
+
+
     public function __construct() {
         $this->students_model = new Students_model();
     }
@@ -39,7 +41,6 @@ class KidsController extends BaseController
         else $data = $css;
         return view('/pages/kids/' . $page,$data);
     }
-
     ////// SET UP METHODS ALL
     private function getDataForPage($pageName,$args): array
     {

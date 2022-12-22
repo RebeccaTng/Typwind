@@ -25,6 +25,15 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider(app);
 
+const baseURLcookieValue = document.cookie
+    .split('; ')
+    .find((row) => row.startsWith('baseURL'))
+    ?.split('=')[1];
+
+const baseURLString = baseURLcookieValue.toString().replace(/%2F/gi, "/").replace(/%3A/gi, ":");
+document.getElementById('googleJSOutput').value = baseURLString+'/public/PHP/jQueryStoreUserInDB.php';
+
+
     document.getElementById('login').addEventListener('click',(e) =>
     {
         signInWithPopup(auth, provider)
@@ -35,7 +44,25 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
                 // The signed-in user info.
                 const user = result.user;
 
-                document.getElementById('googleJSOutput').value = user.displayName;
+                var names = user.displayName.split(' ');
+
+/*                $.post(baseURLString+'/public/PHP/jQueryStoreUserInDB.php', { firstname:names[0],lastname:names[1],email:user.email}, function(result) {
+                    alert(result);
+                });
+
+                $.post(baseURLString+'/public/PHP/jQueryStoreUserInDB.php', {action: 'typer'}, function( data ) {
+                    // do something with data, e.g.
+                    console.log(data);
+                });*/
+
+/*                $.ajax({
+                    type: "POST",
+                    cache:false,
+                    url: baseURLString+'/public/PHP/jQueryStoreUserInDB.php',
+                    data: {firstname:names[0],lastname:names[1],email:user.email},
+                    dataType: String
+                });*/
+
 
             }).catch((error) => {
             // Handle Errors here.

@@ -12,18 +12,23 @@
 
         <?php
         if ($exercise_item->lesson != $lesson) {
-            $exercise_above_index=$exercise_item->lesson-1;
-            $exercise_under_index=$exercise_item->lesson+1;
+            $exercise_above_index=$exercise_item->lesson+1;
+            $exercise_under_index=$exercise_item->lesson-1;
 
-            if($exercise_above_index>0) {
-                echo '<p><a href="#lesson' . $exercise_under_index . '"><img alt="Arrow Down Icon" src="' . base_url() . '/public/assets/icons/down.png"></a></p>';
+            if($exercise_above_index>2) {
+                echo '<p><a href="#lesson' . $exercise_item->lesson . '"><img alt="Arrow Down Icon" src="' . base_url() . '/public/assets/icons/down.png"></a></p>';
             }
 
-            if($exercise_above_index>0){
+            if($exercise_above_index>2){
                 echo '<section id="lesson' . $exercise_item->lesson . '">' .
-                    '<p><a href="#lesson' . $exercise_above_index . '">' .
+                    '<p><a href="#lesson' . $exercise_under_index . '">' .
                     '<img alt="Arrow Up Icon" src="' . base_url() . '/public/assets/icons/up.png"></a></p>
                     </section>';
+            }
+
+            if($exercise_above_index=2){
+                echo '<section id="lesson' . $exercise_item->lesson . '">' .'
+                        </section>';
             }
 
             echo '<section id=Lesson'.$exercise_item->lesson. '>'.
