@@ -16,7 +16,7 @@ class ExpertController extends BaseController
     private array $exercises = array();
     private array $studentOverview = array("expert/studentOverview.css");
     private array $editStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css");
-    private array $addStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css");
+    private array $addStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css", "expert/addStudentPage.css");
     private array $profile = array("expert/profile.css");
     private array $editProfilePage = array("expert/profile.css", "expert/editProfile.css");
 
@@ -137,7 +137,6 @@ class ExpertController extends BaseController
         $this->data['teachers'] = session()->get('teachers');
         return( $this->data);
     }
-
     public function editStudent($idStudents)
     {
         $this->data['idStudents']=$idStudents;
