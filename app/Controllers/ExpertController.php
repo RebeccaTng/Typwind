@@ -133,6 +133,8 @@ class ExpertController extends BaseController
     {
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         return  $this->data;
     }
 
@@ -141,6 +143,8 @@ class ExpertController extends BaseController
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
         $this->data['teachers'] = session()->get('teachers');
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         return( $this->data);
     }
     public function editStudent($idStudents)
@@ -183,7 +187,7 @@ class ExpertController extends BaseController
         $this->data['coins']= $_POST['coins'];
         $this->data['streak']= $_POST['streak'];
         $this->students_model->edit_student($this->data);
-
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
         $css = ['cssFiles' =>  $this->getCSSFile("studentsList")];
         $dataAddStudent = array_merge($this->getDataForPage('studentsList',0),$css);
@@ -194,6 +198,8 @@ class ExpertController extends BaseController
     public function addStudentPage():array
     {
         $data['teachers']=session()->get('teachers');
+        $data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         return ( $data);
     }
     public function addStudent()
@@ -227,6 +233,7 @@ class ExpertController extends BaseController
         $data['idTeacher_fk'] = $_POST['teachers'];
         $this->students_model->add_student($data);
 
+        $data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
 
         $css = ['cssFiles' =>  $this->getCSSFile("studentsList")];
@@ -243,7 +250,8 @@ class ExpertController extends BaseController
 
     public function editProfilePage()
     {
-        return array();
+        $data['menu_items'] = $this->menu_model->get_menuitems('My Profile');
+        return $data;
     }
 
     public function editProfile()
