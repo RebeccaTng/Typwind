@@ -40,7 +40,7 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
-
+        //print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -112,7 +112,7 @@ class KidsController extends BaseController
         return ($this->data);
     }
 
-    public function feedback($idExercises)
+    public function feedback($idExercises): string
     {
         $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
         $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
