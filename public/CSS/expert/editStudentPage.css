@@ -1,0 +1,63 @@
+#notes {
+    padding: 1rem; /*16px*/
+    border: 0.125rem solid var(--primaryColor); /*2px*/
+    background-color: var(--beigeNeutral);
+    border-radius: 1.25rem; /*20px*/
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+}
+
+#notes:focus {
+    border: 0.125rem solid var(--accentColor); /*2px*/
+}
+
+input {
+    margin-bottom: 0.625rem; /*10px*/
+    width: 13.125rem; /*210px*/
+}
+
+p {
+    text-align: right;
+}
+
+#gender, #teachers, #handSelection {
+    width: 13.125rem; /*210px*/
+    height: 2.5rem; /* 40px */
+    padding: 0.375rem 0.938rem; /* 6px 15px */
+    border: 0.125rem solid var(--blueNeutral-lightest); /* 2px */
+    border-radius: 1.25rem; /* 20px */
+    background-color: var(--beigeNeutral-light);
+    font: var(--bodyText);
+    color: var(--blueNeutral-dark);
+    caret-color: var(--blueNeutral-dark);
+    margin-bottom: 0.625rem; /*10px*/
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url("/public/assets/icons/angle-small-down.svg") no-repeat 170px center;
+}
+
+#gender:focus, #teachers:focus, #handSelection:focus {
+    outline: none !important;
+    border: 0.125rem solid var(--accentColor); /* 2px */
+}
+
+.switch {
+    margin-right: 9.688rem; /*155px*/
+}
+
+div.general {
+    grid-template-rows: 3.125rem 9.375rem auto; /*50px 150px 220px*/
+}
+
+.bottomBar {
+    margin-left: -3.75rem; /*-60px*/
+}
+
+@media screen and (max-width: 1500px) {
+    .switch {
+        margin-right: 0;
+    }
+}

@@ -14,7 +14,7 @@ class ExpertController extends BaseController
     private array $home = array("expert/home.css");
     private array $exercises = array();
     private array $studentOverview = array("expert/studentOverview.css");
-    private array $editStudentPage = array();
+    private array $editStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css");
     private array $addStudentPage = array();
     private array $profile = array("expert/profile.css");
     private array $editProfilePage = array("expert/profile.css", "expert/editProfile.css");
