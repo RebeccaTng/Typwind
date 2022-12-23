@@ -85,18 +85,18 @@ class KidsController extends BaseController
 
     public function home():array
     {
-        $exercises=$this->students_model->getExercises();
-        session()->set('exercises', $exercises);
+        $this->data['exercises']=$this->students_model->getExercises();
+        session()->set('exercises', $this->data['exercises']);
         return array();
     }
 
     public function intro($idExercises)
     {
-
         $this->data['exercises']= session()->get('exercises');
 //        $this->data['idExercises']= $_GET['idExercises'];
         $this->data['idExercises']= $idExercises;
         return ($this->data);
+
     }
 
     public function feedback($idExercises):array
@@ -123,5 +123,6 @@ class KidsController extends BaseController
 
         return ($data);
     }
+
 
 }
