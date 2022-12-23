@@ -3,7 +3,7 @@
     <div class="menuHeader">
         <img  src="<?=base_url()?>/public/assets/general/typwind_logo.svg">
     </div>
-    <div class = menuSubHeader>
+    <div class = subHeader>
         <div class="langWrap" >
             <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
             |

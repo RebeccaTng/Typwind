@@ -2,9 +2,6 @@
 
 <?= $this->section('content') ?>
 
-<h1>Exercises</h1>
-
-<div class="exerciseContainer">
 <script>
     $(document).ready(function(){
 
@@ -29,13 +26,19 @@
 
                 lessonGroup.forEach(element => exercisesText = exercisesText + "<h4 class='exerciseField'>" + element.name + "</h4>");
                 exercisesText = exercisesText + "</div>"
-                $(".mainContent").append(exercisesText);
+                $(".exerciseContainer").append(exercisesText);
             }
             console.log("LESSON")
         }
 
     });
 </script>
+
+<h1>Exercises</h1>
+
+
+<div class="exerciseContainer">
+
 </div>
 <?php
 $_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
