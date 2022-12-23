@@ -16,12 +16,26 @@
     </div>
 
     <!--Title and stop button-->
-    <div class="container">
-        <div class="title">
-            <h1>Title</h1>
-            <button id="stopButton" class="button buttonSecondary buttonChild">STOP & EXIT</button>
-        </div>
-    </div>
+    <?php
+    $session = session();
+    ?>
+    <?php
+    foreach ($session->exercises as $exercise):?>
+        <?php  if ($exercise->idExercises==93):?> <!--$session->selectedExercise-->
+            <div hidden="true" id="textInput"><?=$exercise->text?></div>
+            <div hidden="true" id="idExercise_fkDB"><?=$exercise->idExercises?></div>
+            <div hidden="true" id="idStudent_fkDB"><?=$session->id?></div>
+            <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
+            <div class="container">
+                <div class="title">
+                    <h1><?=$exercise->name?></h1>
+                    <button id="stopButton" class="button buttonSecondary buttonChild">STOP & EXIT</button>
+                </div>
+            </div>
+
+        <?php endif;?>
+    <?php endforeach;?>
+
     <div class = "container_visuals">
         <div class = "visuals">
             <!--Image and text bar-->
@@ -103,17 +117,7 @@
             </div>
         </div>
     </div>
-    <?php
-    $session = session();
-    foreach ($session->exercises as $exercise):?>
-        <?php  if ($exercise->idExercises==$session->selectedExercise):?>
-            <div hidden="true" id="textInput"><?=$exercise->text?></div>
-            <div hidden="true" id="idExercise_fkDB"><?=$exercise->idExercises?></div>
-            <div hidden="true" id="idStudent_fkDB"><?=$session->id?></div>
 
-        <?php endif;?>
-    <?php endforeach;?>
-    <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
 
 
     <form id="form" action="<?php echo base_url('kids/feedback');?>" method="post" onsubmit="addResults()">
