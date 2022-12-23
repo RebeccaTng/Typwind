@@ -2,71 +2,82 @@
 
 <?= $this->section('content') ?>
 
-
 <?php foreach ($students as $person):?>
-<?php  if ($person->idStudents==$idStudents):?>
+    <?php  if ($person->idStudents==$idStudents):?>
 
+        <ul class="breadcrumb">
+            <li><a href="<?php echo base_url('/experts/studentsList');?>">Students</a></li>
+            <li><?=$person->firstname?><?=$person->lastname?></li>
+        </ul>
 
-<section>
-    <a href="<?php echo base_url('/experts/studentsList');?>">Students</a><h6><?=$person->firstname?><?=$person->lastname?></h6>
-</section>
+        <h1><?=$person->firstname?><?=$person->lastname?></h1>
 
-<h1> <?= $person->firstname?> </h1>
-<section>
-    <h3>First name= <?= $person->firstname?></h3>
-    <h3>Last name= <?= $person->lastname?></h3>
-    <?php if ($person->gender==1):?>
+        <div class="scroller">
+            <div class="studentContainer">
+                <div class="general card">
+                    <h3>General Information</h3>
+                    <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                    <?php if ($person->handSelection==1):?>
+                        <img class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
+                    <?php endif;?>
+                    <?php if ($person->handSelection==2):?>
+                        <img class="hands" src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
+                    <?php endif;?>
+                    <?php if ($person->handSelection==0):?>
+                        <img class="hands" src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
+                    <?php endif;?>
 
-        <h3>Gender= male</h3>
+                    <p>
+                        <b>First name:</b>&nbsp&nbsp<?= $person->firstname?><br>
+                        <b>Surname:&nbsp&nbsp</b><?= $person->lastname?><br>
+                        <b>Email:&nbsp&nbsp</b><?= $person->email?><br>
+                        <b>Gender:&nbsp&nbsp</b>
+                        <?php if ($person->gender==1):?>
+                            Male
+                        <?php endif;?>
+                        <?php if ($person->gender==0):?>
+                            Female
+                        <?php endif;?>
+                        <br>
+                        <b>Birthday:</b>&nbsp&nbsp<?= $person->birthday?><br>
+                        <b>Teacher:</b>&nbsp&nbsp<?= $person->teacherFirstname?><br>
+                        <b>Hand Selection:&nbsp&nbsp</b>
+                        <?php if ($person->handSelection==1):?>
+                            Right Hand
+                        <?php endif;?>
+                        <?php if ($person->handSelection==2):?>
+                            Left Hand
+                        <?php endif;?>
+                        <?php if ($person->handSelection==0):?>
+                            Both Hands
+                        <?php endif;?>
+                        <br>
+                        <b>Active:&nbsp&nbsp</b>
+                        <?php if ($person->isActive==1):?>
+                            Currently Active
+                        <?php endif;?>
+                        <?php if ($person->isActive==0):?>
+                            Not Active
+                        <?php endif;?>
+                        <br>
+                    </p>
+                </div>
 
-    <?php endif;?>
-    <?php if ($person->gender==0):?>
+                <div class="noteCard card">
+                    <h3>Notes</h3>
+                    <div class="notes">
+                        <p><?=$person->notes ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <h3>Gender= female</h3>
+        <div class="bottomBar">
+            <a href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>">
+                <button class="button buttonPrimary buttonExpert">EDIT</button>
+            </a>
+        </div>
 
-    <?php endif;?>
-    <h3>birthday= <?= $person->birthday?></h3>
-    <h3>teacher= <?= $person->teacherFirstname?></h3>
-    <?php if ($person->handSelection==1):?>
-
-        <h3>Hand selection= One Hand, right hand</h3>
-        <img src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
-
-    <?php endif;?>
-    <?php if ($person->handSelection==2):?>
-
-        <h3>Hand selection= One Hand, left hand</h3>
-        <img src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
-
-    <?php endif;?>
-    <?php if ($person->handSelection==0):?>
-
-        <h3>Hand selection= Both Hands</h3>
-        <img src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
-
-    <?php endif;?>
-    <?php if ($person->isActive==1):?>
-
-        <h3>Active= currently active</h3>
-
-    <?php endif;?>
-    <?php if ($person->isActive==0):?>
-
-        <h3>Active= not active</h3>
-
-    <?php endif;?>
-
-    <h1>Notes</h1>
-    <h3><?=$person->notes ?></h3>
-
-</section>
-
-<section>
-
-    <a href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>">
-        <button>EDIT</button>
-    </a>
-</section>
     <?php endif;?>
 <?php endforeach;?>
 
