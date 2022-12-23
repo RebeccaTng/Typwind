@@ -35,7 +35,7 @@
         </a>
 
 <!--        <a href="--><?php //=base_url()?><!--/experts/profile" class="profile">-->
-        <a href="--><?php //=base_url()?><!--/experts/profile" class="profile">
+        <a href="<?=base_url()?>/experts/profile" class="profile">
             <img  src="<?=base_url()?>/public/assets/icons/profile_icon.svg" >
             <p>My Profile</p>
 
