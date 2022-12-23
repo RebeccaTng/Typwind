@@ -4,7 +4,7 @@
 
 <h1>Exercises</h1>
 
-<div class="exerciseContainer">
+<!--<div class="exerciseContainer">-->
 <script>
     $(document).ready(function(){
 
@@ -21,7 +21,6 @@
             }
         }
 
-        $(".mainContent").append("<div class='exerciseContainer'>");
         for (const lessonId of lessonsMap.keys()) {
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
@@ -34,11 +33,10 @@
             }
             console.log("LESSON")
         }
-        $(".mainContent").append("</div>");
 
     });
 </script>
-</div>
+<!--</div>-->
 <?php
 $_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
 ?>
