@@ -1,3 +1,42 @@
+/*Overall screen*/
+.grid-container_exercise{
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 8.5fr;
+    margin: 50px;
+    height: 100%;
+}
+/*breadcrumb*/
+.breadcrumb{
+    grid-row: 1/span 1;
+}
+/*Title and stop button*/
+.container{
+    grid-row: 2/span 1;
+}
+.title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#stopButton{
+    align-self: flex-end;
+}
+/*Image, textbox and keyboard GRID container*/
+.container_visuals{
+    grid-row: 3/span 1;
+}
+/*Image, textbox and keyboard FLEX container*/
+.visuals{
+    display: flex;
+    align-items: center;
+
+    flex-direction: column-reverse;
+}
+#imageContainer{
+    height: 250px;
+}
+/*Textbox*/
 .textBox {
     background-color: rgb(243, 243, 243);
     border: 2px solid black;
@@ -7,6 +46,8 @@
     display: flex;
     width: 1200px;
     overflow: hidden;
+
+    align-self: flex-end;
 
     /*display: inline;*/
     /*text-align: center;*/
@@ -46,17 +87,17 @@
     padding: 20px;
     position: absolute;
     top: 75%;
-    left: 50%;
+    left: 56%;
+
     transform: translate(-50%, -50%);
     background-color: rgb(197, 197, 197);
     border-radius: 10px;
+
     display: grid;
     grid-template-columns: repeat(30, 30px);
     grid-template-rows: repeat(5, 60px);
     grid-gap: 5px;
 }
-
-
 
 .key {
     background-color: rgb(243, 243, 243);
