@@ -23,7 +23,7 @@ class ExpertController extends BaseController
 
 
     /// END OF CSS FILES ************************
-//    private $data;
+    //    private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
     private $menu_model;
@@ -40,7 +40,7 @@ class ExpertController extends BaseController
         }
         $css = ['cssFiles' =>  $this->getCSSFile($page)];
         $page_data =$this->getDataForPage($page,$arg);
-        if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
+        if(sizeof($page_data)>0) $data = array_merge($page_data[0],$css);
         else $data = $css;
         print_r ($data);
         return view('/pages/experts/' . $page,$data);

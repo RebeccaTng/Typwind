@@ -12,7 +12,7 @@
     </div>
 
     <div class="menuItems" >
-        <?php echo $pele?>
+
         <?php if (! empty($menu_items)) :?>
 
             <ul>
