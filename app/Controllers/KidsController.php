@@ -17,6 +17,7 @@ class KidsController extends BaseController
     private array $intro = array("kids/intro_exercise_child.css");
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array();
+    private array $exercise = array();
 
 
 
@@ -57,6 +58,8 @@ class KidsController extends BaseController
                 return $this->feedback($args);
             case 'exercises':
                 return $this->exercises();
+            case 'exercise':
+                return $this->exercise($args);
 
 
 
@@ -75,6 +78,8 @@ class KidsController extends BaseController
                 return$this->includeCSSFilesInCommonFiles( $this->feedback);
             case 'exercises':
                 return$this->includeCSSFilesInCommonFiles( $this->exercises);
+            case 'exercise':
+                return$this->includeCSSFilesInCommonFiles( $this->exercise);
 
 
             default:
@@ -102,20 +107,30 @@ class KidsController extends BaseController
         $this->data['idExercises']= $idExercises;
         return ($this->data);
     }
-
-    public function feedback($idExercises):array
+    public function exercise($idExercises)
     {
-        $data1['idStudent_fk'] = $_POST['idStudent_fk'];
-        $data1['idExercise_fk'] = $_POST['idExercise_fk'];
-        $data1['score'] = $_POST['score'];
-        $data1['date'] = $_POST['date'];
-        $this->students_model->add_results($data1);
-
+        $this->data['idStudents']=session()->id;
+        $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');
-        $this->data['idExercises']=$idExercises;
+        $this->data['idExercises']= $idExercises;
         return ($this->data);
     }
 
+    public function feedback($idExercises): string
+    {
+        $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
+        $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
+        $this->data['score'] = $_POST['score'];
+        $this->data['date'] = $_POST['date'];
+        $this->students_model->add_results($this->data);
+
+        $this->data['exercises']= session()->get('exercises');
+        $this->data['idExercises']=$idExercises;
+
+        $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
+        $dataFeedback = array_merge($this->getDataForPage('feedback',0),$css);
+        return view('pages/kids/feedback', $dataFeedback) ;
+    }
 
 
     public function exercises():array
@@ -127,5 +142,6 @@ class KidsController extends BaseController
 
         return $data;
     }
+
 
 }

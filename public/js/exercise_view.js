@@ -53,8 +53,6 @@ let imageContainer = document.getElementById("imageContainer");
 let textInputDB = document.getElementById("textInput");
 let handSelection = document.getElementById("handSelection");
 let formDB = document.getElementById("form");
-let idStudent_fkDB = document.getElementById("idStudent_fk");
-let idExercise_fkDB = document.getElementById("idExercise_fk");
 let scoreDB = document.getElementById("score");
 let dateDB = document.getElementById("date");
 
@@ -63,7 +61,6 @@ let dateDB = document.getElementById("date");
 
 /***EVENTS***/
 
-stopButton.onclick = function (){stopButtonFunction()};
 window.addEventListener('keydown', (event) =>{
     previousKey = currentKey;
     currentKey = event;
@@ -172,8 +169,6 @@ function exerciseFinishedFunction(){
 
 /*Function to submit the code to the DB*/
 function submit() {
-    idStudent_fkDB.value = document.getElementById("idStudent_fkDB").innerText;
-    idExercise_fkDB.value = document.getElementById("idExercise_fkDB").innerText;
     scoreDB.value = score;
     date = new Date()
     dateDB.value = date.getFullYear() +"-"+(date.getMonth()+1)+"-"+date.getDate();
@@ -182,9 +177,6 @@ function submit() {
 }
 
 /*Function for when the exit button is pressed*/
-function stopButtonFunction(){
-    window.location = window.location.origin + "/kids/home";
-}
 
 /*Function for setting the correct image. If keystroke has no image nothing happens*/
 function setImage(key){
@@ -195,11 +187,11 @@ function setImage(key){
        if (curr === undefined) {
            s = document.createElement("IMG");//.attributes("class","letter");
            s.setAttribute("class", "image");
-           //s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
+           // s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
            s.setAttribute("alt", key);
            s.setAttribute("src",  window.location.origin + imageMap.get(key));
            // var txt = document.createTextNode(textChar[i]);
-           // s.appendChild(txt);
+           //s.appendChild(txt);
            imageContainer.appendChild(s);
        } else {
            s = curr;
