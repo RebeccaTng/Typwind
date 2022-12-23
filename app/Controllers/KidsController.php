@@ -16,6 +16,7 @@ class KidsController extends BaseController
     private array $intro = array("kids/intro_exercise_child.css");
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array();
+    private array $exercise = array();
 
 
 
@@ -54,6 +55,8 @@ class KidsController extends BaseController
                 return $this->feedback($args);
             case 'exercises':
                 return $this->exercises();
+            case 'exercise':
+                return $this->exercise();
 
 
 
@@ -72,6 +75,8 @@ class KidsController extends BaseController
                 return$this->includeCSSFilesInCommonFiles( $this->feedback);
             case 'exercises':
                 return$this->includeCSSFilesInCommonFiles( $this->exercises);
+            case 'exercise':
+                return$this->includeCSSFilesInCommonFiles( $this->exercise);
 
 
             default:
@@ -103,7 +108,7 @@ class KidsController extends BaseController
         $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']= $idExercises;
-        return view ('pages/kids/exercise_view', $this->data);
+        return ( $this->data);
     }
 
     public function feedback($idExercises):array

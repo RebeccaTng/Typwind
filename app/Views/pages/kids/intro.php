@@ -34,7 +34,7 @@
 
                 <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px">Press start and earn some stars.<br> Good luck!</h4>
                 <div class="intro_ex_button">
-                    <form action="<?php echo base_url('kids/exercise/'.$exercise->idExercises);?>" class="inline">
+                    <form action="<?php echo base_url('kids/exercise_view/'.$exercise->idExercises);?>" class="inline">
                         <button class="button buttonPrimary buttonChild">Start</button>
                     </form>
                     <form action="<?php echo base_url();?>/kids/exercises" class="inline">
