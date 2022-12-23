@@ -80,7 +80,7 @@ class ExpertController extends BaseController
                 return $this->includeCSSFilesInCommonFiles( $this->studentOverview);
             case 'editStudentPage':
                 return $this->includeCSSFilesInCommonFiles( $this->editStudentPage);
-            case 'addStudent':
+            case 'addStudentPage':
                 return $this->includeCSSFilesInCommonFiles( $this->addStudentPage);
             case 'profile':
                 return $this->includeCSSFilesInCommonFiles( $this->profile);
