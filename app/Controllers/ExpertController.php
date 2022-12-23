@@ -14,9 +14,9 @@ class ExpertController extends BaseController
     private array $studentsList = array("expert/studentsList.css");
     private array $home = array("expert/home.css");
     private array $exercises = array();
-    private array $studentOverview = array();
-    private array $editStudentPage = array();
-    private array $addStudentPage = array();
+    private array $studentOverview = array("expert/studentOverview.css");
+    private array $editStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css");
+    private array $addStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css", "expert/addStudentPage.css");
     private array $profile = array("expert/profile.css");
     private array $editProfilePage = array("expert/profile.css", "expert/editProfile.css");
 
@@ -80,7 +80,7 @@ class ExpertController extends BaseController
                 return $this->includeCSSFilesInCommonFiles( $this->studentOverview);
             case 'editStudentPage':
                 return $this->includeCSSFilesInCommonFiles( $this->editStudentPage);
-            case 'addStudent':
+            case 'addStudentPage':
                 return $this->includeCSSFilesInCommonFiles( $this->addStudentPage);
             case 'profile':
                 return $this->includeCSSFilesInCommonFiles( $this->profile);
@@ -137,7 +137,6 @@ class ExpertController extends BaseController
         $this->data['teachers'] = session()->get('teachers');
         return( $this->data);
     }
-
     public function editStudent($idStudents)
     {
         $this->data['idStudents']=$idStudents;
