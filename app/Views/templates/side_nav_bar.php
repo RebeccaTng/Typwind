@@ -14,8 +14,8 @@
     <div class="menuItems" >
 
 <!--        <a href="--><?php //=base_url()?><!--/experts/home"  class="home" >-->
-        <a href="<?=base_url()?>/experts/home" >
-            <img  src="<?=base_url()?>/public/assets/icons/Home_icon.svg" >
+        <a href="<?=base_url()?>/experts/home">
+            <img src="<?=base_url()?>/public/assets/icons/Home_icon.svg" >
             <p>Home</p>
         </a>
 
