@@ -1,0 +1,25 @@
+.mainContent {
+    padding: 2.813rem 1.875rem 3.75rem 3.75rem; /*45px 30px 60px 60px*/
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+div.card {
+    margin-bottom: 30px;
+}
+
+/*div.exerciseContainer {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    row-gap: 30px;*/
+/*}*/
+
+
+@media screen and (max-width: 700px) {
+    div.lessonCard {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
