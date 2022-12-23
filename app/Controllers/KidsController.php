@@ -40,6 +40,7 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
+        //print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -56,7 +57,7 @@ class KidsController extends BaseController
             case 'exercises':
                 return $this->exercises();
             case 'exercise':
-                return $this->exercise();
+                return $this->exercise($args);
 
 
 
@@ -98,7 +99,7 @@ class KidsController extends BaseController
     public function intro($idExercises)
     {
         $this->data['exercises']= session()->get('exercises');
-//        $this->data['idExercises']= $_GET['idExercises'];
+        //$this->data['idExercises']= $_GET['idExercises'];
         $this->data['idExercises']= $idExercises;
         return ($this->data);
     }
@@ -108,7 +109,7 @@ class KidsController extends BaseController
         $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']= $idExercises;
-        return ( $this->data);
+        return ($this->data);
     }
 
     public function feedback($idExercises):array

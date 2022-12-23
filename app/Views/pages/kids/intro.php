@@ -15,7 +15,6 @@
     <div class="title">
         <?php foreach ($exercises as $ex):?>
             <?php  if ($ex->idExercises==$idExercises):?>
-                <?php $exercise = $ex ?>
                 <h1 style="color: var(--blueNeutral);"><?= $ex->name?></h1>
             <?php endif;?>
         <?php endforeach;?>
@@ -33,15 +32,19 @@
             <div class="card_intro">
 
                 <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px">Press start and earn some stars.<br> Good luck!</h4>
-                <div class="intro_ex_button">
-                    <form action="<?php echo base_url('kids/exercise_view/'.$exercise->idExercises);?>" class="inline">
-                        <button class="button buttonPrimary buttonChild">Start</button>
-                    </form>
-                    <form action="<?php echo base_url();?>/kids/exercises" class="inline">
-                        <button class="button buttonSecondary buttonChild">Go back to exercises</button>
-                    </form>
+                <?php foreach ($exercises as $ex):?>
+                    <?php  if ($ex->idExercises==$idExercises):?>
+                        <div class="intro_ex_button">
+                            <form action="<?php echo base_url('kids/exercise/'.$ex->idExercises);?>" class="inline">
+                                <button class="button buttonPrimary buttonChild">Start</button>
+                            </form>
+                            <form action="<?php echo base_url();?>/kids/exercises" class="inline">
+                                <button class="button buttonSecondary buttonChild">Go back to exercises</button>
+                            </form>
 
-                </div>
+                        </div>
+                    <?php endif;?>
+                <?php endforeach;?>
             </div>
     </div>
 </div>

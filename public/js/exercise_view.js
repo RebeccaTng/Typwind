@@ -195,11 +195,11 @@ function setImage(key){
        if (curr === undefined) {
            s = document.createElement("IMG");//.attributes("class","letter");
            s.setAttribute("class", "image");
-           //s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
+           // s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
            s.setAttribute("alt", key);
            s.setAttribute("src",  window.location.origin + imageMap.get(key));
            // var txt = document.createTextNode(textChar[i]);
-           // s.appendChild(txt);
+           //s.appendChild(txt);
            imageContainer.appendChild(s);
        } else {
            s = curr;
