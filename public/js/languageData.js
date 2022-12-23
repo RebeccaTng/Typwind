@@ -6,7 +6,12 @@ var mainData = {
             "students" : "Studenten",
             "exercises" : "Oefeningen",
             "profile" : "Mijn Profiel",
-            "download" : "Uitloggen"
+            "download" : "Uitloggen",
+            "two" : "Welkom Terug",
+            "three" : "Jouw volgende oefening wacht op je!",
+            "four" : "Start nieuwe oefening",
+            "five" : "Het avontuur van de hond",
+            "six" : ""
         },
 
     "english":
@@ -15,7 +20,12 @@ var mainData = {
             "students" : "Students",
             "exercises" : "Exercises",
             "profile" : "My Profile",
-            "download" : "Log Out"
+            "download" : "Log Out",
+            "two" : "Welcome Back",
+            "three" : "Your next exercise is waiting for you!",
+            "four" : "Start new exercise",
+            "five" : "The Adventure of the Dog.",
+            "six" : ""
         }
 }
 
@@ -26,6 +36,12 @@ const exercisesEl = document.querySelector('.exercises');
 const logoutEl = document.querySelector('.download');
 const studentsEl = document.querySelector('.students');
 const profileEl = document.querySelector('.profile');
+const two = document.querySelector('.two');
+const three = document.querySelector('.three');
+const four = document.querySelector('.four');
+const five = document.querySelector('.five');
+const six = document.querySelector('.six');
+
 
 // BASIC Cookie function
 // for now we use this one
@@ -81,6 +97,14 @@ link.forEach(el => {
             setCookie('nederlandsActief',"not active", 30);
             setCookie('englishActive',"active", 30);
         }
+
+        //Only in Student Pages
+        two.textContent = mainData[attr].two;
+        three.textContent = mainData[attr].three;
+        four.textContent = mainData[attr].four;
+        five.textContent = mainData[attr].five;
+        /*six.textContent = mainData[attr].six;*/
+
         //In both Student & Expert Pages
         homeEl.textContent = mainData[attr].home;
         exercisesEl.textContent = mainData[attr].exercises;
@@ -89,6 +113,8 @@ link.forEach(el => {
         //Only in Expert Pages
         studentsEl.textContent = mainData[attr].students;
         profileEl.textContent = mainData[attr].profile;
+
+
 
     });
 });

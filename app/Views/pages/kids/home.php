@@ -4,7 +4,7 @@
 
 <div class="home_content">
     <div>
-        <h1 style="color:var(--blueNeutral);"> Welcome Back </h1>
+        <h1 style="color:var(--blueNeutral);" class="two"> Welcome Back </h1>
         <h1 style="color:var(--blueNeutral); ">
             <?php
             $session = session();
@@ -13,12 +13,12 @@
         </h1>
     </div>
     <div>
-        <h3 style="color:var(--blueNeutral);"> Your next exercise is waiting for you!</h3>
+        <h3 style="color:var(--blueNeutral);" class="three"> Your next exercise is waiting for you!</h3>
     </div>
 
     <div class="start_ex_button">
-        <button class="button buttonSecondary buttonChild" style="color:var(--blueNeutral); text-transform: none;"> The Adventure of the Dog.</button>
-        <button class="button buttonPrimary buttonChild">Start new exercise</button>
+        <button class="button buttonSecondary buttonChild five" style="color:var(--blueNeutral); text-transform: none;"> The Adventure of the Dog.</button>
+        <button class="button buttonPrimary buttonChild four">Start new exercise</button>
     </div>
 
 </div>
