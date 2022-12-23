@@ -40,7 +40,7 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
-        //print_r($data);
+
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -112,19 +112,21 @@ class KidsController extends BaseController
         return ($this->data);
     }
 
-    public function feedback($idExercises):array
+    public function feedback($idExercises)
     {
-        $data1['idStudent_fk'] = $_POST['idStudent_fk'];
-        $data1['idExercise_fk'] = $_POST['idExercise_fk'];
-        $data1['score'] = $_POST['score'];
-        $data1['date'] = $_POST['date'];
-        $this->students_model->add_results($data1);
+        $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
+        $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
+        $this->data['score'] = $_POST['score'];
+        $this->data['date'] = $_POST['date'];
+        $this->students_model->add_results($this->data);
 
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']=$idExercises;
-        return ($this->data);
-    }
 
+        $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
+        $dataFeedback = array_merge($this->getDataForPage('feedback',0),$css);
+        return view('pages/kids/feedback', $dataFeedback) ;
+    }
 
 
     public function exercises():array
