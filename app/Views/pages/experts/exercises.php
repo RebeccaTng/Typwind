@@ -4,7 +4,7 @@
 
 <h1>Exercises</h1>
 
-<!--<div class="exerciseContainer">-->
+<div class="exerciseContainer">
 <script>
     $(document).ready(function(){
 
@@ -36,7 +36,7 @@
 
     });
 </script>
-<!--</div>-->
+</div>
 <?php
 $_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
 ?>
