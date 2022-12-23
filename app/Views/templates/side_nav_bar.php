@@ -16,7 +16,7 @@
 <!--        <a href="--><?php //=base_url()?><!--/experts/home"  class="home" >-->
         <a href="<?=base_url()?>/experts/home" >
             <img  src="<?=base_url()?>/public/assets/icons/Home_icon.svg" >
-            <p>Home1</p>
+            <p>Home</p>
         </a>
 
 <!--        <a href="--><?php //=base_url()?><!--/experts/studentsList"  class="students">-->
