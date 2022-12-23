@@ -96,7 +96,7 @@ li.studentListItem {
     }
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 600px) {
     div.bar {
         display: none;
     }
