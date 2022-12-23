@@ -96,7 +96,14 @@ class KidsController extends BaseController
 //        $this->data['idExercises']= $_GET['idExercises'];
         $this->data['idExercises']= $idExercises;
         return ($this->data);
-
+    }
+    public function exercise($idExercises)
+    {
+        $this->data['idStudents']=session()->id;
+        $this->data['handSelection']=session()->handSelection;
+        $this->data['exercises']= session()->get('exercises');
+        $this->data['idExercises']= $idExercises;
+        return view ('pages/kids/exercise_view', $this->data);
     }
 
     public function feedback($idExercises):array

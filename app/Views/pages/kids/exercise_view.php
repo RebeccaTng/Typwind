@@ -5,8 +5,10 @@
 <link rel="stylesheet" href="<?=base_url()?>/public/CSS/keyboard.css">
 <div>
     <div class="container">
-        <h1>Title</h1>
-        <button id="stopButton">STOP & EXIT</button>
+        <h1>TITLE</h1>
+        <form action="<?php echo base_url('kids/intro/'.$exercise->idExercises);?>>" class="inline">
+            <button class="float-left submit-button" >STOP & EXIT</button>
+        </form>
     </div>
     <div class="exercise">
         <div class="textBox" id="textBox">
@@ -83,16 +85,15 @@
         <div class="key">Fn</div>
     </div>
     <?php
-    $session = session();
-    foreach ($session->exercises as $exercise):?>
-        <?php  if ($exercise->idExercises==$session->selectedExercise):?>
-            <div hidden="true" id="textInput"><?=$exercise->text?></div>
-            <div hidden="true" id="idExercise_fkDB"><?=$exercise->idExercises?></div>
-            <div hidden="true" id="idStudent_fkDB"><?=$session->id?></div>
+    foreach (exercises as $ex):?>
+        <?php  if ($ex->idExercises==$idExercises):?>
+            <div hidden="true" id="textInput"><?=$ex->text?></div>
+            <div hidden="true" id="idExercise_fkDB"><?=$ex->idExercises?></div>
+            <div hidden="true" id="idStudent_fkDB"><?=$idStudents?></div>
 
         <?php endif;?>
     <?php endforeach;?>
-    <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
+    <div hidden="true" id="handSelection"><?=$handSelection?></div>
 
 
     <form id="form" action="<?php echo base_url('kids/feedback');?>" method="post" onsubmit="addResults()">
