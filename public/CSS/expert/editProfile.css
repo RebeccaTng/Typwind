@@ -8,7 +8,7 @@ input {
     margin: 0.125rem 0 1.25rem; /*2px 0 20px*/
 }
 
-div .field {
+div.field {
     text-align: left;
     width: fit-content;
     margin: auto;
