@@ -10,17 +10,19 @@
     </div>
     <div class="menuItems" >
         <!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Home_icon.svg" >-->
-        <a href="<?=base_url()?>/kids/home" title="Go home" class="home" >
-            Home</a>
+        <a href="<?=base_url()?>/kids/home" title="Go home">
+            <img src="<?=base_url()?>/public/assets/icons/Home_icon.svg" >
+            <p class="home">Home</p></a>
         <!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Students_Icon.svg" >-->
-        <a href="<?=base_url()?>/kids/exercises" title="Go to exercises" class="exercises">Exercises</a>
+        <a href="<?=base_url()?>/kids/exercises" title="Go to exercises">
+            <img  src="<?=base_url()?>/public/assets/icons/Students_Icon.svg" >
+            <p class="exercises">Exercises</p></a>
         <!--        <img  src="--><?php //=base_url()?><!--/public/assets/icons/Students_Icon.svg" >-->
-
+        <br><br><br><br><br>
+        <div  class="menuFooter">
+            <a href="<?=base_url()?>/registration/welcome" title="Go home">
+                <img src="<?=base_url()?>/public/assets/icons/log_out_icon.svg" >
+                <p class="download">Log out</p></a>
+        </div>
     </div >
-    <div  class="menuFooter">
-        <a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">
-            <img  src="<?=base_url()?>/public/assets/icons/log_out_icon.svg" >
-            Log out
-        </a>
-    </div>
 </div>
