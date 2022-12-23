@@ -105,6 +105,7 @@ class KidsController extends BaseController
         $this->data['exercises']= session()->get('exercises');
 //        $this->data['idExercises']= $_GET['idExercises'];
         $this->data['idExercises']= $idExercises;
+        $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         return ($this->data);
     }
     public function exercise($idExercises)
@@ -113,6 +114,8 @@ class KidsController extends BaseController
         $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']= $idExercises;
+        $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
+
         return ($this->data);
     }
 
@@ -127,8 +130,10 @@ class KidsController extends BaseController
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']=$idExercises;
 
+
         $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
-        $dataFeedback = array_merge($this->getDataForPage('feedback',0),$css);
+        $dataFeedback = array_merge($this->data,$css);
+        $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         return view('pages/kids/feedback', $dataFeedback) ;
     }
 
