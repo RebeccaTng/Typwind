@@ -1,0 +1,11 @@
+.button {
+    max-width: 12.5rem; /*200px*/
+}
+
+h3 {
+    justify-self: center;
+}
+
+div.card {
+    margin: 0 1.875rem 1.25rem 0; /*30px 20px*/
+}
