@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
 use App\Models\Teachers_model;
+use App\Models\Menu_model;
 
 class ExpertController extends BaseController
 {
@@ -22,11 +23,13 @@ class ExpertController extends BaseController
 
 
     /// END OF CSS FILES ************************
-    private $data;
+//    private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
+    private $menu_model;
 
     public function __construct() {
+        $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
     }
@@ -39,6 +42,7 @@ class ExpertController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
+        print_r ($data);
         return view('/pages/experts/' . $page,$data);
     }
 
@@ -100,12 +104,16 @@ class ExpertController extends BaseController
     ////// SET UP METHODS FOR EACH VIEW
     public function home():array
     {
-        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
-        session()->set('teachers', $this->data['teachers']);
-        return array();
+        $data['pele']= "Best Footballer";
+        $data['menu_items'] = $this->menu_model->get_menuitems();
+        $data['teachers'] = $this->teachers_model->get_all_teachers();
+        session()->set('teachers', $data['teachers']);
+        return array($data);
     }
     public function studentsList():array
     {
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('studentsList');
+
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
         $this->data['teachers'] = session()->get('teachers');

@@ -76,7 +76,7 @@
     font: var(--navEmphasisText);
     color: var(--blueNeutral-dark);
     background-color: var(--beigeNeutral);
-    box-shadow:  0 0 20px rgba(0, 0, 0, 0.15);
+    /*box-shadow:  0 0 20px rgba(0, 0, 0, 0.15);*/
     border-radius: 65px 0px 0px 65px;
     z-index: 10;
 
