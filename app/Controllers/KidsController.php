@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
+use App\Models\Menu_model;
 
 class KidsController extends BaseController
 {
@@ -24,9 +25,11 @@ class KidsController extends BaseController
     /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
+    private $menu_model;
 
 
     public function __construct() {
+        $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
     }
 
@@ -85,9 +88,10 @@ class KidsController extends BaseController
 
     public function home():array
     {
+        $data['menu_items'] = $this->menu_model->get_menuitems_kids();
         $exercises=$this->students_model->getExercises();
         session()->set('exercises', $exercises);
-        return array();
+        return $data;
     }
 
     public function intro($idExercises)
@@ -118,10 +122,10 @@ class KidsController extends BaseController
     {
 
         $model = model(ExerciseModel::class);
-
         $data = ['exercises' => json_encode($model->getExercises())];
+        $data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
 
-        return ($data);
+        return $data;
     }
 
 }

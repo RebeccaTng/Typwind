@@ -40,9 +40,8 @@ class ExpertController extends BaseController
         }
         $css = ['cssFiles' =>  $this->getCSSFile($page)];
         $page_data =$this->getDataForPage($page,$arg);
-        if(sizeof($page_data)>0) $data = array_merge($page_data[0],$css);
+        if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
-        print_r ($data);
         return view('/pages/experts/' . $page,$data);
     }
 
@@ -104,15 +103,16 @@ class ExpertController extends BaseController
     ////// SET UP METHODS FOR EACH VIEW
     public function home():array
     {
-        $data['pele']= "Best Footballer";
+
+
         $data['menu_items'] = $this->menu_model->get_menuitems();
         $data['teachers'] = $this->teachers_model->get_all_teachers();
         session()->set('teachers', $data['teachers']);
-        return array($data);
+        return ($data);
     }
     public function studentsList():array
     {
-        $this->data['menu_items'] = $this->menu_model->get_menuitems('studentsList');
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
@@ -123,11 +123,9 @@ class ExpertController extends BaseController
 
     public function exercises():array
     {
-
         $model = model(ExerciseModel::class);
-
         $data = ['exercises' => json_encode($model->getExercises())];
-
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
         return ($data);
     }
 
@@ -238,9 +236,10 @@ class ExpertController extends BaseController
 //        return view('pages/experts/studentsList', $data);
     }
 
-    public function profile()
+    public function profile():array
     {
-        return array();
+        $data['menu_items'] = $this->menu_model->get_menuitems('My Profile');
+        return $data;
     }
 
     public function editProfilePage()
