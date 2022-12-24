@@ -113,7 +113,7 @@ link.forEach(el => {
         four.textContent = mainData[attr].four;
         five.textContent = mainData[attr].five;
         /*six.textContent = mainData[attr].six;*/
-        
+
     });
 });
 

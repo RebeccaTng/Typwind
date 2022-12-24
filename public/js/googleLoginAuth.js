@@ -4,6 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
+
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -39,6 +40,7 @@ document.getElementById('googleJSOutput').value = baseURLString+'/public/PHP/jQu
     {
         signInWithPopup(auth, provider)
             .then((result) => {
+
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
@@ -46,6 +48,22 @@ document.getElementById('googleJSOutput').value = baseURLString+'/public/PHP/jQu
                 const user = result.user;
 
                 var names = user.displayName.split(' ');
+
+                //AJAX Method call to PHP script
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST',baseURLString+'/RegistrationController/googleLogin',true);
+                xhr.onload = function() {
+                    document.getElementById('googleJSEmail').value = user.email;
+                    document.getElementById('googleJSPass').value = "googleHash";
+                    document.getElementById('googleJSClick').click();
+
+                    console.log(this.responseText);
+                    // If you wanted to call the function in here, then just make another whole xhr var and send it in this function
+                }
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send('firstName='+names[0]+'&lastName='+names[1]+'&AJAXEmail='+user.email);
+
+                //These comments are my Tryouts for AJAX
 
 /*                $.post(baseURLString+'/public/PHP/jQueryStoreUserInDB.php', { firstname:names[0],lastname:names[1],email:user.email}, function(result) {
                     alert(result);
@@ -63,7 +81,6 @@ document.getElementById('googleJSOutput').value = baseURLString+'/public/PHP/jQu
                     data: {firstname:names[0],lastname:names[1],email:user.email},
                     dataType: String
                 });*/
-
 
             }).catch((error) => {
             // Handle Errors here.

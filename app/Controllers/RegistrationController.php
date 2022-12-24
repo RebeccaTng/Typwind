@@ -4,10 +4,29 @@ namespace App\Controllers;
 
 use App\Models\Students_model;
 use App\Models\Teachers_model;
-use function MongoDB\BSON\toJSON;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
+    public function googleLogin(){
+        $firstName = $_POST["firstName"];
+        $lastName = $_POST["lastName"];
+        $AJAXEmail = $_POST["AJAXEmail"];
+        setcookie('googleEmail',$AJAXEmail, time()+3600, "/");
+
+        $expertModel = new Teachers_model();
+        $data = $expertModel->where('email', $AJAXEmail)->first();
+
+        if(!$data){
+            $data = [
+                'firstname'     => $firstName,
+                'lastname'     => $lastName,
+                'email'    => $AJAXEmail,
+                'password' => password_hash('googleHash', PASSWORD_DEFAULT)
+            ];
+            $expertModel->save($data);
+        }
+
+    }
 
     public function expertLogin()
     {
@@ -28,6 +47,9 @@ class RegistrationController extends \CodeIgniter\Controller
         echo view('pages/registration/register', $data);
     }
 
+    public function testingZ(){
+        setcookie("testings", 'testings123', time()+3600, "/");
+    }
 
     public function welcome()
     {
@@ -35,7 +57,7 @@ class RegistrationController extends \CodeIgniter\Controller
         helper(['form']);
         $data = [];
 
-/*        //Clearing all of the previously declared cookies if necesarry with uncommenting this line of code :)
+/*       //Clearing all of the previously declared cookies if necesarry with uncommenting this line of code :)
         if (isset($_SERVER['HTTP_COOKIE'])) {
             $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
             foreach($cookies as $cookie) {
