@@ -15,15 +15,15 @@
             <?php foreach ($menu_items as $menu): ?>
                 <a href="<?=base_url($menu['link'])?>" class="<?=$menu['className']?>" title="<?=$menu['title']?>">
                     <img  src="<?=base_url($menu['image'])?>" >
-                    <p><?=$menu['name']?></p>
+                    <p class ="<?=$menu['name']?>"><?=$menu['name']?></p>
                 </a>
             <?php endforeach; ?>
         <?php endif; ?>
     </div >
     <div  class="menuFooter">
-        <a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">
+        <a href="<?=base_url()?>/registration/welcome" title="Go home">
             <img  src="<?=base_url()?>/public/assets/icons/log_out_icon.svg" >
-            Log out
+            <div class="logout" style="display:inline">Log out</div>
         </a>
     </div>
 </div>

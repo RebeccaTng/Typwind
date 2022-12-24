@@ -2,11 +2,11 @@
 var mainData = {
     "nederlands":
         {
-            "home" : "Startpagina",
-            "students" : "Studenten",
-            "exercises" : "Oefeningen",
-            "profile" : "Mijn Profiel",
-            "download" : "Uitloggen",
+            "Home" : "Startpagina",
+            "Students" : "Studenten",
+            "Exercises" : "Oefeningen",
+            "Profile" : "Mijn Profiel",
+            "logout" : "Uitloggen",
             "two" : "Welkom Terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
@@ -16,11 +16,11 @@ var mainData = {
 
     "english":
         {
-            "home" : "Home",
-            "students" : "Students",
-            "exercises" : "Exercises",
-            "profile" : "My Profile",
-            "download" : "Log Out",
+            "Home" : "Home",
+            "Students" : "Students",
+            "Exercises" : "Exercises",
+            "Profile" : "My Profile",
+            "logout" : "Log Out",
             "two" : "Welcome Back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
@@ -31,11 +31,11 @@ var mainData = {
 
 const langEl = document.querySelector('.langWrap');
 const link = document.querySelectorAll('a');
-const homeEl = document.querySelector('.home');
-const exercisesEl = document.querySelector('.exercises');
-const logoutEl = document.querySelector('.download');
-const studentsEl = document.querySelector('.students');
-const profileEl = document.querySelector('.profile');
+const homeEl = document.querySelector('.Home');
+const exercisesEl = document.querySelector('.Exercises');
+const logoutEl = document.querySelector('.logout');
+const studentsEl = document.querySelector('.Students');
+const profileEl = document.querySelector('.Profile');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
 const four = document.querySelector('.four');
@@ -98,24 +98,22 @@ link.forEach(el => {
             setCookie('englishActive',"active", 30);
         }
 
+        //In both Student & Expert Pages
+        homeEl.textContent = mainData[attr].Home;
+        exercisesEl.textContent = mainData[attr].Exercises;
+        logoutEl.textContent = mainData[attr].logout;
+
+        //Only in Expert Pages
+        studentsEl.textContent = mainData[attr].Students;
+        profileEl.textContent = mainData[attr].Profile;
+
         //Only in Student Pages
         two.textContent = mainData[attr].two;
         three.textContent = mainData[attr].three;
         four.textContent = mainData[attr].four;
         five.textContent = mainData[attr].five;
         /*six.textContent = mainData[attr].six;*/
-
-        //In both Student & Expert Pages
-        homeEl.textContent = mainData[attr].home;
-        exercisesEl.textContent = mainData[attr].exercises;
-        logoutEl.textContent = mainData[attr].download;
-
-        //Only in Expert Pages
-        studentsEl.textContent = mainData[attr].students;
-        profileEl.textContent = mainData[attr].profile;
-
-
-
+        
     });
 });
 
