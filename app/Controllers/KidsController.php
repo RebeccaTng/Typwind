@@ -119,7 +119,7 @@ class KidsController extends BaseController
         return ($this->data);
     }
 
-    public function feedback($idExercises): string
+    public function feedback($idExercises)
     {
         $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
         $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
