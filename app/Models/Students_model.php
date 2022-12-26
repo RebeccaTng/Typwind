@@ -75,4 +75,11 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
         return $query;
     }
 
+    public function getBestScores()
+    {
+        $query_text = 'SELECT idStudent_fk, idExercise_fk, max(score) as score FROM a22ux02.student_exercise_fk group by idStudent_fk,idExercise_fk';
+        $query = $this->db->query($query_text);
+        return $query->getResult();
+    }
+
 }

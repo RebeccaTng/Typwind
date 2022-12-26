@@ -43,6 +43,7 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
+        //print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -143,7 +144,8 @@ class KidsController extends BaseController
     {
 
         $model = model(ExerciseModel::class);
-        $data = ['exercises' => json_encode($model->getExercises())];
+        $data['exercises'] = $model->getExercises();
+        $data['scores'] = $this->students_model->getBestScores();
         $data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
 
         return $data;
