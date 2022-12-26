@@ -53,7 +53,7 @@ div.card {
 }
 
 div.general {
-    width: 100%;
+    width: 40%;
     display: grid;
     grid-template-columns: 35% 60%;
     grid-template-rows: 3.125rem 9.375rem 9.375rem; /*50px 150px 150px*/
@@ -104,5 +104,11 @@ div.noteCard p {
 @media screen and (max-height: 800px) {
     div.container {
         height: 55vh;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    div.general {
+        width: 65%;
     }
 }

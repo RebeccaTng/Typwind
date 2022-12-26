@@ -96,7 +96,7 @@
 
                 <div class="noteCard card">
                     <label for="notes"><h3>Notes</h3></label>
-                    <input type="text" id="notes" name="notes" value="<?= $person->notes?>" >
+                    <textarea id="notes" name="notes" rows="20"><?= $person->notes?></textarea>
                 </div>
 
                 <div class="bottomBar">

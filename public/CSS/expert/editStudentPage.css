@@ -6,9 +6,11 @@
     width: 100%;
     height: fit-content;
     margin: 0;
+    font: var(--bodyText);
 }
 
 #notes:focus {
+    outline: none !important;
     border: 0.125rem solid var(--accentColor); /*2px*/
 }
 
