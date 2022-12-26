@@ -6,9 +6,11 @@
     width: 100%;
     height: fit-content;
     margin: 0;
+    font: var(--bodyText);
 }
 
 #notes:focus {
+    outline: none !important;
     border: 0.125rem solid var(--accentColor); /*2px*/
 }
 
@@ -27,7 +29,6 @@ p {
     padding: 0.375rem 0.938rem; /* 6px 15px */
     border: 0.125rem solid var(--blueNeutral-lightest); /* 2px */
     border-radius: 1.25rem; /* 20px */
-    background-color: var(--beigeNeutral-light);
     font: var(--bodyText);
     color: var(--blueNeutral-dark);
     caret-color: var(--blueNeutral-dark);
@@ -36,7 +37,7 @@ p {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    background: url("/public/assets/icons/angle-small-down.svg") no-repeat 170px center;
+    background: var(--beigeNeutral-light) url("/public/assets/icons/angle-small-down.svg") no-repeat 175px center;
 }
 
 #gender:focus, #teachers:focus, #handSelection:focus {
@@ -57,6 +58,31 @@ div.general {
 }
 
 @media screen and (max-width: 1500px) {
+    .switch {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    div.roundProfilePic, img {
+        display: none;
+    }
+
+    div.general {
+        grid-template-columns: 0 1fr;
+        column-gap: 0;
+    }
+
+    p {
+        margin: auto;
+    }
+
+    .switch {
+        margin-right: 9.688rem; /*155px*/
+    }
+}
+
+@media screen and (max-width: 990px) {
     .switch {
         margin-right: 0;
     }

@@ -6,7 +6,7 @@ class DesignController extends BaseController
 {
     private array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css");
     private array $example =array( "components/expertComponents.css");
-    private array $tests_rebecca =array("login_child.css");
+    private array $tests_rebecca =array("login_child.css", "components/expertComponents.css");
 
     public function view($page = 'css_example')
     {

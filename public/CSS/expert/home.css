@@ -17,6 +17,9 @@ div.user {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mainContent {
@@ -31,15 +34,23 @@ div.user {
     text-align: center;
 }
 
-div.user img.roundProfilePic {
-    height: 7.5rem; /* 120px */
-    width: 7.5rem; /* 120px */
+div.roundProfilePic {
+    height: 9.375rem; /* 150px */
+    width: 9.375rem; /* 150px */
 }
 
-@media screen and (max-width: 700px) {
-    div.user img.roundProfilePic {
+div.roundProfilePic img {
+    height: 5rem; /* 80px */
+}
+
+@media screen and (max-width: 1100px) {
+    div.roundProfilePic {
         height: 6.25rem; /* 100px */
         width: 6.25rem; /* 100px */
+    }
+
+    div.roundProfilePic img {
+        height: 3.125rem; /* 50px */
     }
 }
 

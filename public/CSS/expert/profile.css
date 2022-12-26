@@ -35,3 +35,7 @@ div.center {
 div.left {
     text-align: left;
 }
+
+div.roundProfilePic {
+    margin: auto;
+}

@@ -16,7 +16,9 @@
             <div class="studentContainer">
                 <div class="general card">
                     <h3>General Information</h3>
-                    <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                    <div class="roundProfilePic">
+                        <img src="/public/assets/icons/user.svg" alt="User Icon">
+                    </div>
                     <?php if ($person->handSelection==1):?>
                         <img class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
                     <?php endif;?>

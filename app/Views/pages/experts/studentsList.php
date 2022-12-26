@@ -30,7 +30,9 @@
         <?php foreach ($students as $person):?>
             <li class="studentListItem">
                 <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
-                    <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                    <div class="roundProfilePic">
+                        <img src="/public/assets/icons/user.svg" alt="User Icon">
+                    </div>
                     <h4><?=$person->firstname?><br><?=$person->lastname?></h4>
                 </a>
             </li>
