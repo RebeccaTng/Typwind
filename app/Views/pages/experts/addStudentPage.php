@@ -53,6 +53,11 @@
                 </p>
             </div>
 
+            <div class="noteCard card">
+                <label for="notes"><h3>Notes</h3></label>
+                <textarea id="notes" name="notes" rows="20" value=""></textarea>
+            </div>
+
             <div class="bottomBar">
                 <input type="submit" value="Add student" class="button buttonPrimary buttonExpert">
             </div>
