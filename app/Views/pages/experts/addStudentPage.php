@@ -59,7 +59,7 @@
             </div>
 
             <div class="bottomBar">
-                <input type="submit" value="Add student" class="button buttonPrimary buttonExpert">
+                <input type="submit" value="Submit" class="button buttonPrimary buttonExpert">
             </div>
         </form>
     </div>

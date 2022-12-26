@@ -1,11 +1,20 @@
-.button {
-    max-width: 12.5rem; /*200px*/
+div.general {
+    grid-template-columns: 0 1fr;
+    column-gap: 0;
 }
 
-h3 {
-    justify-self: center;
+p {
+    margin: auto;
 }
 
-div.card {
-    margin: 0 1.875rem 1.25rem 0; /*30px 20px*/
+@media screen and (max-width: 1500px) {
+    .switch {
+        margin-right: 9.688rem; /*155px*/
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .switch {
+        margin-right: 0;
+    }
 }
