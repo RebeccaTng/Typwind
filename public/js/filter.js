@@ -2,7 +2,7 @@
 
 
 function filterStudents(array, name) {
-    var URL = document.getElementById("testURL").value;
+    var URL = document.getElementById("URL").value;
 
     if (name == "disable filter")
     {

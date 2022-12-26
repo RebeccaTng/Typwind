@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<input type="hidden" id="URL" name="testURL" value="<?php echo base_url();?>/kids/intro/">
+<input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/kids/intro/">
 
 <script>
     var URL = document.getElementById("URL").value;
@@ -30,18 +30,17 @@
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
                 console.log(lessonGroup)
-                let exercisesText = "<br><br><div>"
-                lessonGroup.forEach(element => exercisesText = exercisesText + "<p><a href= \"" + URL + element.idExercises + "\">" +"<h4>"+ element.name
+                let exercisesText = "<div class='card lessonCard'> <h2>"+"Lesson "+lessonId +"</h2>"
+                lessonGroup.forEach(element => exercisesText = exercisesText + "<a href= \"" + URL + element.idExercises + "\">" +"<h4 class='exerciseField'>"+ element.name
                     +"</h4></a>"
                     + "<div class = \"wrapper_for_stars\">"
                     +    "<div class =\"unchecked_stars\"></div>"
                     +    "<div class =\"unchecked_stars\"></div>"
                     +    "<div class =\"unchecked_stars\"></div>"
                     +    "<div class =\"unchecked_stars\"></div>"
-                    +    "<div class =\"unchecked_stars\"></div></div>"
-                    + "</p><br>");
+                    +    "<div class =\"unchecked_stars\"></div></div><br>");
+                exercisesText = exercisesText + "</div>"
 
-                exercisesText = exercisesText + "<br><br><div>"
                 $(".mainContent").append(exercisesText);
             }
             console.log("LESSON")
@@ -49,8 +48,9 @@
     });
 </script>
 
-<?php
-$_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
-?>
+<h1>Exercises</h1>
+
+
+<div class="exerciseContainer">
 
 <?= $this->endSection() ?>
