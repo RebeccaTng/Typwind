@@ -55,7 +55,7 @@
 
             <div class="noteCard card">
                 <label for="notes"><h3>Notes</h3></label>
-                <textarea id="notes" name="notes" rows="20" value=""></textarea>
+                <textarea id="notes" name="notes" rows="17" placeholder="Type notes here."></textarea>
             </div>
 
             <div class="bottomBar">

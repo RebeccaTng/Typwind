@@ -98,7 +98,7 @@
 
                 <div class="noteCard card">
                     <label for="notes"><h3>Notes</h3></label>
-                    <textarea id="notes" name="notes" rows="20"><?= $person->notes?></textarea>
+                    <textarea id="notes" name="notes" rows="17"><?= $person->notes?></textarea>
                 </div>
 
                 <div class="bottomBar">
