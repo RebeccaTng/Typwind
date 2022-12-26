@@ -39,6 +39,10 @@ ul.studentList {
 li.studentListItem a {
     text-decoration: none;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 li.studentListItem {

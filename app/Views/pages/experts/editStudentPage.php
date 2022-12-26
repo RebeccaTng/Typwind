@@ -16,7 +16,9 @@
             <form class="studentContainer" action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
                 <div class="general card">
                     <h3>General Information</h3>
-                    <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                    <div class="roundProfilePic">
+                        <img src="/public/assets/icons/user.svg" alt="User Icon">
+                    </div>
 
                     <p>
                         <input type="hidden" id="email" name="email" value="<?=$person->email?>">

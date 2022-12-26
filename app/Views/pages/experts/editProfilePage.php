@@ -5,7 +5,9 @@
     <h1>My Profile</h1>
     <div class="center">
         <div class="user">
-            <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+            <div class="roundProfilePic">
+                <img src="/public/assets/icons/user.svg" alt="User Icon">
+            </div>
             <h2>
                 <?php $session = session();
                 echo $session->firstname; echo " "; echo $session->lastname;?>
