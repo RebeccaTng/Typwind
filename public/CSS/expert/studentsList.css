@@ -30,7 +30,7 @@ ul.studentList {
     align-items: start;
     gap: 3.125rem 3.125rem; /*50px 50px*/
 
-    height: 65vh;
+    height: 80%;
     list-style-type: none;
     overflow: auto;
     padding-right: 2.188rem; /*35px*/
