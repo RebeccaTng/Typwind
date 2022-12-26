@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
 use App\Models\Teachers_model;
+use App\Models\Menu_model;
 
 class ExpertController extends BaseController
 {
@@ -13,7 +14,7 @@ class ExpertController extends BaseController
     private array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css", "components/expertComponents.css");
     private array $studentsList = array("expert/studentsList.css");
     private array $home = array("expert/home.css");
-    private array $exercises = array();
+    private array $exercises = array("expert/exercises.css");
     private array $studentOverview = array("expert/studentOverview.css");
     private array $editStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css");
     private array $addStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css", "expert/addStudentPage.css");
@@ -22,11 +23,13 @@ class ExpertController extends BaseController
 
 
     /// END OF CSS FILES ************************
-    private $data;
+    //    private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
+    private $menu_model;
 
     public function __construct() {
+        $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
     }
@@ -100,12 +103,17 @@ class ExpertController extends BaseController
     ////// SET UP METHODS FOR EACH VIEW
     public function home():array
     {
-        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
-        session()->set('teachers', $this->data['teachers']);
-        return array();
+
+
+        $data['menu_items'] = $this->menu_model->get_menuitems();
+        $data['teachers'] = $this->teachers_model->get_all_teachers();
+        session()->set('teachers', $data['teachers']);
+        return ($data);
     }
     public function studentsList():array
     {
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
         $this->data['teachers'] = session()->get('teachers');
@@ -115,11 +123,9 @@ class ExpertController extends BaseController
 
     public function exercises():array
     {
-
         $model = model(ExerciseModel::class);
-
         $data = ['exercises' => json_encode($model->getExercises())];
-
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
         return ($data);
     }
 
@@ -127,6 +133,8 @@ class ExpertController extends BaseController
     {
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         return  $this->data;
     }
 
@@ -135,6 +143,8 @@ class ExpertController extends BaseController
         $this->data['idStudents']=$idStudents;
         $this->data['students'] = session()->get('students');
         $this->data['teachers'] = session()->get('teachers');
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         return( $this->data);
     }
     public function editStudent($idStudents)
@@ -177,7 +187,7 @@ class ExpertController extends BaseController
         $this->data['coins']= $_POST['coins'];
         $this->data['streak']= $_POST['streak'];
         $this->students_model->edit_student($this->data);
-
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
         $css = ['cssFiles' =>  $this->getCSSFile("studentsList")];
         $dataAddStudent = array_merge($this->getDataForPage('studentsList',0),$css);
@@ -188,6 +198,8 @@ class ExpertController extends BaseController
     public function addStudentPage():array
     {
         $data['teachers']=session()->get('teachers');
+        $data['menu_items'] = $this->menu_model->get_menuitems('Students');
+
         return ( $data);
     }
     public function addStudent()
@@ -221,6 +233,7 @@ class ExpertController extends BaseController
         $data['idTeacher_fk'] = $_POST['teachers'];
         $this->students_model->add_student($data);
 
+        $data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
 
         $css = ['cssFiles' =>  $this->getCSSFile("studentsList")];
@@ -229,14 +242,16 @@ class ExpertController extends BaseController
 //        return view('pages/experts/studentsList', $data);
     }
 
-    public function profile()
+    public function profile():array
     {
-        return array();
+        $data['menu_items'] = $this->menu_model->get_menuitems('My Profile');
+        return $data;
     }
 
     public function editProfilePage()
     {
-        return array();
+        $data['menu_items'] = $this->menu_model->get_menuitems('My Profile');
+        return $data;
     }
 
     public function editProfile()

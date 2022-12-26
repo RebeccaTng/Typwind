@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
+use App\Models\Menu_model;
 
 class KidsController extends BaseController
 {
@@ -16,6 +17,7 @@ class KidsController extends BaseController
     private array $intro = array("kids/intro_exercise_child.css");
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array();
+    private array $exercise = array();
 
 
 
@@ -24,9 +26,11 @@ class KidsController extends BaseController
     /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
+    private $menu_model;
 
 
     public function __construct() {
+        $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
     }
 
@@ -54,6 +58,8 @@ class KidsController extends BaseController
                 return $this->feedback($args);
             case 'exercises':
                 return $this->exercises();
+            case 'exercise':
+                return $this->exercise($args);
 
 
 
@@ -72,6 +78,8 @@ class KidsController extends BaseController
                 return$this->includeCSSFilesInCommonFiles( $this->feedback);
             case 'exercises':
                 return$this->includeCSSFilesInCommonFiles( $this->exercises);
+            case 'exercise':
+                return$this->includeCSSFilesInCommonFiles( $this->exercise);
 
 
             default:
@@ -85,9 +93,10 @@ class KidsController extends BaseController
 
     public function home():array
     {
+        $data['menu_items'] = $this->menu_model->get_menuitems_kids();
         $exercises=$this->students_model->getExercises();
         session()->set('exercises', $exercises);
-        return array();
+        return $data;
     }
 
     public function intro($idExercises)
@@ -96,32 +105,49 @@ class KidsController extends BaseController
         $this->data['exercises']= session()->get('exercises');
 //        $this->data['idExercises']= $_GET['idExercises'];
         $this->data['idExercises']= $idExercises;
+        $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
+        return ($this->data);
+    }
+    public function exercise($idExercises)
+    {
+        $this->data['idStudents']=session()->id;
+        $this->data['handSelection']=session()->handSelection;
+        $this->data['exercises']= session()->get('exercises');
+        $this->data['idExercises']= $idExercises;
+        $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
+
         return ($this->data);
     }
 
-    public function feedback($idExercises):array
+    public function feedback($idExercises): string
     {
-        $data1['idStudent_fk'] = $_POST['idStudent_fk'];
-        $data1['idExercise_fk'] = $_POST['idExercise_fk'];
-        $data1['score'] = $_POST['score'];
-        $data1['date'] = $_POST['date'];
-        $this->students_model->add_results($data1);
+        $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
+        $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
+        $this->data['score'] = $_POST['score'];
+        $this->data['date'] = $_POST['date'];
+        $this->students_model->add_results($this->data);
 
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']=$idExercises;
-        return ($this->data);
-    }
 
+        $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
+        $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
+        $dataFeedback = array_merge($this->data,$css);
+
+
+        return view('pages/kids/feedback', $dataFeedback) ;
+    }
 
 
     public function exercises():array
     {
 
         $model = model(ExerciseModel::class);
-
         $data = ['exercises' => json_encode($model->getExercises())];
+        $data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
 
-        return ($data);
+        return $data;
     }
+
 
 }

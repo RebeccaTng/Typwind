@@ -13,6 +13,7 @@
 
     <!-- Translation file -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
+
     <?php
     if (! empty($cssFiles) && is_array($cssFiles)):
         foreach ($cssFiles as $ccsFilePath):
@@ -21,6 +22,7 @@
         endforeach;
     endif;
     ?>
+
 
     <title>Typewind Online</title>
 </head>

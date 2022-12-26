@@ -71,7 +71,7 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
 
     public function add_results($data)
     {
-        $query =$this->db->table('student_exercise_fk')->insert($data);
+        $query = $this->db->table('student_exercise_fk')->insert($data);
         return $query;
     }
 

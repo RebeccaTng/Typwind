@@ -32,10 +32,19 @@
             <div class="card_intro">
 
                 <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px">Press start and earn some stars.<br> Good luck!</h4>
-                <div class="intro_ex_button">
-                    <button class="button buttonPrimary buttonChild">Start</button>
-                    <button class="button buttonSecondary buttonChild">Go back to exercises</button>
-                </div>
+                <?php foreach ($exercises as $ex):?>
+                    <?php  if ($ex->idExercises==$idExercises):?>
+                        <div class="intro_ex_button">
+                            <form action="<?php echo base_url('kids/exercise/'.$ex->idExercises);?>" class="inline">
+                                <button class="button buttonPrimary buttonChild">Start</button>
+                            </form>
+                            <form action="<?php echo base_url();?>/kids/exercises" class="inline">
+                                <button class="button buttonSecondary buttonChild">Go back to exercises</button>
+                            </form>
+
+                        </div>
+                    <?php endif;?>
+                <?php endforeach;?>
             </div>
     </div>
 </div>

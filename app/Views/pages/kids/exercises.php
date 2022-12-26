@@ -2,8 +2,10 @@
 
 <?= $this->section('content') ?>
 
+<input type="hidden" id="testURL" name="testURL" value="<?php echo base_url();?>/kids/intro/">
 
 <script>
+    var URL = document.getElementById("testURL").value;
     $(document).ready(function(){
 
         let lessonsList = <?php echo $exercises; ?>;
@@ -25,13 +27,13 @@
             if (typeof lessonGroup !== 'undefined') {
                 console.log(lessonGroup)
                 let exercisesText = "<br><br><div>"
-                lessonGroup.forEach(element => exercisesText = exercisesText + "<p>" + element.name + "</p><br>");
+                lessonGroup.forEach(element => exercisesText = exercisesText + "<p><a href= \"" + URL + element.idExercises + "\">" +"<h4>"+ element.name +"</h4></a>" + "</p><br>");
+
                 exercisesText = exercisesText + "<br><br><div>"
                 $(".mainContent").append(exercisesText);
             }
             console.log("LESSON")
         }
-
     });
 </script>
 

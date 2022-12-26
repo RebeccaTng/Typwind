@@ -14,27 +14,28 @@
             <li>Page 4</li>
         </ul>
     </div>
-
-    <!--Title and stop button-->
     <?php
-    $session = session();
-    ?>
-    <?php
-    foreach ($session->exercises as $exercise):?>
-        <?php  if ($exercise->idExercises==93):?> <!--$session->selectedExercise-->
-            <div hidden="true" id="textInput"><?=$exercise->text?></div>
-            <div hidden="true" id="idExercise_fkDB"><?=$exercise->idExercises?></div>
-            <div hidden="true" id="idStudent_fkDB"><?=$session->id?></div>
-            <div hidden="true" id="handSelection"><?=$session->handSelection?></div>
-            <div class="container">
-                <div class="title">
-                    <h1><?=$exercise->name?></h1>
-                    <button id="stopButton" class="button buttonSecondary buttonChild">STOP & EXIT</button>
-                </div>
-            </div>
+    foreach ($exercises as $ex):?>
+    <?php  if ($ex->idExercises==$idExercises):?>
 
-        <?php endif;?>
-    <?php endforeach;?>
+    <div class="container">
+        <div class="title"
+        <h1><?= $ex->name?></h1>
+        <form action="<?php echo base_url('kids/intro/'.$idExercises);?>" class="inline">
+            <button id="stopButton" class="buttonSecondary buttonChild" >STOP & EXIT</button>
+        </form>
+    </div>
+</div>
+    <div hidden="true" id="textInput"><?=$ex->text?></div>
+    <div hidden="true" id="idExercise_fkDB"><?=$ex->idExercises?></div>
+    <div hidden="true" id="idStudent_fkDB"><?=$idStudents?></div>
+
+<?php endif;?>
+<?php endforeach;?>
+<div hidden="true" id="handSelection"><?=$handSelection?></div>
+
+
+
 
     <div class = "container_visuals">
         <div class = "visuals">
@@ -48,7 +49,6 @@
                 <div id="effect"></div>
             </div>
 
-            <!--Keys-->
             <div class="keyboard-base" id="keyboard">
                 <div class="key" id="Backquote">~</div>
                 <div class="key blue" id="Digit1">1</div>
@@ -120,9 +120,9 @@
 
 
 
-    <form id="form" action="<?php echo base_url('kids/feedback');?>" method="post" onsubmit="addResults()">
-        <input type="hidden" id="idStudent_fk" name="idStudent_fk" value="">
-        <input type="hidden" id="idExercise_fk" name="idExercise_fk" value="">
+    <form id="form" action="<?php echo base_url('kids/feedback/'.$idExercises);?>" method="post">
+        <input type="hidden" id="idStudent_fk" name="idStudent_fk" value="<?=$idStudents ?>">
+        <input type="hidden" id="idExercise_fk" name="idExercise_fk" value="<?=$idExercises ?>">
         <input type="hidden" id="score" name="score" value="">
         <input type="hidden" id="date" name="date" value="">
     </form>
