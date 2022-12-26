@@ -13,7 +13,6 @@
         let scores = <?php echo json_encode($scores); ?>;
 
 
-
         const lessonsMap = new Map();
 
         for (let i = 0; i < lessonsList.length; i++) {

@@ -94,9 +94,11 @@ class KidsController extends BaseController
 
     public function home():array
     {
+        $data['scores'] = $this->students_model->getBestScores();
         $data['menu_items'] = $this->menu_model->get_menuitems_kids();
-        $exercises=$this->students_model->getExercises();
-        session()->set('exercises', $exercises);
+        $data['exercises']= $this->students_model->getExercises();
+        $data['idStudents']=session()->id;
+        session()->set('exercises', $data['exercises']);
         return $data;
     }
 
