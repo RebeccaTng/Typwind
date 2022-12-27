@@ -116,4 +116,8 @@ h1 {
     height: 100vh;
 }
 
+.active {
+    font-weight: bold;
+}
+
 
