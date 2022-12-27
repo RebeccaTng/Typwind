@@ -32,11 +32,25 @@
         </div>
 
         <div class="card_buttons">
-            <button class="button buttonPrimary buttonChild">Replay exercise</button>
 
-            <button class="button buttonPrimary buttonChild">Start new exercise</button>
 
-            <button class="button buttonSecondary buttonChild">Back to exercises</button>
+            <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="inline">
+                <button class="button buttonPrimary buttonChild">Replay exercise</button>
+            </form>
+            <?php  if ($idExercise_fk==94):
+                $idNext = 1;
+            else:
+                $idNext= $idExercise_fk+1;
+            endif;?>
+
+            <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="inline">
+                <button class="button buttonPrimary buttonChild">Start new exercise</button>
+            </form>
+
+            <form action="<?php echo base_url('/kids/exercises');?>" class="inline">
+                <button class="button buttonSecondary buttonChild">Back to exercises</button>
+            </form>
+
         </div>
     </div>
 
