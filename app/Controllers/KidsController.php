@@ -160,7 +160,8 @@ class KidsController extends BaseController
 
     private function avatar():array
     {
-        return array();
+        $data['menu_items'] = $this->menu_model->get_menuitems_kids('avatar');
+        return $data;
     }
 
 
