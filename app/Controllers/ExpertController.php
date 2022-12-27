@@ -231,9 +231,8 @@ class ExpertController extends BaseController
         $data['isActive'] = isset($_POST['active']);
         $data['birthday'] = $_POST['birthday'];
         $data['idTeacher_fk'] = $_POST['teachers'];
-        $data['notes']= $_POST['notes'];
+        $data['notes'] = $_POST['notes'];
         $this->students_model->add_student($data);
-
 
         $data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
