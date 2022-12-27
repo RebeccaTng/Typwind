@@ -18,6 +18,7 @@ class KidsController extends BaseController
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array();
     private array $exercise = array();
+    private array $avatar = array();
 
 
 
@@ -60,6 +61,8 @@ class KidsController extends BaseController
                 return $this->exercises();
             case 'exercise':
                 return $this->exercise($args);
+            case 'avatar':
+                return $this->avatar();
 
 
 
@@ -80,6 +83,8 @@ class KidsController extends BaseController
                 return$this->includeCSSFilesInCommonFiles( $this->exercises);
             case 'exercise':
                 return$this->includeCSSFilesInCommonFiles( $this->exercise);
+            case 'avatar':
+                return$this->includeCSSFilesInCommonFiles( $this->avatar);
 
 
             default:
@@ -147,6 +152,11 @@ class KidsController extends BaseController
         $data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
 
         return $data;
+    }
+
+    private function avatar():array
+    {
+        return array();
     }
 
 
