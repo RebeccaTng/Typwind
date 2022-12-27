@@ -20,16 +20,67 @@
 
     <div class="content_feedback">
         <div>
-            <h2 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h2>
-        </div>
-        <!-- Star icons -->
-        <div class = "wrapper_for_stars">
-            <div class ="checked_stars"></div>
-            <div class ="checked_stars"></div>
-            <div class ="checked_stars"></div>
-            <div class ="unchecked_stars"></div>
-            <div class ="unchecked_stars"></div>
-        </div>
+        <?php if(0<=$score & $score<0.2): ?>
+            <h2 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.2<=$score & $score<0.4): ?>
+            <h2 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.4<=$score & $score<=0.6): ?>
+            <h2 style="color: var(--primary-darkest)">You earned 2 stars already!<br>Try again to earn more stars :)</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.6<=$score & $score<0.8): ?>
+            <h2 style="color: var(--primary-darkest)">3 Stars! Well done!</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.8<=$score & $score<1): ?>
+            <h2 style="color: var(--primary-darkest)">Wow 4 Stars!</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if($score ==1): ?>
+            <h2 style="color: var(--primary-darkest)">Perfect score! You are a pro!</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+            </div>
+        <?php endif;?>
+
 
         <div class="card_buttons">
 
@@ -53,6 +104,5 @@
 
         </div>
     </div>
-
 </div>
 <?= $this->endSection() ?>
