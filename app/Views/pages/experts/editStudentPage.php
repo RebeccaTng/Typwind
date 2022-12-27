@@ -2,6 +2,9 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","expertEditStudent", time()+36000, "/");?>
+
+
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
 

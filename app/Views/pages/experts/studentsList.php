@@ -2,15 +2,17 @@
 
 <?= $this->section('content') ?>
 
-    <h1>Students</h1>
+<?php setcookie("currentPage","expertStudents", time()+36000, "/");?>
+
+    <h1 class="one" >Students</h1>
     <div class="bar">
         <!-- Add new student -->
-        <a class="addNew" href=<?php echo base_url('experts/addStudentPage/');?>>Add New Student</a>
+        <a class="addNew two" href=<?php echo base_url('experts/addStudentPage/');?>>Add New Student</a>
 
         <input type="hidden" id="testURL" name="testURL" value="<?php echo base_url();?>/experts/studentOverview/">
         <!-- Filter -->
         <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
-            <option disabled selected value>Filter</option>
+            <option disabled selected value class="three">Filter</option>
             <?php foreach ($teachers as $teacher):?>
                 <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
             <?php endforeach;?>
@@ -18,7 +20,7 @@
         </select>
 
         <!-- Searchbar -->
-        <input type="text" id="myInput" onkeyup="search()" placeholder="Search">
+        <input class="four" type="text" id="myInput" onkeyup="search()" placeholder="Search">
     </div>
 
     <script type="text/javascript">

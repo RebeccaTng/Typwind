@@ -2,6 +2,7 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
+
 <link rel="stylesheet" href="<?=base_url()?>/public/CSS/keyboard.css">
 
 <div class="grid-container_exercise">
