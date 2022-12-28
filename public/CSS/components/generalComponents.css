@@ -204,6 +204,7 @@ div.roundProfilePic {
     align-items: center;
     padding: 0.625rem; /* 10px */
 
+
     border-radius: 50%;
     border: 0.125rem solid var(--secondary-light); /* 2px */
     background-color: var(--beigeNeutral-light);

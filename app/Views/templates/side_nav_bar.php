@@ -23,7 +23,7 @@
     <div  class="menuFooter">
         <a href="<?=base_url()?>/registration/welcome" title="Go home" class="download">
             <img  src="<?=base_url()?>/public/assets/icons/log_out_icon.svg" >
-            Log out
+            <p>Log out</p>
         </a>
     </div>
 </div>
