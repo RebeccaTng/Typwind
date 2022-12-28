@@ -15,6 +15,7 @@
             }
             else{
                 lessonsMap.set(lessonsList[i].lesson,[])
+                lessonsMap.get(lessonsList[i].lesson).push(lessonsList[i])
             }
         }
 
