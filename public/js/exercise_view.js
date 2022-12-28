@@ -16,32 +16,32 @@ let imageMap = new Map([
     [",",["/public/assets/pictures/,.jpg","KeyM",""]],
     ["=",["/public/assets/pictures/=.jpg","Slash",""]],
     [":",["/public/assets/pictures/Dubbelpunt.jpg","Period",""]],
-    ["a",["/public/assets/pictures/Avond.jpg", "KeyQ","public/assets/sounds/A.mp3"]],
-    ["b",["/public/assets/pictures/Banaan.jpg", "KeyB","public/assets/sounds/B.mp3"]],
-    ["c",["/public/assets/pictures/Circus.jpg", "KeyC","public/assets/sounds/C.mp3"]],
-    ["d",["/public/assets/pictures/Draak.jpg", "KeyD","public/assets/sounds/D.mp3"]],
-    ["e",["/public/assets/pictures/Eenwieler.jpg", "KeyE","public/assets/sounds/E.mp3"]],
-    ["f",["/public/assets/pictures/Fuut.jpg", "KeyF","public/assets/sounds/F.mp3"]],
-    ["g",["/public/assets/pictures/Gorilla.jpg", "KeyG","public/assets/sounds/G.mp3"]],
-    ["h",["/public/assets/pictures/Haas.jpg", "KeyH","public/assets/sounds/H.mp3"]],
-    ["i",["/public/assets/pictures/Insect.jpg", "KeyI","public/assets/sounds/I.mp3"]],
-    ["j",["/public/assets/pictures/Joke.jpg", "KeyJ","public/assets/sounds/J.mp3"]],
-    ["k",["/public/assets/pictures/Kat.jpg", "KeyK","public/assets/sounds/K.mp3"]],
-    ["l",["/public/assets/pictures/Luipaard.jpg", "KeyL","public/assets/sounds/L.mp3"]],
-    ["m",["/public/assets/pictures/Matroos.jpg", "Semicolon","public/assets/sounds/M.mp3"]],
-    ["n",["/public/assets/pictures/Natuur.jpg", "KeyN","public/assets/sounds/N.mp3"]],
-    ["o",["/public/assets/pictures/Olifant.jpg", "KeyO","public/assets/sounds/O.mp3"]],
-    ["p",["/public/assets/pictures/Pelikaan.jpg", "KeyP","public/assets/sounds/P.mp3"]],
-    ["q",["/public/assets/pictures/Quiz.jpg", "KeyA","public/assets/sounds/Q.mp3"]],
-    ["r",["/public/assets/pictures/Riet.jpg", "KeyR","public/assets/sounds/R.mp3"]],
-    ["s",["/public/assets/pictures/Slang.jpg", "KeyS","public/assets/sounds/S.mp3"]],
-    ["t",["/public/assets/pictures/Tamtam.jpg", "KeyT","public/assets/sounds/T.mp3"]],
-    ["u",["/public/assets/pictures/Ufo.jpg", "KeyU","public/assets/sounds/U.mp3"]],
-    ["v",["/public/assets/pictures/Vis.jpg", "KeyV","public/assets/sounds/V.mp3"]],
-    ["w",["/public/assets/pictures/Winter.jpg", "KeyZ","public/assets/sounds/W.mp3"]],
-    ["x",["/public/assets/pictures/Xylofoon.jpg", "KeyX","public/assets/sounds/X.mp3"]],
-    ["y",["/public/assets/pictures/Yogamat.jpg", "KeyY","public/assets/sounds/Y.mp3"]],
-    ["z",["/public/assets/pictures/Zigzaggende.jpg", "KeyW","public/assets/sounds/Z.mp3"]],
+    ["a",["/public/assets/pictures/Avond.jpg", "KeyQ","/public/assets/sounds/A.mp3"]],
+    ["b",["/public/assets/pictures/Banaan.jpg", "KeyB","/public/assets/sounds/B.mp3"]],
+    ["c",["/public/assets/pictures/Circus.jpg", "KeyC","/public/assets/sounds/C.mp3"]],
+    ["d",["/public/assets/pictures/Draak.jpg", "KeyD","/public/assets/sounds/D.mp3"]],
+    ["e",["/public/assets/pictures/Eenwieler.jpg", "KeyE","/public/assets/sounds/E.mp3"]],
+    ["f",["/public/assets/pictures/Fuut.jpg", "KeyF","/public/assets/sounds/F.mp3"]],
+    ["g",["/public/assets/pictures/Gorilla.jpg", "KeyG","/public/assets/sounds/G.mp3"]],
+    ["h",["/public/assets/pictures/Haas.jpg", "KeyH","/public/assets/sounds/H.mp3"]],
+    ["i",["/public/assets/pictures/Insect.jpg", "KeyI","/public/assets/sounds/I.mp3"]],
+    ["j",["/public/assets/pictures/Joke.jpg", "KeyJ","/public/assets/sounds/J.mp3"]],
+    ["k",["/public/assets/pictures/Kat.jpg", "KeyK","/public/assets/sounds/K.mp3"]],
+    ["l",["/public/assets/pictures/Luipaard.jpg", "KeyL","/public/assets/sounds/L.mp3"]],
+    ["m",["/public/assets/pictures/Matroos.jpg", "Semicolon","/public/assets/sounds/M.mp3"]],
+    ["n",["/public/assets/pictures/Natuur.jpg", "KeyN","/public/assets/sounds/N.mp3"]],
+    ["o",["/public/assets/pictures/Olifant.jpg", "KeyO","/public/assets/sounds/O.mp3"]],
+    ["p",["/public/assets/pictures/Pelikaan.jpg", "KeyP","/public/assets/sounds/P.mp3"]],
+    ["q",["/public/assets/pictures/Quiz.jpg", "KeyA","/public/assets/sounds/Q.mp3"]],
+    ["r",["/public/assets/pictures/Riet.jpg", "KeyR","/public/assets/sounds/R.mp3"]],
+    ["s",["/public/assets/pictures/Slang.jpg", "KeyS","/public/assets/sounds/S.mp3"]],
+    ["t",["/public/assets/pictures/Tamtam.jpg", "KeyT","/public/assets/sounds/T.mp3"]],
+    ["u",["/public/assets/pictures/Ufo.jpg", "KeyU","/public/assets/sounds/U.mp3"]],
+    ["v",["/public/assets/pictures/Vis.jpg", "KeyV","/public/assets/sounds/V.mp3"]],
+    ["w",["/public/assets/pictures/Winter.jpg", "KeyZ","/public/assets/sounds/W.mp3"]],
+    ["x",["/public/assets/pictures/Xylofoon.jpg", "KeyX","/public/assets/sounds/X.mp3"]],
+    ["y",["/public/assets/pictures/Yogamat.jpg", "KeyY","/public/assets/sounds/Y.mp3"]],
+    ["z",["/public/assets/pictures/Zigzaggende.jpg", "KeyW","/public/assets/sounds/Z.mp3"]],
     ["1",["","Digit1",""]],
     ["2",["","Digit2",""]],
     ["3",["","Digit3",""]],
@@ -108,7 +108,7 @@ function atStart(){
     correctCharactersNeeded =  textChar.length;
     createSpanSentence();
     keyboardColorsFunction(parseInt(handSelection.innerText));
-    highlightKey();
+    highlightCurrentLetter();
 }
 
 /*Create a span element of every character*/
@@ -119,7 +119,6 @@ function createSpanSentence(){
         var txt = document.createTextNode(textChar[i]);
         s.appendChild(txt);
         movableExerciseBoxText.appendChild(s);
-        highlightCurrentLetter();
     }
     moveSentence();
 }
@@ -167,8 +166,12 @@ function processInputFunction() {
     //If input is according to needed inut
     } else if (currInput === textInput[correctCharactersTyped]) {
         correctCharactersTyped++;
-        highlightKey();
-        //If input is correct but previous was wrong
+    //Checks if we're at the end of the exercise
+        if(correctCharactersTyped===correctCharactersNeeded){
+            exerciseFinishedFunction();
+        }
+        highlightCurrentLetter();
+    //If input is correct but previous was wrong
         if(wrongAnswered){
             highlightLetterWrong();
             mistakes++;
@@ -177,15 +180,11 @@ function processInputFunction() {
         }else{
             highlightLetterRight();
         }
-    //Checks if we're at the end of the exercise
-        if(correctCharactersTyped===correctCharactersNeeded){
-            exerciseFinishedFunction();
-        }
-   //Given input is wrong
+
+    //Given input is wrong
     } else {
         wrongAnswered = true;
     }
-    highlightCurrentLetter();
 }
 
 /*Function for when the exercise is finished*/
@@ -250,25 +249,14 @@ function setImage(key){
 /*Function for setting the correct sound. If keystroke has no sound nothing happens and sounds stops*/
 function playSound(key){
     if(key!==undefined){key = key.toLowerCase();}
-    var curr = imageContainer.getElementsByTagName("img")[0];
-    var s;
-    if (imageMap.has(key) && imageMap.get(key)[0]!== "") {
-        if (curr === undefined) {
-            s = document.createElement("IMG");//.attributes("class","letter");
-            s.setAttribute("class", "image");
-            // s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
-            s.setAttribute("alt", key);
-            s.setAttribute("src",  window.location.origin + imageMap.get(key)[0]);
-            // var txt = document.createTextNode(textChar[i]);
-            //s.appendChild(txt);
-            imageContainer.appendChild(s);
-        } else {
-            s = curr;
-            s.setAttribute("src", imageMap.get(key)[0]);
-            s.setAttribute("alt", key);
-        }
-    }else if (curr !== undefined){
-        curr.remove();
+    if(soundContainer.currentTime > 0){
+        soundContainer.pause();
+        soundContainer.currentTime = 0;
+    }
+    if (imageMap.has(key) && imageMap.get(key)[2]!== "") {
+        soundContainer.setAttribute("src", window.location.origin +  imageMap.get(key)[2]);
+        soundContainer.play();
+
     }
 }
 
@@ -277,6 +265,8 @@ function highlightCurrentLetter() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
     span.setAttribute("class","letter focus");
     setImage(textInput[correctCharactersTyped]);
+    playSound(textInput[correctCharactersTyped]);
+    highlightKey();
 }
 
 /*Function for adjusting the CSS class of the given key*/

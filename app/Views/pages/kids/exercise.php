@@ -39,7 +39,7 @@
             <!--Image and text bar-->
             <div class="exercise">
                 <div id="imageContainer"></div>
-                <div hidden="true" id="soundContainer"></div>
+                <audio id="soundContainer"></audio>
                 <div class="textBox" id="textBox">
                     <div class="textContainer " id="movableExerciseBoxText"></div>
                 </div>
