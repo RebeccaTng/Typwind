@@ -1,12 +1,11 @@
 
 <div class="menu_grid-container">
     <div class="menuHeader">
-        <img  src="<?=base_url()?>/public/assets/general/typwind_logo.svg">
+        <img id ="typewindLogo" src="<?=base_url()?>/public/assets/general/typwind_logo.svg">
     </div>
 
     <div class="langWrap menuSubHeader" >
         <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
-            |
        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
 
