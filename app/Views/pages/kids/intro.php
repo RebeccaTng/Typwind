@@ -5,10 +5,8 @@
 <div class = "grid-container_intro">
     <div class = "breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-            <li>Page 4</li>
+            <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a></li>
+            <li>Introduction</li>
         </ul>
     </div>
 

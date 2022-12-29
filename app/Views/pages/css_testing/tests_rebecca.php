@@ -20,49 +20,51 @@
         <p style="font:var(--navEmphasisText);">Navigation emphasis text</p>
     </div>
 
-    <!-- BUTTONS -->
-    <button class="button buttonPrimary buttonExpert">Button Label</button>
-    <button class="button buttonSecondary buttonExpert">Button Label</button>
-    <button class="button buttonPrimary buttonChild">Button Label</button>
-    <button class="button buttonSecondary buttonChild">Button Label</button>
-
-    <!-- BREADCRUMB -->
-    <ul class="breadcrumb">
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-        <li>Page 4</li>
-    </ul>
-
-    <!-- BOTTOM BAR -->
-    <div class="card"> <!-- As we can see for the big beige background where all content will be on, better not to have margin -->
-        <h3>Heading 2</h3>
-        <h4>Heading 3</h4>
-        <p style="font:var(--smallText);">Small text</p>
-        <p style="font:var(--bodyExText);">Body explanatory text</p>
-        <p style="font:var(--bodyText);">Body text</p>
-        <div class="bottomBar">
-            <button class="button buttonPrimary buttonExpert">Button Label</button>
-            <button class="button buttonSecondary buttonExpert">Button Label</button>
-        </div>
-    </div>
-
-    <!-- INPUT FIELD -->
-    <input type="text" placeholder="Type Here">
-
-    <!-- SWITCH -->
-    <label class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-    </label>
-
-    <!-- HANDS -->
-    <img src="/public/assets/general/hands_both.svg" alt="Both hands">
+<!--    <!-- BUTTONS -->-->
+<!--    <button class="button buttonPrimary buttonExpert">Button Label</button>-->
+<!--    <button class="button buttonSecondary buttonExpert">Button Label</button>-->
+<!--    <button class="button buttonPrimary buttonChild">Button Label</button>-->
+<!--    <button class="button buttonSecondary buttonChild">Button Label</button>-->
+<!---->
+<!--    <!-- BREADCRUMB -->-->
+<!--    <ul class="breadcrumb">-->
+<!--        <li><a href="#">Page 1</a></li>-->
+<!--        <li><a href="#">Page 2</a></li>-->
+<!--        <li><a href="#">Page 3</a></li>-->
+<!--        <li>Page 4</li>-->
+<!--    </ul>-->
+<!---->
+<!--    <!-- BOTTOM BAR -->-->
+<!--    <div class="card"> <!-- As we can see for the big beige background where all content will be on, better not to have margin -->-->
+<!--        <h3>Heading 2</h3>-->
+<!--        <h4>Heading 3</h4>-->
+<!--        <p style="font:var(--smallText);">Small text</p>-->
+<!--        <p style="font:var(--bodyExText);">Body explanatory text</p>-->
+<!--        <p style="font:var(--bodyText);">Body text</p>-->
+<!--        <div class="bottomBar">-->
+<!--            <button class="button buttonPrimary buttonExpert">Button Label</button>-->
+<!--            <button class="button buttonSecondary buttonExpert">Button Label</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- INPUT FIELD -->-->
+<!--    <input type="text" placeholder="Type Here">-->
+<!---->
+<!--    <!-- SWITCH -->-->
+<!--    <label class="switch">-->
+<!--        <input type="checkbox">-->
+<!--        <span class="slider"></span>-->
+<!--    </label>-->
+<!---->
+<!--    <!-- HANDS -->-->
+<!--    <img src="/public/assets/general/hands_both.svg" alt="Both hands">-->
 
     <!-- STUDENT -->
     <ul>
         <li class="studentListItem">
-            <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+            <div class="roundProfilePic">
+                <img src="/public/assets/icons/user.svg" alt="User Icon">
+            </div>
             <h4>FirstName<br>Surname</h4>
         </li>
     </ul>

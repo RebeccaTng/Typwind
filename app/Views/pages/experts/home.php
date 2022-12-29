@@ -3,7 +3,9 @@
 <?= $this->section('content') ?>
 
     <div class="user">
-        <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+        <div class="roundProfilePic">
+            <img src="/public/assets/icons/user.svg" alt="User Icon">
+        </div>
         <h1>Welcome Back,</h1>
         <p>
             <?php

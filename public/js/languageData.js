@@ -10,7 +10,7 @@ var mainData = {
             "two" : "Welkom Terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
-            "five" : "Het avontuur van de hond",
+            "five" : "",
             "six" : ""
         },
 
@@ -24,7 +24,7 @@ var mainData = {
             "two" : "Welcome Back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
-            "five" : "The Adventure of the Dog.",
+            "five" : "",
             "six" : ""
         }
 }
@@ -102,7 +102,7 @@ link.forEach(el => {
         two.textContent = mainData[attr].two;
         three.textContent = mainData[attr].three;
         four.textContent = mainData[attr].four;
-        five.textContent = mainData[attr].five;
+        /*five.textContent = mainData[attr].five;
         /*six.textContent = mainData[attr].six;*/
 
         //In both Student & Expert Pages

@@ -4,10 +4,14 @@
 <div class = "grid-container_feedback">
     <div class = "breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-            <li>Page 4</li>
+            <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a>
+            <li><a href="<?php echo base_url('/kids/intro/'.$idExercises);?>">Introduction</a></li>
+            <?php foreach ($exercises as $ex):?>
+                <?php  if ($ex->idExercises==$idExercises):?>
+                    <li><?= $ex->name?></li>
+                <?php endif;?>
+            <?php endforeach;?>
+            <li>Feedback</li>
         </ul>
     </div>
     <div class="title" style="color: var(--blueNeutral)">
@@ -20,25 +24,89 @@
 
     <div class="content_feedback">
         <div>
-            <h2 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h2>
-        </div>
-        <!-- Star icons -->
-        <div class = "wrapper_for_stars">
-            <div class ="checked_stars"></div>
-            <div class ="checked_stars"></div>
-            <div class ="checked_stars"></div>
-            <div class ="unchecked_stars"></div>
-            <div class ="unchecked_stars"></div>
-        </div>
+        <?php if(0<=$score & $score<0.2): ?>
+            <h2 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.2<=$score & $score<0.4): ?>
+            <h2 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.4<=$score & $score<=0.6): ?>
+            <h2 style="color: var(--primary-darkest)">You earned 2 stars already!<br>Try again to earn more stars :)</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.6<=$score & $score<0.8): ?>
+            <h2 style="color: var(--primary-darkest)">3 Stars! Well done!</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if(0.8<=$score & $score<1): ?>
+            <h2 style="color: var(--primary-darkest)">Wow 4 Stars!</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="unchecked_stars"></div>
+            </div>
+        <?php endif;?>
+        <?php if($score ==1): ?>
+            <h2 style="color: var(--primary-darkest)">Perfect score! You are a pro!</h2></div>
+            <div class = "wrapper_for_stars">
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+                <div class ="checked_stars"></div>
+            </div>
+        <?php endif;?>
+
 
         <div class="card_buttons">
-            <button class="button buttonPrimary buttonChild">Replay exercise</button>
 
-            <button class="button buttonPrimary buttonChild">Start new exercise</button>
 
-            <button class="button buttonSecondary buttonChild">Back to exercises</button>
+            <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="inline">
+                <button class="button buttonPrimary buttonChild">Replay exercise</button>
+            </form>
+            <?php  if ($idExercise_fk==94):
+                $idNext = 1;
+            else:
+                $idNext= $idExercise_fk+1;
+            endif;?>
+
+            <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="inline">
+                <button class="button buttonPrimary buttonChild">Start new exercise</button>
+            </form>
+
+            <form action="<?php echo base_url('/kids/exercises');?>" class="inline">
+                <button class="button buttonSecondary buttonChild">Back to exercises</button>
+            </form>
+
         </div>
     </div>
-
 </div>
 <?= $this->endSection() ?>

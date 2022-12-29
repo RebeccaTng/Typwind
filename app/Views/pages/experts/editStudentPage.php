@@ -16,7 +16,9 @@
             <form class="studentContainer" action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
                 <div class="general card">
                     <h3>General Information</h3>
-                    <img src="/public/assets/icons/user.svg" alt="User Icon" class="roundProfilePic">
+                    <div class="roundProfilePic">
+                        <img src="/public/assets/icons/user.svg" alt="User Icon">
+                    </div>
 
                     <p>
                         <input type="hidden" id="email" name="email" value="<?=$person->email?>">
@@ -96,7 +98,7 @@
 
                 <div class="noteCard card">
                     <label for="notes"><h3>Notes</h3></label>
-                    <input type="text" id="notes" name="notes" value="<?= $person->notes?>" >
+                    <textarea id="notes" name="notes" rows="17"><?= $person->notes?></textarea>
                 </div>
 
                 <div class="bottomBar">

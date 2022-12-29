@@ -8,10 +8,13 @@
     <!--breadcrumb-->
     <div class = "breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-            <li>Page 4</li>
+            <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a>
+            <li><a href="<?php echo base_url('/kids/intro/'.$idExercises);?>">Introduction</a></li>
+            <?php foreach ($exercises as $ex):?>
+                <?php  if ($ex->idExercises==$idExercises):?>
+                    <li><?= $ex->name?></li>
+                <?php endif;?>
+            <?php endforeach;?>
         </ul>
     </div>
     <?php

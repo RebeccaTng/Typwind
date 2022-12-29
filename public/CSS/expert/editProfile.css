@@ -21,3 +21,7 @@ div.user {
     align-items: center;
     column-gap: 1.25rem; /*20px*/
 }
+
+div.roundProfilePic {
+    margin: 0;
+}

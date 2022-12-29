@@ -15,6 +15,7 @@
             }
             else{
                 lessonsMap.set(lessonsList[i].lesson,[])
+                lessonsMap.get(lessonsList[i].lesson).push(lessonsList[i])
             }
         }
 
@@ -36,10 +37,9 @@
 
 <h1>Exercises</h1>
 
-
 <div class="exerciseContainer">
-
 </div>
+
 <?php
 $_SESSION["selectedExercise"] = 2; // @loic you need to set this variable in the session to select the correct exercise!
 ?>

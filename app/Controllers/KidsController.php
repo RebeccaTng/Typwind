@@ -18,6 +18,7 @@ class KidsController extends BaseController
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array();
     private array $exercise = array();
+    private array $avatar = array();
 
 
 
@@ -43,6 +44,7 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
+        //print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -60,6 +62,8 @@ class KidsController extends BaseController
                 return $this->exercises();
             case 'exercise':
                 return $this->exercise($args);
+            case 'avatar':
+                return $this->avatar();
 
 
 
@@ -80,6 +84,8 @@ class KidsController extends BaseController
                 return$this->includeCSSFilesInCommonFiles( $this->exercises);
             case 'exercise':
                 return$this->includeCSSFilesInCommonFiles( $this->exercise);
+            case 'avatar':
+                return$this->includeCSSFilesInCommonFiles( $this->avatar);
 
 
             default:
@@ -93,9 +99,11 @@ class KidsController extends BaseController
 
     public function home():array
     {
+        $data['scores'] = $this->students_model->getBestScores();
         $data['menu_items'] = $this->menu_model->get_menuitems_kids();
-        $exercises=$this->students_model->getExercises();
-        session()->set('exercises', $exercises);
+        $data['exercises']= $this->students_model->getExercises();
+        $data['idStudents']=session()->id;
+        session()->set('exercises', $data['exercises']);
         return $data;
     }
 
@@ -119,7 +127,7 @@ class KidsController extends BaseController
         return ($this->data);
     }
 
-    public function feedback($idExercises): string
+    public function feedback($idExercises)
     {
         $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
         $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
@@ -143,9 +151,16 @@ class KidsController extends BaseController
     {
 
         $model = model(ExerciseModel::class);
-        $data = ['exercises' => json_encode($model->getExercises())];
+        $data['exercises'] = $model->getExercises();
+        $data['scores'] = $this->students_model->getBestScores();
         $data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
 
+        return $data;
+    }
+
+    private function avatar():array
+    {
+        $data['menu_items'] = $this->menu_model->get_menuitems_kids('avatar');
         return $data;
     }
 
