@@ -204,12 +204,13 @@ div.roundProfilePic {
     align-items: center;
     padding: 0.625rem; /* 10px */
 
+
     border-radius: 50%;
     border: 0.125rem solid var(--secondary-light); /* 2px */
     background-color: var(--beigeNeutral-light);
     height: 6.25rem; /* 100px */
     width: 6.25rem; /* 100px */
-    margin: 0.313rem; /*5px*/;
+    margin: 0.313rem; /*5px*/
 }
 
 div.roundProfilePic img {

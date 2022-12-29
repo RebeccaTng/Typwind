@@ -93,12 +93,9 @@ h1 {
 }
 
 .leftNavBar {
-
     background-color: transparent;
     text-align: center;
     flex-shrink: 1;
-
-
 }
 .mainContent {
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15);
