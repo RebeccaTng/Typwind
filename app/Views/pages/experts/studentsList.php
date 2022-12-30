@@ -11,11 +11,10 @@
         <!-- Filter -->
         <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
             <option disabled selected value>Filter</option>
-            <option value="disable filter"> Disable filter</option>
+            <option value="disable filter">Disable Filter</option>
             <?php foreach ($teachers as $teacher):?>
                 <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
             <?php endforeach;?>
-
         </select>
 
         <!-- Searchbar -->
