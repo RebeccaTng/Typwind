@@ -5,12 +5,6 @@
     <div class = "breadcrumb">
         <ul class="breadcrumb">
             <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a>
-            <li><a href="<?php echo base_url('/kids/intro/'.$idExercises);?>">Introduction</a></li>
-            <?php foreach ($exercises as $ex):?>
-                <?php  if ($ex->idExercises==$idExercises):?>
-                    <li><?= $ex->name?></li>
-                <?php endif;?>
-            <?php endforeach;?>
             <li>Feedback</li>
         </ul>
     </div>
@@ -89,7 +83,7 @@
         <div class="card_buttons">
 
 
-            <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="inline">
+            <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="feedback_ex_button">
                 <button class="button buttonPrimary buttonChild">Replay exercise</button>
             </form>
             <?php  if ($idExercise_fk==94):
@@ -98,11 +92,11 @@
                 $idNext= $idExercise_fk+1;
             endif;?>
 
-            <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="inline">
+            <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="feedback_ex_button">
                 <button class="button buttonPrimary buttonChild">Start new exercise</button>
             </form>
 
-            <form action="<?php echo base_url('/kids/exercises');?>" class="inline">
+            <form action="<?php echo base_url('/kids/exercises');?>" class="feedback_ex_button">
                 <button class="button buttonSecondary buttonChild">Back to exercises</button>
             </form>
 

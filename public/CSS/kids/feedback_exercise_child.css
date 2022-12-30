@@ -37,18 +37,18 @@
 }
 /* BUTTON */
 .card_buttons{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
-
     background-color: var(--beigeNeutral-light);
     border-radius: 1.563rem; /* 25px */
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
     padding: 40px;
     margin: 0.625rem; /* 10px */
 }
-.button{
-    width: 70%;
+.feedback_ex_button button{
+    width: 100%;
     margin: 21px;
+}
+.feedback_ex_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
