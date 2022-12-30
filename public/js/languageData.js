@@ -375,13 +375,11 @@ link.forEach(el => {
             four.textContent = expertLoginData[attr].four;
 
             if(attr === 'english') {
-                document.getElementById("googleJSPass").placeholder='Password';
-                document.getElementById("login").textContent='Log in With Google+';
+                document.getElementById("JSPass").placeholder='Password';
             }
 
             if(attr === 'nederlands') {
-                document.getElementById("googleJSPass").placeholder='Paswoord';
-                document.getElementById("login").textContent='Log in Met Google+';
+                document.getElementById("JSPass").placeholder='Paswoord';
             }
 
         }

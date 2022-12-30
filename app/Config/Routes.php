@@ -73,9 +73,6 @@ $routes->get('/registration/expertLogin', 'RegistrationController::expertLogin')
 $routes->get('/registration/studentLogin', 'RegistrationController::studentLogin');
 $routes->get('/registration/register', 'RegistrationController::register');
 $routes->get('/registration/welcome', 'RegistrationController::welcome');
-$routes->get('/RegistrationController/googleLogin', 'RegistrationController::testers');
-
-
 
 /*
  * --------------------------------------------------------------------

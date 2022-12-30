@@ -7,27 +7,6 @@ use App\Models\Teachers_model;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
-    public function googleLogin(){
-        $firstName = $_POST["firstName"];
-        $lastName = $_POST["lastName"];
-        $AJAXEmail = $_POST["AJAXEmail"];
-        setcookie('googleEmail',$AJAXEmail, time()+3600, "/");
-
-        $expertModel = new Teachers_model();
-        $data = $expertModel->where('email', $AJAXEmail)->first();
-
-        if(!$data){
-            $data = [
-                'firstname'     => $firstName,
-                'lastname'     => $lastName,
-                'email'    => $AJAXEmail,
-                'password' => password_hash('googleHash', PASSWORD_DEFAULT)
-            ];
-            $expertModel->save($data);
-        }
-
-    }
-
     public function expertLogin()
     {
         helper(['form']);
@@ -45,10 +24,6 @@ class RegistrationController extends \CodeIgniter\Controller
         helper(['form']);
         $data = [];
         echo view('pages/registration/register', $data);
-    }
-
-    public function testingZ(){
-        setcookie("testings", 'testings123', time()+3600, "/");
     }
 
     public function welcome()

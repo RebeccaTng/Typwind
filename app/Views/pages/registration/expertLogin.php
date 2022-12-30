@@ -37,9 +37,9 @@
         <?php endif;?>
 
         <form action="<?php echo base_url(); ?>/RegistrationController/loginExpert" method="post">
-            <input id="googleJSEmail" type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["email"])) echo $_COOKIE["email"]; ?>" >
-            <input id="googleJSPass" type="password" name="password" placeholder="Password" value="">
-            <button id="googleJSClick" type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
+            <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["email"])) echo $_COOKIE["email"]; ?>" >
+            <input id="JSPass" type="password" name="password" placeholder="Password" value="">
+            <button type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert two">REGISTER</button>
 
