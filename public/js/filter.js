@@ -6,26 +6,36 @@ function filterStudents(array, name) {
 
     if (name == "disable filter")
     {
-        html="";
+        html_students="";
         for (var i = 0; i < array.length; i++) {
-            html= html+ "<li class=\"studentListItem\"> <a href= \"" + URL + array[i].idStudents  +"\">"
+            html_students= html_students+ "<li class=\"studentListItem\"> <a href= \"" + URL + array[i].idStudents  +"\">"
                 + " <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\">" +
                 " <h4>" +array[i].firstname + "<br>" + array[i].lastname +"</h4>"+"</a></li>"
         }
+        document.getElementById('disable filter').style.display = "none";
+        document.querySelector('#filter').value="Filter";
     }
     else{
         const result = array.filter(student => student.teacherFirstname === name);
-        html="";
-        for (var i = 0; i < result.length; i++) {
-            html= html+ "<li class=\"studentListItem\"> <a href= \"" + URL + result[i].idStudents  +"\">"
-                + " <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\">" +
-                " <h4>" +result[i].firstname + "<br>" + result[i].lastname +"</h4>"+"</a></li>"
+        html_students="";
+        if(result.length===0)
+        {
+            html_students= "<h3>This teacher has no students assigned</h3>";
         }
+        else{
+            for (var i = 0; i < result.length; i++) {
+                html_students= html_students+ "<li class=\"studentListItem\"> <a href= \"" + URL + result[i].idStudents  +"\">"
+                    + " <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\">" +
+                    " <h4>" +result[i].firstname + "<br>" + result[i].lastname +"</h4>"+"</a></li>"
+            }
+        }
+
+        document.getElementById('disable filter').style.display = "block";
     }
 
 
     //html= html+"
-    document.getElementById("list").innerHTML = html;
+    document.getElementById("list").innerHTML = html_students;
 }
 
 function search() {
