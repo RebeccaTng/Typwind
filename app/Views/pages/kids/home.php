@@ -18,7 +18,7 @@
         <?php foreach ($exercises as $ex):
             $found =0;
             foreach ($scores as $sc):
-                if (($ex->idExercises== $sc->idExercise_fk) && ($sc->idStudent_fk == $idStudents)):
+                if ($ex->idExercises== $sc->idExercise_fk):
                     $found=1;
                     break;
                 endif;

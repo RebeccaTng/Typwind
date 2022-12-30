@@ -42,25 +42,25 @@
                             <?php endforeach;?>
                         </select>
 
-                        <label for="handSelection"><b>Hand Selection:</b></label>
-                        <select name="handSelection" id="handSelection" required>
-                            <option value="One Hand, right hand">Right Hand</option>
-                            <option value="One Hand, left hand">Left Hand</option>
-                            <option value="Both Hands">Both Hands</option>
-                        </select>
+                    <label for="handSelection"><b>Hand Selection:</b></label>
+                    <select name="handSelection" id="handSelection" required>
+                        <option value="One Hand, right hand">Right Hand</option>
+                        <option value="One Hand, left hand">Left Hand</option>
+                        <option selected="selected" value="Both Hands">Both Hands</option>
+                    </select><br>
 
-                        <label for="active"><b>Active</b></label>&nbsp;
-                        <label class="switch">
-                            <input type="checkbox" id="active" name="active">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
+                    <label for="active"><b>Active</b></label>&nbsp;
+                    <label class="switch">
+                        <input type="checkbox" id="active" name="active" checked>
+                        <span class="slider"></span>
+                    </label>
 
-                <div class="notes">
-                    <label for="notes"><h3>Notes</h3></label>
-                    <textarea id="notes" name="notes" rows="12" placeholder="Type here."></textarea>
-                </div>
+                </p>
+            </div>
+
+            <div class="notes">
+                <label for="notes"><h3>Notes</h3></label>
+                <textarea id="notes" name="notes" rows="17" maxlength="1000" ></textarea>
             </div>
 
             <div class="bottomBar">
