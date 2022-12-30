@@ -41,12 +41,12 @@
                     <select name="handSelection" id="handSelection" required>
                         <option value="One Hand, right hand">Right Hand</option>
                         <option value="One Hand, left hand">Left Hand</option>
-                        <option value="Both Hands">Both Hands</option>
+                        <option selected="selected" value="Both Hands">Both Hands</option>
                     </select><br>
 
                     <label for="active"><b>Active</b></label>&nbsp;
                     <label class="switch">
-                        <input type="checkbox" id="active" name="active">
+                        <input type="checkbox" id="active" name="active" checked>
                         <span class="slider"></span>
                     </label>
 
