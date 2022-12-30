@@ -1,16 +1,18 @@
 /* Implementation Grid */
 .grid-container_intro {
     display: grid;
-    grid-template-columns: 3fr 4fr 3fr;
-    grid-template-rows: 0.5fr 1fr 8fr;
+    /*grid-template-columns: 3fr 4fr 3fr;*/
+    /*grid-template-rows: 0.5fr 1fr 8fr;*/
     margin: 50px;
-    height: 100%;
+    /*height: 90%;*/
+
 }
 /* CARD */
 .grid_cards{
-    grid-column: 2  / span 1;
-    grid-row: 3/span 1;
-    justify-self: stretch;
+    /*grid-column: 2  / span 1;*/
+    /*grid-row: 3/span 1;*/
+    place-self: center;
+    /*justify-self: stretch;*/
     text-align: center;
     padding: 40px;
 }
@@ -20,23 +22,24 @@
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
     padding: 40px;
     margin: 0.625rem; /* 10px */
+    text-align: center;
 }
 .breadcrumb{
-    grid-column: 1  / span 3;
-    grid-row: 1/span 1;
+    /*grid-column: 1  / span 3;*/
+    /*grid-row: 1/span 1;*/
 }
 .title{
-    grid-column: 1  / span 3;
-    grid-row: 2/span 1;
+    /*grid-column: 1  / span 3;*/
+    /*grid-row: 2/span 1;*/
 }
 /* BUTTON */
-div.intro_ex_button{
+.intro_ex_button{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-div.intro_ex_button button{
-    width: 70%;
+.intro_ex_button button{
+    width: 100%;
     margin: 12px;
 }
 /* SWITCH */
