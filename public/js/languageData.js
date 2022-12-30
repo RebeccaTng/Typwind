@@ -22,17 +22,13 @@ var expertLoginData={
     "nederlands":
         {
             "one" : "Gelieve in te loggen met uw e-mail",
-            "two" : "REGISTER",
-            "three" : "- of -",
-            "four" : "Log in Met Google",
+            "two" : "REGISTREREN",
         },
 
     "english":
         {
             "one" : "Please log in with your email",
             "two" : "REGISTER",
-            "three" : "- or -",
-            "four" : "Log in With Google",
         }
 }
 
