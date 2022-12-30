@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/generalComponents.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
-    <!-- Google Login Authentication Js -->
-    <script type="module" src="<?=base_url()?>/public/js/googleLoginAuth.js" defer></script>
+
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
@@ -43,9 +42,6 @@
             <button id="googleJSClick" type="submit" class="button buttonPrimary buttonExpert">LOGIN</button>
         </form>
         <button id="REGISTER" onclick="window.location= '<?=base_url()?>/registration/register'" class="button buttonSecondary buttonExpert two">REGISTER</button>
-        <p><i class="three">- or -</i></p>
-        <p class="four">Log in With Google</p>
-        <button type ="button" class="button buttonPrimary buttonExpert" id="login">Log in with Google+</button>
 
     </div>
 
