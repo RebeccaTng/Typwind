@@ -13,35 +13,61 @@ let correctAnswers = 0;
 let mistakes = 0;
 let score = 0;
 let imageMap = new Map([
-    [",","/public/assets/pictures/,.jpg"],
-    ["=","/public/assets/pictures/=.jpg"],
-    [":","/public/assets/pictures/Dubbelpunt.jpg"],
-    ["a","/public/assets/pictures/Avond.jpg"],
-    ["b","/public/assets/pictures/Banaan.jpg"],
-    ["c","/public/assets/pictures/Circus.jpg"],
-    ["d","/public/assets/pictures/Draak.jpg"],
-    ["e","/public/assets/pictures/Eenwieler.jpg"],
-    ["f","/public/assets/pictures/Fuut.jpg"],
-    ["g","/public/assets/pictures/Gorilla.jpg"],
-    ["h","/public/assets/pictures/Haas.jpg"],
-    ["i","/public/assets/pictures/Insect.jpg"],
-    ["j","/public/assets/pictures/Joke.jpg"],
-    ["k","/public/assets/pictures/Kat.jpg"],
-    ["l","/public/assets/pictures/Luipaard.jpg"],
-    ["m","/public/assets/pictures/Matroos.jpg"],
-    ["n","/public/assets/pictures/Natuur.jpg"],
-    ["o","/public/assets/pictures/Olifant.jpg"],
-    ["p","/public/assets/pictures/Pelikaan.jpg"],
-    ["q","/public/assets/pictures/Quiz.jpg"],
-    ["r","/public/assets/pictures/Riet.jpg"],
-    ["s","/public/assets/pictures/Slang.jpg"],
-    ["t","/public/assets/pictures/Tamtam.jpg"],
-    ["u","/public/assets/pictures/Ufo.jpg"],
-    ["v","/public/assets/pictures/Vis.jpg"],
-    ["w","/public/assets/pictures/Winter.jpg"],
-    ["x","/public/assets/pictures/Xylofoon.jpg"],
-    ["y","/public/assets/pictures/Yogamat.jpg"],
-    ["z","/public/assets/pictures/Zigzaggende.jpg"]]);
+    [",",["/public/assets/pictures/,.jpg","KeyM",""]],
+    ["=",["/public/assets/pictures/=.jpg","Slash",""]],
+    [":",["/public/assets/pictures/Dubbelpunt.jpg","Period",""]],
+    ["a",["/public/assets/pictures/Avond.jpg", "KeyQ","/public/assets/sounds/A.mp3"]],
+    ["b",["/public/assets/pictures/Banaan.jpg", "KeyB","/public/assets/sounds/B.mp3"]],
+    ["c",["/public/assets/pictures/Circus.jpg", "KeyC","/public/assets/sounds/C.mp3"]],
+    ["d",["/public/assets/pictures/Draak.jpg", "KeyD","/public/assets/sounds/D.mp3"]],
+    ["e",["/public/assets/pictures/Eenwieler.jpg", "KeyE","/public/assets/sounds/E.mp3"]],
+    ["f",["/public/assets/pictures/Fuut.jpg", "KeyF","/public/assets/sounds/F.mp3"]],
+    ["g",["/public/assets/pictures/Gorilla.jpg", "KeyG","/public/assets/sounds/G.mp3"]],
+    ["h",["/public/assets/pictures/Haas.jpg", "KeyH","/public/assets/sounds/H.mp3"]],
+    ["i",["/public/assets/pictures/Insect.jpg", "KeyI","/public/assets/sounds/I.mp3"]],
+    ["j",["/public/assets/pictures/Joke.jpg", "KeyJ","/public/assets/sounds/J.mp3"]],
+    ["k",["/public/assets/pictures/Kat.jpg", "KeyK","/public/assets/sounds/K.mp3"]],
+    ["l",["/public/assets/pictures/Luipaard.jpg", "KeyL","/public/assets/sounds/L.mp3"]],
+    ["m",["/public/assets/pictures/Matroos.jpg", "Semicolon","/public/assets/sounds/M.mp3"]],
+    ["n",["/public/assets/pictures/Natuur.jpg", "KeyN","/public/assets/sounds/N.mp3"]],
+    ["o",["/public/assets/pictures/Olifant.jpg", "KeyO","/public/assets/sounds/O.mp3"]],
+    ["p",["/public/assets/pictures/Pelikaan.jpg", "KeyP","/public/assets/sounds/P.mp3"]],
+    ["q",["/public/assets/pictures/Quiz.jpg", "KeyA","/public/assets/sounds/Q.mp3"]],
+    ["r",["/public/assets/pictures/Riet.jpg", "KeyR","/public/assets/sounds/R.mp3"]],
+    ["s",["/public/assets/pictures/Slang.jpg", "KeyS","/public/assets/sounds/S.mp3"]],
+    ["t",["/public/assets/pictures/Tamtam.jpg", "KeyT","/public/assets/sounds/T.mp3"]],
+    ["u",["/public/assets/pictures/Ufo.jpg", "KeyU","/public/assets/sounds/U.mp3"]],
+    ["v",["/public/assets/pictures/Vis.jpg", "KeyV","/public/assets/sounds/V.mp3"]],
+    ["w",["/public/assets/pictures/Winter.jpg", "KeyZ","/public/assets/sounds/W.mp3"]],
+    ["x",["/public/assets/pictures/Xylofoon.jpg", "KeyX","/public/assets/sounds/X.mp3"]],
+    ["y",["/public/assets/pictures/Yogamat.jpg", "KeyY","/public/assets/sounds/Y.mp3"]],
+    ["z",["/public/assets/pictures/Zigzaggende.jpg", "KeyW","/public/assets/sounds/Z.mp3"]],
+    ["1",["","Digit1",""]],
+    ["2",["","Digit2",""]],
+    ["3",["","Digit3",""]],
+    ["4",["","Digit4",""]],
+    ["5",["","Digit5",""]],
+    ["6",["","Digit6",""]],
+    ["7",["","Digit7",""]],
+    ["8",["","Digit8",""]],
+    ["9",["","Digit9",""]],
+    ["0",["","Digit0",""]],
+    ["&",["","Digit1",""]],
+    ["é",["","Digit2",""]],
+    ['"',["","Digit3",""]],
+    ["'",["","Digit4",""]],
+    ["(",["","Digit5",""]],
+    ["§",["","Digit6",""]],
+    ["è",["","Digit7",""]],
+    ["!",["","Digit8",""]],
+    ["ç",["","Digit9",""]],
+    ["à",["","Digit0",""]],
+    ["-",["","Minus",""]],
+    ["+",["","Equal",""]],
+    [";",["","Comma",""]],
+    ["",["","",""]], // this one is the template, no function in code
+    [" ",["","Space",""]]]);
+
 
 
 //select elements that will be used
@@ -50,6 +76,7 @@ let stopButton = document.getElementById("stopButton");
 let container = document.getElementById("effect");
 let textBox = document.getElementById("textBox");
 let imageContainer = document.getElementById("imageContainer");
+let soundContainer = document.getElementById("soundContainer");
 let textInputDB = document.getElementById("textInput");
 let handSelection = document.getElementById("handSelection");
 let formDB = document.getElementById("form");
@@ -80,8 +107,8 @@ function atStart(){
     correctCharactersTyped = 0;
     correctCharactersNeeded =  textChar.length;
     createSpanSentence();
-    highlightCurrentLetter();
     keyboardColorsFunction(parseInt(handSelection.innerText));
+    highlightCurrentLetter();
 }
 
 /*Create a span element of every character*/
@@ -115,7 +142,7 @@ function moveSentence(){
     }
 }*/
 
-/*Highlight the key that's being stroked. Undo highlight the previous one*/
+/*/!*Highlight the key that's being stroked. Undo highlight the previous one*!/ Currently not used
 function highlightKey(){
     if (currentKey!== null && document.getElementById(currentKey.code) !== null) {
         document.getElementById(currentKey.code).setAttribute("Class", (document.getElementById(currentKey.code).getAttribute("class") + " thickBorder"));
@@ -125,20 +152,25 @@ function highlightKey(){
     }
     distance += -30;
     document.getElementById("movableExerciseBoxText").style.left = (distance+"px");
-}
+}*/
 
 /*Processes the input generated by the keyboard*/
 function processInputFunction() {
+    // var audio = new Audio(window.location.origin+"/public/assets/sounds/F.mp3");
+    // audio.play();
     let currInput = currentKey.key;
     //Input checker
     //If shift or bracketleft is pressed, it isn't processed as wrong
     if (currInput == null || currInput === "Shift" || currentKey.code === "BracketLeft") {
-        highlightKey();
-        // correct character
+    // correct character
     //If input is according to needed inut
     } else if (currInput === textInput[correctCharactersTyped]) {
         correctCharactersTyped++;
-        highlightKey();
+    //Checks if we're at the end of the exercise
+        if(correctCharactersTyped===correctCharactersNeeded){
+            exerciseFinishedFunction();
+        }
+        highlightCurrentLetter();
     //If input is correct but previous was wrong
         if(wrongAnswered){
             highlightLetterWrong();
@@ -148,16 +180,11 @@ function processInputFunction() {
         }else{
             highlightLetterRight();
         }
-    //Checks if we're at the end of the exercise
-        if(correctCharactersTyped===correctCharactersNeeded){
-            exerciseFinishedFunction();
-        }
-   //Given input is wrong
+
+    //Given input is wrong
     } else {
-        highlightKey();
         wrongAnswered = true;
     }
-    highlightCurrentLetter();
 }
 
 /*Function for when the exercise is finished*/
@@ -176,26 +203,42 @@ function submit() {
     formDB.submit();
 }
 
-/*Function for when the exit button is pressed*/
+/*Highlight the key current key that needs to be stroked. Undo highlight the previous one*/
+function highlightKey(){
+    let key = textInput[correctCharactersTyped].toLowerCase();
+    let pKey= textInput[correctCharactersTyped-1];
+    if (correctCharactersTyped!==0){
+        pKey = pKey.toLowerCase();
+        }
+    //console.log(key +"  "+pKey +"  "+imageMap.get(textInput[0])[1])//+"  "+document.getElementById(imageMap.get(pKey)[1]));
+    if (imageMap.has(key) && key!== null && document.getElementById(imageMap.get(key)[1]) !== null) {
+        document.getElementById(imageMap.get(key)[1]).setAttribute("Class", (document.getElementById(imageMap.get(key)[1]).getAttribute("class") + " thickBorder"));
+    }
+    if (imageMap.has(pKey) && pKey!== null && pKey !== undefined && document.getElementById(imageMap.get(pKey)[1]) !== null){
+        document.getElementById(imageMap.get(pKey)[1]).setAttribute("Class", (document.getElementById(imageMap.get(pKey)[1]).getAttribute("class").slice(0,-12)));
+    }
+    distance += -30;
+    document.getElementById("movableExerciseBoxText").style.left = (distance+"px");
+}
 
 /*Function for setting the correct image. If keystroke has no image nothing happens*/
 function setImage(key){
     if(key!==undefined){key = key.toLowerCase();}
     var curr = imageContainer.getElementsByTagName("img")[0];
     var s;
-   if (imageMap.has(key)) {
+   if (imageMap.has(key) && imageMap.get(key)[0]!== "") {
        if (curr === undefined) {
            s = document.createElement("IMG");//.attributes("class","letter");
            s.setAttribute("class", "image");
            // s.setAttribute("src", "<?=base_url()?>"+imageMap.get(key));
            s.setAttribute("alt", key);
-           s.setAttribute("src",  window.location.origin + imageMap.get(key));
+           s.setAttribute("src",  window.location.origin + imageMap.get(key)[0]);
            // var txt = document.createTextNode(textChar[i]);
            //s.appendChild(txt);
            imageContainer.appendChild(s);
        } else {
            s = curr;
-           s.setAttribute("src", imageMap.get(key));
+           s.setAttribute("src", imageMap.get(key)[0]);
            s.setAttribute("alt", key);
        }
    }else if (curr !== undefined){
@@ -203,11 +246,27 @@ function setImage(key){
    }
 }
 
+/*Function for setting the correct sound. If keystroke has no sound nothing happens and sounds stops*/
+function playSound(key){
+    if(key!==undefined){key = key.toLowerCase();}
+    if(soundContainer.currentTime > 0){
+        soundContainer.pause();
+        soundContainer.currentTime = 0;
+    }
+    if (imageMap.has(key) && imageMap.get(key)[2]!== "") {
+        soundContainer.setAttribute("src", window.location.origin +  imageMap.get(key)[2]);
+        soundContainer.play();
+
+    }
+}
+
 /*Function for adjusting the CSS class of the given key*/
 function highlightCurrentLetter() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
     span.setAttribute("class","letter focus");
-    setImage(textInput[correctCharactersTyped])
+    setImage(textInput[correctCharactersTyped]);
+    playSound(textInput[correctCharactersTyped]);
+    highlightKey();
 }
 
 /*Function for adjusting the CSS class of the given key*/

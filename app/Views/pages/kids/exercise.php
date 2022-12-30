@@ -37,14 +37,12 @@
 <?php endforeach;?>
 <div hidden="true" id="handSelection"><?=$handSelection?></div>
 
-
-
-
     <div class = "container_visuals">
         <div class = "visuals">
             <!--Image and text bar-->
             <div class="exercise">
                 <div id="imageContainer"></div>
+                <audio id="soundContainer"></audio>
                 <div class="textBox" id="textBox">
                     <div class="textContainer " id="movableExerciseBoxText"></div>
                 </div>

@@ -30,18 +30,25 @@
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
                 console.log(lessonGroup)
-                let exercisesText = "<div class='card lessonCard'> <h2>"+"Lesson "+lessonId +"</h2>"
-                lessonGroup.forEach(element => exercisesText = exercisesText + "<a href= \"" + URL + element.idExercises + "\">" +"<h4 class='exerciseField'>"+ element.name
-                    +"</h4></a>"
-                    + "<div class = \"wrapper_for_stars\">"
-                    +    "<div class =\"unchecked_stars\"></div>"
-                    +    "<div class =\"unchecked_stars\"></div>"
-                    +    "<div class =\"unchecked_stars\"></div>"
-                    +    "<div class =\"unchecked_stars\"></div>"
-                    +    "<div class =\"unchecked_stars\"></div></div><br>");
+                let exercisesText = "<div class='card lessonCardChild'> <h2>"+"Lesson "+lessonId +"</h2>"
+                lessonGroup.forEach(element => exercisesText =
+                    exercisesText
+                    + "<a style = 'text-decoration: none;'href= \"" + URL + element.idExercises + "\">"
+                    +"<button class='exerciseButton'>"+ element.name
+                    +"<div class = 'stars_on_exercise'>"
+                    +"<div class = 'wrapper_for_stars'>"
+                    +"<div class ='checked_stars small'></div>"
+                    +"<div class ='checked_stars small'></div>"
+                    +"<div class ='checked_stars small'></div>"
+                    +"<div class ='unchecked_stars small'></div>"
+                    +"<div class ='unchecked_stars small'></div>"
+                    +"</div>"
+                    +"</div>"
+                    +"</button>"
+                    + "</a>");
                 exercisesText = exercisesText + "</div>"
 
-                $(".mainContent").append(exercisesText);
+                $(".exerciseContainer").append(exercisesText);
             }
             console.log("LESSON")
         }
@@ -52,5 +59,6 @@
 
 
 <div class="exerciseContainer">
+</div>
 
 <?= $this->endSection() ?>
