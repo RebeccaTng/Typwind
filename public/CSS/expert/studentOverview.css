@@ -85,4 +85,8 @@ div.notes {
     div.studentContainer {
         grid-template-columns: 100%;
     }
+
+    div.infoContainer {
+        grid-column: 1;
+    }
 }

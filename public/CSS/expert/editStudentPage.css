@@ -62,3 +62,13 @@ div.generalFields {
     justify-items: left;
     align-items: center;
 }
+
+@media screen and (max-width: 1050px) {
+    form.studentContainer {
+        grid-template-columns: 100%;
+    }
+
+    div.infoContainer {
+        grid-column: 1;
+    }
+}
