@@ -9,7 +9,6 @@
     <div class = "breadcrumb">
         <ul class="breadcrumb">
             <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a>
-            <li><a href="<?php echo base_url('/kids/intro/'.$idExercises);?>">Introduction</a></li>
             <?php foreach ($exercises as $ex):?>
                 <?php  if ($ex->idExercises==$idExercises):?>
                     <li><?= $ex->name?></li>
@@ -21,6 +20,7 @@
     foreach ($exercises as $ex):?>
     <?php  if ($ex->idExercises==$idExercises):?>
 
+    <!--title-->
     <div class="container">
         <div class="title"
         <h1><?= $ex->name?></h1>

@@ -33,7 +33,7 @@
                 <?php foreach ($exercises as $ex):?>
                     <?php  if ($ex->idExercises==$idExercises):?>
 
-                            <form action="<?php echo base_url('kids/exercise/'.$ex->idExercises);?>" class="intro_ex_button">
+                        <form action="<?php echo base_url('kids/exercise/'.$ex->idExercises);?>" class="intro_ex_button">
                                 <button class="button buttonPrimary buttonChild">Start</button>
                             </form>
                             <form action="<?php echo base_url();?>/kids/exercises" class="intro_ex_button">
