@@ -99,10 +99,11 @@ class KidsController extends BaseController
 
     public function home():array
     {
-        $data['scores'] = $this->students_model->getBestScores();
+        $data['idStudents']=session()->id;
+        $data['scores'] = $this->students_model->getBestScores($data['idStudents']);
         $data['menu_items'] = $this->menu_model->get_menuitems_kids();
         $data['exercises']= $this->students_model->getExercises();
-        $data['idStudents']=session()->id;
+
         session()->set('exercises', $data['exercises']);
         return $data;
     }
@@ -149,10 +150,10 @@ class KidsController extends BaseController
 
     public function exercises():array
     {
-
+        $idStudent= session()->id;
         $model = model(ExerciseModel::class);
         $data['exercises'] = $model->getExercises();
-        $data['scores'] = $this->students_model->getBestScores();
+        $data['scores'] = $this->students_model->getBestScores($idStudent);
         $data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
 
         return $data;

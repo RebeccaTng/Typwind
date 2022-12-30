@@ -29,24 +29,95 @@
         for (const lessonId of lessonsMap.keys()) {
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
-                console.log(lessonGroup)
-                let exercisesText = "<div class='card lessonCardChild'> <h2>"+"Lesson "+lessonId +"</h2>"
-                lessonGroup.forEach(element => exercisesText =
+                let exercisesText = "<div class='card lessonCardChild'> <h2>"+"Lesson "+lessonId +"</h2>";
+                for (let i = 0; i < lessonGroup.length; i++) {
+                    exercisesText =
                     exercisesText
-                    + "<a style = 'text-decoration: none;'href= \"" + URL + element.idExercises + "\">"
-                    +"<button class='exerciseButton'>"+ element.name
-                    +"<div class = 'stars_on_exercise'>"
-                    +"<div class = 'wrapper_for_stars'>"
-                    +"<div class ='checked_stars small'></div>"
-                    +"<div class ='checked_stars small'></div>"
-                    +"<div class ='checked_stars small'></div>"
-                    +"<div class ='unchecked_stars small'></div>"
-                    +"<div class ='unchecked_stars small'></div>"
-                    +"</div>"
-                    +"</div>"
-                    +"</button>"
-                    + "</a>");
-                exercisesText = exercisesText + "</div>"
+                    + "<a style = 'text-decoration: none;'href= \"" + URL + lessonGroup[i].idExercises + "\">"
+                    +"<button class='exerciseButton'>"+ lessonGroup[i].name
+
+
+                    for (let j = 0; j < scores.length; j++) {
+                        if(scores[j].idExercise_fk === lessonGroup[i].idExercises)
+                        {
+                            if(0<= scores[j].score && scores[j].score<0.2)
+                            {
+                                exercisesText=exercisesText+ "<div class = 'stars_on_exercise'>"
+                                    +"<div class = 'wrapper_for_stars'>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"</div>"
+                                    +"</div>";
+                            }
+                            if(0.2<= scores[j].score && scores[j].score<0.4)
+                            {
+                                exercisesText=exercisesText+ "<div class = 'stars_on_exercise'>"
+                                    +"<div class = 'wrapper_for_stars'>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"</div>"
+                                    +"</div>";
+                            }
+                            if(0.4<= scores[j].score && scores[j].score<0.6)
+                            {
+                                exercisesText=exercisesText+ "<div class = 'stars_on_exercise'>"
+                                    +"<div class = 'wrapper_for_stars'>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"</div>"
+                                    +"</div>";
+                            }
+                            if(0.6<= scores[j].score && scores[j].score<0.8)
+                            {
+                                exercisesText=exercisesText+ "<div class = 'stars_on_exercise'>"
+                                    +"<div class = 'wrapper_for_stars'>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"</div>"
+                                    +"</div>";
+                            }
+                            if(0.8<= scores[j].score && scores[j].score<1)
+                            {
+                                exercisesText=exercisesText+ "<div class = 'stars_on_exercise'>"
+                                    +"<div class = 'wrapper_for_stars'>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='unchecked_stars small'></div>"
+                                    +"</div>"
+                                    +"</div>";
+                            }
+                            if(scores[j].score==1)
+                            {
+                                exercisesText=exercisesText+ "<div class = 'stars_on_exercise'>"
+                                    +"<div class = 'wrapper_for_stars'>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"<div class ='checked_stars small'></div>"
+                                    +"</div>"
+                                    +"</div>";
+                            }
+                        }
+                    }
+                    exercisesText=exercisesText
+                        +"</button>"
+                        + "</a>"};
+                exercisesText = exercisesText + "</div>";
 
                 $(".exerciseContainer").append(exercisesText);
             }
