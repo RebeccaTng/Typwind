@@ -36,7 +36,7 @@
         </form>
     </div>
 </div>
-
+<img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
 </body>
 </html>
 
