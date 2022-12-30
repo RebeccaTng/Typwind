@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/public/assets/general">
+
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
 
@@ -56,7 +58,7 @@
                         </select>
                         <br>
                         <label for="handSelection"><b>Hand Selection:</b></label>
-                        <select name="handSelection" id="handSelection" required>
+                        <select name="handSelection" id="handSelection" onChange="handImage()" required >
                         <?php if ($person->handSelection==1):?>
                             <option selected="selected" value="right">Right hand</option>
                             <option value="left">Left Hand</option>
@@ -86,19 +88,19 @@
                     </p>
 
                     <?php if ($person->handSelection==1):?>
-                        <img class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
+                        <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
                     <?php endif;?>
                     <?php if ($person->handSelection==2):?>
-                        <img class="hands" src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
+                        <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
                     <?php endif;?>
                     <?php if ($person->handSelection==0):?>
-                        <img class="hands" src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
+                        <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
                     <?php endif;?>
                 </div>
 
                 <div class="noteCard card">
                     <label for="notes"><h3>Notes</h3></label>
-                    <textarea id="notes" name="notes" rows="17"><?= $person->notes?></textarea>
+                    <textarea id="notes" name="notes" rows="17" maxlength="1000"> <?= $person->notes?></textarea>
                 </div>
 
                 <div class="bottomBar">
@@ -109,6 +111,24 @@
 
     <?php endif;?>
 <?php endforeach;?>
+<script>
+    function handImage() {
+        var URL = document.getElementById("URL").value;
+        var state=document.getElementById("handSelection");
+        if(state.value=="right")
+        {
+            document.getElementById("hand image").src =URL +"/hands_right.svg";
+        }
+        if(state.value=="left")
+        {
+            document.getElementById("hand image").src =URL +"/hands_left.svg";
+        }
+        if(state.value=="both")
+        {
+            document.getElementById("hand image").src =URL +"/hands_both.svg";
+        }
 
+    }
+</script>
 
 <?= $this->endSection() ?>
