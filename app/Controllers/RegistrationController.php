@@ -125,6 +125,10 @@ class RegistrationController extends \CodeIgniter\Controller
         }
     }
 
+    public function resetPassword(){
+        
+    }
+
     public function loginStudent()
     {
         $session = session();
