@@ -16,7 +16,7 @@ class KidsController extends BaseController
     private array $home = array("kids/home_child.css");
     private array $intro = array("kids/intro_exercise_child.css");
     private array $feedback = array("kids/feedback_exercise_child.css");
-    private array $exercises = array();
+    private array $exercises = array("kids/exercises_child.css", "components/child_components_varia.css");
     private array $exercise = array();
     private array $avatar = array();
 
