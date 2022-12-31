@@ -57,7 +57,6 @@ $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',
 
 /// Kids Routes
 $routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
-//test 123
 $routes->get('/kids/home', 'KidsController::home',['filter'=>'AuthGuard']);
 $routes->get('/kids/exercises', 'KidsController::exercises',['filter'=>'AuthGuard']);
 $routes->get('/kids/intro/(:num)', 'KidsController::intro/$1',['filter'=>'AuthGuard']);
@@ -74,7 +73,6 @@ $routes->get('/registration/expertLogin', 'RegistrationController::expertLogin')
 $routes->get('/registration/studentLogin', 'RegistrationController::studentLogin');
 $routes->get('/registration/register', 'RegistrationController::register');
 $routes->get('/registration/welcome', 'RegistrationController::welcome');
-
 
 /*
  * --------------------------------------------------------------------

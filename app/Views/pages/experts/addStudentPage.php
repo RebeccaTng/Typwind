@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","expertAddStudent", time()+36000, "/");?>
+
     <ul class="breadcrumb">
         <li><a href="<?php echo base_url('/experts/studentsList');?>">Students</a></li>
         <li>Add Student</li>

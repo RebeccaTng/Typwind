@@ -4,11 +4,9 @@ namespace App\Controllers;
 
 use App\Models\Students_model;
 use App\Models\Teachers_model;
-use function MongoDB\BSON\toJSON;
 
 class RegistrationController extends \CodeIgniter\Controller
 {
-
     public function expertLogin()
     {
         helper(['form']);
@@ -28,14 +26,13 @@ class RegistrationController extends \CodeIgniter\Controller
         echo view('pages/registration/register', $data);
     }
 
-
     public function welcome()
     {
         $session = session();
         helper(['form']);
         $data = [];
 
-/*        //Clearing all of the previously declared cookies if necesarry with uncommenting this line of code :)
+/*       //Clearing all of the previously declared cookies if necesarry with uncommenting this line of code :)
         if (isset($_SERVER['HTTP_COOKIE'])) {
             $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
             foreach($cookies as $cookie) {

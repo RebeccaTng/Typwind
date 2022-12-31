@@ -78,13 +78,24 @@
     font: var(--navEmphasisText);
     color: var(--blueNeutral-dark);
 }
+
 .activeItem {
     color: var(--blueNeutral-dark);
     background-color: var(--beigeNeutral);
-    border-radius: 65px 0px 0px 65px;
+    border-radius: 65px 0 0 65px;
     z-index: 10;
 }
 .menu_grid-container a:hover {
+    font: var(--navEmphasisText);
+    color: var(--blueNeutral-dark);
+}
+
+.menu_grid-container .active  {
+    font: var(--navEmphasisText);
+    color: var(--blueNeutral-dark);
+}
+
+.menu_grid-container a:active {
     font: var(--navEmphasisText);
     color: var(--blueNeutral-dark);
 
@@ -143,6 +154,5 @@
 
 
 }
-
 
 

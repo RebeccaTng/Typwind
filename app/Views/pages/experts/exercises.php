@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","expertExercises", time()+36000, "/");?>
+
 <script>
     $(document).ready(function(){
 

@@ -2,11 +2,13 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","expertHome", time()+36000, "/");?>
+
     <div class="user">
         <div class="roundProfilePic">
             <img src="/public/assets/avatars/teacher.svg" alt="User Icon">
         </div>
-        <h1>Welcome Back,</h1>
+        <h1 class="one">Welcome Back,</h1>
         <p>
             <?php
             $session = session();

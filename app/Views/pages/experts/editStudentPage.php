@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","expertEditStudent", time()+36000, "/");?>
 <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/public/assets/general">
 
 <?php foreach ($students as $person):?>

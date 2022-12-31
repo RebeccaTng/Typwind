@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","studentHome", time()+36000, "/");?>
+
 <div class="home_content">
     <h1 style="color:var(--blueNeutral);" class="two"> Welcome Back </h1>
     <h1 style="color:var(--blueNeutral); text-transform: capitalize; ">

@@ -103,8 +103,6 @@ class ExpertController extends BaseController
     ////// SET UP METHODS FOR EACH VIEW
     public function home():array
     {
-
-
         $data['menu_items'] = $this->menu_model->get_menuitems();
         $data['teachers'] = $this->teachers_model->get_all_teachers();
         session()->set('teachers', $data['teachers']);
@@ -113,7 +111,6 @@ class ExpertController extends BaseController
     public function studentsList():array
     {
         $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
-
         $students= $this->students_model->get_students();
         $this->data['students'] = $students;
         $this->data['teachers'] = session()->get('teachers');
