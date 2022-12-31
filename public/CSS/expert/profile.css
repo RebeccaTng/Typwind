@@ -38,4 +38,11 @@ div.left {
 
 div.roundProfilePic {
     margin: auto;
+    height: 8.125rem; /* 130px */
+    width: 8.125rem; /* 130px */
+}
+
+div.roundProfilePic img {
+    height: 3.75rem; /* 60px */
+    width: auto;
 }

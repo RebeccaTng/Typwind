@@ -77,6 +77,17 @@ div.notes {
     margin-bottom: 1.25rem;
 }
 
+div.roundProfilePic {
+    margin: auto;
+    height: 8.125rem; /* 130px */
+    width: 8.125rem; /* 130px */
+}
+
+div.roundProfilePic img {
+    height: 3.75rem; /* 60px */
+    width: auto;
+}
+
 @media screen and (max-width: 1050px) {
     img.hands, img.roundProfilePic, div.roundProfilePic {
         display: none;
