@@ -29,20 +29,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    place-items: center;
 }
-/*.container_visuals{*/
-/*    grid-row: 3/span 1;*/
-/*}*/
-/*!*Image, textbox and keyboard FLEX container*!*/
-/*.visuals{*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    flex-direction: column-reverse;*/
-/*}*/
-/*#imageContainer{*/
-/*    place-self: center;*/
-/*    height: 250px;*/
-/*}*/
 /*Textbox*/
 .textBox {
     background-color: var(--beigeNeutral-light);
@@ -53,6 +41,10 @@
     display: flex;
     width: 1200px;
     overflow: hidden;
+
+    position: absolute;
+    top: 45%;
+    /*left: 25%;*/
 
     /*display: inline;*/
     /*text-align: center;*/
@@ -80,7 +72,7 @@
     alignment: center;
     color: blue;
 
-    border: thick solid black;
+    border:  solid var(--primary-darkest);
 }
 .wrong{
     border-color: transparent;
@@ -93,7 +85,7 @@
     position: absolute;
     top: 75%;
     left: 56%;
-    place-self: center;
+
 
     transform: translate(-50%, -50%);
     background-color: transparent;
@@ -107,7 +99,7 @@
 
 .key {
     background-color: rgb(243, 243, 243);
-    border: 2px solid black;
+    border: 2px solid var(--primary-darkest);
     border-radius: 5px;
     grid-column: span 2;
     font-size: 20px;
@@ -174,5 +166,5 @@
 }
 
 .thickBorder{
-    border: 5px solid black;
+    border: 5px solid var(--blueNeutral);
 }

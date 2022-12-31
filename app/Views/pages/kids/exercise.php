@@ -51,7 +51,7 @@
     </div>
 
     <div class="keyboard-base" id="keyboard">
-        <div class="key" id="Backquote">~</div>
+        <div class="key" id="Backquote"></div>
         <div class="key blue" id="Digit1">1</div>
         <div class="key blue" id="Digit2">2</div>
         <div class="key yellow" id="Digit3">3</div>
@@ -62,11 +62,11 @@
         <div class="key red" id="Digit8">8</div>
         <div class="key green" id="Digit9">9</div>
         <div class="key yellow" id="Digit0">0</div>
-        <div class="key blue" id="Minus">-</div>
-        <div class="key" id="Equal">+</div>
-        <div class="key delete" id="Backspace">Delete</div>
+        <div class="key blue" id="Minus"></div>
+        <div class="key" id="Equal"></div>
+        <div class="key delete" id="Backspace"></div>
 
-        <div class="key tab" id="Tab">Tab</div>
+        <div class="key tab" id="Tab"></div>
         <div class="key blue" id="KeyQ">A</div>
         <div class="key yellow" id="KeyW">Z</div>
         <div class="key green" id="KeyE">E</div>
@@ -77,11 +77,11 @@
         <div class="key green" id="KeyI">I</div>
         <div class="key yellow" id="KeyO">O</div>
         <div class="key blue" id="KeyP">P</div>
-        <div class="key" id="BracketLeft">[</div>
-        <div class="key" id="BracketRight">]</div>
-        <div class="key backslash">\</div>
+        <div class="key" id="BracketLeft"></div>
+        <div class="key" id="BracketRight"></div>
+        <div class="key backslash"></div>
 
-        <div class="key capslock" id="CapsLock">CapsLock</div>
+        <div class="key capslock" id="CapsLock"></div>
         <div class="key blue" id="KeyA">Q</div>
         <div class="key yellow" id="KeyS">S</div>
         <div class="key green" id="KeyD">D</div>
@@ -92,29 +92,29 @@
         <div class="key green" id="KeyK">K</div>
         <div class="key yellow" id="KeyL">L</div>
         <div class="key blue" id="Semicolon">M</div>
-        <div class="key" id="Quote">'</div>
-        <div class="key return" id="Enter">Return</div>
+        <div class="key" id="Quote"></div>
+        <div class="key return" id="Enter"></div>
 
-        <div class="key leftshift" id="ShiftLeft">Shift</div>
+        <div class="key leftshift" id="ShiftLeft"></div>
         <div class="key blue" id="KeyZ">W</div>
         <div class="key yellow" id="KeyX">X</div>
         <div class="key green" id="KeyC">C</div>
         <div class="key red" id="KeyV">V</div>
         <div class="key red" id="KeyB">B</div>
         <div class="key red" id="KeyN">N</div>
-        <div class="key red" id="KeyM">,</div>
-        <div class="key green" id="Comma">;</div>
-        <div class="key yellow" id="Period">:</div>
-        <div class="key blue" id="Slash">=</div>
-        <div class="key rightshift" id="ShiftRight">Shift</div>
-        <div class="key leftctrl" id="ControlLeft">Ctrl</div>
-        <div class="key" id="MetaLeft">Cmd</div>
-        <div class="key command" id="AltLeft">Alt</div>
-        <div class="key space" id="Space">Space</div>
-        <div class="key command" id="AltRight">Alt</div>
-        <div class="key">Cmd</div>
-        <div class="key" id="ControlRight">Ctrl</div>
-        <div class="key">Fn</div>
+        <div class="key red" id="KeyM"></div>
+        <div class="key green" id="Comma"></div>
+        <div class="key yellow" id="Period"></div>
+        <div class="key blue" id="Slash"></div>
+        <div class="key rightshift" id="ShiftRight"></div>
+        <div class="key leftctrl" id="ControlLeft"></div>
+        <div class="key" id="MetaLeft"></div>
+        <div class="key command" id="AltLeft"></div>
+        <div class="key space" id="Space"></div>
+        <div class="key command" id="AltRight"></div>
+        <div class="key"></div>
+        <div class="key" id="ControlRight"></div>
+        <div class="key"></div>
     </div>
 
 
