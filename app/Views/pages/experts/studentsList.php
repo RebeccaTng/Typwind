@@ -9,19 +9,18 @@
 
         <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/experts/studentOverview/">
         <!-- Filter -->
-        <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
-            <option disabled selected value="Filter">Filter</option>
-            <?php foreach ($teachers as $teacher):?>
-                <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
-            <?php endforeach;?>
-
-        </select>
-
+        <div class="filterContainer">
+            <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
+                <option disabled selected value="Filter">Filter</option>
+                <?php foreach ($teachers as $teacher):?>
+                    <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
+                <?php endforeach;?>
+            </select>
+            <button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')"></button>
+        </div>
         <!-- Searchbar -->
         <input type="text" id="myInput" onkeyup="search()" placeholder="Search">
     </div>
-
-<button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')">Disable filter</button>
 
     <script type="text/javascript">
         var users = <?php echo json_encode($students); ?>;

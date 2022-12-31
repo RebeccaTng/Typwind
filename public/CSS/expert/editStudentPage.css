@@ -37,7 +37,7 @@ label {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    background: var(--beigeNeutral-light) url("/public/assets/icons/angle-small-down.svg") no-repeat 13.438rem center;
+    background: var(--beigeNeutral-light) url("/public/assets/icons/angle-small-down.svg") no-repeat 13.338rem center;
 }
 
 #gender:focus, #teachers:focus, #handSelection:focus {
@@ -61,6 +61,10 @@ div.generalFields {
     grid-template-rows: auto;
     justify-items: left;
     align-items: center;
+}
+
+.bottomBar {
+   left: 0;
 }
 
 @media screen and (max-width: 1050px) {

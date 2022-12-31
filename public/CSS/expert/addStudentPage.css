@@ -1,0 +1,26 @@
+.studentContainer {
+    grid-template-columns: 100%;
+}
+
+div.infoContainer {
+    grid-column: 1;
+}
+
+div.infoContainer {
+    flex-direction: row;
+    column-gap: 4.375rem;
+}
+
+div.notes {
+    width: 70%;
+}
+
+@media screen and (max-width: 1000px) {
+    div.infoContainer {
+        flex-direction: column;
+    }
+
+    div.notes {
+        width: 100%;
+    }
+}
