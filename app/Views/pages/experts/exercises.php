@@ -3,14 +3,11 @@
 <?= $this->section('content') ?>
 
 <?php setcookie("currentPage","expertExercises", time()+36000, "/");?>
-
 <script>
     $(document).ready(function(){
 
         let lessonsList = <?php echo $exercises; ?>;
-
         const lessonsMap = new Map();
-
         for (let i = 0; i < lessonsList.length; i++) {
             if(lessonsMap.has(lessonsList[i].lesson)){
                 lessonsMap.get(lessonsList[i].lesson).push(lessonsList[i])
@@ -20,7 +17,6 @@
                 lessonsMap.get(lessonsList[i].lesson).push(lessonsList[i])
             }
         }
-
         for (const lessonId of lessonsMap.keys()) {
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
@@ -38,6 +34,7 @@
 </script>
 
 <h1>Exercises</h1>
+
 
 <div class="exerciseContainer">
 </div>
