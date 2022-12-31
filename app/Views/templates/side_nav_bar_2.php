@@ -3,8 +3,8 @@
 <div class="menu_grid-container">
 
     <div class=" menuHeader ">
-        <div class="  roundProfilePic ">
-            <img src="/public/assets/icons/user.svg" alt="User Icon">
+        <div class="roundProfilePic">
+            <img src="/public/assets/avatars/1.svg" alt="User Icon">
         </div>
 
     </div>
