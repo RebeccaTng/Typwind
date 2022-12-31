@@ -11,10 +11,6 @@
 
     <div class="scroller">
         <form class="studentContainer" action= "<?php echo base_url('experts/addStudent');?>" method="post">
-            <div class="roundProfilePic">
-                <img src="/public/assets/avatars/1.svg" alt="User Icon">
-            </div>
-
             <div class="infoContainer">
                 <div class="general">
                     <h3>General Information</h3>
@@ -42,25 +38,25 @@
                             <?php endforeach;?>
                         </select>
 
-                    <label for="handSelection"><b>Hand Selection:</b></label>
-                    <select name="handSelection" id="handSelection" required>
-                        <option value="One Hand, right hand">Right Hand</option>
-                        <option value="One Hand, left hand">Left Hand</option>
-                        <option selected="selected" value="Both Hands">Both Hands</option>
-                    </select><br>
+                        <label for="handSelection"><b>Hand Selection:</b></label>
+                        <select name="handSelection" id="handSelection" required>
+                            <option value="One Hand, right hand">Right Hand</option>
+                            <option value="One Hand, left hand">Left Hand</option>
+                            <option selected="selected" value="Both Hands">Both Hands</option>
+                        </select>
 
-                    <label for="active"><b>Active</b></label>&nbsp;
-                    <label class="switch">
-                        <input type="checkbox" id="active" name="active" checked>
-                        <span class="slider"></span>
-                    </label>
+                        <label for="active"><b>Active:</b></label>
+                        <label class="switch">
+                            <input type="checkbox" id="active" name="active" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
 
-                </p>
-            </div>
-
-            <div class="notes">
-                <label for="notes"><h3>Notes</h3></label>
-                <textarea id="notes" name="notes" rows="17" maxlength="1000" ></textarea>
+                <div class="notes">
+                    <label for="notes"><h3>Notes</h3></label>
+                    <textarea id="notes" name="notes" rows="12" maxlength="1000" ></textarea>
+                </div>
             </div>
 
             <div class="bottomBar">
