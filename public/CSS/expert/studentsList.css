@@ -83,6 +83,13 @@ li.studentListItem {
     font: var(--bodyText);
 }
 
+h3 {
+    color: var(--secondaryColor);
+    grid-column: 1/span 6;
+    justify-self: center;
+    padding-top: 7.5rem;
+}
+
 @media screen and (max-width: 1750px) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
