@@ -229,6 +229,7 @@ div.language a {
 
 div.language :not(a.active):hover {
     transition-duration: 0.4s;
+    font: var(--navText);
     color: var(--white);
 }
 

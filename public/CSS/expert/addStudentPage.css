@@ -15,6 +15,15 @@ div.notes {
     width: 70%;
 }
 
+span.mandatory {
+    font: var(--smallText);
+    color: var(--secondary-dark);
+}
+
+span.manText {
+    margin-top: 0.625rem;
+}
+
 @media screen and (max-width: 1000px) {
     div.infoContainer {
         flex-direction: column;

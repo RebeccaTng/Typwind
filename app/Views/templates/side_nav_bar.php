@@ -4,8 +4,8 @@
         <img id ="typewindLogo" src="<?=base_url()?>/public/assets/general/typwind_logo.svg">
     </div>
 
-    <div class="langWrap menuSubHeader" >
-        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
+    <div class="langWrap menuSubHeader language" >
+        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
 

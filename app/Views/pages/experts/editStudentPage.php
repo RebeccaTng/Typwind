@@ -90,7 +90,7 @@
 
                     <div class="notes">
                         <label for="notes"><h3>Notes</h3></label>
-                        <textarea id="notes" name="notes" rows="12" maxlength="1000"> <?= $person->notes?></textarea>
+                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."> <?= $person->notes?></textarea>
                     </div>
                 </div>
 
