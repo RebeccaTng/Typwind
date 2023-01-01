@@ -28,49 +28,50 @@
                 </div>
                 <span class="coin"></span>
             </div>
-            <div class="avatarChoice"> <!--EVERY AVATAR SHOULD HAVE 'avatarChoice'-->
+            <div class="avatarChoice locked"> <!--NOT BOUGHT AVATARS SHOULD HAVE 'locked'-->
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/3.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/4.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span> <!--Only show message if there isn't enough money in a if statement-->
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice undo"> <!--UNDO AVATAR PURCHASE-->
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/5.svg" alt="User Icon">
                 </div>
-                <span class="coin">120</span>
+                <span class="coin">UNDO</span>
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/6.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/7.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/8.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/9.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
             </div>
-            <div class="avatarChoice">
+            <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/10.svg" alt="User Icon">
                 </div>

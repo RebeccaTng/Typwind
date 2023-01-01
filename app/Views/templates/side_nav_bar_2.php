@@ -5,7 +5,9 @@
             <img src="/public/assets/avatars/1.svg" alt="User Icon">
         </div>
 
+        <span class="coin">120</span>
     </div>
+
     <div class="langWrap menuSubHeader" >
         <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active"> NED </a>
 

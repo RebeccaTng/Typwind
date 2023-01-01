@@ -24,7 +24,7 @@
                     <input type="checkbox" id="keyboard" name="keyboard">
                     <span class="slider"></span>
                 </label>
-                <label for="keyboard" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Show keyboard with colors </label>
+                <label for="keyboard" style="color: var(--blueNeutral-dark); font: var(--bodyText)">Show keyboard with colors </label>
             </div>
 
             <div class="card_intro">
