@@ -156,7 +156,9 @@ class RegistrationController extends \CodeIgniter\Controller
                 'firstname'     => $this->request->getVar('firstname'),
                 'lastname'     => $this->request->getVar('lastname'),
                 'email'    => $this->request->getVar('email'),
-                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                'isActive'    => 1
+
             ];
             $userModel->save($data);
             return redirect()->to('/registration/welcome');

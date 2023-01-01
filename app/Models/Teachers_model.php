@@ -49,6 +49,7 @@ class Teachers_model extends Model
         'lastname',
         'email',
         'password',
+        'isActive',
         'created_at'
     ];
 
