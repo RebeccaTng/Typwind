@@ -80,7 +80,7 @@ class RegistrationController extends \CodeIgniter\Controller
             ];
             $session->set($ses_data);
 
-            setcookie("email", session()->email, time()+36000, "/");
+            setcookie("expertEmail", session()->email, time()+36000, "/");
             return redirect()->to('experts/home');
 
             }else{
@@ -128,7 +128,7 @@ class RegistrationController extends \CodeIgniter\Controller
             ];
             $session->set($ses_data);
 
-            setcookie("email", session()->email, time()+36000, "/");
+            setcookie("studentEmail", session()->email, time()+36000, "/");
 
             return redirect()->to('/kids/home');
         }

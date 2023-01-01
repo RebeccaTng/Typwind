@@ -41,7 +41,7 @@
 
         <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
 
-            <input type="email" name="email" placeholder="Email" value="<?php if (session()->isStudent) echo session()->email ?>" required>
+            <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["studentEmail"])) echo $_COOKIE["studentEmail"]; ?>" required>
 
             <div class="continue_w_email_button">
                 <button type="submit" class="button buttonPrimary buttonChild three" style="font: var(--buttonLabel);">continue with my email</button>
