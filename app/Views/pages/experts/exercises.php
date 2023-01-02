@@ -35,6 +35,8 @@
 
 <h1>Exercises</h1>
 
+<!-- Add new exercise -->
+<a class="addNew">Add New Exercise</a>
 
 <div class="exerciseContainer">
 </div>
