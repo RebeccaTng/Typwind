@@ -157,9 +157,14 @@ class KidsController extends BaseController
 
     private function avatar():array
     {
+        $idStudent= session()->id;
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('avatar');
+        $data['avatars'] = $this->students_model->geAvatars();
+        $data['avatarsBought'] = $this->students_model->geAvatarsBought($idStudent);
+
         return $data;
     }
+
 
 
 }

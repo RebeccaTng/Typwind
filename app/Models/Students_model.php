@@ -81,5 +81,17 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
         $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
+    public function geAvatars()
+    {
+        $query_text = 'SELECT idAvatars , price FROM avatars ;';
+        $query = $this->db->query($query_text);
+        return $query->getResult();
+    }
+    public function geAvatarsBought($idStudent)
+    {
+        $query_text = 'SELECT  idAvatar_fk, selected FROM student_avatar_fk WHERE idStudent_fk= ?;';
+        $query = $this->db->query($query_text, $idStudent);
+        return $query->getResult();
+    }
 
 }

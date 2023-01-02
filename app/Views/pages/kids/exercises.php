@@ -35,8 +35,6 @@
                     exercisesText
                     + "<a style = 'text-decoration: none;'href= \"" + URL + lessonGroup[i].idExercises + "\">"
                     +"<button class='exerciseButton'>"+ lessonGroup[i].name
-
-
                     for (let j = 0; j < scores.length; j++) {
                         if(scores[j].idExercise_fk === lessonGroup[i].idExercises)
                         {
