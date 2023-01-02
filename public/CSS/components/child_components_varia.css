@@ -93,11 +93,11 @@
 span.coin {
     font: var(--heading3);
     background-color: var(--primaryColor);
-    width: 9.375rem;
+    width: fit-content;
     height: 3.125rem;
     border-radius: 1.563rem;
     text-align: center;
-    padding: 0.625rem 0;
+    padding: 0.625rem 2.5rem;
 }
 
 span.coin:before {

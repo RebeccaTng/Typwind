@@ -16,8 +16,13 @@
 .menuHeader {
     grid-area: header;
     justify-self:center;
-
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 0.625rem;
 }
+
 .menuHeader img{
     height: 50px;
     width: 160px;
