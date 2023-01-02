@@ -20,6 +20,7 @@ class ExpertController extends BaseController
     private array $addStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css", "expert/addStudentPage.css");
     private array $profile = array("expert/profile.css");
     private array $editProfilePage = array("expert/profile.css", "expert/editProfile.css");
+    private array $exerciseContent = array("expert/exerciseContent.css");
 
 
     /// END OF CSS FILES ************************
@@ -65,6 +66,8 @@ class ExpertController extends BaseController
                 return $this->profile();
             case 'editProfilePage':
                 return $this->editProfilePage();
+            case 'exerciseContent':
+                return $this->exerciseContent();
 
             default:
                 return $this->commonCssFiles;
@@ -89,6 +92,8 @@ class ExpertController extends BaseController
                 return $this->includeCSSFilesInCommonFiles( $this->profile);
             case 'editProfilePage':
                 return $this->includeCSSFilesInCommonFiles( $this->editProfilePage);
+            case 'exerciseContent':
+                return $this->includeCSSFilesInCommonFiles( $this->exerciseContent);
             default:
                 return $this->commonCssFiles;
         }
@@ -270,6 +275,13 @@ class ExpertController extends BaseController
         $dataEditTeacher = array_merge($this->getDataForPage('profile',0),$css);
         return view('pages/experts/profile',$dataEditTeacher);
 
+    }
+
+    private function exerciseContent():array
+    {
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        return $data;
     }
 
 }
