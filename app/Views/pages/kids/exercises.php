@@ -128,8 +128,12 @@
 
 <h1>Exercises</h1>
 
+<button class="button"><img alt="Arrow Up Icon" src="/public/assets/icons/up.png"></button>
 
+<br>
+<img alt="Arrow Down Icon" src="/public/assets/icons/down.png">
 <div class="exerciseContainer">
 </div>
+
 
 <?= $this->endSection() ?>
