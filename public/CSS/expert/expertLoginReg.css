@@ -23,14 +23,18 @@ div.card input {
 div.card {
     background-color: var(--beigeNeutral);
     padding: 1.25rem 6.25rem 2.188rem;
-    margin: 0;
+    margin: 0 0 1.875rem 0;
+    text-align: center;
+    max-width: 31.25rem;
+}
+
+div.centering {
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    max-width: 31.25rem;
 }
 
 img.logo {
@@ -41,6 +45,10 @@ img.logo {
 }
 
 #login {
+    margin-top: 0;
+}
+
+.buttonSecondary {
     margin-top: 0;
 }
 

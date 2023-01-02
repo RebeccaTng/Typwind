@@ -19,37 +19,36 @@
 <body>
 
 <div class = "grid-container_login_child">
-    <div class="card_login_child">
-        <div class="langWrap menuSubHeader" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
-            |
+    <div class="centering">
+        <div class="card_login_child">
+            <?php $session=session();
+            $session->set('isLoggedIn',False);
+            ?>
+            <div>
+                <h1>Login</h1>
+                <h2 class ="one" style="color: var(--blueNeutral)">and have fun typing!</h2>
+            </div>
+            <p class ="two" style="font: var(--bodyText); margin:30px;">Let's get logged in with your email</p>
+            <?php if(session()->getFlashdata('msg')):?>
+                <div class="errorMessage">
+                    <?= session()->getFlashdata('msg') ?>
+                </div>
+            <?php endif;?>
+
+            <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
+                <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["studentEmail"])) echo $_COOKIE["studentEmail"]; ?>" required>
+
+                <div class="continue_w_email_button">
+                    <button type="submit" class="button buttonPrimary buttonChild three" style="font: var(--buttonLabel);">continue with my email</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="langWrap menuSubHeader language" >
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
             <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
         </div>
-        <?php $session=session();
-        $session->set('isLoggedIn',False);
-        ?>
-        <div>
-            <h1 style="color: var(--blueNeutral)">Login</h1>
-            <h2 class ="one" style="color: var(--blueNeutral)">and have fun typing!</h2>
-        </div>
-        <p class ="two" style="color: var(--blueNeutral); font: var(--bodyExText); margin: 30px;">Let's get logged in with your email</p>
-        <?php if(session()->getFlashdata('msg')):?>
-            <div class="alert alert-warning">
-                <?= session()->getFlashdata('msg') ?>
-            </div>
-        <?php endif;?>
-
-        <form action="<?php echo base_url(); ?>/RegistrationController/loginStudent" method="post">
-
-            <input type="email" name="email" placeholder="Email" value="<?php if (isset($_COOKIE["studentEmail"])) echo $_COOKIE["studentEmail"]; ?>" required>
-
-            <div class="continue_w_email_button">
-                <button type="submit" class="button buttonPrimary buttonChild three" style="font: var(--buttonLabel);">continue with my email</button>
-            </div>
-        </form>
-
     </div>
-
 </div>
 <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
 </body>
