@@ -6,10 +6,9 @@
         </div>
 
     </div>
-    <div class="langWrap menuSubHeader" >
-        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active"> NED </a>
-
-        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' > ENG </a>
+    <div class="langWrap menuSubHeader language">
+        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
+        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
     <div class="menuItems" >
         <?php if (! empty($menu_items)) :?>
@@ -25,7 +24,6 @@
         <a href="<?=base_url()?>/registration/welcome" title="Go home">
             <img  src="<?=base_url()?>/public/assets/icons/log_out_icon.svg" >
             <p class="logout">Log out</p>
-
         </a>
     </div>
 </div>

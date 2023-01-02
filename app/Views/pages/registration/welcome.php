@@ -22,23 +22,22 @@
 <body>
 
 <div class = "grid-container_welcome">
-    <div class = "card_welcome_page">
+    <div class="centering">
+        <div class = "card_welcome_page">
+            <img src="/public/assets/general/typwind_logo.svg" alt="Typwind logo" style="width:221px;height:77px;">
+            <h1 class="two" style="color:var(--blueNeutral); margin-bottom: 15px;">Welcomes you!</h1>
+            <h3 class="three" style="color:var(--primary-darkest);">Are you a student or a teacher?</h3>
 
-        <img src="/public/assets/general/typwind_logo.svg" alt="Typwind logo" style="width:221px;height:77px;">
-        <h1 class="two" style="color:var(--blueNeutral); margin-bottom: 15px;">Welcomes you!</h1>
-        <h3 class="three" style="color:var(--primary-darkest);">Are you a student or a teacher?</h3>
-
-        <div class="teacher_student_buttons">
-            <button class="button buttonExpert buttonPrimary four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" title="Look at profile" >TEACHER</button>
-            <button class="button buttonExpert buttonPrimary five" onclick="window.location= '<?=base_url()?>/registration/studentLogin'" >STUDENT</button>
+            <div class="teacher_student_buttons">
+                <button class="button buttonExpert buttonPrimary four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" title="Look at profile" >TEACHER</button>
+                <button class="button buttonExpert buttonPrimary five" onclick="window.location= '<?=base_url()?>/registration/studentLogin'" >STUDENT</button>
+            </div>
         </div>
 
-        <div class="langWrap menuSubHeader" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
-            |
+        <div class="langWrap menuSubHeader language" >
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
             <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
         </div>
-
     </div>
 </div>
 

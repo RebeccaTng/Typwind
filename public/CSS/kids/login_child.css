@@ -43,6 +43,14 @@ img.logo {
     right: 3.125rem;
     bottom: 3.125rem;
 }
+
+.centering {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 1.875rem;
+}
+
 @media screen and (max-height: 650px), screen and (max-width: 992px) {
     img.logo {
         display: none;

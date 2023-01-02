@@ -18,29 +18,31 @@
     <title> Expert Registration</title>
 </head>
 <body>
-    <div class="card">
-        <div class="langWrap menuSubHeader" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a>
-            |
+    <div class="centering">
+        <div class="card">
+            <h1 class="one" >Register</h1>
+            <p class="two">Register here if you don't have an account yet</p>
+            <?php if(isset($validation)):?>
+                <div class="errorMessage">
+                    <?= $validation->listErrors() ?>
+                </div>
+            <?php endif;?>
+            <form action="<?php echo base_url(); ?>/RegistrationController/store" method="post">
+                <input id ="firstname" type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" required>
+                <input id ="lastname" type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" required >
+                <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required>
+                <input id ="password" type="password" name="password" placeholder="Password" required>
+                <input id ="confirmpassword" type="password" name="confirmpassword" placeholder="Confirm Password" required >
+
+                <button type="submit" class="button buttonPrimary buttonExpert three">REGISTER</button>
+            </form>
+            <button type="button" id="backToLogin" class="button buttonSecondary buttonExpert four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'">BACK TO LOGIN</button>
+        </div>
+
+        <div class="langWrap menuSubHeader language" >
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
             <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
         </div>
-        <h1 class="one" >Register</h1>
-        <p class="two">Register here if you don't have an account yet</p>
-        <?php if(isset($validation)):?>
-            <div>
-                <?= $validation->listErrors() ?>
-            </div>
-        <?php endif;?>
-        <form action="<?php echo base_url(); ?>/RegistrationController/store" method="post">
-            <input id ="firstname" type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" required>
-            <input id ="lastname" type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" required >
-            <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required>
-            <input id ="password" type="password" name="password" placeholder="Password" required>
-            <input id ="confirmpassword" type="password" name="confirmpassword" placeholder="Confirm Password" required >
-
-            <button type="submit" class="button buttonPrimary buttonExpert three">REGISTER</button>
-        </form>
-        <button type="button" id="backToLogin" class="button buttonSecondary buttonExpert four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'">BACK TO LOGIN</button>
     </div>
     <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">
 </body>
