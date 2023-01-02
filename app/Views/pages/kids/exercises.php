@@ -127,9 +127,16 @@
 </script>
 
 <h1>Exercises</h1>
+<div class="card_and_button">
 
+    <button class="button round" style="background-color: transparent; border: none"><img alt="Arrow Up Icon" src="/public/assets/icons/up.png"></button>
 
-<div class="exerciseContainer">
+    <div class="exerciseContainer">
+    </div>
+
+    <button class="button round" style="background-color: transparent; border: none"><img alt="Arrow Down Icon" src="/public/assets/icons/down.png"></button>
+
 </div>
+
 
 <?= $this->endSection() ?>

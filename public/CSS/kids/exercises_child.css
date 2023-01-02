@@ -2,7 +2,18 @@
     padding: 2.813rem 1.875rem 3.75rem 3.75rem; /*45px 30px 60px 60px*/
 }
 h1 {
-    margin-bottom: 2.5rem; /*40px*/
+    /*margin-bottom: 2.5rem; !*40px*!*/
+    margin-bottom: 0.5rem;
+}
+.card_and_button{
+    display: flex;
+    flex-direction: column;
+    /*row-gap: 1.875rem; !*30px*!*/
+    height: 100%;
+    overflow: auto;
+    align-items: center;
+    /*padding-right: 2.188rem; !*35px*!*/
+    padding-bottom: 1.875rem; /*30px*/
 }
 div.exerciseContainer {
     display: flex;
@@ -13,6 +24,15 @@ div.exerciseContainer {
     align-items: center;
     padding-right: 2.188rem; /*35px*/
     padding-bottom: 1.875rem; /*30px*/
+}
+.scrollButtons{
+    display: grid;
+    grid-template-columns: 1fr
+}
+/*Scroll Buttons*/
+.round {
+    border-radius: 50%;
+    padding: 10px;
 }
 /* LESSON CARD */
 div.lessonCardChild {
@@ -37,6 +57,9 @@ div.lessonCardChild h2 {
     div.lessonCardChild {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "header header header";
+    }
+    div.scrollButtons{
+
     }
 }
 
