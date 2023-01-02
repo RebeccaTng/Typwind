@@ -3,7 +3,7 @@
 }
 
 h1 {
-    margin-bottom: 2.5rem; /*40px*/
+    /*margin-bottom: 2.5rem; !*40px*!*/
 }
 
 div.exerciseContainer {
@@ -36,4 +36,24 @@ div.exerciseContainer {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "header header";
     }
+}
+
+.addNew{
+    font: var(--navText);
+    text-decoration: none;
+    padding: 0;
+    display: flex;
+    /*align-items: center;*/
+    margin-bottom: 1.5rem;
+}
+
+.addNew::before{
+    content: url("/public/assets/icons/add.svg");
+    vertical-align: middle;
+    padding-right: 0.625rem; /*10px*/
+}
+
+.addNew:hover {
+    color: var(--accentColor);
+    transition-duration: 0.4s;
 }
