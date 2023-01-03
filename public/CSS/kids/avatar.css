@@ -167,7 +167,7 @@ div.avatarCard {
     font: var(--emphasisText);
 }
 
-@media screen and (max-width: 1800px) {
+@media screen and (max-width: 112.5em) {
     div.avatarChoice div.roundProfilePic {
         height: 7.5rem; /* 120px */
         width: 7.5rem; /* 120px */
