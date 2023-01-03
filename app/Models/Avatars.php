@@ -64,8 +64,6 @@ class Avatars extends Model
                         break;
                     }
                 }
-
-
             }
         }
         if($this->selectDefaultAvatar){
@@ -73,7 +71,6 @@ class Avatars extends Model
         }
         else{
             $avatarIcons[0]['classCSS']= 'avatarChoice'.' '.self::BOUGHT_CSS_CLASS;
-
         }
         $avatarIcons[0]['price']='';
         unset($this->avatarIcons);
