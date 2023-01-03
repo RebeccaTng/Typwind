@@ -40,7 +40,6 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
-        print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -156,8 +155,9 @@ class KidsController extends BaseController
 
     private function avatar():array
     {
+        //Add more data for transaction.
         $data['idStudents']=session()->id;
-        $data['response']= $this->students_model->avatarStartTransaction($data['idStudents'],2 );
+//        $data['response']= $this->students_model->avatarStartTransaction($data['idStudents'],2 );
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('avatar');
         return $data;
     }
@@ -165,9 +165,13 @@ class KidsController extends BaseController
     public function buyAvatar($idAvatars)
     {
         $data['idAvatar']= $idAvatars;
-        $data['idStudents']=session()->id;
+        print ("hello");
+
         //$data['response']= $this->students_model->avatarStartTransaction($data['idStudents'],$data['idAvatar'] );
-        return view('pages/kids/avatar');
+        $css = ['cssFiles' =>  $this->getCSSFile("avatar")];
+
+        $dataAddStudent = array_merge($this->getDataForPage('avatar',0),$css);
+        return view('pages/kids/avatar',$dataAddStudent);
     }
 
 
