@@ -21,20 +21,23 @@
                     <img src="/public/assets/avatars/1.svg" alt="User Icon">
                 </div>
                 <span class="coin"></span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice bought"> <!--ADD 'bought' TO DIV IF IT IS THEY BOUGHT THE AVATAR ALREADY BUT IT IS NOT THE CURRENT ONE-->
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/2.svg" alt="User Icon">
                 </div>
                 <span class="coin"></span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice locked"> <!--NOT BOUGHT AVATARS SHOULD HAVE 'locked'-->
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/3.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
-            <div class="avatarChoice locked">
+            <div class="avatarChoice locked noMoney"> <!--'noMoney'-->
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/4.svg" alt="User Icon">
                 </div>
@@ -45,37 +48,43 @@
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/5.svg" alt="User Icon">
                 </div>
-                <span class="coin">UNDO</span>
+                <span class="coin">Undo purchase</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/6.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/7.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/8.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/9.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
             <div class="avatarChoice locked">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/10.svg" alt="User Icon">
                 </div>
                 <span class="coin">120</span>
+                <span class="errorMessage">Not enough money</span>
             </div>
         </div>
     </div>

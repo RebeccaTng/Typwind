@@ -42,9 +42,17 @@ div.avatarChoice {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    width: min-content;
+    max-width: max-content;
     justify-items: center;
     align-items: center;
+}
+
+span.errorMessage {
+    text-align: center;
+}
+
+:not(div.noMoney) > span.errorMessage {
+    visibility: hidden;
 }
 
 div.avatarChoice:hover {
@@ -96,7 +104,12 @@ div.avatarChoice span.coin:before {
 }
 
 div.chosen div.roundProfilePic {
-    background-color: var(--secondary-lightest);
+    border: 0.25rem solid var(--accentColor); /* 4px */
+}
+
+div.chosen span.coin {
+    background-color: var(--accentColor);
+    padding: 0.625rem 3.438rem;
 }
 
 div.locked:hover > span.coin {
@@ -107,9 +120,10 @@ div.locked:hover > div.roundProfilePic {
     border: 0.125rem solid var(--accentColor); /* 2px */
 }
 
-div.chosen span.coin, div.bought span.coin {
-    background-color: #88CAAE;
+div.bought span.coin {
+    background-color: var(--primary-dark);
     padding: 0.625rem 3.438rem;
+    height: fit-content;
 }
 
 div.chosen span.coin:before, div.bought span.coin:before {
@@ -127,7 +141,13 @@ div.undo span.coin:before {
 }
 
 div.undo span.coin {
-    background-color: var(--secondaryColor);
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: var(--secondary-light);
+    max-width: 8.125rem;
+    height: fit-content;
+    padding: 0.625rem 0;
+    line-height: 1.125rem;
 }
 
 div.avatarCard {
@@ -143,30 +163,42 @@ div.avatarCard {
     min-height: 34.375rem;
 }
 
+.errorMessage {
+    font: var(--emphasisText);
+}
+
 @media screen and (max-width: 1800px) {
     div.avatarChoice div.roundProfilePic {
-        height: 6.875rem; /* 110px */
-        width: 6.875rem; /* 110px */
+        height: 7.5rem; /* 120px */
+        width: 7.5rem; /* 120px */
     }
 
     div.avatarChoice div.roundProfilePic img {
-        height: 3.75rem; /* 60px */
+        height: 4.063rem; /* 65px */
         width: auto;
     }
 
     div.avatarChoice span.coin {
-        width: 6.875rem;
-        height: 2.5rem;
-        padding: 0.188rem;
+        padding: 0.313rem 1.875rem;
+        height: fit-content;
+    }
+
+    div.undo span.coin {
+        max-width: 8.125rem;
+        padding: 0.5rem 0.938rem;
+    }
+
+    div.chosen span.coin, div.bought span.coin {
+        padding: 0.313rem 2.813rem;
     }
 
     div.avatarChoice:hover > div.roundProfilePic {
-        height: 8.438rem; /* 135px */
-        width: 8.438rem; /* 135px */
+        height: 8.75rem; /* 140px */
+        width: 8.75rem; /* 140px */
     }
 
     div.avatarChoice:hover > div.roundProfilePic > img {
-        height: 4.375rem; /* 70px */
+        height: 5rem; /* 80px */
         width: auto;
     }
 }
