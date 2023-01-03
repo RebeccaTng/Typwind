@@ -14,7 +14,7 @@ class Avatars extends Model
     protected array $avatarsBought;
     const  BOUGHT_CSS_CLASS = 'bought';
     const  SELECTED_CSS_CLASS = 'chosen';
-
+    private int $selectDefaultAvatar;
 
 
     public function getAvatarIcons($idStudent): array
@@ -48,23 +48,34 @@ class Avatars extends Model
     public function setAvatarIcons(): void
     {
         $avatarIcons=array();
+        $this->selectDefaultAvatar=1;
         for($i=0;$i<count($this->avatars);$i++){
             $avatarIcons[$i] = array('idAvatars' => $this->avatars[$i]->idAvatars, 'classCSS' => 'avatarChoice locked', 'price' =>  $this->avatars[$i]->price);
             if (! empty($this->avatarsBought)){
                 foreach ($this->avatarsBought as $avatarBought){
-                    if($avatarBought->idAvatar_fk== $this->avatars[$i]->idAvatars||$this->avatars[$i]->idAvatars==1){
+                    if($avatarBought->idAvatar_fk== $this->avatars[$i]->idAvatars){
                         $avatarIcons[$i]['classCSS']= 'avatarChoice'.' '.self::BOUGHT_CSS_CLASS;
                         $avatarIcons[$i]['price']='';
                         if ($avatarBought->selected){
                             $avatarIcons[$i]['classCSS']= 'avatarChoice'.' '.self::SELECTED_CSS_CLASS;
                             $avatarIcons[$i]['price']='';
-
+                            $this->selectDefaultAvatar=0;
                         }
                         break;
                     }
                 }
+
+
             }
         }
+        if($this->selectDefaultAvatar){
+            $avatarIcons[0]['classCSS']= 'avatarChoice'.' '.self::SELECTED_CSS_CLASS;
+        }
+        else{
+            $avatarIcons[0]['classCSS']= 'avatarChoice'.' '.self::BOUGHT_CSS_CLASS;
+
+        }
+        $avatarIcons[0]['price']='';
         unset($this->avatarIcons);
         $this->avatarIcons= $avatarIcons;
     }

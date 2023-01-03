@@ -34,7 +34,17 @@
             <li class="studentListItem">
                 <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
                     <div class="roundProfilePic">
-                        <img src="/public/assets/avatars/1.svg" alt="User Icon">
+                        <?php
+                        $idOfSelectedAvatar=1;
+                        if (!empty($avatars)):
+                            foreach ($avatars as $avatar):
+                                if($person->idStudents==$avatar->idStudent_fk):
+                                    $idOfSelectedAvatar=$avatar->idAvatar_fk;
+                                    break;
+                                endif;
+                            endforeach;
+                        endif;?>
+                        <img src="/public/assets/avatars/<?=$idOfSelectedAvatar?>.svg" alt="User Icon">
                     </div>
                     <h4><?=$person->firstname?><br><?=$person->lastname?></h4>
                 </a>

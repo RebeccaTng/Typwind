@@ -110,12 +110,12 @@ class ExpertController extends BaseController
     }
     public function studentsList():array
     {
-        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
-        $students= $this->students_model->get_students();
-        $this->data['students'] = $students;
-        $this->data['teachers'] = session()->get('teachers');
-        session()->set('students', $this->data['students']);
-        return $this->data;
+        $data['students'] = $this->students_model->get_students();
+        $data['avatars'] = $this->students_model->getStudentsAvatarId();
+        $data['menu_items'] = $this->menu_model->get_menuitems('Students');
+        $data['teachers'] = session()->get('teachers');
+        session()->set('students', $data['students']);
+        return $data;
     }
 
     public function exercises():array
@@ -255,7 +255,6 @@ class ExpertController extends BaseController
     public function editProfile()
     {
         $this->data['idTeachers']= session()->id;
-
         $this->data['firstname']= $_POST['firstname'];
         session()->firstname = $this->data['firstname'];
         $this->data['lastname'] = $_POST['lastname'];
@@ -264,12 +263,10 @@ class ExpertController extends BaseController
         session()->isActive = $this->data['isActive'];
         $this->data['email']= $_POST['email'];
         session()->email = $this->data['email'];
-
         $this->teachers_model->edit_teacher($this->data);
         $css = ['cssFiles' =>  $this->getCSSFile("profile")];
         $dataEditTeacher = array_merge($this->getDataForPage('profile',0),$css);
         return view('pages/experts/profile',$dataEditTeacher);
-
     }
 
 }
