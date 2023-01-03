@@ -30,6 +30,15 @@
             endif;?>
 
         </div>
+<!--        this is an example of how to call the buyAvatar in the controller -->
+        <form action="http://localhost:8080/kids/buyAvatar/15" method="post">
+            <div >
+                <input id="seven" class="button buttonPrimary buttonExpert" type="submit" value="Save">
+            </div>
+        </form>
+        <!--       End of example, please remove after not needed -->
+
     </div>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
