@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Avatars;
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
 use App\Models\Menu_model;
@@ -23,12 +24,15 @@ class KidsController extends BaseController
     /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
-    private $menu_model;
+    private Menu_model $menu_model;
+    private Avatars $avatarModel;
+
 
 
     public function __construct() {
         $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
+        $this ->avatarModel = new Avatars();
     }
 
     public function view($page = 'home',$arg='0')
@@ -158,8 +162,11 @@ class KidsController extends BaseController
     private function avatar():array
     {
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('avatar');
+        $data['avatars'] = $this ->avatarModel->getAvatarIcons(session()->id);
+        $data['idOfSelectedAvatar'] =$this ->avatarModel->getIdOfSelectedAvatar();
         return $data;
     }
+
 
 
 }
