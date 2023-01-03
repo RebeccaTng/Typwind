@@ -88,7 +88,7 @@ div.roundProfilePic img {
     width: auto;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 65.625em) {
     img.hands, img.roundProfilePic, div.roundProfilePic {
         display: none;
     }

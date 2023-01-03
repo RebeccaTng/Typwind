@@ -43,7 +43,7 @@ div.roundProfilePic img {
     height: 5rem; /* 80px */
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75em) {
     div.roundProfilePic {
         height: 6.25rem; /* 100px */
         width: 6.25rem; /* 100px */
@@ -54,7 +54,7 @@ div.roundProfilePic img {
     }
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 31.25em) {
     div.user img.roundProfilePic {
         display: none;
     }

@@ -11,7 +11,7 @@ class ExpertController extends BaseController
 {
 
     /// CSS FILES *********************
-    private array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css", "components/expertComponents.css");
+    private array $commonCssFiles = array("components/main.css", "components/generalComponents.css", "components/menubar.css", "components/expertComponents.css");
     private array $studentsList = array("expert/studentsList.css");
     private array $home = array("expert/home.css");
     private array $exercises = array("expert/exercises.css");

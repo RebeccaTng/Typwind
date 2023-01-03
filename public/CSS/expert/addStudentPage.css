@@ -24,7 +24,7 @@ span.manText {
     margin-top: 0.625rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 62.5em) {
     div.infoContainer {
         flex-direction: column;
     }

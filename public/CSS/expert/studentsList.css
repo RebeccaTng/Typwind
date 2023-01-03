@@ -122,19 +122,19 @@ h3 {
     padding-top: 7.5rem;
 }
 
-@media screen and (max-width: 1750px) {
+@media screen and (max-width: 109.375em) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 90.625em) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -144,7 +144,7 @@ h3 {
     }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 43.75em) {
     div.bar {
         display: none;
     }
