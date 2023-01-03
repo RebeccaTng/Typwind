@@ -5,7 +5,7 @@
     </div>
 
     <div class="langWrap menuSubHeader language" >
-        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
+        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a><span class="bar"> | </span>
        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
 
