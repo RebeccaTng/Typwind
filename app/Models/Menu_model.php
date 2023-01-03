@@ -23,7 +23,7 @@ class Menu_model extends Model
         $this->menu_items_kids = array (
             array('name' => 'Home', 'title' => 'Go home', 'link' => '/kids/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
             array('name' => 'Exercises', 'title' => 'Check student', 'link' => '/kids/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
-            array('name' => 'My Avatar', 'title' => 'Review my Profile', 'link' => '/kids/avatar', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
+            array('name' => 'Avatars Shop', 'title' => 'Check Avatars shop', 'link' => '/kids/avatar', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
         );
     }
 
