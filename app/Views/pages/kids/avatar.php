@@ -24,6 +24,7 @@
                             <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
                         </div>
                         <span class="coin"><?= $avatar['price']?></span>
+                        <span class="errorMessage">Not enough money</span>
                     </div>
                 <?php endforeach;
             endif;?>

@@ -49,13 +49,16 @@ class Avatars extends Model
     {
         $avatarIcons=array();
         for($i=0;$i<count($this->avatars);$i++){
-            $avatarIcons[$i] = array('idAvatars' => $this->avatars[$i]->idAvatars, 'classCSS' => 'avatarChoice', 'price' =>  $this->avatars[$i]->price);
+            $avatarIcons[$i] = array('idAvatars' => $this->avatars[$i]->idAvatars, 'classCSS' => 'avatarChoice locked', 'price' =>  $this->avatars[$i]->price);
             if (! empty($this->avatarsBought)){
                 foreach ($this->avatarsBought as $avatarBought){
                     if($avatarBought->idAvatar_fk== $this->avatars[$i]->idAvatars||$this->avatars[$i]->idAvatars==1){
                         $avatarIcons[$i]['classCSS']= 'avatarChoice'.' '.self::BOUGHT_CSS_CLASS;
+                        $avatarIcons[$i]['price']='';
                         if ($avatarBought->selected){
                             $avatarIcons[$i]['classCSS']= 'avatarChoice'.' '.self::SELECTED_CSS_CLASS;
+                            $avatarIcons[$i]['price']='';
+
                         }
                         break;
                     }
