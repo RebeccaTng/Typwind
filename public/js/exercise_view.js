@@ -1,5 +1,19 @@
 /***VARIABLES***/
+//select elements that will be used
+let movableExerciseBoxText = document.getElementById("movableExerciseBoxText");
+let stopButton = document.getElementById("stopButton");
+let container = document.getElementById("effect");
+let textBox = document.getElementById("textBox");
+let imageContainer = document.getElementById("imageContainer");
+let soundContainer = document.getElementById("soundContainer");
+let soundContainerStart = document.getElementById("soundContainerStart");
+let textInputDB = document.getElementById("textInput");
+let handSelection = document.getElementById("handSelection");
+let formDB = document.getElementById("form");
+let scoreDB = document.getElementById("score");
+let dateDB = document.getElementById("date");
 
+//global variables
 let textInput = "No input from DB test tEsT tést têst tëst";
 let textChar;
 let currentKey = null;
@@ -12,6 +26,17 @@ let correctCharactersNeeded = 0;
 let correctAnswers = 0;
 let mistakes = 0;
 let score = 0;
+let wrongSoundsMap = new Map([
+    [1, "/public/assets/sounds/wrong1.mp3"],
+    [2, "/public/assets/sounds/wrong2.mp3"],
+    [3, "/public/assets/sounds/wrong3.mp3"],
+    [4, "/public/assets/sounds/wrong4.mp3"],
+    [5, "/public/assets/sounds/wrong5.mp3"],
+    [6, "/public/assets/sounds/wrong6.mp3"],
+    [7, "/public/assets/sounds/wrong7.mp3"],
+    [8, "/public/assets/sounds/wrong8.mp3"],
+    [9, "/public/assets/sounds/wrong9.mp3"],
+    [10, "/public/assets/sounds/wrong10.mp3"]]);
 let imageMap = new Map([
     [",",["/public/assets/pictures/,.jpg","KeyM",""]],
     ["=",["/public/assets/pictures/=.jpg","Slash",""]],
@@ -70,20 +95,6 @@ let imageMap = new Map([
 
 
 
-//select elements that will be used
-let movableExerciseBoxText = document.getElementById("movableExerciseBoxText");
-let stopButton = document.getElementById("stopButton");
-let container = document.getElementById("effect");
-let textBox = document.getElementById("textBox");
-let imageContainer = document.getElementById("imageContainer");
-let soundContainer = document.getElementById("soundContainer");
-let textInputDB = document.getElementById("textInput");
-let handSelection = document.getElementById("handSelection");
-let formDB = document.getElementById("form");
-let scoreDB = document.getElementById("score");
-let dateDB = document.getElementById("date");
-
-
 
 
 /***EVENTS***/
@@ -100,6 +111,7 @@ window.onload = atStart;   //runs the function when the page is loaded
 
 /*What needs to happen when the page is loaded*/
 function atStart(){
+    playSoundStarted();
     if(textInputDB.innerText !== null) {
         textInput = textInputDB.innerText;
     }
@@ -183,15 +195,17 @@ function processInputFunction() {
 
     //Given input is wrong
     } else {
+        playSoundWrong();
         wrongAnswered = true;
     }
 }
 
 /*Function for when the exercise is finished*/
-function exerciseFinishedFunction(){
+async function exerciseFinishedFunction(){
+    stopButton.disabled = true;
+    await playSoundFinished();
     score = ((correctCharactersNeeded-mistakes)/correctCharactersNeeded);
     submit()
-    stopButton.disabled = true;
 }
 
 /*Function to submit the code to the DB*/
@@ -245,6 +259,41 @@ function setImage(key){
         curr.remove();
    }
 }
+
+/*Function playing sound after wrong input*/
+function playSoundWrong(){
+    let number = Math.floor(Math.random() * (wrongSoundsMap.size)+1);
+    if(soundContainer.currentTime > 0){
+        soundContainer.pause();
+        soundContainer.currentTime = 0;
+    }
+    soundContainer.setAttribute("src", window.location.origin +  wrongSoundsMap.get(number));
+    soundContainer.play();
+}
+
+/*Function playing sound when game is finished*/
+function playSoundFinished(){
+    if(soundContainer.currentTime > 0){
+        soundContainer.pause();
+        soundContainer.currentTime = 0;
+    }
+    soundContainerStart.setAttribute("src", window.location.origin + "/public/assets/sounds/finished.mp3");
+    return new Promise(res=>{
+        soundContainerStart.play();
+        soundContainerStart.onended = res;
+    })
+}
+
+/*Function playing sound when game is started*/
+function playSoundStarted(){
+    if(soundContainerStart.currentTime > 0){
+        soundContainerStart.pause();
+        soundContainerStart.currentTime = 0;
+    }
+    soundContainerStart.setAttribute("src", window.location.origin + "/public/assets/sounds/start.mp3");
+    soundContainerStart.play();
+}
+
 
 /*Function for setting the correct sound. If keystroke has no sound nothing happens and sounds stops*/
 function playSound(key){

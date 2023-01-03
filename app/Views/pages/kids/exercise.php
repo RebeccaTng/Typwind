@@ -44,6 +44,7 @@
     <div class="exercise">
         <div id="imageContainer"></div>
         <audio id="soundContainer"></audio>
+        <audio id="soundContainerStart"></audio>
         <div class="textBox" id="textBox">
             <div class="textContainer " id="movableExerciseBoxText"></div>
         </div>
