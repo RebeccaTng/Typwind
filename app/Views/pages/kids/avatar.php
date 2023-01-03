@@ -79,5 +79,9 @@
         </div>
     </div>
 
+    <form action="http://localhost:8080/kids/buyAvatar/1">
+        <input type="submit" value="buy avatar" />
+    </form>
+
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
