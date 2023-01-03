@@ -19,7 +19,8 @@
 
             <?php if (! empty($avatars) && is_array($avatars)):
                 foreach ($avatars as $avatar):?>
-                    <div class="<?= $avatar['classCSS']?> ">
+<!--                    The id of this div is the same as the avatar-->
+                    <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?> >
                         <div class="roundProfilePic">
                             <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
                         </div>
