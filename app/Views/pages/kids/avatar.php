@@ -32,7 +32,7 @@
 
         </div>
 <!--        this is an example of how to call the buyAvatar in the controller -->
-        <form action="http://localhost:8080/kids/buyAvatar/15" method="post">
+        <form action="http://localhost:8080/kids/buyAvatar/10" method="post">
             <div >
                 <input id="seven" class="button buttonPrimary buttonExpert" type="submit" value="Save">
             </div>
