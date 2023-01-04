@@ -21,7 +21,7 @@ class ExpertController extends BaseController
     private array $profile = array("expert/profile.css");
     private array $editProfilePage = array("expert/profile.css", "expert/editProfile.css");
     private array $exerciseContent = array("expert/exerciseContent.css");
-    private array $editExercise = array("expert/editExercise.css");
+    private array $addExercisePage = array("expert/exercises.css","expert/addExercisePage.css");
 
 
     /// END OF CSS FILES ************************
@@ -72,8 +72,8 @@ class ExpertController extends BaseController
                 return $this->editProfilePage();
             case 'exerciseContent':
                 return $this->exerciseContent();
-            case 'editExercise':
-                return $this->editExercise();
+            case 'addExercisePage':
+                return $this->addExercisePage();
 
             default:
                 return $this->commonCssFiles;
@@ -100,8 +100,8 @@ class ExpertController extends BaseController
                 return $this->includeCSSFilesInCommonFiles( $this->editProfilePage);
             case 'exerciseContent':
                 return $this->includeCSSFilesInCommonFiles( $this->exerciseContent);
-            case 'editExercise':
-                return $this->includeCSSFilesInCommonFiles( $this->editExercise);
+            case 'addExercisePage':
+                return $this->includeCSSFilesInCommonFiles( $this->addExercisePage);
             default:
                 return $this->commonCssFiles;
         }
@@ -291,7 +291,7 @@ class ExpertController extends BaseController
 
         return $data;
     }
-    private function editExercise():array
+    public function addExercisePage():array
     {
         $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
@@ -310,7 +310,7 @@ class ExpertController extends BaseController
 
         $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
-        $css = ['cssFiles' =>  $this->getCSSFile("editExercise")];
+        $css = ['cssFiles' =>  $this->getCSSFile("addExercisePage")];
         $dataAddExercise = array_merge($this->getDataForPage('exercises',0),$css);
         return view('pages/experts/exercises', $dataAddExercise);
     }

@@ -36,7 +36,7 @@
 <h1>Exercises</h1>
 
 <!-- Add new exercise -->
-<a class="addNew" href=<?php echo base_url('experts/editExercise/');?>>Add New Exercise</a>
+<a class="addNew" href=<?php echo base_url('experts/addExercisePage/');?>>Add New Exercise</a>
 
 <div class="exerciseContainer">
 </div>
