@@ -303,8 +303,9 @@ class ExpertController extends BaseController
         return $data;
     }
 
-    public function editExercisePage():array
+    public function editExercisePage($idExercises):array
     {
+        $this->data['idExercises']=$idExercises;
         $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
         return $data;

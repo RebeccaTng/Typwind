@@ -18,11 +18,18 @@
             }
         }
         for (const lessonId of lessonsMap.keys()) {
+            const lessonNumber= parseInt(lessonId);
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
                 console.log(lessonGroup)
-                let exercisesText = "<div class='card lessonCard'> <h2>"+"Lesson "+lessonId +"</h2>"
 
+                if(lessonNumber!==0){
+                    exercisesText = "<div class='card lessonCard'> <h2>" + "Lesson " + lessonId + "</h2>"
+                }
+                else
+                {
+                    exercisesText = "<div class='card lessonCard'> <h2>" + "Custom Exercises" + "</h2>"
+                }
                 lessonGroup.forEach(element => exercisesText = exercisesText + "<h4 class='exerciseField'>" + element.name + "</h4>");
                 exercisesText = exercisesText + "</div>"
                 $(".exerciseContainer").append(exercisesText);
