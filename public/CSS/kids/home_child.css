@@ -57,7 +57,7 @@ h4.exercise_name{
 .mainContent {
     position: relative;
     overflow: hidden;
-    padding: 100px;
+    /*padding: 100px;*/
 
     /* WAVE COMPONENT CODE */
     background-image: url(/public/assets/general/wave.svg);
@@ -76,7 +76,6 @@ h4.exercise_name{
     flex-wrap: wrap;
     overflow: hidden;
     transition: opacity 500ms;
-    /*background-color: #002b36;*/
 }
 
 .balloon {

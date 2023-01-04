@@ -1,16 +1,16 @@
-const balloonContainer = document.getElementById("balloon-container");
 
 function random(num) {
     return Math.floor(Math.random() * num);
 }
 
 function getRandomStyles() {
-    var r = random(255);
-    var g = random(255);
-    var b = random(255);
-    var mt = random(200);
-    var ml = random(50);
-    var dur = random(5) + 5;
+    let result = [[243, 116, 96], [244, 166, 132 ], [166, 220, 222], [18, 144, 142], [255, 247, 243]][Math.floor(Math.random() * 5)]
+    let r = result[0];
+    let g = result[1];
+    let b = result[2];
+    let mt = random(200);
+    let ml = random(50);
+    let dur = random(5) + 5;
     return `
   background-color: rgba(${r},${g},${b},0.7);
   color: rgba(${r},${g},${b},0.7); 
@@ -20,26 +20,28 @@ function getRandomStyles() {
   `;
 }
 
-function createBalloons(num) {
-    for (var i = num; i > 0; i--) {
-        var balloon = document.createElement("div");
+function createBalloons(num,balloonContainer) {
+    for (let i = num; i > 0; i--) {
+        const balloon = document.createElement("div");
         balloon.className = "balloon";
         balloon.style.cssText = getRandomStyles();
         balloonContainer.append(balloon);
     }
 }
 
-function removeBalloons() {
-    balloonContainer.style.opacity = 0;
-    setTimeout(() => {
-        balloonContainer.remove()
-    }, 500)
-}
+// function removeBalloons(balloonContainer) {
+//
+//     setTimeout(() => {
+//
+//         balloonContainer.style.opacity = 0;
+//         balloonContainer.remove()
+//     }, 8000)
+// }
 
-window.addEventListener("load", () => {
-    createBalloons(30)
+$(document).ready(function(){
+
+    const balloonContainer = document.getElementById("balloon-container");
+    if(balloonContainer!==null) createBalloons(70,balloonContainer)
+
 });
 
-window.addEventListener("click", () => {
-    removeBalloons();
-});

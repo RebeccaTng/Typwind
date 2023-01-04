@@ -1,7 +1,7 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
-
+    <script type="text/javascript" src="<?=base_url()?>/public/js/balloons.js" ></script>
 <?php setcookie("currentPage","studentHome", time()+36000, "/");?>
 <div id="balloon-container">
 </div>
@@ -46,8 +46,10 @@
             <?php endif;?>
     <!--    </div>-->
     </div>
-
 </div>
+
+
+
 
 
 
