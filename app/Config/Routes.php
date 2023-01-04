@@ -17,8 +17,8 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultController('RegistrationController');
+$routes->setDefaultMethod('welcome');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -39,6 +39,7 @@ $routes->setAutoRoute(true);
 
 //Expert routes
 //$routes->get('/experts/(:any)', 'ExpertController::view/$1');
+$routes->get('', 'RegistrationController::welcome',['filter'=>'AuthGuard']);
 $routes->get('/experts/(:any)', 'ExpertController::view/$1/$2',['filter'=>'AuthGuard']);
 //$routes->get('/experts/home', 'ExpertController::home',['filter'=>'AuthGuard']);
 $routes->get('/experts/studentsList', 'ExpertController::studentsList',['filter'=>'AuthGuard']);
