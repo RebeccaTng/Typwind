@@ -25,3 +25,11 @@ div.user {
 div.roundProfilePic {
     margin: 0;
 }
+
+.buttonPrimary {
+    order: 1;
+}
+
+.buttonSecondary {
+    order: 2;
+}

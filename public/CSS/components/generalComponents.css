@@ -146,6 +146,10 @@ div.bottomBar {
     width: 100%;
 }
 
+div.space {
+    justify-content: space-between;
+}
+
 /* INPUT FIELD */
 input {
     height: 2.5rem; /* 40px */

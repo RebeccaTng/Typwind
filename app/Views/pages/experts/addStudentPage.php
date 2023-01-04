@@ -12,10 +12,11 @@
     <h1>Add Student</h1>
 
     <div class="scroller">
-        <form class="studentContainer" action= "<?php echo base_url('experts/addStudent');?>" method="post">
+        <div class="studentContainer">
             <div class="infoContainer">
                 <div class="general">
                     <h3>General Information</h3>
+                    <form action= "<?php echo base_url('experts/addStudent');?>" method="post">
                     <div class="generalFields">
                         <label for="firstname"><b>First name</b><span class="mandatory">* </span><b>:</b></label  required>
                         <input type="text" id="firstname" name="firstname" placeholder="First name" required>
@@ -62,10 +63,14 @@
                 </div>
             </div>
 
-            <div class="bottomBar">
+            <div class="bottomBar space">
                 <input type="submit" value="Submit" class="button buttonPrimary buttonExpert">
+                    </form>
+                <a href= "<?php echo base_url('experts/studentsList');?>">
+                    <button class="button buttonSecondary buttonExpert">BACK</button>
+                </a>
             </div>
-        </form>
+        </div>
     </div>
 
 <?= $this->endSection() ?>
