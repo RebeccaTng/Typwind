@@ -52,6 +52,10 @@ img.logo {
     margin-top: 0;
 }
 
+div.card {
+    border: none;
+}
+
 @media screen and (max-width: 600px) {
     div.card {
         padding: 0.625rem 3.125rem 1.563rem;
