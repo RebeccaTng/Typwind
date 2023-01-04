@@ -28,12 +28,15 @@ class ExpertController extends BaseController
     //    private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
+    private ExerciseModel  $exercises_model;
+
     private $menu_model;
 
     public function __construct() {
         $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
+        $this->exercises_model = new ExerciseModel();
     }
     public function view($page = 'home',$arg='0')
     {
@@ -294,5 +297,23 @@ class ExpertController extends BaseController
 
         return $data;
     }
+
+    public function addExercise()
+    {
+        $data['name']= $_POST['title'];
+        $data['text'] = $_POST['content'];
+        $data['lesson'] = $_POST['lesson'];
+        $data['idTeacher_fk']= session()->id;
+        $data['isCustom']= 1;
+
+        $this->exercises_model->add_exercise($data);
+
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        $css = ['cssFiles' =>  $this->getCSSFile("editExercise")];
+        $dataAddExercise = array_merge($this->getDataForPage('exercises',0),$css);
+        return view('pages/experts/exercises', $dataAddExercise);
+    }
+
 
 }

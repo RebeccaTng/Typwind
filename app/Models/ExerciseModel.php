@@ -15,4 +15,10 @@ class ExerciseModel extends Model
 
         return $this->where(['id_exercise' => $id_exercise])->first();
     }
+
+    public function add_exercise($data)
+    {
+        $query = $this->db->table('exercises')->insert($data);
+        return $query;
+    }
 }

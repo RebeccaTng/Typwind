@@ -7,19 +7,19 @@
     <li>Exercise</li>
 </ul>
 
-<h1>Exercise</h1>
+<h1>Add Exercise</h1>
 
 <div class="scroller">
+    <form class="exerciseContainer" action= "<?php echo base_url('experts/addExercise');?>" method="post">
     <div class="infoContainer">
         <div class="generalContainer">
             <h3>General Information</h3>
             <div class="general">
-
                 <p>
-                    <label for="titleExercise"><b>Title Exercise:</b></label>
-                    <input type="text" id="titleExercise" name="titleExercise"><br>
-                    <label for="createdBy"><b>Created by:</b></label>
-                    <input type="text" id="createdBy" name="createdBy"><br>
+                    <label for="title"><b>Title Exercise:</b></label>
+                    <input type="text" id="title" name="title"><br>
+                    <label for="lesson"><b>Lesson:</b></label>
+                    <input type="text" id="lesson" name="lesson"><br>
                 </p>
             </div>
 
@@ -29,13 +29,15 @@
             </div>
         </div>
     </div>
+        <div class="bottomBar">
+            <a>
+                <button class="button buttonPrimary buttonExpert">save</button>
+            </a>
+        </div>
+    </form>
 </div>
 
-<div class="bottomBar">
-    <a>
-        <button class="button buttonPrimary buttonExpert">save</button>
-    </a>
-</div>
+
 
 
 <?= $this->endSection() ?>
