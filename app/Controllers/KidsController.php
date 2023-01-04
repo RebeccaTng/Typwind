@@ -170,13 +170,12 @@ class KidsController extends BaseController
     public function buyAvatar($idAvatars)
     {
         $data['idAvatar']= $idAvatars;
-        $data['idStudents']=session()->id;
-        $data['response']= $this->students_model->avatarStartTransaction($data['idStudents'], $data['idAvatar']);
+        $data['response'] = $this->students_model->avatarStartTransaction(session()->id, $data['idAvatar']);
         $css = ['cssFiles' =>  $this->getCSSFile("avatar")];
-        $dataAvatar = array_merge($this->getDataForPage('avatar',0),$css);
+        $dataAvatar = array_merge($this->getDataForPage('avatar',0),$css,$data);
+        print_r($dataAvatar);
         return view('pages/kids/avatar',$dataAvatar);
     }
-
 
 
 }
