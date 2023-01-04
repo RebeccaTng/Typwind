@@ -76,7 +76,7 @@ class ExpertController extends BaseController
             case 'addExercisePage':
                 return $this->addExercisePage();
             case 'editExercisePage':
-                return $this->editExercisePage();
+                return $this->editExercisePage($args);
 
             default:
                 return $this->commonCssFiles;
@@ -141,6 +141,7 @@ class ExpertController extends BaseController
         $model = model(ExerciseModel::class);
         $data = ['exercises' => json_encode($model->getExercises())];
         $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+        session()->set('exercises', $data['exercises']);
         return ($data);
     }
 
@@ -306,9 +307,11 @@ class ExpertController extends BaseController
     public function editExercisePage($idExercises):array
     {
         $this->data['idExercises']=$idExercises;
-        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+        $this->data['exercises'] = session()->get('exercises');
 
-        return $data;
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        return( $this->data);
     }
 
     public function addExercise()
@@ -336,13 +339,12 @@ class ExpertController extends BaseController
         $this->data['lesson'] = $_POST['lesson'];
         $this->data['idTeacher_fk']= session()->id;
         $this->data['isCustom']= 1;
-
         $this->exercises_model->edit_exercise($this->data);
         $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
         $css = ['cssFiles' =>  $this->getCSSFile("exercises")];
-        $dataAddStudent = array_merge($this->getDataForPage('exercises',0),$css);
-        return view('pages/experts/exercises', $dataAddStudent);
+        $this->dataAddStudent = array_merge($this->getDataForPage('exercises',0),$css);
+        return view('pages/experts/exercises', $this->dataAddStudent);
 
     }
 

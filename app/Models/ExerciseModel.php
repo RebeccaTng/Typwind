@@ -5,6 +5,8 @@ namespace App\Models;
 use CodeIgniter\Model;
 class ExerciseModel extends Model
 {
+    protected $db;
+    protected $DBGroup = 'default';
     protected $table = 'exercises';
 
     public function getExercises($id_exercise = false)
