@@ -18,9 +18,6 @@ div.notes {
 span.mandatory {
     font: var(--smallText);
     color: var(--secondary-dark);
-}
-
-span.manText {
     margin-top: 0.625rem;
 }
 

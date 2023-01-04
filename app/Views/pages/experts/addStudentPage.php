@@ -53,12 +53,13 @@
                             <input type="checkbox" id="active" name="active" checked>
                             <span class="slider"></span>
                         </label>
-                        <span class="mandatory manText">*Mandatory Fields</span>
+                        <span class="mandatory">*Mandatory fields</span>
                     </div>
                 </div>
 
                 <div class="notes">
                     <label for="notes"><h3>Notes</h3></label>
+                    <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
                     <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."></textarea>
                 </div>
             </div>

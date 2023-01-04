@@ -75,6 +75,15 @@ div.generalFields {
     order: 2;
 }
 
+div.notes label h3 {
+    margin: 0;
+}
+
+.notesExplanation {
+    font: var(--smallText);
+    margin-bottom: 0.938rem;
+}
+
 @media screen and (max-width: 1050px) {
     form.studentContainer {
         grid-template-columns: 100%;
