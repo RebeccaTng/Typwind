@@ -21,4 +21,11 @@ class ExerciseModel extends Model
         $query = $this->db->table('exercises')->insert($data);
         return $query;
     }
+
+    public function edit_exercise($data)
+    {
+        $builder = $this->db->table('exercises');
+        $builder->where('idExercises', $data['idExercises']);
+        $builder->update($data);
+    }
 }
