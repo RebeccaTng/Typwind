@@ -6,14 +6,14 @@ div.bar .addNew{
     font: var(--navText);
     text-decoration: none;
     padding: 0;
-    display: flex;
-    align-items: center;
 }
 
 div.bar .addNew::before{
-    content: url("/public/assets/icons/add.svg");
-    vertical-align: middle;
-    padding-right: 0.625rem; /*10px*/
+    content: "";
+    background: url("/public/assets/icons/add.svg") no-repeat center;
+    background-size: 2.188rem auto;
+    padding: 1.094rem 0 1.094rem 2.188rem;
+    margin-right: 0.625rem;
 }
 
 div.bar .addNew:hover {
@@ -24,7 +24,7 @@ div.bar .addNew:hover {
 div.bar {
     margin: 0.563rem 4.688rem 2.5rem 0; /*9px 75px 40px 0*/
     display: grid;
-    grid-template-columns: fit-content(13.125rem) auto fit-content(9.375rem) fit-content(14.375rem);
+    grid-template-columns: fit-content(14.125rem) auto fit-content(9.375rem) fit-content(14.375rem);
     column-gap: 1.875rem;
     align-items: center;
 }
