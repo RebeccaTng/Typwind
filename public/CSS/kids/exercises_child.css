@@ -25,14 +25,24 @@ div.exerciseContainer {
     padding-right: 2.188rem; /*35px*/
     padding-bottom: 1.875rem; /*30px*/
 }
-.scrollButtons{
-    display: grid;
-    grid-template-columns: 1fr
-}
+/*.scrollButtons{*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr;*/
+/*}*/
 /*Scroll Buttons*/
 .round {
     border-radius: 50%;
     padding: 10px;
+    background-color: var(--beigeNeutral);
+    border-color: var(--beigeNeutral);
+    border-width: 0px;
+
+}
+.button:hover:enabled {
+    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
+    background-color: var(--beigeNeutral);
+    border-color: var(--secondary-light);
+    border-width: 2px;
 }
 /* LESSON CARD */
 div.lessonCardChild {
@@ -58,9 +68,7 @@ div.lessonCardChild h2 {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "header header header";
     }
-    div.scrollButtons{
 
-    }
 }
 
 @media screen and (max-width: 1250px) {
