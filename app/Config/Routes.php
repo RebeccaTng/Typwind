@@ -47,11 +47,10 @@ $routes->get('/experts/editStudentPage/(:num)', 'ExpertController::editStudentPa
 $routes->post('/experts/editStudent/(:num)', 'ExpertController::editStudent/$1',['filter'=>'AuthGuard']);
 $routes->get('/experts/addStudentPage', 'ExpertController::addStudentPage',['filter'=>'AuthGuard']);
 $routes->post('/experts/addStudent', 'ExpertController::addStudent',['filter'=>'AuthGuard']);
-$routes->get('/experts/profile', 'ExpertController::profile',['filter'=>'AuthGuard']);
 $routes->get('/experts/exercises', 'ExpertController::exercises',['filter'=>'AuthGuard']);
 $routes->post('/experts/addExercise', 'ExpertController::addExercise',['filter'=>'AuthGuard']);
-
-
+$routes->post('/experts/editExercise', 'ExpertController::editExercise',['filter'=>'AuthGuard']);
+$routes->get('/experts/profile', 'ExpertController::profile',['filter'=>'AuthGuard']);
 $routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1',['filter'=>'AuthGuard']);
 $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',['filter'=>'AuthGuard']);
 
