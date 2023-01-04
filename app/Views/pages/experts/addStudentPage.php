@@ -25,7 +25,7 @@
                         <label for="email"><b>Email</b><span class="mandatory">* </span><b>:</b></label>
                         <input type="text" id="email" name="email" placeholder="Email" required>
 
-                        <label for="gender"><b>Gender:</b></label>
+                        <label for="gender"><b>Gender</b><span class="mandatory">* </span><b>:</b></label>
                         <select name="gender" id="gender" required>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -34,7 +34,7 @@
                         <label for="birthday"><b>Birthday</b><span class="mandatory">* </span><b>:</b></label>
                         <input type="date" id="birthday" name="birthday" required>
 
-                        <label for="teachers"><b>Teacher:</b></label>
+                        <label for="teachers"><b>Teacher</b><span class="mandatory">* </span><b>:</b></label>
                         <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>" required>
                             <?php foreach ($teachers as $teacher):?>
                                 <option value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
