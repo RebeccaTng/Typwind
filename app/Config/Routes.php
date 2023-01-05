@@ -65,6 +65,7 @@ $routes->post('/kids/feedback/(:num)', 'KidsController::feedback/$1',['filter'=>
 $routes->post('/kids/buyAvatar/(:num)', 'KidsController::buyAvatar/$1',['filter'=>'AuthGuard']);
 
 
+
 /// design testing Route
 $routes->get('/design/(:any)', 'DesignController::view/$1');
 $routes->get('/design/(:any)', 'DesignController::view/$1');

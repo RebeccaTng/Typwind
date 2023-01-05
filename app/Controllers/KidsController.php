@@ -44,7 +44,7 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
-        print_r($data);
+        //print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
@@ -63,7 +63,7 @@ class KidsController extends BaseController
             case 'exercise':
                 return $this->exercise($args);
             case 'avatar':
-                return $this->avatar();
+                return $this->avatar($args);
 
 
 
@@ -102,8 +102,8 @@ class KidsController extends BaseController
         $data['scores'] = $this->students_model->getBestScores($data['idStudents']);
         $data['menu_items'] = $this->menu_model->get_menuitems_kids();
         $data['exercises']= $this->students_model->getExercises();
-
         session()->set('exercises', $data['exercises']);
+        session()->set('avatars', $this ->avatarModel->getAvatarIcons(session()->id));
         return $data;
     }
 
@@ -158,24 +158,38 @@ class KidsController extends BaseController
         return $data;
     }
 
-    private function avatar():array
+    private function avatar($response):array
     {
         $data['idStudents']=session()->id;
+        $idPurchasedAvatar=session()->get('idPurchasedAvatar');
+
+
+        if($response=="confirm")
+        {
+
+            $data['idPurchasedAvatar']=$idPurchasedAvatar;
+            $data['response'] = $this->students_model->avatarStartTransaction(session()->id, $data['idPurchasedAvatar'],0);
+            session()->set('avatars', $this ->avatarModel->getAvatarIcons(session()->id));
+        }
+        $data['idStudents']=session()->id;
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatars Shop');
-        $data['avatars'] = $this ->avatarModel->getAvatarIcons(session()->id);
-        $data['idOfSelectedAvatar'] =$this ->avatarModel->getIdOfSelectedAvatar();
+        $data['avatars']= session()->get('avatars');
+        //$data['idOfSelectedAvatar'] =$this ->avatarModel->getIdOfSelectedAvatar();
         return $data;
     }
 
     public function buyAvatar($idAvatars)
     {
-        $data['idAvatar']= $idAvatars;
-        $data['response'] = $this->students_model->avatarStartTransaction(session()->id, $data['idAvatar']);
+        session()->set('idPurchasedAvatar', $idAvatars);
+        $data['idPurchasedAvatar']= session()->get('idPurchasedAvatar');
+        $data['response'] = $this->students_model->avatarStartTransaction(session()->id, $data['idPurchasedAvatar'],1);
         $css = ['cssFiles' =>  $this->getCSSFile("avatar")];
+
         $dataAvatar = array_merge($this->getDataForPage('avatar',0),$css,$data);
-        print_r($dataAvatar);
+        //print_r($dataAvatar);
         return view('pages/kids/avatar',$dataAvatar);
     }
+
 
 
 }

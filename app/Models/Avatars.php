@@ -86,6 +86,7 @@ class Avatars extends Model
     {
         $query_text = 'SELECT  idAvatar_fk, selected FROM student_avatar_fk WHERE idStudent_fk= ?;';
         $query = $this->db->query($query_text, $idStudent);
+        print_r($query->getResult());
         return $query->getResult();
     }
 }

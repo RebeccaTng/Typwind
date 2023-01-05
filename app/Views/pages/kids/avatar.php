@@ -1,9 +1,10 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
+
+<script type="text/javascript" src="<?=base_url()?>/public/js/shop.js"></script>
     <!--START OF PAGE CONTENT-->
     <!--ADD HERE ALL THE PHP AND HTML THAT YOUR PAGE NEEDS-->
-
     <h1>My Avatar</h1>
     <div class="avatarContent">
             <div class="roundProfilePic currentPic">
@@ -16,30 +17,59 @@
                 <span class="coin">120</span>
             </div>
             <div class="card avatarCard">
-
             <?php if (! empty($avatars) && is_array($avatars)):
-                foreach ($avatars as $avatar):?>
-<!--                    The id of this div is the same as the avatar-->
-                    <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?> >
-                        <div class="roundProfilePic">
-                            <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
+                foreach ($avatars as $avatar):
+                    if($avatar['classCSS'] =="avatarChoice chosen" || $avatar['classCSS'] =="avatarChoice bought" ):?>
+                        <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?>>
+                            <div class="roundProfilePic">
+                                <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
+                            </div>
+                            <span class="coin"><?= $avatar['price']?></span>
                         </div>
-                        <span class="coin"><?= $avatar['price']?></span>
-                        <span class="errorMessage">Not enough money</span>
-                    </div>
+                    <?php else:?>
+                        <div id="confirm">
+                            <div class="message"></div>
+                            <button class="yes">Yes</button>
+                            <button class="no">No</button>
+                        </div>
+    <!--                    The id of this div is the same as the avatar-->
+                        <a href="#" onclick="post(<?php echo $avatar['idAvatars'] ?>)">
+                            <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?>>
+                                <div class="roundProfilePic">
+                                    <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
+                                </div>
+                                <span class="coin"><?= $avatar['price']?></span>
+                                <span id="<?= $avatar['idAvatars']?>e" class="errorMessage" hidden >Not enough money</span>
+                                <?php if(isset($response) && $idPurchasedAvatar== $avatar['idAvatars'] && $response == "error"):?>
+                                    <script>
+                                        var error = "<?= $avatar['idAvatars']?>e";
+                                        message(error);
+                                    </script>
+                                <?php endif;?>
+                                <?php if(isset($response) && ($idPurchasedAvatar== $avatar['idAvatars']) && ($response == "ok")): ?>
+                                <script>
+                                    functionConfirm("Are you sure?", function yes() {
+                                            commit()
+                                        },
+                                        function no() {
+                                            rollback();
+                                        });
+                                </script>
+
+
+                                <?php endif;?>
+
+                            </div>
+                        </a>
+                    <?php endif;?>
+
                 <?php endforeach;
             endif;?>
 
         </div>
-<!--        this is an example of how to call the buyAvatar in the controller -->
-        <form action="http://localhost:8080/kids/buyAvatar/10" method="post">
-            <div >
-                <input id="seven" class="button buttonPrimary buttonExpert" type="submit" value="Save">
-            </div>
-        </form>
-        <!--       End of example, please remove after not needed -->
-
     </div>
+
+
 
     <!--END OF PAGE CONTENT-->
 <?= $this->endSection() ?>
