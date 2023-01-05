@@ -7,6 +7,7 @@
 
     justify-content: stretch;
     grid-template-areas:'.' 'header' 'subHeader''.''item''item''item''item''item''item''item' 'item'   '.''.' '.''.' 'footer''footer' '.';
+
 }
 .menu_grid-container p{
     font: var(--navText);

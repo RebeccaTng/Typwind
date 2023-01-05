@@ -24,6 +24,7 @@ div.exerciseContainer {
     align-items: center;
     padding-right: 2.188rem; /*35px*/
     padding-bottom: 1.875rem; /*30px*/
+    width: 100%;
 }
 /*.scrollButtons{*/
 /*    display: grid;*/
@@ -33,9 +34,12 @@ div.exerciseContainer {
 .round {
     border-radius: 50%;
     padding: 10px;
-    background-color: var(--beigeNeutral);
-    border-color: var(--beigeNeutral);
-    border-width: 0px;
+    background-color: transparent;
+    border-color: transparent;
+    /*background-color: var(--beigeNeutral);*/
+    /*border-color: var(--beigeNeutral);*/
+    /*border-width: 0px;*/
+    /*border-style: solid;*/
 
 }
 .button:hover:enabled {
@@ -43,6 +47,7 @@ div.exerciseContainer {
     background-color: var(--beigeNeutral);
     border-color: var(--secondary-light);
     border-width: 2px;
+    /*border-style: solid;*/
 }
 /* LESSON CARD */
 div.lessonCardChild {
