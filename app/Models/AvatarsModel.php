@@ -28,7 +28,7 @@ class AvatarsModel extends Model
     {
         $avatars=$this->geAvatars();
         $avatarsBought=$this->geAvatarsBought(session()->id);
-        $this->setCurrentCoins();
+        $this->getCurrentCoins(session()->id);
         $this->setIdOfSelectedAvatar($avatarsBought);
         $this->setAvatarIcons($avatars,$avatarsBought);
     }
@@ -87,13 +87,19 @@ class AvatarsModel extends Model
         unset($this->avatarIcons);
         $this->avatarIcons= $avatarIcons;
     }
-    private function getCurrentCoins(): int
+    private function setCurrentCoins($inputCoins): void
     {
-        return $this->coins;
+        $this->coins=0;
+        if(!empty($inputCoins)){
+            $this->coins=$inputCoins[0]->coins;
+            session()->set('coins',$this->coins);
+        }
     }
-    private function setCurrentCoins(): void
+    private function getCurrentCoins($idStudent): void
     {
-        $this->coins=120;
+        $query_text = 'SELECT coins FROM students WHERE idStudents=37;';
+        $query = $this->db->query($query_text,$idStudent);
+        $this->setCurrentCoins($query->getResult());
     }
     private function geAvatars():array
     {
