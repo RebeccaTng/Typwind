@@ -103,7 +103,8 @@ span.coin {
 span.coin:before {
     content: "";
     background: url("/public/assets/icons/coinYellow.svg") no-repeat center;
-    background-size: 1.563rem auto;
-    padding-left: 1.563rem;
+    background-size: 1.25rem auto;
+    padding-left: 1.25rem;
+    margin-right: 0.5rem;
 }
 

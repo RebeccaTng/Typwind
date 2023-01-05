@@ -26,7 +26,7 @@
 .menuHeader div.roundProfilePic {
     height: 7.5rem; /* 120px */
     width: 7.5rem; /* 120px */
-    border: 0.25rem solid var(--secondary-light); /* 4px */
+    border-width: 0.25rem; /* 4px */
 }
 
 .menuHeader div.roundProfilePic img {
