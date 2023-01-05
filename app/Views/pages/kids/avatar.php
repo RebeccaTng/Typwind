@@ -17,47 +17,46 @@
             </div>
             <div class="card avatarCard">
 
-<!--            --><?php //if (! empty($avatars) && is_array($avatars)):
-//                foreach ($avatars as $avatar):?>
-<!--                    The id of this div is the same as the avatar-->
-<!--                    <div class="--><?php //= $avatar['classCSS']?><!-- " id =--><?php //= $avatar['idAvatars']?><!-- >-->
-<!--                        <div class="roundProfilePic">-->
-<!--                            <img src="/public/assets/avatars/--><?php //= $avatar ['idAvatars']?><!--.svg" alt="User Icon">-->
-<!--                        </div>-->
-<!--                        <span class="coin">--><?php //= $avatar['price']?><!--</span>-->
-<!--                        <span class="errorMessage">Not enough money</span>-->
-<!--                    </div>-->
-<!--                --><?php //endforeach;
-//            endif;?>
+            <?php if (! empty($avatars) && is_array($avatars)):
+                foreach ($avatars as $avatar):?>
+                    <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?> >
+                        <div class="roundProfilePic">
+                            <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
+                        </div>
+                        <span class="coin"><?= $avatar['price']?></span>
+                        <span class="errorMessage">Not enough money</span>
+                    </div>
+                <?php endforeach;
+            endif;?>
 
-                <div class="avatarChoice chosen"> <!--ADD 'chosen' TO DIV IF IT IS THE CURRENT AVATAR-->
-                    <div class="roundProfilePic">
-                        <img src="/public/assets/avatars/1.svg" alt="User Icon">
-                    </div>
-                    <span class="coin">Selected</span>
-                    <span class="errorMessage">Not enough money</span>
-                </div>
-                <div class="avatarChoice bought"> <!--ADD 'bought' TO DIV IF IT IS THEY BOUGHT THE AVATAR ALREADY BUT IT IS NOT THE CURRENT ONE-->
-                    <div class="roundProfilePic">
-                        <img src="/public/assets/avatars/2.svg" alt="User Icon">
-                    </div>
-                    <span class="coin">Purchased</span>
-                    <span class="errorMessage">Not enough money</span>
-                </div>
-                <div class="avatarChoice locked"> <!--NOT BOUGHT AVATARS SHOULD HAVE 'locked'-->
-                    <div class="roundProfilePic">
-                        <img src="/public/assets/avatars/3.svg" alt="User Icon">
-                    </div>
-                    <span class="coin">120</span>
-                    <span class="errorMessage">Not enough money</span>
-                </div>
-                <div class="avatarChoice locked noMoney"> <!--'noMoney'-->
-                    <div class="roundProfilePic">
-                        <img src="/public/assets/avatars/4.svg" alt="User Icon">
-                    </div>
-                    <span class="coin">120</span>
-                    <span class="errorMessage">Not enough money</span> <!--Only show message if there isn't enough money in a if statement-->
-                </div>
+<!--                <div class="avatarChoice chosen"> -->
+<!--                    <div class="roundProfilePic">-->
+<!--                        <img src="/public/assets/avatars/1.svg" alt="User Icon">-->
+<!--                    </div>-->
+<!--                    <span class="coin">Selected</span>-->
+<!--                    <span class="errorMessage">Not enough money</span>-->
+<!--                </div>-->
+<!--                <div class="avatarChoice bought"> -->
+<!--                    <div class="roundProfilePic">-->
+<!--                        <img src="/public/assets/avatars/2.svg" alt="User Icon">-->
+<!--                    </div>-->
+<!--                    <span class="coin">Purchased</span>-->
+<!--                    <span class="errorMessage">Not enough money</span>-->
+<!--                </div>-->
+<!--                <div class="avatarChoice locked"> -->
+<!--                    <div class="roundProfilePic">-->
+<!--                        <img src="/public/assets/avatars/3.svg" alt="User Icon">-->
+<!--                    </div>-->
+<!--                    <span class="coin">120</span>-->
+<!--                    <span class="errorMessage">Not enough money</span>-->
+<!--                </div>-->
+<!--                <div class="avatarChoice locked noMoney"> -->
+<!--                    <div class="roundProfilePic">-->
+<!--                        <img src="/public/assets/avatars/4.svg" alt="User Icon">-->
+<!--                    </div>-->
+<!--                    <span class="coin">120</span>-->
+<!--                    <span class="errorMessage">Not enough money</span> -->
+<!--                </div>-->
 
             </div>
 
