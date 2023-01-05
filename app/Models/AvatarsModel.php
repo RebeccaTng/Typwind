@@ -50,10 +50,12 @@ class AvatarsModel extends Model
             foreach ($avatarsBought as $avatarBought):
                 if($avatarBought->selected):
                     $this->idOfSelectedAvatar=$avatarBought->idAvatar_fk;
+
                     break;
                 endif;
             endforeach;
         endif;
+        session()->set('idOfAvatar',$this->idOfSelectedAvatar);
     }
 
     public function setAvatarIcons($avatars,$avatarsBought): void

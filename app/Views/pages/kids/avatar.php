@@ -13,7 +13,7 @@
             </div>
             <div class="coins">
                 <h3>My Coins</h3>
-                <span class="coin"><?=(!empty($coins))? $coins:0;?></span>
+                <span class="coin"><?=(!empty(session()->coins))? session()->coins:0;?></span>
             </div>
             <div class="card avatarCard">
 
