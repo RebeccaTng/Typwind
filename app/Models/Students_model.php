@@ -81,7 +81,7 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
         $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
-    public function avatarStartTransaction($idStudents, $idAvatars)
+    public function checkPrice($idStudents, $idAvatars)
     {
         $this->db->transBegin();
 
@@ -93,25 +93,84 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
 
         $query_text= "SELECT IF(coins>=0,'ok','error') as response FROM a22ux02.students where idStudents = ?;";
         $query = $this->db->query($query_text, $idStudents);
-        $data['response'] = $query->getResult();
+        $data['response'] = $query->getResult()[0]->response;
 
-        $query_text= "INSERT INTO `a22ux02`.`student_avatar_fk` (`idAvatar_fk`, `idStudent_fk`) VALUES (:idAvatars:, :idStudents:);";
-        $this->db->query($query_text, [
-            'idAvatars'     => $idAvatars,
-            'idStudents' => $idStudents
-        ]);
-        if($data['response'][0]->response=="ok")
+        if($data['response']=="ok")
         {
-            $this->db->transComplete();
+            $query_text = "SELECT exists(select * from a22ux02.student_avatar_fk where idAvatar_fk=:idAvatars: and idStudent_fk=:idStudents:) as duplicate";
+            $data['duplicate'] = $this->db->query($query_text, [
+                'idAvatars'     => $idAvatars,
+                'idStudents' => $idStudents
+            ])->getResult()[0]->duplicate;
+
+            if($data['duplicate'] == 1)
+            {
+                $data['response'] ="duplicate";
+                $this->db->transRollback();
+            }
         }
         else{
             $this->db->transRollback();
         }
-        return $data;
+        return $data['response'];
+
+
+    }
+    public function avatarStartTransaction($idStudents, $idAvatars, $checkFlag)
+    {
+        $this->db->transBegin();
+
+        $query_text= "UPDATE `a22ux02`.`students` SET `coins` =  `coins` -(SELECT price FROM a22ux02.avatars where idAvatars =:idAvatars:) WHERE (`idStudents` =:idStudents:);";
+        $this->db->query($query_text, [
+            'idAvatars'     => $idAvatars,
+            'idStudents' => $idStudents
+        ]);
+
+        $query_text= "SELECT IF(coins>=0,'ok','error') as response FROM a22ux02.students where idStudents = ?;";
+        $query = $this->db->query($query_text, $idStudents);
+        $data['response'] = $query->getResult()[0]->response;
+
+        if($data['response']=="ok")
+        {
+            $query_text = "SELECT exists(select * from a22ux02.student_avatar_fk where idAvatar_fk=:idAvatars: and idStudent_fk=:idStudents:) as duplicate";
+            $data['duplicate'] = $this->db->query($query_text, [
+                'idAvatars'     => $idAvatars,
+                'idStudents' => $idStudents
+            ])->getResult()[0]->duplicate;
+
+            if($data['duplicate'] == 0 && $checkFlag==0)
+            {
+                $query_text= "INSERT INTO `a22ux02`.`student_avatar_fk` (`idAvatar_fk`, `idStudent_fk`) VALUES (:idAvatars:, :idStudents:);";
+                $this->db->query($query_text, [
+                    'idAvatars'     => $idAvatars,
+                    'idStudents' => $idStudents
+                ]);
+                $this->db->transcommit();
+            }
+            if($data['duplicate'] == 0 && $checkFlag==1){
+                $this->db->transRollback();
+            }
+
+            else
+            {
+                $data['response'] ="duplicate";
+                $this->db->transRollback();
+            }
+        }
+        else{
+            $this->db->transRollback();
+        }
+        return $data['response'];
     }
 
-
-
+    public function commit()
+    {
+        $this->db->transComplete();
+    }
+    public function rollback()
+    {
+        $this->db->transRollback();
+    }
 
     public function getStudentsAvatarId(){
         $query_text = 'SELECT * FROM student_avatar_fk WHERE selected=true;';

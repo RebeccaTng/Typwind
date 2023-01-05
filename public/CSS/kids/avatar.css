@@ -51,9 +51,7 @@ span.errorMessage {
     text-align: center;
 }
 
-:not(div.noMoney) > span.errorMessage {
-    visibility: hidden;
-}
+
 
 div.avatarChoice:hover {
     cursor: pointer;
@@ -201,4 +199,32 @@ div.avatarCard {
         height: 5rem; /* 80px */
         width: auto;
     }
+}
+
+#confirm {
+    display: none;
+    background-color: #f2f4ef;
+    border: 1px solid #aaa;
+    position: fixed;
+    width: 250px;
+    height: 150px;
+    left: 50%;
+    margin-left: -100px;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+}
+#confirm button {
+    background-color: lightblue;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#confirm .message {
+    text-align: left;
 }
