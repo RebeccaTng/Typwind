@@ -44,6 +44,8 @@
 
     position: absolute;
     top: 45%;
+    font: var(--heading1);
+    font-weight: normal;
     /*left: 25%;*/
 
     /*display: inline;*/
@@ -105,6 +107,7 @@
     font-size: 20px;
     text-align: center;
     padding-top: 17px;
+    font: var(--bodyExText);
 }
 
 .delete {
@@ -166,5 +169,5 @@
 }
 
 .thickBorder{
-    border: 5px solid var(--blueNeutral);
+    border: 6px solid var(--accentColor);
 }
