@@ -35,8 +35,12 @@
 
                         <label for="teachers"><b>Teacher:</b></label>
                         <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>" required>
-                            <?php foreach ($teachers as $teacher):?>
-                                <option value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
+                            <?php foreach ($teachers as $teacher):
+                                if($teacher->idTeachers== session()->id): ?>
+                                    <option value="<?=$teacher->idTeachers?>" selected><?=$teacher->firstname?></option>
+                                    <?php else:?>
+                                    <option value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
+                                <?php endif; ?>
                             <?php endforeach;?>
                         </select>
 
