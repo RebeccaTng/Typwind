@@ -75,7 +75,10 @@
             </div>
         </div>
 
-        <div class="bottomBar">
+        <div class="bottomBar space">
+            <a href= "<?php echo base_url('experts/studentsList');?>">
+                <button class="button buttonSecondary buttonExpert">BACK</button>
+            </a>
             <a href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>">
                 <button class="button buttonPrimary buttonExpert">EDIT</button>
             </a>

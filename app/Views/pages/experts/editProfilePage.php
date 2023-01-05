@@ -38,10 +38,13 @@
                     <span class="slider"></span>
                 </label>
             </div>
-            <div class="bottomBar">
+            <div class="bottomBar space">
                 <input id="seven" class="button buttonPrimary buttonExpert" type="submit" value="Save">
-            </div>
         </form>
+            <a href="<?php echo base_url('experts/profile');?>">
+                <button class="button buttonSecondary buttonExpert">BACK</button>
+            </a>
+            </div>
     </div>
 
 <?= $this->endSection() ?>

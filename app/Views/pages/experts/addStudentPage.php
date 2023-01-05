@@ -12,10 +12,11 @@
     <h1>Add Student</h1>
 
     <div class="scroller">
-        <form class="studentContainer" action= "<?php echo base_url('experts/addStudent');?>" method="post">
+        <div class="studentContainer">
             <div class="infoContainer">
                 <div class="general">
                     <h3>General Information</h3>
+                    <form action= "<?php echo base_url('experts/addStudent');?>" method="post">
                     <div class="generalFields">
                         <label for="firstname"><b>First name</b><span class="mandatory">* </span><b>:</b></label  required>
                         <input type="text" id="firstname" name="firstname" placeholder="First name" required>
@@ -24,7 +25,7 @@
                         <label for="email"><b>Email</b><span class="mandatory">* </span><b>:</b></label>
                         <input type="text" id="email" name="email" placeholder="Email" required>
 
-                        <label for="gender"><b>Gender:</b></label>
+                        <label for="gender"><b>Gender</b><span class="mandatory">* </span><b>:</b></label>
                         <select name="gender" id="gender" required>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -33,7 +34,7 @@
                         <label for="birthday"><b>Birthday</b><span class="mandatory">* </span><b>:</b></label>
                         <input type="date" id="birthday" name="birthday" required>
 
-                        <label for="teachers"><b>Teacher:</b></label>
+                        <label for="teachers"><b>Teacher</b><span class="mandatory">* </span><b>:</b></label>
                         <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>" required>
                             <?php foreach ($teachers as $teacher):?>
                                 <option value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
@@ -52,20 +53,25 @@
                             <input type="checkbox" id="active" name="active" checked>
                             <span class="slider"></span>
                         </label>
-                        <span class="mandatory manText">*Mandatory Fields</span>
+                        <span class="mandatory">*Mandatory fields</span>
                     </div>
                 </div>
 
                 <div class="notes">
                     <label for="notes"><h3>Notes</h3></label>
+                    <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
                     <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."></textarea>
                 </div>
             </div>
 
-            <div class="bottomBar">
+            <div class="bottomBar space">
                 <input type="submit" value="Submit" class="button buttonPrimary buttonExpert">
+                    </form>
+                <a href= "<?php echo base_url('experts/studentsList');?>">
+                    <button class="button buttonSecondary buttonExpert">BACK</button>
+                </a>
             </div>
-        </form>
+        </div>
     </div>
 
 <?= $this->endSection() ?>

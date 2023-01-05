@@ -16,7 +16,7 @@
         <h1><?=$person->firstname?> <?=$person->lastname?></h1>
 
         <div class="scroller">
-            <form class="studentContainer" action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
+            <div class="studentContainer">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/1.svg" alt="User Icon">
                 </div>
@@ -24,6 +24,7 @@
                 <div class="infoContainer">
                     <div class="general">
                         <h3>General Information</h3>
+                        <form action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
                         <input type="hidden" id="email" name="email" value="<?=$person->email?>">
                         <input type="hidden" id="password" name="password" value="<?=$person->password?>">
                         <input type="hidden" id="reminder" name="reminder" value="<?=$person->reminder?>">
@@ -90,6 +91,7 @@
 
                     <div class="notes">
                         <label for="notes"><h3>Notes</h3></label>
+                        <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
                         <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."> <?= $person->notes?></textarea>
                     </div>
                 </div>
@@ -104,10 +106,14 @@
                     <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
                 <?php endif;?>
 
-                <div class="bottomBar">
+                <div class="bottomBar space">
                     <input type="submit" value="Save" class="button buttonPrimary buttonExpert">
+                        </form>
+                    <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
+                        <button class="button buttonSecondary buttonExpert">BACK</button>
+                    </a>
                 </div>
-            </form>
+            </div>
         </div>
 
     <?php endif;?>
