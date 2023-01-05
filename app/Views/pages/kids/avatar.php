@@ -34,29 +34,30 @@
     <!--                    The id of this div is the same as the avatar-->
                         <a href="#" onclick="post(<?php echo $avatar['idAvatars'] ?>)">
                             <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?>>
-                                <div class="roundProfilePic">
-                                    <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
-                                </div>
-                                <span class="coin"><?= $avatar['price']?></span>
-                                <span id="<?= $avatar['idAvatars']?>e" class="errorMessage" hidden >Not enough money</span>
-                                <?php if(isset($response) && $idPurchasedAvatar== $avatar['idAvatars'] && $response == "error"):?>
+                                    <div class="roundProfilePic">
+                                        <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
+                                    </div>
+                                    <span class="coin"><?= $avatar['price']?></span>
+                                    <span id="<?= $avatar['idAvatars']?>e" class="errorMessage" hidden >Not enough money</span>
+
+                                    <?php if(isset($response) && $idPurchasedAvatar== $avatar['idAvatars'] && $response == "error"):?>
+                                        <script>
+                                            var error = "<?= $avatar['idAvatars']?>e";
+                                            message(error);
+                                        </script>
+                                    <?php endif;?>
+                                    <?php if(isset($response) && ($idPurchasedAvatar== $avatar['idAvatars']) && ($response == "ok")): ?>
                                     <script>
-                                        var error = "<?= $avatar['idAvatars']?>e";
-                                        message(error);
+                                        functionConfirm("Are you sure?", function yes() {
+                                                commit()
+                                            },
+                                            function no() {
+                                                rollback();
+                                            });
                                     </script>
-                                <?php endif;?>
-                                <?php if(isset($response) && ($idPurchasedAvatar== $avatar['idAvatars']) && ($response == "ok")): ?>
-                                <script>
-                                    functionConfirm("Are you sure?", function yes() {
-                                            commit()
-                                        },
-                                        function no() {
-                                            rollback();
-                                        });
-                                </script>
 
 
-                                <?php endif;?>
+                                    <?php endif;?>
 
                             </div>
                         </a>
