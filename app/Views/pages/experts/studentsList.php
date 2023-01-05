@@ -14,9 +14,12 @@
         <div class="filterContainer">
             <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
                 <option disabled selected value="Filter" class="three">Filter</option>
-                <?php foreach ($teachers as $teacher):?>
-                    <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
-                <?php endforeach;?>
+                <?php foreach ($teachers as $teacher):
+                    if($teacher->isActive):?>
+
+                        <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
+                    <?php endif;
+                endforeach;?>
             </select>
             <button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')"></button>
         </div>
