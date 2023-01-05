@@ -9,7 +9,7 @@ function filterStudents(array, name) {
             html_students = html_students + "<li class=\"studentListItem\"> <a href= \"" + URL + array[i].idStudents + "\">"
                 + "<div class=\"roundProfilePic\"> <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\"> </div>" +
                 " <h4>" + array[i].firstname + "<br>" + array[i].lastname + "</h4>" + "</a></li>" +
-                "<h3 id=\"noStudents\" hidden>No Student found</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned</h3>"
+                "<h3 id=\"noStudents\" hidden>No student found</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned</h3>"
         }
         document.getElementById('disable filter').style.display = "none";
         document.querySelector('#filter').value = "Filter";
@@ -17,13 +17,13 @@ function filterStudents(array, name) {
         const result = array.filter(student => student.teacherFirstname === name);
         html_students = "";
         if (result.length === 0) {
-            html_students = "<h3 id=\"noStudents\" hidden>No Student found</h3><h3 id=\"tnoStudents\">This teacher has no students assigned</h3>"
+            html_students = "<h3 id=\"noStudents\" hidden>No student found</h3><h3 id=\"tnoStudents\">This teacher has no students assigned</h3>"
         } else {
             for (var i = 0; i < result.length; i++) {
                 html_students = html_students + "<li class=\"studentListItem\"> <a href= \"" + URL + result[i].idStudents + "\">"
                     + "<div class=\"roundProfilePic\"> <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\"> </div>" +
                     " <h4>" + result[i].firstname + "<br>" + result[i].lastname + "</h4>" + "</a></li>"+
-                    "<h3 id=\"noStudents\" hidden>No Student found</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned</h3>"
+                    "<h3 id=\"noStudents\" hidden>No student found</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned</h3>"
             }
         }
 

@@ -177,7 +177,8 @@ class ExpertController extends BaseController
             $this->data['handSelection']=0;
         }
         $this->data['isActive'] = isset($_POST['active']);
-        $this->data['notes'] = $_POST['notes'];
+        $this->data['notes'] = nl2br($_POST['notes']);
+        print_r($this->data['notes']);
         $this->data['email']= $_POST['email'];
         $this->data['password']= $_POST['password'];
         $this->data['reminder']= $_POST['reminder'];

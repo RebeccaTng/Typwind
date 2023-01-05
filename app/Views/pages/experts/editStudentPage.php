@@ -4,6 +4,7 @@
 
 <?php setcookie("currentPage","expertEditStudent", time()+36000, "/");?>
 <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/public/assets/general">
+<script type="text/javascript" src="<?=base_url()?>/public/js/editStudent.js"></script>
 
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
@@ -90,8 +91,13 @@
 
                     <div class="notes">
                         <label for="notes"><h3>Notes</h3></label>
-                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."> <?= $person->notes?></textarea>
+                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here"><?= $person->notes?></textarea>
+                        <div id="the-count">
+                            <span id="current"></script></span>
+                            <span id="maximum">/ 1000</span>
+                        </div>
                     </div>
+
                 </div>
 
                 <?php if ($person->handSelection==1):?>
@@ -112,23 +118,45 @@
 
     <?php endif;?>
 <?php endforeach;?>
+
 <script>
-    function handImage() {
-        var URL = document.getElementById("URL").value;
-        var state=document.getElementById("handSelection");
-        if(state.value=="right")
-        {
-            document.getElementById("hand image").src =URL +"/hands_right.svg";
+    $('textarea').keyup(function () {
+
+        var characterCount = $(this).val().length,
+            current = $('#current'),
+            maximum = $('#maximum'),
+            note = $('#notes'),
+            theCount = $('#the-count');
+
+
+        current.text(characterCount);
+
+        if (characterCount < 167) {
+            current.css('color', '#666');
         }
-        if(state.value=="left")
-        {
-            document.getElementById("hand image").src =URL +"/hands_left.svg";
+        if (characterCount > 167 && characterCount < 334) {
+            current.css('color', '#6d5555');
         }
-        if(state.value=="both")
-        {
-            document.getElementById("hand image").src =URL +"/hands_both.svg";
+        if (characterCount > 334 && characterCount < 500) {
+            current.css('color', '#793535');
         }
-    }
+        if (characterCount > 667 && characterCount < 834) {
+            current.css('color', '#841c1c');
+        }
+        if (characterCount > 834 && characterCount < 1000) {
+            current.css('color', '#8f0001');
+        }
+
+        if (characterCount >= 1000) {
+            maximum.css('color', '#8f0001');
+            current.css('color', '#8f0001');
+            theCount.css('font-weight', 'bold');
+        } else {
+            maximum.css('color', '#666');
+            theCount.css('font-weight', 'normal');
+        }
+    });
+
 </script>
 
 <?= $this->endSection() ?>

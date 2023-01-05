@@ -67,10 +67,18 @@
                             <br>
                         </p>
                     </div>
-                    <div class="notes">
-                        <h3>Notes</h3>
-                        <p class="noteText"><?=$person->notes ?></p>
-                    </div>
+
+                    <?php if($person->notes == null || $person->notes == ""):?>
+                        <div class="notes">
+                            <h3>Notes</h3>
+                            <i>You don't have any notes</i>
+                        </div>
+                    <?php else:?>
+                        <div class="notes">
+                            <h3>Notes</h3>
+                            <p class="noteText"><?=$person->notes ?></p>
+                        </div>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
