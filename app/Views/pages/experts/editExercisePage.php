@@ -6,6 +6,13 @@
 <?php foreach ($exercises as $exercise):?>
 <?php  if ($exercise->idExercises==$idExercises):?>
 
+<?php  if($exercise->idTeacher_fk!=session()->id):?>
+<script>
+    window.alert("You can only edit exercises that you created.");
+    window.location.href = "<?php echo base_url('experts/exercises');?>";
+</script>
+    <?php endif;?>
+
         <ul class="breadcrumb">
             <li><a>Exercises</a></li>
             <li>Exercise</li>
