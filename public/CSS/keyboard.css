@@ -168,3 +168,15 @@
 .thickBorder{
     border: 5px solid var(--blueNeutral);
 }
+
+.myProgress2 {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.myBar2 {
+    width: 0%;
+    height: 30px;
+    transition: width 250ms ease-in-out, background-color 250ms ease;
+
+}

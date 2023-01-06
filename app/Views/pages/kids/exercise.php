@@ -42,9 +42,15 @@
 
     <!--Image and text bar-->
     <div class="exercise">
+        <div id="myProgress2" class="myProgress2">
+            <div id="myBar2" class="myBar2"></div>
+        </div>
         <div id="imageContainer"></div>
         <audio id="soundContainer"></audio>
         <audio id="soundContainerStart"></audio>
+        <div id="feedback"></div>
+        <input type="button" id="muteSoundsBtn" value="Spel geluiden AAN" onclick="muteSounds();">
+        <input type="button" id="muteSpeakBtn" value="Verteller AAN" onclick="muteSpeak();">
         <div class="textBox" id="textBox">
             <div class="textContainer " id="movableExerciseBoxText"></div>
         </div>
