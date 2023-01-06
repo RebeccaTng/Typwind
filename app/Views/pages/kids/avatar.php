@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-
+<script type="text/javascript" src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
 
     <h1>My Avatar</h1>
     <div class="avatarContent" id ="mainAvatar">
@@ -17,25 +17,23 @@
             </div>
 
             <div class="card avatarCard">
-                <button type="button" id="btnCustom">Custom</button>
-<!--            --><?php //if (! empty($avatars) && is_array($avatars)):
-//                foreach ($avatars as $avatar):?>
-<!--                    <div class="--><?php //= $avatar['classCSS']?><!-- " id =--><?php //= $avatar['idAvatars']?><!-- >-->
-<!--                        <div class="roundProfilePic">-->
-<!--                            <img src="/public/assets/avatars/--><?php //= $avatar ['idAvatars']?><!--.svg" alt="User Icon">-->
-<!--                        </div>-->
-<!--                        <span class="coin">--><?php //= $avatar['price']?><!--</span>-->
-<!--                        <span class="errorMessage">Not enough money</span>-->
-<!--                    </div>-->
-<!--                --><?php //endforeach;
-//            endif;?>
+            <?php if (! empty($avatars) && is_array($avatars)):
+                foreach ($avatars as $avatar):?>
+                    <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?> >
+                        <div class="roundProfilePic">
+                            <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
+                        </div>
+                        <span class="coin"><?= $avatar['price']?></span>
+                        <span class="errorMessage">Not enough money</span>
+                    </div>
+                <?php endforeach;
+            endif;?>
 <!--                <form action="/kids/avatar/buy" method="post">-->
 <!---->
 <!--                    <label for="coins">New coins value</label>-->
 <!--                    <input type="input" name="$idOfAvatar" />-->
 <!--                    <input type="submit" name="submit" value="update" />-->
 <!--                </form>-->
-
             </div>
     </div>
 

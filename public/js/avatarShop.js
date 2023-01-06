@@ -8,7 +8,8 @@ class Dialog {
                 cancel: 'Cancel',
                 dialogClass: '',
                 message: '',
-                template: ''
+                template: '',
+                avatarId: ''
             },
             settings
         )
@@ -84,8 +85,7 @@ class Dialog {
         this.elements.cancel.hidden = dialog.cancel === ''
         this.elements.message.innerText = dialog.message
         this.elements.target = dialog.target || ''
-        this.elements.template.innerHTML = dialog.template || ''
-
+        this.elements.template.innerHTML =  dialog.template || ''
         this.focusable = this.getFocusable()
         this.hasFormData = this.elements.fieldset.elements.length > 0
 
@@ -125,25 +125,39 @@ class Dialog {
             }, { once: true })
         })
     }
+
 }
 
 
 const dialog = new Dialog();
 
 
+const elements = document.getElementsByClassName('locked');
 
-document.getElementById('btnCustom').addEventListener('click', (e) => {
-    dialog.open({
-        accept: 'Confirm',
-        dialogClass: 'custom',
-        message: 'Confirm purchase of new avatar',
-        target: e.target,
-        template:
-            `
+
+for (let i = 0; i < elements.length; i++) {
+    if(!elements[i].classList.contains('noMoney'))
+    elements[i].addEventListener('click', (e) => {
+        let elementId = elements[i].id;
+        if (elementId === '') {
+           console.log(elementId)
+        }
+        dialog.open({
+            accept: 'Confirm',
+            dialogClass: 'custom',
+            message: 'Confirm purchase of new avatar',
+            target: e.target,
+            template:  `
+            <div class=" avatarChoice locked noMoney">
             <div class="roundProfilePic currentPic">
-                <img src="/public/assets/avatars/1.svg" alt="User Icon">
+                <img src="/public/assets/avatars/`+elementId+`.svg" alt="User Icon">
             </div>
-            `
-    })
-    dialog.waitForUser().then((res) => {  console.log(res) })
-});
+            </div>
+            `,
+            avatarId:elementId
+        })
+        dialog.waitForUser().then((res) => {  console.log(res) })
+    });
+
+}
+
