@@ -47,8 +47,6 @@
 }
 :where([data-component*="dialog"] [data-ref="fieldset"]) {
     border: 0;
-    margin: unset;
-    padding: 40px;
 }
 :where([data-component*="dialog"] [data-ref="message"]) {
     font-size: var(--dlg-message-fz, 1.25em);

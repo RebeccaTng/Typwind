@@ -46,6 +46,7 @@ class Dialog {
                 <legend data-ref="message" id="${(Math.round(Date.now())).toString(36)}"></legend>
                 <div data-ref="template"></div>
               </fieldset>
+              
               <menu>
                 <button${this.dialogSupported ? '' : ` type="button"`} data-ref="cancel" value="cancel"></button>
                 <button${this.dialogSupported ? '' : ` type="button"`} data-ref="accept" value="default"></button>
@@ -153,6 +154,7 @@ for (let i = 0; i < elements.length; i++) {
                 <img src="/public/assets/avatars/`+elementId+`.svg" alt="User Icon">
             </div>
             </div>
+            <input type="hidden" name="$idOfAvatar" value=elementId/>
             `,
             avatarId:elementId
         })
