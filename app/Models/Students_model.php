@@ -112,7 +112,6 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
 
 
 
-
     public function getStudentsAvatarId(){
         $query_text = 'SELECT * FROM student_avatar_fk WHERE selected=true;';
         $query = $this->db->query($query_text);

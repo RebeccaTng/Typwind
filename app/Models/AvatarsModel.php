@@ -116,4 +116,33 @@ class AvatarsModel extends Model
         return $query->getResult();
     }
 
+    private function updateCoins($idStudent,$coins){
+        $query_text =  'UPDATE students SET coins= :coins: WHERE idStudents= :idStudents:;';
+        $this->db->query($query_text, [
+            'coins'     => $coins,
+            'idStudents' => $idStudent,
+        ]);
+    }
+    private function setAvatarAsBought($idOfAvatar,$idStudent){
+        $query_text =  'INSERT INTO student_avatar_fk ( idAvatar_fk, idStudent_fk) VALUES (:idAvatar_fk:, :idStudent_fk:);';
+        $this->db->query($query_text, [
+            'idAvatar_fk'     => $idOfAvatar,
+            'idStudent_fk' => $idStudent,
+        ]);
+    }
+    public function buyAvatar($idStudent,$idOfAvatar){
+        $this->db->transStart();
+        $this->setAvatarAsBought($idOfAvatar,$idStudent);
+        $this->updateCoins($idStudent,$this->getNewCoins($idOfAvatar));
+        $this->db->transComplete();
+    }
+    private function  getNewCoins($idOfAvatar):int
+    {
+        foreach ($this->avatarIcons as $av){
+            if($av['idAvatars']==$idOfAvatar) return $this->coins- $av['price'];
+        }
+        return 0;
+    }
+
+
 }

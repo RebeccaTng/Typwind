@@ -159,24 +159,20 @@ class KidsController extends BaseController
 
     private function avatar():array
     {
+        if ($this->request->getMethod() === 'post' && $this->validate([
+                '$idOfAvatar' => 'required'
+            ])) {
+            $this ->avatarModel->buyAvatar(session()->id,$this->request->getPost('$idOfAvatar'));
+            $this->avatarModel->updateAvatars();
+        }
+
         $data['idStudents']=session()->id;
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatars Shop');
-        $data['avatars'] = $this ->avatarModel->getAvatarIcons(session()->id);
+        $data['avatars'] = $this ->avatarModel->getAvatarIcons();
         $data['idOfSelectedAvatar'] =$this ->avatarModel->getIdOfSelectedAvatar();
-
         return $data;
     }
 
-    public function buyAvatar($idAvatars)
-    {
-
-        print ("hello");
-        $css = ['cssFiles' =>  $this->getCSSFile("avatar")];
-        $dataAvatar = array_merge($this->getDataForPage('avatar',0),$css);
-
-        $dataAvatar['idAvatar']= $idAvatars;
-        return view('pages/kids/avatar',$dataAvatar);
-    }
 
 
 }
