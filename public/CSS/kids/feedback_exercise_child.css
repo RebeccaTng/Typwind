@@ -31,24 +31,38 @@
 
 .checked_stars {
     content: url(/public/assets/icons/fi-sr-star.svg);
+    display: inline-block;
+    animation: wiggle 2s ;
 }
 .unchecked_stars {
     content: url(/public/assets/icons/fi-br-star.svg);
+    display: inline-block;
+    animation: wiggle 2s ;
 }
 /* BUTTON */
 .card_buttons{
     background-color: var(--beigeNeutral-light);
     border-radius: 1.563rem; /* 25px */
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
-    padding: 40px;
+    padding: 30px;
     margin: 0.625rem; /* 10px */
 }
 .feedback_ex_button button{
     width: 100%;
-    margin: 21px;
+    margin: 10px;
 }
 .feedback_ex_button{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+/*Wiggle stars*/
+@keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(20deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+

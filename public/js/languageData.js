@@ -73,9 +73,9 @@ var mainData = {
             "Home" : "Startpagina",
             "Students" : "Studenten",
             "Exercises" : "Oefeningen",
-            "Profile" : "Mijn Profiel",
+            "Profile" : "Mijn profiel",
             "logout" : "Uitloggen",
-            "two" : "Welkom Terug",
+            "two" : "Welkom terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
             "five" : "Het avontuur van de hond",
@@ -87,9 +87,9 @@ var mainData = {
             "Home" : "Home",
             "Students" : "Students",
             "Exercises" : "Exercises",
-            "Profile" : "My Profile",
-            "logout" : "Log Out",
-            "two" : "Welcome Back",
+            "Profile" : "My profile",
+            "logout" : "Log out",
+            "two" : "Welcome back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
             "five" : "The Adventure of the Dog.",
@@ -100,7 +100,7 @@ var mainData = {
 var studentHomeData={
     "nederlands":
         {
-            "two" : "Welkom Terug",
+            "two" : "Welkom terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
             "five" : "Het avontuur van de hond",
@@ -109,7 +109,7 @@ var studentHomeData={
 
     "english":
         {
-            "two" : "Welcome Back",
+            "two" : "Welcome back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
             "five" : "The Adventure of the Dog.",
@@ -120,7 +120,7 @@ var studentHomeData={
 var studentExercisesData={
     "nederlands":
         {
-            "two" : "Welkom Terug",
+            "two" : "Welkom terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
             "five" : "Het avontuur van de hond",
@@ -129,7 +129,7 @@ var studentExercisesData={
 
     "english":
         {
-            "two" : "Welcome Back",
+            "two" : "Welcome back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
             "five" : "The Adventure of the Dog.",
@@ -140,12 +140,12 @@ var studentExercisesData={
 var expertHomeData={
     "nederlands":
         {
-            "one" : "Welkom Terug,",
+            "one" : "Welkom terug,",
         },
 
     "english":
         {
-            "one" : "Welcome Back,",
+            "one" : "Welcome back,",
         }
 }
 
@@ -153,7 +153,7 @@ var expertStudentsData={
     "nederlands":
         {
             "one" : "Studenten",
-            "two" :  "Nieuwe Student",
+            "two" :  "Nieuwe student",
             "three" : "Filteren",
             "four" : "Zoeken",
         },
@@ -161,7 +161,7 @@ var expertStudentsData={
     "english":
         {
             "one" : "Students",
-            "two" : "Add New Student",
+            "two" : "Add new student",
             "three" : "Filter",
             "four" : "Search",
         }
@@ -171,7 +171,7 @@ var expertStudentData={
     "nederlands":
         {
             "one" : "Studenten",
-            "two" : "Nieuwe Student",
+            "two" : "Nieuwe student",
             "three" : "Filteren",
             "four" : "Zoeken",
         },
@@ -179,7 +179,7 @@ var expertStudentData={
     "english":
         {
             "one" : "Students",
-            "two" : "Add New Student",
+            "two" : "Add new student",
             "three" : "Filter",
             "four" : "Search",
         }
@@ -189,7 +189,7 @@ var expertEditStudentData={
     "nederlands":
         {
             "one" : "Studenten",
-            "two" : "Nieuwe Student",
+            "two" : "Nieuwe student",
             "three" : "Filteren",
             "four" : "Zoeken",
         },
@@ -197,7 +197,7 @@ var expertEditStudentData={
     "english":
         {
             "one" : "Students",
-            "two" : "Add New Student",
+            "two" : "Add new student",
             "three" : "Filter",
             "four" : "Search",
         }
@@ -228,8 +228,8 @@ var expertExercisesData={
 var expertProfileData={
     "nederlands":
         {
-            "one" : "Mijn Profiel",
-            "two" : "Algemene Informatie",
+            "one" : "Mijn profiel",
+            "two" : "Algemene informatie",
             "three" : "Voornaam",
             "four"  :   "Achternaam",
             "five" : "Email",
@@ -239,8 +239,8 @@ var expertProfileData={
 
     "english":
         {
-            "one" : "My Profile",
-            "two" : "General Information",
+            "one" : "My profile",
+            "two" : "General information",
             "three" : "First name",
             "four"  : "Surname",
             "five" : "Email",
@@ -252,8 +252,8 @@ var expertProfileData={
 var expertEditProfileData={
     "nederlands":
         {
-            "one" : "Mijn Profiel",
-            "two" : "Algemene Informatie",
+            "one" : "Mijn profiel",
+            "two" : "Algemene informatie",
             "three" : "Voornaam",
             "four"  :   "Achternaam",
             "five" : "Email",
@@ -263,8 +263,8 @@ var expertEditProfileData={
 
     "english":
         {
-            "one" : "My Profile",
-            "two" : "General Information",
+            "one" : "My profile",
+            "two" : "General information",
             "three" : "First name",
             "four"  : "Surname",
             "five" : "Email",

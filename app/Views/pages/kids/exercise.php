@@ -26,7 +26,7 @@
         <div class="title">
             <h1><?= $ex->name?></h1>
             <form action="<?php echo base_url('kids/intro/'.$idExercises);?>" class="inline">
-                <button id="stopButton" class="buttonSecondary buttonChild" >STOP & EXIT</button>
+                <button id="stopButton" class="button buttonSecondary buttonChild" >STOP & EXIT</button>
             </form>
         </div>
     </div>

@@ -112,10 +112,15 @@ h1 {
     flex-direction: row;
     justify-content: flex-start;
     height: 100vh;
+
+    /*unselectable*/
+    -moz-user-select: none;
+    -webkit-user-select: none;/*Safari*/
+    -ms-user-select: none;/*Firefox*/
 }
 
 .active {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 
