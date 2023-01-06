@@ -1,9 +1,10 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
-
+    <script type="text/javascript" src="<?=base_url()?>/public/js/balloons.js" ></script>
 <?php setcookie("currentPage","studentHome", time()+36000, "/");?>
-
+<div id="balloon-container">
+</div>
 <div class="home_content">
     <h1 style="color:var(--blueNeutral);" class="two"> Welcome back</h1>
     <h1 style="color:var(--blueNeutral); text-transform: capitalize; ">
@@ -46,8 +47,10 @@
             <?php endif;?>
     <!--    </div>-->
     </div>
-
 </div>
+
+
+
 
 
 
