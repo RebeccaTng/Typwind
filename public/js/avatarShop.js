@@ -92,14 +92,8 @@ class Dialog {
 
 
         this.toggle(true)
+        this.elements.accept.focus()
 
-        if (this.hasFormData) {
-            this.focusable[0].focus()
-            this.focusable[0].select()
-        }
-        else {
-            this.elements.accept.focus()
-        }
     }
 
     toggle(open = false) {
@@ -124,7 +118,7 @@ class Dialog {
                 this.toggle()
                 resolve(value)
             }, { once: true })
-        })
+        });
     }
 
 }
@@ -137,29 +131,69 @@ const elements = document.getElementsByClassName('locked');
 
 
 for (let i = 0; i < elements.length; i++) {
-    if(!elements[i].classList.contains('noMoney'))
-    elements[i].addEventListener('click', (e) => {
-        let elementId = elements[i].id;
-        if (elementId === '') {
-           console.log(elementId)
-        }
-        dialog.open({
-            accept: 'Confirm',
-            dialogClass: 'custom',
-            message: 'Confirm purchase of new avatar',
-            target: e.target,
-            template:  `
+    if(!elements[i].classList.contains('noMoney')){
+        elements[i].addEventListener('click', (e) => {
+            let elementId = elements[i].id;
+
+            dialog.open({
+                accept: 'Confirm',
+                dialogClass: 'custom',
+                message: 'Confirm purchase of new avatar',
+                target: e.target,
+                template:  `
             <div class=" avatarChoice locked noMoney">
             <div class="roundProfilePic currentPic">
                 <img src="/public/assets/avatars/`+elementId+`.svg" alt="User Icon">
             </div>
             </div>
-            <input type="hidden" name="$idOfAvatar" value=elementId/>
+            <input type="hidden" name="idOfAvatar" value=`+elementId+`>
             `,
-            avatarId:elementId
-        })
-        dialog.waitForUser().then((res) => {  console.log(res) })
-    });
+                avatarId:elementId
+            })
+            dialog.waitForUser().then((res) => {
+                if(res!==false){
+                    console.log("req")
+                    fetch('/kids/avatar/buy', {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-Requested-With": "XMLHttpRequest"
+                        },
+                        body:JSON.stringify({id:res.idOfAvatar,buy:true}),
+                        redirect: "follow",
+                    }) .then((data) => {
+                        console.log('Success:', data);
+                        window.location.reload();
+                    })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                }
+                })
+        });
+    }
+}
+const boughtAvatars = document.getElementsByClassName('bought');
+
+
+for (let i = 0; i < boughtAvatars.length; i++) {
+    boughtAvatars[i].addEventListener('click', (e) =>{
+        let elementId = boughtAvatars[i].id;
+            fetch('/kids/avatar/buy', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body:JSON.stringify({id:elementId,buy:false}),
+            }) .then((data) => {
+                console.log('Success:', data);
+                window.location.reload();
+            })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
 
 }
 

@@ -28,12 +28,7 @@
                     </div>
                 <?php endforeach;
             endif;?>
-<!--                <form action="/kids/avatar/buy" method="post">-->
-<!---->
-<!--                    <label for="coins">New coins value</label>-->
-<!--                    <input type="input" name="$idOfAvatar" />-->
-<!--                    <input type="submit" name="submit" value="update" />-->
-<!--                </form>-->
+
             </div>
     </div>
 

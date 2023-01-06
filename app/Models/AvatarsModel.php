@@ -65,9 +65,7 @@ class AvatarsModel extends Model
                 for($i=0;$i<count($avatars);$i++):
                     if($avatars[$i]->price>=$this->coins) $avatarIcons[$i] = array('idAvatars' => $avatars[$i]->idAvatars,'classCSS'=>self::NO_MONEY_CSS_CLASS[0], 'price' =>  $avatars[$i]->price);
                     else $avatarIcons[$i] = array('idAvatars' => $avatars[$i]->idAvatars,'classCSS'=>self::LOCK_CSS_CLASS[0], 'price' =>  $avatars[$i]->price);
-
                     if (! empty($avatarsBought)){
-
                         foreach ($avatarsBought as $avatarBought):
                             if($avatarBought->idAvatar_fk== $avatars[$i]->idAvatars){
                                 $avatarIcons[$i]['classCSS']= self::BOUGHT_CSS_CLASS[0];
@@ -82,9 +80,13 @@ class AvatarsModel extends Model
                     }
                 endfor;
         endif;
-        if($this->getIdOfSelectedAvatar()!=0){
+        if($this->getIdOfSelectedAvatar()!=1){
             $avatarIcons[0]['classCSS']= self::BOUGHT_CSS_CLASS[0];
             $avatarIcons[0]['price']=self::BOUGHT_CSS_CLASS[1];
+        }else{
+            $avatarIcons[0]['classCSS']= self::SELECTED_CSS_CLASS[0];
+            $avatarIcons[0]['price']=self::SELECTED_CSS_CLASS[1];
+
         }
         unset($this->avatarIcons);
         $this->avatarIcons= $avatarIcons;
@@ -142,6 +144,24 @@ class AvatarsModel extends Model
             if($av['idAvatars']==$idOfAvatar) return $this->coins- $av['price'];
         }
         return 0;
+    }
+
+    public function changeSelectedAvatar($newSelectedAvatar){
+        print("New avatar ".$newSelectedAvatar);
+        print("\nOld avatar ".$this->getIdOfSelectedAvatar());
+        $query_text =
+            '    UPDATE student_avatar_fk
+                SET selected
+                        = CASE idAvatar_fk
+                              WHEN :oldAvatar_fk: THEN false
+                              WHEN :newAvatar_fk: THEN true
+                              ELSE selected
+                        END
+                WHERE idAvatar_fk IN(:oldAvatar_fk:, :newAvatar_fk:);';
+        $this->db->query($query_text, [
+            'oldAvatar_fk'     => $this->getIdOfSelectedAvatar(),
+            'newAvatar_fk' => $newSelectedAvatar,
+        ]);
     }
 
 

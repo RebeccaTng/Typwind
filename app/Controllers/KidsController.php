@@ -47,7 +47,7 @@ class KidsController extends BaseController
         return view('/pages/kids/' . $page,$data);
     }
 
-    ////// SET UP METHODS ALL
+
     private function getDataForPage($pageName,$args): array
     {
         switch ($pageName) {
@@ -159,12 +159,13 @@ class KidsController extends BaseController
 
     private function avatar():array
     {
-        if ($this->request->getMethod() === 'post' && $this->validate([
-                '$idOfAvatar' => 'required'
-            ])) {
-            $this ->avatarModel->buyAvatar(session()->id,$this->request->getPost('$idOfAvatar'));
-            $this->avatarModel->updateAvatars();
+        if ($this->request->getMethod() === 'post') {
+            if($this->request->getVar('buy')){
+                $this ->avatarModel->buyAvatar(session()->id, $this->request->getVar('id'));
+            }
+            else $this->avatarModel->changeSelectedAvatar( $this->request->getVar('id'));
         }
+
 
         $data['idStudents']=session()->id;
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatars Shop');
