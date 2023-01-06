@@ -58,6 +58,7 @@
                                     <?php endif;?>
                                 <?php endforeach;?>
                             </select>
+                            <label class="explanation">Which hand(s) will they be typing with?</label>
                             <label for="handSelection"><b>Hand Selection:</b></label>
                             <select name="handSelection" id="handSelection" onChange="handImage()" required >
                             <?php if ($person->handSelection==1):?>
@@ -76,6 +77,7 @@
                                 <option selected="selected" value="both">Both Hands</option>
                             <?php endif;?>
                             </select>
+                            <label class="explanation">Is the child currently following the Typwind course?</label>
                             <label for="active"><b>Active:</b></label>&nbsp;
                             <label class="switch">
                             <?php if ($person->isActive==1):?>

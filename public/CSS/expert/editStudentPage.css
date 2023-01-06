@@ -51,7 +51,7 @@ div.general {
 
 .switch {
     grid-column: 2;
-    grid-row: 8;
+    grid-row: 10;
     margin: 0.469rem 0;
 }
 
@@ -61,10 +61,19 @@ div.generalFields {
     grid-template-rows: auto;
     justify-items: left;
     align-items: center;
+    row-gap: 0.25rem
 }
 
 .bottomBar {
    left: 0;
+}
+
+label.explanation {
+    font: var(--smallText);
+    grid-column: 1/span 2;
+    margin-top: 0.25rem;
+    margin-bottom: -0.4rem;
+    color: var(--lightGray);
 }
 
 @media screen and (max-width: 65.625em) {
