@@ -126,10 +126,8 @@ class Dialog {
 
 const dialog = new Dialog();
 
-
+//LOOK FOR THIS
 const elements = document.getElementsByClassName('locked');
-
-
 for (let i = 0; i < elements.length; i++) {
     if(!elements[i].classList.contains('noMoney')){
         elements[i].addEventListener('click', (e) => {
@@ -146,6 +144,11 @@ for (let i = 0; i < elements.length; i++) {
                 <img src="/public/assets/avatars/`+elementId+`.svg" alt="User Icon">
             </div>
             </div>
+     
+     
+     
+     
+     
             <input type="hidden" name="idOfAvatar" value=`+elementId+`>
             `,
                 avatarId:elementId
@@ -173,6 +176,9 @@ for (let i = 0; i < elements.length; i++) {
         });
     }
 }
+
+
+///NOT AT THIS
 const boughtAvatars = document.getElementsByClassName('bought');
 
 
