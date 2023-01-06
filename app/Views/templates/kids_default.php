@@ -12,6 +12,10 @@
 
     <!-- Translation file -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
+
+
+    <script type="text/javascript" src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
+
     <?php
     if (! empty($cssFiles) && is_array($cssFiles)):
         foreach ($cssFiles as $ccsFilePath):
@@ -24,7 +28,7 @@
 
     <title>Typewind Online</title>
 </head>
-<body >
+<body>
 <div class="grid-container">
     <div class="leftNavBar">
         <?= $this->include('templates/side_nav_bar_2') ?>

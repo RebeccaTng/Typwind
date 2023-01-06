@@ -19,7 +19,7 @@ class KidsController extends BaseController
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array("kids/exercises_child.css");
     private array $exercise = array();
-    private array $avatar = array("kids/avatar.css");
+    private array $avatar = array("kids/avatar.css","kids/dialog.css");
 
     /// END OF CSS FILES ************************
     private $data;
