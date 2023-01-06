@@ -35,9 +35,9 @@ var expertLoginData={
 var registerData={
     "nederlands":
         {
-            "one" : "Register",
-            "two" : "Register je hier als je nog geen account hebt",
-            "three" : "REGISTER",
+            "one" : "Registreer",
+            "two" : "Registreer je hier als je nog geen account hebt",
+            "three" : "REGISTREER",
             "four" : "TERUG NAAR LOGIN",
 
         },
@@ -55,7 +55,7 @@ var studentLoginData={
     "nederlands":
         {
             "one" : "En veel plezier met typen!",
-            "two" :  "Laten we inloggen met uw e-mailadres",
+            "two" :  "Laten we inloggen met je e-mailadres",
             "three" : "VERDER MET MIJN EMAIL",
         },
 
@@ -153,7 +153,7 @@ var expertStudentsData={
     "nederlands":
         {
             "one" : "Studenten",
-            "two" :  "Nieuwe Student",
+            "two" :  "Voeg nieuwe student toe",
             "three" : "Filteren",
             "four" : "Zoeken",
         },
@@ -230,10 +230,10 @@ var expertProfileData={
         {
             "one" : "Mijn Profiel",
             "two" : "Algemene Informatie",
-            "three" : "Voornaam",
-            "four"  :   "Achternaam",
-            "five" : "Email",
-            "six" : "Actief",
+            "three" : "Voornaam:",
+            "four"  :   "Achternaam:",
+            "five" : "Email:",
+            "six" : "Actief:",
             "seven" : "Bewerken"
         },
 
@@ -241,10 +241,10 @@ var expertProfileData={
         {
             "one" : "My Profile",
             "two" : "General Information",
-            "three" : "First name",
-            "four"  : "Surname",
-            "five" : "Email",
-            "six" : "Active",
+            "three" : "First name:",
+            "four"  : "Surname:",
+            "five" : "Email:",
+            "six" : "Active:",
             "seven" : "Edit"
         }
 }

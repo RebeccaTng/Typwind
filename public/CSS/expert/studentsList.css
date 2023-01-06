@@ -23,9 +23,15 @@ div.bar .addNew:hover {
 
 div.bar {
     margin: 0.563rem 4.688rem 2.5rem 0; /*9px 75px 40px 0*/
-    display: grid;
-    grid-template-columns: fit-content(13.125rem) auto fit-content(9.375rem) fit-content(14.375rem);
-    column-gap: 1.875rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.rightBar {
+    display: flex;
+    flex-direction: row;
+    gap: 1.875rem;
     align-items: center;
 }
 

@@ -10,18 +10,21 @@
         <a class="addNew two" href=<?php echo base_url('experts/addStudentPage/');?>>Add New Student</a>
 
         <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/experts/studentOverview/">
-        <!-- Filter -->
-        <div class="filterContainer">
-            <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
-                <option disabled selected value="Filter" class="three">Filter</option>
-                <?php foreach ($teachers as $teacher):?>
-                    <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
-                <?php endforeach;?>
-            </select>
-            <button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')"></button>
+
+        <div class="rightBar"
+            <!-- Filter -->
+            <div class="filterContainer">
+                <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
+                    <option disabled selected value="Filter" class="three">Filter</option>
+                    <?php foreach ($teachers as $teacher):?>
+                        <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
+                    <?php endforeach;?>
+                </select>
+                <button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')"></button>
+            </div>
+            <!-- Searchbar -->
+            <input class="four" type="text" id="myInput" onkeyup="search()" placeholder="Search">
         </div>
-        <!-- Searchbar -->
-        <input class="four" type="text" id="myInput" onkeyup="search()" placeholder="Search">
     </div>
 
     <script type="text/javascript">
