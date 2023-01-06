@@ -87,14 +87,14 @@ div.avatarChoice div.roundProfilePic img {
 div.avatarChoice span.coin {
     min-width: 9.063rem;
     text-align: center;
-    margin-bottom: 0.938rem;
+    margin: 0 0.938rem 0.938rem;
 }
 
-div.avatarChoice:not(div.chosen):hover {
+div.avatarChoice:not(div.noEffects):not(div.noMoney):hover {
     cursor: pointer;
 }
 
-div.avatarChoice:not(div.chosen):hover > div.roundProfilePic {
+div.avatarChoice:not(div.noEffects):hover > div.roundProfilePic {
     box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
     transition-duration: 0.4s;
     height: 9.375rem; /* 150px */
@@ -102,23 +102,23 @@ div.avatarChoice:not(div.chosen):hover > div.roundProfilePic {
     margin-top: 0;
 }
 
-div.avatarChoice:not(div.chosen):hover > div.roundProfilePic > img {
+div.avatarChoice:not(div.noEffects):hover > div.roundProfilePic > img {
     height: 5.625rem; /* 80px */
     width: auto;
     transition-duration: 0.4s;
 }
 
-div.avatarChoice:not(div.chosen):hover > span.coin {
+div.avatarChoice:not(div.noEffects):hover > span.coin {
     box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
     transition-duration: 0.4s;
-    margin-bottom: 0;
+    margin: 0;
 }
 
-div.avatarChoice:not(div.chosen):not(div.noMoney):hover > div.roundProfilePic {
+div.avatarChoice:not(div.noEffects):not(div.noMoney):hover > div.roundProfilePic {
     border-color: var(--accentColor);
 }
 
-div.avatarChoice:not(div.noMoney):active > div.roundProfilePic,  div.avatarChoice:not(div.noMoney):active > span.coin {
+div.avatarChoice:not(div.noEffects):not(div.noMoney):active > div.roundProfilePic,  div.avatarChoice:not(div.noEffects):not(div.noMoney):active > span.coin {
     box-shadow: 4px 4px 12px rgba(30, 41, 41, 0.7) inset;
 }
 
@@ -183,18 +183,18 @@ div.noMoney span.coin:before {
     background-image: url("/public/assets/icons/coinGrey.svg");
 }
 
-div.noMoney:hover {
+div.noMoney:not(div.noEffects):hover {
     cursor: not-allowed;
 }
 
 @media screen and (max-width: 112.5em) {
 
-    div.avatarChoice div.roundProfilePic {
+    div.avatarChoice:not(div.bigPic) div.roundProfilePic {
         height: 7.5rem; /* 120px */
         width: 7.5rem; /* 120px */
     }
 
-    div.avatarChoice div.roundProfilePic img {
+    div.avatarChoice:not(div.bigPic) div.roundProfilePic img {
         height: 4.063rem; /* 65px */
         width: auto;
     }
@@ -209,12 +209,12 @@ div.noMoney:hover {
         padding-left: 1.125rem;
     }
 
-    div.avatarChoice:not(div.chosen):hover > div.roundProfilePic {
+    div.avatarChoice:not(div.noEffects):not(div.bigPic):hover > div.roundProfilePic {
         height: 8.75rem; /* 140px */
         width: 8.75rem; /* 140px */
     }
 
-    div.avatarChoice:not(div.chosen):hover > div.roundProfilePic > img {
+    div.avatarChoice:not(div.noEffects):not(div.bigPic):hover > div.roundProfilePic > img {
         height: 5rem; /* 80px */
         width: auto;
     }

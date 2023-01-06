@@ -12,7 +12,7 @@ class AvatarsModel extends Model
     protected $DBGroup = 'default';
 
     const  BOUGHT_CSS_CLASS = ['avatarChoice bought','Purchased'];
-    const  SELECTED_CSS_CLASS = ['avatarChoice chosen','Selected'];
+    const  SELECTED_CSS_CLASS = ['avatarChoice chosen noEffects','Selected'];
 
     const  NO_MONEY_CSS_CLASS = ['avatarChoice locked noMoney',''];
     const  LOCK_CSS_CLASS = ['avatarChoice locked',''];
