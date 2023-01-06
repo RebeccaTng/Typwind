@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                    exercisesText = "<div class='card lessonCard'> <h2>" + "Custom Exercises" + "</h2>"
+                    exercisesText = "<div class='card lessonCard'> <h2 class='three'>" + "Custom Exercises" + "</h2>"
                 }
                 lessonGroup.forEach(element => exercisesText = exercisesText+ "<a href="+ getCookie("baseURL") +"/experts/editExercisePage/"+ element.idExercises +">" + "<h4 class='exerciseField'>" + element.name + "</h4>" + "</a>");
                 exercisesText = exercisesText + "</div>"
@@ -40,10 +40,10 @@
     });
 </script>
 
-<h1>Exercises</h1>
+<h1 class="one">Exercises</h1>
 
 <!-- Add new exercise -->
-<a class="addNew" href=<?php echo base_url('experts/addExercisePage/');?>>Add New Exercise</a>
+<a class="addNew two" href=<?php echo base_url('experts/addExercisePage/');?>>Add New Exercise</a>
 
 <div class="exerciseContainer">
 </div>

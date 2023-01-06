@@ -3,13 +3,15 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","exercise", time()+36000, "/");?>
+
 <link rel="stylesheet" href="<?=base_url()?>/public/CSS/keyboard.css">
 
 <div class="grid-container_exercise">
     <!--breadcrumb-->
     <div class = "breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a>
+            <li><a href="<?php echo base_url('/kids/exercises');?>" class="one">Exercises</a>
             <?php foreach ($exercises as $ex):?>
                 <?php  if ($ex->idExercises==$idExercises):?>
                     <li><?= $ex->name?></li>
@@ -26,7 +28,7 @@
         <div class="title">
             <h1><?= $ex->name?></h1>
             <form action="<?php echo base_url('kids/intro/'.$idExercises);?>" class="inline">
-                <button id="stopButton" class="buttonSecondary buttonChild" >STOP & EXIT</button>
+                <button id="stopButton" class="buttonSecondary buttonChild two">STOP & EXIT</button>
             </form>
         </div>
     </div>

@@ -120,20 +120,92 @@ var studentHomeData={
 var studentExercisesData={
     "nederlands":
         {
-            "two" : "Welkom Terug",
-            "three" : "Jouw volgende oefening wacht op je!",
-            "four" : "Start nieuwe oefening",
-            "five" : "Het avontuur van de hond",
-            "six" : ""
+            "one" : "Oefeningen"
         },
 
     "english":
         {
-            "two" : "Welcome Back",
-            "three" : "Your next exercise is waiting for you!",
-            "four" : "Start new exercise",
-            "five" : "The Adventure of the Dog.",
-            "six" : ""
+            "one" : "Exercises"
+        }
+}
+
+var studentIntroData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "two" : "Introductie",
+            "three" : "Hoe wil je spelen?",
+            "four" : "Toon keyboard met kleuren",
+            "five" : "Druk start en verdien enkele sterren",
+            "six" : "Veel succes!",
+            "seven": "START",
+            "eight": "GA TERUG NAAR OEFENINGEN"
+
+        },
+
+    "english":
+        {
+            "one" : "Exercises",
+            "two" : "Introduction",
+            "three" : "How do you want to play the game?",
+            "four" : "Show keyboard with colors",
+            "five" : "Press start and earn some stars.",
+            "six": "Good luck!",
+            "seven": "START",
+            "eight": "GO BACK TO EXERCISES"
+
+        }
+}
+
+var studentExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "two" : "STOP & GA TERUG"
+        },
+
+    "english":
+        {
+            "one" : "Exercises",
+            "two" : "STOP & EXIT"
+
+        }
+}
+
+var studentFeedbackData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "two" : "Resultaat",
+            "three" : "Wow 4 Sterren!",
+            "four" : "OPNIEUW SPELEN",
+            "five" : "START NIEUWE OEFENING",
+            "six" : "GA TERUG NAAR OEFENINGEN",
+        },
+
+    "english":
+        {
+            "one" : "Exercises",
+            "two" : "Feedback",
+            "three" : "Wow 4 Stars!",
+            "four" : "REPLAY EXERCISE",
+            "five" : "START NEW EXERCISE",
+            "six" : "GO BACK TO EXERCISES",
+        }
+}
+
+var studentAvatarData={
+    "nederlands":
+        {
+            "one" : "Mijn Avatar",
+            "two" : "Mijn Munten"
+        },
+
+    "english":
+        {
+            "one" : "My Avatar",
+            "two" : "My Coins"
+
         }
 }
 
@@ -204,25 +276,19 @@ var expertEditStudentData={
 }
 
 var expertExercisesData={
-/*    "nederlands":
+    "nederlands":
         {
-            "one" : "Welkom Terug,",
-            "two" : "Welkom Terug",
-            "three" : "Jouw volgende oefening wacht op je!",
-            "four" : "Start nieuwe oefening",
-            "five" : "Het avontuur van de hond",
-            "six" : ""
+            "one" : "Oefeningen",
+            "two" : "Nieuwe oefening toevoegen",
+            "three" : "Oefeningen op maat"
         },
 
     "english":
         {
-            "one" : "Welcome Back,",
-            "two" : "Welcome Back",
-            "three" : "Your next exercise is waiting for you!",
-            "four" : "Start new exercise",
-            "five" : "The Adventure of the Dog.",
-            "six" : ""
-        }*/
+            "one" : "Exercises",
+            "two" : "Add new exercise",
+            "three" : "Custom Exercises"
+        }
 }
 
 var expertProfileData={
@@ -287,6 +353,7 @@ const four = document.querySelector('.four');
 const five = document.querySelector('.five');
 const six = document.querySelector('.six');
 const seven = document.querySelector('.seven');
+const eight = document.querySelector('.eight');
 
 // BASIC Cookie function
 // for now we use this one
@@ -428,13 +495,44 @@ link.forEach(el => {
         }
 
         if(getCookie("currentPage")=== "studentExercises"){
-            //TO BE ADDED
-/*            two.textContent = studentHomeData[attr].two;
-            three.textContent = studentHomeData[attr].three;
-            four.textContent = studentHomeData[attr].four;
-            five.textContent = studentHomeData[attr].five;*/
-            /*six.textContent = mainData[attr].six;*/
+            one.textContent = studentExercisesData[attr].one;
         }
+
+        if(getCookie("currentPage")=== "intro"){
+            one.textContent = studentIntroData[attr].one;
+            two.textContent = studentIntroData[attr].two;
+            three.textContent = studentIntroData[attr].three;
+            four.textContent = studentIntroData[attr].four;
+            five.textContent = studentIntroData[attr].five;
+            six.textContent = studentIntroData[attr].six;
+            seven.textContent = studentIntroData[attr].seven;
+            eight.textContent = studentIntroData[attr].eight;
+        }
+
+        if(getCookie("currentPage")=== "exercise"){
+            one.textContent = studentExerciseData[attr].one;
+            two.textContent = studentExerciseData[attr].two;
+            three.textContent = studentExerciseData[attr].three;
+            four.textContent = studentExerciseData[attr].four;
+            five.textContent = studentExerciseData[attr].five;
+            six.textContent = studentExerciseData[attr].six;
+            seven.textContent = studentExerciseData[attr].seven;
+        }
+
+        if(getCookie("currentPage")=== "feedback"){
+            one.textContent = studentFeedbackData[attr].one;
+            two.textContent = studentFeedbackData[attr].two;
+            three.textContent = studentFeedbackData[attr].three;
+            four.textContent = studentFeedbackData[attr].four;
+            five.textContent = studentFeedbackData[attr].five;
+            six.textContent = studentFeedbackData[attr].six;
+        }
+
+        if(getCookie("currentPage")=== "avatar"){
+            one.textContent = studentAvatarData[attr].one;
+            two.textContent = studentAvatarData[attr].two;
+        }
+
 
         if(getCookie("currentPage")=== "expertHome"){
             one.textContent = expertHomeData[attr].one;
@@ -455,11 +553,9 @@ link.forEach(el => {
         }
 
         if(getCookie("currentPage")=== "expertExercises"){
-/*            one.textContent = expertExercisesData[attr].one;
+            one.textContent = expertExercisesData[attr].one;
             two.textContent = expertExercisesData[attr].two;
             three.textContent = expertExercisesData[attr].three;
-            four.textContent = expertExercisesData[attr].four;
-            five.textContent = expertExercisesData[attr].five;*/
         }
 
         if(getCookie("currentPage")=== "expertProfile"){
@@ -471,6 +567,8 @@ link.forEach(el => {
             six.textContent = expertProfileData[attr].six;
             seven.textContent = expertProfileData[attr].seven;
         }
+
+
 
         if(getCookie("currentPage")=== "expertEditProfile"){
             one.textContent = expertEditProfileData[attr].one;

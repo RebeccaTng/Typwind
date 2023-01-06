@@ -2,11 +2,13 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","intro", time()+36000, "/");?>
+
 <div class = "grid-container_intro">
     <div class = "breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a></li>
-            <li>Introduction</li>
+            <li><a href="<?php echo base_url('/kids/exercises');?>" class="one">Exercises</a></li>
+            <li class="two">Introduction</li>
         </ul>
     </div>
 
@@ -19,25 +21,25 @@
     </div>
     <div class="grid_cards">
             <div class="card_intro">
-                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px">How do you want to play the game?</h4>
+                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px" class="three">How do you want to play the game?</h4>
                 <label class="switch">
                     <input type="checkbox" id="keyboard" name="keyboard">
                     <span class="slider"></span>
                 </label>
-                <label for="keyboard" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Show keyboard with colors </label>
+                <label for="keyboard" style="color: var(--blueNeutral-dark); font: var(--bodyExText)" class="four">Show keyboard with colors </label>
             </div>
 
             <div class="card_intro">
 
-                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px">Press start and earn some stars.<br> Good luck!</h4>
+                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 0px" class="five">Press start and earn some stars.</h4> <br> <h4 style="color: var(--blueNeutral-dark); margin-bottom: 0px" class="six">Good luck!</h4>
                 <?php foreach ($exercises as $ex):?>
                     <?php  if ($ex->idExercises==$idExercises):?>
 
                         <form action="<?php echo base_url('kids/exercise/'.$ex->idExercises);?>" class="intro_ex_button">
-                                <button class="button buttonPrimary buttonChild">Start</button>
+                                <button class="button buttonPrimary buttonChild seven">Start</button>
                             </form>
                             <form action="<?php echo base_url();?>/kids/exercises" class="intro_ex_button">
-                                <button class="button buttonSecondary buttonChild">Go back to exercises</button>
+                                <button class="button buttonSecondary buttonChild eight">Go back to exercises</button>
                             </form>
 
 

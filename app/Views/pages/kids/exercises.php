@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","studentExercises", time()+36000, "/");?>
+
 <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/kids/intro/">
 
 <script>
@@ -127,7 +129,7 @@
     });
 </script>
 
-<h1>Exercises</h1>
+<h1 class="one">Exercises</h1>
 <div class="card_and_button">
 
     <button class="button round" style="background-color: transparent; border: none"><img alt="Arrow Up Icon" src="/public/assets/icons/up.png"></button>
