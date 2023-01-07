@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="/public/assets/general/typwind-icon.ico" />
+
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
