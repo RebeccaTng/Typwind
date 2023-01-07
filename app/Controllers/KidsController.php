@@ -150,7 +150,8 @@ class KidsController extends BaseController
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
         $dataFeedback = array_merge($this->data,$css);
-        return view('pages/kids/feedback', $dataFeedback) ;
+//        return view('pages/kids/feedback', $dataFeedback) ;
+        return  $dataFeedback ;
     }
 
 

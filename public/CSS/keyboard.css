@@ -174,13 +174,17 @@
 
 .myProgress2 {
     width: 100%;
-    background-color: #ddd;
+    border-radius: 1.25rem;
+    border: solid var(--primaryColor);
 }
 
 .myBar2 {
+    /*width: 0%;*/
+    /*height: 30px;*/
+    /*background-color: #E06E3F;*/
+    /*transition: width 250ms ease-in-out, background-color 250ms ease;*/
     width: 0%;
-    height: 30px;
-    background-color: #E06E3F;
-    transition: width 250ms ease-in-out, background-color 250ms ease;
-
+    height: 1.25rem;
+    background: var(--primaryColor);
+    border-radius: 1.25rem;
 }
