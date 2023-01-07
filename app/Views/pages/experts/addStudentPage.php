@@ -40,6 +40,7 @@
                             <?php endforeach;?>
                         </select>
 
+                        <label class="explanation">Which hand(s) will they be typing with?</label>
                         <label for="handSelection"><b>Hand Selection:</b></label>
                         <select name="handSelection" id="handSelection" required>
                             <option value="One Hand, right hand">Right Hand</option>
@@ -47,6 +48,7 @@
                             <option selected="selected" value="Both Hands">Both Hands</option>
                         </select>
 
+                        <label class="explanation">Is the child currently following the Typwind course?</label>
                         <label for="active"><b>Active:</b></label>
                         <label class="switch">
                             <input type="checkbox" id="active" name="active" checked>

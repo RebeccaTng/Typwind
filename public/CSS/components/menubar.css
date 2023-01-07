@@ -38,6 +38,11 @@
     height: fit-content;
 }
 
+#typewindLogo {
+    width: 11.25rem;
+    height: auto;
+}
+
 .menuSubHeader{
     grid-area: subHeader;
     padding-right: 1.563rem;
@@ -71,8 +76,8 @@
     padding-left: 3.438rem;
     margin-right: 0.938rem;
 }
-.menuFooter a {
 
+.menuFooter a {
     text-decoration: none;
     flex-grow: 1;
     display: flex;
@@ -125,9 +130,11 @@
         align-items: center;
 
     }
+
     #typewindLogo{
-        height: 3.125rem;
-        width: 6.25rem;
+        width: 2.5rem;
+        height: auto;
+        content: url("/public/assets/general/typwind-icon.svg");
     }
 
     .menuHeader div.roundProfilePic {

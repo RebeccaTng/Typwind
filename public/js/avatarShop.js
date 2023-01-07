@@ -48,8 +48,8 @@ class Dialog {
               </fieldset>
               
               <menu>
-                <button${this.dialogSupported ? '' : ` type="button"`} data-ref="cancel" value="cancel"></button>
-                <button${this.dialogSupported ? '' : ` type="button"`} data-ref="accept" value="default"></button>
+                <button${this.dialogSupported ? '' : ` type="button"`} class="button buttonSecondary buttonChild" data-ref="cancel" value="cancel"></button>
+                <button${this.dialogSupported ? '' : ` type="button"`} class="button buttonPrimary buttonChild" data-ref="accept" value="default"></button>
               </menu>
             </form>`
         document.body.appendChild(this.dialog)
@@ -136,18 +136,14 @@ for (let i = 0; i < elements.length; i++) {
             dialog.open({
                 accept: 'Confirm',
                 dialogClass: 'custom',
-                message: 'Confirm purchase of new avatar',
+                message: 'Confirm your purchase of this avatar',
                 target: e.target,
                 template:  `
-            <div class=" avatarChoice locked noMoney">
-            <div class="roundProfilePic currentPic">
+            <div class="avatarChoice locked noMoney noEffects bigPic">
+            <div class="roundProfilePic">
                 <img src="/public/assets/avatars/`+elementId+`.svg" alt="User Icon">
             </div>
             </div>
-     
-     
-     
-     
      
             <input type="hidden" name="idOfAvatar" value=`+elementId+`>
             `,
