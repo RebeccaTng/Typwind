@@ -114,7 +114,7 @@ div.avatarChoice:not(div.noEffects):hover > span.coin {
     margin: 0;
 }
 
-div.avatarChoice:not(div.noEffects):not(div.noMoney):hover > div.roundProfilePic {
+div.avatarChoice:not(div.noEffects):not(div.noMoney):not(div.bought):hover > div.roundProfilePic {
     border-color: var(--accentColor);
 }
 
@@ -131,7 +131,7 @@ div.locked div.roundProfilePic {
     border-color: var(--lightGray);
 }
 
-div.locked:not(div.noMoney):hover > span.coin {
+div.locked:not(div.noMoney):not(div.bought):hover > span.coin {
     background-color: var(--accent-light);
 }
 
@@ -165,9 +165,9 @@ div.bought span.coin {
     padding: 0.625rem 1.25rem;
 }
 
-div.bought:hover > span.coin {
-    background-color: var(--accentColor);
-}
+/*div.bought:hover > span.coin {*/
+/*    background-color: var(--accentColor);*/
+/*}*/
 
 div.noMoney:hover span.errorMessage {
     visibility: visible;
