@@ -34,14 +34,18 @@
 #myProgress {
     width: 100%;
     border-radius: 1.25rem;
-    border: solid var(--secondaryColor);
+    border: solid var(--primaryColor);
 }
 
 #myBar {
     width: 0%;
     height: 1.25rem;
-    background: var(--secondaryColor);
+    background: var(--primaryColor);
     border-radius: 1.25rem;
+    /*width: 0%;*/
+    /*height: 30px;*/
+    /*background-color: #E06E3F;*/
+    /*transition: width 250ms ease-in-out, background-color 250ms ease;*/
 }
 
 /*Exercise button*/
