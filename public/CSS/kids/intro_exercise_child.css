@@ -23,7 +23,11 @@
     border: 0.125rem solid var(--beigeNeutral-dark); /* 2px */
     padding: 40px;
     margin: 0.625rem; /* 10px */
-    text-align: center;
+    align-items: center;
+}
+.switches{
+    text-align: left;
+    margin-left: 15px;
 }
 .breadcrumb{
     /*grid-column: 1  / span 3;*/

@@ -23,23 +23,25 @@
     <div class="grid_cards">
             <div class="card_intro">
                 <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px" class="three">How do you want to play the game?</h4>
-                <label class="switch">
-                    <input type="checkbox" id="keyboardShow" name="keyboard"  onchange="sliders()" checked>
-                    <span class="slider"></span>
-                </label>
-                <label for="keyboard" style="color: var(--blueNeutral-dark); font: var(--bodyExText)" class="four">Show keyboard</label>
-                <br>
-                <label class="switch">
-                    <input type="checkbox" id="voice" name="voice"  onchange="sliders()" checked>
-                    <span class="slider"></span>
-                </label>
-                <label for="voice" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Read letters out loud</label>
-                <br>
-                <label class="switch">
-                    <input type="checkbox" id="feedback" name="keyboard"  onchange="sliders()" checked>
-                    <span class="slider"></span>
-                </label>
-                <label for="feedback" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Have audio feedback when typing</label>
+                <div class="switches">
+                    <label class="switch">
+                        <input type="checkbox" id="keyboardShow" name="keyboard"  onchange="sliders()" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <label for="keyboard" style="color: var(--blueNeutral-dark); font: var(--bodyExText)" class="four">Show keyboard</label>
+                    <br>
+                    <label class="switch">
+                        <input type="checkbox" id="voice" name="voice"  onchange="sliders()" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <label for="voice" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Read letters out loud</label>
+                    <br>
+                    <label class="switch">
+                        <input type="checkbox" id="feedback" name="keyboard"  onchange="sliders()" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <label for="feedback" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Have audio feedback when typing</label>
+                </div>
             </div>
 
             <div class="card_intro">
