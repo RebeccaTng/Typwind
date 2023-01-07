@@ -31,6 +31,7 @@
         </div>
     </div>
 
+
     <div hidden="true" id="textInput"><?=$ex->text?></div>
     <div hidden="true" id="idExercise_fkDB"><?=$ex->idExercises?></div>
     <div hidden="true" id="idStudent_fkDB"><?=$idStudents?></div>

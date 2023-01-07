@@ -4,6 +4,7 @@
 
 <?php setcookie("currentPage","expertEditStudent", time()+36000, "/");?>
 <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/public/assets/general">
+<script type="text/javascript" src="<?=base_url()?>/public/js/editStudent.js"></script>
 
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>
@@ -16,7 +17,7 @@
         <h1><?=$person->firstname?> <?=$person->lastname?></h1>
 
         <div class="scroller">
-            <div class="studentContainer">
+            <form class="studentContainer" action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/1.svg" alt="User Icon">
                 </div>
@@ -24,7 +25,6 @@
                 <div class="infoContainer">
                     <div class="general">
                         <h3>General Information</h3>
-                        <form action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
                         <input type="hidden" id="email" name="email" value="<?=$person->email?>">
                         <input type="hidden" id="password" name="password" value="<?=$person->password?>">
                         <input type="hidden" id="reminder" name="reminder" value="<?=$person->reminder?>">
@@ -91,9 +91,13 @@
 
                     <div class="notes">
                         <label for="notes"><h3>Notes</h3></label>
-                        <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
-                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."> <?= $person->notes?></textarea>
+                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here"><?= $person->notes?></textarea>
+                        <div id="the-count">
+                            <span id="current"></script></span>
+                            <span id="maximum">/ 1000</span>
+                        </div>
                     </div>
+
                 </div>
 
                 <?php if ($person->handSelection==1):?>
@@ -108,16 +112,17 @@
 
                 <div class="bottomBar space">
                     <input type="submit" value="Save" class="button buttonPrimary buttonExpert">
-                        </form>
+
                     <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
                         <button class="button buttonSecondary buttonExpert">BACK</button>
                     </a>
                 </div>
-            </div>
+            </form>
         </div>
 
     <?php endif;?>
 <?php endforeach;?>
+
 <script>
     function handImage() {
         var URL = document.getElementById("URL").value;
@@ -135,6 +140,42 @@
             document.getElementById("hand image").src =URL +"/hands_both.svg";
         }
     }
+    $('textarea').keyup(function () {
+
+        var characterCount = $(this).val().length,
+            current = $('#current'),
+            maximum = $('#maximum'),
+            note = $('#notes'),
+            theCount = $('#the-count');
+
+
+        current.text(characterCount);
+
+        if (characterCount < 167) {
+            current.css('color', '#666');
+        }
+        if (characterCount > 167 && characterCount < 334) {
+            current.css('color', '#6d5555');
+        }
+        if (characterCount > 334 && characterCount < 500) {
+            current.css('color', '#793535');
+        }
+        if (characterCount > 667 && characterCount < 834) {
+            current.css('color', '#841c1c');
+        }
+        if (characterCount > 834 && characterCount < 1000) {
+            current.css('color', '#8f0001');
+        }
+
+        if (characterCount >= 1000) {
+            maximum.css('color', '#8f0001');
+            current.css('color', '#8f0001');
+            theCount.css('font-weight', 'bold');
+        } else {
+            maximum.css('color', '#666');
+            theCount.css('font-weight', 'normal');
+        }
+    });
 </script>
 
 <?= $this->endSection() ?>

@@ -12,11 +12,14 @@
         <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/experts/studentOverview/">
         <!-- Filter -->
         <div class="filterContainer">
-            <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
-                <option disabled selected value="Filter" class="three">Filter</option>
-                <?php foreach ($teachers as $teacher):?>
-                    <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
-                <?php endforeach;?>
+            <select name="Filter" id="filter" onchange="filterStudents(users, this.value)" onclick="hideOption()">
+                <option disabled selected value="Filter" class="three" hidden>Filter</option>
+                <?php foreach ($teachers as $teacher):
+                    if($teacher->isActive):?>
+
+                        <option value="<?=$teacher->firstname?>"> <?=$teacher->firstname?> </option>
+                    <?php endif;
+                endforeach;?>
             </select>
             <button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')"></button>
         </div>
@@ -36,9 +39,11 @@
                     <div class="roundProfilePic">
                         <img src="/public/assets/avatars/1.svg" alt="User Icon">
                     </div>
-                    <h4><?=$person->firstname?><br><?=$person->lastname?></h4>
+                    <h4><?=$person->firstname?> <br><?=$person->lastname?></h4>
                 </a>
             </li>
+            <h3 id="noStudents" hidden>No Student found</h3>
+            <h3 id="tnoStudents" hidden>This teacher has no students assigned</h3>
         <?php endforeach;?>
     </ul>
 <?= $this->endSection() ?>

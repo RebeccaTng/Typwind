@@ -106,21 +106,32 @@ class KidsController extends BaseController
 
     public function intro($idExercises)
     {
-
         $this->data['exercises']= session()->get('exercises');
 //        $this->data['idExercises']= $_GET['idExercises'];
         $this->data['idExercises']= $idExercises;
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         return ($this->data);
     }
-    public function exercise($idExercises)
+
+    public function ex($idExercises)
+    {
+        $this->data['idExercises']= $idExercises;
+        $this->data['showKeyboard']= isset($_POST['keyboardShowCopy']);
+        $this->data['voice']= isset($_POST['voiceCopy']);
+        $this->data['feedback']= isset($_POST['feedbackCopy']);
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+        $css = ['cssFiles' =>  $this->getCSSFile("exercise")];
+        $dataExercise = array_merge($this->getDataForPage('exercise',0),$css, $this->data);
+        return view('pages/kids/exercise', $dataExercise);
+    }
+
+    public function exercise()
     {
         $this->data['idStudents']=session()->id;
         $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');
-        $this->data['idExercises']= $idExercises;
+        print_r($this->data['voice']);
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
-
         return ($this->data);
     }
 

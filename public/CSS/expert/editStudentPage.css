@@ -93,3 +93,8 @@ div.notes label h3 {
         grid-column: 1;
     }
 }
+#the-count {
+    float: right;
+    padding: 0.1rem 0 0 0;
+    font-size: 1rem;
+}
