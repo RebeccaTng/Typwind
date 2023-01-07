@@ -29,7 +29,7 @@
             <h3 class="three" style="color:var(--primary-darkest);">Are you a student or a teacher?</h3>
 
             <div class="teacher_student_buttons">
-                <button class="button buttonExpert buttonPrimary four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" title="Look at profile" >TEACHER</button>
+                <button class="button buttonExpert buttonPrimary four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'" >TEACHER</button>
                 <button class="button buttonExpert buttonPrimary five" onclick="window.location= '<?=base_url()?>/registration/studentLogin'" >STUDENT</button>
             </div>
         </div>
