@@ -27,6 +27,8 @@
     <div class="container">
         <div class="title">
             <h1><?= $ex->name?></h1>
+            <input type="button" class="button buttonSecondary buttonChild two" id="muteSoundsBtn" value="Spel geluiden" onclick="muteSounds();">
+            <input type="button" class="button buttonSecondary buttonChild two" id="muteSpeakBtn" value="Verteller" onclick="muteSpeak();">
             <form action="<?php echo base_url('kids/intro/'.$idExercises);?>" class="inline">
                 <button id="stopButton" class="button buttonSecondary buttonChild two" >STOP & EXIT</button>
             </form>
@@ -36,30 +38,37 @@
     <div hidden="true" id="textInput"><?=$ex->text?></div>
     <div hidden="true" id="idExercise_fkDB"><?=$ex->idExercises?></div>
     <div hidden="true" id="idStudent_fkDB"><?=$idStudents?></div>
-
 <?php endif;?>
 <?php endforeach;?>
 <div hidden="true" id="handSelection"><?=$handSelection?></div>
 
+    <?php if  (($voiceCopy==1)):?>
+    <div hidden="true" id="voiceCopy">1</div>
+<?php else :?>
+    <div hidden="true" id="voiceCopy">0</div>
+<?php endif;?>
+
+    <?php if  (($feedbackCopy==1)):?>
+    <div hidden="true" id="feedbackCopy">1</div>
+<?php else :?>
+    <div hidden="true" id="feedbackCopy">0</div>
+<?php endif;?>
 
     <!--Image and text bar-->
     <div class="exercise">
-        <div id="myProgress2" class="myProgress2">
-            <div id="myBar2" class="myBar2"></div>
+        <div id="myProgress" class="myProgress">
+            <div id="myBar" class="myBar"></div>
         </div>
         <div id="imageContainer"></div>
+        <div id="feedback"></div>
         <audio id="soundContainer"></audio>
         <audio id="soundContainerStart"></audio>
-        <div id="feedback"></div>
-        <input type="button" id="muteSoundsBtn" value="Spel geluiden AAN" onclick="muteSounds();">
-        <input type="button" id="muteSpeakBtn" value="Verteller AAN" onclick="muteSpeak();">
-        <div class="textBox" id="textBox">
-            <div class="textContainer " id="movableExerciseBoxText"></div>
+       <div class="textBox" id="textBox">
+           <div class="textContainer " id="movableExerciseBoxText"></div>
         </div>
-
-        <div id="effect"></div>
     </div>
 
+<?php if  (($showKeyboard==1)):?>
     <div class="keyboard-base" id="keyboard">
         <div class="key" id="Backquote"></div>
         <div class="key blue" id="Digit1">1</div>
@@ -112,10 +121,10 @@
         <div class="key red" id="KeyV">V</div>
         <div class="key red" id="KeyB">B</div>
         <div class="key red" id="KeyN">N</div>
-        <div class="key red" id="KeyM"></div>
-        <div class="key green" id="Comma"></div>
-        <div class="key yellow" id="Period"></div>
-        <div class="key blue" id="Slash"></div>
+        <div class="key red" id="KeyM">,</div>
+        <div class="key green" id="Comma">;</div>
+        <div class="key yellow" id="Period">:</div>
+        <div class="key blue" id="Slash">=</div>
         <div class="key rightshift" id="ShiftRight"></div>
         <div class="key leftctrl" id="ControlLeft"></div>
         <div class="key" id="MetaLeft"></div>
@@ -126,7 +135,7 @@
         <div class="key" id="ControlRight"></div>
         <div class="key"></div>
     </div>
-
+<?php endif;?>
 
 
 

@@ -129,6 +129,9 @@ class KidsController extends BaseController
 
     public function exercise()
     {
+        $this->data['showKeyboard']= isset($_POST['keyboardShowCopy']);
+        $this->data['voiceCopy']= isset($_POST['voiceCopy']);
+        $this->data['feedbackCopy']= isset($_POST['feedbackCopy']);
         $this->data['idStudents']=session()->id;
         $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');

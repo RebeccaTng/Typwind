@@ -13,9 +13,11 @@ let formDB = document.getElementById("form");
 let scoreDB = document.getElementById("score");
 let dateDB = document.getElementById("date");
 let feedback = document.getElementById("feedback");
-let myBar = document.getElementById("myBar2");
+let myBar = document.getElementById("myBar");
 let muteSoundsBtn = document.getElementById("muteSoundsBtn");
 let muteSpeakBtn = document.getElementById("muteSpeakBtn");
+let feedbackCopy = document.getElementById("feedbackCopy");
+let voiceCopy = document.getElementById("voiceCopy");
 
 //global variables
 let textInput = "No input from DB test tEsT tést têst tëst";
@@ -31,8 +33,8 @@ let correctAnswers = 0;
 let mistakes = 0;
 let score = 0;
 let progressbar = 0;
-let muteSoundsBool = true;
-let muteSpeakBool = true;
+let muteSoundsBool;
+let muteSpeakBool;
 let wrongMessagesMap = new Map([
     [1,"Ai, probeer nog een keer!"],
     [2,"Kom op, je kan het. Probeer nog een keer!"],
@@ -123,6 +125,7 @@ window.onload = atStart;   //runs the function when the page is loaded
 
 /*What needs to happen when the page is loaded*/
 function atStart(){
+    soundAtStart();
     if (muteSoundsBool){playSoundStarted();}
     if(textInputDB.innerText !== null) {
         textInput = textInputDB.innerText;
@@ -296,6 +299,26 @@ function feedbackSentence(boolean){
     }
 }
 
+/*Function to setup the sound buttons*/
+function soundAtStart(){
+    console.log(feedbackCopy.innerText)
+    if (feedbackCopy.innerText==1){
+        muteSoundsBool=true;
+        muteSoundsBtn.value="Spel geluiden AAN";
+    }else{
+        muteSoundsBool=false;
+        muteSoundsBtn.value="Spel geluiden UIT";
+    }
+    console.log(muteSoundsBool)
+    if (voiceCopy.innerText==1){
+        muteSpeakBool=true;
+        muteSpeakBtn.value="Verteller AAN";
+    }else{
+        muteSpeakBool=false;
+        muteSpeakBtn.value="Verteller UIT";
+    }
+}
+
 function muteSounds(){
     if(!muteSoundsBool){
         muteSoundsBool = true;
@@ -368,6 +391,8 @@ function playSound(key){
 
     }
 }
+
+
 
 /*Function for adjusting the CSS class of the given key*/
 function highlightCurrentLetter() {

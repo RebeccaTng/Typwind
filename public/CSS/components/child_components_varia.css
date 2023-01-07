@@ -38,7 +38,7 @@
 }
 
 #myBar {
-    width: 30%;
+    width: 0%;
     height: 1.25rem;
     background: var(--secondaryColor);
     border-radius: 1.25rem;
