@@ -103,7 +103,7 @@ let imageMap = new Map([
     ["+",["","Equal",""]],
     [";",["","Comma",""]],
     ["",["","",""]], // this one is the template, no function in code
-    [" ",["/public/assets/pictures/noInput.png","Space",""]]]);
+    [" ",["","Space",""]]]);
 
 
 
@@ -209,6 +209,8 @@ function processInputFunction() {
         }
     //Given input is wrong
     } else {
+        var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
+        span.style.borderColor = "red";
         feedbackSentence(true);
         if (muteSoundsBool){playSoundWrong();}
         wrongAnswered = true;
@@ -279,9 +281,9 @@ function setImage(key){
 function moveBar() {
     let width = Math.ceil(((correctCharactersTyped+1)/correctCharactersNeeded)*100);
     myBar.style.width = width + "%";
-    r = width<50 ? 244 : Math.floor(255-(width*2-100)*255/100);
-    g = width>50 ? 244 : Math.floor((width*2)*255/100);
-    myBar.style.backgroundColor = 'rgb('+r+','+g+',0)';
+    // r = width<50 ? 244 : Math.floor(255-(width*2-100)*255/100);
+    // g = width>50 ? 244 : Math.floor((width*2)*255/100);
+    // myBar.style.backgroundColor = 'rgb('+r+','+g+',0)';
 }
 
 /*Function for setting or unsetting the feedback sentence based on the value*/
@@ -379,6 +381,7 @@ function highlightCurrentLetter() {
 /*Function for adjusting the CSS class of the given key*/
 function highlightLetterWrong() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
+    span.style.borderColor = null;
     span.setAttribute("class","letter wrong");
     moveSentence();
 }
