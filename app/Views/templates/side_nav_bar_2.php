@@ -13,7 +13,7 @@
     <div class="menuItems" >
         <?php if (! empty($menu_items)) :?>
             <?php foreach ($menu_items as $menu): ?>
-                <a href="<?=base_url($menu['link'])?>" class="<?=$menu['className']?>" title="<?=$menu['title']?>">
+                <a href="<?=base_url($menu['link'])?>" class="<?=$menu['className']?>">
                     <img  src="<?=base_url($menu['image'])?>" >
                     <p class="<?=$menu['name']?>"><?=$menu['name']?></p>
                 </a>

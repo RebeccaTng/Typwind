@@ -25,11 +25,12 @@
             }
         }
 
-
         for (const lessonId of lessonsMap.keys()) {
+            const lessonNumber= Number.prototype[lessonId];
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
                 let exercisesText = "<div class='card lessonCardChild'> <h2>"+"Lesson "+lessonId +"</h2>";
+
                 for (let i = 0; i < lessonGroup.length; i++) {
                     exercisesText =
                     exercisesText

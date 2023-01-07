@@ -20,18 +20,24 @@ class ExpertController extends BaseController
     private array $addStudentPage = array("expert/studentOverview.css", "expert/editStudentPage.css", "expert/addStudentPage.css");
     private array $profile = array("expert/profile.css");
     private array $editProfilePage = array("expert/profile.css", "expert/editProfile.css");
+    private array $exerciseContent = array("expert/exerciseContent.css");
+    private array $addExercisePage = array("expert/exercises.css","expert/addExercisePage.css");
+    private array $editExercisePage = array("expert/exercises.css","expert/addExercisePage.css");
 
 
     /// END OF CSS FILES ************************
     //    private $data;
     private Students_model $students_model;
     private Teachers_model $teachers_model;
+    private ExerciseModel  $exercises_model;
+
     private $menu_model;
 
     public function __construct() {
         $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
         $this->teachers_model = new Teachers_model();
+        $this->exercises_model = new ExerciseModel();
     }
     public function view($page = 'home',$arg='0')
     {
@@ -65,6 +71,12 @@ class ExpertController extends BaseController
                 return $this->profile();
             case 'editProfilePage':
                 return $this->editProfilePage();
+            case 'exerciseContent':
+                return $this->exerciseContent();
+            case 'addExercisePage':
+                return $this->addExercisePage();
+            case 'editExercisePage':
+                return $this->editExercisePage($args);
 
             default:
                 return $this->commonCssFiles;
@@ -89,6 +101,12 @@ class ExpertController extends BaseController
                 return $this->includeCSSFilesInCommonFiles( $this->profile);
             case 'editProfilePage':
                 return $this->includeCSSFilesInCommonFiles( $this->editProfilePage);
+            case 'exerciseContent':
+                return $this->includeCSSFilesInCommonFiles( $this->exerciseContent);
+            case 'addExercisePage':
+                return $this->includeCSSFilesInCommonFiles( $this->addExercisePage);
+            case 'editExercisePage':
+                return $this->includeCSSFilesInCommonFiles( $this->editExercisePage);
             default:
                 return $this->commonCssFiles;
         }
@@ -123,6 +141,7 @@ class ExpertController extends BaseController
         $model = model(ExerciseModel::class);
         $data = ['exercises' => json_encode($model->getExercises())];
         $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+        session()->set('exercises', $data['exercises']);
         return ($data);
     }
 
@@ -271,5 +290,63 @@ class ExpertController extends BaseController
         return view('pages/experts/profile',$dataEditTeacher);
 
     }
+
+    private function exerciseContent():array
+    {
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        return $data;
+    }
+    public function addExercisePage():array
+    {
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        return $data;
+    }
+
+    public function editExercisePage($idExercises):array
+    {
+        $this->data['idExercises']=$idExercises;
+        $this->data['exercises'] = session()->get('exercises');
+
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        return( $this->data);
+    }
+
+    public function addExercise()
+    {
+        $data['name']= $_POST['title'];
+        $data['text'] = $_POST['content'];
+        $data['lesson'] = $_POST['lesson'];
+        $data['idTeacher_fk']= session()->id;
+        $data['isCustom']= 1;
+
+        $this->exercises_model->add_exercise($data);
+
+        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        $css = ['cssFiles' =>  $this->getCSSFile("addExercisePage")];
+        $dataAddExercise = array_merge($this->getDataForPage('exercises',0),$css);
+        return view('pages/experts/exercises', $dataAddExercise);
+    }
+
+    public function editExercise($idExercises)
+    {
+        $this->data['idExercises']=$idExercises;
+        $this->data['name']= $_POST['title'];
+        $this->data['text'] = $_POST['content'];
+        $this->data['lesson'] = $_POST['lesson'];
+        $this->data['idTeacher_fk']= session()->id;
+        $this->data['isCustom']= 1;
+        $this->exercises_model->edit_exercise($this->data);
+        $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
+
+        $css = ['cssFiles' =>  $this->getCSSFile("exercises")];
+        $this->dataAddStudent = array_merge($this->getDataForPage('exercises',0),$css);
+        return view('pages/experts/exercises', $this->dataAddStudent);
+
+    }
+
 
 }
