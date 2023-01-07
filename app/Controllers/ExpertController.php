@@ -266,6 +266,10 @@ class ExpertController extends BaseController
         session()->email = $this->data['email'];
 
         $this->teachers_model->edit_teacher($this->data);
+        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
+        session()->set('teachers', $this->data['teachers']);
+        print_r(session()->get('teachers'));
+
         $css = ['cssFiles' =>  $this->getCSSFile("profile")];
         $dataEditTeacher = array_merge($this->getDataForPage('profile',0),$css);
         return view('pages/experts/profile',$dataEditTeacher);
