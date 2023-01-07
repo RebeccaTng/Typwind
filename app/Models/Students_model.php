@@ -79,14 +79,14 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
                 WHERE
                       idStudents  = :id:;
             ';
-        $this->db->transStart();
-        $this->db->query($query_text, [
-            'coins'=> session()->coins +$coins,
-            'id' => session()->id,
-        ]);
+//        $this->db->transStart();
+//        $this->db->query($query_text, [
+//            'coins'=> session()->coins +$coins,
+//            'id' => session()->id,
+//        ]);
 
-        $this->db->table('student_exercise_fk')->insert($data);
-        $this->db->transComplete();
+//        $this->db->table('student_exercise_fk')->insert($data);
+//        $this->db->transComplete();
         return $coins;
     }
     public function getBestScores($idStudent)

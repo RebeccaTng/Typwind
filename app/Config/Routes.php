@@ -62,7 +62,8 @@ $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',
 
 /// Kids Routes
 $routes->match(['get', 'post'], 'kids/avatar/buy', 'KidsController::view/avatar');
-$routes->post('/kids/feedback/(:num)', 'KidsController::feedback/$1',['filter'=>'AuthGuard']);
+$routes->match(['get', 'post'], 'kids/feedback/(:any)', 'KidsController::view/feedback/$1');
+//$routes->post('/kids/feedback/(:num)', 'KidsController::feedback/$1',['filter'=>'AuthGuard']);
 //$routes->post('/kids/buyAvatar/(:num)', 'KidsController::buyAvatar/$1',['filter'=>'AuthGuard']);
 $routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
 $routes->get('/kids/home', 'KidsController::home',['filter'=>'AuthGuard']);
