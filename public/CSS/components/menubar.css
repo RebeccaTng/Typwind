@@ -74,8 +74,7 @@
     text-align: start;
 }
 
-
-.menuItems a:hover  p{
+.menuItems a:not(a.activeItem):hover  p{
     font: var(--navEmphasisText);
     color: var(--blueNeutral-dark);
 }
