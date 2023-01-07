@@ -122,7 +122,6 @@ class KidsController extends BaseController
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']= $idExercises;
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
-
         return ($this->data);
     }
 
@@ -132,16 +131,13 @@ class KidsController extends BaseController
         $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
         $this->data['score'] = $_POST['score'];
         $this->data['date'] = $_POST['date'];
-        $this->students_model->add_results($this->data);
-
+        $this->data['coins'] =$this->students_model->add_results($this->data);
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']=$idExercises;
 
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
         $dataFeedback = array_merge($this->data,$css);
-
-
         return view('pages/kids/feedback', $dataFeedback) ;
     }
 
@@ -165,8 +161,6 @@ class KidsController extends BaseController
             }
             else $this->avatarModel->changeSelectedAvatar( $this->request->getVar('id'));
         }
-
-
         $data['idStudents']=session()->id;
         $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatars Shop');
         $data['avatars'] = $this ->avatarModel->getAvatarIcons();

@@ -79,10 +79,9 @@
             </div>
         <?php endif;?>
 
-        <span class="coin">+ 10</span>
+        <span class="coin">+ <?=(!empty($coins))? $coins:0;?></span>
 
         <div class="card_buttons">
-
             <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="feedback_ex_button">
                 <button class="button buttonPrimary buttonChild">Replay exercise</button>
             </form>
