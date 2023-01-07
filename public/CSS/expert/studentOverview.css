@@ -88,6 +88,12 @@ div.roundProfilePic img {
     width: auto;
 }
 
+span.noNotes {
+    font: var(--bodyText);
+    font-style: italic;
+    color: var(--blueNeutral-light);
+}
+
 @media screen and (max-width: 65.625em) {
     img.hands, img.roundProfilePic, div.roundProfilePic {
         display: none;
