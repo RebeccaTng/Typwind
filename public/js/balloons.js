@@ -29,14 +29,7 @@ function createBalloons(num,balloonContainer) {
     }
 }
 
-// function removeBalloons(balloonContainer) {
-//
-//     setTimeout(() => {
-//
-//         balloonContainer.style.opacity = 0;
-//         balloonContainer.remove()
-//     }, 8000)
-// }
+
 
 $(document).ready(function(){
 
