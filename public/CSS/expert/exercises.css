@@ -41,21 +41,31 @@ div.exerciseContainer {
 .addNew{
     font: var(--navText);
     text-decoration: none;
-    padding: 0;
     display: flex;
-    /*align-items: center;*/
+    align-items: center;
     margin-bottom: 1.5rem;
+    margin-top: 1rem;
 }
 a{
     text-decoration: none;
 }
-.addNew::before{
-    content: url("/public/assets/icons/add.svg");
-    vertical-align: middle;
-    padding-right: 0.625rem; /*10px*/
-}
+/*.addNew::before{*/
+/*    content: url("/public/assets/icons/add.svg");*/
+/*    vertical-align: middle;*/
+/*    padding-right: 0.625rem; !*10px*!*/
+/*    background-size: 2.188rem auto;*/
 
+/*}*/
 .addNew:hover {
     color: var(--accentColor);
     transition-duration: 0.4s;
+}
+
+.addNew::before{
+    content: "";
+    background: url("/public/assets/icons/add.svg") no-repeat center;
+    background-size: 2.188rem auto;
+    padding: 1.094rem 0 1.094rem 2.188rem;
+    margin-right: 0.625rem;
+    /*margin-top: 2.5rem;*/
 }
