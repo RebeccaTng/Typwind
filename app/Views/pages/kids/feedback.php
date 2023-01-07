@@ -23,7 +23,8 @@
         <h2 style="color: var(--primary-darkest)"> Finished exercise! </h2>
         <div>
         <?php if(0<=$score & $score<0.2): ?>
-            <h3 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h3></div>
+            <?php setcookie("feedbackCookie","one", time()+36000, "/");?>
+            <h2 style="color: var(--primary-darkest)" class="seven">Congrats, you completed an exercise!</h2><br><h2 style="color: var(--primary-darkest)" class="twelve">Try again to earn more stars :)</h2></div>
             <div class = "wrapper_for_stars">
                 <div class ="unchecked_stars"></div>
                 <div class ="unchecked_stars"></div>
@@ -33,7 +34,8 @@
             </div>
         <?php endif;?>
         <?php if(0.2<=$score & $score<0.4): ?>
-            <h3 style="color: var(--primary-darkest)">Congrats, you completed an exercise!<br>Try again to earn more stars :)</h3></div>
+        <?php setcookie("feedbackCookie","two", time()+36000, "/");?>
+        <h2 style="color: var(--primary-darkest)" class="seven">Congrats, you completed an exercise!</h2><br><h2 style="color: var(--primary-darkest)" class="twelve">Try again to earn more stars :)</h2></div>
             <div class = "wrapper_for_stars">
                 <div class ="checked_stars"></div>
                 <div class ="unchecked_stars"></div>
@@ -43,7 +45,8 @@
             </div>
         <?php endif;?>
         <?php if(0.4<=$score & $score<=0.6): ?>
-            <h3 style="color: var(--primary-darkest)">You earned 2 stars already!<br>Try again to earn more stars :)</h3></div>
+    <?php setcookie("feedbackCookie","three", time()+36000, "/");?>
+    <h2 style="color: var(--primary-darkest)" class="eight">You earned 2 stars already!</h2><br><h2 style="color: var(--primary-darkest)" class="twelve">Try again to earn more stars :)</h2></div>
             <div class = "wrapper_for_stars">
                 <div class ="checked_stars"></div>
                 <div class ="checked_stars"></div>
@@ -53,7 +56,8 @@
             </div>
         <?php endif;?>
         <?php if(0.6<=$score & $score<0.8): ?>
-            <h3 style="color: var(--primary-darkest)">You earned 3 stars! Well done! Do you want to try again to earn more stars?</h3></div>
+            <?php setcookie("feedbackCookie","four", time()+36000, "/");?>
+            <h2 style="color: var(--primary-darkest)" class="nine">3 Stars! Well done!</h2></div>
             <div class = "wrapper_for_stars">
                 <div class ="checked_stars"></div>
                 <div class ="checked_stars"></div>
@@ -63,7 +67,8 @@
             </div>
         <?php endif;?>
         <?php if(0.8<=$score & $score<1): ?>
-            <h3 style="color: var(--primary-darkest)" class="three">Wow you earned 4 stars! You are ready for the next exercise ;-)</h3></div>
+            <?php setcookie("feedbackCookie","five", time()+36000, "/");?>
+            <h2 style="color: var(--primary-darkest)" class="ten">Wow 4 Stars!</h2></div>
             <div class = "wrapper_for_stars">
                 <div class ="checked_stars"></div>
                 <div class ="checked_stars"></div>
@@ -73,7 +78,8 @@
             </div>
         <?php endif;?>
         <?php if($score ==1): ?>
-            <h3 style="color: var(--primary-darkest)">Perfect score! You are a pro! You are ready for the next exercise ;-)</h3></div>
+            <?php setcookie("feedbackCookie","six", time()+36000, "/");?>
+            <h2 style="color: var(--primary-darkest)" class="eleven">Perfect score! You are a pro!</h2></div>
             <div class = "wrapper_for_stars">
                 <div class ="checked_stars"></div>
                 <div class ="checked_stars"></div>

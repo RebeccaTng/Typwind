@@ -127,15 +127,15 @@
     });
 </script>
 
-<h1 class="one">Exercises</h1>
+<h1 style="user-select: none;" class="one">Exercises</h1>
 <div class="card_and_button">
 
-    <button class="button round"><img alt="Arrow Up Icon" src="/public/assets/icons/up.svg"></button>
+    <button class="button round" style="background-color: transparent; user-select: none; border: none" onclick="document.querySelector('.exerciseContainer').scrollBy(0, -100)"><img alt="Arrow Up Icon" src="/public/assets/icons/up.svg"></button>
 
     <div class="exerciseContainer">
     </div>
 
-    <button class="button round"><img alt="Arrow Down Icon" src="/public/assets/icons/down.svg"></button>
+    <button class="button round" style="background-color: transparent; user-select: none; border: none" onclick="document.querySelector('.exerciseContainer').scrollBy(0, 100)"><img alt="Arrow Down Icon" src="/public/assets/icons/down.svg"></button>
 
 </div>
 
