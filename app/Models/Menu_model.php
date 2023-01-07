@@ -1,8 +1,5 @@
 <?php
 
-//This menu model isn't used yet.
-//It should be used if we want to indicate which tab is active ('highlight active menu item')
-
 namespace App\Models;
 
 use CodeIgniter\Model;
@@ -15,15 +12,15 @@ class Menu_model extends Model
     public function __construct()
     {
         $this->menu_items = array (
-            array('name' => 'Home', 'title' => 'Go home', 'link' => '/experts/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
-            array('name' => 'Students', 'title' => 'Check student', 'link' => '/experts/studentsList', 'className' => 'inactive','image'=>'/public/assets/icons/Students_Icon.svg') ,
-            array('name' => 'Exercises', 'title' => 'Check Exercises', 'link' => '/experts/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
-            array('name' => 'My Profile', 'title' => 'Review my Profile', 'link' => '/experts/profile', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
+            array('name' => 'Home', 'link' => '/experts/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
+            array('name' => 'Students', 'link' => '/experts/studentsList', 'className' => 'inactive','image'=>'/public/assets/icons/Students_Icon.svg') ,
+            array('name' => 'Exercises', 'link' => '/experts/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
+            array('name' => 'My Profile', 'link' => '/experts/profile', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
         );
         $this->menu_items_kids = array (
-            array('name' => 'Home', 'title' => 'Go home', 'link' => '/kids/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
-            array('name' => 'Exercises', 'title' => 'Check student', 'link' => '/kids/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
-            array('name' => 'My Avatar', 'title' => 'Review my Profile', 'link' => '/kids/avatar', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
+            array('name' => 'Home', 'link' => '/kids/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
+            array('name' => 'Exercises', 'link' => '/kids/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
+            array('name' => 'Avatar', 'link' => '/kids/avatar', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
         );
     }
 

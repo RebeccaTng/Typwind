@@ -1,17 +1,17 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
-    <!--START OF PAGE CONTENT-->
-    <!--ADD HERE ALL THE PHP AND HTML THAT YOUR PAGE NEEDS-->
 
-    <h1>My Avatar</h1>
+<?php setcookie("currentPage","avatar", time()+36000, "/");?>
+
+    <h1 class="one">My Avatar</h1>
     <div class="avatarContent">
         <div class="roundProfilePic currentPic">
             <img src="/public/assets/avatars/1.svg" alt="User Icon">
         </div>
 
         <div class="coins">
-            <h3>My Coins</h3>
+            <h3 class="two">My Coins</h3>
             <span class="coin">120</span>
         </div>
 

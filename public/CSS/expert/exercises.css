@@ -46,7 +46,9 @@ div.exerciseContainer {
     /*align-items: center;*/
     margin-bottom: 1.5rem;
 }
-
+a{
+    text-decoration: none;
+}
 .addNew::before{
     content: url("/public/assets/icons/add.svg");
     vertical-align: middle;

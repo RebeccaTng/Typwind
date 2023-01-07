@@ -1,11 +1,14 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
+
+<?php setcookie("currentPage","feedback", time()+36000, "/");?>
+
 <div class = "grid-container_feedback">
     <div class = "breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="<?php echo base_url('/kids/exercises');?>">Exercises</a>
-            <li>Feedback</li>
+            <li><a href="<?php echo base_url('/kids/exercises');?>" class="one">Exercises</a>
+            <li class="two">Feedback</li>
         </ul>
     </div>
     <div class="title" style="color: var(--blueNeutral)">
@@ -60,7 +63,7 @@
             </div>
         <?php endif;?>
         <?php if(0.8<=$score & $score<1): ?>
-            <h3 style="color: var(--primary-darkest)">Wow you earned 4 stars! You are ready for the next exercise ;-)</h3></div>
+            <h3 style="color: var(--primary-darkest)" class="three">Wow you earned 4 stars! You are ready for the next exercise ;-)</h3></div>
             <div class = "wrapper_for_stars">
                 <div class ="checked_stars"></div>
                 <div class ="checked_stars"></div>
@@ -90,15 +93,15 @@
             endif;?>
 
             <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="feedback_ex_button">
-                <button class="button buttonPrimary buttonChild">Start next exercise</button>
+                <button class="button buttonPrimary buttonChild four">Start next exercise</button>
             </form>
 
             <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="feedback_ex_button">
-                <button class="button buttonSecondary buttonChild">Replay exercise</button>
+                <button class="button buttonSecondary buttonChild five">Replay exercise</button>
             </form>
 
             <form action="<?php echo base_url('/kids/exercises');?>" class="feedback_ex_button">
-                <button class="button buttonSecondary buttonChild">Back to exercises</button>
+                <button class="button buttonSecondary buttonChild six">Back to exercises</button>
             </form>
 
         </div>

@@ -17,8 +17,8 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultController('RegistrationController');
+$routes->setDefaultMethod('welcome');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -39,6 +39,7 @@ $routes->setAutoRoute(true);
 
 //Expert routes
 //$routes->get('/experts/(:any)', 'ExpertController::view/$1');
+$routes->get('', 'RegistrationController::welcome',['filter'=>'AuthGuard']);
 $routes->get('/experts/(:any)', 'ExpertController::view/$1/$2',['filter'=>'AuthGuard']);
 //$routes->get('/experts/home', 'ExpertController::home',['filter'=>'AuthGuard']);
 $routes->get('/experts/studentsList', 'ExpertController::studentsList',['filter'=>'AuthGuard']);
@@ -47,9 +48,13 @@ $routes->get('/experts/editStudentPage/(:num)', 'ExpertController::editStudentPa
 $routes->post('/experts/editStudent/(:num)', 'ExpertController::editStudent/$1',['filter'=>'AuthGuard']);
 $routes->get('/experts/addStudentPage', 'ExpertController::addStudentPage',['filter'=>'AuthGuard']);
 $routes->post('/experts/addStudent', 'ExpertController::addStudent',['filter'=>'AuthGuard']);
-$routes->get('/experts/profile', 'ExpertController::profile',['filter'=>'AuthGuard']);
 $routes->get('/experts/exercises', 'ExpertController::exercises',['filter'=>'AuthGuard']);
-
+$routes->get('/experts/addExercisePage', 'ExpertController::addExercisePage',['filter'=>'AuthGuard']);
+$routes->post('/experts/addExercise', 'ExpertController::addExercise',['filter'=>'AuthGuard']);
+$routes->get('/experts/editExercisePage/(:num)', 'ExpertController::editExercisePage/$1',['filter'=>'AuthGuard']);
+$routes->post('/experts/editExercise/(:num)', 'ExpertController::editExercise/$1',['filter'=>'AuthGuard']);
+/*$routes->post('/experts/editExercise', 'ExpertController::editExercise',['filter'=>'AuthGuard']);*/
+$routes->get('/experts/profile', 'ExpertController::profile',['filter'=>'AuthGuard']);
 $routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1',['filter'=>'AuthGuard']);
 $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',['filter'=>'AuthGuard']);
 

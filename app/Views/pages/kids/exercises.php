@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","studentExercises", time()+36000, "/");?>
+
 <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/kids/intro/">
 
 <script>
@@ -25,11 +27,12 @@
             }
         }
 
-
         for (const lessonId of lessonsMap.keys()) {
+            const lessonNumber= Number.prototype[lessonId];
             let lessonGroup = lessonsMap.get(lessonId)
             if (typeof lessonGroup !== 'undefined') {
                 let exercisesText = "<div class='card lessonCardChild'> <h2>"+"Lesson "+lessonId +"</h2>";
+
                 for (let i = 0; i < lessonGroup.length; i++) {
                     exercisesText =
                     exercisesText
@@ -126,7 +129,7 @@
     });
 </script>
 
-<h1>Exercises</h1>
+<h1 class="one">Exercises</h1>
 <div class="card_and_button">
 
     <button class="button round"><img alt="Arrow Up Icon" src="/public/assets/icons/up.svg"></button>
