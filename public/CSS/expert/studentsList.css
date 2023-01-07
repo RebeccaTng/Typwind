@@ -126,6 +126,7 @@ h3 {
     grid-column: 1/span 6;
     justify-self: center;
     padding-top: 7.5rem;
+    font-style: italic;
 }
 
 @media screen and (max-width: 109.375em) {

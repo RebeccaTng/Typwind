@@ -59,10 +59,10 @@
                             <br>
                             <b>Active:&nbsp&nbsp</b>
                             <?php if ($person->isActive==1):?>
-                                Currently Active
+                                Currently active and following the Typwind course
                             <?php endif;?>
                             <?php if ($person->isActive==0):?>
-                                Not Active
+                                Not active, stopped following the Typwind course
                             <?php endif;?>
                             <br>
                         </p>
@@ -71,7 +71,7 @@
                     <?php if($person->notes == null || $person->notes == ""):?>
                         <div class="notes">
                             <h3>Notes</h3>
-                            <i>You don't have any notes</i>
+                            <span class="noNotes">This student does not have any notes.</span>
                         </div>
                     <?php else:?>
                         <div class="notes">
