@@ -139,19 +139,23 @@ class KidsController extends BaseController
 
     public function feedback($idExercises)
     {
-        $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
-        $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
-        $this->data['score'] = $_POST['score'];
-        $this->data['date'] = $_POST['date'];
-        $this->students_model->add_results($this->data);
+        if ($this->request->getMethod() === 'post') {
 
-//        $this->data['coins'] =$this->students_model->add_results($this->data);
+            $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
+            $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
+//        $this->data['score'] = $_POST['score'];
+            $this->data['score'] = $_POST['score'];
+
+            $this->data['date'] = $_POST['date'];
+
+            $this->data['coins'] =$this->avatarModel->add_results($this->data);
+        }
+
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']=$idExercises;
 
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
-        //        return view('pages/kids/feedback', $dataFeedback) ;
         return array_merge($this->data,$css);
     }
 

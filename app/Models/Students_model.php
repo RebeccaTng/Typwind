@@ -69,60 +69,14 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
         'created_at'
     ];
 
-    public function add_results($data) :int
-    {
-        $coins =  intdiv(($data['score']*100+20),20)*5;
-        $query_text =
-            '   UPDATE students
-                SET
-                    coins = :coins:
-                WHERE
-                      idStudents  = :id:;
-            ';
-//        $this->db->transStart();
-//        $this->db->query($query_text, [
-//            'coins'=> session()->coins +$coins,
-//            'id' => session()->id,
-//        ]);
 
-//        $this->db->table('student_exercise_fk')->insert($data);
-//        $this->db->transComplete();
-        return $coins;
-    }
     public function getBestScores($idStudent)
     {
         $query_text = 'SELECT idStudent_fk, idExercise_fk, max(score) as score FROM a22ux02.student_exercise_fk WHERE idStudent_fk= ? group by idStudent_fk,idExercise_fk';
         $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
-//    public function avatarStartTransaction($idStudents, $idAvatars)
-//    {
-//        $this->db->transBegin();
-//
-//        $query_text= "UPDATE `a22ux02`.`students` SET `coins` =  `coins` -(SELECT price FROM a22ux02.avatars where idAvatars =:idAvatars:) WHERE (`idStudents` =:idStudents:);";
-//        $this->db->query($query_text, [
-//            'idAvatars'     => $idAvatars,
-//            'idStudents' => $idStudents
-//        ]);
-//
-//        $query_text= "SELECT IF(coins>=0,'ok','error') as response FROM a22ux02.students where idStudents = ?;";
-//        $query = $this->db->query($query_text, $idStudents);
-//        $data['response'] = $query->getResult();
-//
-//        $query_text= "INSERT INTO `a22ux02`.`student_avatar_fk` (`idAvatar_fk`, `idStudent_fk`) VALUES (:idAvatars:, :idStudents:);";
-//        $this->db->query($query_text, [
-//            'idAvatars'     => $idAvatars,
-//            'idStudents' => $idStudents
-//        ]);
-//        if($data['response'][0]->response=="ok")
-//        {
-//            $this->db->transComplete();
-//        }
-//        else{
-//            $this->db->transRollback();
-//        }
-//        return $data;
-//    }
+
 
 
 

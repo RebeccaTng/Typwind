@@ -163,6 +163,18 @@ class AvatarsModel extends Model
             'newAvatar_fk' => $newSelectedAvatar,
         ]);
     }
+    public function add_results($data) :int
+    {
+        $scoreAdjusted = ((int)($data['score']*100))+20;
+        $newCoins = intdiv( $scoreAdjusted,20)*5;
+        $coins = session()->coins  + $newCoins;
+
+        $this->db->transStart();
+        $this->updateCoins(session()->id,$coins);
+        $this->db->table('student_exercise_fk')->insert($data);
+        $this->db->transComplete();
+        return $newCoins;
+    }
 
 
 }
