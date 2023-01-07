@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-
+<!--    /public/assets/icons/Home_icon.svg-->
     <!-- Translation file -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
 

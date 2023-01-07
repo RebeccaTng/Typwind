@@ -167,11 +167,11 @@
         justify-content: center;
 
     }
-    .menuItems  img {
+
+    .menuItems img {
         padding-left: 0;
         margin-right: 0;
     }
-
     .menuFooter p {
         display: none;
     }
