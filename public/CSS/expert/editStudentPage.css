@@ -83,6 +83,7 @@ div.notes label h3 {
 .notesExplanation {
     font: var(--smallText);
     margin-bottom: 0.938rem;
+    color: var(--blueNeutral-light);
 }
 
 label.explanation {
@@ -90,7 +91,7 @@ label.explanation {
     grid-column: 1/span 2;
     margin-top: 0.25rem;
     margin-bottom: -0.4rem;
-    color: var(--lightGray);
+    color: var(--blueNeutral-light);
 }
 
 @media screen and (max-width: 1050px) {

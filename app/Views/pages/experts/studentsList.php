@@ -55,7 +55,7 @@
                     <h4><?=$person->firstname?> <br><?=$person->lastname?></h4>
                 </a>
             </li>
-            <h3 id="noStudents" hidden>No Student found</h3>
+            <h3 id="noStudents" hidden>No student found with that name</h3>
             <h3 id="tnoStudents" hidden>This teacher has no students assigned</h3>
         <?php endforeach;?>
     </ul>

@@ -93,7 +93,8 @@
 
                     <div class="notes">
                         <label for="notes"><h3>Notes</h3></label>
-                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here"><?= $person->notes?></textarea>
+                        <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
+                        <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."><?= $person->notes?></textarea>
                         <div id="the-count">
                             <span id="current"></script></span>
                             <span id="maximum">/ 1000</span>
