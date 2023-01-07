@@ -2,6 +2,16 @@
     padding: 2.813rem 1.875rem 1.875rem 3.75rem; /*45px 30px 30px 60px*/
 }
 
+span.errorMessage {
+    text-align: center;
+    visibility: hidden;
+    font: var(--emphasisText);
+}
+
+div.roundProfilePic {
+    border-width: 0.188rem;
+}
+
 div.currentPic {
     grid-row: 1;
     grid-column: 1;
@@ -31,46 +41,11 @@ div.avatarContent {
     display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: 1fr 1fr;
-    gap: 3.75rem;
+    gap: 3.125rem;
     height: 90%;
     padding-right: 1.875rem;
     padding-bottom: 1.875rem;
     overflow: auto;
-}
-
-div.avatarChoice {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    width: min-content;
-    justify-items: center;
-    align-items: center;
-}
-
-div.avatarChoice div.roundProfilePic {
-    height: 8.438rem; /* 135px */
-    width: 8.438rem; /* 135px */
-}
-
-div.avatarChoice div.roundProfilePic img {
-    height: 4.375rem; /* 70px */
-    width: auto;
-}
-
-div.avatarChoice span.coin:before {
-    content: "";
-    background: url("/public/assets/icons/coin.svg") no-repeat center;
-    background-size: auto 1.25rem;
-    padding-right: 1.375rem;
-    padding-top: 0.313rem;
-}
-
-div.chosen div.roundProfilePic {
-    background-color: var(--blueNeutral-lightest);
-}
-
-div.chosen span.coin, div.bought span.coin {
-    visibility: hidden;
 }
 
 div.avatarCard {
@@ -81,31 +56,176 @@ div.avatarCard {
     grid-template-rows: auto;
     justify-items: center;
     align-items: center;
-    row-gap: 3.125rem;
+    row-gap: 3.75rem;
     column-gap: 0.313rem;
-    min-height: 31.25rem;
+    height: fit-content;
+    margin: 1.875rem 0.625rem;
+    padding: 3.75rem 1.25rem;
+    align-self: center;
 }
 
-@media screen and (max-width: 1800px) {
-    div.avatarChoice div.roundProfilePic {
-        height: 6.875rem; /* 110px */
-        width: 6.875rem; /* 110px */
+div.avatarChoice {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    max-width: max-content;
+    justify-items: center;
+    align-items: center;
+}
+
+div.avatarChoice div.roundProfilePic {
+    height: 8.438rem; /* 135px */
+    width: 8.438rem; /* 135px */
+    margin-top: 0.938rem;
+}
+
+div.avatarChoice div.roundProfilePic img {
+    height: 4.375rem; /* 70px */
+    width: auto;
+}
+
+div.avatarChoice span.coin {
+    min-width: 9.063rem;
+    text-align: center;
+    margin: 0 0.938rem 0.938rem;
+}
+
+div.avatarChoice:not(div.noEffects):not(div.noMoney):hover {
+    cursor: pointer;
+}
+
+div.avatarChoice:not(div.noEffects):hover > div.roundProfilePic {
+    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
+    transition-duration: 0.4s;
+    height: 9.375rem; /* 150px */
+    width: 9.375rem; /* 150px */
+    margin-top: 0;
+}
+
+div.avatarChoice:not(div.noEffects):hover > div.roundProfilePic > img {
+    height: 5.625rem; /* 80px */
+    width: auto;
+    transition-duration: 0.4s;
+}
+
+div.avatarChoice:not(div.noEffects):hover > span.coin {
+    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); /* --black = rgb(30,41,41)*/
+    transition-duration: 0.4s;
+    margin: 0;
+}
+
+div.avatarChoice:not(div.noEffects):not(div.noMoney):not(div.bought):hover > div.roundProfilePic {
+    border-color: var(--accentColor);
+}
+
+div.avatarChoice:not(div.noEffects):not(div.noMoney):active > div.roundProfilePic,  div.avatarChoice:not(div.noEffects):not(div.noMoney):active > span.coin {
+    box-shadow: 4px 4px 12px rgba(30, 41, 41, 0.7) inset;
+}
+
+div.locked div.roundProfilePic img {
+    filter: blur(0.438rem);
+    -webkit-filter: blur(0.438rem);
+}
+
+div.locked div.roundProfilePic {
+    border-color: var(--lightGray);
+}
+
+div.locked:not(div.noMoney):not(div.bought):hover > span.coin {
+    background-color: var(--accent-light);
+}
+
+div.locked:not(div.noMoney):hover > span.coin:before {
+    background-image: url("/public/assets/icons/coin.svg");
+    transition-duration: 0.4s;
+}
+
+div.locked div.roundProfilePic {
+    background-color: var(--lightestGray);
+}
+
+div.chosen span.coin {
+    background-color: var(--secondary-lightest);
+    padding: 0.625rem 1.25rem;
+}
+
+div.chosen span.coin:before, div.bought span.coin:before {
+    background-image: none;
+    padding: 0;
+    margin: 0;
+}
+
+div.bought div.roundProfilePic {
+    border-color: var(--primary-dark);
+}
+
+div.bought span.coin {
+    background-color: var(--primary-dark);
+    color: var(--beigeNeutral);
+    padding: 0.625rem 1.25rem;
+}
+
+/*div.bought:hover > span.coin {*/
+/*    background-color: var(--accentColor);*/
+/*}*/
+
+div.noMoney:hover span.errorMessage {
+    visibility: visible;
+    transition-duration: 0.4s;
+}
+
+div.noMoney span.coin {
+    background-color: var(--lightestGray);
+    color: var(--mediumGray);
+}
+
+div.noMoney span.coin:before {
+    background-image: url("/public/assets/icons/coinGrey.svg");
+}
+
+div.noMoney:not(div.noEffects):hover {
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 112.5em) {
+
+    div.avatarChoice:not(div.bigPic) div.roundProfilePic {
+        height: 7.5rem; /* 120px */
+        width: 7.5rem; /* 120px */
     }
 
-    div.avatarChoice div.roundProfilePic img {
-        height: 3.75rem; /* 60px */
+    div.avatarChoice:not(div.bigPic) div.roundProfilePic img {
+        height: 4.063rem; /* 65px */
         width: auto;
     }
 
     div.avatarChoice span.coin {
-        width: 8.125rem;
-        height: 2.5rem;
-        padding: 0.188rem;
+        padding: 0.313rem 1.875rem;
+        min-width: 8.125rem;
     }
-}
 
-@media screen and (max-height: 700px) {
-    div.avatarContent {
-        height: 75%;
+    div.avatarChoice span.coin:before {
+        background-size: 1.125rem auto;
+        padding-left: 1.125rem;
+    }
+
+    div.avatarChoice:not(div.noEffects):not(div.bigPic):hover > div.roundProfilePic {
+        height: 8.75rem; /* 140px */
+        width: 8.75rem; /* 140px */
+    }
+
+    div.avatarChoice:not(div.noEffects):not(div.bigPic):hover > div.roundProfilePic > img {
+        height: 5rem; /* 80px */
+        width: auto;
+    }
+
+    div.chosen span.coin, div.bought span.coin {
+        min-width: 8.125rem;
+        padding: 0.313rem 0.313rem;
+    }
+
+    div.chosen span.coin:before, div.bought span.coin:before {
+        padding: 0;
+        margin: 0;
     }
 }

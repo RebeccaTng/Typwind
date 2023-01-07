@@ -23,9 +23,15 @@ div.bar .addNew:hover {
 
 div.bar {
     margin: 0.563rem 4.688rem 2.5rem 0; /*9px 75px 40px 0*/
-    display: grid;
-    grid-template-columns: fit-content(14.125rem) auto fit-content(9.375rem) fit-content(14.375rem);
-    column-gap: 1.875rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.rightBar {
+    display: flex;
+    flex-direction: row;
+    gap: 1.875rem;
     align-items: center;
 }
 
@@ -122,19 +128,19 @@ h3 {
     padding-top: 7.5rem;
 }
 
-@media screen and (max-width: 1750px) {
+@media screen and (max-width: 109.375em) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 90.625em) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
     ul.studentList {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -144,7 +150,7 @@ h3 {
     }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 43.75em) {
     div.bar {
         display: none;
     }

@@ -235,10 +235,10 @@ div.language a {
 div.language :not(a.active):hover {
     transition-duration: 0.4s;
     font: var(--navText);
-    color: var(--white);
+    color: var(--beigeNeutral);
 }
 
-div.errorMessage {
+.errorMessage {
     font: var(--bodyText);
     color: var(--secondary-dark);
     margin-bottom: 0.313rem;

@@ -61,6 +61,7 @@ $routes->post('/experts/editProfile/(:num)', 'ExpertController::editProfile/$1',
 //$routes->get('/experts/(:any)', 'ExpertController::view/$1',['filter'=>'AuthGuard']);
 
 /// Kids Routes
+$routes->match(['get', 'post'], 'kids/avatar/buy', 'KidsController::view/avatar');
 $routes->get('/kids/(:any)', 'KidsController::view/$1',['filter'=>'AuthGuard']);
 $routes->get('/kids/home', 'KidsController::home',['filter'=>'AuthGuard']);
 $routes->get('/kids/exercises', 'KidsController::exercises',['filter'=>'AuthGuard']);
@@ -68,6 +69,7 @@ $routes->get('/kids/intro/(:num)', 'KidsController::intro/$1',['filter'=>'AuthGu
 $routes->post('/kids/exercise/(:num)', 'KidsController::ex/$1',['filter'=>'AuthGuard']);
 //$routes->get('/kids/exercise/(:num)', 'KidsController::exercise/$1',['filter'=>'AuthGuard']);
 $routes->post('/kids/feedback/(:num)', 'KidsController::feedback/$1',['filter'=>'AuthGuard']);
+$routes->post('/kids/buyAvatar/(:num)', 'KidsController::buyAvatar/$1',['filter'=>'AuthGuard']);
 
 
 /// design testing Route

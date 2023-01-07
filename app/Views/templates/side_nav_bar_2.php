@@ -2,12 +2,13 @@
 
     <div class=" menuHeader ">
         <div class="roundProfilePic">
-            <img src="/public/assets/avatars/1.svg" alt="User Icon">
+            <img src="/public/assets/avatars/<?=(!empty(session()->idOfAvatar))? session()->idOfAvatar:1;?>.svg" alt="User Icon">
         </div>
 
+        <span class="coin"><?=(!empty(session()->coins))? session()->coins:0;?></span>
     </div>
     <div class="langWrap menuSubHeader language">
-        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
+        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a><span class="bar"> | </span>
         <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
     </div>
     <div class="menuItems" >

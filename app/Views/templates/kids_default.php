@@ -25,7 +25,7 @@
 
     <title>Typewind Online</title>
 </head>
-<body >
+<body>
 <div class="grid-container">
     <div class="leftNavBar">
         <?= $this->include('templates/side_nav_bar_2') ?>

@@ -83,6 +83,7 @@
             </div>
         <?php endif;?>
 
+        <span class="coin">+ <?=(!empty($coins))? $coins:0;?></span>
 
         <div class="card_buttons">
 

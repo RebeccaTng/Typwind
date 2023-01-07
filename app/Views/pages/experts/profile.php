@@ -20,11 +20,11 @@
             <b class="five">Email:</b>&nbsp&nbsp&nbsp<?php echo $session->email;?><br>
 
             <?php if (session()->isActive==1):?>
-                <b class="six">Active:</b>&nbsp&nbsp&nbspCurrently active
+                <b class="six">Active:</b>&nbsp&nbsp&nbspActive, currently teaching
             <?php endif;?>
 
             <?php if (session()->isActive==0):?>
-                <b class="six">Active:</b>&nbsp&nbsp&nbspCurrently not active
+                <b class="six">Active:</b>&nbsp&nbsp&nbspInactive, not teaching
             <?php endif;?>
         </p>
     </div>

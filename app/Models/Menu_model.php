@@ -15,12 +15,12 @@ class Menu_model extends Model
             array('name' => 'Home', 'link' => '/experts/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
             array('name' => 'Students', 'link' => '/experts/studentsList', 'className' => 'inactive','image'=>'/public/assets/icons/Students_Icon.svg') ,
             array('name' => 'Exercises', 'link' => '/experts/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
-            array('name' => 'My Profile', 'link' => '/experts/profile', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
+            array('name' => 'My Profile', 'link' => '/experts/profile', 'className' => 'inactive','image'=>'/public/assets/avatars/teacher.svg')
         );
         $this->menu_items_kids = array (
             array('name' => 'Home', 'link' => '/kids/home', 'className' => 'activeItem','image'=>'/public/assets/icons/Home_icon.svg'),
             array('name' => 'Exercises', 'link' => '/kids/exercises', 'className' => 'inactive','image'=>'/public/assets/icons/exercises_icon.svg') ,
-            array('name' => 'Avatar', 'link' => '/kids/avatar', 'className' => 'inactive','image'=>'/public/assets/icons/profile_icon.svg')
+            array('name' => 'Avatars Shop', 'link' => '/kids/avatar', 'className' => 'inactive','image'=>'/public/assets/icons/shop.svg')
         );
     }
 

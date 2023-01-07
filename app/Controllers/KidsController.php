@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AvatarsModel;
 use App\Models\ExerciseModel;
 use App\Models\Students_model;
 use App\Models\Menu_model;
@@ -12,23 +13,26 @@ class KidsController extends BaseController
 
 
     /// CSS FILES *********************
-    private  array $commonCssFiles = array("components/main.css", "components/menubar.css", "components/generalComponents.css", "components/child_components_varia.css");
+    private  array $commonCssFiles = array("components/main.css", "components/generalComponents.css", "components/menubar.css", "components/child_components_varia.css");
     private array $home = array("kids/home_child.css");
     private array $intro = array("kids/intro_exercise_child.css");
     private array $feedback = array("kids/feedback_exercise_child.css");
     private array $exercises = array("kids/exercises_child.css");
     private array $exercise = array();
-    private array $avatar = array("kids/avatar.css");
+    private array $avatar = array("kids/avatar.css","kids/dialog.css");
 
     /// END OF CSS FILES ************************
     private $data;
     private Students_model $students_model;
-    private $menu_model;
+    private Menu_model $menu_model;
+    private AvatarsModel $avatarModel;
+
 
 
     public function __construct() {
         $this->menu_model = new Menu_model();
         $this->students_model = new Students_model();
+        $this ->avatarModel = new AvatarsModel();
     }
 
     public function view($page = 'home',$arg='0')
@@ -40,11 +44,10 @@ class KidsController extends BaseController
         $page_data =$this->getDataForPage($page,$arg);
         if(sizeof($page_data)>0) $data = array_merge($page_data,$css);
         else $data = $css;
-        //print_r($data);
         return view('/pages/kids/' . $page,$data);
     }
 
-    ////// SET UP METHODS ALL
+
     private function getDataForPage($pageName,$args): array
     {
         switch ($pageName) {
@@ -82,7 +85,6 @@ class KidsController extends BaseController
                 return$this->includeCSSFilesInCommonFiles( $this->exercise);
             case 'avatar':
                 return$this->includeCSSFilesInCommonFiles( $this->avatar);
-
 
             default:
                 return $this->commonCssFiles;
@@ -141,16 +143,13 @@ class KidsController extends BaseController
         $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
         $this->data['score'] = $_POST['score'];
         $this->data['date'] = $_POST['date'];
-        $this->students_model->add_results($this->data);
-
+        $this->data['coins'] =$this->students_model->add_results($this->data);
         $this->data['exercises']= session()->get('exercises');
         $this->data['idExercises']=$idExercises;
 
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         $css = ['cssFiles' =>  $this->getCSSFile("feedback")];
         $dataFeedback = array_merge($this->data,$css);
-
-
         return view('pages/kids/feedback', $dataFeedback) ;
     }
 
@@ -168,9 +167,19 @@ class KidsController extends BaseController
 
     private function avatar():array
     {
-        $data['menu_items'] = $this->menu_model->get_menuitems_kids('avatar');
+        if ($this->request->getMethod() === 'post') {
+            if($this->request->getVar('buy')){
+                $this ->avatarModel->buyAvatar(session()->id, $this->request->getVar('id'));
+            }
+            else $this->avatarModel->changeSelectedAvatar( $this->request->getVar('id'));
+        }
+        $data['idStudents']=session()->id;
+        $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatars Shop');
+        $data['avatars'] = $this ->avatarModel->getAvatarIcons();
+        $data['idOfSelectedAvatar'] =$this ->avatarModel->getIdOfSelectedAvatar();
         return $data;
     }
+
 
 
 }

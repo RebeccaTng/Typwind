@@ -56,13 +56,13 @@ div.card {
     border: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
     div.card {
         padding: 0.625rem 3.125rem 1.563rem;
     }
 }
 
-@media screen and (max-height: 650px), screen and (max-width: 992px) {
+@media screen and (max-height: 40.625em), screen and (max-width: 62em) {
     img.logo {
         display: none;
     }

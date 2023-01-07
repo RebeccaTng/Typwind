@@ -5,7 +5,6 @@
 <?php setcookie("currentPage","expertExercises", time()+36000, "/");?>
 <script>
     $(document).ready(function(){
-
         let lessonsList = <?php echo $exercises; ?>;
         const lessonsMap = new Map();
         for (let i = 0; i < lessonsList.length; i++) {
@@ -36,7 +35,6 @@
             }
             console.log("LESSON")
         }
-
     });
 </script>
 

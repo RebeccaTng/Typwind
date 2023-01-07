@@ -92,17 +92,19 @@
 
 span.coin {
     font: var(--heading3);
-    background-color: var(--primaryColor);
-    width: 9.375rem;
-    height: 3.125rem;
+    background-color: var(--primary-light);
     border-radius: 1.563rem;
-    text-align: center;
-    padding: 0.625rem 0;
+    /*width: fit-content;*/
+    /*height: 3.125rem;*/
+    /*text-align: center;*/
+    padding: 0.625rem 2.5rem;
 }
 
 span.coin:before {
-    content: url("/public/assets/icons/coin.svg");
-    vertical-align: middle;
-    padding-right: 0.625rem; /*10px*/
+    content: "";
+    background: url("/public/assets/icons/coinYellow.svg") no-repeat center;
+    background-size: 1.25rem auto;
+    padding-left: 1.25rem;
+    margin-right: 0.5rem;
 }
 
