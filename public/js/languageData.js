@@ -177,20 +177,32 @@ var studentFeedbackData={
         {
             "one" : "Oefeningen",
             "two" : "Resultaat",
-            "three" : "Wow 4 Sterren!",
+            "three" : "Proficiat, je hebt een oefening voltooid!",
             "four" : "OPNIEUW SPELEN",
             "five" : "START NIEUWE OEFENING",
             "six" : "GA TERUG NAAR OEFENINGEN",
+            "seven" : "Proficiat, je hebt een oefening voltooid!",
+            "eight" : "Je hebt al 2 Sterren behaald!",
+            "nine" : "3 Sterren! Goed gedaan!",
+            "ten" : "Wow 4 Sterren!",
+            "eleven" : "Perfecte score! Je bent een pro!",
+            "twelve" : "Probeer opnieuw om meer sterren te halen :)",
         },
 
     "english":
         {
             "one" : "Exercises",
             "two" : "Feedback",
-            "three" : "Wow 4 Stars!",
+            "three" : "Congrats, you completed an exercise!",
             "four" : "REPLAY EXERCISE",
             "five" : "START NEW EXERCISE",
             "six" : "GO BACK TO EXERCISES",
+            "seven" : "Congrats, you completed an exercise!",
+            "eight" : "You earned 2 stars already!",
+            "nine" : "3 Stars! Well done!",
+            "ten" : "Wow 4 Stars!",
+            "eleven" : "Perfect score! You are a pro!",
+            "twelve" : "Try again to earn more stars :)",
         }
 }
 
@@ -354,7 +366,10 @@ const five = document.querySelector('.five');
 const six = document.querySelector('.six');
 const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
-
+const nine = document.querySelector('.nine');
+const ten = document.querySelector('.ten');
+const eleven = document.querySelector('.eleven');
+const twelve = document.querySelector('.twelve');
 // BASIC Cookie function
 // for now we use this one
 
@@ -522,10 +537,21 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "feedback"){
             one.textContent = studentFeedbackData[attr].one;
             two.textContent = studentFeedbackData[attr].two;
-            three.textContent = studentFeedbackData[attr].three;
             four.textContent = studentFeedbackData[attr].four;
             five.textContent = studentFeedbackData[attr].five;
             six.textContent = studentFeedbackData[attr].six;
+            if(getCookie("feedbackCookie")=== "one" || getCookie("feedbackCookie")=== "two"){
+            seven.textContent = studentFeedbackData[attr].seven;}
+            if(getCookie("feedbackCookie")=== "three"){
+            eight.textContent = studentFeedbackData[attr].eight;}
+            if(getCookie("feedbackCookie")=== "four"){
+            nine.textContent = studentFeedbackData[attr].nine;}
+            if(getCookie("feedbackCookie")=== "five"){
+            ten.textContent = studentFeedbackData[attr].ten;}
+            if(getCookie("feedbackCookie")=== "six"){
+            eleven.textContent = studentFeedbackData[attr].eleven;}
+            if(getCookie("feedbackCookie")=== "one" || getCookie("feedbackCookie")=== "two" || getCookie("feedbackCookie")=== "three")
+            {twelve.textContent = studentFeedbackData[attr].twelve;}
         }
 
         if(getCookie("currentPage")=== "avatar"){

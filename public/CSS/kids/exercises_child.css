@@ -25,10 +25,14 @@ div.exerciseContainer {
     padding-right: 2.188rem; /*35px*/
     padding-bottom: 1.875rem; /*30px*/
 }
+.exerciseContainer{
+    user-select: none;
+}
 .scrollButtons{
     display: grid;
     grid-template-columns: 1fr
 }
+
 /*Scroll Buttons*/
 .round {
     border-radius: 50%;
