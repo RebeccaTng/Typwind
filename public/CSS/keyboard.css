@@ -172,15 +172,14 @@
     border: 6px solid var(--accentColor);
 }
 
-.myProgress2 {
+.myProgress {
     width: 100%;
     background-color: #ddd;
 }
 
-.myBar2 {
+.myBar {
     width: 0%;
     height: 30px;
-    background-color: #E06E3F;
     transition: width 250ms ease-in-out, background-color 250ms ease;
 
 }
