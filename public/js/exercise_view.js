@@ -1,5 +1,23 @@
 /***VARIABLES***/
+//select elements that will be used
+let movableExerciseBoxText = document.getElementById("movableExerciseBoxText");
+let stopButton = document.getElementById("stopButton");
+let container = document.getElementById("effect");
+let textBox = document.getElementById("textBox");
+let imageContainer = document.getElementById("imageContainer");
+let soundContainer = document.getElementById("soundContainer");
+let soundContainerStart = document.getElementById("soundContainerStart");
+let textInputDB = document.getElementById("textInput");
+let handSelection = document.getElementById("handSelection");
+let formDB = document.getElementById("form");
+let scoreDB = document.getElementById("score");
+let dateDB = document.getElementById("date");
+let feedback = document.getElementById("feedback");
+let myBar = document.getElementById("myBar2");
+let muteSoundsBtn = document.getElementById("muteSoundsBtn");
+let muteSpeakBtn = document.getElementById("muteSpeakBtn");
 
+//global variables
 let textInput = "No input from DB test tEsT tést têst tëst";
 let textChar;
 let currentKey = null;
@@ -12,6 +30,25 @@ let correctCharactersNeeded = 0;
 let correctAnswers = 0;
 let mistakes = 0;
 let score = 0;
+let progressbar = 0;
+let muteSoundsBool = true;
+let muteSpeakBool = true;
+let wrongMessagesMap = new Map([
+    [1,"Ai, probeer nog een keer!"],
+    [2,"Kom op, je kan het. Probeer nog een keer!"],
+    [3,"Je kan dit. Probeer nog een keer!"],
+    [4,"Oeps probeer nog een keer!"]]);
+let wrongSoundsMap = new Map([
+    [1, "/public/assets/sounds/wrong1.mp3"],
+    [2, "/public/assets/sounds/wrong2.mp3"],
+    [3, "/public/assets/sounds/wrong3.mp3"],
+    [4, "/public/assets/sounds/wrong4.mp3"],
+    [5, "/public/assets/sounds/wrong5.mp3"],
+    [6, "/public/assets/sounds/wrong6.mp3"],
+    [7, "/public/assets/sounds/wrong7.mp3"],
+    [8, "/public/assets/sounds/wrong8.mp3"],
+    [9, "/public/assets/sounds/wrong9.mp3"],
+    [10, "/public/assets/sounds/wrong10.mp3"]]);
 let imageMap = new Map([
     [",",["/public/assets/pictures/,.jpg","KeyM",""]],
     ["=",["/public/assets/pictures/=.jpg","Slash",""]],
@@ -70,20 +107,6 @@ let imageMap = new Map([
 
 
 
-//select elements that will be used
-let movableExerciseBoxText = document.getElementById("movableExerciseBoxText");
-let stopButton = document.getElementById("stopButton");
-let container = document.getElementById("effect");
-let textBox = document.getElementById("textBox");
-let imageContainer = document.getElementById("imageContainer");
-let soundContainer = document.getElementById("soundContainer");
-let textInputDB = document.getElementById("textInput");
-let handSelection = document.getElementById("handSelection");
-let formDB = document.getElementById("form");
-let scoreDB = document.getElementById("score");
-let dateDB = document.getElementById("date");
-
-
 
 
 /***EVENTS***/
@@ -100,6 +123,7 @@ window.onload = atStart;   //runs the function when the page is loaded
 
 /*What needs to happen when the page is loaded*/
 function atStart(){
+    if (muteSoundsBool){playSoundStarted();}
     if(textInputDB.innerText !== null) {
         textInput = textInputDB.innerText;
     }
@@ -109,6 +133,7 @@ function atStart(){
     createSpanSentence();
     keyboardColorsFunction(parseInt(handSelection.innerText));
     highlightCurrentLetter();
+    moveBar();
 }
 
 /*Create a span element of every character*/
@@ -165,6 +190,8 @@ function processInputFunction() {
     // correct character
     //If input is according to needed inut
     } else if (currInput === textInput[correctCharactersTyped]) {
+        moveBar();
+        feedbackSentence(false);
         correctCharactersTyped++;
     //Checks if we're at the end of the exercise
         if(correctCharactersTyped===correctCharactersNeeded){
@@ -180,18 +207,22 @@ function processInputFunction() {
         }else{
             highlightLetterRight();
         }
-
     //Given input is wrong
     } else {
+        var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
+        span.style.borderColor = "red";
+        feedbackSentence(true);
+        if (muteSoundsBool){playSoundWrong();}
         wrongAnswered = true;
     }
 }
 
 /*Function for when the exercise is finished*/
-function exerciseFinishedFunction(){
+async function exerciseFinishedFunction(){
+    stopButton.disabled = true;
+    if (muteSoundsBool){await playSoundFinished();}
     score = ((correctCharactersNeeded-mistakes)/correctCharactersNeeded);
     submit()
-    stopButton.disabled = true;
 }
 
 /*Function to submit the code to the DB*/
@@ -246,6 +277,84 @@ function setImage(key){
    }
 }
 
+/*Adapt the progressbar*/
+function moveBar() {
+    let width = Math.ceil(((correctCharactersTyped+1)/correctCharactersNeeded)*100);
+    myBar.style.width = width + "%";
+    // r = width<50 ? 244 : Math.floor(255-(width*2-100)*255/100);
+    // g = width>50 ? 244 : Math.floor((width*2)*255/100);
+    // myBar.style.backgroundColor = 'rgb('+r+','+g+',0)';
+}
+
+/*Function for setting or unsetting the feedback sentence based on the value*/
+function feedbackSentence(boolean){
+    let number = Math.floor(Math.random() * (wrongMessagesMap.size)+1);
+    if (boolean){
+        feedback.innerText = wrongMessagesMap.get(number);
+    } else{
+        feedback.innerText = "";
+    }
+}
+
+function muteSounds(){
+    if(!muteSoundsBool){
+        muteSoundsBool = true;
+        muteSoundsBtn.value="Spel geluiden AAN";
+    }else if(muteSoundsBool){
+        muteSoundsBool = false;
+        muteSoundsBtn.value="Spel geluiden UIT";
+    }
+    document.activeElement.blur();
+}
+
+function muteSpeak(){
+    if(!muteSpeakBool){
+        muteSpeakBool = true;
+        muteSpeakBtn.value="Verteller AAN";
+    }else if(muteSpeakBool){
+        muteSpeakBool = false;
+        muteSpeakBtn.value="Verteller UIT";
+    }
+    document.activeElement.blur();
+}
+
+
+
+/*Function playing sound after wrong input*/
+function playSoundWrong(){
+    let number = Math.floor(Math.random() * (wrongSoundsMap.size)+1);
+    if(soundContainer.currentTime > 0){
+        soundContainer.pause();
+        soundContainer.currentTime = 0;
+    }
+    soundContainer.setAttribute("src", window.location.origin +  wrongSoundsMap.get(number));
+    soundContainer.play();
+}
+
+/*Function playing sound when game is finished*/
+function playSoundFinished(){
+    if(soundContainer.currentTime > 0){
+        soundContainer.pause();
+        soundContainer.currentTime = 0;
+    }
+    soundContainerStart.setAttribute("src", window.location.origin + "/public/assets/sounds/finished.mp3");
+    return new Promise(res=>{
+        soundContainerStart.play();
+        soundContainerStart.onended = res;
+    })
+}
+
+/*Function playing sound when game is started*/
+function playSoundStarted(){
+    if(soundContainerStart.currentTime > 0){
+        soundContainerStart.pause();
+        soundContainerStart.currentTime = 0;
+    }
+    soundContainerStart.setAttribute("src", window.location.origin + "/public/assets/sounds/start.mp3");
+    soundContainerStart.play();
+}
+
+
 /*Function for setting the correct sound. If keystroke has no sound nothing happens and sounds stops*/
 function playSound(key){
     if(key!==undefined){key = key.toLowerCase();}
@@ -265,13 +374,14 @@ function highlightCurrentLetter() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped];
     span.setAttribute("class","letter focus");
     setImage(textInput[correctCharactersTyped]);
-    playSound(textInput[correctCharactersTyped]);
+    if (muteSpeakBool){playSound(textInput[correctCharactersTyped]);}
     highlightKey();
 }
 
 /*Function for adjusting the CSS class of the given key*/
 function highlightLetterWrong() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
+    span.style.borderColor = null;
     span.setAttribute("class","letter wrong");
     moveSentence();
 }
