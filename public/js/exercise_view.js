@@ -224,7 +224,7 @@ function processInputFunction() {
 async function exerciseFinishedFunction(){
     stopButton.disabled = true;
     if (muteSoundsBool){await playSoundFinished();}
-    score = (0.9*(correctCharactersNeeded-mistakes)/correctCharactersNeeded);
+    score = ((correctCharactersNeeded-mistakes)/correctCharactersNeeded);
     submit()
 }
 
