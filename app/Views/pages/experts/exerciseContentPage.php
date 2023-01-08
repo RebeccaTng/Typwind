@@ -26,7 +26,21 @@
             <div class="general">
                 <h3 class ="three">General Information</h3>
                 <p>
-                    <b class="four">Created by: </b><?php echo $teacher->firstname. " ". $teacher->lastname ;?><br>
+                    <b class="four">Created by: </b>
+                    <?php if ($exercise->idTeacher_fk==null):
+                          echo
+                          "Windekind";
+                    ?>
+                    <?php
+                          else:
+                           echo
+                          $teacher->firstname. " "
+                        . $teacher->lastname
+
+                    ; endif;?>
+
+
+                    <br>
                     <b class="five">Lesson:
                     </b><?php  if ($exercise->isCustom==1):
                         echo "Custom";
@@ -56,8 +70,7 @@
         </script>
     </a>
 </div>
-<br><br><br><br><br><br>
-
+                <?php break;?>
             <?php endif;?>
         <?php endforeach;?>
     <?php endif;?>
