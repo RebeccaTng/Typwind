@@ -106,5 +106,5 @@ label.explanation {
 #the-count {
     float: right;
     padding: 0.1rem 0 0 0;
-    font-size: 1rem;
+    font: var(--smallText);
 }
