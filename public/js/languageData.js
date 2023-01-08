@@ -35,7 +35,7 @@ var expertLoginData={
 var registerData={
     "nederlands":
         {
-            "one" : "Signup",
+            "one" : "Nieuw account",
             "two" : "Registreer je hier als je nog geen account hebt",
             "three" : "REGISTREER",
             "four" : "TERUG NAAR LOGIN",
@@ -44,7 +44,7 @@ var registerData={
 
     "english":
         {
-            "one" : "Signup",
+            "one" : "New account",
             "two" : "Register here if you don't have an account yet",
             "three" : "REGISTER",
             "four" : "BACK TO LOGIN",
