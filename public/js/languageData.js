@@ -136,10 +136,11 @@ var studentIntroData={
             "two" : "Introductie",
             "three" : "Hoe wil je spelen?",
             "four" : "Toon keyboard met kleuren",
+            "nine" : "Vertel de letters hardop",
+            "ten" : "Audio feedback wanneer je aan het typen bent",
             "five" : "Druk start en verdien enkele sterren",
-            "six" : "Veel succes!",
             "seven": "START",
-            "eight": "GA TERUG NAAR OEFENINGEN"
+            "eight": "GA TERUG NAAR OEFENINGEN",
 
         },
 
@@ -149,10 +150,11 @@ var studentIntroData={
             "two" : "Introduction",
             "three" : "How do you want to play the game?",
             "four" : "Show keyboard with colors",
+            "nine" : "Read letters out loud",
+            "ten" : "Have audio feedback when typing",
             "five" : "Press start and earn some stars.",
-            "six": "Good luck!",
             "seven": "START",
-            "eight": "GO BACK TO EXERCISES"
+            "eight": "GO BACK TO EXERCISES",
 
         }
 }
@@ -360,14 +362,16 @@ var expertExercisesData={
         {
             "one" : "Oefeningen",
             "two" : "Nieuwe oefening toevoegen",
-            "three" : "Oefeningen op maat"
+            "three" : "Les",
+            "four" : "Aangepaste oefeningen"
         },
 
     "english":
         {
             "one" : "Exercises",
             "two" : "Add new exercise",
-            "three" : "Custom Exercises"
+            "three" : "Leson",
+            "four" : "Custom exercises"
         }
 }
 
@@ -405,7 +409,7 @@ var expertExerciseData={
             "one2" : "Oefening",
             "three" : "Algemene informatie",
             "four" : "Gemaakt door: ",
-            "five" : "Lesson: ",
+            "five" : "Les: ",
             "six" : "Inhoud",
             "seven" : "AANPASSEN",
         },
@@ -676,8 +680,9 @@ link.forEach(el => {
             two.textContent = studentIntroData[attr].two;
             three.textContent = studentIntroData[attr].three;
             four.textContent = studentIntroData[attr].four;
+            nine.textContent = studentIntroData[attr].nine;
+            ten.textContent = studentIntroData[attr].ten;
             five.textContent = studentIntroData[attr].five;
-            six.textContent = studentIntroData[attr].six;
             seven.textContent = studentIntroData[attr].seven;
             eight.textContent = studentIntroData[attr].eight;
         }
@@ -750,6 +755,7 @@ link.forEach(el => {
             one.textContent = expertExercisesData[attr].one;
             two.textContent = expertExercisesData[attr].two;
             three.textContent = expertExercisesData[attr].three;
+            four.textContent = expertExercisesData[attr].four;
         }
 
         if(getCookie("currentPage")=== "expertExercise"){

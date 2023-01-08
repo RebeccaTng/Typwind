@@ -23,11 +23,11 @@
                 console.log(lessonGroup)
 
                 if(lessonNumber!==0){
-                    exercisesText = "<div class='card lessonCard'> <h2>" + "Lesson " + lessonId + "</h2>"
+                    exercisesText = "<div class='card lessonCard'> <h2>" + "Les " + lessonId + "</h2>"
                 }
                 else
                 {
-                    exercisesText = "<div class='card lessonCard'> <h2 class='three'>" + "Custom Exercises" + "</h2>"
+                    exercisesText = "<div class='card lessonCard'> <h2>" + "Aangepaste oefeningen" + "</h2>"
                 }
                 lessonGroup.forEach(element => exercisesText = exercisesText+ "<a href="+ getCookie("baseURL") +"/experts/exerciseContentPage/"+ element.idExercises +">" + "<h4 class='exerciseField'>" + element.name + "</h4>" + "</a>");
                 exercisesText = exercisesText + "</div>"
