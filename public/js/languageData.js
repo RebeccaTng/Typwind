@@ -213,15 +213,14 @@ var studentFeedbackData={
 var studentAvatarData={
     "nederlands":
         {
-            "one" : "Mijn Avatar",
-            "two" : "Mijn Munten"
+            "one" : "Mijn munten",
+            "two" : "Niet genoeg munten"
         },
 
     "english":
         {
-            "one" : "My Avatar",
-            "two" : "My Coins"
-
+            "one" : "My coins",
+            "two" : "Not enough coins"
         }
 }
 
@@ -847,7 +846,7 @@ link.forEach(el => {
             three.textContent = expertAddExerciseData[attr].three;
             four.textContent = expertAddExerciseData[attr].four;
             five.textContent = expertAddExerciseData[attr].five;
-            six.textContent = expertAddExerciseData[attr].six;
+            $('.six').prop('placeholder', expertAddExerciseData[attr].six);
             seven.textContent = expertAddExerciseData[attr].seven;
         }
 
