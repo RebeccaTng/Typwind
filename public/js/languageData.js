@@ -250,7 +250,7 @@ var expertStudentsData={
     "english":
         {
             "one" : "Students",
-            "two" : "Add New Student",
+            "two" : "Add new student",
             "three" : "Filter",
             "four" : "Search",
         }
