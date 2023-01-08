@@ -14,13 +14,12 @@ function handImage() {
 
 window.onload = function () {
 
-    var characterCount = $('#notes').val().length,
-        current = $('#current'),
+    $('#notes').val($('#notes').val().replace(/<br *\/?>/gi, ''));
+    var current = $('#current'),
         maximum = $('#maximum'),
+        characterCount = $('#notes').val().length,
         theCount = $('#the-count');
     current.text(characterCount);
-    $('#notes').val($('#notes').val().replace(/<br *\/?>/gi, ''));
-
 
     if (characterCount < 167) {
         current.css('color', '#666');
