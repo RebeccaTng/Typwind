@@ -103,8 +103,9 @@ var studentHomeData={
             "two" : "Welkom Terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
-            "five" : "Het avontuur van de hond",
-            "six" : ""
+            "five" : "Proficiat, je hebt het spel uitgespeeld!",
+            "six" : "Les: ",
+            "seven" :"Oefening: "
         },
 
     "english":
@@ -112,8 +113,9 @@ var studentHomeData={
             "two" : "Welcome Back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
-            "five" : "The Adventure of the Dog.",
-            "six" : ""
+            "five" : "Congratulations, you have finished the game!",
+            "six" : "Lesson: ",
+            "seven" :"Exercise: "
         }
 }
 
@@ -667,8 +669,13 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "studentHome"){
             two.textContent = studentHomeData[attr].two;
             three.textContent = studentHomeData[attr].three;
-            four.textContent = studentHomeData[attr].four;
+            if(four)
+                four.textContent = studentHomeData[attr].four;
+            if(five)
             five.textContent = studentHomeData[attr].five;
+            six.textContent = studentHomeData[attr].six;
+            seven.textContent = studentHomeData[attr].seven;
+
             /*six.textContent = mainData[attr].six;*/
         }
 

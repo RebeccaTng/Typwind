@@ -39,7 +39,7 @@ h4.exercise_name{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
     font: var(--heading3);
     text-transform: uppercase;
