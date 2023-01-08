@@ -18,8 +18,6 @@
                 <p>
                     <label for="title"><b>Title Exercise:</b></label>
                     <input type="text" id="title" name="title"><br>
-                    <label for="lesson"><b>Lesson:</b></label>
-                    <input type="text" id="lesson" name="lesson"><br>
                 </p>
             </div>
 

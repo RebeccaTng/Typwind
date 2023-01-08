@@ -6,13 +6,6 @@
 <?php foreach ($exercises as $exercise):?>
 <?php  if ($exercise->idExercises==$idExercises):?>
 
-<?php  if($exercise->idTeacher_fk!=session()->id):?>
-<script>
-    window.alert("You can only edit exercises that you created.");
-    window.location.href = "<?php echo base_url('experts/exercises');?>";
-</script>
-    <?php endif;?>
-
         <ul class="breadcrumb">
             <li><a>Exercises</a></li>
             <li>Exercise</li>
@@ -29,8 +22,6 @@
                 <p>
                     <label for="title"><b>Title Exercise:</b></label>
                     <input type="text" id="title" name="title" value="<?=$exercise->name?>"><br>
-                    <label for="lesson"><b>Lesson:</b></label>
-                    <input type="text" id="lesson" name="lesson" value="<?=$exercise->lesson?>"><br>
                 </p>
             </div>
 

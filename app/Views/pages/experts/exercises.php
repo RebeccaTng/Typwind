@@ -29,7 +29,7 @@
                 {
                     exercisesText = "<div class='card lessonCard'> <h2 class='three'>" + "Custom Exercises" + "</h2>"
                 }
-                lessonGroup.forEach(element => exercisesText = exercisesText+ "<a href="+ getCookie("baseURL") +"/experts/editExercisePage/"+ element.idExercises +">" + "<h4 class='exerciseField'>" + element.name + "</h4>" + "</a>");
+                lessonGroup.forEach(element => exercisesText = exercisesText+ "<a href="+ getCookie("baseURL") +"/experts/exerciseContentPage/"+ element.idExercises +">" + "<h4 class='exerciseField'>" + element.name + "</h4>" + "</a>");
                 exercisesText = exercisesText + "</div>"
                 $(".exerciseContainer").append(exercisesText);
             }

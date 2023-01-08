@@ -53,6 +53,7 @@ $routes->get('/experts/addExercisePage', 'ExpertController::addExercisePage',['f
 $routes->post('/experts/addExercise', 'ExpertController::addExercise',['filter'=>'AuthGuard']);
 $routes->get('/experts/editExercisePage/(:num)', 'ExpertController::editExercisePage/$1',['filter'=>'AuthGuard']);
 $routes->post('/experts/editExercise/(:num)', 'ExpertController::editExercise/$1',['filter'=>'AuthGuard']);
+$routes->get('/experts/exerciseContentPage/(:num)', 'ExpertController::exerciseContentPage/$1',['filter'=>'AuthGuard']);
 /*$routes->post('/experts/editExercise', 'ExpertController::editExercise',['filter'=>'AuthGuard']);*/
 $routes->get('/experts/profile', 'ExpertController::profile',['filter'=>'AuthGuard']);
 $routes->get('/experts/editProfilePage/(:num)','ExpertController::editProfilePage/$1',['filter'=>'AuthGuard']);
