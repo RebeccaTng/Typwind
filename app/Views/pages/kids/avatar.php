@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
 
-    <h1>Avatar Shop</h1>
+    <h1>Avatars</h1>
     <div class="avatarContent" id ="mainAvatar">
             <div class="roundProfilePic currentPic">
                 <?php if (! empty($idOfSelectedAvatar)):?>
