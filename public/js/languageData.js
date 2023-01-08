@@ -73,7 +73,7 @@ var mainData = {
             "Home" : "Startpagina",
             "Students" : "Studenten",
             "Exercises" : "Oefeningen",
-            "Profile" : "Mijn Profiel",
+            "Profile" : "Mijn profiel",
             "logout" : "Uitloggen",
             "two" : "Welkom terug",
             "three" : "Jouw volgende oefening wacht op je!",
@@ -87,8 +87,8 @@ var mainData = {
             "Home" : "Home",
             "Students" : "Students",
             "Exercises" : "Exercises",
-            "Profile" : "My Profile",
-            "logout" : "Log Out",
+            "Profile" : "My profile",
+            "logout" : "Log out",
             "two" : "Welcome back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
@@ -100,7 +100,7 @@ var mainData = {
 var studentHomeData={
     "nederlands":
         {
-            "two" : "Welkom Terug",
+            "two" : "Welkom terug",
             "three" : "Jouw volgende oefening wacht op je!",
             "four" : "Start nieuwe oefening",
             "five" : "Proficiat, je hebt het spel uitgespeeld!",
@@ -110,7 +110,7 @@ var studentHomeData={
 
     "english":
         {
-            "two" : "Welcome Back",
+            "two" : "Welcome back",
             "three" : "Your next exercise is waiting for you!",
             "four" : "Start new exercise",
             "five" : "Congratulations, you have finished the game!",
@@ -165,7 +165,7 @@ var studentExerciseData={
     "nederlands":
         {
             "one" : "Oefeningen",
-            "two" : "STOP & TERUG"
+            "two" : "STOP & KEER TERUG"
         },
 
     "english":
@@ -229,12 +229,12 @@ var studentAvatarData={
 var expertHomeData={
     "nederlands":
         {
-            "one" : "Welkom Terug,",
+            "one" : "Welkom terug,",
         },
 
     "english":
         {
-            "one" : "Welcome Back,",
+            "one" : "Welcome back,",
         }
 }
 
@@ -261,7 +261,7 @@ var expertStudentData={
         {
             "one" : "Studenten",
             "one2" : "Studenten",
-            "two" : "Nieuwe Student",
+            "two" : "Nieuwe student",
             "three" : "Filteren",
             "four" : "Zoeken",
             "five" : "Gender:",
@@ -285,7 +285,7 @@ var expertStudentData={
     "english":
         {
             "one" : "Students",
-            "one2" : "General Information",
+            "one2" : "General information",
             "two" : "First name:",
             "three" : "Surname:",
             "four" : "Email:",
@@ -294,10 +294,10 @@ var expertStudentData={
             "seven" : "Female",
             "eight" : "Birthday:",
             "nine" : "Teacher:",
-            "ten" : "Hand Selection:",
-            "eleven" : "Right Hand",
-            "twelve" : "Left Hand",
-            "thirteen" : "Both Hands",
+            "ten" : "Hand selection:",
+            "eleven" : "Right hand",
+            "twelve" : "Left hand",
+            "thirteen" : "Both hands",
             "fourteen" : "Active:",
             "fifteen" : "Currently active and following the Typwind course",
             "sixteen" : "Not active, stopped following the Typwind course",
@@ -347,10 +347,10 @@ var expertEditStudentData={
             "eight" : "Birthday:",
             "nine" : "Teacher:",
             "nine2" : "Which hand(s) will this student be typing with?",
-            "ten" : "Hand Selection:",
-            "eleven" : "Right Hand",
-            "twelve" : "Left Hand",
-            "thirteen" : "Both Hands",
+            "ten" : "Hand selection:",
+            "eleven" : "Right hand",
+            "twelve" : "Left hand",
+            "thirteen" : "Both hands",
             "thirteen2" : "Is the child currently following the Typwind course?",
             "fourteen" : "Active:",
             "eighteen" : "Notes",
@@ -373,7 +373,7 @@ var expertExercisesData={
         {
             "one" : "Exercises",
             "two" : "Add new exercise",
-            "three" : "Leson",
+            "three" : "Lesson",
             "four" : "Custom exercises"
         }
 }
@@ -385,7 +385,7 @@ var expertAddExerciseData={
             "one2" : "Oefening toevoegen",
             "two" : "Oefening toevoegen",
             "three" : "Algemene informatie",
-            "four" : "Titel van oefening",
+            "four" : "Titel van de oefening",
             "five" : "Inhoud",
             "six" : "Typ hier",
             "seven" : "Opslaan",
@@ -398,7 +398,7 @@ var expertAddExerciseData={
             "one2" : "Add new exercise",
             "two" : "Add new xercise",
             "three" : "General information",
-            "four" : "Title of exercise",
+            "four" : "Title of the exercise",
             "five" : "Content",
             "six" : "Type here",
             "seven" : "Save",
@@ -422,7 +422,7 @@ var expertExerciseData={
 
             "one" : "Exercises",
             "one2" : "Exercise",
-            "three" : "General Information",
+            "three" : "General information",
             "four" : "Created by: ",
             "five" : "Lesson: ",
             "six" : "Content",
@@ -437,7 +437,7 @@ var expertEditExerciseData={
             "one2" : "Oefening",
             "two" : "Oefening aanpassen",
             "three" : "Algemene informatie",
-            "four" : "Titel oefening:",
+            "four" : "Titel van oefening:",
             "five" : "Inhoud",
             "seven" : "Opslaan",
         },
@@ -447,9 +447,9 @@ var expertEditExerciseData={
 
             "one" : "Exercises",
             "one2" : "Exercise",
-            "two" : "Add Exercise",
-            "three" : "General Information:",
-            "four" : "Title Exercise",
+            "two" : "Edit exercise",
+            "three" : "General information:",
+            "four" : "Title of exercise",
             "five" : "Content",
             "seven" : "Save",
         }
@@ -458,8 +458,8 @@ var expertEditExerciseData={
 var expertProfileData={
     "nederlands":
         {
-            "one" : "Mijn Profiel",
-            "two" : "Algemene Informatie",
+            "one" : "Mijn profiel",
+            "two" : "Algemene informatie",
             "three" : "Voornaam:",
             "four"  :   "Achternaam:",
             "five" : "Email:",
@@ -469,8 +469,8 @@ var expertProfileData={
 
     "english":
         {
-            "one" : "My Profile",
-            "two" : "General Information",
+            "one" : "My profile",
+            "two" : "General information",
             "three" : "First name:",
             "four"  : "Surname:",
             "five" : "Email:",
@@ -482,8 +482,8 @@ var expertProfileData={
 var expertEditProfileData={
     "nederlands":
         {
-            "one" : "Mijn Profiel",
-            "two" : "Algemene Informatie",
+            "one" : "Mijn profiel",
+            "two" : "Algemene informatie",
             "three" : "Voornaam",
             "four"  :   "Achternaam",
             "five" : "Email",
@@ -493,8 +493,8 @@ var expertEditProfileData={
 
     "english":
         {
-            "one" : "My Profile",
-            "two" : "General Information",
+            "one" : "My profile",
+            "two" : "General information",
             "three" : "First name",
             "four"  : "Surname",
             "five" : "Email",
