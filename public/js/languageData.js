@@ -163,7 +163,7 @@ var studentExerciseData={
     "nederlands":
         {
             "one" : "Oefeningen",
-            "two" : "STOP & GA TERUG"
+            "two" : "STOP & TERUG"
         },
 
     "english":
@@ -179,6 +179,7 @@ var studentFeedbackData={
         {
             "one" : "Oefeningen",
             "two" : "Resultaat",
+            "one2" : "Oefening voltooid!",
             "three" : "Proficiat, je hebt een oefening voltooid!",
             "four" : "START NIEUWE OEFENING",
             "five" : "OPNIEUW SPELEN",
@@ -195,6 +196,7 @@ var studentFeedbackData={
         {
             "one" : "Exercises",
             "two" : "Feedback",
+            "one2" : "Finished exercise!",
             "three" : "Congrats, you completed an exercise!",
             "four" : "Start next exercise",
             "five" : "Replay exercise",
@@ -700,6 +702,7 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "feedback"){
             one.textContent = studentFeedbackData[attr].one;
             two.textContent = studentFeedbackData[attr].two;
+            one2.textContent = studentFeedbackData[attr].one2;
             four.textContent = studentFeedbackData[attr].four;
             five.textContent = studentFeedbackData[attr].five;
             six.textContent = studentFeedbackData[attr].six;

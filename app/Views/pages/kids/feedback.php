@@ -20,7 +20,7 @@
     </div>
 
     <div class="content_feedback">
-        <h2 style="color: var(--primary-darkest)"> Finished exercise! </h2>
+        <h2 style="color: var(--primary-darkest)" class="one2"> Finished exercise! </h2>
         <div>
         <?php if(0<=$score & $score<0.2): ?>
             <?php setcookie("feedbackCookie","one", time()+36000, "/");?>

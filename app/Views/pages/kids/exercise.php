@@ -27,8 +27,8 @@
     <div class="container">
         <div class="title">
             <h1><?= $ex->name?></h1>
-            <input  type="hidden"  class="button buttonSecondary buttonChild two" id="muteSoundsBtn" value="Spel geluiden" onclick="muteSounds();">
-            <input type="hidden"  class="button buttonSecondary buttonChild two" id="muteSpeakBtn" value="Verteller" onclick="muteSpeak();">
+            <input type="hidden"  class="button buttonSecondary buttonChild" id="muteSoundsBtn" value="Spel geluiden" onclick="muteSounds();">
+            <input type="hidden"  class="button buttonSecondary buttonChild" id="muteSpeakBtn" value="Verteller" onclick="muteSpeak();">
             <form action="<?php echo base_url('kids/intro/'.$idExercises);?>" class="inline">
                 <button id="stopButton" class="button buttonSecondary buttonChild two" >STOP & EXIT</button>
             </form>
