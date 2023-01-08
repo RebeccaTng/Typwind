@@ -10,7 +10,7 @@
         <?php setcookie("currentExercise",$exercise->idExercises, time()+36000, "/");?>
 
 <ul class="breadcrumb">
-    <li><a>Exercises</a></li>
+    <li><a href="<?php echo base_url('/experts/exercises');?>">Exercises</a></li>
     <li>Title</li>
 </ul>
 

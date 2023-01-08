@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <ul class="breadcrumb">
-    <li><a>Exercises</a></li>
+    <li><a href="<?php echo base_url('/experts/exercises');?>">Exercises</a></li>
     <li>Exercise</li>
 </ul>
 
