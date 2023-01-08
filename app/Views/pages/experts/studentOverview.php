@@ -8,7 +8,7 @@
     <?php  if ($person->idStudents==$idStudents):?>
 
         <ul class="breadcrumb">
-            <li><a href="<?php echo base_url('/experts/studentsList');?>">Students</a></li>
+            <li><a href="<?php echo base_url('/experts/studentsList');?>" class="one">Students</a></li>
             <li><?=$person->firstname?> <?=$person->lastname?></li>
         </ul>
 
@@ -31,38 +31,38 @@
 
                 <div class="infoContainer">
                     <div class="general">
-                        <h3>General Information</h3>
+                        <h3 class="one2">General Information</h3>
                         <p>
-                            <b>First name:</b>&nbsp&nbsp<?= $person->firstname?><br>
-                            <b>Surname:&nbsp&nbsp</b><?= $person->lastname?><br>
-                            <b>Email:&nbsp&nbsp</b><?= $person->email?><br>
-                            <b>Gender:&nbsp&nbsp</b>
+                            <b class="two">First name:</b>&nbsp&nbsp<?= $person->firstname?><br>
+                            <b class="three">Surname:</b>&nbsp&nbsp<?= $person->lastname?><br>
+                            <b class="four">Email:</b>&nbsp&nbsp<?= $person->email?><br>
+                            <b class="five">Gender:</b>&nbsp&nbsp
                             <?php if ($person->gender==1):?>
-                                Male
+                                <span class="six">Male</span>
                             <?php endif;?>
                             <?php if ($person->gender==0):?>
-                                Female
+                                <span class="seven">Female</span>
                             <?php endif;?>
                             <br>
-                            <b>Birthday:</b>&nbsp&nbsp<?= $person->birthday?><br>
-                            <b>Teacher:</b>&nbsp&nbsp<?= $person->teacherFirstname?><br>
-                            <b>Hand Selection:&nbsp&nbsp</b>
+                            <b class="eight">Birthday:</b>&nbsp&nbsp<?= $person->birthday?><br>
+                            <b class="nine">Teacher:</b>&nbsp&nbsp<?= $person->teacherFirstname?><br>
+                            <b class="ten">Hand Selection:</b>&nbsp&nbsp
                             <?php if ($person->handSelection==1):?>
-                                Right Hand
+                                <span class="eleven">Right Hand</span>
                             <?php endif;?>
                             <?php if ($person->handSelection==2):?>
-                                Left Hand
+                            <span class="twelve">Left Hand</span>
                             <?php endif;?>
                             <?php if ($person->handSelection==0):?>
-                                Both Hands
+                                <span class="thirteen">Both Hands</span>
                             <?php endif;?>
                             <br>
-                            <b>Active:&nbsp&nbsp</b>
+                            <b class="fourteen">Active:</b>&nbsp&nbsp
                             <?php if ($person->isActive==1):?>
-                                Currently active and following the Typwind course
+                            <span class="fifteen">Currently active and following the Typwind course
                             <?php endif;?>
                             <?php if ($person->isActive==0):?>
-                                Not active, stopped following the Typwind course
+                                <span class="sixteen">Not active, stopped following the Typwind course
                             <?php endif;?>
                             <br>
                         </p>
@@ -71,11 +71,11 @@
                     <?php if($person->notes == null || $person->notes == ""):?>
                         <div class="notes">
                             <h3>Notes</h3>
-                            <span class="noNotes">This student does not have any notes.</span>
+                            <span class="noNotes seventeen">This student does not have any notes.</span>
                         </div>
                     <?php else:?>
                         <div class="notes">
-                            <h3>Notes</h3>
+                            <h3 class="eighteen">Notes</h3>
                             <p class="noteText"><?=$person->notes ?></p>
                         </div>
                     <?php endif;?>
@@ -85,10 +85,10 @@
 
         <div class="bottomBar space">
             <a href= "<?php echo base_url('experts/studentsList');?>">
-                <button class="button buttonSecondary buttonExpert">BACK</button>
+                <button class="button buttonSecondary buttonExpert nineteen">BACK</button>
             </a>
             <a href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>">
-                <button class="button buttonPrimary buttonExpert">EDIT</button>
+                <button class="button buttonPrimary buttonExpert twenty">EDIT</button>
             </a>
         </div>
 

@@ -10,7 +10,7 @@
     <?php  if ($person->idStudents==$idStudents):?>
 
         <ul class="breadcrumb">
-            <li><a href="<?php echo base_url('/experts/studentsList');?>">Students</a></li>
+            <li><a href="<?php echo base_url('/experts/studentsList');?>" class="one">Students</a></li>
             <li><?=$person->firstname?> <?=$person->lastname?></li>
         </ul>
 
@@ -24,7 +24,7 @@
 
                 <div class="infoContainer">
                     <div class="general">
-                        <h3>General Information</h3>
+                        <h3 class="one2">General Information</h3>
                         <input type="hidden" id="email" name="email" value="<?=$person->email?>">
                         <input type="hidden" id="password" name="password" value="<?=$person->password?>">
                         <input type="hidden" id="reminder" name="reminder" value="<?=$person->reminder?>">
@@ -32,25 +32,25 @@
                         <input type="hidden" id="streak" name="streak" value=<?=$person->streak?>>
 
                         <div class="generalFields">
-                            <label for="firstname"><b>First name:</b></label>
+                            <label for="firstname"><b class="two">First name:</b></label>
                             <input type="text" id="firstname" name="firstname" value="<?=$person->firstname?>" required>
-                            <label for="lastname"><b>Surname:</b></label>
+                            <label for="lastname"><b class="three">Surname:</b></label>
                             <input type="text" id="lastname" name="lastname" value="<?=$person->lastname?>" required>
-                            <label for="lastname"><b>Email:</b></label>
+                            <label for="lastname"><b class="four">Email:</b></label>
                             <input type="text" id="email" name="email" value="<?=$person->email?>" required>
-                            <label for="gender"><b>Gender:</b></label>
+                            <label for="gender"><b class="five">Gender:</b></label>
                             <select name="gender" id="gender" required>
                             <?php if ($person->gender==1):?>
-                                <option selected="selected" value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option selected="selected" value="male" class="six">Male</option>
+                                <option value="female" class="seven">Female</option>
                             <?php else:?>
-                                <option value="male">Male</option>
-                                <option selected="selected" value="female">Female</option>
+                                <option value="male" class="six">Male</option>
+                                <option selected="selected" value="female" class="seven">Female</option>
                             <?php endif;?>
                             </select>
-                            <label for="birthday"><b>Birthday:</b></label>
+                            <label for="birthday"><b class="eight">Birthday:</b></label>
                             <input type="date" id="birthday" name="birthday" value="<?=$person->birthday?>" required>
-                            <label for="teachers"><b>Teacher:</b></label>
+                            <label for="teachers"><b class="nine">Teacher:</b></label>
                             <select name="teachers" id="teachers" value="<?=$person->teacherFirstname?>" required>
                                 <?php foreach ($teachers as $teacher):?>
                                     <?php if ($person->teacherFirstname==$teacher->firstname):?>
@@ -59,27 +59,27 @@
                                     <?php endif;?>
                                 <?php endforeach;?>
                             </select>
-                            <label class="explanation">Which hand(s) will they be typing with?</label>
-                            <label for="handSelection"><b>Hand Selection:</b></label>
+                            <label class="explanation nine2">Which hand(s) will they be typing with?</label>
+                            <label for="handSelection"><b class="ten">Hand Selection:</b></label>
                             <select name="handSelection" id="handSelection" onChange="handImage()" required >
                             <?php if ($person->handSelection==1):?>
-                                <option selected="selected" value="right">Right hand</option>
-                                <option value="left">Left Hand</option>
-                                <option value="both">Both Hands</option>
+                                <option selected="selected" value="right" class="eleven" >Right hand</option>
+                                <option value="left" class="twelve">Left Hand</option>
+                                <option value="both" class="thirteen">Both Hands</option>
                             <?php endif;?>
                             <?php if ($person->handSelection==2):?>
-                                <option value="right">Right Hand</option>
-                                <option selected="selected" value="left">Left Hand</option>
-                                <option value="both">Both Hands</option>
+                                <option value="right" class="eleven">Right Hand</option>
+                                <option selected="selected" value="left" class="twelve">Left Hand</option>
+                                <option value="both" class="thirteen">Both Hands</option>
                             <?php endif;?>
                             <?php if ($person->handSelection==0):?>
-                                <option value="right">Right Hand</option>
-                                <option value="left">Left Hand</option>
-                                <option selected="selected" value="both">Both Hands</option>
+                                <option value="right" class="eleven">Right Hand</option>
+                                <option value="left" class="twelve">Left Hand</option>
+                                <option selected="selected" value="both" class="thirteen">Both Hands</option>
                             <?php endif;?>
                             </select>
-                            <label class="explanation">Is the child currently following the Typwind course?</label>
-                            <label for="active"><b>Active:</b></label>&nbsp;
+                            <label class="explanation thirteen2">Is the child currently following the Typwind course?</label>
+                            <label for="active"><b class="fourteen">Active:</b></label>&nbsp;
                             <label class="switch">
                             <?php if ($person->isActive==1):?>
                                 <input type="checkbox" id="active" name="active" value="1"checked>
@@ -92,8 +92,8 @@
                     </div>
 
                     <div class="notes">
-                        <label for="notes"><h3>Notes</h3></label>
-                        <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
+                        <label for="notes"><h3 class="eighteen">Notes</h3></label>
+                        <p class="notesExplanation nineteen">Add some things you need to keep in mind about your student.</p>
                         <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."><?= $person->notes?></textarea>
                         <div id="the-count">
                             <span id="current"></script></span>
@@ -114,10 +114,10 @@
                 <?php endif;?>
 
                 <div class="bottomBar space">
-                    <input type="submit" value="Save" class="button buttonPrimary buttonExpert">
+                    <input type="submit" value="Save" class="button buttonPrimary buttonExpert nineteen2">
 
                     <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
-                        <button class="button buttonSecondary buttonExpert">BACK</button>
+                        <button class="button buttonSecondary buttonExpert twenty">BACK</button>
                     </a>
                 </div>
             </form>
