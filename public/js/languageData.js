@@ -35,7 +35,7 @@ var expertLoginData={
 var registerData={
     "nederlands":
         {
-            "one" : "Nieuw account",
+            "one" : "Registreren",
             "two" : "Registreer je hier als je nog geen account hebt",
             "three" : "REGISTREER",
             "four" : "TERUG NAAR LOGIN",
@@ -44,7 +44,7 @@ var registerData={
 
     "english":
         {
-            "one" : "New account",
+            "one" : "Register",
             "two" : "Register here if you don't have an account yet",
             "three" : "REGISTER",
             "four" : "BACK TO LOGIN",
@@ -641,7 +641,7 @@ link.forEach(el => {
                 document.getElementById("firstname").placeholder='Firstname';
                 document.getElementById("lastname").placeholder='Surname';
                 document.getElementById("password").placeholder='Password';
-                document.getElementById("confirmpassword").placeholder='Confirm Password';
+                document.getElementById("confirmpassword").placeholder='Confirm password';
 
             }
 
@@ -649,7 +649,7 @@ link.forEach(el => {
                 document.getElementById("firstname").placeholder='Voornaam';
                 document.getElementById("lastname").placeholder='Achternaam';
                 document.getElementById("password").placeholder='Paswoord';
-                document.getElementById("confirmpassword").placeholder='Confirmeer Paswoord';
+                document.getElementById("confirmpassword").placeholder='Confirmeer paswoord';
             }
         }
 
