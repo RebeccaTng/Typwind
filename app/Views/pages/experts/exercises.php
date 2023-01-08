@@ -38,10 +38,10 @@
     });
 </script>
 
-<h1 class="one" style="margin-bottom: 0.563rem;margin-left: 2.463rem">Exercises</h1>
+<h1 class="one">Exercises</h1>
 
 <!-- Add new exercise -->
-<a class="addNew two" style="margin-bottom: 0.563rem;margin-left: 2.463rem" href=<?php echo base_url('experts/addExercisePage/');?>>Add New Exercise</a>
+<a class="addNew two" href=<?php echo base_url('experts/addExercisePage/');?>>Add New Exercise</a>
 
 <div class="exerciseContainer">
 </div>

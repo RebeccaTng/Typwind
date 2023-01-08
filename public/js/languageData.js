@@ -382,10 +382,10 @@ var expertAddExerciseData={
     "nederlands":
         {
             "one" : "Oefeningen",
-            "one2" : "Oefening",
+            "one2" : "Oefening toevoegen",
             "two" : "Oefening toevoegen",
             "three" : "Algemene informatie",
-            "four" : "Titel oefening",
+            "four" : "Titel van oefening",
             "five" : "Inhoud",
             "six" : "Typ hier",
             "seven" : "Opslaan",
@@ -395,10 +395,10 @@ var expertAddExerciseData={
         {
 
             "one" : "Exercises",
-            "one2" : "Exercise",
-            "two" : "Add Exercise",
-            "three" : "General Information",
-            "four" : "Title Exercise",
+            "one2" : "Add new exercise",
+            "two" : "Add new xercise",
+            "three" : "General information",
+            "four" : "Title of exercise",
             "five" : "Content",
             "six" : "Type here",
             "seven" : "Save",
