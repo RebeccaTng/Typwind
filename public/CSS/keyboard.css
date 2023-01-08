@@ -78,7 +78,7 @@
 }
 .wrong{
     border-color: transparent;
-    color: red;
+    color:  var(--secondary-dark);
 }
 
 .keyboard-base {
