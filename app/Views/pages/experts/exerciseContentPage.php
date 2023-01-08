@@ -57,6 +57,10 @@
 </div>
 
 <div class="bottomBar">
+    <a href= "<?php echo base_url('experts/exercises');?>">
+        <button class="button buttonSecondary buttonExpert nineteen">BACK</button>
+    </a>
+
     <a>
         <?php
         if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):
