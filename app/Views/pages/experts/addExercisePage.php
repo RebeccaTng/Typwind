@@ -9,7 +9,7 @@
     <li class="one2">Exercise</li>
 </ul>
 
-<h1 class="two">Add Exercise</h1>
+<h1 class="headerOne two">Add Exercise</h1>
 
 <div class="scroller">
     <form class="exerciseContainer" action= "<?php echo base_url('experts/addExercise');?>" method="post">
@@ -36,7 +36,6 @@
         </div>
     </form>
 </div>
-
 
 
 
