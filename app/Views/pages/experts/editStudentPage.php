@@ -42,9 +42,9 @@
                             <select name="gender" id="gender" required>
                             <?php if ($person->gender==1):?>
                                 <option selected="selected" value="male" class="six">Male</option>
-                                <option value="female">Female</option>
+                                <option value="female" class="seven">Female</option>
                             <?php else:?>
-                                <option value="male">Male</option>
+                                <option value="male" class="six">Male</option>
                                 <option selected="selected" value="female" class="seven">Female</option>
                             <?php endif;?>
                             </select>
