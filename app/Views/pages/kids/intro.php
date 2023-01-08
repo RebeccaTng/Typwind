@@ -34,13 +34,13 @@
                         <input type="checkbox" id="voice" name="voice"  onchange="sliders()" checked>
                         <span class="slider"></span>
                     </label>
-                    <label for="voice" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Read letters out loud</label>
+                    <label for="voice" style="color: var(--blueNeutral-dark); font: var(--bodyExText)" class="nine">Read letters out loud</label>
                     <br>
                     <label class="switch">
                         <input type="checkbox" id="feedback" name="keyboard"  onchange="sliders()" checked>
                         <span class="slider"></span>
                     </label>
-                    <label for="feedback" style="color: var(--blueNeutral-dark); font: var(--bodyExText)">Have audio feedback when typing</label>
+                    <label for="feedback" style="color: var(--blueNeutral-dark); font: var(--bodyExText)" class="ten">Have audio feedback when typing</label>
                 </div>
             </div>
 

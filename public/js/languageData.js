@@ -136,10 +136,11 @@ var studentIntroData={
             "two" : "Introductie",
             "three" : "Hoe wil je spelen?",
             "four" : "Toon keyboard met kleuren",
+            "nine" : "Vertel de letters hardop",
+            "ten" : "Audio feedback wanneer je aan het typen bent",
             "five" : "Druk start en verdien enkele sterren",
-            "six" : "Veel succes!",
             "seven": "START",
-            "eight": "GA TERUG NAAR OEFENINGEN"
+            "eight": "GA TERUG NAAR OEFENINGEN",
 
         },
 
@@ -149,10 +150,11 @@ var studentIntroData={
             "two" : "Introduction",
             "three" : "How do you want to play the game?",
             "four" : "Show keyboard with colors",
+            "nine" : "Read letters out loud",
+            "ten" : "Have audio feedback when typing",
             "five" : "Press start and earn some stars.",
-            "six": "Good luck!",
             "seven": "START",
-            "eight": "GO BACK TO EXERCISES"
+            "eight": "GO BACK TO EXERCISES",
 
         }
 }
@@ -161,7 +163,7 @@ var studentExerciseData={
     "nederlands":
         {
             "one" : "Oefeningen",
-            "two" : "STOP & GA TERUG"
+            "two" : "STOP & TERUG"
         },
 
     "english":
@@ -177,6 +179,7 @@ var studentFeedbackData={
         {
             "one" : "Oefeningen",
             "two" : "Resultaat",
+            "one2" : "Oefening voltooid!",
             "three" : "Proficiat, je hebt een oefening voltooid!",
             "four" : "START NIEUWE OEFENING",
             "five" : "OPNIEUW SPELEN",
@@ -193,6 +196,7 @@ var studentFeedbackData={
         {
             "one" : "Exercises",
             "two" : "Feedback",
+            "one2" : "Finished exercise!",
             "three" : "Congrats, you completed an exercise!",
             "four" : "Start next exercise",
             "five" : "Replay exercise",
@@ -209,15 +213,14 @@ var studentFeedbackData={
 var studentAvatarData={
     "nederlands":
         {
-            "one" : "Mijn Avatar",
-            "two" : "Mijn Munten"
+            "one" : "Mijn munten",
+            "two" : "Niet genoeg munten"
         },
 
     "english":
         {
-            "one" : "My Avatar",
-            "two" : "My Coins"
-
+            "one" : "My coins",
+            "two" : "Not enough coins"
         }
 }
 
@@ -360,14 +363,93 @@ var expertExercisesData={
         {
             "one" : "Oefeningen",
             "two" : "Nieuwe oefening toevoegen",
-            "three" : "Oefeningen op maat"
+            "three" : "Les",
+            "four" : "Aangepaste oefeningen"
         },
 
     "english":
         {
             "one" : "Exercises",
             "two" : "Add new exercise",
-            "three" : "Custom Exercises"
+            "three" : "Leson",
+            "four" : "Custom exercises"
+        }
+}
+
+var expertAddExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "one2" : "Oefening",
+            "two" : "Oefening toevoegen",
+            "three" : "Algemene informatie",
+            "four" : "Titel oefening",
+            "five" : "Inhoud",
+            "six" : "Typ hier",
+            "seven" : "Opslaan",
+        },
+
+    "english":
+        {
+
+            "one" : "Exercises",
+            "one2" : "Exercise",
+            "two" : "Add Exercise",
+            "three" : "General Information",
+            "four" : "Title Exercise",
+            "five" : "Content",
+            "six" : "Type here",
+            "seven" : "Save",
+        }
+}
+
+var expertExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "one2" : "Oefening",
+            "three" : "Algemene informatie",
+            "four" : "Gemaakt door: ",
+            "five" : "Les: ",
+            "six" : "Inhoud",
+            "seven" : "AANPASSEN",
+        },
+
+    "english":
+        {
+
+            "one" : "Exercises",
+            "one2" : "Exercise",
+            "three" : "General Information",
+            "four" : "Created by: ",
+            "five" : "Lesson: ",
+            "six" : "Content",
+            "seven" : "EDIT",
+        }
+}
+
+var expertEditExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "one2" : "Oefening",
+            "two" : "Oefening aanpassen",
+            "three" : "Algemene informatie",
+            "four" : "Titel oefening:",
+            "five" : "Inhoud",
+            "seven" : "Opslaan",
+        },
+
+    "english":
+        {
+
+            "one" : "Exercises",
+            "one2" : "Exercise",
+            "two" : "Add Exercise",
+            "three" : "General Information:",
+            "four" : "Title Exercise",
+            "five" : "Content",
+            "seven" : "Save",
         }
 }
 
@@ -599,8 +681,9 @@ link.forEach(el => {
             two.textContent = studentIntroData[attr].two;
             three.textContent = studentIntroData[attr].three;
             four.textContent = studentIntroData[attr].four;
+            nine.textContent = studentIntroData[attr].nine;
+            ten.textContent = studentIntroData[attr].ten;
             five.textContent = studentIntroData[attr].five;
-            six.textContent = studentIntroData[attr].six;
             seven.textContent = studentIntroData[attr].seven;
             eight.textContent = studentIntroData[attr].eight;
         }
@@ -618,6 +701,7 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "feedback"){
             one.textContent = studentFeedbackData[attr].one;
             two.textContent = studentFeedbackData[attr].two;
+            one2.textContent = studentFeedbackData[attr].one2;
             four.textContent = studentFeedbackData[attr].four;
             five.textContent = studentFeedbackData[attr].five;
             six.textContent = studentFeedbackData[attr].six;
@@ -673,6 +757,16 @@ link.forEach(el => {
             one.textContent = expertExercisesData[attr].one;
             two.textContent = expertExercisesData[attr].two;
             three.textContent = expertExercisesData[attr].three;
+            four.textContent = expertExercisesData[attr].four;
+        }
+
+        if(getCookie("currentPage")=== "expertExercise"){
+            one.textContent = expertExerciseData[attr].one;
+            three.textContent = expertExerciseData[attr].three;
+            four.textContent = expertExerciseData[attr].four;
+            five.textContent = expertExerciseData[attr].five;
+            six.textContent = expertExerciseData[attr].six;
+            seven.textContent = expertExerciseData[attr].seven;
         }
 
         if(getCookie("currentPage")=== "expertStudent"){
@@ -743,6 +837,27 @@ link.forEach(el => {
             nineteen2.textContent = expertEditStudentData[attr].nineteen2;
             $('.nineteen2').prop('value', expertEditStudentData[attr].nineteen2);
             twenty.textContent = expertEditStudentData[attr].twenty;
+        }
+
+        if(getCookie("currentPage")=== "expertAddExercise"){
+            one.textContent = expertAddExerciseData[attr].one;
+            one2.textContent = expertAddExerciseData[attr].one2;
+            two.textContent = expertAddExerciseData[attr].two;
+            three.textContent = expertAddExerciseData[attr].three;
+            four.textContent = expertAddExerciseData[attr].four;
+            five.textContent = expertAddExerciseData[attr].five;
+            $('.six').prop('placeholder', expertAddExerciseData[attr].six);
+            seven.textContent = expertAddExerciseData[attr].seven;
+        }
+
+        if(getCookie("currentPage")=== "expertEditExercise"){
+            one.textContent = expertEditExerciseData[attr].one;
+            one2.textContent = expertEditExerciseData[attr].one2;
+            two.textContent = expertEditExerciseData[attr].two;
+            three.textContent = expertEditExerciseData[attr].three;
+            four.textContent = expertEditExerciseData[attr].four;
+            five.textContent = expertEditExerciseData[attr].five;
+            seven.textContent = expertEditExerciseData[attr].seven;
         }
 
         if(getCookie("currentPage")=== "expertEditProfile"){

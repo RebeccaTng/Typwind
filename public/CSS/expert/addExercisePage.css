@@ -1,6 +1,6 @@
 .mainContent {
     position: relative;
-    padding: 2.813rem 0 3.75rem; /*45px 0 60px*/
+    padding: 2.813rem 0 3.75rem 45rem 0.60rem;
 }
 
 div.bottomBar a {
@@ -10,7 +10,7 @@ div.bottomBar a {
 .button {
     max-width: 9.375rem; /*150px*/
 }
-ul.breadcrumb, h1 {
+ul.breadcrumb, h1.headerOne {
     padding-left: 60px;
 }
 p {

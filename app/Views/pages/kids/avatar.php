@@ -2,9 +2,11 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","avatar", time()+36000, "/");?>
+
 <script type="text/javascript" src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
 
-    <h1>Avatar Shop</h1>
+    <h1>Avatars</h1>
     <div class="avatarContent" id ="mainAvatar">
             <div class="roundProfilePic currentPic">
                 <?php if (! empty($idOfSelectedAvatar)):?>
@@ -12,7 +14,7 @@
                 <?php endif;?>
             </div>
             <div class="coins">
-                <h3>My Coins</h3>
+                <h3 class="one">My Coins</h3>
                 <span class="coin"><?=(!empty(session()->coins))? session()->coins:0;?></span>
             </div>
 
@@ -24,7 +26,7 @@
                             <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
                         </div>
                         <span class="coin"><?= $avatar['price']?></span>
-                        <span class="errorMessage">Not enough money</span>
+                        <span class="errorMessage two">Not enough coins</span>
                     </div>
                 <?php endforeach;
             endif;?>
