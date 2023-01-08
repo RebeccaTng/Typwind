@@ -371,6 +371,83 @@ var expertExercisesData={
         }
 }
 
+var expertAddExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "one2" : "Oefening",
+            "two" : "Oefening toevoegen",
+            "three" : "Algemene informatie",
+            "four" : "Titel oefening",
+            "five" : "Inhoud",
+            "six" : "Typ hier",
+            "seven" : "Opslaan",
+        },
+
+    "english":
+        {
+
+            "one" : "Exercises",
+            "one2" : "Exercise",
+            "two" : "Add Exercise",
+            "three" : "General Information",
+            "four" : "Title Exercise",
+            "five" : "Content",
+            "six" : "Type here",
+            "seven" : "Save",
+        }
+}
+
+var expertExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "one2" : "Oefening",
+            "three" : "Algemene informatie",
+            "four" : "Gemaakt door: ",
+            "five" : "Lesson: ",
+            "six" : "Inhoud",
+            "seven" : "AANPASSEN",
+        },
+
+    "english":
+        {
+
+            "one" : "Exercises",
+            "one2" : "Exercise",
+            "three" : "General Information",
+            "four" : "Created by: ",
+            "five" : "Lesson: ",
+            "six" : "Content",
+            "seven" : "EDIT",
+        }
+}
+
+var expertEditExerciseData={
+    "nederlands":
+        {
+            "one" : "Oefeningen",
+            "one2" : "Oefening",
+            "two" : "Oefening aanpassen",
+            "three" : "Algemene informatie",
+            "four" : "Titel oefening:",
+            "five" : "Inhoud",
+            "seven" : "Opslaan",
+        },
+
+    "english":
+        {
+
+            "one" : "Exercises",
+            "one2" : "Exercise",
+            "two" : "Add Exercise",
+            "three" : "General Information:",
+            "four" : "Title Exercise",
+            "five" : "Content",
+            "seven" : "Save",
+        }
+}
+
 var expertProfileData={
     "nederlands":
         {
@@ -675,6 +752,15 @@ link.forEach(el => {
             three.textContent = expertExercisesData[attr].three;
         }
 
+        if(getCookie("currentPage")=== "expertExercise"){
+            one.textContent = expertExerciseData[attr].one;
+            three.textContent = expertExerciseData[attr].three;
+            four.textContent = expertExerciseData[attr].four;
+            five.textContent = expertExerciseData[attr].five;
+            six.textContent = expertExerciseData[attr].six;
+            seven.textContent = expertExerciseData[attr].seven;
+        }
+
         if(getCookie("currentPage")=== "expertStudent"){
             one.textContent = expertStudentData[attr].one;
             one2.textContent = expertStudentData[attr].one2;
@@ -743,6 +829,27 @@ link.forEach(el => {
             nineteen2.textContent = expertEditStudentData[attr].nineteen2;
             $('.nineteen2').prop('value', expertEditStudentData[attr].nineteen2);
             twenty.textContent = expertEditStudentData[attr].twenty;
+        }
+
+        if(getCookie("currentPage")=== "expertAddExercise"){
+            one.textContent = expertAddExerciseData[attr].one;
+            one2.textContent = expertAddExerciseData[attr].one2;
+            two.textContent = expertAddExerciseData[attr].two;
+            three.textContent = expertAddExerciseData[attr].three;
+            four.textContent = expertAddExerciseData[attr].four;
+            five.textContent = expertAddExerciseData[attr].five;
+            six.textContent = expertAddExerciseData[attr].six;
+            seven.textContent = expertAddExerciseData[attr].seven;
+        }
+
+        if(getCookie("currentPage")=== "expertEditExercise"){
+            one.textContent = expertEditExerciseData[attr].one;
+            one2.textContent = expertEditExerciseData[attr].one2;
+            two.textContent = expertEditExerciseData[attr].two;
+            three.textContent = expertEditExerciseData[attr].three;
+            four.textContent = expertEditExerciseData[attr].four;
+            five.textContent = expertEditExerciseData[attr].five;
+            seven.textContent = expertEditExerciseData[attr].seven;
         }
 
         if(getCookie("currentPage")=== "expertEditProfile"){

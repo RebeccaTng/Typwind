@@ -2,37 +2,41 @@
 
 <?= $this->section('content') ?>
 
+<?php setcookie("currentPage","expertExercise", time()+36000, "/");?>
+
 <?php $exercises =json_decode(session()->exercises);?>
+<?php $teachers =session()->teachers;?>
 
 <?php foreach ($exercises as $exercise):?>
 <?php  if ($exercise->idExercises==$idExercises):?>
+<?php foreach ($teachers as $teacher):?>
+    <?php  if ($exercise->idTeacher_fk==$teacher->idTeachers || $exercise->idTeacher_fk==null):?>
 
         <?php setcookie("currentExercise",$exercise->idExercises, time()+36000, "/");?>
 
 <ul class="breadcrumb">
-    <li><a href="<?php echo base_url('/experts/exercises');?>">Exercises</a></li>
-    <li>Title</li>
+    <li><a href="<?php echo base_url('/experts/exercises');?>" class="one">Exercises</a></li>
+    <li><?php echo $exercise->name?></li>
 </ul>
 
-<h1>The adventure of the Dog</h1>
+<h1><?=$exercise->name?></h1>
 
 <div class="scroller">
         <div class="infoContainer">
             <div class="general">
-                <h3>General Information</h3>
+                <h3 class ="three">General Information</h3>
                 <p>
-                    <b>Created by: <?=$exercise->name?></b><br>
-                    <b>Lesson:
-                        <?php  if ($exercise->isCustom==1):
+                    <b class="four">Created by: </b><?php echo $teacher->firstname. " ". $teacher->lastname ;?><br>
+                    <b class="five">Lesson:
+                    </b><?php  if ($exercise->isCustom==1):
                         echo "Custom";
-                        else: echo $exercise->lesson;
-                        endif
-                        ?>
-                    </b><br>
+                    else: echo $exercise->lesson;
+                    endif
+                    ?><br>
                 </p>
             </div>
             <div class="content">
-                <h3>Content</h3>
+                <h3 class="six">Content</h3>
                 <p class="contentText"><?=$exercise->text?></p>
             </div>
         </div>
@@ -42,7 +46,7 @@
     <a>
         <?php
         if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):
-        echo '<button id= "edit" class="button buttonPrimary buttonExpert">EDIT</button>';
+        echo '<button id= "edit" class="button buttonPrimary buttonExpert seven">EDIT</button>';
         endif
         ?>
         <script type="text/javascript">
@@ -52,9 +56,11 @@
         </script>
     </a>
 </div>
+<br><br><br><br><br><br>
 
-
-
+            <?php endif;?>
+        <?php endforeach;?>
     <?php endif;?>
 <?php endforeach;?>
+
 <?= $this->endSection() ?>

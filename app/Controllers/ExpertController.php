@@ -310,7 +310,6 @@ class ExpertController extends BaseController
     public function exerciseContentPage($idExercises):array
     {
         $this->data['idExercises']=$idExercises;
-        $this->data['exercises'] = session()->get('exercises');
 
         $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
