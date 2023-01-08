@@ -255,17 +255,51 @@ var expertStudentData={
     "nederlands":
         {
             "one" : "Studenten",
+            "one2" : "Studenten",
             "two" : "Nieuwe Student",
             "three" : "Filteren",
             "four" : "Zoeken",
+            "five" : "Gender:",
+            "six" : "Man",
+            "seven" : "Vrouw",
+            "eight" : "Verjaardag:",
+            "nine" : "Leerkracht:",
+            "ten" : "Hand selectie:",
+            "eleven" : "Rechter hand",
+            "twelve" : "Linker hand",
+            "thirteen" : "Beide handen",
+            "fourteen" : "Actief:",
+            "fifteen" : "Momenteel actief, volgt Typwind lessen.",
+            "sixteen" : "Niet actief, gestopt met volgen van Typwind lessen.",
+            "seventeen" : "Deze student heeft geen notities.",
+            "eighteen" : "Notities",
+            "nineteen" : "TERUG",
+            "twenty" : "BEWERK"
         },
 
     "english":
         {
             "one" : "Students",
-            "two" : "Add New Student",
-            "three" : "Filter",
-            "four" : "Search",
+            "one2" : "General Information",
+            "two" : "First name:",
+            "three" : "Surname:",
+            "four" : "Email:",
+            "five" : "Gender:",
+            "six" : "Male",
+            "seven" : "Female",
+            "eight" : "Birthday:",
+            "nine" : "Teacher:",
+            "ten" : "Hand Selection:",
+            "eleven" : "Right Hand",
+            "twelve" : "Left Hand",
+            "thirteen" : "Both Hands",
+            "fourteen" : "Active:",
+            "fifteen" : "Currently active and following the Typwind course",
+            "sixteen" : "Not active, stopped following the Typwind course",
+            "seventeen" : "This student does not have any notes.",
+            "eighteen" : "Notes",
+            "nineteen" : "BACK",
+            "twenty" : "EDIT"
         }
 }
 
@@ -273,17 +307,51 @@ var expertEditStudentData={
     "nederlands":
         {
             "one" : "Studenten",
-            "two" : "Nieuwe Student",
-            "three" : "Filteren",
-            "four" : "Zoeken",
+            "one2" : "Student",
+            "two" : "Voornaam:",
+            "three" : "Achternaam:",
+            "four" : "Email:",
+            "five" : "Gender:",
+            "six" : "Man",
+            "seven" : "Vrouw",
+            "eight" : "Verjaardag:",
+            "nine" : "Leerkracht:",
+            "nine2" : "Met welke hand(en) zal deze student typen?",
+            "ten" : "Hand selectie:",
+            "eleven" : "Rechter hand",
+            "twelve" : "Linker hand",
+            "thirteen" : "Beide handen",
+            "thirteen2" : "Is deze student momenteel typwind lessen aan het volgen?",
+            "fourteen" : "Actief:",
+            "eighteen" : "Notities",
+            "nineteen" : "Voeg enkele dingen toe voor je student om te onthouden.",
+            "nineteen2" : "OPSLAAN",
+            "twenty" : "TERUG"
         },
 
     "english":
         {
             "one" : "Students",
-            "two" : "Add New Student",
-            "three" : "Filter",
-            "four" : "Search",
+            "one2" : "Student",
+            "two" : "First name:",
+            "three" : "Surname:",
+            "four" : "Email:",
+            "five" : "Gender:",
+            "six" : "Male",
+            "seven" : "Female",
+            "eight" : "Birthday:",
+            "nine" : "Teacher:",
+            "nine2" : "Which hand(s) will this student be typing with?",
+            "ten" : "Hand Selection:",
+            "eleven" : "Right Hand",
+            "twelve" : "Left Hand",
+            "thirteen" : "Both Hands",
+            "thirteen2" : "Is the child currently following the Typwind course?",
+            "fourteen" : "Active:",
+            "eighteen" : "Notes",
+            "nineteen" : "Add some things you need to keep in mind about your student.",
+            "nineteen2" : "SAVE",
+            "twenty" : "BACK"
         }
 }
 
@@ -359,6 +427,7 @@ const logoutEl = document.querySelector('.logout');
 const studentsEl = document.querySelector('.Students');
 const profileEl = document.querySelector('.Profile');
 const one = document.querySelector('.one');
+const one2 = document.querySelector('.one2');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
 const four = document.querySelector('.four');
@@ -367,9 +436,21 @@ const six = document.querySelector('.six');
 const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
+const nine2 = document.querySelector('.nine2');
 const ten = document.querySelector('.ten');
 const eleven = document.querySelector('.eleven');
 const twelve = document.querySelector('.twelve');
+const thirteen = document.querySelector('.thirteen');
+const thirteen2 = document.querySelector('.thirteen2');
+const fourteen = document.querySelector('.fourteen');
+const fifteen = document.querySelector('.fifteen');
+const sixteen = document.querySelector('.sixteen');
+const seventeen = document.querySelector('.seventeen');
+const eighteen = document.querySelector('.eighteen');
+const nineteen = document.querySelector('.nineteen');
+const nineteen2 = document.querySelector('.nineteen2');
+const twenty = document.querySelector('.twenty');
+
 // BASIC Cookie function
 // for now we use this one
 
@@ -578,12 +659,6 @@ link.forEach(el => {
             }
         }
 
-        if(getCookie("currentPage")=== "expertExercises"){
-            one.textContent = expertExercisesData[attr].one;
-            two.textContent = expertExercisesData[attr].two;
-            three.textContent = expertExercisesData[attr].three;
-        }
-
         if(getCookie("currentPage")=== "expertProfile"){
             one.textContent = expertProfileData[attr].one;
             two.textContent = expertProfileData[attr].two;
@@ -594,7 +669,78 @@ link.forEach(el => {
             seven.textContent = expertProfileData[attr].seven;
         }
 
+        if(getCookie("currentPage")=== "expertExercises"){
+            one.textContent = expertExercisesData[attr].one;
+            two.textContent = expertExercisesData[attr].two;
+            three.textContent = expertExercisesData[attr].three;
+        }
 
+        if(getCookie("currentPage")=== "expertStudent"){
+            one.textContent = expertStudentData[attr].one;
+            one2.textContent = expertStudentData[attr].one2;
+            two.textContent = expertStudentData[attr].two;
+            three.textContent = expertStudentData[attr].three;
+            four.textContent = expertStudentData[attr].four;
+            five.textContent = expertStudentData[attr].five;
+            if(six)
+                six.textContent = expertStudentData[attr].six;
+            if(seven)
+                seven.textContent = expertStudentData[attr].seven;
+            eight.textContent = expertStudentData[attr].eight;
+            nine.textContent = expertStudentData[attr].nine;
+            ten.textContent = expertStudentData[attr].ten;
+            if(eleven)
+                eleven.textContent = expertStudentData[attr].eleven;
+            if(twelve)
+                twelve.textContent = expertStudentData[attr].twelve;
+            if(thirteen)
+                thirteen.textContent = expertStudentData[attr].thirteen;
+            if(fourteen)
+                fourteen.textContent = expertStudentData[attr].fourteen;
+            if(fifteen)
+                fifteen.textContent = expertStudentData[attr].fifteen;
+            if(sixteen)
+                sixteen.textContent = expertStudentData[attr].sixteen;
+            if(seventeen)
+                seventeen.textContent = expertStudentData[attr].seventeen;
+            eighteen.textContent = expertStudentData[attr].eighteen;
+            nineteen.textContent = expertStudentData[attr].nineteen;
+            twenty.textContent = expertStudentData[attr].twenty;
+        }
+
+        if(getCookie("currentPage")=== "expertEditStudent"){
+            one.textContent = expertEditStudentData[attr].one;
+            one2.textContent = expertEditStudentData[attr].one2;
+            two.textContent = expertEditStudentData[attr].two;
+            three.textContent = expertEditStudentData[attr].three;
+            four.textContent = expertEditStudentData[attr].four;
+            five.textContent = expertEditStudentData[attr].five;
+            if(six)
+                six.textContent = expertEditStudentData[attr].six;
+            if(seven)
+                seven.textContent = expertEditStudentData[attr].seven;
+            eight.textContent = expertEditStudentData[attr].eight;
+            nine.textContent = expertEditStudentData[attr].nine;
+            ten.textContent = expertEditStudentData[attr].ten;
+            if(eleven)
+                eleven.textContent = expertEditStudentData[attr].eleven;
+            if(twelve)
+                twelve.textContent = expertEditStudentData[attr].twelve;
+            if(thirteen)
+                thirteen.textContent = expertEditStudentData[attr].thirteen;
+            if(fourteen)
+                fourteen.textContent = expertEditStudentData[attr].fourteen;
+            if(fifteen)
+                fifteen.textContent = expertEditStudentData[attr].fifteen;
+            if(sixteen)
+                sixteen.textContent = expertEditStudentData[attr].sixteen;
+            if(seventeen)
+                seventeen.textContent = expertEditStudentData[attr].seventeen;
+            eighteen.textContent = expertEditStudentData[attr].eighteen;
+            nineteen.textContent = expertEditStudentData[attr].nineteen;
+            $('.nineteen2').prop('value', expertEditStudentData[attr].nineteen2);
+            twenty.textContent = expertEditStudentData[attr].twenty;
+        }
 
         if(getCookie("currentPage")=== "expertEditProfile"){
             one.textContent = expertEditProfileData[attr].one;
