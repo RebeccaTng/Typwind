@@ -118,6 +118,7 @@ h1 {
     -moz-user-select: none;
     -webkit-user-select: none;/*Safari*/
     -ms-user-select: none;/*Firefox*/
+
 }
 
 .active {
