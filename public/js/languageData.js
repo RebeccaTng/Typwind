@@ -365,16 +365,12 @@ var expertExercisesData={
         {
             "one" : "Oefeningen",
             "two" : "Nieuwe oefening toevoegen",
-            "three" : "Les",
-            "four" : "Aangepaste oefeningen"
         },
 
     "english":
         {
             "one" : "Exercises",
             "two" : "Add new exercise",
-            "three" : "Lesson",
-            "four" : "Custom exercises"
         }
 }
 
@@ -763,8 +759,6 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "expertExercises"){
             one.textContent = expertExercisesData[attr].one;
             two.textContent = expertExercisesData[attr].two;
-            three.textContent = expertExercisesData[attr].three;
-            four.textContent = expertExercisesData[attr].four;
         }
 
         if(getCookie("currentPage")=== "expertExercise"){
