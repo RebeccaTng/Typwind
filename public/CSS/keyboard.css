@@ -169,7 +169,7 @@
 
 .thickBorder{
     /*border: 6px solid var(--accentColor);*/
-    border:  solid 7    px var(--primary-darkest);
+    border:  solid 7px var(--primary-darkest);
 }
 #feedback{
     font: var(--bodyText);
