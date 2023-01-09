@@ -37,11 +37,10 @@ div.coins {
 }
 
 div.avatarContent {
-    margin-left: 0.938rem;
     display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: 1fr 1fr;
-    gap: 3.125rem;
+    gap: 2.5rem;
     height: 90%;
     padding-right: 1.875rem;
     padding-bottom: 1.875rem;
@@ -56,11 +55,11 @@ div.avatarCard {
     grid-template-rows: auto;
     justify-items: center;
     align-items: center;
-    row-gap: 3.75rem;
+    row-gap: 1.875rem;
     column-gap: 0.313rem;
     height: fit-content;
     margin: 1.875rem 0.625rem;
-    padding: 3.75rem 1.25rem;
+    padding: 2.5rem 1.25rem;
     align-self: center;
 }
 
@@ -68,7 +67,7 @@ div.avatarChoice {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    max-width: max-content;
+    width: max-content;
     justify-items: center;
     align-items: center;
 }
@@ -227,5 +226,12 @@ div.noMoney:not(div.noEffects):hover {
     div.chosen span.coin:before, div.bought span.coin:before {
         padding: 0;
         margin: 0;
+    }
+}
+
+@media screen and (max-height: 50em) {
+    div.avatarCard {
+        row-gap: 0.625rem;
+        padding: 1.25rem 1.25rem;
     }
 }
