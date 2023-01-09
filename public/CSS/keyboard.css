@@ -72,9 +72,8 @@
 
 .focus{
     alignment: center;
-    color: blue;
-
-    border:  solid var(--primary-darkest);
+    color:  solid var(--primary-darkest);
+    border:  solid 6px var(--primary-darkest);
 }
 .wrong{
     border-color: transparent;
@@ -169,7 +168,8 @@
 }
 
 .thickBorder{
-    border: 6px solid var(--accentColor);
+    /*border: 6px solid var(--accentColor);*/
+    border:  solid 7    px var(--primary-darkest);
 }
 #feedback{
     font: var(--bodyText);
