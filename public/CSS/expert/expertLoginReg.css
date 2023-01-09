@@ -22,10 +22,10 @@ div.card input {
 
 div.card {
     background-color: var(--beigeNeutral);
-    padding: 1.25rem 6.25rem 2.188rem;
+    padding: 1.25rem 5.625rem 2.188rem;
     margin: 0 0 1.875rem 0;
     text-align: center;
-    max-width: 31.25rem;
+    max-width: 34rem;
 }
 
 div.centering {
@@ -54,6 +54,11 @@ img.logo {
 
 div.card {
     border: none;
+}
+
+.button {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (max-width: 37.5em) {

@@ -20,7 +20,6 @@
     background-color: var(--beigeNeutral);
     border-radius: 1.563rem; /* 25px */
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
-    border: 0.125rem solid var(--beigeNeutral-dark); /* 2px */
 
     /*grid-column: 2  / span 1;*/
     /*grid-row: 2/span 1;*/
