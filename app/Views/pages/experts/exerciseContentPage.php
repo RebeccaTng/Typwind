@@ -58,7 +58,7 @@
 
 <div class="bottomBar space">
     <a href= "<?php echo base_url('experts/exercises');?>">
-        <button class="button buttonSecondary buttonExpert nineteen">BACK</button>
+        <button class="button buttonSecondary buttonExpert nine2">BACK</button>
     </a>
 
     <a>

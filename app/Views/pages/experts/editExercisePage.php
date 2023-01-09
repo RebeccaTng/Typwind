@@ -14,7 +14,7 @@
             <li class="one2">Exercise</li>
         </ul>
 
-<h1 class="two">Edit Exercise</h1>
+<h1 class="two headerOne">Edit Exercise</h1>
 
 <div class="scroller">
     <form class="exerciseContainer" action= "<?php echo base_url('experts/editExercise/'.$exercise->idExercises);?>" method="post">
@@ -34,7 +34,10 @@
             </div>
         </div>
     </div>
-        <div class="bottomBar">
+        <div class="bottomBar space">
+            <a href="<?php echo base_url('experts/exerciseContentPage/'.$exercise->idExercises);?>">
+                <button type="button" class="button buttonSecondary buttonExpert nine2">BACK</button>
+            </a>
             <a>
                 <button class="button buttonPrimary buttonExpert seven">save</button>
             </a>

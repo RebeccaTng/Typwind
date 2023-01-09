@@ -31,8 +31,10 @@
     </div>
         <div class="bottomBar space">
 
-                <button onclick="myFunction()" class="button buttonSecondary buttonExpert nineteen">BACK</button>
-            <a >
+            <a href="<?php echo base_url('experts/exercises');?>">
+                <button type="button" class="button buttonSecondary buttonExpert nine2">BACK</button>
+            </a>
+                <a >
                 <button class="button buttonPrimary buttonExpert seven">save</button>
             </a>
         </div>

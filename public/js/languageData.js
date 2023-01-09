@@ -384,7 +384,8 @@ var expertAddExerciseData={
             "four" : "Titel van de oefening",
             "five" : "Inhoud",
             "six" : "Typ hier",
-            "seven" : "Opslaan",
+            "seven" : "OPSLAAN",
+            "nine2" : "TERUG"
         },
 
     "english":
@@ -397,7 +398,8 @@ var expertAddExerciseData={
             "four" : "Title of the exercise",
             "five" : "Content",
             "six" : "Type here",
-            "seven" : "Save",
+            "seven" : "SAVE",
+            "nine2" : "BACK"
         }
 }
 
@@ -411,6 +413,7 @@ var expertExerciseData={
             "five" : "Les: ",
             "six" : "Inhoud",
             "seven" : "AANPASSEN",
+            "nine2" : "TERUG"
         },
 
     "english":
@@ -423,6 +426,7 @@ var expertExerciseData={
             "five" : "Lesson: ",
             "six" : "Content",
             "seven" : "EDIT",
+            "nine2" : "BACK"
         }
 }
 
@@ -435,7 +439,8 @@ var expertEditExerciseData={
             "three" : "Algemene informatie",
             "four" : "Titel van oefening:",
             "five" : "Inhoud",
-            "seven" : "Opslaan",
+            "seven" : "OPSLAAN",
+            "nine2" : "TERUG"
         },
 
     "english":
@@ -447,7 +452,8 @@ var expertEditExerciseData={
             "three" : "General information:",
             "four" : "Title of exercise",
             "five" : "Content",
-            "seven" : "Save",
+            "seven" : "SAVE",
+            "nine2" : "BACK"
         }
 }
 
@@ -768,6 +774,7 @@ link.forEach(el => {
             five.textContent = expertExerciseData[attr].five;
             six.textContent = expertExerciseData[attr].six;
             seven.textContent = expertExerciseData[attr].seven;
+            nine2.textContent = expertExerciseData[attr].nine2;
         }
 
         if(getCookie("currentPage")=== "expertStudent"){
@@ -849,6 +856,8 @@ link.forEach(el => {
             five.textContent = expertAddExerciseData[attr].five;
             $('.six').prop('placeholder', expertAddExerciseData[attr].six);
             seven.textContent = expertAddExerciseData[attr].seven;
+            nine2.textContent = expertAddExerciseData[attr].nine2;
+
         }
 
         if(getCookie("currentPage")=== "expertEditExercise"){
@@ -859,6 +868,7 @@ link.forEach(el => {
             four.textContent = expertEditExerciseData[attr].four;
             five.textContent = expertEditExerciseData[attr].five;
             seven.textContent = expertEditExerciseData[attr].seven;
+            nine2.textContent = expertEditExerciseData[attr].nine2;
         }
 
         if(getCookie("currentPage")=== "expertEditProfile"){
