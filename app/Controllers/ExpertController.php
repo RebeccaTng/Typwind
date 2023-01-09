@@ -323,14 +323,8 @@ class ExpertController extends BaseController
         $data['lesson'] = "Beans";
         $data['idTeacher_fk']= session()->id;
         $data['isCustom']= 1;
-
         $this->exercises_model->add_exercise($data);
-
-        $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
-
-        $css = ['cssFiles' =>  $this->getCSSFile("addExercisePage")];
-        $dataAddExercise = array_merge($this->getDataForPage('exercises',0),$css);
-        return view('pages/experts/exercises', $dataAddExercise);
+        return redirect()->to('experts/exercises');
     }
 
     public function editExercise($idExercises)
@@ -341,12 +335,8 @@ class ExpertController extends BaseController
         $this->data['idTeacher_fk']= session()->id;
         $this->data['isCustom']= 1;
         $this->exercises_model->edit_exercise($this->data);
-        $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
-
-        $css = ['cssFiles' =>  $this->getCSSFile("exercises")];
-        $this->dataAddStudent = array_merge($this->getDataForPage('exercises',0),$css);
-        return view('pages/experts/exercises', $this->dataAddStudent);
-
+        return redirect()->to('experts/exercises');
+        
     }
 
 
