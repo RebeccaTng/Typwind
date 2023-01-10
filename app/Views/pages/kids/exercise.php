@@ -35,23 +35,23 @@
         </div>
     </div>
 
-    <div hidden="true" id="textInput"><?=$ex->text?></div>
-    <div hidden="true" id="idExercise_fkDB"><?=$ex->idExercises?></div>
-    <div hidden="true" id="idStudent_fkDB"><?=$idStudents?></div>
+    <div hidden id="textInput"><?=$ex->text?></div>
+    <div hidden id="idExercise_fkDB"><?=$ex->idExercises?></div>
+    <div hidden id="idStudent_fkDB"><?=$idStudents?></div>
 <?php endif;?>
 <?php endforeach;?>
-<div hidden="true" id="handSelection"><?=$handSelection?></div>
+<div hidden id="handSelection"><?=$handSelection?></div>
 
     <?php if  (($voiceCopy==1)):?>
-    <div hidden="true" id="voiceCopy">1</div>
+    <div hidden id="voiceCopy">1</div>
 <?php else :?>
-    <div hidden="true" id="voiceCopy">0</div>
+    <div hidden id="voiceCopy">0</div>
 <?php endif;?>
 
     <?php if  (($feedbackCopy==1)):?>
-    <div hidden="true" id="feedbackCopy">1</div>
+    <div hidden id="feedbackCopy">1</div>
 <?php else :?>
-    <div hidden="true" id="feedbackCopy">0</div>
+    <div hidden id="feedbackCopy">0</div>
 <?php endif;?>
 
     <!--Image and text bar-->
