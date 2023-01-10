@@ -91,11 +91,11 @@
                     </div>
 
                     <div class="notes">
-                        <label for="notes"><h3 class="eighteen">Notes</h3></label>
+                        <h3 class="eighteen">Notes</h3>
                         <p class="notesExplanation nineteen">Add some things you need to keep in mind about your student.</p>
                         <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."><?= $person->notes?></textarea>
                         <div id="the-count">
-                            <span id="current"></script></span>
+                            <span id="current"></span>
                             <span id="maximum">/ 1000</span>
                         </div>
                     </div>
@@ -114,10 +114,7 @@
 
                 <div class="bottomBar space">
                     <input type="submit" value="Save" class="button buttonPrimary buttonExpert nineteen2">
-
-                    <a href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>">
-                        <button class="button buttonSecondary buttonExpert twenty">BACK</button>
-                    </a>
+                        <button onclick='document.location.href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>"' class="button buttonSecondary buttonExpert twenty">BACK</button>
                 </div>
             </form>
         </div>
