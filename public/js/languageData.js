@@ -396,7 +396,7 @@ var expertAddExerciseData={
 
             "one" : "Exercises",
             "one2" : "Add new exercise",
-            "two" : "Add new xercise",
+            "two" : "Add new exercise",
             "three" : "General information",
             "four" : "Title of the exercise",
             "five" : "Content",
