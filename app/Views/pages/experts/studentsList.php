@@ -11,7 +11,7 @@
 
         <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/experts/studentOverview/">
 
-        <div class="rightBar"
+        <div class="rightBar">
             <!-- Filter -->
             <div class="filterContainer">
                 <select name="Filter" id="filter" onchange="filterStudents(users, this.value)" onclick="hideOption()">
