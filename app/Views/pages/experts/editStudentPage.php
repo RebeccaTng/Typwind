@@ -113,8 +113,8 @@
                 <?php endif;?>
 
                 <div class="bottomBar space">
-                    <input type="submit" value="Save" class="button buttonPrimary buttonExpert nineteen2">
-                        <button onclick='document.location.href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>"' class="button buttonSecondary buttonExpert twenty">BACK</button>
+                    <button onclick='document.location.href="<?php echo base_url('experts/studentOverview/'.$person->idStudents);?>"' type="button" class="button buttonSecondary buttonExpert twenty">BACK</button>
+                    <button class="button buttonPrimary buttonExpert nineteen2">save</button>
                 </div>
             </form>
         </div>

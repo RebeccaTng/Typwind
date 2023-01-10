@@ -69,11 +69,11 @@ div.generalFields {
 }
 
 .buttonPrimary {
-    order: 1;
+    order: 2;
 }
 
 .buttonSecondary {
-    order: 2;
+    order: 1;
 }
 
 div.notes label h3 {
