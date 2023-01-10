@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
@@ -40,8 +39,8 @@
         </div>
 
         <div class="langWrap menuSubHeader language" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
-            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language="nederlands" class="active">NED</a> |
+            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language="english" >ENG</a>
         </div>
     </div>
     <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">

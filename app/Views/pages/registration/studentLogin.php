@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/kids/login_child.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
@@ -45,8 +44,8 @@
         </div>
 
         <div class="langWrap menuSubHeader language" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language='nederlands' class="active">NED</a> |
-            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language='english' >ENG</a>
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language="nederlands" class="active">NED</a> |
+            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language="english" >ENG</a>
         </div>
     </div>
 </div>

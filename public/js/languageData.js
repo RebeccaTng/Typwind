@@ -601,11 +601,11 @@ link.forEach(el => {
 
         if(attr === 'nederlands') {
             setCookie('nederlandsActief',"active", 30);
-            setCookie('englishActive',"not active", 30);
+            setCookie('englishActive',"notActive", 30);
         }
 
         if(attr === 'english') {
-            setCookie('nederlandsActief',"not active", 30);
+            setCookie('nederlandsActief',"notActive", 30);
             setCookie('englishActive',"active", 30);
         }
 

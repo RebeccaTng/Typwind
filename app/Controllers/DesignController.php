@@ -14,7 +14,7 @@ class DesignController extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
 
-        setcookie("englishActive", 'not active', time()+3600, "/");
+        setcookie("englishActive", 'notActive', time()+3600, "/");
         setcookie("nederlandsActief", 'active', time()+3600, "/");
         $data = [
             'cssFiles' =>  $this->getCSSFile($page)
