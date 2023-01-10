@@ -620,8 +620,6 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "expertLogin"){
             one.textContent = expertLoginData[attr].one;
             two.textContent = expertLoginData[attr].two;
-            three.textContent = expertLoginData[attr].three;
-            four.textContent = expertLoginData[attr].four;
 
             if(attr === 'english') {
                 document.getElementById("JSPass").placeholder='Password';
@@ -659,13 +657,14 @@ link.forEach(el => {
             one.textContent = studentLoginData[attr].one;
             two.textContent = studentLoginData[attr].two;
             three.textContent = studentLoginData[attr].three;
-            four.textContent = studentLoginData[attr].four;
-            five.textContent = studentLoginData[attr].five;
         }
 
         //In both Student & Expert Pages
+        if(homeEl)
         homeEl.textContent = mainData[attr].Home;
+        if(exercisesEl)
         exercisesEl.textContent = mainData[attr].Exercises;
+        if(logoutEl)
         logoutEl.textContent = mainData[attr].logout;
 
         if(getCookie("currentPage")=== "studentHome"){
@@ -773,6 +772,7 @@ link.forEach(el => {
             four.textContent = expertExerciseData[attr].four;
             five.textContent = expertExerciseData[attr].five;
             six.textContent = expertExerciseData[attr].six;
+            if(seven)
             seven.textContent = expertExerciseData[attr].seven;
             nine2.textContent = expertExerciseData[attr].nine2;
         }
@@ -889,7 +889,9 @@ link.forEach(el => {
         }
 
         //Only in Expert Pages
+        if(studentsEl)
         studentsEl.textContent = mainData[attr].Students;
+        if(profileEl)
         profileEl.textContent = mainData[attr].Profile;
     });
 });

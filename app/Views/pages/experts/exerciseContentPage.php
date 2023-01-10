@@ -67,11 +67,15 @@
         echo '<button id= "edit" class="button buttonPrimary buttonExpert seven">EDIT</button>';
         endif
         ?>
+        <?php
+        if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):?>
         <script type="text/javascript">
             document.getElementById("edit").onclick = function () {
                 location.href = getCookie("baseURL") +"/experts/editExercisePage/" + getCookie("currentExercise") ;
             };
         </script>
+            <?php endif
+            ?>
     </a>
 </div>
                 <?php break;?>
