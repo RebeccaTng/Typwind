@@ -1,7 +1,7 @@
 <?= $this->extend('/templates/kids_default') ?>
 
 <?= $this->section('content') ?>
-<script type="text/javascript" src="<?=base_url()?>/public/js/intro.js"></script>
+<script  src="<?=base_url()?>/public/js/intro.js"></script>
 
 <?php setcookie("currentPage","intro", time()+36000, "/");?>
 

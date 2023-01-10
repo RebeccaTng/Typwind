@@ -30,10 +30,10 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    <script >
         var users = <?php echo json_encode($students); ?>;
     </script>
-    <script type="text/javascript" src="<?=base_url()?>/public/js/filter.js"></script>
+    <script  src="<?=base_url()?>/public/js/filter.js"></script>
 
     <ul class="studentList" id="list">
         <?php foreach ($students as $person):?>

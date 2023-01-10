@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/welcome.css">
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/components/main.css">
@@ -12,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 
     <!-- Translation file -->
-    <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
+    <script  src="<?=base_url()?>/public/js/languageData.js" defer></script>
 
 
     <?php setcookie("currentPage","welcome", time()+36000, "/");?>

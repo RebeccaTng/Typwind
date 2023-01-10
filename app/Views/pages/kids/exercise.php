@@ -146,5 +146,5 @@
         <input type="hidden" id="date" name="date" value="">
     </form>
 </div>
-<script type="text/javascript" src="<?=base_url()?>/public/js/exercise_view.js"></script>
+<script  src="<?=base_url()?>/public/js/exercise_view.js"></script>
 <?= $this->endSection() ?>

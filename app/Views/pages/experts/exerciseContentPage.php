@@ -69,7 +69,7 @@
         ?>
         <?php
         if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):?>
-        <script type="text/javascript">
+        <script >
             document.getElementById("edit").onclick = function () {
                 location.href = getCookie("baseURL") +"/experts/editExercisePage/" + getCookie("currentExercise") ;
             };

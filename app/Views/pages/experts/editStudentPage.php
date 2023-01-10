@@ -4,7 +4,7 @@
 
 <?php setcookie("currentPage","expertEditStudent", time()+36000, "/");?>
 <input type="hidden" id="URL" name="URL" value="<?php echo base_url();?>/public/assets/general">
-<script type="text/javascript" src="<?=base_url()?>/public/js/editStudent.js"></script>
+<script  src="<?=base_url()?>/public/js/editStudent.js"></script>
 
 <?php foreach ($students as $person):?>
     <?php  if ($person->idStudents==$idStudents):?>

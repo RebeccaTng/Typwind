@@ -9,10 +9,10 @@
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
 
     <!-- Translation file -->
-    <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
+    <script  src="<?=base_url()?>/public/js/languageData.js" defer></script>
 
     <?php
     if (! empty($cssFiles) && is_array($cssFiles)):

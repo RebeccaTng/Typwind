@@ -4,7 +4,7 @@
 
 <?php setcookie("currentPage","avatar", time()+36000, "/");?>
 
-<script type="text/javascript" src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
+<script  src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
 
     <h1>Avatars</h1>
     <div class="avatarContent" id ="mainAvatar">
