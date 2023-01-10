@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?=base_url()?>/public/CSS/expert/expertLoginReg.css">
 
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
     <!-- Translation file -->
     <script type="text/javascript" src="<?=base_url()?>/public/js/languageData.js" defer></script>
