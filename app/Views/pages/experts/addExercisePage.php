@@ -24,19 +24,14 @@
             </div>
 
             <div class="content">
-                <label for="content"><h3 class="five">Content</h3></label>
+                <h3 class="five">Content</h3>
                 <textarea class="six" id="content" name="content" rows="12" maxlength="1000" placeholder="Type here."></textarea>
             </div>
         </div>
     </div>
         <div class="bottomBar space">
-
-            <a href="<?php echo base_url('experts/exercises');?>">
-                <button type="button" class="button buttonSecondary buttonExpert nine2">BACK</button>
-            </a>
-                <a >
+                <button onclick='document.location.href="<?php echo base_url('experts/exercises');?>"' type="button" class="button buttonSecondary buttonExpert nine2">BACK</button>
                 <button class="button buttonPrimary buttonExpert seven">save</button>
-            </a>
         </div>
     </form>
 

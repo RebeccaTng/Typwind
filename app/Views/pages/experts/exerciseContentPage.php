@@ -57,11 +57,8 @@
 </div>
 
 <div class="bottomBar space">
-    <a href= "<?php echo base_url('experts/exercises');?>">
-        <button class="button buttonSecondary buttonExpert nine2">BACK</button>
-    </a>
+        <button onclick='document.location.href= "<?php echo base_url('experts/exercises');?>"' class="button buttonSecondary buttonExpert nine2">BACK</button>
 
-    <a>
         <?php
         if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):
         echo '<button id= "edit" class="button buttonPrimary buttonExpert seven">EDIT</button>';
@@ -76,7 +73,6 @@
         </script>
             <?php endif
             ?>
-    </a>
 </div>
                 <?php break;?>
             <?php endif;?>

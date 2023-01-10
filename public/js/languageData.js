@@ -805,6 +805,7 @@ link.forEach(el => {
                 sixteen.textContent = expertStudentData[attr].sixteen;
             if(seventeen)
                 seventeen.textContent = expertStudentData[attr].seventeen;
+            if(eighteen)
             eighteen.textContent = expertStudentData[attr].eighteen;
             nineteen.textContent = expertStudentData[attr].nineteen;
             twenty.textContent = expertStudentData[attr].twenty;
@@ -840,7 +841,8 @@ link.forEach(el => {
                 sixteen.textContent = expertEditStudentData[attr].sixteen;
             if(seventeen)
                 seventeen.textContent = expertEditStudentData[attr].seventeen;
-            eighteen.textContent = expertEditStudentData[attr].eighteen;
+            if(eighteen)
+                eighteen.textContent = expertEditStudentData[attr].eighteen;
             nineteen.textContent = expertEditStudentData[attr].nineteen;
             nineteen2.textContent = expertEditStudentData[attr].nineteen2;
             $('.nineteen2').prop('value', expertEditStudentData[attr].nineteen2);

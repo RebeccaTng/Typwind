@@ -33,10 +33,10 @@
                     <div class="general">
                         <h3 class="one2">General Information</h3>
                         <p>
-                            <b class="two">First name:</b>&nbsp&nbsp<?= $person->firstname?><br>
-                            <b class="three">Surname:</b>&nbsp&nbsp<?= $person->lastname?><br>
-                            <b class="four">Email:</b>&nbsp&nbsp<?= $person->email?><br>
-                            <b class="five">Gender:</b>&nbsp&nbsp
+                            <b class="two">First name:</b>&nbsp;&nbsp;<?= $person->firstname?><br>
+                            <b class="three">Surname:</b>&nbsp;&nbsp;<?= $person->lastname?><br>
+                            <b class="four">Email:</b>&nbsp;&nbsp;<?= $person->email?><br>
+                            <b class="five">Gender:</b>&nbsp;&nbsp;
                             <?php if ($person->gender==1):?>
                                 <span class="six">Male</span>
                             <?php endif;?>
@@ -44,9 +44,9 @@
                                 <span class="seven">Female</span>
                             <?php endif;?>
                             <br>
-                            <b class="eight">Birthday:</b>&nbsp&nbsp<?= $person->birthday?><br>
-                            <b class="nine">Teacher:</b>&nbsp&nbsp<?= $person->teacherFirstname?><br>
-                            <b class="ten">Hand Selection:</b>&nbsp&nbsp
+                            <b class="eight">Birthday:</b>&nbsp;&nbsp;<?= $person->birthday?><br>
+                            <b class="nine">Teacher:</b>&nbsp;&nbsp;<?= $person->teacherFirstname?><br>
+                            <b class="ten">Hand Selection:</b>&nbsp;&nbsp;
                             <?php if ($person->handSelection==1):?>
                                 <span class="eleven">Right Hand</span>
                             <?php endif;?>
@@ -57,12 +57,12 @@
                                 <span class="thirteen">Both Hands</span>
                             <?php endif;?>
                             <br>
-                            <b class="fourteen">Active:</b>&nbsp&nbsp
+                            <b class="fourteen">Active:</b>&nbsp;&nbsp;
                             <?php if ($person->isActive==1):?>
-                            <span class="fifteen">Currently active and following the Typwind course
+                            <span class="fifteen">Currently active and following the Typwind course</span>
                             <?php endif;?>
                             <?php if ($person->isActive==0):?>
-                                <span class="sixteen">Not active, stopped following the Typwind course
+                                <span class="sixteen">Not active, stopped following the Typwind course</span>
                             <?php endif;?>
                             <br>
                         </p>
@@ -84,12 +84,8 @@
         </div>
 
         <div class="bottomBar space">
-            <a href= "<?php echo base_url('experts/studentsList');?>">
-                <button class="button buttonSecondary buttonExpert nineteen">BACK</button>
-            </a>
-            <a href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>">
-                <button class="button buttonPrimary buttonExpert twenty">EDIT</button>
-            </a>
+                <button onclick= 'document.location.href= "<?php echo base_url('experts/studentsList');?>"' class="button buttonSecondary buttonExpert nineteen">BACK</button>
+                <button onclick= 'document.location.href= "<?php echo base_url('experts/editStudentPage/'.$person->idStudents);?>"' class="button buttonPrimary buttonExpert twenty">EDIT</button>
         </div>
 
     <?php endif;?>

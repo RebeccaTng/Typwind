@@ -25,7 +25,6 @@
                 <div class="infoContainer">
                     <div class="general">
                         <h3 class="one2">General Information</h3>
-                        <input type="hidden" id="email" name="email" value="<?=$person->email?>">
                         <input type="hidden" id="password" name="password" value="<?=$person->password?>">
                         <input type="hidden" id="reminder" name="reminder" value="<?=$person->reminder?>">
                         <input type="hidden" id="coins" name="coins" value=<?=$person->coins?>>
@@ -39,7 +38,7 @@
                             <label for="lastname"><b class="four">Email:</b></label>
                             <input type="text" id="email" name="email" value="<?=$person->email?>" required>
                             <label for="gender"><b class="five">Gender:</b></label>
-                            <select name="gender" id="gender" required>
+                            <select name="gender" id="gender" value="" required>
                             <?php if ($person->gender==1):?>
                                 <option selected="selected" value="male" class="six">Male</option>
                                 <option value="female" class="seven">Female</option>
@@ -55,7 +54,7 @@
                                 <?php foreach ($teachers as $teacher):?>
                                     <?php if ($person->teacherFirstname==$teacher->firstname):?>
                                         <option selected="selected" value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
-                                    <?php else:?> <option value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>?>
+                                    <?php else:?> <option value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
                                     <?php endif;?>
                                 <?php endforeach;?>
                             </select>

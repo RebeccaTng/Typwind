@@ -15,16 +15,16 @@
         </h2>
         <h3 class="two">General Information</h3>
         <p>
-            <b class="three">First name:</b>&nbsp&nbsp&nbsp<?php echo $session->firstname;?><br>
-            <b class="four">Surname:</b>&nbsp&nbsp&nbsp<?php echo $session->lastname;?><br>
-            <b class="five">Email:</b>&nbsp&nbsp&nbsp<?php echo $session->email;?><br>
+            <b class="three">First name:</b>&nbsp;&nbsp;&nbsp;<?php echo $session->firstname;?><br>
+            <b class="four">Surname:</b>&nbsp;&nbsp;&nbsp;<?php echo $session->lastname;?><br>
+            <b class="five">Email:</b>&nbsp;&nbsp;&nbsp;<?php echo $session->email;?><br>
 
             <?php if (session()->isActive==1):?>
-                <b class="six">Active:</b>&nbsp&nbsp&nbspActive, currently teaching
+                <b class="six">Active:</b>&nbsp;&nbsp;&nbsp;Active, currently teaching
             <?php endif;?>
 
             <?php if (session()->isActive==0):?>
-                <b class="six">Active:</b>&nbsp&nbsp&nbspInactive, not teaching
+                <b class="six">Active:</b>&nbsp;&nbsp;&nbsp;Inactive, not teaching
             <?php endif;?>
         </p>
     </div>
