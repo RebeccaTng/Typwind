@@ -58,7 +58,7 @@
         <?php endforeach;?>
     </ul>
             <h3 id="noStudents" hidden>No student found with this name</h3>
-            <h3 id="noStudents" hidden>This teacher has no students assigned to them</h3>
+            <h3 id="tnoStudents" hidden>This teacher has no students assigned to them</h3>
 
 <?= $this->endSection() ?>
 
