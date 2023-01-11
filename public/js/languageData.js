@@ -600,13 +600,13 @@ link.forEach(el => {
         const attr = el.getAttribute('data-language');
 
         if(attr === 'nederlands') {
-            setCookie('nederlandsActief',"active", 30);
+            setCookie('nederlandsActief',"activeLang", 30);
             setCookie('englishActive',"notActive", 30);
         }
 
         if(attr === 'english') {
             setCookie('nederlandsActief',"notActive", 30);
-            setCookie('englishActive',"active", 30);
+            setCookie('englishActive',"activeLang", 30);
         }
 
         if(getCookie("currentPage")=== "welcome"){
@@ -899,5 +899,5 @@ link.forEach(el => {
 });
 
 $("document").ready(function() {
-    document. getElementById('active').click();
+    document. getElementById('activeLang').click();
 });
