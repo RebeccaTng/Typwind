@@ -34,8 +34,8 @@
         </div>
 
         <div class="langWrap menuSubHeader language" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" data-language="nederlands" class="active">NED</a> |
-            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" data-language="english" >ENG</a>
+            <a id="<?php if($_COOKIE["nederlandsActief"])echo $_COOKIE["nederlandsActief"];?>" href="#" data-language="nederlands" class="active">NED</a> |
+            <a id="<?php if($_COOKIE["englishActive"])echo $_COOKIE["englishActive"];?>" href="#" data-language="english" >ENG</a>
         </div>
     </div>
 </div>
