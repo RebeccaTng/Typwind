@@ -14,7 +14,7 @@
         <div class="rightBar">
             <!-- Filter -->
             <div class="filterContainer">
-                <select name="Filter" id="filter" onchange="filterStudents(users, this.value)" onclick="hideOption()">
+                <select name="Filter" id="filter" onchange="filterStudents(users, this.value)">
                     <option disabled selected value="Filter" class="three" hidden>Filter</option>
                     <?php foreach ($teachers as $teacher):
                         if($teacher->isActive):?>
