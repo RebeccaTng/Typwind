@@ -30,9 +30,7 @@
     </div>
 
     <div class="bottomBar">
-        <a href="<?php echo base_url('experts/editProfilePage/'.session()->id);?>">
-            <button class="button buttonPrimary buttonExpert seven">EDIT</button>
-        </a>
+            <button onclick='document.location.href="<?php echo base_url('experts/editProfilePage/'.session()->id);?>"' class="button buttonPrimary buttonExpert seven">EDIT</button>
     </div>
 
 <?= $this->endSection() ?>

@@ -39,8 +39,8 @@
         </div>
 
         <div class="langWrap menuSubHeader language" >
-            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language="nederlands" class="active">NED</a> |
-            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language="english" >ENG</a>
+            <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" data-language="nederlands" class="active">NED</a> |
+            <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" data-language="english" >ENG</a>
         </div>
     </div>
     <img src="/public/assets/general/typwind_logo_white.svg" alt="Typwind Logo" class="logo">

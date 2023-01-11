@@ -39,12 +39,11 @@
                 </label>
             </div>
             <div class="bottomBar space">
+                <button type="button" onclick='document.location.href="<?php echo base_url('experts/profile');?>"' class="button buttonSecondary buttonExpert">BACK</button>
                 <input id="seven" class="button buttonPrimary buttonExpert" type="submit" value="Save">
-        </form>
-            <a href="<?php echo base_url('experts/profile');?>">
-                <button class="button buttonSecondary buttonExpert">BACK</button>
-            </a>
             </div>
+        </form>
+
     </div>
 
 <?= $this->endSection() ?>

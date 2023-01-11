@@ -597,7 +597,7 @@ link.forEach(el => {
         langEl.querySelector('.active').classList.remove('active');
         el.classList.add('active');
 
-        const attr = el.getAttribute('language');
+        const attr = el.getAttribute('data-language');
 
         if(attr === 'nederlands') {
             setCookie('nederlandsActief',"active", 30);

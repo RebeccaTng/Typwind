@@ -8,8 +8,8 @@
         <span class="coin"><?=(!empty(session()->coins))? session()->coins:0;?></span>
     </div>
     <div class="langWrap menuSubHeader language">
-        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" language="nederlands" class="active">NED</a><span class="bar"> | </span>
-        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" language="english" >ENG</a>
+        <a id="<?php echo $_COOKIE["nederlandsActief"];?>" href="#" data-language="nederlands" class="active">NED</a><span class="bar"> | </span>
+        <a id="<?php echo $_COOKIE["englishActive"];?>" href="#" data-language="english" >ENG</a>
     </div>
     <div class="menuItems" >
         <?php if (! empty($menu_items)) :?>
