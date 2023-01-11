@@ -92,7 +92,7 @@ li.studentListItem {
     background: url("/public/assets/icons/angle-small-down.svg") no-repeat left center;
 }
 
-#disable\ filter{
+#disableFilter{
     background: var(--blueNeutral-lightest) url("/public/assets/icons/cross.svg") no-repeat;
     background-position: 0.375rem center;
     width: 1.25rem;
@@ -101,7 +101,7 @@ li.studentListItem {
     border: none;
 }
 
-#disable\ filter:hover {
+#disableFilter:hover {
     background-color: var(--accentColor);
     transition-duration: 0.4s;
     cursor: pointer;

@@ -11,7 +11,7 @@ function filterStudents(array, name) {
                 " <h4>" + array[i].firstname + "<br>" + array[i].lastname + "</h4>" + "</a></li>" +
                 "<h3 id=\"noStudents\" hidden>No student found with this name</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned to them</h3>"
         }
-        document.getElementById('disable filter').style.display = "none";
+        document.getElementById('disableFilter').style.display = "none";
         document.querySelector('#filter').value = "Filter";
     } else {
         const result = array.filter(student => student.teacherFirstname === name);
@@ -27,7 +27,7 @@ function filterStudents(array, name) {
             }
         }
 
-        document.getElementById('disable filter').style.display = "block";
+        document.getElementById('disableFilter').style.display = "block";
     }
 
     //html= html+"

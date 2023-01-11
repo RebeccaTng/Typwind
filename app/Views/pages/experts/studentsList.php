@@ -23,7 +23,7 @@
                         <?php endif;
                     endforeach;?>
                 </select>
-                <button hidden= "hidden" id="disable filter" onclick="filterStudents(users, 'disable filter')"></button>
+                <button hidden= "hidden" id="disableFilter" onclick="filterStudents(users, 'disable filter')"></button>
             </div>
             <!-- Searchbar -->
             <input class="four" type="text" id="myInput" onkeyup="search()" placeholder="Search">

@@ -38,7 +38,7 @@
                             <label for="lastname"><b class="four">Email:</b></label>
                             <input type="text" id="email" name="email" value="<?=$person->email?>" required>
                             <label for="gender"><b class="five">Gender:</b></label>
-                            <select name="gender" id="gender" value="" required>
+                            <select name="gender" id="gender">
                             <?php if ($person->gender==1):?>
                                 <option selected="selected" value="male" class="six">Male</option>
                                 <option value="female" class="seven">Female</option>
@@ -50,7 +50,7 @@
                             <label for="birthday"><b class="eight">Birthday:</b></label>
                             <input type="date" id="birthday" name="birthday" value="<?=$person->birthday?>" required>
                             <label for="teachers"><b class="nine">Teacher:</b></label>
-                            <select name="teachers" id="teachers" value="<?=$person->teacherFirstname?>" required>
+                            <select name="teachers" id="teachers">
                                 <?php foreach ($teachers as $teacher):?>
                                     <?php if ($person->teacherFirstname==$teacher->firstname):?>
                                         <option selected="selected" value="<?=$teacher->idTeachers?>"> <?=$teacher->firstname?> </option>
@@ -60,7 +60,7 @@
                             </select>
                             <label class="explanation nine2">Which hand(s) will they be typing with?</label>
                             <label for="handSelection"><b class="ten">Hand Selection:</b></label>
-                            <select name="handSelection" id="handSelection" onChange="handImage()" required >
+                            <select name="handSelection" id="handSelection" onChange="handImage()">
                             <?php if ($person->handSelection==1):?>
                                 <option selected="selected" value="right" class="eleven" >Right hand</option>
                                 <option value="left" class="twelve">Left Hand</option>
@@ -81,7 +81,7 @@
                             <label for="active"><b class="fourteen">Active:</b></label>&nbsp;
                             <label class="switch">
                             <?php if ($person->isActive==1):?>
-                                <input type="checkbox" id="active" name="active" value="1"checked>
+                                <input type="checkbox" id="active" name="active" value="1" checked>
                             <?php else:?>
                                 <input type="checkbox" id="active" name="active">
                             <?php endif;?>
@@ -103,13 +103,13 @@
                 </div>
 
                 <?php if ($person->handSelection==1):?>
-                    <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
+                    <img id="handImage" class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">
                 <?php endif;?>
                 <?php if ($person->handSelection==2):?>
-                    <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
+                    <img id="handImage" class="hands" src="<?php echo base_url('/public/assets/general/hands_left.svg');?>" alt="Italian Trulli">
                 <?php endif;?>
                 <?php if ($person->handSelection==0):?>
-                    <img id="hand image" class="hands" src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
+                    <img id="handImage" class="hands" src="<?php echo base_url('/public/assets/general/hands_both.svg');?>" alt="Italian Trulli">
                 <?php endif;?>
 
                 <div class="bottomBar space">

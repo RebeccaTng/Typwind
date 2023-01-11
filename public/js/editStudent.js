@@ -2,13 +2,13 @@ function handImage() {
     var URL = document.getElementById("URL").value;
     var state = document.getElementById("handSelection");
     if (state.value == "right") {
-        document.getElementById("hand image").src = URL + "/hands_right.svg";
+        document.getElementById("handImage").src = URL + "/hands_right.svg";
     }
     if (state.value == "left") {
-        document.getElementById("hand image").src = URL + "/hands_left.svg";
+        document.getElementById("handImage").src = URL + "/hands_left.svg";
     }
     if (state.value == "both") {
-        document.getElementById("hand image").src = URL + "/hands_both.svg";
+        document.getElementById("handImage").src = URL + "/hands_both.svg";
     }
 }
 
