@@ -718,6 +718,12 @@ link.forEach(el => {
             document.getElementById("lastname").placeholder=expertAddStudentData[attr].five;
         }
 
+        if(getCookie("currentPage")=== "expertExercises"){
+            var theOne = expertExercisesData[attr];
+            switchLang('Lesson','Les');
+            switchLang('Custom exercises','Aangepaste oefeningen');
+        }
+
         if(getCookie("currentPage")=== "feedback"){
             var theOne = studentFeedbackData[attr];
             if(getCookie("feedbackCookie")=== "one" || getCookie("feedbackCookie")=== "two"){
@@ -798,8 +804,6 @@ function switchLang(eng,ned){
             var theOne = welcomeData[attr];
         if(getCookie("currentPage")=== "expertExercise")
             var theOne = expertExerciseData[attr];
-        if(getCookie("currentPage")=== "expertExercises")
-            var theOne = expertExercisesData[attr];
         if(getCookie("currentPage")=== "exercise")
             var theOne = studentExerciseData[attr];
         if(getCookie("currentPage")=== "intro")
