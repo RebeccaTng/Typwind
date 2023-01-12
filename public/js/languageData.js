@@ -682,6 +682,26 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "studentExercises"){
             one.textContent = studentExercisesData[attr].one;
+            if(attr === 'nederlands') {
+                var html = document.querySelector('html');
+                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+                var node;
+                while (node = walker.nextNode()) {
+                    node.nodeValue = node.nodeValue.replace(/Lesson/, 'Les ')
+                    node.nodeValue = node.nodeValue.replace(/Custom exercises/, 'Aangepaste oefeningen')
+                }
+            }
+
+            if(attr === 'english') {
+                var html = document.querySelector('html');
+                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+                var node;
+                while (node = walker.nextNode()) {
+                    node.nodeValue = node.nodeValue.replace(/Les /, 'Lesson')
+                    node.nodeValue = node.nodeValue.replace(/Aangepaste oefeningen/, 'Custom exercises')
+                }
+            }
+
         }
 
         if(getCookie("currentPage")=== "intro"){
@@ -764,6 +784,7 @@ link.forEach(el => {
         if(getCookie("currentPage")=== "expertExercises"){
             one.textContent = expertExercisesData[attr].one;
             two.textContent = expertExercisesData[attr].two;
+
         }
 
         if(getCookie("currentPage")=== "expertExercise"){

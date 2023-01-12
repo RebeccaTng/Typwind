@@ -36,7 +36,7 @@
                     exercisesText = "<div class='card lessonCardChild'> <h2>"+"Lesson "+lessonId +"</h2>";
                 }
                 else{
-                    exercisesText = "<div class='card lessonCardChild'> <h2>" + "Custom Exercises" + "</h2>"
+                    exercisesText = "<div class='card lessonCardChild'> <h2>" + "Custom exercises" + "</h2>"
                 }
 
 
