@@ -707,25 +707,8 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "studentExercises"){
             one.textContent = studentExercisesData[attr].one;
-            if(attr === 'nederlands') {
-                var html = document.querySelector('html');
-                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
-                var node;
-                while (node = walker.nextNode()) {
-                    node.nodeValue = node.nodeValue.replace('Lesson', 'Les ')
-                    node.nodeValue = node.nodeValue.replace('Custom exercises', 'Aangepaste oefeningen')
-                }
-            }
-
-            if(attr === 'english') {
-                var html = document.querySelector('html');
-                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
-                var node;
-                while (node = walker.nextNode()) {
-                    node.nodeValue = node.nodeValue.replace(/Les /, 'Lesson')
-                    node.nodeValue = node.nodeValue.replace(/Aangepaste oefeningen/, 'Custom exercises')
-                }
-            }
+            switchLang('Lesson','Les');
+            switchLang('Custom exercises','Aangepaste oefeningen');
         }
 
         if(getCookie("currentPage")=== "expertAddStudent"){
@@ -733,7 +716,6 @@ link.forEach(el => {
             document.getElementById("notes").placeholder=expertAddStudentData[attr].eight;
             document.getElementById("firstname").placeholder=expertAddStudentData[attr].four;
             document.getElementById("lastname").placeholder=expertAddStudentData[attr].five;
-
         }
 
         if(getCookie("currentPage")=== "feedback"){
@@ -754,31 +736,32 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "avatar"){
             var theOne = studentAvatarData[attr];
-            if(attr === 'nederlands') {
-                var html = document.querySelector('html');
-                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
-                var node;
-                while (node = walker.nextNode()) {
-                    node.nodeValue = node.nodeValue.replace('Avatar shop', 'Avatar winkel')
-                    node.nodeValue = node.nodeValue.replace('Purchased', 'Aangekocht')
-                    node.nodeValue = node.nodeValue.replace('Selected', 'Gekozen')
-                    node.nodeValue = node.nodeValue.replace('Not enough coins', 'Niet genoeg munten')
-
-                }
-            }
-
-            if(attr === 'english') {
-                var html = document.querySelector('html');
-                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
-                var node;
-                while (node = walker.nextNode()) {
-                    node.nodeValue = node.nodeValue.replace('Avatar winkel', 'Avatar shop')
-                    node.nodeValue = node.nodeValue.replace('Aangekocht', 'Purchased')
-                    node.nodeValue = node.nodeValue.replace('Gekozen', 'Selected')
-                    node.nodeValue = node.nodeValue.replace('Niet genoeg munten', 'Not enough coins')
-                }
-            }
+            switchLang('Purchased','Aangekocht');
+            switchLang('Selected','Gekozen');
+            switchLang('Not enough coins','Niet genoeg munten');
         }
+        
+switchLang('Avatar shop','Avatar winkel');
+        
+function switchLang(eng,ned){
+    if(attr === 'nederlands') {
+        var html = document.querySelector('html');
+        var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+        var node;
+        while (node = walker.nextNode()) {
+            node.nodeValue = node.nodeValue.replace(eng, ned)
+        }
+    }
+
+    if(attr === 'english') {
+        var html = document.querySelector('html');
+        var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+        var node;
+        while (node = walker.nextNode()) {
+            node.nodeValue = node.nodeValue.replace(ned, eng)
+        }
+    }
+}
 
         if(getCookie("currentPage")=== "expertStudents"){
             var theOne = expertStudentData[attr];
