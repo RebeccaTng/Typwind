@@ -712,8 +712,8 @@ link.forEach(el => {
                 var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
                 var node;
                 while (node = walker.nextNode()) {
-                    node.nodeValue = node.nodeValue.replace(/Lesson/, 'Les ')
-                    node.nodeValue = node.nodeValue.replace(/Custom exercises/, 'Aangepaste oefeningen')
+                    node.nodeValue = node.nodeValue.replace('Lesson', 'Les ')
+                    node.nodeValue = node.nodeValue.replace('Custom exercises', 'Aangepaste oefeningen')
                 }
             }
 
@@ -754,6 +754,30 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "avatar"){
             var theOne = studentAvatarData[attr];
+            if(attr === 'nederlands') {
+                var html = document.querySelector('html');
+                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+                var node;
+                while (node = walker.nextNode()) {
+                    node.nodeValue = node.nodeValue.replace('Avatar shop', 'Avatar winkel')
+                    node.nodeValue = node.nodeValue.replace('Purchased', 'Aangekocht')
+                    node.nodeValue = node.nodeValue.replace('Selected', 'Gekozen')
+                    node.nodeValue = node.nodeValue.replace('Not enough coins', 'Niet genoeg munten')
+
+                }
+            }
+
+            if(attr === 'english') {
+                var html = document.querySelector('html');
+                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+                var node;
+                while (node = walker.nextNode()) {
+                    node.nodeValue = node.nodeValue.replace('Avatar winkel', 'Avatar shop')
+                    node.nodeValue = node.nodeValue.replace('Aangekocht', 'Purchased')
+                    node.nodeValue = node.nodeValue.replace('Gekozen', 'Selected')
+                    node.nodeValue = node.nodeValue.replace('Niet genoeg munten', 'Not enough coins')
+                }
+            }
         }
 
         if(getCookie("currentPage")=== "expertStudents"){
