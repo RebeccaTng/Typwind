@@ -13,10 +13,21 @@ class AuthGuard implements FilterInterface
             return redirect()
                 ->to('/registration/welcome');
         }
+
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
+        if (session()->get('isStudent') && !session()->get('studentPage'))
+        {
+            return redirect()
+                ->to('/registration/welcome');
+        }
+        if (!session()->get('isStudent') && session()->get('studentPage'))
+        {
+            return redirect()
+                ->to('/registration/welcome');
+        }
 
     }
 }

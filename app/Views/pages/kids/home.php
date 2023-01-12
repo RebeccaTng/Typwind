@@ -3,6 +3,7 @@
 <?= $this->section('content') ?>
     <script  src="<?=base_url()?>/public/js/balloons.js" ></script>
 <?php setcookie("currentPage","studentHome", time()+36000, "/");?>
+
 <div id="balloon-container">
 </div>
 <div class="home_content">

@@ -11,6 +11,7 @@
 
     <!-- Translation file -->
     <script  src="<?=base_url()?>/public/js/languageData.js" defer></script>
+    <?php session()->set("studentPage",FALSE)?>
 
     <?php
     if (! empty($cssFiles) && is_array($cssFiles)):

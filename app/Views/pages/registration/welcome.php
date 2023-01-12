@@ -13,7 +13,8 @@
     <!-- Translation file -->
     <script  src="<?=base_url()?>/public/js/languageData.js" defer></script>
 
-
+    <?php if(session()->BaseURL)
+        session()->destroy();?>
     <?php setcookie("currentPage","welcome", time()+36000, "/");?>
 
     <title class="one">Welcome page</title>
