@@ -16,7 +16,14 @@
             <div class="infoContainer">
                 <div class="general">
                     <h3>General Information</h3>
-                    <form action= "<?php echo base_url('experts/addStudent');?>" method="post">
+                    <?php if(isset(session()->validation)):?>
+                        <div class="errorMessage">
+                            <p>
+                                <?= session()->validation->listErrors() ?>
+                            </p>
+                        </div><br>
+                    <?php endif;?>
+                    <form action= "<?php echo base_url('ExpertController/storeStudent');?>" method="post">
                     <div class="generalFields">
                         <label for="firstname"><b>First name</b><span class="mandatory">* </span><b>:</b></label  required>
                         <input type="text" id="firstname" name="firstname" placeholder="First name" required>
@@ -121,5 +128,6 @@
             }
         });
     </script>
+<?php session()->remove("validation") ?>
 
 <?= $this->endSection() ?>

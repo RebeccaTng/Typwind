@@ -50,6 +50,7 @@
 
     <?php endif;?>
 <?php endforeach;?>
+<?php session()->remove("validation") ?>
 
 <?= $this->endSection() ?>
 

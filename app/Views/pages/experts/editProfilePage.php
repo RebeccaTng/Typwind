@@ -51,5 +51,6 @@
         </form>
 
     </div>
+<?php session()->remove("validation") ?>
 
 <?= $this->endSection() ?>

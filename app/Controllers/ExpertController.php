@@ -161,48 +161,6 @@ class ExpertController extends BaseController
 
         return( $this->data);
     }
-    public function editStudent($idStudents)
-    {
-        $this->data['idStudents']=$idStudents;
-        $this->data['firstname']= $_POST['firstname'];
-        $this->data['lastname'] = $_POST['lastname'];
-        $gender= $_POST['gender'];
-        if($gender == "male")
-        {
-            $this->data['gender']= 1;
-        }
-        else{
-            $this->data['gender']=0;
-        }
-        $this->data['birthday'] = $_POST['birthday'];
-
-        $this->data['idTeacher_fk'] = $_POST['teachers'];;
-
-
-        $handSelection=$_POST['handSelection'];
-
-
-        if ($handSelection=="left")
-        {
-            $this->data['handSelection']=2;
-        }
-        if ($handSelection=="right")
-        {
-            $this->data['handSelection']=1;
-        }
-        if ($handSelection=="both"){
-            $this->data['handSelection']=0;
-        }
-        $this->data['isActive'] = isset($_POST['active']);
-        $this->data['notes'] = nl2br($_POST['notes']);
-        $this->data['email']= $_POST['email'];
-        $this->data['password']= $_POST['password'];
-        $this->data['reminder']= $_POST['reminder'];
-        $this->data['coins']= $_POST['coins'];
-        $this->data['streak']= $_POST['streak'];
-        $this->students_model->edit_student($this->data);
-        return redirect()->to('experts/studentsList');
-    }
 
     public function addStudentPage():array
     {
@@ -210,42 +168,6 @@ class ExpertController extends BaseController
         $data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
         return ( $data);
-    }
-    public function addStudent()
-    {
-        $data['firstname']= $_POST['firstname'];
-        $data['lastname'] = $_POST['lastname'];
-        $data['email']= $_POST['email'];
-/*        $data['password'] = $_POST['password'];*/
-        $gender= $_POST['gender'];
-        if($gender == "male")
-        {
-            $data['gender']= 1;
-        }
-        else{
-            $data['gender']=0;
-        }
-        $handSelection=$_POST['handSelection'];
-        if ($handSelection=="One Hand, right hand")
-        {
-            $data['handSelection']=1;
-        }
-        if ($handSelection=="One Hand, left hand")
-        {
-            $data['handSelection']=2;
-        }
-        else{
-            $data['handSelection']=0;
-        }
-        $data['isActive'] = isset($_POST['active']);
-        $data['birthday'] = $_POST['birthday'];
-        $data['idTeacher_fk'] = $_POST['teachers'];
-        $data['notes'] = nl2br($_POST['notes']);
-        $this->students_model->add_student($data);
-
-        return redirect()->to('experts/studentsList');
-
-//        return view('pages/experts/studentsList', $data);
     }
 
     public function profile():array
@@ -283,6 +205,73 @@ class ExpertController extends BaseController
         $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
         return( $this->data);
+    }
+
+    public function storeStudent($idStudents=null)
+    {
+        helper(['form']);
+
+        $rules = [
+            'firstname'          => 'required|min_length[3]|max_length[50]|alpha_space',
+            'lastname'          => 'required|min_length[3]|alpha_space',
+            'email'          => "required|min_length[4]|max_length[100]|valid_email|is_unique[students.email,idStudents,{$idStudents}]",
+            'notes' => 'max_length[1000]',
+        ];
+
+        if($this->validate($rules)){
+
+            $this->data = [
+                'idStudents' => $idStudents,
+                'firstname' => $_POST['firstname'],
+                'lastname' => $_POST['lastname'],
+                'email'     => $_POST['email'],
+                'isActive' => isset($_POST['active']),
+                'birthday' => $_POST['birthday'],
+                'idTeacher_fk' => $_POST['teachers'],
+                'notes' => nl2br($_POST['notes']),
+            ];
+
+            $gender= $_POST['gender'];
+
+            if($gender == "male")
+            {
+                $this->data['gender']= 1;
+            }
+            else{
+                $this->data['gender']=0;
+            }
+
+            $handSelection=$_POST['handSelection'];
+
+            if ($handSelection=="One Hand, right hand")
+            {
+                $this->data['handSelection']=1;
+            }
+            if ($handSelection=="One Hand, left hand")
+            {
+                $this->data['handSelection']=2;
+            }
+            else{
+                $this->data['handSelection']=0;
+            }
+
+            if($idStudents==null){
+                $this->students_model->add_student($this->data);
+            }
+            else{
+                $this->students_model->edit_student($this->data);
+            }
+
+            return redirect()->to('experts/studentsList');
+        }else{
+            $data['validation'] = $this->validator;
+            session()->set("validation",$data['validation']);
+            if($idStudents==null){
+                return redirect()->to('experts/addStudentPage');}
+            else{
+                return redirect()->to('experts/editStudentPage/'.$idStudents);
+            }
+        }
     }
 
     public function storeExercise($idExercises=null)
@@ -326,7 +315,7 @@ class ExpertController extends BaseController
         $rules = [
             'firstname'          => 'required|min_length[3]|max_length[50]|alpha_space',
             'lastname'          => 'required|min_length[3]|alpha_space',
-            'email'          => 'required|min_length[3]'
+            'email'          => 'required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email]'
         ];
 
         if($this->validate($rules)){
@@ -354,6 +343,4 @@ class ExpertController extends BaseController
                 return redirect()->to('experts/editProfilePage');
         }
     }
-
-
 }

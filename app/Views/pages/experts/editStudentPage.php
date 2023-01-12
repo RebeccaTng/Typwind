@@ -17,12 +17,19 @@
         <h1><?=$person->firstname?> <?=$person->lastname?></h1>
 
         <div class="scroller">
-            <form class="studentContainer" action="<?php echo base_url('experts/editStudent/'.$person->idStudents);?>" method="post">
+            <form class="studentContainer" action="<?php echo base_url('ExpertController/storeStudent/'.$person->idStudents);?>" method="post">
                 <div class="roundProfilePic">
                     <img src="/public/assets/avatars/1.svg" alt="User Icon">
                 </div>
 
                 <div class="infoContainer">
+                    <?php if(isset(session()->validation)):?>
+                        <div class="errorMessage">
+                            <p>
+                                <?= session()->validation->listErrors() ?>
+                            </p>
+                        </div>
+                    <?php endif;?>
                     <div class="general">
                         <h3 class="one2">General Information</h3>
                         <input type="hidden" id="password" name="password" value="<?=$person->password?>">
@@ -160,5 +167,6 @@
         }
     });
 </script>
+<?php session()->remove("validation") ?>
 
 <?= $this->endSection() ?>
