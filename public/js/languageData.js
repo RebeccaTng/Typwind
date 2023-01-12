@@ -367,12 +367,12 @@ var expertAddStudentData={
             "one2" : "Student toevoegen",
             "two" : "Student toevoegen",
             "three" : "Algemene informatie",
-            "four" : "Voornaam:",
-            "five" : "Achternaam:",
+            "four" : "Voornaam",
+            "five" : "Achternaam",
             "six" : "Man",
             "seven" : "Vrouw",
-            "eight" : "Verjaardag:",
-            "nine" : "Leerkracht:",
+            "eight" : "Verjaardag",
+            "nine" : "Leerkracht",
             "nine2" : "Met welke hand(en) zal deze student typen?",
             "ten" : "Hand selectie:",
             "eleven" : "Rechter hand",
@@ -381,6 +381,7 @@ var expertAddStudentData={
             "thirteen2" : "Is deze student momenteel typwind lessen aan het volgen?",
             "fourteen" : "Actief:",
             "fifteen" : "*Benodigde velden",
+            "sixteen" : "Typ Hier:",
             "eighteen" : "Notities",
             "nineteen" : "Voeg enkele dingen toe voor je student om te onthouden.",
             "nineteen2" : "OPSLAAN",
@@ -390,15 +391,15 @@ var expertAddStudentData={
     "english":
         {
             "one" : "Students",
-            "one2" : "Student",
-            "two" : "First name:",
-            "three" : "Surname:",
-            "four" : "Email:",
-            "five" : "Gender:",
+            "one2" : "Add student",
+            "two" : "Add student",
+            "three" : "General information",
+            "four" : "Firstname",
+            "five" : "Lastname",
             "six" : "Male",
             "seven" : "Female",
-            "eight" : "Birthday:",
-            "nine" : "Teacher:",
+            "eight" : "Birthday",
+            "nine" : "Teacher",
             "nine2" : "Which hand(s) will this student be typing with?",
             "ten" : "Hand selection:",
             "eleven" : "Right hand",
@@ -407,6 +408,7 @@ var expertAddStudentData={
             "thirteen2" : "Is the child currently following the Typwind course?",
             "fourteen" : "Active:",
             "fifteen" : "*Mandatory fields",
+            "sixteen" : "Type Here:",
             "eighteen" : "Notes",
             "nineteen" : "Add some things you need to keep in mind about your student.",
             "nineteen2" : "SAVE",
@@ -728,6 +730,10 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "expertAddStudent"){
             var theOne = expertAddStudentData[attr];
+            document.getElementById("notes").placeholder=expertAddStudentData[attr].eight;
+            document.getElementById("firstname").placeholder=expertAddStudentData[attr].four;
+            document.getElementById("lastname").placeholder=expertAddStudentData[attr].five;
+
         }
 
         if(getCookie("currentPage")=== "feedback"){
@@ -821,13 +827,13 @@ link.forEach(el => {
             six.textContent = theOne.six;
         if(seven&& theOne.seven)
             seven.textContent = theOne.seven;
-        if(seven&& theOne.eight )
+        if(eight&& theOne.eight )
             eight.textContent = theOne.eight;
-        if(seven&& theOne.nine )
+        if(nine&& theOne.nine )
             nine.textContent = theOne.nine;
-        if(seven&& theOne.nine2 )
+        if(nine2&& theOne.nine2 )
             nine2.textContent = theOne.nine2;
-        if(seven&& theOne.ten )
+        if(ten&& theOne.ten )
             ten.textContent = theOne.ten;
         if(eleven&& theOne.eleven )
             eleven.textContent = theOne.eleven;
