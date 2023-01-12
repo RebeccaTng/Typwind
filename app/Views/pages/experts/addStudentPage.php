@@ -5,17 +5,17 @@
 <?php setcookie("currentPage","expertAddStudent", time()+36000, "/");?>
 
     <ul class="breadcrumb">
-        <li><a href="<?php echo base_url('/experts/studentsList');?>">Students</a></li>
-        <li>Add Student</li>
+        <li><a href="<?php echo base_url('/experts/studentsList');?>" class="one">Students</a></li>
+        <li class="one2">Add Student</li>
     </ul>
 
-    <h1>Add Student</h1>
+    <h1 class="two">Add Student</h1>
 
     <div class="scroller">
         <div class="studentContainer">
             <div class="infoContainer">
                 <div class="general">
-                    <h3>General Information</h3>
+                    <h3 class="three">General Information</h3>
                     <?php if(isset(session()->validation)):?>
                         <div class="errorMessage">
                             <p>
@@ -25,23 +25,23 @@
                     <?php endif;?>
                     <form action= "<?php echo base_url('ExpertController/storeStudent');?>" method="post">
                     <div class="generalFields">
-                        <label for="firstname"><b>First name</b><span class="mandatory">* </span><b>:</b></label  required>
-                        <input type="text" id="firstname" name="firstname" placeholder="First name" required>
-                        <label for="lastname"><b>Surname</b><span class="mandatory">* </span><b>:</b></label>
-                        <input type="text" id="lastname" name="lastname" placeholder="Surname" required>
+                        <label for="firstname"><b class="four">First name</b><span class="mandatory">* </span><b>:</b></label  required>
+                        <input class="four" type="text" id="firstname" name="firstname" placeholder="First name" required>
+                        <label for="lastname"><b class="five">Surname</b><span class="mandatory">* </span><b>:</b></label>
+                        <input class="five" type="text" id="lastname" name="lastname" placeholder="Surname" required>
                         <label for="email"><b>Email</b><span class="mandatory">* </span><b>:</b></label>
                         <input type="text" id="email" name="email" placeholder="Email" required>
 
                         <label for="gender"><b>Gender</b><span class="mandatory">* </span><b>:</b></label>
                         <select name="gender" id="gender" required>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option class="six" value="male">Male</option>
+                            <option class="six"value="female">Female</option>
                         </select>
 
-                        <label for="birthday"><b>Birthday</b><span class="mandatory">* </span><b>:</b></label>
+                        <label for="birthday"><b class="six">Birthday</b><span class="mandatory">* </span><b>:</b></label>
                         <input type="date" id="birthday" name="birthday" required>
 
-                        <label for="teachers"><b>Teacher</b><span class="mandatory">* </span><b>:</b></label>
+                        <label for="teachers"><b class="six">Teacher</b><span class="mandatory">* </span><b>:</b></label>
                         <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>" required>
                             <?php foreach ($teachers as $teacher):
                                 if($teacher->idTeachers== session()->id): ?>
@@ -52,27 +52,27 @@
                             <?php endforeach;?>
                         </select>
 
-                        <label class="explanation">Which hand(s) will they be typing with?</label>
-                        <label for="handSelection"><b>Hand Selection:</b></label>
+                        <label class="explanation nine2">Which hand(s) will they be typing with?</label>
+                        <label for="handSelection"><b class="ten">Hand Selection:</b></label>
                         <select name="handSelection" id="handSelection" required>
-                            <option value="One Hand, right hand">Right Hand</option>
-                            <option value="One Hand, left hand">Left Hand</option>
-                            <option selected="selected" value="Both Hands">Both Hands</option>
+                            <option class="six" value="One Hand, right hand">Right Hand</option>
+                            <option class="six" value="One Hand, left hand">Left Hand</option>
+                            <option class="six" selected="selected" value="Both Hands">Both Hands</option>
                         </select>
 
-                        <label class="explanation">Is the child currently following the Typwind course?</label>
-                        <label for="active"><b>Active:</b></label>
+                        <label class="explanation thirteen2">Is the child currently following the Typwind course?</label>
+                        <label for="active"><b class="fourteen">Active:</b></label>
                         <label class="switch">
                             <input type="checkbox" id="active" name="active" checked>
                             <span class="slider"></span>
                         </label>
-                        <span class="mandatory">*Mandatory fields</span>
+                        <span class="mandatory fifteen">*Mandatory fields</span>
                     </div>
                 </div>
 
                 <div class="notes">
-                    <label for="notes"><h3>Notes</h3></label>
-                    <p class="notesExplanation">Add some things you need to keep in mind about your student.</p>
+                    <label for="notes"><h3 class="eighteen">Notes</h3></label>
+                    <p class="notesExplanation nineteen">Add some things you need to keep in mind about your student.</p>
                     <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."></textarea>
                     <div id="the-count">
                         <span id="current">0</script></span>
@@ -82,11 +82,10 @@
             </div>
 
             <div class="bottomBar space">
-                <input type="submit" value="Submit" class="button buttonPrimary buttonExpert">
+                <button type="submit" value="Submit" class="button buttonPrimary buttonExpert nineteen">SAVE
+                </button>
                     </form>
-                <a href= "<?php echo base_url('experts/studentsList');?>">
-                    <button class="button buttonSecondary buttonExpert">BACK</button>
-                </a>
+                    <button onclick='document.location.href= "<?php echo base_url('experts/studentsList');?>"' class="button buttonSecondary buttonExpert twenty">BACK</button>
             </div>
         </div>
     </div>
