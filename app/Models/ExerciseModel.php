@@ -30,4 +30,6 @@ class ExerciseModel extends Model
         $builder->where('idExercises', $data['idExercises']);
         $builder->update($data);
     }
+
+
 }

@@ -327,5 +327,64 @@ class ExpertController extends BaseController
         
     }
 
+    public function store()
+    {
+        helper(['form']);
+        $rules = [
+            'firstname'          => 'required|min_length[2]|max_length[50]',
+            'lastname'          => 'required|min_length[2]|max_length[50]',
+            'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email]',
+            'password'      => 'required|min_length[4]|max_length[50]',
+            'confirmpassword'  => 'matches[password]'
+        ];
 
+        if($this->validate($rules)){
+            $userModel = new Teachers_model();
+            $data = [
+                'firstname'     => $this->request->getVar('firstname'),
+                'lastname'     => $this->request->getVar('lastname'),
+                'email'    => $this->request->getVar('email'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                'isActive'    => 1
+
+            ];
+            $userModel->save($data);
+            return redirect()->to('/registration/welcome');
+        }else{
+            $data['validation'] = $this->validator;
+            echo view('/pages/registration/register', $data);
+        }
+    }
+
+    public function storeExercise()
+    {
+        helper(['form']);
+        $rules = [
+            'name'          => 'required|min_length[2]|max_length[50]|is_unique[exercises.name]',
+            'content'          => 'required|min_length[2]'
+        ];
+
+        if($this->validate($rules)){
+            $exerciseModel = new ExerciseModel();
+/*            $data = [
+                'name'     => $this->request->getVar('firstname'),
+                'text'     => $this->request->getVar('content'),
+                'lesson'    => "Beans",
+                'idTeacher_fk' => session()->id,
+                'isCustom'    => 1
+            ];*/
+
+            $data['name']= $_POST['title'];
+            $data['text'] = $_POST['content'];
+            $data['lesson'] = "Beans";
+            $data['idTeacher_fk']= session()->id;
+            $data['isCustom']= 1;
+            $this->exercises_model->add_exercise($data);
+/*            $exerciseModel->save($data);*/
+            return redirect()->to('experts/exercises');
+        }else{
+            $data['validation'] = $this->validator;
+            echo view('/pages/experts/addExercisePage', $data);
+        }
+    }
 }

@@ -35,6 +35,7 @@
 
                 <button type="submit" class="button buttonPrimary buttonExpert three">REGISTER</button>
             </form>
+
             <button type="button" id="backToLogin" class="button buttonSecondary buttonExpert four" onclick="window.location= '<?=base_url()?>/registration/expertLogin'">BACK TO LOGIN</button>
         </div>
 
