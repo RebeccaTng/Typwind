@@ -26,7 +26,7 @@
                     <?= $validation->listErrors() ?>
                 </div>
             <?php endif;?>
-            <form action="<?php echo base_url(); ?>/RegistrationController/store" method="post">
+            <form action="<?php echo base_url(); ?>/RegistrationController/storeTeacher" method="post">
                 <input id ="firstname" type="text" name="firstname" placeholder="Firstname" value="<?= set_value('name') ?>" required>
                 <input id ="lastname" type="text" name="lastname" placeholder="Surname" value="<?= set_value('name') ?>" required >
                 <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required>

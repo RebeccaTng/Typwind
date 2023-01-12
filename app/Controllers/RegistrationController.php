@@ -140,7 +140,7 @@ class RegistrationController extends \CodeIgniter\Controller
         }
     }
 
-    public function store()
+    public function storeTeacher()
     {
         helper(['form']);
         $rules = [

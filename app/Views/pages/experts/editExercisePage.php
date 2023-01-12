@@ -17,9 +17,16 @@
 <h1 class="two headerOne">Edit Exercise</h1>
 
 <div class="scroller">
-    <form class="exerciseContainer" action= "<?php echo base_url('experts/editExercise/'.$exercise->idExercises);?>" method="post">
+    <form class="exerciseContainer" action= "<?php echo base_url('expertController/storeExercise/'.$exercise->idExercises);?>" method="post">
     <div class="infoContainer">
         <div class="generalContainer">
+            <?php if(isset(session()->validation)):?>
+                <div class="errorMessage">
+                    <p>
+                        <?= session()->validation->listErrors() ?>
+                    </p>
+                </div><br>
+            <?php endif;?>
             <h3 class="three">General Information</h3>
             <div class="general">
                 <p>

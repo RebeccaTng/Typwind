@@ -12,9 +12,17 @@
 <h1 class="headerOne two">Add Exercise</h1>
 
 <div class="scroller">
-    <form class="exerciseContainer" action= "<?php echo base_url('experts/addExercise');?>" method="post">
+
+    <form class="exerciseContainer" action= "<?php echo base_url('ExpertController/storeExercise');?>" method="post">
     <div class="infoContainer">
         <div class="generalContainer">
+            <?php if(isset(session()->validation)):?>
+                <div class="errorMessage">
+                    <p>
+                        <?= session()->validation->listErrors() ?>
+                    </p>
+                </div><br>
+            <?php endif;?>
             <h3 class="three">General Information</h3>
             <div class="general">
                 <p>
@@ -36,5 +44,6 @@
     </form>
 
 </div>
+<?php session()->remove("validation") ?>
 <?= $this->endSection() ?>
 

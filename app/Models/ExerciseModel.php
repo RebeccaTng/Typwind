@@ -31,5 +31,4 @@ class ExerciseModel extends Model
         $builder->update($data);
     }
 
-
 }
