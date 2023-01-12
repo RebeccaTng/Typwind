@@ -260,24 +260,6 @@ class ExpertController extends BaseController
         return $data;
     }
 
-    public function editProfile()
-    {
-        $this->data['idTeachers']= session()->id;
-        $this->data['firstname']= $_POST['firstname'];
-        session()->firstname = $this->data['firstname'];
-        $this->data['lastname'] = $_POST['lastname'];
-        session()->lastname = $this->data['lastname'];
-        $this->data['isActive'] = isset($_POST['active']);
-        session()->isActive = $this->data['isActive'];
-        $this->data['email']= $_POST['email'];
-        session()->email = $this->data['email'];
-        $this->teachers_model->edit_teacher($this->data);
-        $this->data['teachers'] = $this->teachers_model->get_all_teachers();
-        session()->set('teachers', $this->data['teachers']);
-        return redirect()->to('experts/profile');
-
-    }
-
     public function addExercisePage():array
     {
         $data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
@@ -298,33 +280,9 @@ class ExpertController extends BaseController
     public function exerciseContentPage($idExercises):array
     {
         $this->data['idExercises']=$idExercises;
-
         $this->data['menu_items'] = $this->menu_model->get_menuitems('Exercises');
 
         return( $this->data);
-    }
-
-    public function addExercise()
-    {
-        $data['name']= $_POST['title'];
-        $data['text'] = $_POST['content'];
-        $data['lesson'] = "Beans";
-        $data['idTeacher_fk']= session()->id;
-        $data['isCustom']= 1;
-        $this->exercises_model->add_exercise($data);
-        return redirect()->to('experts/exercises');
-    }
-
-    public function editExercise($idExercises)
-    {
-        $this->data['idExercises']=$idExercises;
-        $this->data['name']= $_POST['title'];
-        $this->data['text'] = $_POST['content'];
-        $this->data['idTeacher_fk']= session()->id;
-        $this->data['isCustom']= 1;
-        $this->exercises_model->edit_exercise($this->data);
-        return redirect()->to('experts/exercises');
-        
     }
 
     public function storeExercise($idExercises=null)
@@ -360,4 +318,42 @@ class ExpertController extends BaseController
             }
         }
     }
+
+    public function storeProfile()
+    {
+        helper(['form']);
+
+        $rules = [
+            'firstname'          => 'required|min_length[3]|max_length[50]|alpha_space',
+            'lastname'          => 'required|min_length[3]|alpha_space',
+            'email'          => 'required|min_length[3]'
+        ];
+
+        if($this->validate($rules)){
+
+            session()->firstname = $this->data['firstname'];
+            session()->lastname = $this->data['lastname'];
+            session()->isActive = $this->data['isActive'];
+            session()->email = $this->data['email'];
+
+            $this->data = [
+                'idTeachers' => session()->id,
+                'firstname' => $_POST['firstname'],
+                'lastname'     => $_POST['lastname'],
+                'isActive'     =>  isset($_POST['active']),
+                'email'     => $_POST['email']
+            ];
+
+            $this->teachers_model->edit_teacher($this->data);
+            $this->data['teachers'] = $this->teachers_model->get_all_teachers();
+            session()->set('teachers', $this->data['teachers']);
+                return redirect()->to('experts/profile');
+        }else{
+            $data['validation'] = $this->validator;
+            session()->set("validation",$data['validation']);
+                return redirect()->to('experts/editProfilePage');
+        }
+    }
+
+
 }

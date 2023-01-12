@@ -15,9 +15,15 @@
                 echo $session->firstname; echo " "; echo $session->lastname;?>
             </h2>
         </div>
-
+        <?php if(isset(session()->validation)):?>
+            <div class="errorMessage">
+                <p>
+                    <?= session()->validation->listErrors() ?>
+                </p>
+            </div>
+        <?php endif;?>
         <h3 class="two">General Information</h3>
-        <form action="<?php echo base_url('experts/editProfile/'.session()->id);?>" method="post">
+        <form action="<?php echo base_url('ExpertController/storeProfile');?>" method="post">
             <!-- <input type="hidden" id="password" name="password" value="<?$person->password?>"> -->
 
             <div class="field">
