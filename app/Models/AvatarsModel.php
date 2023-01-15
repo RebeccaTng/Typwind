@@ -101,7 +101,7 @@ class AvatarsModel extends Model
     }
     private function getCurrentCoins($idStudent): void
     {
-        $query_text = 'SELECT coins FROM students WHERE idStudents=37;';
+        $query_text = 'SELECT coins FROM students WHERE idStudents=?;';
         $query = $this->db->query($query_text,$idStudent);
         $this->setCurrentCoins($query->getResult());
     }
