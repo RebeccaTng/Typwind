@@ -1,5 +1,6 @@
 /* Implementation Grid */
 .grid-container_intro {
+
     display: grid;
     /*grid-template-columns: 3fr 4fr 3fr;*/
     /*grid-template-rows: 0.5fr 1fr 8fr;*/
@@ -9,12 +10,13 @@
 }
 /* CARD */
 .grid_cards{
+    transform: scale(0.90);
     /*grid-column: 2  / span 1;*/
     /*grid-row: 3/span 1;*/
     place-self: center;
     /*justify-self: stretch;*/
     text-align: center;
-    padding: 40px;
+    padding: 0px;
 }
 .card_intro {
     background-color: var(--beigeNeutral-light);
