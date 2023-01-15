@@ -10,13 +10,15 @@
 }
 /* CARD */
 .grid_cards{
+    /*
     transform: scale(0.90);
+    */
     /*grid-column: 2  / span 1;*/
     /*grid-row: 3/span 1;*/
     place-self: center;
     /*justify-self: stretch;*/
     text-align: center;
-    padding: 0px;
+    padding: 40px;
 }
 .card_intro {
     background-color: var(--beigeNeutral-light);
