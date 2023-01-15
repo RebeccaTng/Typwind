@@ -311,11 +311,11 @@ class ExpertController extends BaseController
     public function storeProfile()
     {
         helper(['form']);
-
+        $session=session();
         $rules = [
             'firstname'          => 'required|min_length[3]|max_length[50]|alpha_space',
             'lastname'          => 'required|min_length[3]|alpha_space',
-            'email'          => 'required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email]'
+            'email'          => "required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email,idStudents,{$session->id}]"
         ];
 
         if($this->validate($rules)){
