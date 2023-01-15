@@ -315,15 +315,10 @@ class ExpertController extends BaseController
         $rules = [
             'firstname'          => 'required|min_length[3]|max_length[50]|alpha_space',
             'lastname'          => 'required|min_length[3]|alpha_space',
-            'email'          => "required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email,idStudents,{$session->id}]"
+            'email'          => "required|min_length[4]|max_length[100]|valid_email|is_unique[teachers.email,idTeachers,{$session->id}]"
         ];
 
         if($this->validate($rules)){
-
-            session()->firstname = $this->data['firstname'];
-            session()->lastname = $this->data['lastname'];
-            session()->isActive = $this->data['isActive'];
-            session()->email = $this->data['email'];
 
             $this->data = [
                 'idTeachers' => session()->id,
@@ -332,6 +327,11 @@ class ExpertController extends BaseController
                 'isActive'     =>  isset($_POST['active']),
                 'email'     => $_POST['email']
             ];
+
+            $session->firstname = $this->data['firstname'];
+            $session->lastname = $this->data['lastname'];
+            $session->isActive = $this->data['isActive'];
+            $session->email = $this->data['email'];
 
             $this->teachers_model->edit_teacher($this->data);
             $this->data['teachers'] = $this->teachers_model->get_all_teachers();
