@@ -707,7 +707,7 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "studentExercises"){
             one.textContent = studentExercisesData[attr].one;
-            switchLang('Lesson','Les');
+            switchLang('Lesson','Les ');
             switchLang('Custom exercises','Aangepaste oefeningen');
         }
 
@@ -720,7 +720,7 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "expertExercises"){
             var theOne = expertExercisesData[attr];
-            switchLang('Lesson','Les');
+            switchLang('Lesson','Les ');
             switchLang('Custom exercises','Aangepaste oefeningen');
         }
 
