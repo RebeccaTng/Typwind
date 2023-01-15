@@ -16,6 +16,7 @@ h1 {
     padding-bottom: 1.875rem; /*30px*/
 }
 div.exerciseContainer {
+
     display: flex;
     flex-direction: column;
     row-gap: 1.875rem; /*30px*/
@@ -55,6 +56,7 @@ div.exerciseContainer {
 }
 /* LESSON CARD */
 div.lessonCardChild {
+    transform: scale(0.90);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
