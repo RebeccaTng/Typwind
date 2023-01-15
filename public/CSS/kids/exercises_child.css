@@ -56,8 +56,9 @@ div.exerciseContainer {
 }
 /* LESSON CARD */
 div.lessonCardChild {
-    transform: scale(0.90);
+    zoom:90%;
     display: grid;
+    text-align: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "header header header header";

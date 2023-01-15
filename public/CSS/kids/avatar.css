@@ -37,6 +37,7 @@ div.coins {
 }
 
 div.avatarContent {
+    zoom: normal;
     display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: 1fr 1fr;

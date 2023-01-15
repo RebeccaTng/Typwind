@@ -183,7 +183,7 @@ class KidsController extends BaseController
             else $this->avatarModel->changeSelectedAvatar( $this->request->getVar('id'));
         }
         $data['idStudents']=session()->id;
-        $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatars');
+        $data['menu_items'] = $this->menu_model->get_menuitems_kids('Avatar shop');
         $data['avatars'] = $this ->avatarModel->getAvatarIcons();
         $data['idOfSelectedAvatar'] =$this ->avatarModel->getIdOfSelectedAvatar();
         return $data;
