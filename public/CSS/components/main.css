@@ -77,6 +77,10 @@
     --navEmphasisText: 700 1.25rem var(--opensans-font); /* Weight=bold, Size=20pt, Family=Open Sans */
 }
 
+html {
+    font-size: 90%;
+}
+
 h4 {
     font: var(--heading3);
 }
