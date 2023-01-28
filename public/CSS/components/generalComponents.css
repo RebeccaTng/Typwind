@@ -232,7 +232,7 @@ div.language a {
     color: var(--blueNeutral);
 }
 
-div.language :not(a.active):hover {
+div.language :not(a.active):not(span.bar):hover {
     transition-duration: 0.4s;
     font: var(--navText);
     color: var(--beigeNeutral);

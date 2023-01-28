@@ -45,6 +45,7 @@ div.avatarContent {
     padding-right: 1.875rem;
     padding-bottom: 1.875rem;
     overflow: auto;
+    margin-top: 0.625em;
 }
 
 div.avatarCard {
@@ -219,7 +220,7 @@ div.noMoney:not(div.noEffects):hover {
     }
 
     div.chosen span.coin, div.bought span.coin {
-        min-width: 8.125rem;
+        min-width: 8.75rem;
         padding: 0.313rem 0.313rem;
     }
 
@@ -229,9 +230,9 @@ div.noMoney:not(div.noEffects):hover {
     }
 }
 
-@media screen and (max-height: 50em) {
-    div.avatarCard {
-        row-gap: 0.625rem;
-        padding: 1.25rem 1.25rem;
-    }
-}
+/*@media screen and (max-height: 50em) {*/
+/*    div.avatarCard {*/
+/*        row-gap: 0.625rem;*/
+/*        padding: 1.25rem 1.25rem;*/
+/*    }*/
+/*}*/

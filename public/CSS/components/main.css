@@ -77,9 +77,9 @@
     --navEmphasisText: 700 1.25rem var(--opensans-font); /* Weight=bold, Size=20pt, Family=Open Sans */
 }
 
-html {
-    font-size: 90%;
-}
+/*html {*/
+/*    font-size: 90%;*/
+/*}*/
 
 h4 {
     font: var(--heading3);
@@ -98,11 +98,13 @@ h1 {
 }
 
 .leftNavBar {
+    zoom: 0.95;
     background-color: transparent;
     text-align: center;
     flex-shrink: 1;
 }
 .mainContent {
+    zoom: 0.95;
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15);
     background-color: var(--beigeNeutral);
     border-radius: 1.563rem; /* 25px */

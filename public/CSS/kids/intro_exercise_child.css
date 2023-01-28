@@ -4,9 +4,7 @@
     display: grid;
     /*grid-template-columns: 3fr 4fr 3fr;*/
     /*grid-template-rows: 0.5fr 1fr 8fr;*/
-    margin: 50px;
-    /*height: 90%;*/
-
+    margin: 2.831rem 3.75rem 3.75rem;
 }
 /* CARD */
 .grid_cards{
@@ -18,7 +16,7 @@
     place-self: center;
     /*justify-self: stretch;*/
     text-align: center;
-    padding: 40px;
+    margin-top: 1.25rem;
 }
 .card_intro {
     background-color: var(--beigeNeutral-light);
