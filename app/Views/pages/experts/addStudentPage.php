@@ -16,31 +16,33 @@
             <div class="infoContainer">
                 <div class="general">
                     <h3 class="three">General Information</h3>
+
                     <?php if(isset(session()->validation)):?>
                         <div class="errorMessage">
-                            <?= session()->validation->listErrors() ?>
-                        </div>
+                            <?=
+                            session()->validation->listErrors() ?>
+                        </div><br>
                     <?php endif;?>
                     <form action= "<?php echo base_url('ExpertController/storeStudent');?>" method="post">
                     <div class="generalFields">
-                        <label for="firstname"><b class="four">First name</b><span class="mandatory">* </span><b>:</b></label  required>
-                        <input class="four" type="text" id="firstname" name="firstname" placeholder="First name" required>
+                        <label for="firstname"><b class="four">First name</b><span class="mandatory">* </span><b>:</b></label  >
+                        <input class="four" type="text" id="firstname" name="firstname" placeholder="First name" >
                         <label for="lastname"><b class="five">Surname</b><span class="mandatory">* </span><b>:</b></label>
-                        <input class="five" type="text" id="lastname" name="lastname" placeholder="Surname" required>
+                        <input class="five" type="text" id="lastname" name="lastname" placeholder="Surname" >
                         <label for="email"><b>Email</b><span class="mandatory">* </span><b>:</b></label>
-                        <input type="text" id="email" name="email" placeholder="Email" required>
+                        <input type="text" id="email" name="email" placeholder="Email" >
 
                         <label for="gender"><b>Gender</b><span class="mandatory">* </span><b>:</b></label>
-                        <select name="gender" id="gender" required>
+                        <select name="gender" id="gender" >
                             <option class="six" value="male">Male</option>
                             <option class="seven"value="female">Female</option>
                         </select>
 
                         <label for="birthday"><b class="eight">Birthday</b><span class="mandatory">* </span><b>:</b></label>
-                        <input type="date" id="birthday" name="birthday" required>
+                        <input type="date" id="birthday" name="birthday" >
 
                         <label for="teachers"><b class="nine">Teacher</b><span class="mandatory">* </span><b>:</b></label>
-                        <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>" required>
+                        <select name="teachers" id="teachers" value="<?=$teachers[0]->firstname?>" >
                             <?php foreach ($teachers as $teacher):
                                 if($teacher->idTeachers== session()->id): ?>
                                     <option value="<?=$teacher->idTeachers?>" selected><?=$teacher->firstname?></option>
@@ -52,7 +54,7 @@
 
                         <label class="explanation nine2">Which hand(s) will they be typing with?</label>
                         <label for="handSelection"><b class="ten">Hand Selection:</b></label>
-                        <select name="handSelection" id="handSelection" required>
+                        <select name="handSelection" id="handSelection" >
                             <option class="eleven" value="One Hand, right hand">Right Hand</option>
                             <option class="twelve" value="One Hand, left hand">Left Hand</option>
                             <option class="thirteen" selected="selected" value="Both Hands">Both Hands</option>

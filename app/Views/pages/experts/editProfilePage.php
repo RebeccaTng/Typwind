@@ -28,11 +28,11 @@
 
             <div class="field">
                 <label class="three" for="firstname">First name:</label><br>
-                <input type="text" id="firstname" name="firstname" value="<?=session()->firstname?>" required><br>
+                <input type="text" id="firstname" name="firstname" value="<?=session()->firstname?>" ><br>
                 <label class="four" for="lastname">Surname:</label><br>
-                <input type="text" id="lastname" name="lastname" value="<?=session()->lastname?>" required><br>
+                <input type="text" id="lastname" name="lastname" value="<?=session()->lastname?>" ><br>
                 <label class="five" for="email">Email:</label><br>
-                <input type="text" id="email" name="email" value="<?=session()->email?>" required><br>
+                <input type="text" id="email" name="email" value="<?=session()->email?>" ><br>
                 <label class="six" for="active">Active</label>
 
                 <label class="switch">

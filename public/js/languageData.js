@@ -713,12 +713,31 @@ link.forEach(el => {
             switchLang('Custom exercises','Aangepaste oefeningen');
         }
 
+
         if(getCookie("currentPage")=== "expertAddStudent"){
             var theOne = expertAddStudentData[attr];
             document.getElementById("notes").placeholder=expertAddStudentData[attr].eighteen;
             document.getElementById("firstname").placeholder=expertAddStudentData[attr].four;
             document.getElementById("lastname").placeholder=expertAddStudentData[attr].five;
+            switchLang('Gender','Geslacht');
         }
+
+        //Translating the Form Validation
+        switchLang("The firstname field","Het voornaam veld");
+        switchLang("The lastname field","Het achternaam veld");
+        switchLang("The email field","Het email veld");
+        switchLang("The birthday field","Het verjaardag veld");
+        switchLang("The title field","Het titel veld");
+        switchLang("The content field","Het inhoud veld");
+        switchLang("must be at least","moet minstens");
+        switchLang("characters in length","karakters bevatten");
+        switchLang("must contain a unique value","moet een unieke waarde bevatten");
+        switchLang("may only contain alphabetical characters and spaces","mag alleen alfabetische tekens en spaties bevatten.");
+        switchLang("cannot exceed","kan niet meer dan");
+        switchLang("is required","is verplicht");
+        switchLang("must contain a valid email address","moet een geldige email bevatten");
+
+
 
         if(getCookie("currentPage")=== "expertExercises"){
             var theOne = expertExercisesData[attr];
@@ -742,20 +761,16 @@ link.forEach(el => {
             {twelve.textContent = studentFeedbackData[attr].twelve;}
         }
 
+        switchLang('Avatar shop','Avatar winkel');
         if(getCookie("currentPage")=== "avatar"){
             var theOne = studentAvatarData[attr];
             switchLang('Purchased','Aangekocht');
             switchLang('Selected','Gekozen');
             switchLang('Not enough coins','Niet genoeg munten');
-
-
         }
-
-        switchLang('Avatar shop','Avatar winkel');
-        switchLang('Gender','Geslacht');
-
+        
         function switchLang(eng,ned){
-    if(attr === 'nederlands') {
+        if(attr === 'nederlands') {
         var html = document.querySelector('html');
         var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
         var node;
@@ -897,8 +912,9 @@ if(getCookie("englishActive")==="activeLang") {
     confirmMessage = "Confirm your purchase of this avatar";
     confirmText = "Confirm"
     cancelText = "Cancel"
-
 }
+
+
 
 $("document").ready(function() {
     document. getElementById('activeLang').click();
