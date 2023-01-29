@@ -24,8 +24,8 @@
 <div class = "grid-container_welcome">
     <div class="centering">
         <div class = "card_welcome_page">
-            <img src="/public/assets/general/typwind_logo.svg" alt="Typwind logo" style="width:221px;height:77px;">
-            <h1 class="two" style="color:var(--blueNeutral); margin-bottom: 15px;">Welcomes you!</h1>
+            <img src="/public/assets/general/typwind_logo.svg" alt="Typwind logo" style="width:13.8125rem;height:4.8125rem;">
+            <h1 class="two" style="color:var(--blueNeutral); margin-bottom: 0.9375rem;">Welcomes you!</h1>
             <h3 class="three" style="color:var(--primary-darkest);">Are you a student or a teacher?</h3>
 
             <div class="teacher_student_buttons">

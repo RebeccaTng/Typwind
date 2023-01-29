@@ -70,10 +70,10 @@
     transition-duration: 0.4s;
 }
 .exerciseButton:hover:enabled {
-    box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(30, 41, 41, 0.5); /* --black = rgb(30,41,41)*/
 }
 .exerciseButton:active:enabled {
-    box-shadow: 4px 4px 12px rgba(30, 41, 41, 0.7) inset;
+    box-shadow: 0.25rem 0.25rem 0.75rem rgba(30, 41, 41, 0.7) inset;
 }
 
 .stars_on_exercise{

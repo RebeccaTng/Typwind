@@ -23,12 +23,12 @@
     /*justify-self: stretch;*/
     place-self: center;
     text-align: center;
-    padding: 50px;
+    padding: 3.125rem;
 }
 
 div.card_login_child input{
-    width: 300px;
-    margin-bottom: 25px;
+    width: 18.75rem;
+    margin-bottom: 1.5625rem;
 }
 
 .continue_w_email_button{
@@ -38,7 +38,7 @@ div.card_login_child input{
 }
 
 div.continue_w_email_button button{
-    width: 300px;
+    width: 18.75rem;
 }
 
 img.logo {
@@ -55,7 +55,7 @@ img.logo {
     gap: 1.875rem;
 }
 
-@media screen and (max-height: 650px), screen and (max-width: 992px) {
+@media screen and (max-height: 40.625rem), screen and (max-width: 62rem) {
     img.logo {
         display: none;
     }

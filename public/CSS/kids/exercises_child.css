@@ -38,7 +38,7 @@ div.exerciseContainer {
 /*Scroll Buttons*/
 .round {
     border-radius: 50%;
-    padding: 10px;
+    padding: 0.625rem;
     background-color: transparent;
     border-color: transparent;
     /*background-color: var(--beigeNeutral);*/
@@ -51,7 +51,7 @@ div.exerciseContainer {
     /*box-shadow: 4px 4px 8px rgba(30, 41, 41, 0.45); !* --black = rgb(30,41,41)*!*/
     background-color: var(--beigeNeutral);
     border-color: var(--secondary-light);
-    border-width: 2px;
+    border-width: 0.125rem;
     border-style: solid;
 }
 /* LESSON CARD */
@@ -67,7 +67,7 @@ div.lessonCardChild {
     grid-template-areas: "header header header header";
     max-width: fit-content;
     align-items: start;
-    gap: 60px;
+    gap: 3.75rem;
     padding: 1.25rem 2.5rem 2.188rem;
 }
 
@@ -78,7 +78,7 @@ div.lessonCardChild h2 {
     color: var(--secondaryColor);
     margin: 0;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 93.75rem) {
     div.lessonCardChild {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "header header header";
@@ -86,7 +86,7 @@ div.lessonCardChild h2 {
 
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 78.125rem) {
     div.lessonCardChild {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "header header";
