@@ -278,7 +278,7 @@ class ExpertController extends BaseController
     {
         helper(['form']);
         $rules = [
-            'title'          => 'required|min_length[5]|max_length[50]|is_unique[exercises.name]',
+            'title'          => 'required|min_length[3]|max_length[50]|is_unique[exercises.name]',
             'content'          => 'required|min_length[2]'
         ];
 

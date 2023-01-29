@@ -441,7 +441,8 @@ var expertAddExerciseData={
             "five" : "Inhoud",
             "six" : "Typ hier",
             "seven" : "OPSLAAN",
-            "nine2" : "TERUG"
+            "nine2" : "TERUG",
+            "ten" : "titel"
         },
 
     "english":
@@ -455,7 +456,8 @@ var expertAddExerciseData={
             "five" : "Content",
             "six" : "Type here",
             "seven" : "SAVE",
-            "nine2" : "BACK"
+            "nine2" : "BACK",
+            "ten" : "title"
         }
 }
 
@@ -655,12 +657,12 @@ link.forEach(el => {
 
         const attr = el.getAttribute('data-language');
 
-        if(attr === 'nederlands') {
+        if(attr === 'nederlands' && getCookie('nederlandsActief')==="notActive") {
             setCookie('nederlandsActief',"activeLang", 30);
             setCookie('englishActive',"notActive", 30);
         }
 
-        if(attr === 'english') {
+        if(attr === 'english' && getCookie('englishActive')==="notActive") {
             setCookie('nederlandsActief',"notActive", 30);
             setCookie('englishActive',"activeLang", 30);
         }
@@ -713,7 +715,7 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "expertAddStudent"){
             var theOne = expertAddStudentData[attr];
-            document.getElementById("notes").placeholder=expertAddStudentData[attr].eight;
+            document.getElementById("notes").placeholder=expertAddStudentData[attr].eighteen;
             document.getElementById("firstname").placeholder=expertAddStudentData[attr].four;
             document.getElementById("lastname").placeholder=expertAddStudentData[attr].five;
         }
@@ -745,11 +747,14 @@ link.forEach(el => {
             switchLang('Purchased','Aangekocht');
             switchLang('Selected','Gekozen');
             switchLang('Not enough coins','Niet genoeg munten');
+
+
         }
-        
-switchLang('Avatar shop','Avatar winkel');
-        
-function switchLang(eng,ned){
+
+        switchLang('Avatar shop','Avatar winkel');
+        switchLang('Gender','Geslacht');
+
+        function switchLang(eng,ned){
     if(attr === 'nederlands') {
         var html = document.querySelector('html');
         var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
@@ -770,7 +775,7 @@ function switchLang(eng,ned){
 }
 
         if(getCookie("currentPage")=== "expertStudents"){
-            var theOne = expertStudentData[attr];
+            var theOne = expertStudentsData[attr];
 
             if(attr === 'english') {
                 document.getElementById("myInput").placeholder='Search';
@@ -787,7 +792,9 @@ function switchLang(eng,ned){
         }
         if(getCookie("currentPage")=== "expertAddExercise"){
             var theOne = expertAddExerciseData[attr];
-            $('.six').prop('placeholder', expertAddExerciseData[attr].six);
+            document.getElementById("content").placeholder=expertAddExerciseData[attr].six;
+            document.getElementById("title").placeholder=expertAddExerciseData[attr].six;
+
         }
         if(getCookie("currentPage")=== "expertEditProfile"){
             var theOne = expertEditProfileData[attr];
@@ -878,6 +885,20 @@ function switchLang(eng,ned){
             profileEl.textContent = mainData[attr].Profile;
     });
 });
+
+//dialog in avatar page
+let confirmMessage="Confirm";
+if(getCookie("nederlandsActief")==="activeLang"){
+    confirmMessage ="Bevestig je aankoop van deze avatar";
+    confirmText = "Bevestig"
+    cancelText = "Annuleer"
+}
+if(getCookie("englishActive")==="activeLang") {
+    confirmMessage = "Confirm your purchase of this avatar";
+    confirmText = "Confirm"
+    cancelText = "Cancel"
+
+}
 
 $("document").ready(function() {
     document. getElementById('activeLang').click();
