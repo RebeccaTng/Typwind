@@ -71,7 +71,7 @@
                 <div class="notes">
                     <label for="notes"><h3 class="eighteen">Notes</h3></label>
                     <p class="notesExplanation nineteen">Add some things you need to keep in mind about your student.</p>
-                    <textarea class="sixteen" id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."></textarea>
+                    <textarea id="notes" name="notes" rows="12" maxlength="1000" placeholder="Type here."></textarea>
                     <div id="the-count">
                         <span id="current">0</script></span>
                         <span id="maximum">/ 1000</span>

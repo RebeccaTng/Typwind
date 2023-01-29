@@ -215,6 +215,7 @@ class ExpertController extends BaseController
             'firstname'          => 'required|min_length[3]|max_length[50]|alpha_space',
             'lastname'          => 'required|min_length[3]|alpha_space',
             'email'          => "required|min_length[4]|max_length[100]|valid_email|is_unique[students.email,idStudents,{$idStudents}]",
+            'birthday'          => "required",
             'notes' => 'max_length[1000]',
         ];
 
@@ -278,7 +279,7 @@ class ExpertController extends BaseController
     {
         helper(['form']);
         $rules = [
-            'title'          => 'required|min_length[5]|max_length[50]|is_unique[exercises.name]',
+            'title'          => 'required|min_length[3]|max_length[50]|is_unique[exercises.name]',
             'content'          => 'required|min_length[2]'
         ];
 

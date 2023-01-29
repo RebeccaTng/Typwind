@@ -5,7 +5,7 @@ class Dialog {
             {
                 accept: 'OK',
                 bodyClass: 'dialog-open',
-                cancel: 'Cancel',
+                cancel: cancelText,
                 dialogClass: '',
                 message: '',
                 template: '',
@@ -126,6 +126,8 @@ class Dialog {
 
 const dialog = new Dialog();
 
+document.getElementById("notActive").onclick = function(){location.reload()};
+
 //LOOK FOR THIS
 const elements = document.getElementsByClassName('locked');
 for (let i = 0; i < elements.length; i++) {
@@ -134,9 +136,9 @@ for (let i = 0; i < elements.length; i++) {
             let elementId = elements[i].id;
 
             dialog.open({
-                accept: 'Confirm',
+                accept: confirmText,
                 dialogClass: 'custom',
-                message: 'Confirm your purchase of this avatar',
+                message: confirmMessage,
                 target: e.target,
                 template:  `
             <div class="avatarChoice locked noMoney noEffects bigPic">
