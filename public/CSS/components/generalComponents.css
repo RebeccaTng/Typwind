@@ -240,6 +240,6 @@ div.language :not(a.active):not(span.bar):hover {
 
 .errorMessage {
     font: var(--bodyText);
-    color: var(--secondary-dark);
+    color: var(--secondary-dark) !important;
     margin-bottom: 0.313rem;
 }

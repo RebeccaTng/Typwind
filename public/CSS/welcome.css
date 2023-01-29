@@ -1,4 +1,6 @@
-
+* {
+    zoom: 0.99;
+}
 /* Implementation Grid */
 .grid-container_welcome {
     display: grid;

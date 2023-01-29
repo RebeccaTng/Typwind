@@ -1,3 +1,7 @@
+* {
+    zoom: 0.99;
+}
+
 /* Implementation Grid */
 .grid-container_login_child {
     display: grid;

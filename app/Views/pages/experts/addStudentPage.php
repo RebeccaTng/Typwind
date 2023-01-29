@@ -18,9 +18,7 @@
                     <h3 class="three">General Information</h3>
                     <?php if(isset(session()->validation)):?>
                         <div class="errorMessage">
-                            <p>
-                                <?= session()->validation->listErrors() ?>
-                            </p>
+                            <?= session()->validation->listErrors() ?>
                         </div><br>
                     <?php endif;?>
                     <form action= "<?php echo base_url('ExpertController/storeStudent');?>" method="post">
@@ -52,7 +50,7 @@
                             <?php endforeach;?>
                         </select>
 
-                        <label class="explanation"><span class="nine2">Which hand(s) will they be typing with?</span></label>
+                        <label class="explanation nine2">Which hand(s) will they be typing with?</label>
                         <label for="handSelection"><b class="ten">Hand Selection:</b></label>
                         <select name="handSelection" id="handSelection" required>
                             <option class="eleven" value="One Hand, right hand">Right Hand</option>

@@ -10,6 +10,7 @@
     color: var(--blueNeutral);
     user-select: none;
 }
+
 :root {
     /* Colors Styles */
     --primary-darkest: #0A6274;
