@@ -1,6 +1,6 @@
 <div class="menu_grid-container">
 
-    <div class=" menuHeader ">
+    <div class=" menuHeader " id ="menuHeader">
         <div class="roundProfilePic">
             <img src="/public/assets/avatars/<?=(!empty(session()->idOfAvatar))? session()->idOfAvatar:1;?>.svg" alt="User Icon">
         </div>

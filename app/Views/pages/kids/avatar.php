@@ -15,7 +15,7 @@
                 <img src="/public/assets/avatars/<?=$idOfSelectedAvatar?>.svg" alt="User Icon">
                 <?php endif;?>
             </div>
-            <div class="coins">
+            <div class="coins" id ="currentCoins">
                 <h3 class="one">My Coins</h3>
                 <span class="coin"><?=(!empty(session()->coins))? session()->coins:0;?></span>
             </div>

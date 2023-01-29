@@ -657,12 +657,12 @@ link.forEach(el => {
 
         const attr = el.getAttribute('data-language');
 
-        if(attr === 'nederlands') {
+        if(attr === 'nederlands' && getCookie('nederlandsActief')==="notActive") {
             setCookie('nederlandsActief',"activeLang", 30);
             setCookie('englishActive',"notActive", 30);
         }
 
-        if(attr === 'english') {
+        if(attr === 'english' && getCookie('englishActive')==="notActive") {
             setCookie('nederlandsActief',"notActive", 30);
             setCookie('englishActive',"activeLang", 30);
         }
@@ -712,7 +712,6 @@ link.forEach(el => {
             switchLang('Lesson ','Les ');
             switchLang('Custom exercises','Aangepaste oefeningen');
         }
-
 
         if(getCookie("currentPage")=== "expertAddStudent"){
             var theOne = expertAddStudentData[attr];
@@ -813,6 +812,9 @@ link.forEach(el => {
                 cancelText = "Cancel"
             }
         }
+
+        switchLang('Avatar shop','Avatar winkel');
+        switchLang('Gender','Geslacht');
 
         function switchLang(eng,ned){
             if(attr === 'nederlands') {
@@ -941,6 +943,20 @@ link.forEach(el => {
             profileEl.textContent = mainData[attr].Profile;
     });
 });
+
+//dialog in avatar page
+let confirmMessage="Confirm";
+if(getCookie("nederlandsActief")==="activeLang"){
+    confirmMessage ="Bevestig je aankoop van deze avatar";
+    confirmText = "Bevestig"
+    cancelText = "Annuleer"
+}
+if(getCookie("englishActive")==="activeLang") {
+    confirmMessage = "Confirm your purchase of this avatar";
+    confirmText = "Confirm"
+    cancelText = "Cancel"
+
+}
 
 $("document").ready(function() {
     document. getElementById('activeLang').click();
