@@ -158,8 +158,6 @@ const onClickNotBought = e => {
                 body:JSON.stringify({id:res.idOfAvatar,buy:true}),
                 redirect: "follow",
             }) .then(async (data) => {
-
-
                 console.log('Success:', data);
                 const avatarIcon = document.getElementById(res.idOfAvatar);
                 el.removeEventListener("click", onClickNotBought);
@@ -172,13 +170,10 @@ const onClickNotBought = e => {
                 document.getElementById("menuHeader").querySelector('.coin').textContent = finalCoins;
                 avatarIcon.classList.replace('locked', 'bought');
                 avatarIcon.querySelector('.coin').textContent= (getCookie('nederlandsActief') === "notActive") ? "Purchased" : "Aangekocht";
-
                 await delay(1500);
                 avatarIcon.classList.replace('fireWorks', 'noFireWorks');
-                // window.location.reload();
-                fillBoughtElements();
                 fillElements();
-
+                fillBoughtElements();
             })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -191,7 +186,14 @@ document.getElementById("notActive").onclick = function(){location.reload()};
 let elements = document.getElementsByClassName('locked');
 fillElements();
 function fillElements(){
+    const currentCoins =  document.getElementById("currentCoins").querySelector('.coin').textContent;
+
+    console.log("Current coins"+ currentCoins);
     for (let i = 0; i < elements.length; i++) {
+        console.log("Id of avatar: "+ elements[i].id);
+        if(currentCoins<elements[i].querySelector('.coin').textContent){
+            elements[i].classList.add('noMoney');
+        }
         if(!elements[i].classList.contains('noMoney')&&elements[i].classList.contains('locked')){
             elements[i].addEventListener('click',onClickNotBought)
         }
@@ -224,5 +226,7 @@ function fillBoughtElements(){
 
     }
 }
+
+
 
 
