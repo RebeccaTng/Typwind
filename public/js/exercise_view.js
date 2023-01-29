@@ -134,7 +134,7 @@ function atStart(){
     correctCharactersTyped = 0;
     correctCharactersNeeded =  textChar.length;
     createSpanSentence();
-    keyboardColorsFunction(parseInt(handSelection.innerText));
+    //keyboardColorsFunction(parseInt(handSelection.innerText));  //Not part of windekinds current structure
     highlightCurrentLetter();
     moveBar();
 }
@@ -405,6 +405,9 @@ function highlightCurrentLetter() {
 function highlightLetterWrong() {
     var span = movableExerciseBoxText.getElementsByTagName("span")[correctCharactersTyped-1];
     span.style.borderColor = null;
+    if(span.textContent === " "){
+        span.textContent ="_";
+    }
     span.setAttribute("class","letter wrong");
     moveSentence();
 }
