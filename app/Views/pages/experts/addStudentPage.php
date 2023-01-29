@@ -19,7 +19,7 @@
                     <?php if(isset(session()->validation)):?>
                         <div class="errorMessage">
                             <?= session()->validation->listErrors() ?>
-                        </div><br>
+                        </div>
                     <?php endif;?>
                     <form action= "<?php echo base_url('ExpertController/storeStudent');?>" method="post">
                     <div class="generalFields">
