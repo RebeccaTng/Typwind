@@ -27,13 +27,13 @@
             <div class="general">
                 <p>
                     <label for="title"><b class="four">Title Exercise:</b></label>
-                    <input type="text" id="title" name="title" placeholder="Type here." required><br>
+                    <input type="text" id="title" name="title" placeholder="Type here." ><br>
                 </p>
             </div>
 
             <div class="content">
                 <h3 class="five">Content</h3>
-                <textarea id="content" name="content" rows="12" maxlength="1000" placeholder="Type here." required></textarea>
+                <textarea id="content" name="content" rows="12" maxlength="1000" placeholder="Type here." ></textarea>
             </div>
         </div>
     </div>

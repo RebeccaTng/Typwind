@@ -39,11 +39,11 @@
 
                         <div class="generalFields">
                             <label for="firstname"><b class="two">First name:</b></label>
-                            <input type="text" id="firstname" name="firstname" value="<?=$person->firstname?>" required>
+                            <input type="text" id="firstname" name="firstname" value="<?=$person->firstname?>" >
                             <label for="lastname"><b class="three">Surname:</b></label>
-                            <input type="text" id="lastname" name="lastname" value="<?=$person->lastname?>" required>
+                            <input type="text" id="lastname" name="lastname" value="<?=$person->lastname?>" >
                             <label for="lastname"><b class="four">Email:</b></label>
-                            <input type="text" id="email" name="email" value="<?=$person->email?>" required>
+                            <input type="text" id="email" name="email" value="<?=$person->email?>" >
                             <label for="gender"><b class="five">Gender:</b></label>
                             <select name="gender" id="gender">
                             <?php if ($person->gender==1):?>
@@ -55,7 +55,7 @@
                             <?php endif;?>
                             </select>
                             <label for="birthday"><b class="eight">Birthday:</b></label>
-                            <input type="date" id="birthday" name="birthday" value="<?=$person->birthday?>" required>
+                            <input type="date" id="birthday" name="birthday" value="<?=$person->birthday?>" >
                             <label for="teachers"><b class="nine">Teacher:</b></label>
                             <select name="teachers" id="teachers">
                                 <?php foreach ($teachers as $teacher):?>
