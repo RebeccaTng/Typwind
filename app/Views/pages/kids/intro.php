@@ -22,7 +22,7 @@
     </div>
     <div class="grid_cards">
             <div class="card_intro">
-                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px" class="three">How do you want to play the game?</h4>
+                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 1.5625rem" class="three">How do you want to play the game?</h4>
                 <div class="switches">
                     <label class="switch">
                         <input type="checkbox" id="keyboardShow" name="keyboard"  onchange="sliders()" checked>
@@ -46,7 +46,7 @@
 
             <div class="card_intro">
 
-                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 25px" class="five">Press start and earn some stars.<br> Good luck!</h4>
+                <h4 style="color: var(--blueNeutral-dark); margin-bottom: 1.5625rem" class="five">Press start and earn some stars.<br> Good luck!</h4>
                 <?php foreach ($exercises as $ex):?>
                     <?php  if ($ex->idExercises==$idExercises):?>
 

@@ -147,8 +147,7 @@ class AvatarsModel extends Model
     }
 
     public function changeSelectedAvatar($newSelectedAvatar){
-        print("New avatar ".$newSelectedAvatar);
-        print("\nOld avatar ".$this->getIdOfSelectedAvatar());
+
         $query_text =
             '    UPDATE student_avatar_fk
                 SET selected
@@ -157,10 +156,11 @@ class AvatarsModel extends Model
                               WHEN :newAvatar_fk: THEN true
                               ELSE selected
                         END
-                WHERE idAvatar_fk IN(:oldAvatar_fk:, :newAvatar_fk:);';
+                WHERE idAvatar_fk IN(:oldAvatar_fk:, :newAvatar_fk:) AND idStudent_fk = :id_student:;';
         $this->db->query($query_text, [
             'oldAvatar_fk'     => $this->getIdOfSelectedAvatar(),
             'newAvatar_fk' => $newSelectedAvatar,
+            'id_student' => session()->id,
         ]);
     }
     public function add_results($data) :int

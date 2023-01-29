@@ -44,7 +44,7 @@
                         $idOfSelectedAvatar=1;
                         if (!empty($avatars)):
                             foreach ($avatars as $avatar):
-                                if($person->idStudents==$avatar->idStudent_fk):
+                                if($person->idStudents==$avatar->idStudent_fk && $avatar->selected):
                                     $idOfSelectedAvatar=$avatar->idAvatar_fk;
                                     break;
                                 endif;
