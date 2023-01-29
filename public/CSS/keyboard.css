@@ -16,12 +16,13 @@
 }
 .title{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row;
 }
 #stopButton{
     align-self: flex-end;
+    padding: 10px;
 }
 
 /*Image, textbox and keyboard GRID container*/
