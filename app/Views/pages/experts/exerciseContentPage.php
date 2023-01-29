@@ -12,7 +12,8 @@
 <?php foreach ($teachers as $teacher):?>
     <?php  if ($exercise->idTeacherFk==$teacher->idTeachers || $exercise->idTeacherFk==null):?>
 
-        <?php setcookie("currentExercise",$exercise->idExercises, time()+36000, "/");?>
+        <?php   session()->set("currentExercise",$exercise->idExercises);
+                setcookie("currentExercise",$exercise->idExercises, time()+36000, "/");?>
 
 <ul class="breadcrumb">
     <li><a href="<?php echo base_url('/experts/exercises');?>" class="one">Exercises</a></li>

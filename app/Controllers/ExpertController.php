@@ -279,11 +279,12 @@ class ExpertController extends BaseController
 
     public function storeExercise($idExercises=null)
     {
+        $session=session();
         helper(['form']);
-        $rules = [
-            'title'          => 'required|min_length[3]|max_length[50]|is_unique[exercises.name]',
-            'content'          => 'required|min_length[2]'
-        ];
+            $rules = [
+                'title'          => "required|min_length[3]|max_length[50]|is_unique[exercises.name,idExercises,{$session->currentExercise}]",
+                'content'          => 'required|min_length[2]'
+            ];
 
         if($this->validate($rules)){
 
