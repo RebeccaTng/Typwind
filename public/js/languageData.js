@@ -137,7 +137,7 @@ var studentIntroData={
             "one" : "Oefeningen",
             "two" : "Introductie",
             "three" : "Hoe wil je spelen?",
-            "four" : "Toon de keyboard",
+            "four" : "Toon keyboard",
             "nine" : "Lees de letters hardop",
             "ten" : "Audio feedback wanneer je aan het typen bent",
             "five" : "Druk start en verdien enkele sterren",
@@ -745,7 +745,7 @@ link.forEach(el => {
 
         if(getCookie("currentPage")=== "exercise") {
             var theOne = studentExerciseData[attr];
-            
+
             //Translating the kid's exercise page
             switchLang("Awch, try again!","Ai, probeer nog een keer!");
             switchLang("Come on, you can do it. Try again!","Kom op, je kan het. Probeer nog een keer!");
