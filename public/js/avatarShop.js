@@ -127,8 +127,7 @@ class Dialog {
 const dialog = new Dialog();
 
 document.getElementById("notActive").onclick = function(){location.reload()};
-
-//LOOK FOR THIS
+const delay = ms => new Promise(res => setTimeout(res, ms));
 const elements = document.getElementsByClassName('locked');
 for (let i = 0; i < elements.length; i++) {
     if(!elements[i].classList.contains('noMoney')){
@@ -162,9 +161,12 @@ for (let i = 0; i < elements.length; i++) {
                         },
                         body:JSON.stringify({id:res.idOfAvatar,buy:true}),
                         redirect: "follow",
-                    }) .then((data) => {
+                    }) .then(async (data) => {
                         console.log('Success:', data);
-                        window.location.reload();
+
+                            await delay(5000);
+                            elements[i].element.classList.replace('noFireWorks', 'fireWorks');
+                            window.location.reload();
                     })
                         .catch((error) => {
                             console.error('Error:', error);
@@ -176,7 +178,6 @@ for (let i = 0; i < elements.length; i++) {
 }
 
 
-///NOT AT THIS
 const boughtAvatars = document.getElementsByClassName('bought');
 
 

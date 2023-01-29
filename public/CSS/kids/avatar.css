@@ -47,6 +47,12 @@ div.avatarContent {
     overflow: auto;
     margin-top: 0.625em;
 }
+div.noFireWorks > .pyro{
+    visibility: hidden;
+}
+div.fireWorks > .pyro{
+    visibility: visible;
+}
 
 div.avatarCard {
     grid-column: 2;

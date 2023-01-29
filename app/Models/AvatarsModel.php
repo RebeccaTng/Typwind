@@ -11,11 +11,11 @@ class AvatarsModel extends Model
     protected $db;
     protected $DBGroup = 'default';
 
-    const  BOUGHT_CSS_CLASS = ['avatarChoice bought','Purchased'];
-    const  SELECTED_CSS_CLASS = ['avatarChoice chosen noEffects','Selected'];
+    const  BOUGHT_CSS_CLASS = [' avatarChoice bought noFireWorks','Purchased'];
+    const  SELECTED_CSS_CLASS = ['avatarChoice chosen noEffects noFireWorks','Selected'];
 
-    const  NO_MONEY_CSS_CLASS = ['avatarChoice locked noMoney',''];
-    const  LOCK_CSS_CLASS = ['avatarChoice locked',''];
+    const  NO_MONEY_CSS_CLASS = ['avatarChoice locked noMoney noFireWorks',''];
+    const  LOCK_CSS_CLASS = ['avatarChoice locked noFireWorks',''];
 
     protected int $idOfSelectedAvatar;
     private array $avatarIcons=array();

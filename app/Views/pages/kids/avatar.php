@@ -8,10 +8,7 @@
 <link rel="stylesheet" href='<?=base_url()?>/public/CSS/kids/avatarEffects.css'>
 
     <h1>Avatar shop</h1>
-    <div class="pyro">
-        <div class="before"></div>
-        <div class="after"></div>
-    </div>
+
     <div class="avatarContent" id ="mainAvatar">
             <div class="roundProfilePic currentPic">
                 <?php if (! empty($idOfSelectedAvatar)):?>
@@ -27,6 +24,10 @@
             <?php if (! empty($avatars) && is_array($avatars)):
                 foreach ($avatars as $avatar):?>
                     <div class="<?= $avatar['classCSS']?> " id =<?= $avatar['idAvatars']?> >
+                        <div class="pyro">
+                            <div class="before"></div>
+                            <div class="after"></div>
+                        </div>
                         <div class="roundProfilePic">
                             <img src="/public/assets/avatars/<?= $avatar ['idAvatars']?>.svg" alt="User Icon">
                         </div>
