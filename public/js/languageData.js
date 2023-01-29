@@ -657,12 +657,12 @@ link.forEach(el => {
 
         const attr = el.getAttribute('data-language');
 
-        if(attr === 'nederlands' && getCookie('nederlandsActief')==="notActive") {
+        if(attr === 'nederlands') {
             setCookie('nederlandsActief',"activeLang", 30);
             setCookie('englishActive',"notActive", 30);
         }
 
-        if(attr === 'english' && getCookie('englishActive')==="notActive") {
+        if(attr === 'english') {
             setCookie('nederlandsActief',"notActive", 30);
             setCookie('englishActive',"activeLang", 30);
         }
@@ -737,12 +737,36 @@ link.forEach(el => {
         switchLang("is required","is verplicht");
         switchLang("must contain a valid email address","moet een geldige email bevatten");
 
-
-
         if(getCookie("currentPage")=== "expertExercises"){
             var theOne = expertExercisesData[attr];
             switchLang('Lesson ','Les ');
             switchLang('Custom exercises','Aangepaste oefeningen');
+        }
+
+        if(getCookie("currentPage")=== "exercise") {
+            var theOne = studentExerciseData[attr];
+            
+            //Translating the kid's exercise page
+            switchLang("Awch, try again!","Ai, probeer nog een keer!");
+            switchLang("Come on, you can do it. Try again!","Kom op, je kan het. Probeer nog een keer!");
+            switchLang("You can do this. Try again!","Je kan dit. Probeer nog een keer!");
+            switchLang("Oops, try again!","Oeps probeer nog een keer!");
+
+            if(attr==="nederlands"){
+                wrongMessagesMap = new Map([
+                    [1,"Ai, probeer nog een keer!"],
+                    [2,"Kom op, je kan het. Probeer nog een keer!"],
+                    [3,"Je kan dit. Probeer nog een keer!"],
+                    [4,"Oeps probeer nog een keer!"]]);
+            }
+            if(attr==="english"){
+                wrongMessagesMap = new Map([
+                    [1,"Awch, try again!"],
+                    [2,"Come on, you can do it. Try again!"],
+                    [3,"You can do this. Try again!"],
+                    [4,"Oops, try again!"]]);
+            }
+
         }
 
         if(getCookie("currentPage")=== "feedback"){
@@ -767,27 +791,40 @@ link.forEach(el => {
             switchLang('Purchased','Aangekocht');
             switchLang('Selected','Gekozen');
             switchLang('Not enough coins','Niet genoeg munten');
-        }
-        
-        function switchLang(eng,ned){
-        if(attr === 'nederlands') {
-        var html = document.querySelector('html');
-        var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
-        var node;
-        while (node = walker.nextNode()) {
-            node.nodeValue = node.nodeValue.replace(eng, ned)
-        }
-    }
 
-    if(attr === 'english') {
-        var html = document.querySelector('html');
-        var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
-        var node;
-        while (node = walker.nextNode()) {
-            node.nodeValue = node.nodeValue.replace(ned, eng)
+            //dialog in avatar page
+            let confirmMessage="Confirm";
+            if(getCookie("nederlandsActief")==="activeLang"){
+                confirmMessage ="Bevestig je aankoop van deze avatar";
+                confirmText = "Bevestig"
+                cancelText = "Annuleer"
+            }
+            if(getCookie("englishActive")==="activeLang") {
+                confirmMessage = "Confirm your purchase of this avatar";
+                confirmText = "Confirm"
+                cancelText = "Cancel"
+            }
         }
-    }
-}
+
+        function switchLang(eng,ned){
+            if(attr === 'nederlands') {
+                var html = document.querySelector('html');
+                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+                var node;
+                while (node = walker.nextNode()) {
+                    node.nodeValue = node.nodeValue.replace(eng, ned)
+                }
+            }
+
+            if(attr === 'english') {
+                var html = document.querySelector('html');
+                var walker = document.createTreeWalker(html, NodeFilter.SHOW_TEXT);
+                var node;
+                while (node = walker.nextNode()) {
+                    node.nodeValue = node.nodeValue.replace(ned, eng)
+                }
+            }
+        }
 
         if(getCookie("currentPage")=== "expertStudents"){
             var theOne = expertStudentsData[attr];
@@ -826,8 +863,6 @@ link.forEach(el => {
             var theOne = welcomeData[attr];
         if(getCookie("currentPage")=== "expertExercise")
             var theOne = expertExerciseData[attr];
-        if(getCookie("currentPage")=== "exercise")
-            var theOne = studentExerciseData[attr];
         if(getCookie("currentPage")=== "intro")
             var theOne = studentIntroData[attr];
         if(getCookie("currentPage")=== "studentHome")
@@ -900,21 +935,6 @@ link.forEach(el => {
             profileEl.textContent = mainData[attr].Profile;
     });
 });
-
-//dialog in avatar page
-let confirmMessage="Confirm";
-if(getCookie("nederlandsActief")==="activeLang"){
-    confirmMessage ="Bevestig je aankoop van deze avatar";
-    confirmText = "Bevestig"
-    cancelText = "Annuleer"
-}
-if(getCookie("englishActive")==="activeLang") {
-    confirmMessage = "Confirm your purchase of this avatar";
-    confirmText = "Confirm"
-    cancelText = "Cancel"
-}
-
-
 
 $("document").ready(function() {
     document. getElementById('activeLang').click();
