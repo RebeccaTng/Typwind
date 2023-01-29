@@ -19,7 +19,7 @@
         <?php endforeach;?>
     </div>
 
-    <div class="content_feedback">
+    <div class="content_feedback" style="zoom: 85%">
         <h3 style="color: var(--primary-darkest)" class="one2"> Finished exercise! </h3>
         <div>
         <?php if(0<=$score & $score<0.2): ?>

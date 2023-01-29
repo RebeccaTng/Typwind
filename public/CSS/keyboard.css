@@ -43,7 +43,7 @@
     overflow: hidden;
 
     position: absolute;
-    top: 45%;
+    top: 50%;
     font: var(--heading1);
     font-weight: normal;
     /*left: 25%;*/
@@ -81,11 +81,12 @@
 }
 
 .keyboard-base {
+    zoom:80%;
     max-width: 67.8125rem;
     padding: 1.25rem;
     position: absolute;
     top: 75%;
-    left: 56%;
+    left: 58%;
 
 
     transform: translate(-50%, -50%);
