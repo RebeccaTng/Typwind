@@ -125,9 +125,8 @@ class Dialog {
 
 
 const dialog = new Dialog();
-
-document.getElementById("notActive").onclick = function(){location.reload()};
 const delay = ms => new Promise(res => setTimeout(res, ms));
+document.getElementById("notActive").onclick = function(){location.reload()};
 const elements = document.getElementsByClassName('locked');
 for (let i = 0; i < elements.length; i++) {
     if(!elements[i].classList.contains('noMoney')){
@@ -165,7 +164,7 @@ for (let i = 0; i < elements.length; i++) {
                         console.log('Success:', data);
 
                             await delay(5000);
-                            elements[i].element.classList.replace('noFireWorks', 'fireWorks');
+                            // elements[i].element.classList.replace('noFireWorks', 'fireWorks');
                             window.location.reload();
                     })
                         .catch((error) => {
