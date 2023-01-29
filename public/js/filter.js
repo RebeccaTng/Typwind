@@ -8,7 +8,7 @@ function filterStudents(array, name) {
         for (var i = 0; i < array.length; i++) {
             html_students = html_students + "<li class=\"studentListItem\"> <a href= \"" + URL + array[i].idStudents + "\">"
                 + "<div class=\"roundProfilePic\"> <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\"> </div>" +
-                " <h4>" + array[i].firstname + "<br>" + array[i].lastname + "</h4>" + "</a></li>" +
+                " <h4>" + array[i].firstname + " <br>" + array[i].lastname + "</h4>" + "</a></li>" +
                 "<h3 id=\"noStudents\" hidden>No student found with this name</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned to them</h3>"
         }
         document.getElementById('disableFilter').style.display = "none";
@@ -22,7 +22,7 @@ function filterStudents(array, name) {
             for (var i = 0; i < result.length; i++) {
                 html_students = html_students + "<li class=\"studentListItem\"> <a href= \"" + URL + result[i].idStudents + "\">"
                     + "<div class=\"roundProfilePic\"> <img src=\"/public/assets/avatars/1.svg\" alt=\"User Icon\" class=\"roundProfilePic\"> </div>" +
-                    " <h4>" + result[i].firstname + "<br>" + result[i].lastname + "</h4>" + "</a></li>"+
+                    " <h4>" + result[i].firstname + " <br>" + result[i].lastname + "</h4>" + "</a></li>"+
                     "<h3 id=\"noStudents\" hidden>No student found with this name</h3><h3 id=\"tnoStudents\" hidden>This teacher has no students assigned to them</h3>"
             }
         }
@@ -47,10 +47,10 @@ function search() {
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
+
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
-            console.log("test")
         } else {
             li[i].style.display = "none";
         }
