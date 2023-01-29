@@ -21,6 +21,10 @@ span.mandatory {
     margin-top: 0.625rem;
 }
 
+.errorMessage #text {
+    color: var(--secondary-dark) !important;
+}
+
 @media screen and (max-width: 62.5em) {
     div.infoContainer {
         flex-direction: column;

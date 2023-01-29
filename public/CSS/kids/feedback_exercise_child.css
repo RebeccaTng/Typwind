@@ -45,18 +45,24 @@
     border-radius: 1.563rem; /* 25px */
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(30, 41, 41, 0.2); /* 8px 8px 20px */
     padding: 40px;
-    margin: 2.5rem 0.625rem 0.625rem; /* 40px 10px 10px */
     border: 0.125rem solid var(--beigeNeutral-dark); /* 2px */
+    max-width: 500px;
+    margin: 2.5rem auto auto;
 }
 
 .feedback_ex_button button{
-    width: 100%;
-    margin: 10px;
+    width: 21.875rem;
+    margin: 0.75rem;
 }
 .feedback_ex_button{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h3.eleven, h3.twelve {
+    width: max-content;
+    margin: auto;
 }
 
 /*Wiggle stars*/
