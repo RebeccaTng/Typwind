@@ -17,7 +17,17 @@
         <div class="scroller">
             <div class="studentContainer">
                 <div class="roundProfilePic">
-                    <img src="/public/assets/avatars/1.svg" alt="User Icon">
+                    <?php
+                    $idOfSelectedAvatar=1;
+                    if (!empty($avatars)):
+                        foreach ($avatars as $avatar):
+                            if($person->idStudents==$avatar->idStudentFk && $avatar->selected):
+                                $idOfSelectedAvatar=$avatar->idAvatarFk;
+                                break;
+                            endif;
+                        endforeach;
+                    endif;?>
+                    <img src="/public/assets/avatars/<?=$idOfSelectedAvatar?>.svg" alt="User Icon">
                 </div>
                 <?php if ($person->handSelection==1):?>
                     <img class="hands" src="<?php echo base_url('/public/assets/general/hands_right.svg');?>" alt="Italian Trulli">

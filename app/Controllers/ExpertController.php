@@ -145,11 +145,12 @@ class ExpertController extends BaseController
 
     public function studentOverview($idStudents): array
     {
-        $this->data['idStudents']=$idStudents;
-        $this->data['students'] = session()->get('students');
-        $this->data['menu_items'] = $this->menu_model->get_menuitems('Students');
+        $data['avatars'] = $this->students_model->getStudentsAvatarId();
+        $data['idStudents']=$idStudents;
+        $data['students'] = session()->get('students');
+        $data['menu_items'] = $this->menu_model->get_menuitems('Students');
 
-        return  $this->data;
+        return  $data;
     }
 
     public function editStudentPage($idStudents): array
