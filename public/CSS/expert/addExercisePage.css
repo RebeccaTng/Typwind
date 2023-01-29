@@ -85,3 +85,8 @@ div.generalContainer{
     outline: none !important;
     border: 0.125rem solid var(--accentColor); /*2px*/
 }
+#the-count {
+    float: right;
+    padding: 0.1rem 0 0 0;
+    font: var(--smallText);
+}

@@ -134,7 +134,6 @@
         var characterCount = $(this).val().length,
             current = $('#current'),
             maximum = $('#maximum'),
-            note = $('#notes'),
             theCount = $('#the-count');
 
 

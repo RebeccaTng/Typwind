@@ -1,23 +1,9 @@
-function handImage() {
-    var URL = document.getElementById("URL").value;
-    var state = document.getElementById("handSelection");
-    if (state.value == "right") {
-        document.getElementById("handImage").src = URL + "/hands_right.svg";
-    }
-    if (state.value == "left") {
-        document.getElementById("handImage").src = URL + "/hands_left.svg";
-    }
-    if (state.value == "both") {
-        document.getElementById("handImage").src = URL + "/hands_both.svg";
-    }
-}
-
 window.onload = function () {
 
-    $('#notes').val($('#notes').val().replace(/<br *\/?>/gi, ''));
+
     var current = $('#current'),
         maximum = $('#maximum'),
-        characterCount = $('#notes').val().length,
+        characterCount = $('#content').val().length,
         theCount = $('#the-count');
     current.text(characterCount);
 
@@ -46,5 +32,3 @@ window.onload = function () {
         theCount.css('font-weight', 'normal');
     }
 }
-
-

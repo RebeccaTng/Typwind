@@ -10,7 +10,7 @@
 <?php foreach ($exercises as $exercise):?>
 <?php  if ($exercise->idExercises==$idExercises):?>
 <?php foreach ($teachers as $teacher):?>
-    <?php  if ($exercise->idTeacher_fk==$teacher->idTeachers || $exercise->idTeacher_fk==null):?>
+    <?php  if ($exercise->idTeacherFk==$teacher->idTeachers || $exercise->idTeacherFk==null):?>
 
         <?php setcookie("currentExercise",$exercise->idExercises, time()+36000, "/");?>
 
@@ -27,7 +27,7 @@
                 <h3 class ="three">General Information</h3>
                 <p>
                     <b class="four">Created by: </b>
-                    <?php if ($exercise->idTeacher_fk==null):
+                    <?php if ($exercise->idTeacherFk==null):
                           echo
                           "Windekind";
                     ?>
@@ -60,12 +60,12 @@
         <button onclick='document.location.href= "<?php echo base_url('experts/exercises');?>"' class="button buttonSecondary buttonExpert nine2">BACK</button>
 
         <?php
-        if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):
+        if($exercise->isCustom==1 && $exercise->idTeacherFk==session()->id):
         echo '<button id= "edit" class="button buttonPrimary buttonExpert seven">EDIT</button>';
         endif
         ?>
         <?php
-        if($exercise->isCustom==1 && $exercise->idTeacher_fk==session()->id):?>
+        if($exercise->isCustom==1 && $exercise->idTeacherFk==session()->id):?>
         <script >
             document.getElementById("edit").onclick = function () {
                 location.href = getCookie("baseURL") +"/experts/editExercisePage/" + getCookie("currentExercise") ;
