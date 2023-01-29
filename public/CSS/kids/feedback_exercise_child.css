@@ -51,7 +51,7 @@
 }
 
 .feedback_ex_button button{
-    width: 17.5rem;
+    width: 21.875rem;
     margin: 0.75rem;
 }
 .feedback_ex_button{
@@ -60,7 +60,7 @@
     align-items: center;
 }
 
-h2.eleven, h2.twelve {
+h3.eleven, h3.twelve {
     width: max-content;
 }
 
