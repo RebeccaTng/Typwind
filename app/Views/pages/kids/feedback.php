@@ -15,8 +15,12 @@
         <?php foreach ($exercises as $ex):?>
             <?php  if ($ex->idExercises==$idExercises):?>
                 <h1><?= $ex->name?></h1>
-            <?php endif;?>
-        <?php endforeach;?>
+            <?php endif;
+            $idLastExercise = 0;
+            if($ex->idExercises>$idLastExercise):
+                $idLastExercise=$ex->idExercises;
+            endif;
+        endforeach;?>
     </div>
 
     <div class="content_feedback" style="zoom: 85%">
@@ -95,8 +99,20 @@
 
             <?php  if ($idExercise_fk==94):
                 $idNext = 1;
+            elseif($idExercise_fk==41):
+                $idNext = 62;
+            elseif ($idExercise_fk>=96 && $idExercise_fk<$idLastExercise):
+                foreach ($exercises as $ex):
+                    if ($ex->idExercises > $idExercise_fk):
+                        $idNext = $ex->idExercises;
+                        break;
+                    endif;
+                endforeach;
+
+            elseif($idExercise_fk==$idLastExercise):
+                $idNext = 1;
             else:
-                $idNext= $idExercise_fk+1;
+                $idNext = $idExercise_fk+1;
             endif;?>
 
             <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="feedback_ex_button">

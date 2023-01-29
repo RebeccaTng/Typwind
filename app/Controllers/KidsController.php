@@ -135,7 +135,6 @@ class KidsController extends BaseController
         $this->data['idStudents']=session()->id;
         $this->data['handSelection']=session()->handSelection;
         $this->data['exercises']= session()->get('exercises');
-        print_r($this->data['voice']);
         $this->data[ 'menu_items'] = $this->menu_model->get_menuitems_kids('Exercises');
         return ($this->data);
     }
