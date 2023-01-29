@@ -140,8 +140,8 @@
 
 
     <form id="form" action="<?php echo base_url('kids/feedback/'.$idExercises);?>" method="post">
-        <input type="hidden" id="idStudent_fk" name="idStudent_fk" value="<?=$idStudents ?>">
-        <input type="hidden" id="idExercise_fk" name="idExercise_fk" value="<?=$idExercises ?>">
+        <input type="hidden" id="idStudentFk" name="idStudentFk" value="<?=$idStudents ?>">
+        <input type="hidden" id="idExerciseFk" name="idExerciseFk" value="<?=$idExercises ?>">
         <input type="hidden" id="score" name="score" value="">
         <input type="hidden" id="date" name="date" value="">
     </form>
