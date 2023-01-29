@@ -46,7 +46,7 @@
                     + "<a style = 'text-decoration: none;'href= \"" + URL + lessonGroup[i].idExercises + "\">"
                     +"<button class='exerciseButton'>"+ lessonGroup[i].name
                     for (let j = 0; j < scores.length; j++) {
-                        if(scores[j].idExercise_fk === lessonGroup[i].idExercises)
+                        if(scores[j].idExerciseFk === lessonGroup[i].idExercises)
                         {
                             if(0<= scores[j].score && scores[j].score<0.2)
                             {

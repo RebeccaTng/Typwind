@@ -228,7 +228,7 @@ class ExpertController extends BaseController
                 'email'     => $_POST['email'],
                 'isActive' => isset($_POST['active']),
                 'birthday' => $_POST['birthday'],
-                'idTeacher_fk' => $_POST['teachers'],
+                'idTeacherFk' => $_POST['teachers'],
                 'notes' => nl2br($_POST['notes']),
             ];
 
@@ -290,7 +290,7 @@ class ExpertController extends BaseController
                 'name'     => $_POST['title'],
                 'text'     => $_POST['content'],
                 'lesson'    => "Beans",
-                'idTeacher_fk' => session()->id,
+                'idTeacherFk' => session()->id,
                 'isCustom'    => 1
             ];
             if($idExercises==null){

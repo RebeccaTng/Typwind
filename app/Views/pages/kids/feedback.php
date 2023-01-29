@@ -97,29 +97,29 @@
 
         <div class="card_buttons">
 
-            <?php  if ($idExercise_fk==94):
+            <?php  if ($idExerciseFk==94):
                 $idNext = 1;
-            elseif($idExercise_fk==41):
+            elseif($idExerciseFk==41):
                 $idNext = 62;
-            elseif ($idExercise_fk>=96 && $idExercise_fk<$idLastExercise):
+            elseif ($idExerciseFk>=96 && $idExerciseFk<$idLastExercise):
                 foreach ($exercises as $ex):
-                    if ($ex->idExercises > $idExercise_fk):
+                    if ($ex->idExercises > $idExerciseFk):
                         $idNext = $ex->idExercises;
                         break;
                     endif;
                 endforeach;
 
-            elseif($idExercise_fk==$idLastExercise):
+            elseif($idExerciseFk==$idLastExercise):
                 $idNext = 1;
             else:
-                $idNext = $idExercise_fk+1;
+                $idNext = $idExerciseFk+1;
             endif;?>
 
             <form action="<?php echo base_url('/kids/intro/'.$idNext);?>" class="feedback_ex_button">
                 <button class="button buttonPrimary buttonChild four">Start next exercise</button>
             </form>
 
-            <form action="<?php echo base_url('/kids/intro/'.$idExercise_fk);?>" class="feedback_ex_button">
+            <form action="<?php echo base_url('/kids/intro/'.$idExerciseFk);?>" class="feedback_ex_button">
                 <button class="button buttonSecondary buttonChild five">Replay exercise</button>
             </form>
 

@@ -143,8 +143,8 @@ class KidsController extends BaseController
     {
         if ($this->request->getMethod() === 'post') {
 
-            $this->data['idStudent_fk'] = $_POST['idStudent_fk'];
-            $this->data['idExercise_fk'] = $_POST['idExercise_fk'];
+            $this->data['idStudentFk'] = $_POST['idStudentFk'];
+            $this->data['idExerciseFk'] = $_POST['idExerciseFk'];
 //        $this->data['score'] = $_POST['score'];
             $this->data['score'] = $_POST['score'];
 
