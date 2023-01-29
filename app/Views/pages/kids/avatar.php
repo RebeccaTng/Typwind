@@ -5,8 +5,13 @@
 <?php setcookie("currentPage","avatar", time()+36000, "/");?>
 
 <script  src="<?=base_url()?>/public/js/avatarShop.js" defer></script>
+<link rel="stylesheet" href='<?=base_url()?>/public/CSS/kids/avatarEffects.css'>
 
     <h1>Avatar shop</h1>
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
     <div class="avatarContent" id ="mainAvatar">
             <div class="roundProfilePic currentPic">
                 <?php if (! empty($idOfSelectedAvatar)):?>
