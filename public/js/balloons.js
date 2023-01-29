@@ -4,6 +4,7 @@ function random(num) {
 }
 
 function getRandomStyles() {
+    // #F37460  #F4A684  #A6DCDE     #12908E  #FFF7F3
     let result = [[243, 116, 96], [244, 166, 132 ], [166, 220, 222], [18, 144, 142], [255, 247, 243]][Math.floor(Math.random() * 5)]
     let r = result[0];
     let g = result[1];
