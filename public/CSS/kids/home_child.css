@@ -20,8 +20,8 @@
     justify-self: center;
     align-self: center;
     text-align: center;
-    padding: 50px;
-    margin: 30px;
+    padding: 3.125rem;
+    margin: 1.875rem;
 }
 .start_ex_button{
     display: flex;
@@ -29,11 +29,11 @@
     align-items: center;
     /*justify-content: center;*/
     /*text-align: center;*/
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 .start_ex_button button{
     width: 100%;
-    margin: 10px;
+    margin: 0.625rem;
 }
 h4.exercise_name{
     display: flex;
@@ -79,21 +79,21 @@ h4.exercise_name{
 }
 
 .balloon {
-    height: 125px;
-    width: 105px;
+    height: 7.8125rem;
+    width: 6.5625rem;
     border-radius: 75% 75% 70% 70%;
     position: relative;
 }
 
 .balloon:before {
     content: "";
-    height: 75px;
-    width: 1px;
-    padding: 1px;
+    height: 4.6875rem;
+    width: 0.0625rem;
+    padding: 0.0625rem;
     background-color: #FDFD96;
     display: block;
     position: absolute;
-    top: 125px;
+    top: 7.8125rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -105,7 +105,7 @@ h4.exercise_name{
     display: block;
     position: absolute;
     color: inherit;
-    top: 120px;
+    top: 7.5rem;
     left: 0;
     right: 0;
     margin: auto;
