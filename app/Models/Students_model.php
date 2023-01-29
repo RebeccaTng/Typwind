@@ -26,10 +26,10 @@ class Students_model extends Model {
 
     public function get_students() {
         $query_text = 'SELECT students.idStudents, students.firstname, students.lastname, students.password, students.email, students.gender, students.birthday
-,students.handSelection, students.isActive, students.notes, students.reminder, students.coins, students.streak
+,students.handSelection, students.isActive, students.notes, students.coins
 , teachers.firstname as teacherFirstname, teachers.lastname as teacherLastname, teachers.email as teacherEmail
 , teachers.password as teacherPassword FROM a22ux02.students 
-INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order by students.firstname';
+INNER JOIN a22ux02.teachers ON students.idTeacherFk=teachers.idTeachers order by students.firstname';
         $query = $this->db->query($query_text);
         return $query->getResult();
     }
@@ -42,13 +42,13 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
 
     public function getStudentExercises($idStudent)
     {
-        $query_text = 'SELECT * FROM exercises INNER JOIN student_exercise_fk ON exercises.idExercises = student_exercise_fk.idExercise_fk WHERE student_exercise_fk.idStudent_fk=?';
+        $query_text = 'SELECT * FROM exercises INNER JOIN studentExerciseFk ON exercises.idExercises = studentExerciseFk.idExerciseFk WHERE studentExerciseFk.idStudentFk=?';
         $query = $this->db->query($query_text,$idStudent);
         return $query->getResult();
     }
 
     public function getSpecificExercises($idStudent) {
-        $query_text = 'SELECT * FROM student_exercise_fk WHERE idStudent_fk= ?';
+        $query_text = 'SELECT * FROM studentExerciseFk WHERE idStudentFk= ?';
         $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
@@ -72,7 +72,7 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
 
     public function getBestScores($idStudent)
     {
-        $query_text = 'SELECT idStudent_fk, idExercise_fk, max(score) as score FROM a22ux02.student_exercise_fk WHERE idStudent_fk= ? group by idStudent_fk,idExercise_fk';
+        $query_text = 'SELECT idStudentFk, idExerciseFk, max(score) as score FROM a22ux02.studentExerciseFk WHERE idStudentFk= ? group by idStudentFk,idExerciseFk';
         $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
@@ -81,7 +81,7 @@ INNER JOIN a22ux02.teachers ON students.idTeacher_fk=teachers.idTeachers order b
 
 
     public function getStudentsAvatarId(){
-        $query_text = 'SELECT * FROM student_avatar_fk WHERE selected=true;';
+        $query_text = 'SELECT * FROM studentAvatarFk WHERE selected=true;';
         $query = $this->db->query($query_text);
         return $query->getResult();
     }

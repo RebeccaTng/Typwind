@@ -49,7 +49,7 @@ class AvatarsModel extends Model
         if (! empty($avatarsBought)):
             foreach ($avatarsBought as $avatarBought):
                 if($avatarBought->selected):
-                    $this->idOfSelectedAvatar=$avatarBought->idAvatar_fk;
+                    $this->idOfSelectedAvatar=$avatarBought->idAvatarFk;
 
                     break;
                 endif;
@@ -67,7 +67,7 @@ class AvatarsModel extends Model
                     else $avatarIcons[$i] = array('idAvatars' => $avatars[$i]->idAvatars,'classCSS'=>self::LOCK_CSS_CLASS[0], 'price' =>  $avatars[$i]->price);
                     if (! empty($avatarsBought)){
                         foreach ($avatarsBought as $avatarBought):
-                            if($avatarBought->idAvatar_fk== $avatars[$i]->idAvatars){
+                            if($avatarBought->idAvatarFk== $avatars[$i]->idAvatars){
                                 $avatarIcons[$i]['classCSS']= self::BOUGHT_CSS_CLASS[0];
                                 $avatarIcons[$i]['price']=self::BOUGHT_CSS_CLASS[1];
                                 if ($avatarBought->selected){
@@ -113,7 +113,7 @@ class AvatarsModel extends Model
     }
     private function geAvatarsBought($idStudent):array
     {
-        $query_text = 'SELECT  idAvatar_fk, selected FROM student_avatar_fk WHERE idStudent_fk= ?;';
+        $query_text = 'SELECT  idAvatarFk, selected FROM studentAvatarFk WHERE idStudentFk= ?;';
         $query = $this->db->query($query_text, $idStudent);
         return $query->getResult();
     }
@@ -126,10 +126,10 @@ class AvatarsModel extends Model
         ]);
     }
     private function setAvatarAsBought($idOfAvatar,$idStudent){
-        $query_text =  'INSERT INTO student_avatar_fk ( idAvatar_fk, idStudent_fk) VALUES (:idAvatar_fk:, :idStudent_fk:);';
+        $query_text =  'INSERT INTO studentAvatarFk ( idAvatarFk, idStudentFk) VALUES (:idAvatarFk:, :idStudentFk:);';
         $this->db->query($query_text, [
-            'idAvatar_fk'     => $idOfAvatar,
-            'idStudent_fk' => $idStudent,
+            'idAvatarFk'     => $idOfAvatar,
+            'idStudentFk' => $idStudent,
         ]);
     }
     public function buyAvatar($idStudent,$idOfAvatar){
@@ -149,18 +149,18 @@ class AvatarsModel extends Model
     public function changeSelectedAvatar($newSelectedAvatar){
 
         $query_text =
-            '    UPDATE student_avatar_fk
+            '    UPDATE studentAvatarFk
                 SET selected
-                        = CASE idAvatar_fk
-                              WHEN :oldAvatar_fk: THEN false
-                              WHEN :newAvatar_fk: THEN true
+                        = CASE idAvatarFk
+                              WHEN :oldAvatarFk: THEN false
+                              WHEN :newAvatarFk: THEN true
                               ELSE selected
                         END
-                WHERE idAvatar_fk IN(:oldAvatar_fk:, :newAvatar_fk:) AND idStudent_fk = :id_student:;';
+                WHERE idAvatarFk IN(:oldAvatarFk:, :newAvatarFk:) AND idStudentFk = :idStudent:;';
         $this->db->query($query_text, [
-            'oldAvatar_fk'     => $this->getIdOfSelectedAvatar(),
-            'newAvatar_fk' => $newSelectedAvatar,
-            'id_student' => session()->id,
+            'oldAvatarFk'     => $this->getIdOfSelectedAvatar(),
+            'newAvatarFk' => $newSelectedAvatar,
+            'idStudent' => session()->id,
         ]);
     }
     public function add_results($data) :int
@@ -171,7 +171,7 @@ class AvatarsModel extends Model
 
         $this->db->transStart();
         $this->updateCoins(session()->id,$coins);
-        $this->db->table('student_exercise_fk')->insert($data);
+        $this->db->table('studentExerciseFk')->insert($data);
         $this->db->transComplete();
         return $newCoins;
     }

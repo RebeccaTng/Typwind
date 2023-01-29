@@ -33,9 +33,8 @@
                     <div class="general">
                         <h3 class="one2">General Information</h3>
                         <input type="hidden" id="password" name="password" value="<?=$person->password?>">
-                        <input type="hidden" id="reminder" name="reminder" value="<?=$person->reminder?>">
                         <input type="hidden" id="coins" name="coins" value=<?=$person->coins?>>
-                        <input type="hidden" id="streak" name="streak" value=<?=$person->streak?>>
+
 
                         <div class="generalFields">
                             <label for="firstname"><b class="two">First name:</b></label>
