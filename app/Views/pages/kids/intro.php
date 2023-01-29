@@ -28,7 +28,7 @@
                         <input type="checkbox" id="keyboardShow" name="keyboard"  onchange="sliders()" checked>
                         <span class="slider"></span>
                     </label>
-                    <label for="keyboardShow" style="color: var(--blueNeutral-dark); font: var(--bodyExText)" class="four">Show keyboard</label>
+                    <label for="keyboardShow" style="color: var(--blueNeutral-dark); font: var(--bodyExText);" class="four">Show keyboard</label>
                     <br>
                     <label class="switch">
                         <input type="checkbox" id="voice" name="voice"  onchange="sliders()" checked>
