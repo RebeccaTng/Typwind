@@ -55,7 +55,7 @@
 <?php endif;?>
 
     <!--Image and text bar-->
-    <div class="exercise">
+    <div class="exercise" style="zoom: 80%">
         <div id="myProgress" class="myProgress">
             <div id="myBar" class="myBar"></div>
         </div>
