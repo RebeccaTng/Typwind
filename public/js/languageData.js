@@ -743,6 +743,14 @@ link.forEach(el => {
             switchLang('Custom exercises','Aangepaste oefeningen');
         }
 
+        if(getCookie("currentPage")=== "studentHome")
+        {
+            var theOne = studentHomeData[attr];
+            switchLang('Custom','Aangepast');
+            switchLang('Congratulations','Proficiat');
+            switchLang('You finished the game','Je hebt het spel uitgespeeld');
+        }
+
         if(getCookie("currentPage")=== "exercise") {
             var theOne = studentExerciseData[attr];
 
@@ -865,8 +873,6 @@ link.forEach(el => {
             var theOne = expertExerciseData[attr];
         if(getCookie("currentPage")=== "intro")
             var theOne = studentIntroData[attr];
-        if(getCookie("currentPage")=== "studentHome")
-            var theOne = studentHomeData[attr];
         if(getCookie("currentPage")=== "expertEditExercise")
             var theOne = expertEditExerciseData[attr];
         if(getCookie("currentPage")=== "expertStudent")
