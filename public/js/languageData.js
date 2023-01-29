@@ -747,8 +747,6 @@ link.forEach(el => {
             switchLang('Purchased','Aangekocht');
             switchLang('Selected','Gekozen');
             switchLang('Not enough coins','Niet genoeg munten');
-
-
         }
 
         switchLang('Avatar shop','Avatar winkel');

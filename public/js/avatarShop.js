@@ -161,11 +161,30 @@ for (let i = 0; i < elements.length; i++) {
                         body:JSON.stringify({id:res.idOfAvatar,buy:true}),
                         redirect: "follow",
                     }) .then(async (data) => {
+
+
                         console.log('Success:', data);
 
-                            await delay(5000);
-                            // elements[i].element.classList.replace('noFireWorks', 'fireWorks');
-                            window.location.reload();
+                        // elements.splice( res.idOfAvatar,1);
+
+                        const avatarIcon = document.getElementById(res.idOfAvatar);
+
+
+
+
+                        avatarIcon.classList.replace('noFireWorks', 'fireWorks');
+                        await delay(2500);
+                        const currentCoins =  document.getElementById("currentCoins");
+                        const finalCoins = (currentCoins.querySelector('.coin').textContent - avatarIcon.querySelector('.coin').textContent).toString();
+                        currentCoins.querySelector('.coin').textContent= finalCoins;
+                        document.getElementById("menuHeader").querySelector('.coin').textContent = finalCoins;
+                        avatarIcon.classList.replace('locked', 'bought');
+                        avatarIcon.querySelector('.coin').textContent= (getCookie('nederlandsActief') === "notActive") ? "Purchased" : "Aangekocht";
+
+                        await delay(1500);
+                        avatarIcon.classList.replace('fireWorks', 'noFireWorks');
+                        window.location.reload();
+
                     })
                         .catch((error) => {
                             console.error('Error:', error);
