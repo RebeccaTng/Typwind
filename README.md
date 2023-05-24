@@ -16,7 +16,7 @@
     + [Avatar shop](#avatar-shop)
 ___
 ## Context
-This app was written for the option UX Driven Web Development in the R&D Experience course at Group T KU Leuven.
+This app was written for the UX Driven Web Development in the R&D Experience course at Group T KU Leuven.
 
 ## Project Description
 Typwind is a specialized teaching methodology developed by Windekind, a special education school in Leuven, Belgium, designed for teenagers with neuromotor impairments. It helps them learn to type, as writing can be challenging for them. Typwind is currently only available as a paper manual. For online exercises, Windekind look towards a game called RapidTyping. While RapidTyping provides online exercises, they don't follow the Typwind methodology. To address this gap, we've created a new platform that incorporates Typwind's principles.
